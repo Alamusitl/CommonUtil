@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '24.0.0'
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            moduleName "PatchClient"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+    sourceSets {
+        main {
+            jni.srcDirs = ['src/main/jni']
+        }
+    }
+}
+
+def makeJar(String target, String dir) {
+    exec {
+        executable "jar"
+        args "cvf", target
+        args "-C", dir
+        args "", "."
+    }
+}
+
+task buildLib(dependsOn: ['build']) << {
+    makeJar("com.ksc.client.core.jar", "build/intermediates/classes/release")
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:support-v4:24.0.0'
+    compile project(':sdkutil')
+}
