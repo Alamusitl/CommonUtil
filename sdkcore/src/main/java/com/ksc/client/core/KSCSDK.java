@@ -59,6 +59,8 @@ public class KSCSDK implements ISDK {
         if (activity == null) {
             KSCLog.e("init param error, activity can not be null, please check!");
             return;
+        } else {
+            mUserCallBack.setActivity(activity);
         }
         if (initCallBack == null) {
             KSCLog.e("init param error, initCallBack can not be null, please check!");
@@ -66,12 +68,12 @@ public class KSCSDK implements ISDK {
         } else {
             mUserCallBack.setInitCallBack(initCallBack);
         }
-        if (TextUtils.isEmpty(appInfo.getAppid())) {
+        if (TextUtils.isEmpty(appInfo.getAppId())) {
             KSCLog.e("init param error, appId can not be null, please check!");
             mUserCallBack.onInitFail(KSCStatusCode.INIT_FAIL, KSCStatusCode.getErrorMsg(KSCStatusCode.INIT_FAIL));
             return;
         }
-        if (TextUtils.isEmpty(appInfo.getAppkey())) {
+        if (TextUtils.isEmpty(appInfo.getAppKey())) {
             KSCLog.e("init param error, appKey can not be null, please check!");
             mUserCallBack.onInitFail(KSCStatusCode.INIT_FAIL, KSCStatusCode.getErrorMsg(KSCStatusCode.INIT_FAIL));
             return;

@@ -148,7 +148,7 @@ public class KSCSDKInfo {
      */
     private static String getAppId() {
         if (mAppInfo != null) {
-            return mAppInfo.getAppid();
+            return mAppInfo.getAppId();
         } else {
             return null;
         }
@@ -164,7 +164,7 @@ public class KSCSDKInfo {
         if (mAppInfo == null) {
             return null;
         } else {
-            return mAppInfo.getAppkey();
+            return mAppInfo.getAppKey();
         }
     }
 

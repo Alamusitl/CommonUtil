@@ -7,24 +7,24 @@ import android.content.pm.ActivityInfo;
  */
 public class AppInfo {
 
-    private String mAppid = null;// appid
-    private String mAppkey = null;// appkey
+    private String mAppId = null;// appId
+    private String mAppKey = null;// appKey
     private int mScreenOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;// 横竖屏，默认竖屏
 
-    public String getAppid() {
-        return mAppid;
+    public String getAppId() {
+        return mAppId;
     }
 
-    public void setAppid(String appid) {
-        this.mAppid = appid;
+    public void setAppId(String appId) {
+        this.mAppId = appId;
     }
 
-    public String getAppkey() {
-        return mAppkey;
+    public String getAppKey() {
+        return mAppKey;
     }
 
-    public void setAppkey(String appkey) {
-        this.mAppkey = appkey;
+    public void setAppKey(String appKey) {
+        this.mAppKey = appKey;
     }
 
     public int getScreenOrientation() {
@@ -38,8 +38,8 @@ public class AppInfo {
     @Override
     public String toString() {
         return "AppInfo{" +
-                "mAppid='" + mAppid + '\'' +
-                ", mAppkey='" + mAppkey + '\'' +
+                "mAppId='" + mAppId + '\'' +
+                ", mAppKey='" + mAppKey + '\'' +
                 ", mScreenOrientation=" + mScreenOrientation +
                 '}';
     }

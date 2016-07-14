@@ -1,5 +1,7 @@
 package com.ksc.client.core.inner.callbackwrapper;
 
+import android.app.Activity;
+
 import com.ksc.client.core.base.callback.ExitCallBack;
 import com.ksc.client.core.base.callback.InitCallBack;
 import com.ksc.client.core.base.callback.LoginCallBack;
@@ -13,12 +15,17 @@ import com.ksc.client.core.base.entity.PayInfo;
  */
 public class UserCallBackWrapper implements InitCallBack, ExitCallBack, LoginCallBack, LogoutCallBack, PayCallBack, SwitchAccountCallBack {
 
+    private Activity mCurrentActivity;
     private InitCallBack mInitCallBack;
     private LoginCallBack mLoginCallBack;
     private LogoutCallBack mLogoutCallBack;
     private PayCallBack mPayCallBack;
     private SwitchAccountCallBack mSwitchAccountCallBack;
     private ExitCallBack mExitCallBack;
+
+    public void setActivity(Activity activity) {
+        mCurrentActivity = activity;
+    }
 
     public void setInitCallBack(InitCallBack initCallBack) {
         mInitCallBack = initCallBack;
@@ -44,123 +51,209 @@ public class UserCallBackWrapper implements InitCallBack, ExitCallBack, LoginCal
         mExitCallBack = exitCallBack;
     }
 
-
     @Override
     public void doExit() {
-        if (mExitCallBack != null) {
-            mExitCallBack.doExit();
+        if (mExitCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mExitCallBack.doExit();
+                    mCurrentActivity = null;
+                }
+            });
         }
     }
 
     @Override
     public void onNoChannelExit() {
-        if (mExitCallBack != null) {
-            mExitCallBack.onNoChannelExit();
+        if (mExitCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mExitCallBack.onNoChannelExit();
+                    mCurrentActivity = null;
+                }
+            });
         }
     }
 
     @Override
-    public void onInitFail(int code, String msg) {
-        if (mInitCallBack != null) {
-            mInitCallBack.onInitFail(code, msg);
+    public void onInitFail(final int code, final String msg) {
+        if (mInitCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mInitCallBack.onInitFail(code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onInitSuccess(int code, String msg) {
-        if (mInitCallBack != null) {
-            mInitCallBack.onInitSuccess(code, msg);
+    public void onInitSuccess(final int code, final String msg) {
+        if (mInitCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mInitCallBack.onInitSuccess(code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onLoginSuccess(int code, String msg) {
-        if (mLoginCallBack != null) {
-            mLoginCallBack.onLoginSuccess(code, msg);
+    public void onLoginSuccess(final int code, final String msg) {
+        if (mLoginCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mLoginCallBack.onLoginSuccess(code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onLoginFail(int code, String msg) {
-        if (mLoginCallBack != null) {
-            mLoginCallBack.onLoginFail(code, msg);
+    public void onLoginFail(final int code, final String msg) {
+        if (mLoginCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mLoginCallBack.onLoginFail(code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onLoginCancel(int code, String msg) {
-        if (mLoginCallBack != null) {
-            mLoginCallBack.onLoginCancel(code, msg);
+    public void onLoginCancel(final int code, final String msg) {
+        if (mLoginCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mLoginCallBack.onLoginCancel(code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onLogoutSuccess(int code, String msg) {
-        if (mLogoutCallBack != null) {
-            mLogoutCallBack.onLogoutSuccess(code, msg);
+    public void onLogoutSuccess(final int code, final String msg) {
+        if (mLogoutCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mLogoutCallBack.onLogoutSuccess(code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onLogoutFail(int code, String msg) {
-        if (mLogoutCallBack != null) {
-            mLogoutCallBack.onLogoutFail(code, msg);
+    public void onLogoutFail(final int code, final String msg) {
+        if (mLogoutCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mLogoutCallBack.onLogoutFail(code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onPaySuccess(PayInfo payInfo, int code, String msg) {
-        if (mPayCallBack != null) {
-            mPayCallBack.onPaySuccess(payInfo, code, msg);
+    public void onPaySuccess(final PayInfo payInfo, final int code, final String msg) {
+        if (mPayCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mPayCallBack.onPaySuccess(payInfo, code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onPayFail(PayInfo payInfo, int code, String msg) {
-        if (mPayCallBack != null) {
-            mPayCallBack.onPayFail(payInfo, code, msg);
+    public void onPayFail(final PayInfo payInfo, final int code, final String msg) {
+        if (mPayCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mPayCallBack.onPayFail(payInfo, code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onPayCancel(PayInfo payInfo, int code, String msg) {
-        if (mPayCallBack != null) {
-            mPayCallBack.onPayCancel(payInfo, code, msg);
+    public void onPayCancel(final PayInfo payInfo, final int code, final String msg) {
+        if (mPayCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mPayCallBack.onPayCancel(payInfo, code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onPayOthers(PayInfo payInfo, int code, String msg) {
-        if (mPayCallBack != null) {
-            mPayCallBack.onPayOthers(payInfo, code, msg);
+    public void onPayOthers(final PayInfo payInfo, final int code, final String msg) {
+        if (mPayCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mPayCallBack.onPayOthers(payInfo, code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onPayProgress(PayInfo payInfo, int code, String msg) {
-        if (mPayCallBack != null) {
-            mPayCallBack.onPayProgress(payInfo, code, msg);
+    public void onPayProgress(final PayInfo payInfo, final int code, final String msg) {
+        if (mPayCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mPayCallBack.onPayProgress(payInfo, code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onSwitchAccountSuccess(int code, String msg) {
-        if (mSwitchAccountCallBack != null) {
-            mSwitchAccountCallBack.onSwitchAccountSuccess(code, msg);
+    public void onSwitchAccountSuccess(final int code, final String msg) {
+        if (mSwitchAccountCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mSwitchAccountCallBack.onSwitchAccountSuccess(code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onSwitchAccountFail(int code, String msg) {
-        if (mSwitchAccountCallBack != null) {
-            mSwitchAccountCallBack.onSwitchAccountFail(code, msg);
+    public void onSwitchAccountFail(final int code, final String msg) {
+        if (mSwitchAccountCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mSwitchAccountCallBack.onSwitchAccountFail(code, msg);
+                }
+            });
         }
     }
 
     @Override
-    public void onSwitchAccountCancel(int code, String msg) {
-        if (mSwitchAccountCallBack != null) {
-            mSwitchAccountCallBack.onSwitchAccountCancel(code, msg);
+    public void onSwitchAccountCancel(final int code, final String msg) {
+        if (mSwitchAccountCallBack != null && mCurrentActivity != null) {
+            mCurrentActivity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    mSwitchAccountCallBack.onSwitchAccountCancel(code, msg);
+                }
+            });
         }
     }
 }
