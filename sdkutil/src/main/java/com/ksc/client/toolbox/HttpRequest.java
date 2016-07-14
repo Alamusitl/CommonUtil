@@ -1,9 +1,16 @@
 package com.ksc.client.toolbox;
 
-import com.ksc.client.util.KSCLog;
+import android.os.Handler;
+import android.os.Message;
 
+import com.ksc.client.util.KSCLog;
+import com.ksc.client.util.KSCStorageUtils;
+
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -16,7 +23,7 @@ import java.util.Map;
 /**
  * Created by Alamusi on 2016/7/7.
  */
-public class HttpRequest extends Thread {
+public class HttpRequest implements Runnable {
 
     private static final String HEADER_CONTENT_TYPE = "Content-Type";
 
@@ -24,6 +31,7 @@ public class HttpRequest extends Thread {
     private Map<String, String> mHeaders;
     private HttpListener mHttpListener;
     private HttpErrorListener mHttpErrorListener;
+    private Handler mHandler;
 
     public HttpRequest(HttpRequestParam requestParam, HttpListener httpListener, HttpErrorListener httpErrorListener) {
         this(requestParam, null, httpListener, httpErrorListener);
@@ -36,9 +44,14 @@ public class HttpRequest extends Thread {
         mHttpErrorListener = httpErrorListener;
     }
 
+    public void setHandler(Handler handler) {
+        mHandler = handler;
+    }
+
     @Override
     public void run() {
         try {
+            KSCLog.i("Runnable Id : " + Thread.currentThread().getId());
             String url = mRequestParams.getUrl();
             URL parseUrl = new URL(url);
             HttpURLConnection connection = openConnection(parseUrl, mRequestParams);
@@ -55,23 +68,24 @@ public class HttpRequest extends Thread {
             setConnectionParametersForRequest(connection, mRequestParams);
             connection.connect();
             int responseCode = connection.getResponseCode();
+            KSCLog.i("Connection response code : " + responseCode);
             if (responseCode == -1) {
                 throw new IOException("Could not retrieve response code from HttpUrlConnection");
             }
             byte[] body = new byte[0];
-            Map<String, String> responseHeaders = new HashMap<>();
             if (responseCode == HttpURLConnection.HTTP_OK) {
-                InputStreamReader isr = new InputStreamReader(connection.getInputStream());
-                BufferedReader bfr = new BufferedReader(isr);
-                String line;
-                StringBuilder result = new StringBuilder();
-                while ((line = bfr.readLine()) != null) {
-                    result.append(line);
+                switch (mRequestParams.getRequestType()) {
+                    case HttpRequestParam.TYPE_GET_PARAM:
+                        body = processGetParam(connection);
+                        break;
+                    case HttpRequestParam.TYPE_DOWNLOAD_FILE:
+                        body = processDownloadFile(connection);
+                        break;
+                    default:
+                        break;
                 }
-                body = result.toString().getBytes();
-                isr.close();
-                bfr.close();
             }
+            Map<String, String> responseHeaders = new HashMap<>();
             for (Map.Entry<String, List<String>> header : connection.getHeaderFields().entrySet()) {
                 if (header.getKey() != null) {
                     responseHeaders.put(header.getKey(), header.getValue().get(0));
@@ -86,10 +100,6 @@ public class HttpRequest extends Thread {
             KSCLog.e("can not open connection, url:" + mRequestParams.getUrl());
             mHttpErrorListener.onErrorResponse(new HttpError(e.getMessage()));
         }
-    }
-
-    public void performRequest() {
-        start();
     }
 
     /**
@@ -131,6 +141,13 @@ public class HttpRequest extends Thread {
         }
     }
 
+    /**
+     * 附加参数
+     *
+     * @param connection   请求的connection
+     * @param requestParam 参数
+     * @throws IOException
+     */
     private void addBodyIfExists(HttpURLConnection connection, HttpRequestParam requestParam) throws IOException {
         byte[] body = requestParam.getBody();
         if (body != null) {
@@ -141,5 +158,70 @@ public class HttpRequest extends Thread {
             out.flush();
             out.close();
         }
+    }
+
+    private byte[] processDownloadFile(HttpURLConnection connection) throws IOException {
+        int totalSize = connection.getContentLength();
+        if (mHandler != null) {
+            Message message = mHandler.obtainMessage();
+            message.what = HttpRequestParam.DOWNLOAD_FILE_TOTAL;
+            message.obj = 100;
+        }
+
+        BufferedInputStream bis = new BufferedInputStream(connection.getInputStream());
+        String path = KSCStorageUtils.getDownloadDir(totalSize);
+        if (path == null) {
+            String msg = "Download File Failed, Download Space is null";
+            return msg.getBytes();
+        }
+        String[] list = connection.getURL().toString().split("/");
+        String name = list[list.length - 1];
+        path = path + File.separator + name;
+        KSCLog.i(path);
+        File file = new File(path);
+        if (!file.exists()) {
+            if (!file.getParentFile().exists()) {
+                if (!file.getParentFile().mkdirs()) {
+                    KSCLog.e("mkdirs dir " + file.getParentFile().getName() + " failed!");
+                }
+            }
+            if (!file.createNewFile()) {
+                KSCLog.e("create file " + file.getName() + " failed!");
+            }
+        }
+        FileOutputStream fos = new FileOutputStream(file);
+        int length;
+        int currentSize = 0;
+        byte[] buf = new byte[1024 * 4];
+        mHandler.sendMessage(mHandler.obtainMessage(HttpRequestParam.DOWNLOAD_FILE_START));
+        while ((length = bis.read(buf)) != -1) {
+            currentSize += length;
+            fos.write(buf, 0, length);
+            int present = (int) ((currentSize * 100) / (float) totalSize);
+            KSCLog.i(present + "");
+            mHandler.sendMessage(mHandler.obtainMessage(HttpRequestParam.DOWNLOAD_FILE_CURRENT, present));
+        }
+        if (currentSize == totalSize) {
+            mHandler.sendMessage(mHandler.obtainMessage(HttpRequestParam.DOWNLOAD_FILE_DONE, file.getAbsolutePath()));
+        } else {
+            mHandler.sendMessage(mHandler.obtainMessage(HttpRequestParam.DOWNLOAD_FILE_FAIL));
+        }
+        fos.close();
+        bis.close();
+        String msg = "Download File Success";
+        return msg.getBytes();
+    }
+
+    private byte[] processGetParam(HttpURLConnection connection) throws IOException {
+        byte[] body;
+        BufferedReader bfr = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String line;
+        StringBuilder result = new StringBuilder();
+        while ((line = bfr.readLine()) != null) {
+            result.append(line);
+        }
+        body = result.toString().getBytes();
+        bfr.close();
+        return body;
     }
 }

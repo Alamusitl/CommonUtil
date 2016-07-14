@@ -174,17 +174,7 @@ public class KSCStorageUtils {
             return null;
         }
         File path = Environment.getExternalStorageDirectory();
-        StatFs stat = new StatFs(path.getPath());
-        long blockSize;
-        long blockCount;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            blockSize = stat.getBlockSizeLong();
-            blockCount = stat.getBlockCountLong();
-        } else {
-            blockSize = stat.getBlockSize();
-            blockCount = stat.getBlockCount();
-        }
-        return Formatter.formatFileSize(context, blockSize * blockCount);
+        return Formatter.formatFileSize(context, getTotalSize(path));
     }
 
     /**
@@ -199,17 +189,7 @@ public class KSCStorageUtils {
             return null;
         }
         File path = Environment.getExternalStorageDirectory();
-        StatFs stat = new StatFs(path.getPath());
-        long blockSize;
-        long availableBlockCount;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            blockSize = stat.getBlockSizeLong();
-            availableBlockCount = stat.getAvailableBlocksLong();
-        } else {
-            blockSize = stat.getBlockSize();
-            availableBlockCount = stat.getAvailableBlocks();
-        }
-        return Formatter.formatFileSize(context, blockSize * availableBlockCount);
+        return Formatter.formatFileSize(context, getAvailableSize(path));
     }
 
     /**
@@ -220,17 +200,7 @@ public class KSCStorageUtils {
      */
     public static String getRomTotalSize(Context context) {
         File path = Environment.getDataDirectory();
-        StatFs stat = new StatFs(path.getPath());
-        long blockSize;
-        long blockCount;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            blockSize = stat.getBlockSizeLong();
-            blockCount = stat.getBlockCountLong();
-        } else {
-            blockSize = stat.getBlockSize();
-            blockCount = stat.getBlockCount();
-        }
-        return Formatter.formatFileSize(context, blockSize * blockCount);
+        return Formatter.formatFileSize(context, getTotalSize(path));
     }
 
     /**
@@ -241,6 +211,24 @@ public class KSCStorageUtils {
      */
     public static String getRomAvailableSize(Context context) {
         File path = Environment.getDataDirectory();
+        return Formatter.formatFileSize(context, getAvailableSize(path));
+    }
+
+    public static long getTotalSize(File path) {
+        StatFs stat = new StatFs(path.getPath());
+        long blockSize;
+        long blockCount;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            blockSize = stat.getBlockSizeLong();
+            blockCount = stat.getBlockCountLong();
+        } else {
+            blockSize = stat.getBlockSize();
+            blockCount = stat.getBlockCount();
+        }
+        return blockSize * blockCount;
+    }
+
+    public static long getAvailableSize(File path) {
         StatFs stat = new StatFs(path.getPath());
         long blockSize;
         long availableBlockCount;
@@ -251,6 +239,35 @@ public class KSCStorageUtils {
             blockSize = stat.getBlockSize();
             availableBlockCount = stat.getAvailableBlocks();
         }
-        return Formatter.formatFileSize(context, blockSize * availableBlockCount);
+        return blockSize * availableBlockCount;
     }
+
+    public static String getDownloadDir(int size) {
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+            File path = Environment.getExternalStorageDirectory();
+            long SDCardAvailableSize = getAvailableSize(path);
+            if (size > (SDCardAvailableSize + 100 * 1024 * 1024)) {
+                return null;
+            } else {
+                File dir = new File(path + File.separator + Environment.DIRECTORY_DOWNLOADS);
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                }
+                return dir.getAbsolutePath();
+            }
+        } else {
+            File path = Environment.getDataDirectory();
+            long RomAvailableSize = getAvailableSize(path);
+            if (size > (RomAvailableSize + 100 * 1024 * 1024)) {
+                return null;
+            } else {
+                File dir = new File(Environment.getDataDirectory().getAbsolutePath() + File.separator + "Downloads");
+                if (!dir.exists()) {
+                    dir.mkdirs();
+                }
+                return dir.getAbsolutePath();
+            }
+        }
+    }
+
 }
