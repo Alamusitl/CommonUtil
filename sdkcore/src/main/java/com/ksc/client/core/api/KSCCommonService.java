@@ -12,11 +12,15 @@ import com.ksc.client.core.config.KSCStatusCode;
 import com.ksc.client.toolbox.HttpError;
 import com.ksc.client.toolbox.HttpErrorListener;
 import com.ksc.client.toolbox.HttpListener;
-import com.ksc.client.toolbox.HttpRequest;
+import com.ksc.client.toolbox.HttpRequestManager;
 import com.ksc.client.toolbox.HttpRequestParam;
 import com.ksc.client.toolbox.HttpResponse;
 import com.ksc.client.util.KSCLog;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.HttpURLConnection;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -33,7 +37,7 @@ public class KSCCommonService {
         String url = KSCSDKInfo.getInitUrl();
         HttpRequestParam requestParam = new HttpRequestParam(url);
         requestParam.setTimeOutMs(5 * 1000);
-        HttpRequest request = new HttpRequest(requestParam, new HttpListener() {
+        HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(final HttpResponse response) {
                 KSCLog.i("get init param from server success, code :" + response.getCode() + " , data" + response.getBodyString());
@@ -61,27 +65,43 @@ public class KSCCommonService {
                 });
             }
         });
-        request.performRequest();
     }
 
     public static void createOrder(final Activity activity, final String channel, final PayInfo payInfo, final GetOrderCallBack callBack) {
         long currentTime = System.currentTimeMillis();
         if (mIsCreatingOrder.get() && (currentTime - mLastTime <= 2000)) {
-            OrderResponse response = new OrderResponse();
-            response.setGameOrder(payInfo.getOrder());
-            callBack.onCreateOrderResult(KSCStatusCode.PAY_FAILED_REPEAT, KSCStatusCode.getErrorMsg(KSCStatusCode.PAY_FAILED_REPEAT), response);
+            callBack.onCreateOrderResult(KSCStatusCode.PAY_FAILED_REPEAT, KSCStatusCode.getErrorMsg(KSCStatusCode.PAY_FAILED_REPEAT), null);
+            return;
         }
         mIsCreatingOrder.compareAndSet(false, true);
         mLastTime = System.currentTimeMillis();
         String url = KSCSDKInfo.getCreateOrderUrl();
-        HttpRequestParam requestParam = new HttpRequestParam(url);
-        HttpRequest request = new HttpRequest(requestParam, new HttpListener() {
+        final HttpRequestParam requestParam = new HttpRequestParam(url);
+        HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
-            public void onResponse(HttpResponse response) {
+            public void onResponse(final HttpResponse response) {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
+                        if (response.getCode() != HttpURLConnection.HTTP_OK) {
+                            callBack.onCreateOrderResult(K_RESPONSE_FAIL, "server response code is :" + response.getCode(), null);
+                            return;
+                        }
+                        try {
+                            JSONObject data = new JSONObject(response.getBodyString());
+                            OrderResponse orderResponse = new OrderResponse();
+                            orderResponse.setKscOrder(data.optString("order"));
+                            orderResponse.setAmount(data.optString("amount"));
+                            orderResponse.setProductId(data.optString("productId"));
+                            orderResponse.setProductName(data.optString("productName"));
+                            orderResponse.setProductDesc(data.optString("productDesc"));
+                            orderResponse.setCustomInfo(data.optString("customInfo"));
+                            orderResponse.setSubmitTime(data.optString("submitTime"));
+                            orderResponse.setSign(data.optString("sign"));
+                            callBack.onCreateOrderResult(K_RESPONSE_OK, "get order response success.", orderResponse);
+                        } catch (JSONException e) {
+                            KSCLog.e("JSON Format order response error", e);
+                        }
                     }
                 });
             }
@@ -97,7 +117,6 @@ public class KSCCommonService {
                 });
             }
         });
-        request.performRequest();
     }
 
     public static void getUpdateInfo(Activity activity, String channel) {

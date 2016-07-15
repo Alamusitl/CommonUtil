@@ -5,72 +5,54 @@ package com.ksc.client.core.api.entity;
  */
 public class OrderResponse {
 
-    private String mKscAppId;// KSC APPID
-    private String mChannel;// 渠道标示
-    private String mKscVersion;// KSC 版本号
-    private String mSdkVersion;// 渠道SDK版本号
-    private String mUid;// 用户ID
-    private String mKscOrder;// KSC 订单号
-    private String mGameOrder;// 游戏订单号
+    private String mOrder;// KSC 订单号
+    private String mAmount;// 商品价格
+    private String mProductId;// 商品ID
+    private String mProductName;// 商品名称
+    private String mProductDesc;// 商品描述
     private String mCustomInfo;// 自定义信息
     private String mSubmitTime;// 订单创建时间
     private String mSign;// 签名
-    private String mChannelProductId;
 
-    public String getKscAppid() {
-        return mKscAppId;
-    }
-
-    public void setKscAppid(String appid) {
-        this.mKscAppId = appid;
-    }
-
-    public String getChannel() {
-        return mChannel;
-    }
-
-    public void setChannel(String channel) {
-        this.mChannel = channel;
-    }
-
-    public String getKscVersion() {
-        return mKscVersion;
-    }
-
-    public void setKscVersion(String version) {
-        this.mKscVersion = version;
-    }
-
-    public String getSdkVersion() {
-        return mSdkVersion;
-    }
-
-    public void setSdkVersion(String sdkVersion) {
-        this.mSdkVersion = sdkVersion;
-    }
-
-    public String getUid() {
-        return mUid;
-    }
-
-    public void setUid(String uid) {
-        this.mUid = uid;
-    }
 
     public String getKscOrder() {
-        return mKscOrder;
+        return mOrder;
     }
 
     public void setKscOrder(String order) {
-        this.mKscOrder = order;
+        this.mOrder = order;
     }
 
-    public String getGameOrder() {
-        return mGameOrder;
+    public String getAmount() {
+        return mAmount;
     }
 
-    public void setGameOrder(String gameOrder) {
-        this.mGameOrder = gameOrder;
+    public void setAmount(String amount) {
+        mAmount = amount;
+    }
+
+    public String getProductId() {
+        return mProductId;
+    }
+
+    public void setProductId(String channelProductId) {
+        mProductId = channelProductId;
+    }
+
+    public String getProductName() {
+        return mProductName;
+    }
+
+    public void setProductName(String productName) {
+        mProductName = productName;
+    }
+
+    public String getProductDesc() {
+        return mProductDesc;
+    }
+
+    public void setProductDesc(String productDesc) {
+        mProductDesc = productDesc;
     }
 
     public String getCustomInfo() {
@@ -97,28 +79,18 @@ public class OrderResponse {
         this.mSign = sign;
     }
 
-    public String getChannelProductId() {
-        return mChannelProductId;
-    }
-
-    public void setChannelProductId(String channelProductId) {
-        mChannelProductId = channelProductId;
-    }
 
     @Override
     public String toString() {
         return "OrderResponse{" +
-                ", mKscAppId='" + mKscAppId + '\'' +
-                ", mChannel='" + mChannel + '\'' +
-                ", mKscVersion='" + mKscVersion + '\'' +
-                ", mSdkVersion='" + mSdkVersion + '\'' +
-                ", mUid='" + mUid + '\'' +
-                ", mKscOrder='" + mKscOrder + '\'' +
-                ", mGameOrder='" + mGameOrder + '\'' +
+                "mOrder='" + mOrder + '\'' +
+                ", mAmount='" + mAmount + '\'' +
+                ", mProductId='" + mProductId + '\'' +
+                ", mProductName='" + mProductName + '\'' +
+                ", mProductDesc='" + mProductDesc + '\'' +
                 ", mCustomInfo='" + mCustomInfo + '\'' +
                 ", mSubmitTime='" + mSubmitTime + '\'' +
                 ", mSign='" + mSign + '\'' +
-                ", mChannelProductId='" + mChannelProductId + '\'' +
                 '}';
     }
 }
