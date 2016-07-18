@@ -25,6 +25,7 @@ import com.ksc.client.core.config.KSCSDKInfo;
 import com.ksc.client.core.config.KSCStatusCode;
 import com.ksc.client.core.inner.ChannelBase;
 import com.ksc.client.core.inner.callbackwrapper.UserCallBackWrapper;
+import com.ksc.client.toolbox.HttpRequestManager;
 import com.ksc.client.util.KSCLog;
 
 import java.text.MessageFormat;
@@ -354,6 +355,7 @@ public class KSCSDK implements ISDK {
         } else {
             printErrorLogNonChannelImpl();
         }
+        HttpRequestManager.init();
         KSCLog.d(MessageFormat.format("end to onApplicationCreate. context={0}", context));
     }
 
@@ -378,6 +380,7 @@ public class KSCSDK implements ISDK {
         } else {
             printErrorLogNonChannelImpl();
         }
+        HttpRequestManager.destroy();
         KSCLog.d(MessageFormat.format("end to onApplicationTerminate. context={0}", context));
     }
 

@@ -4,7 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
+import com.ksc.client.core.config.KSCSDKInfo;
+import com.ksc.client.toolbox.HttpError;
+import com.ksc.client.toolbox.HttpErrorListener;
+import com.ksc.client.toolbox.HttpListener;
+import com.ksc.client.toolbox.HttpRequestManager;
+import com.ksc.client.toolbox.HttpRequestParam;
+import com.ksc.client.toolbox.HttpResponse;
 import com.ksc.client.util.KSCLog;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -14,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -23,17 +34,43 @@ import java.util.zip.ZipFile;
  */
 public class KSCUpdate {
 
+    public static final String UPDATE_TYPE_RESOURCE = "resource";
+    public static final String UPDATE_TYPR_PATCH = "patch";
+    public static final String UPDATE_TYPE_APK = "apk";
     private static final int BUF_SIZE = 1024;
 
-    public static void updateResource(Context context) {
-
+    public static void checkUpdate() {
+        String channel = KSCSDKInfo.getChannelId();
+        String appid = KSCSDKInfo.getAppId();
+        String number = KSCSDKInfo.getBuildVersion();
+        String url = "";
+        final HttpRequestParam requestParam = new HttpRequestParam(url);
+        HttpRequestManager.execute(requestParam, new HttpListener() {
+            @Override
+            public void onResponse(HttpResponse response) {
+                if (response.getCode() == HttpURLConnection.HTTP_OK) {
+                    processUpdateRequest(response.getBodyString());
+                } else {
+                    KSCLog.e("get update response error, code : " + response.getCode() + " , message : " + response.getBodyString());
+                }
+            }
+        }, new HttpErrorListener() {
+            @Override
+            public void onErrorResponse(HttpError error) {
+                KSCLog.e("get update info fail," + error.httpResponse.getCode() + ":" + error.httpResponse.getBodyString(), error);
+            }
+        });
     }
 
-    public static void updateApk(String url) {
-
+    private static void processUpdateRequest(String bodyString) {
+        try {
+            JSONObject data = new JSONObject(bodyString);
+        } catch (JSONException e) {
+            KSCLog.e("can not format String to JSON, String : [" + bodyString + "]", e);
+        }
     }
 
-    public static void updateApkWithPatch(String url, String md5, String sha1) {
+    public static void downloadUpdateFile(String url, String type, String sha1) {
 
     }
 
