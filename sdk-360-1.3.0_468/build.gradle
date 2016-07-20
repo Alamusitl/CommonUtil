@@ -1,10 +1,9 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.0"
     defaultConfig {
-        applicationId 'com.ksc.client.impl.360'
         minSdkVersion 9
         targetSdkVersion 24
         versionCode 1
