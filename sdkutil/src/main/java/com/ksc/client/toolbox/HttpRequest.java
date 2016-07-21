@@ -164,8 +164,8 @@ public class HttpRequest implements Runnable {
         int totalSize = connection.getContentLength();
         if (mHandler != null) {
             Message message = mHandler.obtainMessage();
-            message.what = HttpRequestParam.DOWNLOAD_FILE_TOTAL;
-            message.obj = 100;
+            message.what = HttpRequestManager.DOWNLOAD_FILE_TOTAL;
+            message.obj = totalSize;
         }
 
         BufferedInputStream bis = new BufferedInputStream(connection.getInputStream());
@@ -193,18 +193,16 @@ public class HttpRequest implements Runnable {
         int length;
         int currentSize = 0;
         byte[] buf = new byte[1024 * 4];
-        mHandler.sendMessage(mHandler.obtainMessage(HttpRequestParam.DOWNLOAD_FILE_START));
+        mHandler.sendMessage(mHandler.obtainMessage(HttpRequestManager.DOWNLOAD_FILE_START));
         while ((length = bis.read(buf)) != -1) {
             currentSize += length;
             fos.write(buf, 0, length);
-            int present = (int) ((currentSize * 100) / (float) totalSize);
-            KSCLog.i(present + "");
-            mHandler.sendMessage(mHandler.obtainMessage(HttpRequestParam.DOWNLOAD_FILE_CURRENT, present));
+            mHandler.sendMessage(mHandler.obtainMessage(HttpRequestManager.DOWNLOAD_FILE_CURRENT, currentSize));
         }
         if (currentSize == totalSize) {
-            mHandler.sendMessage(mHandler.obtainMessage(HttpRequestParam.DOWNLOAD_FILE_DONE, file.getAbsolutePath()));
+            mHandler.sendMessage(mHandler.obtainMessage(HttpRequestManager.DOWNLOAD_FILE_DONE, file.getAbsolutePath()));
         } else {
-            mHandler.sendMessage(mHandler.obtainMessage(HttpRequestParam.DOWNLOAD_FILE_FAIL));
+            mHandler.sendMessage(mHandler.obtainMessage(HttpRequestManager.DOWNLOAD_FILE_FAIL));
         }
         fos.close();
         bis.close();

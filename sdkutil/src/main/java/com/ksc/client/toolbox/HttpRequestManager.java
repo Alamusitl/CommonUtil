@@ -1,9 +1,6 @@
 package com.ksc.client.toolbox;
 
-import android.app.ProgressDialog;
 import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,6 +10,11 @@ import java.util.concurrent.Executors;
  */
 public class HttpRequestManager {
 
+    public static final int DOWNLOAD_FILE_START = 10000;
+    public static final int DOWNLOAD_FILE_TOTAL = 10001;
+    public static final int DOWNLOAD_FILE_CURRENT = 10002;
+    public static final int DOWNLOAD_FILE_DONE = 10003;
+    public static final int DOWNLOAD_FILE_FAIL = 10004;
     private static ExecutorService mFixedThreadPool;
 
     public static void init() {
@@ -26,30 +28,8 @@ public class HttpRequestManager {
         mFixedThreadPool.execute(request);
     }
 
-    public static void execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, final ProgressDialog dialog) {
+    public static void execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, Handler handler) {
         HttpRequest request = new HttpRequest(requestParam, listener, errorListener);
-        Handler handler = new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                switch (msg.what) {
-                    case HttpRequestParam.DOWNLOAD_FILE_START:
-                        dialog.show();
-                        break;
-                    case HttpRequestParam.DOWNLOAD_FILE_TOTAL:
-                        dialog.setMax((Integer) msg.obj);
-                        break;
-                    case HttpRequestParam.DOWNLOAD_FILE_CURRENT:
-                        dialog.setProgress((Integer) msg.obj);
-                        break;
-                    case HttpRequestParam.DOWNLOAD_FILE_DONE:
-                        dialog.cancel();
-                        break;
-                    case HttpRequestParam.DOWNLOAD_FILE_FAIL:
-                        dialog.cancel();
-                        break;
-                }
-            }
-        };
         request.setHandler(handler);
         mFixedThreadPool.execute(request);
     }
