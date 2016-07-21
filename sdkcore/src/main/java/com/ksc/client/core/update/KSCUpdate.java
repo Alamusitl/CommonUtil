@@ -1,10 +1,18 @@
 package com.ksc.client.core.update;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 
 import com.ksc.client.core.config.KSCSDKInfo;
+import com.ksc.client.core.update.entity.KSCUpdateInfo;
 import com.ksc.client.toolbox.HttpError;
 import com.ksc.client.toolbox.HttpErrorListener;
 import com.ksc.client.toolbox.HttpListener;
@@ -13,6 +21,7 @@ import com.ksc.client.toolbox.HttpRequestParam;
 import com.ksc.client.toolbox.HttpResponse;
 import com.ksc.client.util.KSCLog;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -38,11 +47,40 @@ public class KSCUpdate {
     public static final String UPDATE_TYPR_PATCH = "patch";
     public static final String UPDATE_TYPE_APK = "apk";
     private static final int BUF_SIZE = 1024;
+    private static ProgressDialog mDialog;
+    private static long mTotalSize = 0;
+    private static long mDownloadSize = 0;
+    private static Handler mHandler = new Handler(Looper.getMainLooper()) {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case HttpRequestManager.DOWNLOAD_FILE_START:
+                    mDialog.show();
+                    break;
+                case HttpRequestManager.DOWNLOAD_FILE_TOTAL:
+                    mTotalSize = Long.parseLong((String) msg.obj);
+                    mDialog.setMax(100);
+                    break;
+                case HttpRequestManager.DOWNLOAD_FILE_CURRENT:
+                    mDownloadSize = Long.parseLong((String) msg.obj);
+                    int present = (int) ((mDownloadSize * 100) / (double) mTotalSize);
+                    mDialog.setProgress(present);
+                    break;
+                case HttpRequestManager.DOWNLOAD_FILE_DONE:
+                    mDialog.cancel();
+                    break;
+                case HttpRequestManager.DOWNLOAD_FILE_FAIL:
+                    mDialog.cancel();
+                    break;
+            }
+        }
+    };
 
     public static void checkUpdate() {
         String channel = KSCSDKInfo.getChannelId();
         String appid = KSCSDKInfo.getAppId();
         String number = KSCSDKInfo.getBuildVersion();
+        String platform = "Android";
         String url = "";
         final HttpRequestParam requestParam = new HttpRequestParam(url);
         HttpRequestManager.execute(requestParam, new HttpListener() {
@@ -50,6 +88,8 @@ public class KSCUpdate {
             public void onResponse(HttpResponse response) {
                 if (response.getCode() == HttpURLConnection.HTTP_OK) {
                     processUpdateRequest(response.getBodyString());
+                } else if (response.getCode() == 406) {
+                    KSCLog.e("check update error, msg : " + response.getBodyString());
                 } else {
                     KSCLog.e("get update response error, code : " + response.getCode() + " , message : " + response.getBodyString());
                 }
@@ -63,15 +103,28 @@ public class KSCUpdate {
     }
 
     private static void processUpdateRequest(String bodyString) {
+        if (bodyString.equals("")) {
+            KSCLog.d("client version is last version");
+            return;
+        }
         try {
             JSONObject data = new JSONObject(bodyString);
+            JSONArray list = data.optJSONArray("verlist");
+            for (int i = 0; i < list.length(); i++) {
+                JSONObject info = list.getJSONObject(i);
+                String id = info.optString("id");
+                String version = info.optString("version");
+                String url = info.optString("url");
+                String type = info.optString("package");
+                String update = info.optString("update");
+                String suffix = info.optString("compress");
+                String msg = info.optString("comment");
+                String md5 = info.optString("Md5");
+                KSCUpdateInfo updateInfo = new KSCUpdateInfo(id, version, url, type, update, suffix, msg, md5);
+            }
         } catch (JSONException e) {
             KSCLog.e("can not format String to JSON, String : [" + bodyString + "]", e);
         }
-    }
-
-    public static void downloadUpdateFile(String url, String type, String sha1) {
-
     }
 
     private static void installApk(Context context, File file) {
@@ -131,6 +184,32 @@ public class KSCUpdate {
         } else {
             return new File(baseDir, absFileName);
         }
+    }
+
+    private void showUpdateMsg(final Activity activity, String msg) {
+        final AlertDialog alertDialog = new AlertDialog.Builder(activity).setTitle("更新提示").setMessage(msg).create();
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "更新", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                startDownloadFile(activity);
+            }
+        });
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                alertDialog.cancel();
+            }
+        });
+        alertDialog.show();
+    }
+
+    private void startDownloadFile(Activity activity) {
+        showProcessDialog(activity);
+    }
+
+    private void showProcessDialog(Activity activity) {
+        mDialog = new ProgressDialog(activity);
+        mDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
     }
 
 }
