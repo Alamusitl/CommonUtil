@@ -109,7 +109,7 @@ public class ChannelImpl extends ChannelBase {
                         mUserCallBack.onLoginSuccess(KSCStatusCode.SUCCESS, KSCStatusCode.getErrorMsg(KSCStatusCode.SUCCESS));
                     } else if (code == UCGameSDKStatusCode.NO_INIT) {
                         msg = "没有初始化就进行登录调用，需要游戏调用SDK初始化方法" + msg;
-                        mUserCallBack.onLoginFail(KSCStatusCode.LOGIN_FAIL_NOT_INIT, msg);
+                        mUserCallBack.onLoginFail(KSCStatusCode.NOT_INIT, msg);
                     } else if (code == UCGameSDKStatusCode.LOGIN_EXIT) {
                         if (!isLogin()) {
                             mUserCallBack.onLoginCancel(KSCStatusCode.LOGIN_CANCEL, KSCStatusCode.getErrorMsg(KSCStatusCode.LOGIN_CANCEL));

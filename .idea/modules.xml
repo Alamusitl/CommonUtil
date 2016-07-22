@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DeleteTestDir/deletetestdir.iml" filepath="$PROJECT_DIR$/DeleteTestDir/deletetestdir.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-GPT-ScreenRecordDemo/KSC-GPT-ScreenRecordDemo.iml" filepath="$PROJECT_DIR$/KSC-GPT-ScreenRecordDemo/KSC-GPT-ScreenRecordDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSYStreamerDemo/KSYStreamerDemo.iml" filepath="$PROJECT_DIR$/KSYStreamerDemo/KSYStreamerDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/SensorsAnalyticsSDK/SensorsAnalyticsSDK.iml" filepath="$PROJECT_DIR$/SensorsAnalyticsSDK/SensorsAnalyticsSDK.iml" />
-      <module fileurl="file://$PROJECT_DIR$/deletetestdir/deletetestdir.iml" filepath="$PROJECT_DIR$/deletetestdir/deletetestdir.iml" />
       <module fileurl="file://$PROJECT_DIR$/recordscreendemo/recordscreendemo.iml" filepath="$PROJECT_DIR$/recordscreendemo/recordscreendemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdk-360-1.3.0_468/sdk-360-1.3.0_468.iml" filepath="$PROJECT_DIR$/sdk-360-1.3.0_468/sdk-360-1.3.0_468.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdk-anzhi-3.5.2/sdk-anzhi-3.5.2.iml" filepath="$PROJECT_DIR$/sdk-anzhi-3.5.2/sdk-anzhi-3.5.2.iml" />
