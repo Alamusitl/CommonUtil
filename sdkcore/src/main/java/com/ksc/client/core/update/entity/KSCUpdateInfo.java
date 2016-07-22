@@ -5,14 +5,14 @@ package com.ksc.client.core.update.entity;
  */
 public class KSCUpdateInfo {
 
-    private String mId;
-    private String mVersion;
-    private String mUrl;
-    private String mType;
-    private String mIsForce;
-    private String mSuffix;
-    private String mUpdateMsg;
-    private String mMD5;
+    private String mId;// 更新包的ID
+    private String mVersion;// 版本号
+    private String mUrl;// 更新包URL
+    private String mType;// 更新类型，完整包/补丁包
+    private String mIsForce;// 是否强制更新, Force/Free
+    private String mSuffix; // 更新包文件类型，zip/tgz/rar/bz2
+    private String mUpdateMsg;// 更新说明
+    private String mMD5;// 更新包MD5
 
     public KSCUpdateInfo(String mId, String mVersion, String mUrl, String mType, String mIsForce, String mSuffix, String mUpdateMsg, String mMD5) {
         this.mId = mId;

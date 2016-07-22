@@ -223,12 +223,7 @@ public class ChannelImpl extends ChannelBase {
 
     @Override
     public boolean isMethodSupport(String methodName) {
-        if (methodName.equals("openUserCenter")) {
-            return true;
-        } else if (methodName.equals("switchAccount")) {
-            return true;
-        }
-        return false;
+        return true;
     }
 
     @Override

@@ -36,7 +36,7 @@ public class HttpRequestManager {
 
     public static void destroy() {
         if (mFixedThreadPool != null && !mFixedThreadPool.isShutdown()) {
-            mFixedThreadPool.shutdown();
+            mFixedThreadPool.shutdownNow();
         }
     }
 

@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -34,7 +35,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -50,6 +53,8 @@ public class KSCUpdate {
     private static ProgressDialog mDialog;
     private static long mTotalSize = 0;
     private static long mDownloadSize = 0;
+    private static Activity mActivity;
+    private static List<KSCUpdateInfo> mUpdateList = new ArrayList<>();
     private static Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -68,6 +73,22 @@ public class KSCUpdate {
                     break;
                 case HttpRequestManager.DOWNLOAD_FILE_DONE:
                     mDialog.cancel();
+                    String filePath = (String) msg.obj;
+                    for (KSCUpdateInfo info : mUpdateList) {
+                        if (info.getType().equals("Full")) {
+                            installApk(mActivity, new File(filePath));
+                        } else if (info.getType().equals("Patch")) {
+                            PatchClient.loadLib();
+                            PatchClient.applyPatch(mActivity.getApplicationContext(), Environment.getExternalStorageDirectory() + File.separator + "new.apk", filePath);
+                        } else {
+                            try {
+                                unZipResourceFile(new File(filePath), mActivity.getFilesDir().getAbsolutePath());
+                            } catch (IOException e) {
+                                KSCLog.e("unzip Resource File fail, IO Exception : " + e.getMessage(), e);
+                            }
+                        }
+                    }
+
                     break;
                 case HttpRequestManager.DOWNLOAD_FILE_FAIL:
                     mDialog.cancel();
@@ -76,7 +97,8 @@ public class KSCUpdate {
         }
     };
 
-    public static void checkUpdate() {
+    public static void checkUpdate(Activity activity) {
+        mActivity = activity;
         String channel = KSCSDKInfo.getChannelId();
         String appid = KSCSDKInfo.getAppId();
         String number = KSCSDKInfo.getBuildVersion();
@@ -87,7 +109,7 @@ public class KSCUpdate {
             @Override
             public void onResponse(HttpResponse response) {
                 if (response.getCode() == HttpURLConnection.HTTP_OK) {
-                    processUpdateRequest(response.getBodyString());
+                    processUpdateResponse(response.getBodyString());
                 } else if (response.getCode() == 406) {
                     KSCLog.e("check update error, msg : " + response.getBodyString());
                 } else {
@@ -97,12 +119,12 @@ public class KSCUpdate {
         }, new HttpErrorListener() {
             @Override
             public void onErrorResponse(HttpError error) {
-                KSCLog.e("get update info fail," + error.httpResponse.getCode() + ":" + error.httpResponse.getBodyString(), error);
+                KSCLog.e("get update info fail," + (error.httpResponse != null ? error.httpResponse.getCode() : 0) + ":" + (error.httpResponse != null ? error.httpResponse.getBodyString() : null), error);
             }
         });
     }
 
-    private static void processUpdateRequest(String bodyString) {
+    private static void processUpdateResponse(String bodyString) {
         if (bodyString.equals("")) {
             KSCLog.d("client version is last version");
             return;
@@ -121,6 +143,10 @@ public class KSCUpdate {
                 String msg = info.optString("comment");
                 String md5 = info.optString("Md5");
                 KSCUpdateInfo updateInfo = new KSCUpdateInfo(id, version, url, type, update, suffix, msg, md5);
+                mUpdateList.add(updateInfo);
+            }
+            for (KSCUpdateInfo info : mUpdateList) {
+                showUpdateMsg(mActivity, info.getUpdateMsg());
             }
         } catch (JSONException e) {
             KSCLog.e("can not format String to JSON, String : [" + bodyString + "]", e);
@@ -186,7 +212,11 @@ public class KSCUpdate {
         }
     }
 
-    private void showUpdateMsg(final Activity activity, String msg) {
+    public static void setProcessDialog(ProgressDialog dialog) {
+        mDialog = dialog;
+    }
+
+    private static void showUpdateMsg(final Activity activity, String msg) {
         final AlertDialog alertDialog = new AlertDialog.Builder(activity).setTitle("更新提示").setMessage(msg).create();
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "更新", new DialogInterface.OnClickListener() {
             @Override
@@ -203,11 +233,23 @@ public class KSCUpdate {
         alertDialog.show();
     }
 
-    private void startDownloadFile(Activity activity) {
+    private static void startDownloadFile(Activity activity) {
         showProcessDialog(activity);
+        final HttpRequestParam requestParam = new HttpRequestParam("");
+        HttpRequestManager.execute(requestParam, new HttpListener() {
+            @Override
+            public void onResponse(HttpResponse response) {
+                KSCLog.d("download file success, code: " + response.getCode() + ", msg: " + response.getBodyString());
+            }
+        }, new HttpErrorListener() {
+            @Override
+            public void onErrorResponse(HttpError error) {
+                KSCLog.e("download file fail, error info: " + (error.httpResponse != null ? error.httpResponse.getBodyString() : null), error);
+            }
+        }, mHandler);
     }
 
-    private void showProcessDialog(Activity activity) {
+    private static void showProcessDialog(Activity activity) {
         mDialog = new ProgressDialog(activity);
         mDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
     }
