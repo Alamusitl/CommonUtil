@@ -1,0 +1,171 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.ksc.client.impl">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <!-- bank -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.webkit.permission.PLUGIN"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="com.tencent.mtt.extension.Player"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- download -->
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD"/>
+    <uses-permission android:name="android.permission.NFC"/>
+
+    <uses-feature android:name="android.hardware.nfc.hce"/>
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        >
+        <activity
+            android:name="com.appchina.usersdk.YYHSplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.appchina.usersdk.YYHLoginDialogActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/YYHDialogThemeHigh">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.appchina.usersdk.YYHLoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/YYHDialogThemeDialog">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.appchina.usersdk.YYHAccountCenter"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.appchina.usersdk.YYHWebviewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name="com.iapppay.pay.mobile.ui.activity.PayHubActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection">
+        </activity>
+        <activity
+            android:name="com.iapppay.pay.mobile.ui.activity.MiniPayHubActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection">
+        </activity>
+        <activity
+            android:name="com.iapppay.pay.mobile.ui.activity.PayListActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection">
+        </activity>
+        <activity
+            android:name="com.iapppay.pay.mobile.ui.activity.ChargeActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection">
+        </activity>
+        <activity
+            android:name="com.iapppay.pay.mobile.ui.activity.ServiceCenterActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection">
+        </activity>
+        <activity
+            android:name="com.iapppay.pay.mobile.ui.activity.SelectCardAmountActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection">
+        </activity>
+        <activity
+            android:name="com.iapppay.pay.mobile.ui.activity.SelectAmountActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection">
+        </activity>
+        <activity
+            android:name="com.iapppay.pay.mobile.ui.activity.PcPayActivity"
+            android:configChanges="screenSize|orientation|keyboard|navigation|layoutDirection">
+        </activity>
+
+        <service
+            android:name="com.iapppay.mpay.downmgr.DownLoadService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind">
+        </activity>
+
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind">
+        </activity>
+
+        <activity
+            android:name="com.umpay.quickpay.UmpayActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/ump_translucent"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+
+        <activity
+            android:name="com.ipaynow.plugin.activity.PayMethodActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog">
+        </activity>
+
+        <activity
+            android:name="com.ipaynow.plugin.inner_plugin.wechat_plugin.activity.WeChatNotifyActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
+        <service android:name="com.UCMobile.PayPlugin.PayPluginService">
+            <intent-filter>
+                <action android:name="android.webkit.PLUGIN"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="type"
+                android:value="native"/>
+        </service>
+    </application>
+
+</manifest>
