@@ -21,16 +21,22 @@ import com.xiaomi.gamecenter.sdk.entry.MiAppInfo;
 import com.xiaomi.gamecenter.sdk.entry.MiBuyInfo;
 import com.xiaomi.gamecenter.sdk.entry.ScreenOrientation;
 
+import org.json.JSONObject;
+
 /**
  * Created by Alamusi on 2016/7/14.
  */
 public class ChannelImpl extends ChannelBase {
 
     @Override
-    public void init(Activity activity, AppInfo appInfo, String channelInfo) {
+    public void init(Activity activity, AppInfo appInfo, JSONObject channelInfo) {
+        if (!channelInfo.has("appId") || !channelInfo.has("appKey")) {
+            mUserCallBack.onInitFail(KSCStatusCode.INIT_FAIL, KSCStatusCode.getErrorMsg(KSCStatusCode.INIT_FAIL));
+            return;
+        }
         MiAppInfo miAppInfo = new MiAppInfo();
-        miAppInfo.setAppId("appId");
-        miAppInfo.setAppKey("appKey");
+        miAppInfo.setAppId(channelInfo.optString("appId"));
+        miAppInfo.setAppKey(channelInfo.optString("appKey"));
         if (KSCSDKInfo.isLandscape()) {
             miAppInfo.setOrientation(ScreenOrientation.horizontal);
         } else {

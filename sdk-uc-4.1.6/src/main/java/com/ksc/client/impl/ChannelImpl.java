@@ -11,7 +11,6 @@ import com.ksc.client.core.config.KSCStatusCode;
 import com.ksc.client.core.inner.ChannelBase;
 import com.ksc.client.util.KSCLog;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import cn.uc.gamesdk.UCCallbackListener;
@@ -35,11 +34,10 @@ public class ChannelImpl extends ChannelBase {
     private UCGameSDK mUCGameSDK;
 
     @Override
-    public void init(final Activity activity, AppInfo appInfo, String channelInfo) {
+    public void init(final Activity activity, AppInfo appInfo, JSONObject channelInfo) {
         try {
-            JSONObject channelParam = new JSONObject(channelInfo);
-            int gameId = Integer.parseInt(channelParam.optString("gameId"));
-            int cpId = Integer.parseInt(channelParam.optString("cpId"));
+            int gameId = Integer.parseInt(channelInfo.optString("gameId"));
+            int cpId = Integer.parseInt(channelInfo.optString("cpId"));
             UCOrientation ucOrientation;
             if (appInfo.getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
                 ucOrientation = UCOrientation.PORTRAIT;
@@ -86,9 +84,6 @@ public class ChannelImpl extends ChannelBase {
                     }
                 }
             });
-        } catch (JSONException e) {
-            KSCLog.e("format UC param error, param=" + channelInfo, e);
-            mUserCallBack.onInitFail(KSCStatusCode.INIT_FAIL, KSCStatusCode.getErrorMsg(KSCStatusCode.INIT_FAIL));
         } catch (UCCallbackListenerNullException e) {
             KSCLog.e("Init UC Callback Listener Null Exception", e);
         }

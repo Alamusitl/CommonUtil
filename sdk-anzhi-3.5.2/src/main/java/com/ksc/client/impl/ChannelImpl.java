@@ -119,18 +119,11 @@ public class ChannelImpl extends ChannelBase {
     };
 
     @Override
-    public void init(Activity activity, AppInfo appInfo, String channelInfo) {
+    public void init(Activity activity, AppInfo appInfo, JSONObject channelInfo) {
         mCurrentActivity = activity;
-        JSONObject data;
-        try {
-            data = new JSONObject(channelInfo);
-        } catch (JSONException e) {
-            KSCLog.e("channel info can not be format json." + channelInfo, e);
-            return;
-        }
-        String appKey = data.optString("appKey");
-        String appSecret = data.optString("appSecret");
-        mGameName = data.optString("gameName");
+        String appKey = channelInfo.optString("appKey");
+        String appSecret = channelInfo.optString("appSecret");
+        mGameName = channelInfo.optString("gameName");
         CPInfo info = new CPInfo();
         info.setOpenOfficialLogin(false);
         info.setAppKey(appKey);

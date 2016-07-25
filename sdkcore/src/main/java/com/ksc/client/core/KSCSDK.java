@@ -28,6 +28,9 @@ import com.ksc.client.core.inner.callbackwrapper.UserCallBackWrapper;
 import com.ksc.client.toolbox.HttpRequestManager;
 import com.ksc.client.util.KSCLog;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.MessageFormat;
 
 /**
@@ -82,11 +85,24 @@ public class KSCSDK implements ISDK {
         KSCSDKInfo.setAppInfo(appInfo);
         KSCCommonService.getInitParams(activity, KSCSDKInfo.getChannelId(), new GetInitParamCallBack() {
             @Override
-            public void onGetParamsResult(int code, String result) {
+            public void onGetParamsResult(int code, final String result) {
                 if (code == KSCCommonService.K_RESPONSE_OK) {
                     KSCLog.i("get channel param success, begin channel init");
                     if (getChannelImpl() != null) {
-                        getChannelImpl().init(activity, appInfo, result);
+                        activity.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                JSONObject jsonResult;
+                                try {
+                                    jsonResult = new JSONObject(result);
+                                } catch (JSONException e) {
+                                    KSCLog.e("convert init result to json fail, result : " + result, e);
+                                    mUserCallBack.onInitFail(KSCStatusCode.INIT_FAIL, KSCStatusCode.getErrorMsg(KSCStatusCode.INIT_FAIL));
+                                    return;
+                                }
+                                getChannelImpl().init(activity, appInfo, jsonResult);
+                            }
+                        });
                     } else {
                         printErrorLogNonChannelImpl();
                     }
@@ -100,7 +116,7 @@ public class KSCSDK implements ISDK {
     }
 
     @Override
-    public void login(Activity activity, LoginCallBack loginCallBack) {
+    public void login(final Activity activity, LoginCallBack loginCallBack) {
         KSCLog.d(MessageFormat.format("begin to login. activity={0}, loginCallBack={1}", activity, loginCallBack));
         if (activity == null) {
             KSCLog.e("login param error, activity can not be null, please check!");
@@ -113,7 +129,12 @@ public class KSCSDK implements ISDK {
             mUserCallBack.setLoginCallBack(loginCallBack);
         }
         if (getChannelImpl() != null) {
-            getChannelImpl().login(activity);
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    getChannelImpl().login(activity);
+                }
+            });
         } else {
             printErrorLogNonChannelImpl();
         }
@@ -121,7 +142,7 @@ public class KSCSDK implements ISDK {
     }
 
     @Override
-    public void logout(Activity activity, LogoutCallBack logoutCallBack) {
+    public void logout(final Activity activity, LogoutCallBack logoutCallBack) {
         KSCLog.d(MessageFormat.format("begin to logout. activity={0}, logoutCallBack={1}", activity, logoutCallBack));
         if (activity == null) {
             KSCLog.e("logout param error, activity can not be null, please check!");
@@ -134,7 +155,12 @@ public class KSCSDK implements ISDK {
             mUserCallBack.setLogoutCallBack(logoutCallBack);
         }
         if (getChannelImpl() != null) {
-            getChannelImpl().logout(activity);
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    getChannelImpl().logout(activity);
+                }
+            });
         } else {
             printErrorLogNonChannelImpl();
         }
@@ -162,7 +188,12 @@ public class KSCSDK implements ISDK {
                     return;
                 }
                 if (getChannelImpl() != null) {
-                    getChannelImpl().pay(activity, payInfo, response);
+                    activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            getChannelImpl().pay(activity, payInfo, response);
+                        }
+                    });
                 } else {
                     printErrorLogNonChannelImpl();
                 }
@@ -172,7 +203,7 @@ public class KSCSDK implements ISDK {
     }
 
     @Override
-    public void exit(Activity activity, ExitCallBack exitCallBack) {
+    public void exit(final Activity activity, ExitCallBack exitCallBack) {
         KSCLog.d(MessageFormat.format("begin to exit. activity={0}, exitCallBack={1}", activity, exitCallBack));
         if (activity == null) {
             KSCLog.e("exit param error, activity can not be null, please check!");
@@ -185,7 +216,12 @@ public class KSCSDK implements ISDK {
             mUserCallBack.setExitCallBack(exitCallBack);
         }
         if (getChannelImpl() != null) {
-            getChannelImpl().exit(activity);
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    getChannelImpl().exit(activity);
+                }
+            });
         } else {
             printErrorLogNonChannelImpl();
         }
@@ -385,7 +421,7 @@ public class KSCSDK implements ISDK {
     }
 
     @Override
-    public void switchAccount(Activity activity, SwitchAccountCallBack switchAccountCallBack) {
+    public void switchAccount(final Activity activity, SwitchAccountCallBack switchAccountCallBack) {
         KSCLog.d(MessageFormat.format("begin to switchAccount. activity={0}, switchAccountCallBack={2}", activity, switchAccountCallBack));
         if (activity == null) {
             KSCLog.e("switchAccount param error, activity can not be null, please check!");
@@ -398,7 +434,12 @@ public class KSCSDK implements ISDK {
             mUserCallBack.setSwitchAccountCallBack(switchAccountCallBack);
         }
         if (getChannelImpl() != null) {
-            getChannelImpl().switchAccount(activity);
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    getChannelImpl().switchAccount(activity);
+                }
+            });
         } else {
             printErrorLogNonChannelImpl();
         }
@@ -406,14 +447,19 @@ public class KSCSDK implements ISDK {
     }
 
     @Override
-    public void openUserCenter(Activity activity) {
+    public void openUserCenter(final Activity activity) {
         KSCLog.d(MessageFormat.format("begin to openUserCenter. activity={0}", activity));
         if (activity == null) {
             KSCLog.e("openUserCenter param error, activity can not be null, please check!");
             return;
         }
         if (getChannelImpl() != null) {
-            getChannelImpl().openUserCenter(activity);
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    getChannelImpl().openUserCenter(activity);
+                }
+            });
         } else {
             printErrorLogNonChannelImpl();
         }

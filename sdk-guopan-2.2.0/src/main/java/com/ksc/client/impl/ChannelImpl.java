@@ -23,7 +23,6 @@ import com.ksc.client.core.config.KSCStatusCode;
 import com.ksc.client.core.inner.ChannelBase;
 import com.ksc.client.util.KSCLog;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -32,16 +31,9 @@ import org.json.JSONObject;
 public class ChannelImpl extends ChannelBase {
 
     @Override
-    public void init(Activity activity, AppInfo appInfo, final String channelInfo) {
-        String appId = null;
-        String appKey = null;
-        try {
-            JSONObject tmp = new JSONObject(channelInfo);
-            appId = tmp.optString("appId");
-            appKey = tmp.optString("appKey");
-        } catch (JSONException e) {
-            KSCLog.e("JSONException channelInfo: " + channelInfo, e);
-        }
+    public void init(Activity activity, AppInfo appInfo, final JSONObject channelInfo) {
+        String appId = channelInfo.optString("appId");
+        String appKey = channelInfo.optString("appKey");
         GPApiFactory.getGPApi().setLogOpen(false);
         GPApiFactory.getGPApi().initSdk(activity, appId, appKey, new IGPSDKInitObsv() {
             @Override

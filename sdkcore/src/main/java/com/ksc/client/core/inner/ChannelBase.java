@@ -7,25 +7,27 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import com.ksc.client.core.config.KSCStatusCode;
+import com.ksc.client.core.api.entity.OrderResponse;
 import com.ksc.client.core.base.entity.AppInfo;
 import com.ksc.client.core.base.entity.PayInfo;
 import com.ksc.client.core.base.entity.RoleInfo;
+import com.ksc.client.core.config.KSCStatusCode;
 import com.ksc.client.core.inner.callbackwrapper.UserCallBackWrapper;
-import com.ksc.client.core.api.entity.OrderResponse;
+
+import org.json.JSONObject;
 
 /**
  * Created by Alamusi on 2016/6/22.
  */
 public abstract class ChannelBase {
 
-    private String mAuthInfo = null;
     protected UserCallBackWrapper mUserCallBack;
+    private String mAuthInfo = null;
 
     /********************
      * Base Interface
      ********************/
-    public abstract void init(final Activity activity, AppInfo appInfo, String channelInfo);
+    public abstract void init(final Activity activity, AppInfo appInfo, JSONObject channelInfo);
 
     public abstract void login(final Activity activity);
 
@@ -66,11 +68,7 @@ public abstract class ChannelBase {
     }
 
     public boolean isLogin() {
-        if (TextUtils.isEmpty(getAuthInfo())) {
-            return false;
-        } else {
-            return true;
-        }
+        return !TextUtils.isEmpty(getAuthInfo());
     }
 
     /*******************

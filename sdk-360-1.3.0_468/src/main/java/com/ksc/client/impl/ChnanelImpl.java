@@ -34,7 +34,7 @@ public class ChnanelImpl extends ChannelBase {
     private String mNotifyUrl = null;
 
     @Override
-    public void init(Activity activity, AppInfo appInfo, String channelInfo) {
+    public void init(Activity activity, AppInfo appInfo, JSONObject channelInfo) {
         KSCLog.d("360 init begin");
         Matrix.init(activity);
         if (appInfo.getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
