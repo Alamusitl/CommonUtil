@@ -20,6 +20,11 @@ android {
         exclude 'META-INF/WALLET.RSA'
         exclude 'META-INF/WALLET.SF'
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
 
 dependencies {

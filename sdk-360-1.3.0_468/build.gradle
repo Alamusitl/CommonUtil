@@ -18,7 +18,10 @@ android {
     lintOptions {
         abortOnError false
     }
-    productFlavors {
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
     }
 }
 

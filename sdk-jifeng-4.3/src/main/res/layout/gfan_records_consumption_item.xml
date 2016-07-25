@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_records_header"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_vertical"
+              android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_records_game_name"
+        style="@style/gfan_records_of_consumption"
+        android:layout_weight="3"
+        android:text="游戏"
+        />
+
+    <TextView
+        android:id="@+id/tv_records_time"
+        style="@style/gfan_records_of_consumption"
+        android:layout_weight="4"
+        android:text="时间"/>
+
+    <TextView
+        android:id="@+id/tv_records_count"
+        style="@style/gfan_records_of_consumption"
+        android:layout_weight="2"
+        android:text="机锋券"/>
+
+    <TextView
+        android:id="@+id/tv_records_content"
+        style="@style/gfan_records_of_consumption"
+        android:layout_weight="3"
+        android:text="消费内容"/>
+
+</LinearLayout><!-- From: file:/E:/GfanSDK/SDK/src/main/res/layout/gfan_records_consumption_item.xml -->
