@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/KSC-GPT-ScreenRecordDemo/KSC-GPT-ScreenRecordDemo.iml" filepath="$PROJECT_DIR$/KSC-GPT-ScreenRecordDemo/KSC-GPT-ScreenRecordDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSYStreamerDemo/KSYStreamerDemo.iml" filepath="$PROJECT_DIR$/KSYStreamerDemo/KSYStreamerDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDKDemo/sdkdemo.iml" filepath="$PROJECT_DIR$/SDKDemo/sdkdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/SensorsAnalyticsSDK/SensorsAnalyticsSDK.iml" filepath="$PROJECT_DIR$/SensorsAnalyticsSDK/SensorsAnalyticsSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdk-360-1.3.0_468/sdk-360-1.3.0_468.iml" filepath="$PROJECT_DIR$/sdk-360-1.3.0_468/sdk-360-1.3.0_468.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdk-anzhi-3.5.2/sdk-anzhi-3.5.2.iml" filepath="$PROJECT_DIR$/sdk-anzhi-3.5.2/sdk-anzhi-3.5.2.iml" />
@@ -22,7 +23,6 @@
       <module fileurl="file://$PROJECT_DIR$/sdkads/sdkads.iml" filepath="$PROJECT_DIR$/sdkads/sdkads.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdkanalytics/sdkanalytics.iml" filepath="$PROJECT_DIR$/sdkanalytics/sdkanalytics.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdkcore/sdkcore.iml" filepath="$PROJECT_DIR$/sdkcore/sdkcore.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdkdemo/sdkdemo.iml" filepath="$PROJECT_DIR$/sdkdemo/sdkdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdkutil/sdkutil.iml" filepath="$PROJECT_DIR$/sdkutil/sdkutil.iml" />
     </modules>
   </component>

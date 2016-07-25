@@ -1,0 +1,246 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.ksc.client.impl">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <!-- unionpay 3.1.0 sdk uses-permission -->
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD"/>
+    <uses-permission android:name="android.permission.NFC"/>
+
+    <uses-feature android:name="android.hardware.nfc.hce"/>
+    <!-- alipay sdk uses-permission -->
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="com.alipay.mobile.command.trigger.permission"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <!-- 微信支付权限 -->
+    <uses-permission android:name="android.webkit.permission.PLUGIN"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        >
+
+        <meta-data
+            android:name="PptvVasSdk_CID"
+            android:value="269"/>
+        <meta-data
+            android:name="PptvVasSdk_CCID"
+            android:value=""/>
+        <meta-data
+            android:name="PptvVasSdk_DebugMode"
+            android:value="true"/>
+        <!-- 一键注册 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.login.OneKeyRegistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 首次登陆 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.login.FirstLoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 忘记密码 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.login.function.ForgetPassword"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 登陆注册 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.login.LoginRegisterActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+
+        <!-- 自动登录 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.login.AutoLoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 欢迎页 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.welcome.WelcomePageActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 用户设置 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.welcome.AccountSettingsActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 解绑手机 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.welcome.UnbindPhoneActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 游戏礼包 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.welcome.GiftActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 修改密码 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.welcome.ModifyPassWordActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 礼包用法 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.welcome.GiftUsageGuideActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 充值记录 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.welcome.ChargeRecordActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 绑定手机 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.login.function.BindPhoneActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 支付失败 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayFailedActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 支付成功 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PaySuccessActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 支付等待 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayRsultWaitActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 骏网卡 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayJunEnterActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- Mo9 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayMo9DetailActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 易宝 szf-->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.YiBaoPayActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 神州付 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.SzfPayActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 盛付通 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.SftPayActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 非定额支付选择列表 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayChannelActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 非定额支付金额选择 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayAmountActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 现金劵界面 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.CashCouponActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 意见反馈 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.welcome.FeedBackActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 充G币界面 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.welcome.GCoinChargeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 充G币支付方式选择界面 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.welcome.GCoinChargeChannelChoiceActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 定额支付初始选择界面 选择支付方式 选择现金劵 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayFixAmountActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- G币支付 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayGActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- G币支付 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayGInputActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 非定额支付前置金额页面 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayChooseAmountActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- jd框支付插件 -->
+        <activity
+            android:name="com.wangyin.wepay.kuang.ui.WePayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/WePayTheme"
+            >
+        </activity>
+        <!-- 网页浏览 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.login.function.WebViewActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 卡号输入页面 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayCardInputActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <!-- 定额支付方式选择 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayFixedAmountChannelsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+        </activity>
+        <!-- 面值界面 -->
+        <activity
+            android:name="com.pptv.vassdk.ui.activity.pay.PayNormalChoseAmountActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+        </activity>
+
+        <!-- wechat支付页面 -->
+        <activity
+            android:name="com.ipaynow.plugin.inner_plugin.wechat_plugin.activity.WeChatNotifyActivity"
+            android:configChanges="keyboardHidden|navigation|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog">
+        </activity>
+
+        <!-- 新接入银联插件支付页面 -->
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
+        <!-- 银联一键支付-->
+        <activity
+            android:name="com.umpay.quickpay.UmpayActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/ump_translucent"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
+        <!-- alipay sdk end -->
+    </application>
+
+</manifest>

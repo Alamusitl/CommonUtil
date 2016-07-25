@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/DeleteTestDir" />
             <option value="$PROJECT_DIR$/KSC-GPT-ScreenRecordDemo" />
             <option value="$PROJECT_DIR$/KSYStreamerDemo" />
+            <option value="$PROJECT_DIR$/SDKDemo" />
             <option value="$PROJECT_DIR$/SensorsAnalyticsSDK" />
             <option value="$PROJECT_DIR$/sdk-360-1.3.0_468" />
             <option value="$PROJECT_DIR$/sdk-anzhi-3.5.2" />
@@ -28,7 +29,6 @@
             <option value="$PROJECT_DIR$/sdkads" />
             <option value="$PROJECT_DIR$/sdkanalytics" />
             <option value="$PROJECT_DIR$/sdkcore" />
-            <option value="$PROJECT_DIR$/sdkdemo" />
             <option value="$PROJECT_DIR$/sdkutil" />
           </set>
         </option>
@@ -38,6 +38,7 @@
             <option value="$PROJECT_DIR$/DeleteTestDir" />
             <option value="$PROJECT_DIR$/KSC-GPT-ScreenRecordDemo" />
             <option value="$PROJECT_DIR$/KSYStreamerDemo" />
+            <option value="$PROJECT_DIR$/SDKDemo" />
             <option value="$PROJECT_DIR$/SensorsAnalyticsSDK" />
             <option value="$PROJECT_DIR$/sdk-360-1.3.0_468" />
             <option value="$PROJECT_DIR$/sdk-anzhi-3.5.2" />
@@ -54,7 +55,6 @@
             <option value="$PROJECT_DIR$/sdkads" />
             <option value="$PROJECT_DIR$/sdkanalytics" />
             <option value="$PROJECT_DIR$/sdkcore" />
-            <option value="$PROJECT_DIR$/sdkdemo" />
             <option value="$PROJECT_DIR$/sdkutil" />
           </set>
         </option>
