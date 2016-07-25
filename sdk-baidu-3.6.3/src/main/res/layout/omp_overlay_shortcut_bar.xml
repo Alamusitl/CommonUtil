@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="center"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/shortcut_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/shortcut_record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/shortcut_record_background"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/omp_btn_switch_record_normal">
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/shortcut_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/shortcut_camera_background"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/omp_btn_switch_screenshot_normal">
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/shortcut_trash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="25dip"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/shortcut_trash_background"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/omp_btn_switch_close_normal">
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/omp_tool_selection_instruction"
+            android:textColor="#ffffff"
+            android:textSize="10sp"/>
+    </LinearLayout>
+</LinearLayout>

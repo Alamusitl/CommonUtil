@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dip"
+        android:background="#82cde5"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/omp_notifications"
+            android:textColor="#ffffff"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/notification_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+        <LinearLayout
+            android:id="@+id/empty_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/omplay_icon"
+                android:layout_width="86dip"
+                android:layout_height="86dip"
+                android:background="@null"
+                android:src="@drawable/omp_ic_omplaysquare_nitification"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dip"
+                android:text="@string/omp_no_notifications"
+                android:textColor="#9b9b9b"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
+

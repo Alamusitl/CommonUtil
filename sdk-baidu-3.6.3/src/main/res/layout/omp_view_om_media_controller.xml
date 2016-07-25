@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/image_button_pause_video"
+        android:layout_width="125dp"
+        android:layout_height="124dp"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:src="@drawable/omp_view_om_media_controller_button_pause_selector"
+        android:visibility="gone"/>
+
+    <ImageButton
+        android:id="@+id/image_button_play_video"
+        android:layout_width="125dp"
+        android:layout_height="124dp"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:src="@drawable/omp_view_om_media_controller_button_play_selector"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/omp_black_up_gradient"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/text_view_media_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="19dp"
+            android:layout_marginRight="19dp"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/view_group_media_controller_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/omp_black_gradient">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btn_volume"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="12dp"
+                android:background="@null"
+                android:src="@drawable/omp_btn_player_full_speaker"/>
+
+            <TextView
+                android:id="@+id/text_view_video_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00 / 00:00"
+                android:textColor="@android:color/white"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/image_button_like"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@null"
+                android:src="@drawable/omp_btn_player_like"/>
+
+            <TextView
+                android:id="@+id/text_view_like_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"/>
+
+            <ImageButton
+                android:id="@+id/image_button_share"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@null"
+                android:src="@drawable/omp_btn_player_share"/>
+
+            <ImageButton
+                android:id="@+id/image_button_omlet"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@null"
+                android:src="@drawable/omp_btn_player_omlett"/>
+
+            <ImageButton
+                android:id="@+id/image_button_close"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginRight="12dp"
+                android:background="@null"
+                android:src="@drawable/omp_btn_player_zoomin"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <SeekBar
+        android:id="@+id/media_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/view_group_media_controller_bar"
+        android:layout_marginTop="-15dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/omp_seekbar_style"
+        android:thumb="@drawable/omp_seekbar_thumb"/>
+
+    <TextView
+        android:id="@+id/text_view_time_point"
+        android:layout_width="48dp"
+        android:layout_height="20dp"
+        android:layout_above="@+id/view_group_media_controller_bar"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/omp_view_om_media_controller_text_timepoint_background"
+        android:gravity="center"
+        android:text="00:00"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/view_group_volume_controller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/view_group_media_controller_bar"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="86dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:background="@drawable/omp_black_alpha_round_background"/>
+
+        <mobisocial.omlet.overlaybar.ui.view.VerticalSeekBar
+            android:id="@+id/volume_seekbar"
+            android:layout_width="wrap_content"
+            android:layout_height="98dp"
+            android:layout_centerInParent="true"
+            android:max="10"
+            android:progress="10"
+            android:progressDrawable="@drawable/omp_seekbar_style"
+            android:thumb="@drawable/omp_seekbar_thumb"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/view_group_share_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#4C000000"
+            android:clickable="true"></View>
+
+        <LinearLayout
+            android:id="@+id/view_group_share_dialog_frame"
+            android:layout_width="307dp"
+            android:layout_height="180dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/omp_white_small_round_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:text="@string/omp_omMediaController_share_dialog_title"
+                android:textColor="@color/omp_gray_text_4a4a4a"
+                android:textSize="18sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="@null"
+                    android:src="@drawable/omp_btn_player_share_baidu"/>
+
+                <ImageButton
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="18dp"
+                    android:background="@null"
+                    android:src="@drawable/omp_btn_player_share_omlet"/>
+
+                <ImageButton
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="18dp"
+                    android:background="@null"
+                    android:src="@drawable/omp_btn_player_share_sina"/>
+
+                <ImageButton
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="18dp"
+                    android:background="@null"
+                    android:src="@drawable/omp_btn_player_share_qqcloud"/>
+
+                <ImageButton
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="18dp"
+                    android:background="@null"
+                    android:src="@drawable/omp_btn_player_share_tencent"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="@null"
+                    android:src="@drawable/omp_btn_player_share_evryone"/>
+
+                <ImageButton
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="18dp"
+                    android:background="@null"
+                    android:src="@drawable/omp_btn_player_share_qq"/>
+
+                <ImageButton
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="18dp"
+                    android:background="@null"
+                    android:src="@drawable/omp_btn_player_share_wechat"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:layout_marginRight="23dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edit_text_share_link"
+                    android:layout_width="188dp"
+                    android:layout_height="34dp"
+                    android:background="@drawable/omp_view_om_media_controller_share_dialog_url_background"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:singleLine="true"
+                    android:text="http://www.18183.com/ldxy/201509/3939"
+                    android:textColor="@color/omp_gray_line_979797"
+                    android:textSize="14sp"/>
+
+                <Button
+                    android:id="@+id/button_copy"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:layout_marginLeft="6dp"
+                    android:background="@drawable/omp_view_om_media_controller_share_dialog_copy_selector"
+                    android:text="@string/omp_omMediaController_share_dialog_copy"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="21dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:id="@+id/image_button_check"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/omp_view_om_media_controller_share_dialog_url_background"
+                    android:src="@drawable/omp_view_om_media_controller_share_check_selector"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/omp_omMediaController_share_dialog_start_time"/>
+
+                <EditText
+                    android:layout_width="58dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/omp_view_om_media_controller_share_dialog_url_background"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:singleLine="true"
+                    android:text="00:00"
+                    android:textColor="@color/omp_gray_line_979797"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/button_close_share"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignRight="@+id/view_group_share_dialog_frame"
+            android:layout_alignTop="@+id/view_group_share_dialog_frame"
+            android:layout_marginRight="-25dp"
+            android:layout_marginTop="-25dp"
+            android:background="@null"
+            android:src="@drawable/omp_btn_clospeage"/>
+    </RelativeLayout>
+</RelativeLayout>
+

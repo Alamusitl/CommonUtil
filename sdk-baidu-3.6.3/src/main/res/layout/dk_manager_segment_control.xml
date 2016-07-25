@@ -1,0 +1,24 @@
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/manager_segment_radiogroup"
+            style="@style/dk_segment_layout_style"
+            android:checkedButton="@+id/manager_segment_download">
+
+    <RadioButton
+        android:id="@+id/manager_segment_download"
+        style="@style/dk_segment_item_style"
+        android:background="@drawable/dk_segment_radio_left_selector"
+        android:text="@string/dk_download_download"/>
+
+    <RadioButton
+        android:id="@+id/manager_segment_update"
+        style="@style/dk_segment_item_style"
+        android:background="@drawable/dk_segment_radio_middle_selector"
+        android:text="@string/dk_download_update"/>
+
+    <RadioButton
+        android:id="@+id/manager_segment_installed"
+        style="@style/dk_segment_item_style"
+        android:background="@drawable/dk_segment_radio_right_selector"
+        android:text="@string/dk_installed"
+        />
+</RadioGroup>
