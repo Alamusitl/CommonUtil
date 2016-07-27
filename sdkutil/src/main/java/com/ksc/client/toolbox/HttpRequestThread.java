@@ -7,12 +7,9 @@ import com.ksc.client.util.KSCLog;
 import com.ksc.client.util.KSCStorageUtils;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -23,21 +20,20 @@ import java.util.Map;
 /**
  * Created by Alamusi on 2016/7/7.
  */
-public class HttpRequest implements Runnable {
-
-    private static final String HEADER_CONTENT_TYPE = "Content-Type";
+public class HttpRequestThread extends Thread {
 
     private HttpRequestParam mRequestParams;
     private Map<String, String> mHeaders;
     private HttpListener mHttpListener;
     private HttpErrorListener mHttpErrorListener;
     private Handler mHandler;
+    private String mPath;
 
-    public HttpRequest(HttpRequestParam requestParam, HttpListener httpListener, HttpErrorListener httpErrorListener) {
+    public HttpRequestThread(HttpRequestParam requestParam, HttpListener httpListener, HttpErrorListener httpErrorListener) {
         this(requestParam, null, httpListener, httpErrorListener);
     }
 
-    public HttpRequest(HttpRequestParam requestParam, Map<String, String> headers, HttpListener httpListener, HttpErrorListener httpErrorListener) {
+    public HttpRequestThread(HttpRequestParam requestParam, Map<String, String> headers, HttpListener httpListener, HttpErrorListener httpErrorListener) {
         mRequestParams = requestParam;
         mHeaders = headers;
         mHttpListener = httpListener;
@@ -54,7 +50,7 @@ public class HttpRequest implements Runnable {
             KSCLog.i("Runnable Id : " + Thread.currentThread().getId());
             String url = mRequestParams.getUrl();
             URL parseUrl = new URL(url);
-            HttpURLConnection connection = openConnection(parseUrl, mRequestParams);
+            HttpURLConnection connection = HttpUtils.openConnection(parseUrl, mRequestParams);
             if (connection == null) {
                 KSCLog.e("open connection fail, url: " + url);
                 mHttpErrorListener.onErrorResponse(new HttpError("connection can not be null"));
@@ -65,7 +61,7 @@ public class HttpRequest implements Runnable {
                     connection.addRequestProperty(headerName, mHeaders.get(headerName));
                 }
             }
-            setConnectionParametersForRequest(connection, mRequestParams);
+            HttpUtils.setConnectionParametersForRequest(connection, mRequestParams);
             connection.connect();
             int responseCode = connection.getResponseCode();
             KSCLog.i("Connection response code : " + responseCode);
@@ -74,16 +70,7 @@ public class HttpRequest implements Runnable {
             }
             byte[] body = new byte[0];
             if (responseCode == HttpURLConnection.HTTP_OK) {
-                switch (mRequestParams.getRequestType()) {
-                    case HttpRequestParam.TYPE_GET_PARAM:
-                        body = processGetParam(connection);
-                        break;
-                    case HttpRequestParam.TYPE_DOWNLOAD_FILE:
-                        body = processDownloadFile(connection);
-                        break;
-                    default:
-                        break;
-                }
+                body = processDownloadFile(connection);
             }
             Map<String, String> responseHeaders = new HashMap<>();
             for (Map.Entry<String, List<String>> header : connection.getHeaderFields().entrySet()) {
@@ -102,64 +89,6 @@ public class HttpRequest implements Runnable {
         }
     }
 
-    /**
-     * Opens an {@link HttpURLConnection} with parameters
-     *
-     * @param parseUrl     target url
-     * @param requestParam target {@link HttpRequestParam}
-     * @return an opening {@link HttpURLConnection
-     * @throws IOException
-     */
-    private HttpURLConnection openConnection(URL parseUrl, HttpRequestParam requestParam) throws IOException {
-        HttpURLConnection connection;
-        connection = (HttpURLConnection) parseUrl.openConnection();
-        connection.setConnectTimeout(requestParam.getTimeOutMs());
-        connection.setReadTimeout(requestParam.getTimeOutMs());
-        connection.setUseCaches(false);
-        connection.setDoInput(true);
-        return connection;
-    }
-
-    /**
-     * set Params on {@link HttpURLConnection} with {@link HttpRequestParam}
-     *
-     * @param connection   target {@link HttpURLConnection}
-     * @param requestParam source {@link HttpRequestParam}
-     * @throws IOException
-     */
-    private void setConnectionParametersForRequest(HttpURLConnection connection, HttpRequestParam requestParam) throws IOException {
-        switch (requestParam.getMethod()) {
-            case HttpRequestParam.METHOD_GET:
-                connection.setRequestMethod("GET");
-                break;
-            case HttpRequestParam.METHOD_POST:
-                connection.setRequestMethod("POST");
-                addBodyIfExists(connection, requestParam);
-                break;
-            default:
-                throw new IllegalArgumentException("Unknown method type.");
-        }
-    }
-
-    /**
-     * 附加参数
-     *
-     * @param connection   请求的connection
-     * @param requestParam 参数
-     * @throws IOException
-     */
-    private void addBodyIfExists(HttpURLConnection connection, HttpRequestParam requestParam) throws IOException {
-        byte[] body = requestParam.getBody();
-        if (body != null) {
-            connection.setDoOutput(true);
-            connection.addRequestProperty(HEADER_CONTENT_TYPE, requestParam.getBodyContentType());
-            DataOutputStream out = new DataOutputStream(connection.getOutputStream());
-            out.write(body);
-            out.flush();
-            out.close();
-        }
-    }
-
     private byte[] processDownloadFile(HttpURLConnection connection) throws IOException {
         int totalSize = connection.getContentLength();
         if (mHandler != null) {
@@ -169,16 +98,16 @@ public class HttpRequest implements Runnable {
         }
 
         BufferedInputStream bis = new BufferedInputStream(connection.getInputStream());
-        String path = KSCStorageUtils.getDownloadDir(totalSize);
-        if (path == null) {
+        mPath = KSCStorageUtils.getDownloadDir(totalSize);
+        if (mPath == null) {
             String msg = "Download File Failed, Download Space is null";
             return msg.getBytes();
         }
         String[] list = connection.getURL().toString().split("/");
         String name = list[list.length - 1];
-        path = path + File.separator + name;
-        KSCLog.i(path);
-        File file = new File(path);
+        mPath = mPath + File.separator + name;
+        KSCLog.i(mPath);
+        File file = new File(mPath);
         if (!file.exists()) {
             if (!file.getParentFile().exists()) {
                 if (!file.getParentFile().mkdirs()) {
@@ -210,16 +139,7 @@ public class HttpRequest implements Runnable {
         return msg.getBytes();
     }
 
-    private byte[] processGetParam(HttpURLConnection connection) throws IOException {
-        byte[] body;
-        BufferedReader bfr = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String line;
-        StringBuilder result = new StringBuilder();
-        while ((line = bfr.readLine()) != null) {
-            result.append(line);
-        }
-        body = result.toString().getBytes();
-        bfr.close();
-        return body;
+    public String getDownloadPath() {
+        return mPath;
     }
 }

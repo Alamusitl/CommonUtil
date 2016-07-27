@@ -24,15 +24,17 @@ public class HttpRequestManager {
     }
 
     public static void execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener) {
-        HttpRequest request = new HttpRequest(requestParam, listener, errorListener);
+        HttpRequestRunnable request = new HttpRequestRunnable(requestParam, listener, errorListener);
         mFixedThreadPool.execute(request);
     }
 
-    public static void execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, Handler handler) {
-        HttpRequest request = new HttpRequest(requestParam, listener, errorListener);
+    public static long execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, Handler handler) {
+        HttpRequestThread request = new HttpRequestThread(requestParam, listener, errorListener);
         request.setHandler(handler);
         mFixedThreadPool.execute(request);
+        return request.getId();
     }
+
 
     public static void destroy() {
         if (mFixedThreadPool != null && !mFixedThreadPool.isShutdown()) {

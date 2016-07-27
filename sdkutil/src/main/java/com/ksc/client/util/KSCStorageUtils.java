@@ -246,27 +246,24 @@ public class KSCStorageUtils {
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             File path = Environment.getExternalStorageDirectory();
             long SDCardAvailableSize = getAvailableSize(path);
-            if (size > (SDCardAvailableSize + 100 * 1024 * 1024)) {
-                return null;
-            } else {
+            if (size <= (SDCardAvailableSize - 100 * 1024 * 1024)) {
                 File dir = new File(path + File.separator + Environment.DIRECTORY_DOWNLOADS);
                 if (!dir.exists()) {
                     dir.mkdirs();
                 }
                 return dir.getAbsolutePath();
             }
+        }
+        File path = Environment.getDataDirectory();
+        long RomAvailableSize = getAvailableSize(path);
+        if (size > (RomAvailableSize - 100 * 1024 * 1024)) {
+            return null;
         } else {
-            File path = Environment.getDataDirectory();
-            long RomAvailableSize = getAvailableSize(path);
-            if (size > (RomAvailableSize + 100 * 1024 * 1024)) {
-                return null;
-            } else {
-                File dir = new File(Environment.getDataDirectory().getAbsolutePath() + File.separator + "Downloads");
-                if (!dir.exists()) {
-                    dir.mkdirs();
-                }
-                return dir.getAbsolutePath();
+            File dir = new File(Environment.getDataDirectory().getAbsolutePath() + File.separator + "Downloads");
+            if (!dir.exists()) {
+                dir.mkdirs();
             }
+            return dir.getAbsolutePath();
         }
     }
 
