@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AudioRecordDemo" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
             <option value="$PROJECT_DIR$/KSC-GPT-ScreenRecordDemo" />
             <option value="$PROJECT_DIR$/KSYStreamerDemo" />
@@ -35,6 +36,7 @@
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AudioRecordDemo" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
             <option value="$PROJECT_DIR$/KSC-GPT-ScreenRecordDemo" />
             <option value="$PROJECT_DIR$/KSYStreamerDemo" />
