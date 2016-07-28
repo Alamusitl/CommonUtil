@@ -1,6 +1,7 @@
 package com.ksc.client.core.config;
 
 import android.content.Context;
+import android.text.TextUtils;
 
 import com.ksc.client.core.base.entity.AppInfo;
 import com.ksc.client.util.KSCLog;
@@ -22,12 +23,12 @@ public class KSCSDKInfo {
     private static final String SDK_CONFIG_KEY_INIT_URL = "KSCInitUrl";
     private static final String SDK_CONFIG_KEY_GET_ORDER_URL = "KSCGetOrderUrl";
     private static final String SDK_DEFAULT_INIT_URL = "";
-    private static final String SDK_DEFAULT_GETORDER_URL = "";
+    private static final String SDK_DEFAULT_ORDER_URL = "";
 
     private static Properties mConfigProperties = new Properties();
 
     private static AppInfo mAppInfo = null;
-    private static String mAppVersion = "undefined";
+    private static String mAppVersionName = "undefined";
     private static String mAppVersionCode = "undefined";
     private static String mPackageName = "undefined";
 
@@ -49,12 +50,12 @@ public class KSCSDKInfo {
         }
     }
 
-    public static String getAppVersion() {
-        return mAppVersion;
+    public static String getAppVersionName() {
+        return mAppVersionName;
     }
 
-    public static void setAppVersion(String appVersion) {
-        KSCSDKInfo.mAppVersion = appVersion;
+    public static void setAppVersionName(String appVersionName) {
+        KSCSDKInfo.mAppVersionName = appVersionName;
     }
 
     public static String getAppVersionCode() {
@@ -219,7 +220,11 @@ public class KSCSDKInfo {
      * @return
      */
     public static String getInitUrl() {
-        return getValue(SDK_CONFIG_KEY_INIT_URL);
+        String url = getValue(SDK_CONFIG_KEY_INIT_URL);
+        if (TextUtils.isEmpty(url)) {
+            url = SDK_DEFAULT_INIT_URL;
+        }
+        return url;
     }
 
     /**
@@ -228,6 +233,10 @@ public class KSCSDKInfo {
      * @return
      */
     public static String getCreateOrderUrl() {
-        return getValue(SDK_CONFIG_KEY_GET_ORDER_URL);
+        String url = getValue(SDK_CONFIG_KEY_GET_ORDER_URL);
+        if (TextUtils.isEmpty(url)) {
+            url = SDK_DEFAULT_ORDER_URL;
+        }
+        return url;
     }
 }

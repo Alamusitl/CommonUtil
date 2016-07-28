@@ -21,6 +21,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.HttpURLConnection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
@@ -30,23 +32,38 @@ public class KSCCommonService {
 
     public static final int K_RESPONSE_OK = 0;
     public static final int K_RESPONSE_FAIL = -1;
+    private static final int RESPONSE_FAIL = 300;
+    private static final int RESPONSE_SUCCESS = 200;
     private static AtomicBoolean mIsCreatingOrder = new AtomicBoolean(false);
     private static long mLastTime = System.currentTimeMillis();
 
-    public static void getInitParams(final Activity activity, final String channel, final GetInitParamCallBack callBack) {
+    public static void getInitParams(final Activity activity, final GetInitParamCallBack callBack) {
         String url = KSCSDKInfo.getInitUrl();
-        HttpRequestParam requestParam = new HttpRequestParam(url);
+        url += "android/" + KSCSDKInfo.getAppId() + "/" + KSCSDKInfo.getAppVersionName() + "/" + KSCSDKInfo.getChannelId() + "/" + KSCSDKInfo.getChannelVersion() + "/";
+        KSCLog.d(url);
+        final HttpRequestParam requestParam = new HttpRequestParam(url);
         requestParam.setTimeOutMs(5 * 1000);
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(final HttpResponse response) {
                 KSCLog.i("get init param from server success, code :" + response.getCode() + " , data" + response.getBodyString());
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        callBack.onGetParamsResult(K_RESPONSE_OK, response.getBodyString());
+                try {
+                    final JSONObject data = new JSONObject(response.getBodyString());
+                    int status = data.optInt("status");
+                    if (status == RESPONSE_FAIL) {
+                        callBack.onGetParamsResult(K_RESPONSE_FAIL, "get channel param error, status = " + status);
                     }
-                });
+                    if (status == RESPONSE_SUCCESS) {
+                        activity.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                callBack.onGetParamsResult(K_RESPONSE_OK, data.optString("data"));
+                            }
+                        });
+                    }
+                } catch (JSONException e) {
+                    KSCLog.e("convert response to json fail.", e);
+                }
             }
         }, new HttpErrorListener() {
             @Override
@@ -67,7 +84,7 @@ public class KSCCommonService {
         });
     }
 
-    public static void createOrder(final Activity activity, final String channel, final PayInfo payInfo, final GetOrderCallBack callBack) {
+    public static void createOrder(final Activity activity, final PayInfo payInfo, final GetOrderCallBack callBack) {
         long currentTime = System.currentTimeMillis();
         if (mIsCreatingOrder.get() && (currentTime - mLastTime <= 2000)) {
             callBack.onCreateOrderResult(KSCStatusCode.PAY_FAILED_REPEAT, KSCStatusCode.getErrorMsg(KSCStatusCode.PAY_FAILED_REPEAT), null);
@@ -75,8 +92,19 @@ public class KSCCommonService {
         }
         mIsCreatingOrder.compareAndSet(false, true);
         mLastTime = System.currentTimeMillis();
-        String url = KSCSDKInfo.getCreateOrderUrl();
-        final HttpRequestParam requestParam = new HttpRequestParam(url);
+        String url = KSCSDKInfo.getCreateOrderUrl() + "android/";
+        final HttpRequestParam requestParam = new HttpRequestParam(url, HttpRequestParam.METHOD_POST);
+        Map<String, String> param = new HashMap<>();
+        param.put("orderid_cp", payInfo.getOrder());
+        param.put("channelid", KSCSDKInfo.getChannelId());
+        param.put("appid", KSCSDKInfo.getAppId());
+        param.put("userid", payInfo.getUid());
+        param.put("productid", payInfo.getProductId());
+        param.put("productnum", String.valueOf(payInfo.getProductQuantity()));
+        param.put("productname", payInfo.getProductName());
+        param.put("description", payInfo.getProductDest());
+        param.put("price", payInfo.getPrice());
+        requestParam.setBody(param);
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(final HttpResponse response) {
@@ -117,9 +145,5 @@ public class KSCCommonService {
                 });
             }
         });
-    }
-
-    public static void getUpdateInfo(Activity activity, String channel) {
-
     }
 }

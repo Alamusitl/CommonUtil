@@ -3,8 +3,11 @@ package com.ksc.client.core;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Environment;
 import android.text.TextUtils;
 
 import com.ksc.client.core.api.KSCCommonService;
@@ -18,6 +21,7 @@ import com.ksc.client.core.base.callback.LoginCallBack;
 import com.ksc.client.core.base.callback.LogoutCallBack;
 import com.ksc.client.core.base.callback.PayCallBack;
 import com.ksc.client.core.base.callback.SwitchAccountCallBack;
+import com.ksc.client.core.base.callback.UpdateCallBack;
 import com.ksc.client.core.base.entity.AppInfo;
 import com.ksc.client.core.base.entity.PayInfo;
 import com.ksc.client.core.base.entity.RoleInfo;
@@ -25,12 +29,14 @@ import com.ksc.client.core.config.KSCSDKInfo;
 import com.ksc.client.core.config.KSCStatusCode;
 import com.ksc.client.core.inner.ChannelBase;
 import com.ksc.client.core.inner.callbackwrapper.UserCallBackWrapper;
+import com.ksc.client.core.update.KSCUpdate;
 import com.ksc.client.toolbox.HttpRequestManager;
 import com.ksc.client.util.KSCLog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.text.MessageFormat;
 
 /**
@@ -83,7 +89,7 @@ public class KSCSDK implements ISDK {
             return;
         }
         KSCSDKInfo.setAppInfo(appInfo);
-        KSCCommonService.getInitParams(activity, KSCSDKInfo.getChannelId(), new GetInitParamCallBack() {
+        KSCCommonService.getInitParams(activity, new GetInitParamCallBack() {
             @Override
             public void onGetParamsResult(int code, final String result) {
                 if (code == KSCCommonService.K_RESPONSE_OK) {
@@ -180,7 +186,7 @@ public class KSCSDK implements ISDK {
         } else {
             mUserCallBack.setPayCallBack(payCallBack);
         }
-        KSCCommonService.createOrder(activity, getChannelID(), payInfo, new GetOrderCallBack() {
+        KSCCommonService.createOrder(activity, payInfo, new GetOrderCallBack() {
             @Override
             public void onCreateOrderResult(int code, String msg, final OrderResponse response) {
                 if (code != KSCCommonService.K_RESPONSE_OK) {
@@ -254,6 +260,14 @@ public class KSCSDK implements ISDK {
     @Override
     public void onCreate(Activity activity) {
         KSCLog.d(MessageFormat.format("begin to onCreate. activity={0}", activity));
+        KSCSDKInfo.setPackageName(activity.getPackageName());
+        try {
+            PackageInfo packageInfo = activity.getPackageManager().getPackageInfo(activity.getPackageName(), 0);
+            KSCSDKInfo.setAppVersionName(packageInfo.versionName);
+            KSCSDKInfo.setAppVersionCode(String.valueOf(packageInfo.versionCode));
+        } catch (PackageManager.NameNotFoundException e) {
+            KSCLog.e("can not found package " + activity.getPackageName(), e);
+        }
         if (getChannelImpl() != null) {
             getChannelImpl().onCreate(activity);
         } else {
@@ -508,6 +522,23 @@ public class KSCSDK implements ISDK {
             printErrorLogNonChannelImpl();
         }
         KSCLog.d(MessageFormat.format("end to onRoleLevelUp. roleInfo={0}", roleInfo.toString()));
+    }
+
+    @Override
+    public void onClientUpdate(Context context, String updateFilePath, boolean useSelf, UpdateCallBack updateCallBack) {
+        if (TextUtils.isEmpty(updateFilePath)) {
+            if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+                File file = context.getExternalFilesDir(null);
+                if (file != null) {
+                    updateFilePath = file.getAbsolutePath();
+                } else {
+                    updateFilePath = context.getFilesDir().getAbsolutePath();
+                }
+            } else {
+                updateFilePath = context.getFilesDir().getAbsolutePath();
+            }
+        }
+        KSCUpdate.checkUpdate(context, updateFilePath, useSelf, updateCallBack);
     }
 
     private ChannelBase getChannelImpl() {

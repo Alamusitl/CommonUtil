@@ -1,6 +1,6 @@
 package com.ksc.client.core.base.activity;
 
-import android.app.Activity;
+import android.app.NativeActivity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -8,10 +8,10 @@ import android.os.Bundle;
 import com.ksc.client.core.KSCSDK;
 
 /**
- * SDK原生Native Activity，建议游戏继承此Activity
+ * SDK原生Native Activity，建议游戏继承此NativeActivity
  * Created by Alamusi on 2016/6/22.
  */
-public class KSCNativeActivity extends Activity {
+public class KSCNativeActivity extends NativeActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

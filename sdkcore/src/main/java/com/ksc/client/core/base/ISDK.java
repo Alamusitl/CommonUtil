@@ -12,6 +12,7 @@ import com.ksc.client.core.base.callback.LoginCallBack;
 import com.ksc.client.core.base.callback.LogoutCallBack;
 import com.ksc.client.core.base.callback.PayCallBack;
 import com.ksc.client.core.base.callback.SwitchAccountCallBack;
+import com.ksc.client.core.base.callback.UpdateCallBack;
 import com.ksc.client.core.base.entity.AppInfo;
 import com.ksc.client.core.base.entity.PayInfo;
 import com.ksc.client.core.base.entity.RoleInfo;
@@ -169,4 +170,14 @@ public interface ISDK {
      * @param roleInfo － 角色信息，请参考RoleInfo的定义
      */
     void onRoleLevelUp(RoleInfo roleInfo);
+
+    /**
+     * 客户端更新设置
+     *
+     * @param context        当前的context
+     * @param updateFilePath 内更新资源解压路径
+     * @param useSelf        更新提示是否使用自己的，false标示使用默认的
+     * @param updateCallBack 更新回调
+     */
+    void onClientUpdate(Context context, String updateFilePath, boolean useSelf, UpdateCallBack updateCallBack);
 }
