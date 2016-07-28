@@ -28,11 +28,11 @@ public class HttpRequestManager {
         mFixedThreadPool.execute(request);
     }
 
-    public static long execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, Handler handler) {
+    public static Thread execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, Handler handler) {
         HttpRequestThread request = new HttpRequestThread(requestParam, listener, errorListener);
         request.setHandler(handler);
         mFixedThreadPool.execute(request);
-        return request.getId();
+        return request;
     }
 
 
