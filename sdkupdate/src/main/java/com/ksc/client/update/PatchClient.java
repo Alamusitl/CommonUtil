@@ -1,4 +1,4 @@
-package com.ksc.client.core.update;
+package com.ksc.client.update;
 
 
 import android.content.Context;

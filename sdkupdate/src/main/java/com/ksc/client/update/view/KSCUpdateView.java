@@ -1,4 +1,4 @@
-package com.ksc.client.core.update.view;
+package com.ksc.client.update.view;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -6,7 +6,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Handler;
 
-import com.ksc.client.core.update.KSCUpdate;
+import com.ksc.client.update.KSCUpdate;
+import com.ksc.client.update.entity.KSCUpdateInfo;
+
+import java.util.ArrayList;
 
 /**
  * Created by Alamusi on 2016/7/27.
@@ -35,6 +38,10 @@ public class KSCUpdateView {
         alertDialog.show();
     }
 
+    public static void showUpdatePrompt(Context context, ArrayList<KSCUpdateInfo> updateInfoList, Handler handler) {
+
+    }
+
     public static void showUpdateProgress(Context context, boolean isForceUpdate, final Handler handler) {
         mProgressDialog = new ProgressDialog(context);
         mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
@@ -60,6 +67,12 @@ public class KSCUpdateView {
             mProgressDialog.setCanceledOnTouchOutside(false);
         }
         mProgressDialog.show();
+    }
+
+    public static void updateProcessHide() {
+        if (mProgressDialog.isShowing()) {
+            mProgressDialog.cancel();
+        }
     }
 
     public static void updateProgress(int current, int max) {
