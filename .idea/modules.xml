@@ -21,9 +21,9 @@
       <module fileurl="file://$PROJECT_DIR$/sdk-wandoujia-5.1.2/sdk-wandoujia-5.1.2.iml" filepath="$PROJECT_DIR$/sdk-wandoujia-5.1.2/sdk-wandoujia-5.1.2.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdk-xiaomi-4.6.11/sdk-xiaomi-4.6.11.iml" filepath="$PROJECT_DIR$/sdk-xiaomi-4.6.11/sdk-xiaomi-4.6.11.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdk-yingyonghui-6.2.0/sdk-yingyonghui-6.2.0.iml" filepath="$PROJECT_DIR$/sdk-yingyonghui-6.2.0/sdk-yingyonghui-6.2.0.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdkads/sdkads.iml" filepath="$PROJECT_DIR$/sdkads/sdkads.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdkanalytics/sdkanalytics.iml" filepath="$PROJECT_DIR$/sdkanalytics/sdkanalytics.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdkcore/sdkcore.iml" filepath="$PROJECT_DIR$/sdkcore/sdkcore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sdkupdate/sdkupdate.iml" filepath="$PROJECT_DIR$/sdkupdate/sdkupdate.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdkutil/sdkutil.iml" filepath="$PROJECT_DIR$/sdkutil/sdkutil.iml" />
     </modules>
   </component>

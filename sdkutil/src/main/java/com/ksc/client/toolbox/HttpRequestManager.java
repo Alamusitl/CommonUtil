@@ -28,17 +28,17 @@ public class HttpRequestManager {
         mFixedThreadPool.execute(request);
     }
 
-    public static Thread execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, Handler handler) {
+    public static HttpRequestThread execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, Handler handler) {
         HttpRequestThread request = new HttpRequestThread(requestParam, listener, errorListener);
         request.setHandler(handler);
         mFixedThreadPool.execute(request);
         return request;
     }
 
-
     public static void destroy() {
         if (mFixedThreadPool != null && !mFixedThreadPool.isShutdown()) {
             mFixedThreadPool.shutdownNow();
+            mFixedThreadPool = null;
         }
     }
 
