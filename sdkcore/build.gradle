@@ -8,10 +8,6 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
-
-        ndk {
-            moduleName "PatchClient"
-        }
     }
     buildTypes {
         release {
@@ -20,12 +16,6 @@ android {
         }
     }
     productFlavors {
-    }
-    sourceSets {
-        main {
-            jni.srcDirs = ['src/main/jni']
-            jniLibs.srcDirs = ['libs']
-        }
     }
 }
 
