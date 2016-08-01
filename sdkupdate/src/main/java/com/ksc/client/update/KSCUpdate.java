@@ -43,17 +43,18 @@ import java.util.zip.ZipFile;
  */
 public class KSCUpdate {
 
-    protected static final int EVENT_UPDATE_HAS_UPDATE = 1000;
-    protected static final int EVENT_UPDATE_NO_UPDATE = 1001;
-    protected static final int EVENT_UPDATE_CHECK_FAIL = 1002;
-    protected static final int EVENT_UPDATE_START = 1003;
-    protected static final int EVENT_UPDATE_CANCEL = 1004;
-    protected static final int EVENT_UPDATE_BACKGROUND = 1005;
-    protected static final int EVENT_UPDATE_FINISH = 1006;
-    protected static final int EVENT_UPDATE_OVER = 1007;
-    protected static final int EVENT_UPDATE_FAIL = 1008;
-    protected static final int EVENT_UPDATE_DOWNLOADING = 1009;
-    protected static final int EVENT_UPDATE_STOP_DOWNLOAD = 1010;
+    public static final int EVENT_UPDATE_HAS_UPDATE = 1000;// 检查有更新
+    public static final int EVENT_UPDATE_NO_UPDATE = 1001;// 检查无更新
+    public static final int EVENT_UPDATE_CHECK_FAIL = 1002;// 检查失败
+    public static final int EVENT_UPDATE_START = 1003;// 开始更新
+    public static final int EVENT_UPDATE_CANCEL = 1004;// 取消更新
+    public static final int EVENT_UPDATE_DOWNLOAD_START = 1005;// 开始下载
+    public static final int EVENT_UPDATE_DOWNLOAD_BACKGROUND = 1006;// 后台下载
+    public static final int EVENT_UPDATE_DOWNLOADING = 1007;// 正在下载
+    public static final int EVENT_UPDATE_DOWNLOAD_FAIL = 1008;// 下载失败
+    public static final int EVENT_UPDATE_DOWNLOAD_FINISH = 1009;// 下载完成
+    public static final int EVENT_UPDATE_DOWNLOAD_STOP = 1010;// 停止下载
+    public static final int EVENT_UPDATE_OVER = 1011;// 更新完成
 
     protected static String mUpdateResourcePath = null;
     protected static CheckUpdateCallBack mCheckUpdateCallBack = null;
@@ -80,43 +81,6 @@ public class KSCUpdate {
                     break;
                 case KSCUpdate.EVENT_UPDATE_START:
                     startUpdate(mContext, mReadUpdateList);
-                    break;
-                case KSCUpdate.EVENT_UPDATE_CANCEL:
-                    break;
-                case KSCUpdate.EVENT_UPDATE_BACKGROUND:
-                    break;
-                case KSCUpdate.EVENT_UPDATE_FINISH:
-                    break;
-                case KSCUpdate.EVENT_UPDATE_OVER:
-                    mContext.stopService(new Intent(mContext, KSCUpdateService.class));
-                    break;
-                case KSCUpdate.EVENT_UPDATE_FAIL:
-                    KSCUpdate.mCheckUpdateCallBack.onError((String) msg.obj);
-                    break;
-                case KSCUpdate.EVENT_UPDATE_DOWNLOADING:
-                    break;
-                case KSCUpdate.EVENT_UPDATE_STOP_DOWNLOAD:
-                    break;
-                case HttpRequestManager.DOWNLOAD_FILE_START:
-//                    KSCUpdateView.showUpdateProgress(mContext, mCurUpdateInfo.getIsForce(), mHandler);
-                    break;
-                case HttpRequestManager.DOWNLOAD_FILE_TOTAL:
-//                    mTotalSize = Long.parseLong((String) msg.obj);
-                    KSCUpdateView.updateProgress(0, 100);
-                    break;
-                case HttpRequestManager.DOWNLOAD_FILE_CURRENT:
-                    long downloadSize = Long.parseLong((String) msg.obj);
-//                    int present = (int) ((downloadSize * 100) / (double) mTotalSize);
-//                    KSCUpdateView.updateProgress(present, 100);
-                    break;
-                case HttpRequestManager.DOWNLOAD_FILE_DONE:
-                    KSCUpdateView.updateProcessHide();
-                    String filePath = (String) msg.obj;
-//                    processDownloadFile(filePath);
-                    break;
-                case HttpRequestManager.DOWNLOAD_FILE_FAIL:
-                    KSCUpdateView.updateProcessHide();
-//                    clearCache();
                     break;
             }
         }
@@ -178,7 +142,7 @@ public class KSCUpdate {
      * @param allInfo 更新信息
      * @return 解析完的数据列表
      */
-    public static ArrayList<KSCUpdateInfo> parseUpdateResponse(String allInfo) {
+    private static ArrayList<KSCUpdateInfo> parseUpdateResponse(String allInfo) {
         ArrayList<KSCUpdateInfo> updateInfoList = new ArrayList<>();
         try {
             JSONObject data = new JSONObject(allInfo);

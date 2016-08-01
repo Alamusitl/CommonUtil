@@ -1,7 +1,6 @@
 package com.ksc.client.toolbox;
 
 import android.os.Handler;
-import android.os.Message;
 
 import com.ksc.client.util.KSCLog;
 import com.ksc.client.util.KSCStorageUtils;
@@ -92,9 +91,7 @@ public class HttpRequestThread extends Thread {
     private byte[] processDownloadFile(HttpURLConnection connection) throws IOException {
         int totalSize = connection.getContentLength();
         if (mHandler != null) {
-            Message message = mHandler.obtainMessage();
-            message.what = HttpRequestManager.DOWNLOAD_FILE_TOTAL;
-            message.obj = totalSize;
+            mHandler.sendMessage(mHandler.obtainMessage(HttpRequestManager.DOWNLOAD_FILE_TOTAL, totalSize));
         }
 
         BufferedInputStream bis = new BufferedInputStream(connection.getInputStream());

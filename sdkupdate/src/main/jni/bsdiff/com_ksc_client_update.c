@@ -211,8 +211,7 @@ int applypatch(int argc, char *argv[]) {
     return 0;
 }
 
-JNIEXPORT jintJNICALL Java_com_ksc_client_update_PatchClient_applyPatchToOldApk(JNIEnv *env,
-                                                                                jobject obj, jstring old, jstring new, jstring patch){
+JNIEXPORT jintJNICALL Java_com_ksc_client_update_PatchClient_applyPatchToOldApk(JNIEnv *env, jobject obj, jstring old, jstring new, jstring patch){
     int argc = 4;
     char *argv[argc];
     argv[0] = "bspatch";

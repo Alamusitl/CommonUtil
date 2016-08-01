@@ -17,6 +17,7 @@ import com.ksc.client.toolbox.HttpRequestParam;
 import com.ksc.client.toolbox.HttpRequestThread;
 import com.ksc.client.toolbox.HttpResponse;
 import com.ksc.client.update.entity.KSCUpdateInfo;
+import com.ksc.client.update.view.KSCUpdateView;
 import com.ksc.client.util.KSCLog;
 import com.ksc.client.util.KSCMD5Utils;
 
@@ -31,10 +32,11 @@ public class KSCUpdateService extends Service {
 
     private static KSCUpdateInfo mCurUpdateInfo;
     private static List<KSCUpdateInfo> mUpdateList;
-    private static long mTotalSize = 0;
+    private static int mTotalSize = 0;
     private static Context mContext;
     private static String mTmpPath;
     private static HttpRequestThread mCurThread;
+    private static int mTime = 0;
 
     private Handler mServiceHandler = new Handler(Looper.myLooper()) {
         @Override
@@ -42,6 +44,52 @@ public class KSCUpdateService extends Service {
             switch (msg.what) {
                 case KSCUpdate.EVENT_UPDATE_START:
                     processSingleRequest();
+                    break;
+                case KSCUpdate.EVENT_UPDATE_OVER:
+                    stopSelf();
+                    break;
+                case KSCUpdate.EVENT_UPDATE_DOWNLOAD_START:
+                    KSCUpdateView.showUpdateProgress(mContext, mCurUpdateInfo.getIsForce(), mServiceHandler);
+                    startDownloadFile();
+                    break;
+                case KSCUpdate.EVENT_UPDATE_DOWNLOAD_BACKGROUND:
+                    KSCLog.d("start download background!");
+                    break;
+                case KSCUpdate.EVENT_UPDATE_DOWNLOADING:
+                    break;
+                case KSCUpdate.EVENT_UPDATE_DOWNLOAD_FAIL:
+                    KSCLog.d("download file fail!");
+                    retry();
+                    break;
+                case KSCUpdate.EVENT_UPDATE_DOWNLOAD_STOP:
+                    KSCLog.d("stop download update file!");
+                    clearCache();
+                    moveToNext();
+                    break;
+                case KSCUpdate.EVENT_UPDATE_DOWNLOAD_FINISH:
+                    processDownloadFile(mTmpPath);
+                    break;
+                case HttpRequestManager.DOWNLOAD_FILE_START:
+                    KSCLog.d("start download file!");
+                    break;
+                case HttpRequestManager.DOWNLOAD_FILE_CURRENT:
+                    int currentSize = (int) msg.obj;
+                    KSCUpdateView.updateProgress(currentSize, mTotalSize);
+                    break;
+                case HttpRequestManager.DOWNLOAD_FILE_FAIL:
+                    KSCLog.d("download file fail!");
+                    KSCUpdateView.updateProcessHide();
+                    retry();
+                    break;
+                case HttpRequestManager.DOWNLOAD_FILE_TOTAL:
+                    mTotalSize = (int) msg.obj;
+                    KSCUpdateView.updateProgress(0, mTotalSize);
+                    break;
+                case HttpRequestManager.DOWNLOAD_FILE_DONE:
+                    KSCLog.d("download update file success!");
+                    KSCUpdateView.updateProcessHide();
+                    break;
+                default:
                     break;
             }
         }
@@ -53,10 +101,9 @@ public class KSCUpdateService extends Service {
         }
         if (mUpdateList.size() > 0) {
             mCurUpdateInfo = mUpdateList.get(0);
-            mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdate.EVENT_UPDATE_START));
+            mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdate.EVENT_UPDATE_DOWNLOAD_START));
         } else {
             mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdate.EVENT_UPDATE_OVER));
-            return;
         }
     }
 
@@ -77,11 +124,13 @@ public class KSCUpdateService extends Service {
             @Override
             public void onResponse(HttpResponse response) {
                 KSCLog.d("download file success, code: " + response.getCode() + ", msg: " + response.getBodyString());
+                mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdate.EVENT_UPDATE_DOWNLOAD_FINISH));
             }
         }, new HttpErrorListener() {
             @Override
             public void onErrorResponse(HttpError error) {
                 KSCLog.e("download file fail, error info: " + (error.httpResponse != null ? error.httpResponse.getBodyString() : null), error);
+                mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdate.EVENT_UPDATE_DOWNLOAD_FAIL));
             }
         }, mServiceHandler);
         mTmpPath = mCurThread.getDownloadPath();
@@ -93,7 +142,7 @@ public class KSCUpdateService extends Service {
             String md5 = KSCMD5Utils.getFileMD5(file);
             if (!mCurUpdateInfo.getMD5().equals(md5)) {
                 KSCUpdate.mCheckUpdateCallBack.onError("version=" + mCurUpdateInfo.getVersion() + " update fail, md5 error, md5=" + md5);
-                mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdate.EVENT_UPDATE_START));
+                moveToNext();
                 return;
             }
         }
@@ -104,6 +153,7 @@ public class KSCUpdateService extends Service {
             String path = Environment.getExternalStorageDirectory() + File.separator + "new.apk";
             int result = PatchClient.applyPatch(mContext.getApplicationContext(), path, filePath);
             if (result == 0) {
+                clearCache();
                 File newApk = new File(path);
                 if (newApk.exists() && newApk.isFile()) {
                     KSCUpdate.installApk(mContext, newApk);
@@ -119,7 +169,7 @@ public class KSCUpdateService extends Service {
                 KSCUpdate.mCheckUpdateCallBack.onError("version=" + mCurUpdateInfo.getVersion() + " update fail, unzip resource fail, " + e.getMessage());
             }
         }
-        mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdate.EVENT_UPDATE_START));
+        moveToNext();
     }
 
     private void clearCache() {
@@ -135,6 +185,17 @@ public class KSCUpdateService extends Service {
             KSCLog.d("delete tmp file success!");
         } else {
             KSCLog.d("delete tmp file fail!");
+        }
+    }
+
+    private void retry() {
+        clearCache();
+        if (mTime < 3) {
+            mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdate.EVENT_UPDATE_DOWNLOAD_START));
+            mTime++;
+        } else {
+            mTime = 0;
+            moveToNext();
         }
     }
 
