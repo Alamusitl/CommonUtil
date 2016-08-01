@@ -16,6 +16,7 @@ import com.ksc.client.toolbox.HttpRequestManager;
 import com.ksc.client.toolbox.HttpRequestParam;
 import com.ksc.client.toolbox.HttpResponse;
 import com.ksc.client.update.callback.CheckUpdateCallBack;
+import com.ksc.client.update.callback.UpdateCallBack;
 import com.ksc.client.update.entity.KSCUpdateInfo;
 import com.ksc.client.update.view.KSCUpdateView;
 import com.ksc.client.util.KSCLog;
@@ -58,6 +59,7 @@ public class KSCUpdate {
 
     protected static String mUpdateResourcePath = null;
     protected static CheckUpdateCallBack mCheckUpdateCallBack = null;
+    protected static UpdateCallBack mUpdateCallBack = null;
     protected static boolean mIsUseCPSelf = false;
     private static ArrayList<KSCUpdateInfo> mReadUpdateList;
     private static Context mContext;
@@ -80,7 +82,12 @@ public class KSCUpdate {
                     mCheckUpdateCallBack.onError((String) msg.obj);
                     break;
                 case KSCUpdate.EVENT_UPDATE_START:
-                    startUpdate(mContext, mReadUpdateList);
+                    startUpdate(mContext, mReadUpdateList, mUpdateCallBack);
+                    break;
+                case KSCUpdate.EVENT_UPDATE_OVER:
+                    if (mUpdateCallBack != null) {
+                        mUpdateCallBack.onFinishUpdate();
+                    }
                     break;
             }
         }
@@ -130,10 +137,25 @@ public class KSCUpdate {
         });
     }
 
-    public static void startUpdate(Context context, ArrayList<KSCUpdateInfo> updateList) {
+    public static void startUpdate(Context context, ArrayList<KSCUpdateInfo> updateList, UpdateCallBack updateCallBack) {
+        if (updateCallBack == null) {
+            updateCallBack = new UpdateCallBack() {
+                @Override
+                public void onStartUpdate() {
+
+                }
+
+                @Override
+                public void onFinishUpdate() {
+
+                }
+            };
+        }
+        mUpdateCallBack = updateCallBack;
         Intent intent = new Intent(context, KSCUpdateService.class);
         intent.putParcelableArrayListExtra("data", updateList);
         context.startService(intent);
+        mUpdateCallBack.onStartUpdate();
     }
 
     /**

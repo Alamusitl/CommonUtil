@@ -27,19 +27,25 @@ import com.ksc.client.core.config.KSCSDKInfo;
 import com.ksc.client.core.config.KSCStatusCode;
 import com.ksc.client.core.inner.ChannelBase;
 import com.ksc.client.core.inner.callbackwrapper.UserCallBackWrapper;
+import com.ksc.client.core.update.IUpdate;
 import com.ksc.client.toolbox.HttpRequestManager;
+import com.ksc.client.update.KSCUpdate;
+import com.ksc.client.update.callback.CheckUpdateCallBack;
+import com.ksc.client.update.callback.UpdateCallBack;
+import com.ksc.client.update.entity.KSCUpdateInfo;
 import com.ksc.client.util.KSCLog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
 
 /**
  * 主入口
  * Created by Alamusi on 2016/6/21.
  */
-public class KSCSDK implements ISDK {
+public class KSCSDK implements ISDK, IUpdate {
 
     private static KSCSDK mInstance = null;
     private static UserCallBackWrapper mUserCallBack = null;
@@ -534,4 +540,13 @@ public class KSCSDK implements ISDK {
         KSCLog.e("can not find channel implement, please check if your main activity is inherited from KSCActivity or call KSCApplication lifecyle interfaces(such as onCreate, onStart and etc.)");
     }
 
+    @Override
+    public void checkUpdate(Context context, String resourcePath, boolean isUseSelf, CheckUpdateCallBack checkUpdateCallBack) {
+        KSCUpdate.checkUpdate(context, KSCSDKInfo.getAppId(), KSCSDKInfo.getChannelId(), KSCSDKInfo.getBuildVersion(), resourcePath, isUseSelf, checkUpdateCallBack);
+    }
+
+    @Override
+    public void startUpdate(Context context, ArrayList<KSCUpdateInfo> updateInfoList, UpdateCallBack updateCallBack) {
+        KSCUpdate.startUpdate(context, updateInfoList, updateCallBack);
+    }
 }

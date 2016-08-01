@@ -46,6 +46,7 @@ public class KSCUpdateService extends Service {
                     processSingleRequest();
                     break;
                 case KSCUpdate.EVENT_UPDATE_OVER:
+                    KSCUpdate.mHandler.sendMessage(KSCUpdate.mHandler.obtainMessage(KSCUpdate.EVENT_UPDATE_OVER));
                     stopSelf();
                     break;
                 case KSCUpdate.EVENT_UPDATE_DOWNLOAD_START:

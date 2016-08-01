@@ -35,10 +35,10 @@ public class KSCFactory {
             KSCSDKInfo.loadAssetsConfig(context);
         }
 
-        mChannel = loadClass(KSCSDKConstant.SDK_CHANNEL_CLASS_NAME, ChannelBase.class);
+        mChannel = loadClass(KSCSDKConstant.SDK_CHANNEL_CLASS_NAME);
     }
 
-    private static <T> T loadClass(String className, Class<T> tClass) {
+    private static <T> T loadClass(String className) {
         try {
             Class<?> clz = Class.forName(className);
             if (clz == null) {
