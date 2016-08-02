@@ -9,21 +9,28 @@ import android.util.Log;
 public class KSCLog {
 
     private static final String TAG = KSCLog.class.getSimpleName();
+    public static boolean mIsDebug = false;
 
     public static void d(String info) {
         Log.d(TAG, info);
     }
 
     public static void d(String tag, String info) {
-        Log.d(tag, info);
+        if (mIsDebug) {
+            Log.d(tag, info);
+        }
     }
 
     public static void i(String info) {
-        Log.i(TAG, info);
+        if (mIsDebug) {
+            Log.i(TAG, info);
+        }
     }
 
     public static void i(String tag, String info) {
-        Log.i(tag, info);
+        if (mIsDebug) {
+            Log.i(tag, info);
+        }
     }
 
     public static void w(String info) {
