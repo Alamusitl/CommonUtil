@@ -170,4 +170,11 @@ public interface ISDK {
      */
     void onRoleLevelUp(RoleInfo roleInfo);
 
+    /**
+     * 设置是否Debug
+     *
+     * @param debug true为开启debug模式，false为release模式
+     */
+    void setDebug(boolean debug);
+
 }

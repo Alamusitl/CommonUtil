@@ -358,6 +358,7 @@ public class KSCSDK implements ISDK, IUpdate {
     @Override
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
         KSCLog.d(MessageFormat.format("begin to onActivityResult. activity={0}, requestCode={1}, resultCode={2}, data={3}", activity, requestCode, resultCode, data));
+        KSCUpdate.onActivityResult(activity, requestCode, resultCode, data);
         if (getChannelImpl() != null) {
             getChannelImpl().onActivityResult(activity, requestCode, resultCode, data);
         } else {
@@ -526,6 +527,13 @@ public class KSCSDK implements ISDK, IUpdate {
         KSCLog.d(MessageFormat.format("end to onRoleLevelUp. roleInfo={0}", roleInfo.toString()));
     }
 
+    @Override
+    public void setDebug(boolean debug) {
+        KSCLog.d("begin to set debugMode, debug=" + debug);
+        KSCLog.mIsDebug = debug;
+        KSCLog.d("end to set debugMode, debug=" + debug);
+    }
+
     private ChannelBase getChannelImpl() {
         final String CATCH_UNEXPECTED_EXCEPTION = "catch unexpected exception";
         try {
@@ -541,12 +549,12 @@ public class KSCSDK implements ISDK, IUpdate {
     }
 
     @Override
-    public void checkUpdate(Context context, String resourcePath, boolean isUseSelf, CheckUpdateCallBack checkUpdateCallBack) {
-        KSCUpdate.checkUpdate(context, KSCSDKInfo.getAppId(), KSCSDKInfo.getChannelId(), KSCSDKInfo.getBuildVersion(), resourcePath, isUseSelf, checkUpdateCallBack);
+    public void checkUpdate(Activity activity, String resourcePath, boolean isUseSelf, CheckUpdateCallBack checkUpdateCallBack) {
+        KSCUpdate.checkUpdate(activity, KSCSDKInfo.getAppId(), KSCSDKInfo.getChannelId(), KSCSDKInfo.getBuildVersion(), resourcePath, isUseSelf, checkUpdateCallBack);
     }
 
     @Override
-    public void startUpdate(Context context, ArrayList<KSCUpdateInfo> updateInfoList, UpdateCallBack updateCallBack) {
-        KSCUpdate.startUpdate(context, updateInfoList, updateCallBack);
+    public void startUpdate(Activity activity, ArrayList<KSCUpdateInfo> updateInfoList, UpdateCallBack updateCallBack) {
+        KSCUpdate.startUpdate(activity, updateInfoList, updateCallBack);
     }
 }

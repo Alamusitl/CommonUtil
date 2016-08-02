@@ -1,6 +1,6 @@
 package com.ksc.client.core.update;
 
-import android.content.Context;
+import android.app.Activity;
 
 import com.ksc.client.update.callback.CheckUpdateCallBack;
 import com.ksc.client.update.callback.UpdateCallBack;
@@ -16,19 +16,19 @@ public interface IUpdate {
     /**
      * 检查更新
      *
-     * @param context             上下文
+     * @param activity            上下文
      * @param resourcePath        资源更新路径
      * @param isUseSelf           是否使用自己的更新视图
      * @param checkUpdateCallBack 检查更新回调
      */
-    void checkUpdate(Context context, String resourcePath, boolean isUseSelf, CheckUpdateCallBack checkUpdateCallBack);
+    void checkUpdate(Activity activity, String resourcePath, boolean isUseSelf, CheckUpdateCallBack checkUpdateCallBack);
 
     /**
      * 开始更新
      *
-     * @param context        上下文
+     * @param activity       上下文
      * @param updateInfoList 需要更新的信息List
      * @param updateCallBack 更新回调
      */
-    void startUpdate(Context context, ArrayList<KSCUpdateInfo> updateInfoList, UpdateCallBack updateCallBack);
+    void startUpdate(Activity activity, ArrayList<KSCUpdateInfo> updateInfoList, UpdateCallBack updateCallBack);
 }
