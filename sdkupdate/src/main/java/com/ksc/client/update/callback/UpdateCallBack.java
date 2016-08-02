@@ -11,6 +11,16 @@ public interface UpdateCallBack {
     void onStartUpdate();
 
     /**
+     * 下载进度
+     */
+    void onProcess(int present);
+
+    /**
+     * 更新错误
+     */
+    void onError(String version);
+
+    /**
      * 更新完成
      */
     void onFinishUpdate();
