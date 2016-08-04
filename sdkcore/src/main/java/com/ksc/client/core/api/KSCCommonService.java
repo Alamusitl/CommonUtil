@@ -16,6 +16,7 @@ import com.ksc.client.toolbox.HttpRequestManager;
 import com.ksc.client.toolbox.HttpRequestParam;
 import com.ksc.client.toolbox.HttpResponse;
 import com.ksc.client.util.KSCLog;
+import com.ksc.client.util.KSCPackageUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,7 +40,7 @@ public class KSCCommonService {
 
     public static void getInitParams(final Activity activity, final GetInitParamCallBack callBack) {
         String url = KSCSDKInfo.getInitUrl();
-        url += "android/" + KSCSDKInfo.getAppId() + "/" + KSCSDKInfo.getAppVersionName() + "/" + KSCSDKInfo.getChannelId() + "/" + KSCSDKInfo.getChannelVersion() + "/";
+        url += "android/" + KSCSDKInfo.getAppId() + "/" + KSCPackageUtils.getVersionName(activity) + "/" + KSCSDKInfo.getChannelId() + "/" + KSCSDKInfo.getChannelVersion() + "/";
         KSCLog.d(url);
         final HttpRequestParam requestParam = new HttpRequestParam(url);
         requestParam.setTimeOutMs(5 * 1000);
