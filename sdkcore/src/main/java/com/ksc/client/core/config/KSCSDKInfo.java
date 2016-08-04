@@ -28,9 +28,6 @@ public class KSCSDKInfo {
     private static Properties mConfigProperties = new Properties();
 
     private static AppInfo mAppInfo = null;
-    private static String mAppVersionName = "undefined";
-    private static String mAppVersionCode = "undefined";
-    private static String mPackageName = "undefined";
 
     public static String getValue(String key) {
         synchronized ("getValue") {
@@ -48,30 +45,6 @@ public class KSCSDKInfo {
             }
             return mConfigProperties.getProperty(key, defaultValue);
         }
-    }
-
-    public static String getAppVersionName() {
-        return mAppVersionName;
-    }
-
-    public static void setAppVersionName(String appVersionName) {
-        KSCSDKInfo.mAppVersionName = appVersionName;
-    }
-
-    public static String getAppVersionCode() {
-        return mAppVersionCode;
-    }
-
-    public static void setAppVersionCode(String appVersionCode) {
-        KSCSDKInfo.mAppVersionCode = appVersionCode;
-    }
-
-    public static String getPackageName() {
-        return mPackageName;
-    }
-
-    public static void setPackageName(String packageName) {
-        KSCSDKInfo.mPackageName = packageName;
     }
 
     public static void setAppInfo(AppInfo appInfo) {

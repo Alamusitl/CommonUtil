@@ -3,8 +3,6 @@ package com.ksc.client.core;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -28,7 +26,6 @@ import com.ksc.client.core.config.KSCStatusCode;
 import com.ksc.client.core.inner.ChannelBase;
 import com.ksc.client.core.inner.callbackwrapper.UserCallBackWrapper;
 import com.ksc.client.core.update.IUpdate;
-import com.ksc.client.toolbox.HttpRequestManager;
 import com.ksc.client.update.KSCUpdate;
 import com.ksc.client.update.callback.CheckUpdateCallBack;
 import com.ksc.client.update.callback.UpdateCallBack;
@@ -47,7 +44,6 @@ import java.util.ArrayList;
  */
 public class KSCSDK implements ISDK, IUpdate {
 
-    private static KSCSDK mInstance = null;
     private static UserCallBackWrapper mUserCallBack = null;
 
     public KSCSDK() {
@@ -55,14 +51,7 @@ public class KSCSDK implements ISDK, IUpdate {
     }
 
     public static KSCSDK getInstance() {
-        if (mInstance == null) {
-            synchronized (KSCSDK.class) {
-                if (mInstance == null) {
-                    mInstance = new KSCSDK();
-                }
-            }
-        }
-        return mInstance;
+        return SingletonHolder.INSTANCE;
     }
 
     @Override
@@ -262,14 +251,6 @@ public class KSCSDK implements ISDK, IUpdate {
     @Override
     public void onCreate(Activity activity) {
         KSCLog.d(MessageFormat.format("begin to onCreate. activity={0}", activity));
-        KSCSDKInfo.setPackageName(activity.getPackageName());
-        try {
-            PackageInfo packageInfo = activity.getPackageManager().getPackageInfo(activity.getPackageName(), 0);
-            KSCSDKInfo.setAppVersionName(packageInfo.versionName);
-            KSCSDKInfo.setAppVersionCode(String.valueOf(packageInfo.versionCode));
-        } catch (PackageManager.NameNotFoundException e) {
-            KSCLog.e("can not found package " + activity.getPackageName(), e);
-        }
         if (getChannelImpl() != null) {
             getChannelImpl().onCreate(activity);
         } else {
@@ -408,7 +389,6 @@ public class KSCSDK implements ISDK, IUpdate {
         } else {
             printErrorLogNonChannelImpl();
         }
-        HttpRequestManager.init();
         KSCLog.d(MessageFormat.format("end to onApplicationCreate. context={0}", context));
     }
 
@@ -433,7 +413,7 @@ public class KSCSDK implements ISDK, IUpdate {
         } else {
             printErrorLogNonChannelImpl();
         }
-        HttpRequestManager.destroy();
+
         KSCLog.d(MessageFormat.format("end to onApplicationTerminate. context={0}", context));
     }
 
@@ -556,5 +536,9 @@ public class KSCSDK implements ISDK, IUpdate {
     @Override
     public void startUpdate(Activity activity, ArrayList<KSCUpdateInfo> updateInfoList, UpdateCallBack updateCallBack) {
         KSCUpdate.startUpdate(activity, updateInfoList, updateCallBack);
+    }
+
+    private static class SingletonHolder {
+        public static final KSCSDK INSTANCE = new KSCSDK();
     }
 }

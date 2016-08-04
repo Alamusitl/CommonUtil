@@ -24,11 +24,13 @@ public class HttpRequestManager {
     }
 
     public static void execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener) {
+        init();
         HttpRequestRunnable request = new HttpRequestRunnable(requestParam, listener, errorListener);
         mFixedThreadPool.execute(request);
     }
 
     public static HttpRequestThread execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, Handler handler) {
+        init();
         HttpRequestThread request = new HttpRequestThread(requestParam, listener, errorListener);
         request.setHandler(handler);
         mFixedThreadPool.execute(request);
