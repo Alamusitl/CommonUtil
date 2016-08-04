@@ -25,24 +25,18 @@ import com.ksc.client.core.config.KSCSDKInfo;
 import com.ksc.client.core.config.KSCStatusCode;
 import com.ksc.client.core.inner.ChannelBase;
 import com.ksc.client.core.inner.callbackwrapper.UserCallBackWrapper;
-import com.ksc.client.core.update.IUpdate;
-import com.ksc.client.update.KSCUpdate;
-import com.ksc.client.update.callback.CheckUpdateCallBack;
-import com.ksc.client.update.callback.UpdateCallBack;
-import com.ksc.client.update.entity.KSCUpdateInfo;
 import com.ksc.client.util.KSCLog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
 
 /**
  * 主入口
  * Created by Alamusi on 2016/6/21.
  */
-public class KSCSDK implements ISDK, IUpdate {
+public class KSCSDK implements ISDK {
 
     private static UserCallBackWrapper mUserCallBack = null;
 
@@ -339,7 +333,6 @@ public class KSCSDK implements ISDK, IUpdate {
     @Override
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
         KSCLog.d(MessageFormat.format("begin to onActivityResult. activity={0}, requestCode={1}, resultCode={2}, data={3}", activity, requestCode, resultCode, data));
-        KSCUpdate.onActivityResult(activity, requestCode, resultCode, data);
         if (getChannelImpl() != null) {
             getChannelImpl().onActivityResult(activity, requestCode, resultCode, data);
         } else {
@@ -526,16 +519,6 @@ public class KSCSDK implements ISDK, IUpdate {
 
     private void printErrorLogNonChannelImpl() {
         KSCLog.e("can not find channel implement, please check if your main activity is inherited from KSCActivity or call KSCApplication lifecyle interfaces(such as onCreate, onStart and etc.)");
-    }
-
-    @Override
-    public void checkUpdate(Activity activity, String resourcePath, boolean isUseSelf, CheckUpdateCallBack checkUpdateCallBack) {
-        KSCUpdate.checkUpdate(activity, KSCSDKInfo.getAppId(), KSCSDKInfo.getChannelId(), KSCSDKInfo.getBuildVersion(), resourcePath, isUseSelf, checkUpdateCallBack);
-    }
-
-    @Override
-    public void startUpdate(Activity activity, ArrayList<KSCUpdateInfo> updateInfoList, UpdateCallBack updateCallBack) {
-        KSCUpdate.startUpdate(activity, updateInfoList, updateCallBack);
     }
 
     private static class SingletonHolder {
