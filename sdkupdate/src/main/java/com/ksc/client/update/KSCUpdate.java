@@ -18,6 +18,7 @@ import com.ksc.client.update.callback.CheckUpdateCallBack;
 import com.ksc.client.update.callback.UpdateCallBack;
 import com.ksc.client.update.entity.KSCUpdateInfo;
 import com.ksc.client.update.view.KSCUpdateDialogActivity;
+import com.ksc.client.util.KSCHelpUtils;
 import com.ksc.client.util.KSCLog;
 import com.ksc.client.util.KSCPackageUtils;
 
@@ -27,7 +28,6 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.net.HttpURLConnection;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -41,12 +41,18 @@ public class KSCUpdate {
     private Activity mActivity;
     private CheckUpdateCallBack mCheckUpdateCallBack = null;
     private UpdateCallBack mUpdateCallBack = null;
+    private ArrayList<KSCUpdateInfo> mAllList = new ArrayList<>();
     protected Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case KSCUpdateStatusCode.EVENT_UPDATE_HAS_UPDATE:
-                    ArrayList<KSCUpdateInfo> updateInfoList = parseUpdateResponse((String) msg.obj);
+                    mAllList = parseUpdateResponse((String) msg.obj);
+                    ArrayList<KSCUpdateInfo> updateInfoList = new ArrayList<>();
+                    for (KSCUpdateInfo info : mAllList) {
+                        KSCUpdateInfo tmp = new KSCUpdateInfo(info.getName(), null, null, info.getType(), info.getIsForce(), info.getUpdateMsg(), info.getSize(), null);
+                        updateInfoList.add(tmp);
+                    }
                     mCheckUpdateCallBack.onSuccess(true, updateInfoList);
                     if (msg.arg1 == 1) {
                         showSDKUpdateDialog(mActivity, updateInfoList);
@@ -62,7 +68,7 @@ public class KSCUpdate {
                     break;
                 case KSCUpdateStatusCode.EVENT_UPDATE_START:
                     if (mUpdateCallBack != null) {
-                        mUpdateCallBack.onUpdateStart((String) msg.obj, msg.arg1, changeToStr(msg.arg1));
+                        mUpdateCallBack.onUpdateStart((String) msg.obj, msg.arg1, KSCHelpUtils.changeToStr(msg.arg1));
                     }
                     break;
                 case KSCUpdateStatusCode.EVENT_UPDATE_CANCEL:
@@ -77,7 +83,7 @@ public class KSCUpdate {
                     break;
                 case KSCUpdateStatusCode.EVENT_UPDATE_DOWNLOADING:
                     if (mUpdateCallBack != null) {
-                        mUpdateCallBack.onUpdating((String) msg.obj, msg.arg1, changeToStr(msg.arg1), msg.arg2);
+                        mUpdateCallBack.onUpdating((String) msg.obj, msg.arg1, KSCHelpUtils.changeToStr(msg.arg1), msg.arg2);
                     }
                     break;
                 case KSCUpdateStatusCode.EVENT_UPDATE_FINISH:
@@ -263,6 +269,7 @@ public class KSCUpdate {
                 String type = info.optString("package");
                 String update = info.optString("update");
                 String msg = info.optString("comment");
+                int size = info.getInt("size");
                 String md5 = info.optString("Md5");
                 boolean isForce = true;
                 if (update.equals("force")) {
@@ -270,7 +277,7 @@ public class KSCUpdate {
                 } else if (update.equals("free")) {
                     isForce = false;
                 }
-                KSCUpdateInfo updateInfo = new KSCUpdateInfo(id, version, url, type, isForce, msg, md5);
+                KSCUpdateInfo updateInfo = new KSCUpdateInfo(id, version, url, type, isForce, msg, size, md5);
                 updateInfoList.add(updateInfo);
             }
         } catch (JSONException e) {
@@ -317,22 +324,6 @@ public class KSCUpdate {
     private void release() {
         mActivity = null;
         mCheckUpdateCallBack = null;
-    }
-
-    private String changeToStr(int size) {
-        DecimalFormat df = new DecimalFormat("#.00");
-        String sizeStr;
-        if (size >= 1024) {
-            float sizeFloat = size / (float) 1024;
-            sizeStr = df.format(sizeFloat) + "KB";
-            if (sizeFloat >= 1024) {
-                sizeFloat = sizeFloat / 1024;
-                sizeStr = df.format(sizeFloat) + "MB";
-            }
-        } else {
-            sizeStr = size + "b";
-        }
-        return sizeStr;
     }
 
     private static class SingletonHolder {

@@ -19,37 +19,40 @@ public class KSCUpdateInfo implements Parcelable {
             return new KSCUpdateInfo[i];
         }
     };
-    private String mId;// 更新包的ID
+    private String mName;// 更新包的ID
     private String mVersion;// 版本号
     private String mUrl;// 更新包URL
-    private String mType;// 更新类型，完整包/补丁包
+    private String mType;// 更新类型，完整包/补丁包/资源包
     private boolean mIsForce;// 是否强制更新
     private String mUpdateMsg;// 更新说明
+    private int mSize;// 下载文件的大小
     private String mMD5;// 更新包MD5
 
-    public KSCUpdateInfo(String id, String version, String url, String type, boolean isForce, String updateMsg, String MD5) {
-        this.mId = id;
+    public KSCUpdateInfo(String name, String version, String url, String type, boolean isForce, String updateMsg, int size, String MD5) {
+        this.mName = name;
         this.mVersion = version;
         this.mUrl = url;
         this.mType = type;
         this.mIsForce = isForce;
         this.mUpdateMsg = updateMsg;
+        mSize = size;
         this.mMD5 = MD5;
     }
 
     public KSCUpdateInfo(Parcel parcel) {
-        mId = parcel.readString();
+        mName = parcel.readString();
         mVersion = parcel.readString();
         mUrl = parcel.readString();
         mType = parcel.readString();
         String isForce = parcel.readString();
         mIsForce = isForce.equals("force");
         mUpdateMsg = parcel.readString();
+        mSize = parcel.readInt();
         mMD5 = parcel.readString();
     }
 
-    public String getId() {
-        return mId;
+    public String getName() {
+        return mName;
     }
 
     public String getVersion() {
@@ -76,15 +79,24 @@ public class KSCUpdateInfo implements Parcelable {
         return mMD5;
     }
 
+    public int getSize() {
+        return mSize;
+    }
+
+    public void setSize(int size) {
+        mSize = size;
+    }
+
     @Override
     public String toString() {
         return "KSCUpdateInfo{" +
-                "mId='" + mId + '\'' +
+                "mName='" + mName + '\'' +
                 ", mVersion='" + mVersion + '\'' +
                 ", mUrl='" + mUrl + '\'' +
                 ", mType='" + mType + '\'' +
-                ", mIsForce='" + mIsForce + '\'' +
+                ", mIsForce=" + mIsForce +
                 ", mUpdateMsg='" + mUpdateMsg + '\'' +
+                ", mSize=" + mSize +
                 ", mMD5='" + mMD5 + '\'' +
                 '}';
     }
@@ -96,7 +108,7 @@ public class KSCUpdateInfo implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(mId);
+        parcel.writeString(mName);
         parcel.writeString(mVersion);
         parcel.writeString(mUrl);
         parcel.writeString(mType);
@@ -106,6 +118,7 @@ public class KSCUpdateInfo implements Parcelable {
             parcel.writeString("free");
         }
         parcel.writeString(mUpdateMsg);
+        parcel.writeInt(mSize);
         parcel.writeString(mMD5);
     }
 

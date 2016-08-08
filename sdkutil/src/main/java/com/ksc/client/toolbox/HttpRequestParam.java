@@ -15,6 +15,7 @@ public class HttpRequestParam {
 
     private static final String DEFAULT_PARAMS_ENCODING = "UTF-8";
     private String mUrl;
+    private String mDownloadPath;
     private int mMethod;
     private int mTimeOutMs;
     private Map<String, String> mPostParams;
@@ -91,4 +92,13 @@ public class HttpRequestParam {
         return "application/x-www-form-urlencoded; charset=" + getParamsEncoding();
     }
 
+    public String getDownloadPath() {
+        return mDownloadPath;
+    }
+
+    public void setDownloadPath(String path) {
+        mDownloadPath = path;
+    }
+
 }
+

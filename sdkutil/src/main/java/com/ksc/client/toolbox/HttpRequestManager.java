@@ -11,10 +11,9 @@ import java.util.concurrent.Executors;
 public class HttpRequestManager {
 
     public static final int DOWNLOAD_FILE_START = 10000;
-    public static final int DOWNLOAD_FILE_TOTAL = 10001;
-    public static final int DOWNLOAD_FILE_CURRENT = 10002;
-    public static final int DOWNLOAD_FILE_DONE = 10003;
-    public static final int DOWNLOAD_FILE_FAIL = 10004;
+    public static final int DOWNLOAD_FILE_CURRENT = 10001;
+    public static final int DOWNLOAD_FILE_DONE = 10002;
+    public static final int DOWNLOAD_FILE_FAIL = 10003;
     private static ExecutorService mFixedThreadPool;
 
     public static void init() {
@@ -29,9 +28,9 @@ public class HttpRequestManager {
         mFixedThreadPool.execute(request);
     }
 
-    public static HttpRequestThread execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, Handler handler) {
+    public static HttpRequestRunnable execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, Handler handler) {
         init();
-        HttpRequestThread request = new HttpRequestThread(requestParam, listener, errorListener);
+        HttpRequestRunnable request = new HttpRequestRunnable(requestParam, listener, errorListener);
         request.setHandler(handler);
         mFixedThreadPool.execute(request);
         return request;
