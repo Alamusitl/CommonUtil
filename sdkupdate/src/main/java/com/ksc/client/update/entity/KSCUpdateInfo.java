@@ -24,17 +24,15 @@ public class KSCUpdateInfo implements Parcelable {
     private String mUrl;// 更新包URL
     private String mType;// 更新类型，完整包/补丁包
     private boolean mIsForce;// 是否强制更新
-    private String mSuffix; // 更新包文件类型，zip
     private String mUpdateMsg;// 更新说明
     private String mMD5;// 更新包MD5
 
-    public KSCUpdateInfo(String id, String version, String url, String type, boolean isForce, String suffix, String updateMsg, String MD5) {
+    public KSCUpdateInfo(String id, String version, String url, String type, boolean isForce, String updateMsg, String MD5) {
         this.mId = id;
         this.mVersion = version;
         this.mUrl = url;
         this.mType = type;
         this.mIsForce = isForce;
-        this.mSuffix = suffix;
         this.mUpdateMsg = updateMsg;
         this.mMD5 = MD5;
     }
@@ -46,7 +44,6 @@ public class KSCUpdateInfo implements Parcelable {
         mType = parcel.readString();
         String isForce = parcel.readString();
         mIsForce = isForce.equals("force");
-        mSuffix = parcel.readString();
         mUpdateMsg = parcel.readString();
         mMD5 = parcel.readString();
     }
@@ -71,10 +68,6 @@ public class KSCUpdateInfo implements Parcelable {
         return mIsForce;
     }
 
-    public String getSuffix() {
-        return mSuffix;
-    }
-
     public String getUpdateMsg() {
         return mUpdateMsg;
     }
@@ -91,7 +84,6 @@ public class KSCUpdateInfo implements Parcelable {
                 ", mUrl='" + mUrl + '\'' +
                 ", mType='" + mType + '\'' +
                 ", mIsForce='" + mIsForce + '\'' +
-                ", mSuffix='" + mSuffix + '\'' +
                 ", mUpdateMsg='" + mUpdateMsg + '\'' +
                 ", mMD5='" + mMD5 + '\'' +
                 '}';
@@ -113,7 +105,6 @@ public class KSCUpdateInfo implements Parcelable {
         } else {
             parcel.writeString("free");
         }
-        parcel.writeString(mSuffix);
         parcel.writeString(mUpdateMsg);
         parcel.writeString(mMD5);
     }

@@ -1,10 +1,10 @@
 package com.ksc.client.update.view;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
@@ -18,14 +18,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class KSCUpdateDialogActivity extends Activity {
+public class KSCUpdateDialogActivity extends AppCompatActivity {
+
+    private AlertDialog mDialog;
+    private ArrayList<KSCUpdateInfo> mList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        if (getIntent().hasExtra("updatePrompt") && getIntent().getBooleanExtra("updatePrompt", false)) {
+        if (getIntent().hasExtra("updateList")) {
+            mDialog = new AlertDialog.Builder(this).create();
+            mDialog.getWindow().getAttributes().gravity = Gravity.CENTER;
+            mDialog.setCanceledOnTouchOutside(false);
+            mList = getIntent().getParcelableArrayListExtra("updateList");
             showUpdatePromptDialog();
         } else {
             close();
@@ -36,17 +43,21 @@ public class KSCUpdateDialogActivity extends Activity {
      * 显示更新提示Dialog
      */
     private void showUpdatePromptDialog() {
-        AlertDialog dialog = new AlertDialog.Builder(this).create();
-        dialog.getWindow().getAttributes().gravity = Gravity.CENTER;
-        dialog.setCanceledOnTouchOutside(false);
-        ArrayList<KSCUpdateInfo> list = getIntent().getParcelableArrayListExtra("updateList");
-        if (list.size() == 0) {
+        if (mList == null || mList.size() == 0) {
             setResult(RESULT_CANCELED);
+            if (mDialog != null && mDialog.isShowing()) {
+                mDialog.cancel();
+                mDialog = null;
+            }
             close();
-        } else if (list.size() == 1) {
-            showDialogWithOne(dialog, list);
+            return;
+        }
+        KSCUpdateInfo updateInfo = mList.get(0);
+        if (updateInfo.getType().equals("full") || updateInfo.getType().equals("diff")) {
+            showDialogWithOne(mDialog, updateInfo);
+            mList.remove(0);
         } else {
-            showDialogWithMore(dialog, list);
+            showDialogWithMore(mDialog, mList);
         }
     }
 
@@ -54,27 +65,27 @@ public class KSCUpdateDialogActivity extends Activity {
      * 显示一个更新请求的Dialog
      *
      * @param dialog 目标Dialog
-     * @param list   更新请求的List
+     * @param info   更新请求信息
      */
-    private void showDialogWithOne(final AlertDialog dialog, final ArrayList<KSCUpdateInfo> list) {
-        dialog.setMessage(list.get(0).getUpdateMsg());
+    private void showDialogWithOne(final AlertDialog dialog, final KSCUpdateInfo info) {
+        dialog.setMessage(info.getUpdateMsg());
         dialog.setButton(DialogInterface.BUTTON_POSITIVE, "更新", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Intent intent = new Intent();
+                ArrayList<KSCUpdateInfo> list = new ArrayList<>();
+                list.add(info);
                 intent.putParcelableArrayListExtra("updateList", list);
                 setResult(RESULT_OK, intent);
                 dialog.cancel();
                 close();
             }
         });
-        if (!list.get(0).getIsForce()) {
+        if (!info.getIsForce()) {
             dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "取消", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    setResult(RESULT_CANCELED);
-                    dialog.cancel();
-                    close();
+                    showUpdatePromptDialog();
                 }
             });
         } else {

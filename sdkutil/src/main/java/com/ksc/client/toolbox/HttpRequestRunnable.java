@@ -21,21 +21,27 @@ public class HttpRequestRunnable implements Runnable {
     private Map<String, String> mHeaders;
     private HttpListener mHttpListener;
     private HttpErrorListener mHttpErrorListener;
+    private volatile boolean mIsRunning = false;
 
     public HttpRequestRunnable(HttpRequestParam requestParam, HttpListener httpListener, HttpErrorListener httpErrorListener) {
-        this(requestParam, null, httpListener, httpErrorListener);
-    }
-
-    public HttpRequestRunnable(HttpRequestParam requestParam, Map<String, String> headers, HttpListener httpListener, HttpErrorListener httpErrorListener) {
         mRequestParams = requestParam;
-        mHeaders = headers;
+        mHeaders = requestParam.getHeaders();
         mHttpListener = httpListener;
         mHttpErrorListener = httpErrorListener;
+    }
+
+    public void stop() {
+        mIsRunning = false;
+    }
+
+    public boolean isRunning() {
+        return mIsRunning;
     }
 
     @Override
     public void run() {
         try {
+            mIsRunning = true;
             KSCLog.i("Runnable Id : " + Thread.currentThread().getId());
             String url = mRequestParams.getUrl();
             URL parseUrl = new URL(url);
@@ -69,6 +75,7 @@ public class HttpRequestRunnable implements Runnable {
             }
             mHttpListener.onResponse(new HttpResponse(responseCode, body, responseHeaders, false));
             connection.disconnect();
+            mIsRunning = false;
         } catch (MalformedURLException e) {
             KSCLog.e("can not malformed url:" + mRequestParams.getUrl());
             mHttpErrorListener.onErrorResponse(new HttpError(e.getMessage()));
@@ -83,7 +90,7 @@ public class HttpRequestRunnable implements Runnable {
         BufferedReader bfr = new BufferedReader(new InputStreamReader(connection.getInputStream()));
         String line;
         StringBuilder result = new StringBuilder();
-        while ((line = bfr.readLine()) != null) {
+        while (((line = bfr.readLine()) != null) && mIsRunning) {
             result.append(line);
         }
         body = result.toString().getBytes();

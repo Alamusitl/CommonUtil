@@ -12,8 +12,10 @@
             android:name=".KSCUpdateService"
             android:process=":KSCUpdateService"/>
 
-        <activity android:name=".view.KSCUpdateDialogActivity"/>
-
+        <activity
+            android:name=".view.KSCUpdateDialogActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert">
+        </activity>
     </application>
 
 </manifest>

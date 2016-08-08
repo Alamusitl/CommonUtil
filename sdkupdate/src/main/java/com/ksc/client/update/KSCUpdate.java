@@ -1,9 +1,7 @@
 package com.ksc.client.update;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
@@ -21,83 +19,211 @@ import com.ksc.client.update.callback.UpdateCallBack;
 import com.ksc.client.update.entity.KSCUpdateInfo;
 import com.ksc.client.update.view.KSCUpdateDialogActivity;
 import com.ksc.client.util.KSCLog;
+import com.ksc.client.util.KSCPackageUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Alamusi on 2016/6/22.
  */
 public class KSCUpdate {
 
-    public static final int EVENT_UPDATE_START = 1003;// 开始更新
-    public static final int EVENT_UPDATE_CANCEL = 1004;// 取消更新
-    public static final int EVENT_UPDATE_DOWNLOAD_START = 1005;// 开始下载
-    public static final int EVENT_UPDATE_DOWNLOAD_BACKGROUND = 1006;// 后台下载
-    public static final int EVENT_UPDATE_DOWNLOADING = 1007;// 正在下载
-    public static final int EVENT_UPDATE_DOWNLOAD_FAIL = 1008;// 下载失败
-    public static final int EVENT_UPDATE_DOWNLOAD_FINISH = 1009;// 下载完成
-    public static final int EVENT_UPDATE_DOWNLOAD_STOP = 1010;// 停止下载
-    public static final int EVENT_UPDATE_OVER = 1011;// 更新完成
-    private static final int EVENT_UPDATE_HAS_UPDATE = 1000;// 检查有更新
-    private static final int EVENT_UPDATE_NO_UPDATE = 1001;// 检查无更新
-    private static final int EVENT_UPDATE_CHECK_FAIL = 1002;// 检查失败
-    private static final int REQUEST_CODE = 10000;
-    protected static UpdateCallBack mUpdateCallBack = null;
-    private static String mUpdateResourcePath = null;
-    private static boolean mIsUseCPSelf = false;
-    private static CheckUpdateCallBack mCheckUpdateCallBack = null;
-    private static ArrayList<KSCUpdateInfo> mReadUpdateList;
-    private static Activity mActivity;
-
-    protected static Handler mHandler = new Handler(Looper.getMainLooper()) {
+    private static final String GET_VERSION_LIST_URL = "http://192.168.158.168:8000/update/getverlist/";
+    private Activity mActivity;
+    private CheckUpdateCallBack mCheckUpdateCallBack = null;
+    private UpdateCallBack mUpdateCallBack = null;
+    protected Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
-                case EVENT_UPDATE_HAS_UPDATE:
+                case KSCUpdateStatusCode.EVENT_UPDATE_HAS_UPDATE:
                     ArrayList<KSCUpdateInfo> updateInfoList = parseUpdateResponse((String) msg.obj);
                     mCheckUpdateCallBack.onSuccess(true, updateInfoList);
-                    if (!mIsUseCPSelf) {
+                    if (msg.arg1 == 1) {
                         showSDKUpdateDialog(mActivity, updateInfoList);
                     }
                     break;
-                case EVENT_UPDATE_NO_UPDATE:
+                case KSCUpdateStatusCode.EVENT_UPDATE_NO_UPDATE:
                     mCheckUpdateCallBack.onSuccess(false, null);
+                    release();
                     break;
-                case EVENT_UPDATE_CHECK_FAIL:
+                case KSCUpdateStatusCode.EVENT_UPDATE_CHECK_FAIL:
                     mCheckUpdateCallBack.onError((String) msg.obj);
+                    release();
                     break;
-                case KSCUpdate.EVENT_UPDATE_START:
-                    startUpdate(mActivity, mReadUpdateList, mUpdateCallBack);
-                    break;
-                case KSCUpdate.EVENT_UPDATE_CANCEL:
-                    break;
-                case KSCUpdate.EVENT_UPDATE_OVER:
+                case KSCUpdateStatusCode.EVENT_UPDATE_START:
                     if (mUpdateCallBack != null) {
-                        mUpdateCallBack.onFinishUpdate();
+                        mUpdateCallBack.onUpdateStart((String) msg.obj, msg.arg1, changeToStr(msg.arg1));
                     }
+                    break;
+                case KSCUpdateStatusCode.EVENT_UPDATE_CANCEL:
+                    if (mUpdateCallBack != null) {
+                        mUpdateCallBack.onUpdateCancel((String) msg.obj);
+                    }
+                    break;
+                case KSCUpdateStatusCode.EVENT_UPDATE_ERROR:
+                    if (mUpdateCallBack != null) {
+                        mUpdateCallBack.onUpdateError((String) msg.obj);
+                    }
+                    break;
+                case KSCUpdateStatusCode.EVENT_UPDATE_DOWNLOADING:
+                    if (mUpdateCallBack != null) {
+                        mUpdateCallBack.onUpdating((String) msg.obj, msg.arg1, changeToStr(msg.arg1), msg.arg2);
+                    }
+                    break;
+                case KSCUpdateStatusCode.EVENT_UPDATE_FINISH:
+                    if (mUpdateCallBack != null) {
+                        mUpdateCallBack.onUpdateFinish((String) msg.obj);
+                    }
+                    break;
+                case KSCUpdateStatusCode.EVENT_UPDATE_OVER:
+                    if (mUpdateCallBack != null) {
+                        mUpdateCallBack.onUpdateOver();
+                    }
+                    release();
                     break;
             }
         }
     };
 
-    public static void checkUpdate(final Activity activity, String appId, String channel, String version, String updateResourcePath, boolean useSelf, CheckUpdateCallBack checkUpdateCallBack) {
+    public static KSCUpdate getInstance() {
+        return SingletonHolder.INSTANCE;
+    }
+
+    /**
+     * 检查更新
+     *
+     * @param activity            上下文
+     * @param appId               AppId
+     * @param channel             渠道ID
+     * @param resourceVersion     资源版本号
+     * @param useSelf             是否使用自己的更新视图
+     * @param checkUpdateCallBack 检查更新回调
+     */
+    public void checkUpdate(final Activity activity, String appId, String channel, String resourceVersion, final boolean useSelf, CheckUpdateCallBack checkUpdateCallBack) {
+        if (activity == null) {
+            KSCLog.e("KSCUpdate check param activity is null, please check!");
+            return;
+        }
+        if (TextUtils.isEmpty(appId)) {
+            KSCLog.e("KSCUpdate check param appId is empty, please check!");
+            return;
+        }
+        if (TextUtils.isEmpty(channel)) {
+            KSCLog.e("KSCUpdate check param channel is empty, please check!");
+            return;
+        }
+        if (TextUtils.isEmpty(resourceVersion)) {
+            KSCLog.e("KSCUpdate check param resourceVersion is empty, please check!");
+            return;
+        }
+        if (checkUpdateCallBack == null) {
+            KSCLog.e("KSCUpdate check param checkUpdateCallBack is null, please check!");
+            return;
+        }
         mActivity = activity;
+        mCheckUpdateCallBack = checkUpdateCallBack;
+        String url = GET_VERSION_LIST_URL + "?" + "app_id=" + appId + "&full_id=" + KSCPackageUtils.getVersionCode(activity) + "&resource_id=" + resourceVersion + "&channel=" + channel + "&platform=android/";
+        final HttpRequestParam requestParam = new HttpRequestParam(url);
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Authorization", "Token 62c2d2f93d0a043b1bd5a97640b0a13d7e733bb0");
+        requestParam.setHeaders(headers);
+        HttpRequestManager.execute(requestParam, new HttpListener() {
+            @Override
+            public void onResponse(HttpResponse response) {
+                Message message = mHandler.obtainMessage();
+                if (response.getCode() == HttpURLConnection.HTTP_OK) {
+                    String versionList = response.getBodyString();
+                    try {
+                        JSONObject list = new JSONObject(versionList);
+                        if (list.length() == 0) {
+                            message.what = KSCUpdateStatusCode.EVENT_UPDATE_NO_UPDATE;
+                        } else if (list.has("detail")) {
+                            message.what = KSCUpdateStatusCode.EVENT_UPDATE_CHECK_FAIL;
+                            message.obj = list.optString("detail");
+                        } else {
+                            message.what = KSCUpdateStatusCode.EVENT_UPDATE_HAS_UPDATE;
+                            if (!useSelf) {
+                                message.arg1 = 1;
+                            } else {
+                                message.arg1 = 0;
+                            }
+                            message.obj = versionList;
+                        }
+                    } catch (JSONException e) {
+                        KSCLog.e("update response convert error, JSONException", e);
+                        message.what = KSCUpdateStatusCode.EVENT_UPDATE_CHECK_FAIL;
+                        message.obj = e.getMessage();
+                    }
+                } else {
+                    KSCLog.e("check update error, code : " + response.getCode() + " , message : " + response.getBodyString());
+                    message.what = KSCUpdateStatusCode.EVENT_UPDATE_CHECK_FAIL;
+                    message.obj = response.getBodyString();
+                }
+                mHandler.sendMessage(message);
+            }
+        }, new HttpErrorListener() {
+            @Override
+            public void onErrorResponse(HttpError error) {
+                KSCLog.e("get update info fail," + (error.httpResponse != null ? error.httpResponse.getCode() : 0) + ":" + (error.httpResponse != null ? error.httpResponse.getBodyString() : null), error);
+                mHandler.sendMessage(mHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_CHECK_FAIL, error.getMessage()));
+            }
+        });
+    }
+
+    /**
+     * 开始更新
+     *
+     * @param activity           上下文
+     * @param useSelf            是否使用自己的更新视图
+     * @param updateResourcePath 资源更新路径
+     * @param updateList         需要更新的信息List
+     * @param updateCallBack     更新回调
+     */
+    public void startUpdate(Activity activity, boolean useSelf, String updateResourcePath, ArrayList<KSCUpdateInfo> updateList, UpdateCallBack updateCallBack) {
+        if (updateCallBack == null) {
+            updateCallBack = new UpdateCallBack() {
+
+                @Override
+                public void onUpdateStart(String name, int totalSize, String Size) {
+
+                }
+
+                @Override
+                public void onUpdating(String name, int currentSize, String Size, float present) {
+
+                }
+
+                @Override
+                public void onUpdateError(String name) {
+
+                }
+
+                @Override
+                public void onUpdateCancel(String name) {
+
+                }
+
+                @Override
+                public void onUpdateFinish(String name) {
+
+                }
+
+                @Override
+                public void onUpdateOver() {
+
+                }
+            };
+        }
         if (TextUtils.isEmpty(updateResourcePath)) {
             if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
                 File file = activity.getExternalFilesDir(null);
@@ -110,80 +236,12 @@ public class KSCUpdate {
                 updateResourcePath = activity.getFilesDir().getAbsolutePath();
             }
         }
-        mUpdateResourcePath = updateResourcePath;
-        mIsUseCPSelf = useSelf;
-        mCheckUpdateCallBack = checkUpdateCallBack;
-        String platform = "android";
-        String url = "?Action=getClientVerlist&Version=" + version + "&app=" + appId + "&versionid=" + version + "&channel=" + channel + "&platform=" + platform;
-        final HttpRequestParam requestParam = new HttpRequestParam(url);
-        HttpRequestManager.execute(requestParam, new HttpListener() {
-            @Override
-            public void onResponse(HttpResponse response) {
-                if (response.getCode() == HttpURLConnection.HTTP_OK) {
-                    String versionList = response.getBodyString();
-                    if (versionList.equals("{}")) {
-                        mHandler.sendMessage(mHandler.obtainMessage(EVENT_UPDATE_NO_UPDATE));
-                    } else {
-                        mHandler.sendMessage(mHandler.obtainMessage(EVENT_UPDATE_HAS_UPDATE, versionList));
-                    }
-                } else {
-                    KSCLog.e("check update error, code : " + response.getCode() + " , message : " + response.getBodyString());
-                    mHandler.sendMessage(mHandler.obtainMessage(EVENT_UPDATE_CHECK_FAIL, response.getBodyString()));
-                }
-            }
-        }, new HttpErrorListener() {
-            @Override
-            public void onErrorResponse(HttpError error) {
-                try {
-                    InputStream is = activity.getAssets().open("versionList.json");
-                    byte[] buffer = new byte[1024];
-                    StringBuilder builder = new StringBuilder();
-                    while (is.read(buffer, 0, 1024) != -1) {
-                        String tmp = new String(buffer);
-                        builder.append(tmp);
-                    }
-                    KSCLog.d(builder.toString());
-                    String versionList = builder.toString();
-                    mHandler.sendMessage(mHandler.obtainMessage(EVENT_UPDATE_HAS_UPDATE, versionList));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-//                KSCLog.e("get update info fail," + (error.httpResponse != null ? error.httpResponse.getCode() : 0) + ":" + (error.httpResponse != null ? error.httpResponse.getBodyString() : null), error);
-//                mHandler.sendMessage(mHandler.obtainMessage(EVENT_UPDATE_CHECK_FAIL, error.getMessage()));
-            }
-        });
-    }
-
-    public static void startUpdate(Activity activity, ArrayList<KSCUpdateInfo> updateList, UpdateCallBack updateCallBack) {
-        if (updateCallBack == null) {
-            updateCallBack = new UpdateCallBack() {
-                @Override
-                public void onStartUpdate() {
-
-                }
-
-                @Override
-                public void onProcess(int present) {
-
-                }
-
-                @Override
-                public void onError(String version) {
-
-                }
-
-                @Override
-                public void onFinishUpdate() {
-
-                }
-            };
-        }
         mUpdateCallBack = updateCallBack;
         Intent intent = new Intent(activity, KSCUpdateService.class);
         intent.putParcelableArrayListExtra("data", updateList);
-        intent.putExtra("resourcePath", mUpdateResourcePath);
+        intent.putExtra("resourcePath", updateResourcePath);
+        intent.putExtra("useSelf", useSelf);
         activity.startService(intent);
-        mUpdateCallBack.onStartUpdate();
     }
 
     /**
@@ -192,19 +250,18 @@ public class KSCUpdate {
      * @param allInfo 更新信息
      * @return 解析完的数据列表
      */
-    private static ArrayList<KSCUpdateInfo> parseUpdateResponse(String allInfo) {
+    private ArrayList<KSCUpdateInfo> parseUpdateResponse(String allInfo) {
         ArrayList<KSCUpdateInfo> updateInfoList = new ArrayList<>();
         try {
             JSONObject data = new JSONObject(allInfo);
             JSONArray list = data.optJSONArray("verlist");
             for (int i = 0; i < list.length(); i++) {
                 JSONObject info = list.getJSONObject(i);
-                String id = info.optString("id");
+                String id = info.optString("name");
                 String version = info.optString("version");
                 String url = info.optString("url");
                 String type = info.optString("package");
                 String update = info.optString("update");
-                String suffix = info.optString("compress");
                 String msg = info.optString("comment");
                 String md5 = info.optString("Md5");
                 boolean isForce = true;
@@ -213,7 +270,7 @@ public class KSCUpdate {
                 } else if (update.equals("free")) {
                     isForce = false;
                 }
-                KSCUpdateInfo updateInfo = new KSCUpdateInfo(id, version, url, type, isForce, suffix, msg, md5);
+                KSCUpdateInfo updateInfo = new KSCUpdateInfo(id, version, url, type, isForce, msg, md5);
                 updateInfoList.add(updateInfo);
             }
         } catch (JSONException e) {
@@ -228,118 +285,58 @@ public class KSCUpdate {
      * @param activity       当前的Activity
      * @param updateInfoList 更新列表
      */
-    private static void showSDKUpdateDialog(Activity activity, ArrayList<KSCUpdateInfo> updateInfoList) {
-        KSCUpdateInfo updateInfo = updateInfoList.get(0);
+    private void showSDKUpdateDialog(Activity activity, ArrayList<KSCUpdateInfo> updateInfoList) {
         Intent intent = new Intent(activity, KSCUpdateDialogActivity.class);
-        intent.putExtra("updatePrompt", true);
-        if (updateInfo.getType().equals("full") || updateInfo.getType().equals("patch")) {
-            ArrayList<KSCUpdateInfo> tmpList = new ArrayList<>();
-            tmpList.add(updateInfo);
-            intent.putParcelableArrayListExtra("updateList", tmpList);
-        } else {
-            intent.putParcelableArrayListExtra("updateList", updateInfoList);
-        }
-        activity.startActivityForResult(intent, REQUEST_CODE);
+        intent.putParcelableArrayListExtra("updateList", updateInfoList);
+        activity.startActivityForResult(intent, 10000);
     }
 
-    /**
-     * 安装下载 & Patch的APK
-     *
-     * @param context 上下文
-     * @param file    目标APK文件
-     */
-    protected static void installApk(Context context, File file) {
-        Intent intent = new Intent();
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
-        context.startActivity(intent);
-    }
-
-    /**
-     * 解压更新资源
-     *
-     * @param srcFile 更新文件
-     * @param destDir 解压的目录
-     * @throws IOException
-     */
-    protected static void unZipResourceFile(File srcFile, String destDir) throws IOException {
-        ZipFile zipFile = new ZipFile(srcFile);
-        Enumeration zList = zipFile.entries();
-        ZipEntry zipEntry;
-        final int BUF_SIZE = 1024;
-        byte[] buf = new byte[BUF_SIZE];
-        while (zList.hasMoreElements()) {
-            zipEntry = (ZipEntry) zList.nextElement();
-            KSCLog.d("unzipFile: " + "zipEntry.name = " + zipEntry.getName());
-            if (zipEntry.isDirectory()) {
-                String tDir = destDir + zipEntry.getName();
-                tDir = tDir.trim();
-                tDir = new String(tDir.getBytes("8859_1"), "GB2312");
-                KSCLog.d("unzipFile: " + "destDir : " + tDir);
-                File file = new File(tDir);
-                if (!file.exists()) {
-                    file.mkdirs();
-                    continue;
-                }
-            }
-            OutputStream os = new BufferedOutputStream(new FileOutputStream(getRealFileName(destDir, zipEntry.getName())));
-            InputStream is = new BufferedInputStream(zipFile.getInputStream(zipEntry));
-            int readLength;
-            while ((readLength = is.read(buf, 0, BUF_SIZE)) != -1) {
-                os.write(buf, 0, readLength);
-            }
-            is.close();
-            os.close();
-        }
-        zipFile.close();
-        KSCLog.d("unzipFile: " + srcFile + " is finish.");
-    }
-
-    /**
-     * 获得解压的路径
-     *
-     * @param baseDir     基础路径
-     * @param absFileName 文件的名称
-     * @return
-     * @throws UnsupportedEncodingException
-     */
-    private static File getRealFileName(String baseDir, String absFileName) throws UnsupportedEncodingException {
-        String[] dirs = absFileName.split("/");
-        String lastDir = baseDir;
-        if (dirs.length > 1) {
-            for (int i = 0; i < dirs.length - 1; i++) {
-                lastDir += (dirs[i] + File.separator);
-                File dir = new File(lastDir);
-                if (!dir.exists()) {
-                    dir.mkdirs();
-                }
-            }
-            File ret = new File(lastDir, dirs[dirs.length - 1]);
-            KSCLog.d("unzipFile: " + "ret :" + ret);
-            return ret;
-        } else {
-            return new File(baseDir, absFileName);
-        }
-    }
-
-    public static void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
         KSCLog.d("KSCUpdate onActivityResult begin called!");
-        if (requestCode == REQUEST_CODE) {
+        if (requestCode == 10000) {
             switch (resultCode) {
                 case Activity.RESULT_CANCELED:
                     KSCLog.d("user cancel update!");
-                    mHandler.sendMessage(mHandler.obtainMessage(EVENT_UPDATE_CANCEL));
+                    mHandler.sendMessage(mHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_CANCEL, ""));
                     break;
                 case Activity.RESULT_OK:
                     if (data.hasExtra("updateList")) {
-                        mReadUpdateList = data.getParcelableArrayListExtra("updateList");
-                        mHandler.sendMessage(mHandler.obtainMessage(EVENT_UPDATE_START));
+                        ArrayList<KSCUpdateInfo> mReadUpdateList = data.getParcelableArrayListExtra("updateList");
+                        File file = activity.getExternalFilesDir(null);
+                        if (file == null || !file.exists()) {
+                            file = activity.getFilesDir();
+                        }
+                        startUpdate(activity, false, file.getAbsolutePath(), mReadUpdateList, mUpdateCallBack);
                     }
                     break;
             }
         }
         KSCLog.d("KSCUpdate onActivityResult end called!");
+    }
+
+    private void release() {
+        mActivity = null;
+        mCheckUpdateCallBack = null;
+    }
+
+    private String changeToStr(int size) {
+        DecimalFormat df = new DecimalFormat("#.00");
+        String sizeStr;
+        if (size >= 1024) {
+            float sizeFloat = size / (float) 1024;
+            sizeStr = df.format(sizeFloat) + "KB";
+            if (sizeFloat >= 1024) {
+                sizeFloat = sizeFloat / 1024;
+                sizeStr = df.format(sizeFloat) + "MB";
+            }
+        } else {
+            sizeStr = size + "b";
+        }
+        return sizeStr;
+    }
+
+    private static class SingletonHolder {
+        public static final KSCUpdate INSTANCE = new KSCUpdate();
     }
 
 }

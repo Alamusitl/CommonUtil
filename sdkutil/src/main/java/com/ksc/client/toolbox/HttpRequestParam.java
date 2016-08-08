@@ -18,6 +18,7 @@ public class HttpRequestParam {
     private int mMethod;
     private int mTimeOutMs;
     private Map<String, String> mPostParams;
+    private Map<String, String> mHeaders;
 
     public HttpRequestParam(String url) {
         this(url, METHOD_GET);
@@ -28,6 +29,7 @@ public class HttpRequestParam {
         mMethod = method;
         mTimeOutMs = DEFAULT_TIME_OUT_MS;
         mPostParams = null;
+        mHeaders = null;
     }
 
     public String getUrl() {
@@ -56,6 +58,14 @@ public class HttpRequestParam {
 
     public void setBody(Map<String, String> params) {
         mPostParams = params;
+    }
+
+    public Map<String, String> getHeaders() {
+        return mHeaders;
+    }
+
+    public void setHeaders(Map<String, String> headers) {
+        mHeaders = headers;
     }
 
     private byte[] encodeParameter(Map<String, String> params, String paramsEncoding) {
