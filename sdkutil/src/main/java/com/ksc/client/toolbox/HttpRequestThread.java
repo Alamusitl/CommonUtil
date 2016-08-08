@@ -29,14 +29,11 @@ public class HttpRequestThread extends Thread {
     private String mPath;
 
     public HttpRequestThread(HttpRequestParam requestParam, HttpListener httpListener, HttpErrorListener httpErrorListener) {
-        this(requestParam, null, httpListener, httpErrorListener);
-    }
-
-    public HttpRequestThread(HttpRequestParam requestParam, Map<String, String> headers, HttpListener httpListener, HttpErrorListener httpErrorListener) {
         mRequestParams = requestParam;
-        mHeaders = headers;
+        mHeaders = requestParam.getHeaders();
         mHttpListener = httpListener;
         mHttpErrorListener = httpErrorListener;
+
     }
 
     public void setHandler(Handler handler) {
@@ -120,7 +117,7 @@ public class HttpRequestThread extends Thread {
         int currentSize = 0;
         byte[] buf = new byte[1024 * 4];
         mHandler.sendMessage(mHandler.obtainMessage(HttpRequestManager.DOWNLOAD_FILE_START));
-        while ((length = bis.read(buf)) != -1) {
+        while (((length = bis.read(buf)) != -1) && !isInterrupted()) {
             currentSize += length;
             fos.write(buf, 0, length);
             mHandler.sendMessage(mHandler.obtainMessage(HttpRequestManager.DOWNLOAD_FILE_CURRENT, currentSize));
