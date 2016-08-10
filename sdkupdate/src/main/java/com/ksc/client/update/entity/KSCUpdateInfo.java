@@ -3,6 +3,8 @@ package com.ksc.client.update.entity;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.ksc.client.update.KSCUpdateKeyCode;
+
 /**
  * Created by Alamusi on 2016/7/21.
  */
@@ -11,7 +13,15 @@ public class KSCUpdateInfo implements Parcelable {
     public static final Parcelable.Creator<KSCUpdateInfo> CREATOR = new Creator<KSCUpdateInfo>() {
         @Override
         public KSCUpdateInfo createFromParcel(Parcel parcel) {
-            return new KSCUpdateInfo(parcel);
+            String name = parcel.readString();
+            String version = parcel.readString();
+            String url = parcel.readString();
+            String type = parcel.readString();
+            boolean isForce = parcel.readString().equals(KSCUpdateKeyCode.KEY_TYPE_FORCE);
+            String updateMsg = parcel.readString();
+            int size = parcel.readInt();
+            String MD5 = parcel.readString();
+            return new KSCUpdateInfo(name, version, url, type, isForce, updateMsg, size, MD5);
         }
 
         @Override
@@ -35,20 +45,8 @@ public class KSCUpdateInfo implements Parcelable {
         this.mType = type;
         this.mIsForce = isForce;
         this.mUpdateMsg = updateMsg;
-        mSize = size;
+        this.mSize = size;
         this.mMD5 = MD5;
-    }
-
-    public KSCUpdateInfo(Parcel parcel) {
-        mName = parcel.readString();
-        mVersion = parcel.readString();
-        mUrl = parcel.readString();
-        mType = parcel.readString();
-        String isForce = parcel.readString();
-        mIsForce = isForce.equals("force");
-        mUpdateMsg = parcel.readString();
-        mSize = parcel.readInt();
-        mMD5 = parcel.readString();
     }
 
     public String getName() {
@@ -113,9 +111,9 @@ public class KSCUpdateInfo implements Parcelable {
         parcel.writeString(mUrl);
         parcel.writeString(mType);
         if (mIsForce) {
-            parcel.writeString("force");
+            parcel.writeString(KSCUpdateKeyCode.KEY_TYPE_FORCE);
         } else {
-            parcel.writeString("free");
+            parcel.writeString(KSCUpdateKeyCode.KEY_TYPE_FREE);
         }
         parcel.writeString(mUpdateMsg);
         parcel.writeInt(mSize);

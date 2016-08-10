@@ -10,10 +10,6 @@ public class PatchClient {
 
     public static native int applyPatchToOldApk(String oldApkPath, String newApkPath, String patchFilePath);
 
-    public static void loadLib() {
-        System.loadLibrary("PatchClient");
-    }
-
     /**
      * 客户端合并老的APK和差异化文件
      *

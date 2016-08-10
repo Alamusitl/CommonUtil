@@ -8,13 +8,12 @@
 extern "C" {
 #endif
 /*
- * Class:     com_ksc_sdk_update_PatchClient
+ * Class:     com_ksc_client_update_PatchClient
  * Method:    applyPatchToOldApk
  * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
  */
 JNIEXPORT jint
-JNICALL Java_com_ksc_client_update_PatchClient_applyPatchToOldApk
-        (JNIEnv *, jclass, jstring, jstring, jstring);
+JNICALL Java_com_ksc_client_update_PatchClient_applyPatchToOldApk(JNIEnv *, jclass, jstring, jstring, jstring);
 
 #ifdef __cplusplus
 }

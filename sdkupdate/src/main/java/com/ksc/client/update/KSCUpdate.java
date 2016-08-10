@@ -2,6 +2,7 @@ package com.ksc.client.update;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
@@ -38,21 +39,16 @@ import java.util.Map;
 public class KSCUpdate {
 
     private static final String GET_VERSION_LIST_URL = "http://192.168.158.168:8000/update/getverlist/";
+
     private Activity mActivity;
     private CheckUpdateCallBack mCheckUpdateCallBack = null;
     private UpdateCallBack mUpdateCallBack = null;
-    private ArrayList<KSCUpdateInfo> mAllList = new ArrayList<>();
     protected Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case KSCUpdateStatusCode.EVENT_UPDATE_HAS_UPDATE:
-                    mAllList = parseUpdateResponse((String) msg.obj);
-                    ArrayList<KSCUpdateInfo> updateInfoList = new ArrayList<>();
-                    for (KSCUpdateInfo info : mAllList) {
-                        KSCUpdateInfo tmp = new KSCUpdateInfo(info.getName(), null, null, info.getType(), info.getIsForce(), info.getUpdateMsg(), info.getSize(), null);
-                        updateInfoList.add(tmp);
-                    }
+                    ArrayList<KSCUpdateInfo> updateInfoList = parseUpdateResponse((String) msg.obj);
                     mCheckUpdateCallBack.onSuccess(true, updateInfoList);
                     if (msg.arg1 == 1) {
                         showSDKUpdateDialog(mActivity, updateInfoList);
@@ -138,10 +134,11 @@ public class KSCUpdate {
         }
         mActivity = activity;
         mCheckUpdateCallBack = checkUpdateCallBack;
-        String url = GET_VERSION_LIST_URL + "?" + "app_id=" + appId + "&full_id=" + KSCPackageUtils.getVersionCode(activity) + "&resource_id=" + resourceVersion + "&channel=" + channel + "&platform=android/";
+        String url = GET_VERSION_LIST_URL + "?" + "app_id=" + appId + "&full_id=" + KSCPackageUtils.getVersionCode(activity) + "&resource_id=" + resourceVersion + "&channel=" + channel + "&platform=android";
+        url = "http://192.168.158.168:8000/update/getverlist/?app_id=9bc6200b-f708-44bc-949f-c06d48d67f65&full_id=0000100000&resource_id=0000100000&channel=d2e4325a-4ee4-4af0-b2a0-c2dae1262b1e&platform=android";
         final HttpRequestParam requestParam = new HttpRequestParam(url);
         Map<String, String> headers = new HashMap<>();
-        headers.put("Authorization", "Token 62c2d2f93d0a043b1bd5a97640b0a13d7e733bb0");
+        headers.put("Authorization", "Token 920553d7631d619284b7d126544453015fc6eb34");
         requestParam.setHeaders(headers);
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
@@ -244,9 +241,11 @@ public class KSCUpdate {
         }
         mUpdateCallBack = updateCallBack;
         Intent intent = new Intent(activity, KSCUpdateService.class);
-        intent.putParcelableArrayListExtra("data", updateList);
-        intent.putExtra("resourcePath", updateResourcePath);
-        intent.putExtra("useSelf", useSelf);
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList(KSCUpdateKeyCode.KEY_LIST, updateList);
+        intent.putExtra(KSCUpdateKeyCode.KEY_BUNDLE, bundle);
+        intent.putExtra(KSCUpdateKeyCode.KEY_RESOURCE_PATH, updateResourcePath);
+        intent.putExtra(KSCUpdateKeyCode.KEY_USE_SELF, useSelf);
         activity.startService(intent);
     }
 
@@ -260,24 +259,24 @@ public class KSCUpdate {
         ArrayList<KSCUpdateInfo> updateInfoList = new ArrayList<>();
         try {
             JSONObject data = new JSONObject(allInfo);
-            JSONArray list = data.optJSONArray("verlist");
+            JSONArray list = data.optJSONArray(KSCUpdateKeyCode.KEY_VERSION_LIST);
             for (int i = 0; i < list.length(); i++) {
                 JSONObject info = list.getJSONObject(i);
-                String id = info.optString("name");
-                String version = info.optString("version");
-                String url = info.optString("url");
-                String type = info.optString("package");
-                String update = info.optString("update");
-                String msg = info.optString("comment");
-                int size = info.getInt("size");
-                String md5 = info.optString("Md5");
+                String name = info.optString(KSCUpdateKeyCode.KEY_VERSION_LIST_NAME);
+                String version = info.optString(KSCUpdateKeyCode.KEY_VERSION_LIST_VERSION);
+                String url = info.optString(KSCUpdateKeyCode.KEY_VERSION_LIST_URL);
+                String type = info.optString(KSCUpdateKeyCode.KEY_VERSION_LIST_PACKAGE);
+                String update = info.optString(KSCUpdateKeyCode.KEY_VERSION_LIST_TYPE);
+                String msg = info.optString(KSCUpdateKeyCode.KEY_VERSION_LIST_COMMENT);
+                int size = info.getInt(KSCUpdateKeyCode.KEY_VERSION_LIST_SIZE);
+                String md5 = info.optString(KSCUpdateKeyCode.KEY_VERSION_LIST_MD5);
                 boolean isForce = true;
-                if (update.equals("force")) {
+                if (update.equals(KSCUpdateKeyCode.KEY_TYPE_FORCE)) {
                     isForce = true;
-                } else if (update.equals("free")) {
+                } else if (update.equals(KSCUpdateKeyCode.KEY_TYPE_FREE)) {
                     isForce = false;
                 }
-                KSCUpdateInfo updateInfo = new KSCUpdateInfo(id, version, url, type, isForce, msg, size, md5);
+                KSCUpdateInfo updateInfo = new KSCUpdateInfo(name, version, url, type, isForce, msg, size, md5);
                 updateInfoList.add(updateInfo);
             }
         } catch (JSONException e) {
@@ -294,7 +293,9 @@ public class KSCUpdate {
      */
     private void showSDKUpdateDialog(Activity activity, ArrayList<KSCUpdateInfo> updateInfoList) {
         Intent intent = new Intent(activity, KSCUpdateDialogActivity.class);
-        intent.putParcelableArrayListExtra("updateList", updateInfoList);
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList(KSCUpdateKeyCode.KEY_LIST, updateInfoList);
+        intent.putExtra(KSCUpdateKeyCode.KEY_BUNDLE, bundle);
         activity.startActivityForResult(intent, 10000);
     }
 
@@ -307,14 +308,14 @@ public class KSCUpdate {
                     mHandler.sendMessage(mHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_CANCEL, ""));
                     break;
                 case Activity.RESULT_OK:
-                    if (data.hasExtra("updateList")) {
-                        ArrayList<KSCUpdateInfo> mReadUpdateList = data.getParcelableArrayListExtra("updateList");
-                        File file = activity.getExternalFilesDir(null);
-                        if (file == null || !file.exists()) {
-                            file = activity.getFilesDir();
-                        }
-                        startUpdate(activity, false, file.getAbsolutePath(), mReadUpdateList, mUpdateCallBack);
+                    Bundle bundle = data.getBundleExtra(KSCUpdateKeyCode.KEY_BUNDLE);
+                    bundle.setClassLoader(KSCUpdateInfo.class.getClassLoader());
+                    ArrayList<KSCUpdateInfo> mReadUpdateList = bundle.getParcelableArrayList(KSCUpdateKeyCode.KEY_LIST);
+                    File file = activity.getExternalFilesDir(null);
+                    if (file == null || !file.exists()) {
+                        file = activity.getFilesDir();
                     }
+                    startUpdate(activity, false, file.getAbsolutePath(), mReadUpdateList, mUpdateCallBack);
                     break;
             }
         }

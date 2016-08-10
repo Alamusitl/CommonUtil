@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -24,6 +25,7 @@ import com.ksc.client.toolbox.HttpResponse;
 import com.ksc.client.update.entity.KSCUpdateInfo;
 import com.ksc.client.util.KSCLog;
 import com.ksc.client.util.KSCMD5Utils;
+import com.ksc.client.util.KSCPackageUtils;
 import com.ksc.client.util.KSCStorageUtils;
 
 import java.io.BufferedInputStream;
@@ -43,6 +45,12 @@ import java.util.zip.ZipFile;
  * Created by Alamusi on 2016/7/28.
  */
 public class KSCUpdateService extends Service {
+
+    private static final java.lang.String TAG = KSCUpdateService.class.getSimpleName();
+
+    static {
+        System.loadLibrary("PatchClient");
+    }
 
     private KSCUpdateInfo mCurUpdateInfo;
     private List<KSCUpdateInfo> mUpdateList;
@@ -152,7 +160,7 @@ public class KSCUpdateService extends Service {
 
     private void processSingleRequest() {
         if (mUpdateList == null) {
-            KSCLog.e("update list is null, update over!");
+            KSCLog.e(TAG, "update list is null, update over!");
             mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_OVER));
             return;
         }
@@ -160,7 +168,7 @@ public class KSCUpdateService extends Service {
             mCurUpdateInfo = mUpdateList.get(0);
             mDownloadPath = KSCStorageUtils.getDownloadDir(mCurUpdateInfo.getSize());
             if (mDownloadPath == null) {
-                KSCLog.e("Download File Failed, Download Space is null");
+                KSCLog.e(TAG, "Download File Failed, Download Space is null");
                 moveToNext();
                 return;
             }
@@ -171,14 +179,14 @@ public class KSCUpdateService extends Service {
             if (!file.exists()) {
                 if (!file.getParentFile().exists()) {
                     if (!file.getParentFile().mkdirs()) {
-                        KSCLog.e("mkdirs dir " + file.getParentFile().getName() + " failed!");
+                        KSCLog.e(TAG, "mkdirs dir " + file.getParentFile().getName() + " failed!");
                         moveToNext();
                         return;
                     }
                 }
                 try {
                     if (!file.createNewFile()) {
-                        KSCLog.e("create file " + file.getName() + " failed!");
+                        KSCLog.e(TAG, "create file " + file.getName() + " failed!");
                         moveToNext();
                         return;
                     }
@@ -204,12 +212,12 @@ public class KSCUpdateService extends Service {
     }
 
     private void startDownloadFile() {
-        final HttpRequestParam requestParam = new HttpRequestParam(mCurUpdateInfo.getUrl());
+        HttpRequestParam requestParam = new HttpRequestParam(mCurUpdateInfo.getUrl());
         requestParam.setDownloadPath(mDownloadPath);
         mCurThread = HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(HttpResponse response) {
-                KSCLog.d("download file success, code: " + response.getCode() + ", msg: " + response.getBodyString());
+                KSCLog.d(TAG, "download file success, code: " + response.getCode() + ", msg: " + response.getBodyString());
                 mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_DOWNLOAD_FINISH));
             }
         }, new HttpErrorListener() {
@@ -231,9 +239,9 @@ public class KSCUpdateService extends Service {
         }
         boolean delete = file.delete();
         if (delete) {
-            KSCLog.d("delete tmp file success!");
+            KSCLog.d(TAG, "delete tmp file success!");
         } else {
-            KSCLog.d("delete tmp file fail!");
+            KSCLog.d(TAG, "delete tmp file fail!");
         }
     }
 
@@ -261,7 +269,7 @@ public class KSCUpdateService extends Service {
                 mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                 mProgressDialog.setCanceledOnTouchOutside(false);
                 mProgressDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-                mProgressDialog.setButton(ProgressDialog.BUTTON_POSITIVE, "后台下载", new DialogInterface.OnClickListener() {
+                mProgressDialog.setButton(ProgressDialog.BUTTON_POSITIVE, KSCUpdateKeyCode.KEY_PROCESS_TEXT_BACKGROUND, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         mProgressDialog.cancel();
@@ -271,7 +279,7 @@ public class KSCUpdateService extends Service {
                 if (!isForceUpdate) {
                     mProgressDialog.setCancelable(true);
                     mProgressDialog.setCanceledOnTouchOutside(true);
-                    mProgressDialog.setButton(ProgressDialog.BUTTON_NEGATIVE, "取消更新", new DialogInterface.OnClickListener() {
+                    mProgressDialog.setButton(ProgressDialog.BUTTON_NEGATIVE, KSCUpdateKeyCode.KEY_PROCESS_TEXT_CANCEL, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             mProgressDialog.cancel();
@@ -319,17 +327,16 @@ public class KSCUpdateService extends Service {
         if (file.exists()) {
             String md5 = KSCMD5Utils.getFileMD5(file);
             if (!mCurUpdateInfo.getMD5().equals(md5)) {
-                KSCLog.w("update file " + filePath + ", md5 error!");
+                KSCLog.w(TAG, "update file " + filePath + ", md5 error!");
                 mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_ERROR, 0, 0, mCurUpdateInfo.getName()));
                 moveToNext();
                 return;
             }
         }
-        if (mCurUpdateInfo.getType().equals("Full")) {
-            mThreadHandler.post(installApk(mContext, file, mCurUpdateInfo.getName()));
-        } else if (mCurUpdateInfo.getType().equals("Patch")) {
-            PatchClient.loadLib();
-            mThreadHandler.post(patchClient(mContext, filePath, mCurUpdateInfo.getName()));
+        if (mCurUpdateInfo.getType().equals(KSCUpdateKeyCode.KEY_FILE_TYPE_FULL)) {
+            installApk(mContext, file, mCurUpdateInfo.getName());
+        } else if (mCurUpdateInfo.getType().equals(KSCUpdateKeyCode.KEY_FILE_TYPE_DIFF)) {
+            patchClient(mContext, filePath, mCurUpdateInfo.getName());
         } else {
             mThreadHandler.post(unZipResourceFile(file, mUpdateResourcePath, mCurUpdateInfo.getName()));
         }
@@ -342,26 +349,22 @@ public class KSCUpdateService extends Service {
      * @param context 上下文
      * @param file    目标APK文件
      */
-    private Runnable installApk(final Context context, final File file, final String name) {
-        return new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent();
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
-                context.startActivity(intent);
-                mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_FINISH, name));
-                mServiceHandler.sendMessage(mServiceHandler.obtainMessage(0));
-            }
-        };
+    private void installApk(final Context context, final File file, final String name) {
+        Intent intent = new Intent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+        context.startActivity(intent);
+        mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_FINISH, name));
+        mServiceHandler.sendMessage(mServiceHandler.obtainMessage(0));
     }
 
-    private Runnable patchClient(final Context context, final String filePath, final String name) {
-        return new Runnable() {
+    private void patchClient(final Context context, final String filePath, final String name) {
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
             @Override
             public void run() {
-                String path = Environment.getExternalStorageDirectory() + File.separator + "new.apk";
+                String path = Environment.getExternalStorageDirectory() + File.separator + Environment.DIRECTORY_DOWNLOADS + File.separator + KSCPackageUtils.getPackageName(context) + ".apk";
                 int result = PatchClient.applyPatch(mContext.getApplicationContext(), path, filePath);
                 if (result == 0) {
                     clearCache();
@@ -372,12 +375,11 @@ public class KSCUpdateService extends Service {
                         mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_ERROR, 0, 0, mCurUpdateInfo.getName()));
                     }
                 } else {
-                    KSCLog.w("patch file " + filePath + ", patch fail, result=" + result);
+                    KSCLog.w(TAG, "patch file " + filePath + ", patch fail, result=" + result);
                     mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_ERROR, 0, 0, mCurUpdateInfo.getName()));
                 }
-                mServiceHandler.sendMessage(mServiceHandler.obtainMessage(0));
             }
-        };
+        });
     }
 
     /**
@@ -399,12 +401,12 @@ public class KSCUpdateService extends Service {
                     byte[] buf = new byte[BUF_SIZE];
                     while (zList.hasMoreElements()) {
                         zipEntry = (ZipEntry) zList.nextElement();
-                        KSCLog.d("unzipFile: " + "zipEntry.name = " + zipEntry.getName());
+                        KSCLog.d(TAG, "unzipFile: " + "zipEntry.name = " + zipEntry.getName());
                         if (zipEntry.isDirectory()) {
                             String tDir = destDir + zipEntry.getName();
                             tDir = tDir.trim();
                             tDir = new String(tDir.getBytes("8859_1"), "GB2312");
-                            KSCLog.d("unzipFile: " + "destDir : " + tDir);
+                            KSCLog.d(TAG, "unzipFile: " + "destDir : " + tDir);
                             File file = new File(tDir);
                             if (!file.exists()) {
                                 file.mkdirs();
@@ -424,7 +426,7 @@ public class KSCUpdateService extends Service {
                     if (srcFile.exists()) {
                         srcFile.delete();
                     }
-                    KSCLog.d("unzipFile: " + srcFile + " is finish.");
+                    KSCLog.d(TAG, "unzipFile: " + srcFile + " is finish.");
                     mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_FINISH, name));
                     mServiceHandler.sendMessage(mServiceHandler.obtainMessage(0));
                 } catch (Exception e) {
@@ -446,7 +448,7 @@ public class KSCUpdateService extends Service {
     private File getRealFileName(String baseDir, String absFileName) throws UnsupportedEncodingException {
         String[] dirs = absFileName.split("/");
         String lastDir = baseDir;
-        if (dirs.length > 1) {
+        if (dirs.length > 0) {
             for (int i = 0; i < dirs.length - 1; i++) {
                 lastDir += (dirs[i] + File.separator);
                 File dir = new File(lastDir);
@@ -455,7 +457,7 @@ public class KSCUpdateService extends Service {
                 }
             }
             File ret = new File(lastDir, dirs[dirs.length - 1]);
-            KSCLog.d("unzipFile: " + "ret :" + ret);
+            KSCLog.d(TAG, "unzipFile: " + "ret :" + ret);
             return ret;
         } else {
             return new File(baseDir, absFileName);
@@ -490,9 +492,10 @@ public class KSCUpdateService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         mContext = this;
-        mUpdateList = intent.getParcelableArrayListExtra("data");
-        mUpdateResourcePath = intent.getStringExtra("resourcePath");
-        mIsUseSelf = intent.getBooleanExtra("useSelf", false);
+        Bundle bundle = intent.getBundleExtra(KSCUpdateKeyCode.KEY_BUNDLE);
+        mUpdateList = bundle.getParcelableArrayList(KSCUpdateKeyCode.KEY_LIST);
+        mUpdateResourcePath = intent.getStringExtra(KSCUpdateKeyCode.KEY_RESOURCE_PATH);
+        mIsUseSelf = intent.getBooleanExtra(KSCUpdateKeyCode.KEY_USE_SELF, false);
         mServiceHandler.sendMessage(mServiceHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_START));
         return super.onStartCommand(intent, flags, startId);
     }

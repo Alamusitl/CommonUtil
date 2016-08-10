@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.ksc.client.update.KSCUpdateKeyCode;
 import com.ksc.client.update.adapter.KSCUpdateViewAdapter;
 import com.ksc.client.update.entity.KSCUpdateInfo;
 
@@ -28,15 +29,13 @@ public class KSCUpdateDialogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        if (getIntent().hasExtra("updateList")) {
-            mDialog = new AlertDialog.Builder(this).create();
-            mDialog.getWindow().getAttributes().gravity = Gravity.CENTER;
-            mDialog.setCanceledOnTouchOutside(false);
-            mList = getIntent().getParcelableArrayListExtra("updateList");
-            showUpdatePromptDialog();
-        } else {
-            close();
-        }
+        mDialog = new AlertDialog.Builder(this).create();
+        mDialog.getWindow().getAttributes().gravity = Gravity.CENTER;
+        mDialog.setCanceledOnTouchOutside(false);
+        Bundle extras = getIntent().getBundleExtra(KSCUpdateKeyCode.KEY_BUNDLE);
+        extras.setClassLoader(KSCUpdateInfo.class.getClassLoader());
+        mList = extras.getParcelableArrayList(KSCUpdateKeyCode.KEY_LIST);
+        showUpdatePromptDialog();
     }
 
     /**
@@ -53,7 +52,7 @@ public class KSCUpdateDialogActivity extends AppCompatActivity {
             return;
         }
         KSCUpdateInfo updateInfo = mList.get(0);
-        if (updateInfo.getType().equals("full") || updateInfo.getType().equals("diff")) {
+        if (updateInfo.getType().equals(KSCUpdateKeyCode.KEY_FILE_TYPE_FULL) || updateInfo.getType().equals(KSCUpdateKeyCode.KEY_FILE_TYPE_DIFF)) {
             showDialogWithOne(mDialog, updateInfo);
             mList.remove(0);
         } else {
@@ -69,20 +68,22 @@ public class KSCUpdateDialogActivity extends AppCompatActivity {
      */
     private void showDialogWithOne(final AlertDialog dialog, final KSCUpdateInfo info) {
         dialog.setMessage(info.getUpdateMsg());
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE, "更新", new DialogInterface.OnClickListener() {
+        dialog.setButton(DialogInterface.BUTTON_POSITIVE, KSCUpdateKeyCode.KEY_DIALOG_TEXT_CONFIRM, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Intent intent = new Intent();
                 ArrayList<KSCUpdateInfo> list = new ArrayList<>();
                 list.add(info);
-                intent.putParcelableArrayListExtra("updateList", list);
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList(KSCUpdateKeyCode.KEY_LIST, list);
+                intent.putExtra(KSCUpdateKeyCode.KEY_BUNDLE, bundle);
                 setResult(RESULT_OK, intent);
                 dialog.cancel();
                 close();
             }
         });
         if (!info.getIsForce()) {
-            dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "取消", new DialogInterface.OnClickListener() {
+            dialog.setButton(DialogInterface.BUTTON_NEGATIVE, KSCUpdateKeyCode.KEY_DIALOG_TEXT_CANCEL, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     showUpdatePromptDialog();
@@ -121,7 +122,7 @@ public class KSCUpdateDialogActivity extends AppCompatActivity {
         mainLayout.addView(listView);
         dialog.setCancelable(false);
         dialog.setView(mainLayout);
-        dialog.setButton(DialogInterface.BUTTON_POSITIVE, "更新", new DialogInterface.OnClickListener() {
+        dialog.setButton(DialogInterface.BUTTON_POSITIVE, KSCUpdateKeyCode.KEY_DIALOG_TEXT_CONFIRM, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Intent intent = new Intent();
@@ -131,7 +132,9 @@ public class KSCUpdateDialogActivity extends AppCompatActivity {
                         readList.add(info);
                     }
                 }
-                intent.putParcelableArrayListExtra("updateList", readList);
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList(KSCUpdateKeyCode.KEY_LIST, readList);
+                intent.putExtra(KSCUpdateKeyCode.KEY_BUNDLE, bundle);
                 setResult(RESULT_OK, intent);
                 dialog.cancel();
                 close();
