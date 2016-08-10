@@ -42,17 +42,22 @@ public class KSCCommonService {
         String url = KSCSDKInfo.getInitUrl();
         url += "android/" + KSCSDKInfo.getAppId() + "/" + KSCPackageUtils.getVersionName(activity) + "/" + KSCSDKInfo.getChannelId() + "/" + KSCSDKInfo.getChannelVersion() + "/";
         KSCLog.d(url);
-        final HttpRequestParam requestParam = new HttpRequestParam(url);
+        final HttpRequestParam requestParam = new HttpRequestParam(url, HttpRequestParam.METHOD_POST);
         requestParam.setTimeOutMs(5 * 1000);
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(final HttpResponse response) {
                 KSCLog.i("get init param from server success, code :" + response.getCode() + " , data" + response.getBodyString());
+                if (response.getCode() != RESPONSE_SUCCESS) {
+                    callBack.onGetParamsResult(K_RESPONSE_FAIL, "response code error, code=" + response.getCode());
+                    return;
+                }
                 try {
                     final JSONObject data = new JSONObject(response.getBodyString());
                     int status = data.optInt("status");
                     if (status == RESPONSE_FAIL) {
-                        callBack.onGetParamsResult(K_RESPONSE_FAIL, "get channel param error, status = " + status);
+                        KSCLog.w("get channel param error, status = " + status);
+                        getLocalParams(activity, callBack);
                     }
                     if (status == RESPONSE_SUCCESS) {
                         activity.runOnUiThread(new Runnable() {
@@ -70,17 +75,21 @@ public class KSCCommonService {
             @Override
             public void onErrorResponse(HttpError error) {
                 KSCLog.w("get init param from server fail, error: " + error.getMessage());
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        String param = KSCSDKInfo.getChannelParam();
-                        if (TextUtils.isEmpty(param)) {
-                            callBack.onGetParamsResult(K_RESPONSE_FAIL, "get channel param error");
-                        } else {
-                            callBack.onGetParamsResult(K_RESPONSE_OK, param);
-                        }
-                    }
-                });
+                getLocalParams(activity, callBack);
+            }
+        });
+    }
+
+    private static void getLocalParams(Activity activity, final GetInitParamCallBack callBack) {
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                String param = KSCSDKInfo.getChannelParam();
+                if (TextUtils.isEmpty(param)) {
+                    callBack.onGetParamsResult(K_RESPONSE_FAIL, "get channel param error");
+                } else {
+                    callBack.onGetParamsResult(K_RESPONSE_OK, param);
+                }
             }
         });
     }

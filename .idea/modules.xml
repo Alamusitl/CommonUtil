@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AudioRecordDemo/AudioRecordDemo.iml" filepath="$PROJECT_DIR$/AudioRecordDemo/AudioRecordDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" filepath="$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-GPT-ScreenRecordDemo/KSC-GPT-ScreenRecordDemo.iml" filepath="$PROJECT_DIR$/KSC-GPT-ScreenRecordDemo/KSC-GPT-ScreenRecordDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KSCUpdateDemo/KSCUpdateDemo.iml" filepath="$PROJECT_DIR$/KSCUpdateDemo/KSCUpdateDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSYStreamerDemo/KSYStreamerDemo.iml" filepath="$PROJECT_DIR$/KSYStreamerDemo/KSYStreamerDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDKDemo/SDKDemo.iml" filepath="$PROJECT_DIR$/SDKDemo/SDKDemo.iml" />
