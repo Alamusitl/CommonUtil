@@ -20,21 +20,17 @@ android {
     }
 }
 
-def makeJar(String target, String dir) {
-    exec {
-        executable "jar"
-        args "cvf", target
-        args "-C", dir
-        args "", "."
-    }
+task makeCoreJar(type: Jar) {
+    delete 'build/libs/sdkcore.jar'
+    baseName 'sdkcore'
+    from('build/intermediates/classes/release')
+    exclude('android/')
+    exclude('com/ksc/client/util/')
+    exclude('com/ksc/client/core/BuildConfig.class', 'com/ksc/client/core/R.class')
 }
-
-task buildLib(dependsOn: ['build']) << {
-    makeJar("com.ksc.client.core.jar", "build/intermediates/classes/release")
-}
+makeCoreJar.dependsOn(build)
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:support-v4:24.0.0'
     compile project(':sdkutil')
 }

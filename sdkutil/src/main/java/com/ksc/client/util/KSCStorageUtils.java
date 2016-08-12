@@ -259,7 +259,7 @@ public class KSCStorageUtils {
         if (size > (RomAvailableSize - 100 * 1024 * 1024)) {
             return null;
         } else {
-            File dir = new File(Environment.getDataDirectory().getAbsolutePath() + File.separator + "Downloads");
+            File dir = new File(Environment.getDataDirectory().getAbsolutePath() + File.separator + Environment.DIRECTORY_DOWNLOADS);
             if (!dir.exists()) {
                 dir.mkdirs();
             }

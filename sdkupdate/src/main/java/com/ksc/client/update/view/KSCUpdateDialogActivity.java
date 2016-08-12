@@ -140,6 +140,7 @@ public class KSCUpdateDialogActivity extends AppCompatActivity {
                 close();
             }
         });
+        dialog.show();
     }
 
     private void close() {

@@ -172,9 +172,8 @@ public class KSCUpdateService extends Service {
                 moveToNext();
                 return;
             }
-            String[] list = mCurUpdateInfo.getUrl().split("/");
-            String name = list[list.length - 1];
-            mDownloadPath = mDownloadPath + File.separator + name;
+            String name = mCurUpdateInfo.getUrl().substring(mCurUpdateInfo.getUrl().lastIndexOf("/"), mCurUpdateInfo.getUrl().length());
+            mDownloadPath = mDownloadPath + name;
             File file = new File(mDownloadPath);
             if (!file.exists()) {
                 if (!file.getParentFile().exists()) {
@@ -359,6 +358,13 @@ public class KSCUpdateService extends Service {
         mServiceHandler.sendMessage(mServiceHandler.obtainMessage(0));
     }
 
+    /**
+     * 合并老的APK和差异文件
+     *
+     * @param context  context
+     * @param filePath 差异文件的路径
+     * @param name     更新包的名称
+     */
     private void patchClient(final Context context, final String filePath, final String name) {
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(new Runnable() {
@@ -399,6 +405,10 @@ public class KSCUpdateService extends Service {
                     ZipEntry zipEntry;
                     final int BUF_SIZE = 1024;
                     byte[] buf = new byte[BUF_SIZE];
+                    File outDir = new File(destDir);
+                    if (!outDir.exists()) {
+                        outDir.mkdirs();
+                    }
                     while (zList.hasMoreElements()) {
                         zipEntry = (ZipEntry) zList.nextElement();
                         KSCLog.d(TAG, "unzipFile: " + "zipEntry.name = " + zipEntry.getName());
