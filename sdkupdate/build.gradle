@@ -27,6 +27,15 @@ android {
     }
 }
 
+task copySo(type: Copy) {
+    copy{
+        from('build/intermediates/bundles/release/jni') {
+            include('**/*.so')
+        }
+        into('build/libs')
+    }
+}
+
 task makeUpdateJar(type: Jar) {
     delete 'build/libs/sdkupdate.jar'
     baseName 'sdkupdate'

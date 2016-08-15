@@ -30,8 +30,6 @@ import org.json.JSONObject;
 import java.io.File;
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by Alamusi on 2016/6/22.
@@ -135,11 +133,8 @@ public class KSCUpdate {
         mActivity = activity;
         mCheckUpdateCallBack = checkUpdateCallBack;
         String url = GET_VERSION_LIST_URL + "?" + "app_id=" + appId + "&full_id=" + KSCPackageUtils.getVersionCode(activity) + "&resource_id=" + resourceVersion + "&channel=" + channel + "&platform=android";
-        url = "http://192.168.158.168:8000/update/getverlist/?app_id=9bc6200b-f708-44bc-949f-c06d48d67f65&full_id=0000300000&resource_id=0000030000&channel=d2e4325a-4ee4-4af0-b2a0-c2dae1262b1e&platform=android";
+        url = "http://192.168.116.104:8080/springmvc/update/getverlist/?app_id=9bc6200b-f708-44bc-949f-c06d48d67f65&full_id=0000300000&resource_id=0000030000&channel=d2e4325a-4ee4-4af0-b2a0-c2dae1262b1e&platform=android";
         final HttpRequestParam requestParam = new HttpRequestParam(url);
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Authorization", "Token 920553d7631d619284b7d126544453015fc6eb34");
-        requestParam.setHeaders(headers);
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(HttpResponse response) {

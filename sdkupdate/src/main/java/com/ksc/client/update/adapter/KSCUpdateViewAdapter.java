@@ -65,7 +65,7 @@ public class KSCUpdateViewAdapter extends BaseAdapter {
 
         public SingleUpdateView(Context context) {
             super(context);
-            setOrientation(HORIZONTAL);
+            setOrientation(LinearLayout.HORIZONTAL);
             setGravity(Gravity.CENTER_VERTICAL);
             setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
             mTvUpdateMsg = new TextView(context);
@@ -73,8 +73,17 @@ public class KSCUpdateViewAdapter extends BaseAdapter {
             mCbForceState = new CheckBox(context);
             mCbForceState.setChecked(true);
             mCbForceState.setGravity(Gravity.CENTER);
-            addView(mTvUpdateMsg, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT));
-            addView(mCbForceState, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+
+            LayoutParams stateParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            mCbForceState.setLayoutParams(stateParams);
+            addView(mCbForceState, stateParams);
+
+            LayoutParams msgParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            msgParams.leftMargin = 10;
+            msgParams.rightMargin = 10;
+            msgParams.topMargin = 5;
+            msgParams.bottomMargin = 5;
+            addView(mTvUpdateMsg, msgParams);
         }
 
         public void setData(int index) {
