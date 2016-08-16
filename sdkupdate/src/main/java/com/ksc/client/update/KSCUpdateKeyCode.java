@@ -5,6 +5,9 @@ package com.ksc.client.update;
  */
 public class KSCUpdateKeyCode {
 
+    public static final String GET_VERSION_LIST_URL = "http://192.168.158.168:8000";
+    public static final String AES_PRIVATE_KEY = "";
+
     public static final String KEY_LIST = "update_list";
     public static final String KEY_BUNDLE = "bundle";
     public static final String KEY_RESOURCE_PATH = "resourcePath";
@@ -22,7 +25,6 @@ public class KSCUpdateKeyCode {
 
     public static final String KEY_TYPE_FORCE = "force";
     public static final String KEY_TYPE_FREE = "free";
-
 
     public static final String KEY_DIALOG_TEXT_CONFIRM = "确认";
     public static final String KEY_DIALOG_TEXT_CANCEL = "取消";

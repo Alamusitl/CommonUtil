@@ -36,8 +36,6 @@ import java.util.ArrayList;
  */
 public class KSCUpdate {
 
-    private static final String GET_VERSION_LIST_URL = "http://192.168.158.168:8000/update/getverlist/";
-
     private Activity mActivity;
     private CheckUpdateCallBack mCheckUpdateCallBack = null;
     private UpdateCallBack mUpdateCallBack = null;
@@ -132,8 +130,13 @@ public class KSCUpdate {
         }
         mActivity = activity;
         mCheckUpdateCallBack = checkUpdateCallBack;
-        String url = GET_VERSION_LIST_URL + "?" + "app_id=" + appId + "&full_id=" + KSCPackageUtils.getVersionCode(activity) + "&resource_id=" + resourceVersion + "&channel=" + channel + "&platform=android";
-        url = "http://192.168.116.104:8080/springmvc/update/getverlist/?app_id=9bc6200b-f708-44bc-949f-c06d48d67f65&full_id=0000300000&resource_id=0000030000&channel=d2e4325a-4ee4-4af0-b2a0-c2dae1262b1e&platform=android";
+        String param = "app_id=" + appId + "&full_id=" + KSCPackageUtils.getVersionCode(activity) + "&resource_id=" + resourceVersion + "&channel=" + channel + "&platform=android";
+        String encryptParam = KSCHelpUtils.encodeParam(param, KSCUpdateKeyCode.AES_PRIVATE_KEY);
+        if (encryptParam == null) {
+            mCheckUpdateCallBack.onError("check update param error, try again!");
+            return;
+        }
+        String url = KSCUpdateKeyCode.GET_VERSION_LIST_URL + "/springmvc/update/getverlist/?r=" + encryptParam;
         final HttpRequestParam requestParam = new HttpRequestParam(url);
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override

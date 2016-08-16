@@ -2,28 +2,12 @@ package com.sdk;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
     public static void main(String[] argv) throws IOException {
         System.out.println("Main");
         delete();
-//        test();
-    }
-
-    private static void test() {
-        List<String> list = new ArrayList<>();
-        list.add("1");
-        list.add("2");
-        System.out.println(list.size());
-        System.out.println(list.get(0));
-        list.remove(0);
-        System.out.println(list.size());
-        System.out.println(list.get(0));
-        list.remove(0);
-        System.out.println(list.size());
     }
 
     private static void delete() {
