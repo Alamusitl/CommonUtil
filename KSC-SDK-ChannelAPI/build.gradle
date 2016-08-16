@@ -32,5 +32,5 @@ makeCoreJar.dependsOn(build)
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':sdkutil')
+    compile project(':KSC-SDK-Util')
 }

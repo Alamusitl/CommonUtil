@@ -9,11 +9,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/AudioRecordDemo" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
             <option value="$PROJECT_DIR$/KSC-Channel-Demo" />
-            <option value="$PROJECT_DIR$/KSC-GPT-ScreenRecordDemo" />
+            <option value="$PROJECT_DIR$/KSC-SDK-Analytics" />
+            <option value="$PROJECT_DIR$/KSC-SDK-AudioRecordDemo" />
+            <option value="$PROJECT_DIR$/KSC-SDK-ChannelAPI" />
             <option value="$PROJECT_DIR$/KSC-SDK-MobileAds" />
+            <option value="$PROJECT_DIR$/KSC-SDK-ScreenRecordDemo" />
+            <option value="$PROJECT_DIR$/KSC-SDK-Update" />
+            <option value="$PROJECT_DIR$/KSC-SDK-Util" />
             <option value="$PROJECT_DIR$/KSC-Update-Demo" />
             <option value="$PROJECT_DIR$/KSYStreamerDemo" />
             <option value="$PROJECT_DIR$/SensorsAnalyticsSDK" />
@@ -29,20 +33,20 @@
             <option value="$PROJECT_DIR$/sdk-wandoujia-5.1.2" />
             <option value="$PROJECT_DIR$/sdk-xiaomi-4.6.11" />
             <option value="$PROJECT_DIR$/sdk-yingyonghui-6.2.0" />
-            <option value="$PROJECT_DIR$/sdkanalytics" />
-            <option value="$PROJECT_DIR$/sdkcore" />
-            <option value="$PROJECT_DIR$/sdkupdate" />
-            <option value="$PROJECT_DIR$/sdkutil" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/AudioRecordDemo" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
             <option value="$PROJECT_DIR$/KSC-Channel-Demo" />
-            <option value="$PROJECT_DIR$/KSC-GPT-ScreenRecordDemo" />
+            <option value="$PROJECT_DIR$/KSC-SDK-Analytics" />
+            <option value="$PROJECT_DIR$/KSC-SDK-AudioRecordDemo" />
+            <option value="$PROJECT_DIR$/KSC-SDK-ChannelAPI" />
             <option value="$PROJECT_DIR$/KSC-SDK-MobileAds" />
+            <option value="$PROJECT_DIR$/KSC-SDK-ScreenRecordDemo" />
+            <option value="$PROJECT_DIR$/KSC-SDK-Update" />
+            <option value="$PROJECT_DIR$/KSC-SDK-Util" />
             <option value="$PROJECT_DIR$/KSC-Update-Demo" />
             <option value="$PROJECT_DIR$/KSYStreamerDemo" />
             <option value="$PROJECT_DIR$/SensorsAnalyticsSDK" />
@@ -58,10 +62,6 @@
             <option value="$PROJECT_DIR$/sdk-wandoujia-5.1.2" />
             <option value="$PROJECT_DIR$/sdk-xiaomi-4.6.11" />
             <option value="$PROJECT_DIR$/sdk-yingyonghui-6.2.0" />
-            <option value="$PROJECT_DIR$/sdkanalytics" />
-            <option value="$PROJECT_DIR$/sdkcore" />
-            <option value="$PROJECT_DIR$/sdkupdate" />
-            <option value="$PROJECT_DIR$/sdkutil" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -22,10 +22,7 @@ public class KSCNetUtils {
             return false;
         }
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.getState() == NetworkInfo.State.CONNECTED) {
-            return true;
-        }
-        return false;
+        return networkInfo != null && networkInfo.getState() == NetworkInfo.State.CONNECTED;
     }
 
     /**

@@ -132,10 +132,7 @@ public class KSCDeviceUtils {
             return false;
         }
 
-        if (!Build.MODEL.toLowerCase(Locale.US).contains("sdk")) {
-            return false;
-        }
+        return Build.MODEL.toLowerCase(Locale.US).contains("sdk");
 
-        return true;
     }
 }

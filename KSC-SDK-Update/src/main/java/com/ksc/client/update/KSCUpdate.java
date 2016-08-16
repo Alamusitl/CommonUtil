@@ -107,7 +107,7 @@ public class KSCUpdate {
      * @param useSelf             是否使用自己的更新视图
      * @param checkUpdateCallBack 检查更新回调
      */
-    public void checkUpdate(final Activity activity, String appId, String channel, String resourceVersion, final boolean useSelf, CheckUpdateCallBack checkUpdateCallBack) {
+    public void checkUpdate(final Activity activity, String appId, String channel, final String resourceVersion, final boolean useSelf, CheckUpdateCallBack checkUpdateCallBack) {
         if (activity == null) {
             KSCLog.e("KSCUpdate check param activity is null, please check!");
             return;
@@ -143,7 +143,7 @@ public class KSCUpdate {
             public void onResponse(HttpResponse response) {
                 Message message = mHandler.obtainMessage();
                 if (response.getCode() == HttpURLConnection.HTTP_OK) {
-                    String versionList = response.getBodyString();
+                    String versionList = KSCHelpUtils.decodeParam(response.getBodyString(), KSCUpdateKeyCode.AES_PRIVATE_KEY);
                     try {
                         JSONObject list = new JSONObject(versionList);
                         if (list.length() == 0) {
