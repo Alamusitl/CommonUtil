@@ -3,14 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" filepath="$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KSC-AudioRecord-Demo/KSC-SDK-AudioRecordDemo.iml" filepath="$PROJECT_DIR$/KSC-AudioRecord-Demo/KSC-SDK-AudioRecordDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-Channel-Demo/KSC-Channel-Demo.iml" filepath="$PROJECT_DIR$/KSC-Channel-Demo/KSC-Channel-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Analytics/KSC-SDK-Analytics.iml" filepath="$PROJECT_DIR$/KSC-SDK-Analytics/KSC-SDK-Analytics.iml" />
-      <module fileurl="file://$PROJECT_DIR$/KSC-SDK-AudioRecordDemo/KSC-SDK-AudioRecordDemo.iml" filepath="$PROJECT_DIR$/KSC-SDK-AudioRecordDemo/KSC-SDK-AudioRecordDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-ChannelAPI/KSC-SDK-ChannelAPI.iml" filepath="$PROJECT_DIR$/KSC-SDK-ChannelAPI/KSC-SDK-ChannelAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-MobileAds/KSC-SDK-MobileAds.iml" filepath="$PROJECT_DIR$/KSC-SDK-MobileAds/KSC-SDK-MobileAds.iml" />
-      <module fileurl="file://$PROJECT_DIR$/KSC-SDK-ScreenRecordDemo/KSC-SDK-ScreenRecordDemo.iml" filepath="$PROJECT_DIR$/KSC-SDK-ScreenRecordDemo/KSC-SDK-ScreenRecordDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Update/KSC-SDK-Update.iml" filepath="$PROJECT_DIR$/KSC-SDK-Update/KSC-SDK-Update.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" filepath="$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KSC-ScreenRecord-Demo/KSC-SDK-ScreenRecordDemo.iml" filepath="$PROJECT_DIR$/KSC-ScreenRecord-Demo/KSC-SDK-ScreenRecordDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-Update-Demo/KSC-Update-Demo.iml" filepath="$PROJECT_DIR$/KSC-Update-Demo/KSC-Update-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSYStreamerDemo/KSYStreamerDemo.iml" filepath="$PROJECT_DIR$/KSYStreamerDemo/KSYStreamerDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
