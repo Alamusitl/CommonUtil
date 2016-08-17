@@ -1,7 +1,5 @@
 package com.ksc.client.toolbox;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.Map;
 
 /**
@@ -18,7 +16,7 @@ public class HttpRequestParam {
     private String mDownloadPath;
     private int mMethod;
     private int mTimeOutMs;
-    private Map<String, String> mPostParams;
+    private String mPostParams;
     private Map<String, String> mHeaders;
 
     public HttpRequestParam(String url) {
@@ -50,14 +48,14 @@ public class HttpRequestParam {
     }
 
     public byte[] getBody() {
-        Map<String, String> params = mPostParams;
-        if (params != null && params.size() > 0) {
-            return encodeParameter(params, getParamsEncoding());
+        if (mPostParams == null) {
+            return null;
+        } else {
+            return mPostParams.getBytes();
         }
-        return null;
     }
 
-    public void setBody(Map<String, String> params) {
+    public void setBody(String params) {
         mPostParams = params;
     }
 
@@ -67,21 +65,6 @@ public class HttpRequestParam {
 
     public void setHeaders(Map<String, String> headers) {
         mHeaders = headers;
-    }
-
-    private byte[] encodeParameter(Map<String, String> params, String paramsEncoding) {
-        try {
-            StringBuilder encodedParams = new StringBuilder();
-            for (Map.Entry<String, String> entry : params.entrySet()) {
-                encodedParams.append(URLEncoder.encode(entry.getKey(), paramsEncoding));
-                encodedParams.append("=");
-                encodedParams.append(URLEncoder.encode(entry.getValue(), paramsEncoding));
-                encodedParams.append("&");
-            }
-            return encodedParams.toString().getBytes(paramsEncoding);
-        } catch (UnsupportedEncodingException e) {
-            throw new RuntimeException("Encoding not supported: " + paramsEncoding, e);
-        }
     }
 
     private String getParamsEncoding() {
