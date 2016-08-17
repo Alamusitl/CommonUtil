@@ -77,7 +77,7 @@ public class KSCSDK implements ISDK {
         KSCCommonService.getInitParams(activity, new GetInitParamCallBack() {
             @Override
             public void onGetParamsResult(int code, final String result) {
-                if (code == KSCCommonService.K_RESPONSE_OK) {
+                if (code == KSCStatusCode.SUCCESS) {
                     KSCLog.i("get channel param success, begin channel init");
                     if (getChannelImpl() != null) {
                         activity.runOnUiThread(new Runnable() {
@@ -97,7 +97,7 @@ public class KSCSDK implements ISDK {
                     } else {
                         printErrorLogNonChannelImpl();
                     }
-                } else if (code == KSCCommonService.K_RESPONSE_FAIL) {
+                } else if (code == KSCStatusCode.INIT_FAIL) {
                     KSCLog.i("get channel param fail, init sdk fail!");
                     mUserCallBack.onInitFail(KSCStatusCode.INIT_FAIL, KSCStatusCode.getErrorMsg(KSCStatusCode.INIT_FAIL));
                 }
@@ -174,8 +174,8 @@ public class KSCSDK implements ISDK {
         KSCCommonService.createOrder(activity, payInfo, new GetOrderCallBack() {
             @Override
             public void onCreateOrderResult(int code, String msg, final OrderResponse response) {
-                if (code != KSCCommonService.K_RESPONSE_OK) {
-                    mUserCallBack.onPayFail(payInfo, KSCStatusCode.PAY_FAILED_CREATE_ORDER_FAILED, msg);
+                if (code != KSCStatusCode.SUCCESS) {
+                    mUserCallBack.onPayFail(payInfo, code, msg);
                     return;
                 }
                 if (getChannelImpl() != null) {

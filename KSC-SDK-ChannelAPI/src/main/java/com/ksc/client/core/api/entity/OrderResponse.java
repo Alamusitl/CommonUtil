@@ -6,14 +6,13 @@ package com.ksc.client.core.api.entity;
 public class OrderResponse {
 
     private String mOrder;// KSC 订单号
-    private String mAmount;// 商品价格
+    private String mAmount;// 商品价格，单位为分
     private String mProductId;// 商品ID
     private String mProductName;// 商品名称
     private String mProductDesc;// 商品描述
     private String mCustomInfo;// 自定义信息
     private String mSubmitTime;// 订单创建时间
-    private String mSign;// 签名
-
+    private String mAccessKey;// 签名方法
 
     public String getKscOrder() {
         return mOrder;
@@ -71,14 +70,13 @@ public class OrderResponse {
         this.mSubmitTime = submitTime;
     }
 
-    public String getSign() {
-        return mSign;
+    public String getAccessKey() {
+        return mAccessKey;
     }
 
-    public void setSign(String sign) {
-        this.mSign = sign;
+    public void setAccessKey(String accessKey) {
+        mAccessKey = accessKey;
     }
-
 
     @Override
     public String toString() {
@@ -90,7 +88,7 @@ public class OrderResponse {
                 ", mProductDesc='" + mProductDesc + '\'' +
                 ", mCustomInfo='" + mCustomInfo + '\'' +
                 ", mSubmitTime='" + mSubmitTime + '\'' +
-                ", mSign='" + mSign + '\'' +
+                ", mAccessKey='" + mAccessKey + '\'' +
                 '}';
     }
 }

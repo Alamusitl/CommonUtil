@@ -36,8 +36,8 @@ public class ChannelImpl extends ChannelBase {
     @Override
     public void init(final Activity activity, AppInfo appInfo, JSONObject channelInfo) {
         try {
-            int gameId = Integer.parseInt(channelInfo.optString("gameId"));
-            int cpId = Integer.parseInt(channelInfo.optString("cpId"));
+            int gameId = channelInfo.optInt("gameId");
+            int cpId = channelInfo.optInt("cpId");
             UCOrientation ucOrientation;
             if (appInfo.getScreenOrientation() == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
                 ucOrientation = UCOrientation.PORTRAIT;
@@ -144,7 +144,7 @@ public class ChannelImpl extends ChannelBase {
         paymentInfo.setServerId(0);
         paymentInfo.setRoleId(payInfo.getRoleId());
         paymentInfo.setRoleName(payInfo.getRoleName());
-        paymentInfo.setAmount(Float.parseFloat(response.getAmount()));
+        paymentInfo.setAmount(Float.parseFloat(response.getAmount()) / 100);
         paymentInfo.setCustomInfo(response.getCustomInfo());
         paymentInfo.setTransactionNumCP(response.getKscOrder());
         try {

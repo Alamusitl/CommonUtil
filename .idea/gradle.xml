@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Baidu-AD-Demo" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
             <option value="$PROJECT_DIR$/KSC-AudioRecord-Demo" />
             <option value="$PROJECT_DIR$/KSC-Channel-Demo" />
@@ -38,6 +39,7 @@
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Baidu-AD-Demo" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
             <option value="$PROJECT_DIR$/KSC-AudioRecord-Demo" />
             <option value="$PROJECT_DIR$/KSC-Channel-Demo" />

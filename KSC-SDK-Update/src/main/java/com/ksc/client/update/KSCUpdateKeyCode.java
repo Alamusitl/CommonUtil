@@ -6,7 +6,7 @@ package com.ksc.client.update;
 public class KSCUpdateKeyCode {
 
     public static final String GET_VERSION_LIST_URL = "http://192.168.116.104:8080";
-    public static final String AES_PRIVATE_KEY = "";
+    public static final String AES_PRIVATE_KEY = "5dr7WEb2fo20ZF9U";
 
     public static final String KEY_LIST = "update_list";
     public static final String KEY_BUNDLE = "bundle";
