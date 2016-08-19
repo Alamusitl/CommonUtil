@@ -1,0 +1,133 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.baidu.mobads.demo.main">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <meta-data
+            android:name="BaiduMobAd_APP_ID"
+            android:value="e866cfb0"/>
+
+        <!-- for baidu xadsdk internal web-browser -->
+        <!-- 非信息广告必须添加 -->
+        <activity
+            android:name="com.baidu.mobads.AppActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <!-- 信息流广告必须添加 -->
+        <activity
+            android:name="com.baidu.mobad.feeds.BaiduActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"/>
+
+        <!-- for standard testing -->
+        <activity
+            android:name="com.baidu.mobads.demo.main.RSplashActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.baidu.mobads.demo.main.BaiduSDKDemo"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="com.baidu.mobads.demo.main.BannerAdActivity"
+            android:label="@string/simple_coding"/>
+        <activity
+            android:name="com.baidu.mobads.demo.main.InterstitialAdActivity"
+            android:label="@string/simple_inters"/>
+        <activity
+            android:name="com.baidu.mobads.demo.main.IconsAdActivity"
+            android:label="@string/simple_icon"/>
+        <activity
+            android:name="com.baidu.mobads.demo.main.RecommendAdActivity"
+            android:label="@string/simple_recmad">
+        </activity>
+        <activity
+            android:name="com.baidu.mobads.demo.main.VideoAdActivity"
+            android:label="@string/simple_video"/>
+        <activity
+            android:name=".InterstitialAdForVideoAppActivity"
+            android:label="@string/simple_inters_for_video"/>
+        <activity
+            android:name="com.baidu.mobads.demo.main.feeds.MainActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="com.baidu.mobads.demo.main.feeds.ListViewActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="com.baidu.mobads.demo.main.feeds.NativeOriginActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name="com.baidu.mobads.demo.main.feeds.VideoFeedActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme.Full">
+        </activity>
+        <activity
+            android:name="com.baidu.mobads.demo.main.feeds.HTMLFeedLunBoActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme.Full">
+        </activity>
+        <activity
+            android:name="com.baidu.mobads.demo.main.feeds.HTMLFeedChuChuangActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme.Full">
+        </activity>
+
+        <activity
+            android:name="com.baidu.mobads.demo.main.basevideo.PrerollActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <!-- for unit test -->
+        <activity
+            android:name="com.baidu.mobads.demo.main.XAdUnitTestActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+
+        <activity
+            android:name="com.baidu.mobads.demo.main.CpuAdActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.baidu.mobads.demo.main.DubaoActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+
+</manifest>

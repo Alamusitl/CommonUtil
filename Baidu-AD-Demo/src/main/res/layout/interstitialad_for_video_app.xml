@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#fdfefa">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <EditText
+                android:id="@+id/interstitial_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="width"
+                android:inputType="number"
+                android:text="600"/>
+
+            <EditText
+                android:id="@+id/interstitial_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="height"
+                android:inputType="number"
+                android:text="900"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/interstitial_linear"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"/>
+
+        <RelativeLayout
+            android:id="@+id/parent_interstitial"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

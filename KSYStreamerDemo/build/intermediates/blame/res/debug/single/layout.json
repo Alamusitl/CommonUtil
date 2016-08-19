@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\layout\\camera_titlebar.xml",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\layout\\camera_titlebar.xml"
+    },
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\layout\\demo_activity.xml",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\layout\\demo_activity.xml"
+    },
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\layout\\camera_activity.xml",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\layout\\camera_activity.xml"
+    },
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\layout\\camera_bottombar.xml",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\layout\\camera_bottombar.xml"
+    }
+]

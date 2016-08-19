@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/main_layout"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/container_of_content_video_player"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/green">
+
+        <com.baidu.mobads.demo.main.basevideo.BDVideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/baiduAdHolderView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"/>
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/information_of_this_content_video"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/ivory"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pause_resume_ad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pause-resume"/>
+
+            <Button
+                android:id="@+id/resize_ad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="resize"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/content_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="话说孙悟空护送唐三藏去西天取经，半路却和牛魔王合谋要杀害唐三藏，并偷走了月光宝盒。观音大士闻讯赶到，欲除掉孙悟空以免危害苍生。唐三藏慈悲为怀，愿意一命赔一命，观音遂令悟空五百年后投胎做人，赎其罪孽。"/>
+
+    </LinearLayout>
+
+</LinearLayout>

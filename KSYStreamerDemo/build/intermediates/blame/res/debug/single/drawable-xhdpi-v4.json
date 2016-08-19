@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\record_switch_camera_normal.png",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\drawable-xhdpi\\record_switch_camera_normal.png"
+    },
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\record_switch_camera_disable.png",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\drawable-xhdpi\\record_switch_camera_disable.png"
+    },
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\record_flash_disable.png",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\drawable-xhdpi\\record_flash_disable.png"
+    },
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\record_flash_normal.png",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\drawable-xhdpi\\record_flash_normal.png"
+    },
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\record_exit_normal.png",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\drawable-xhdpi\\record_exit_normal.png"
+    },
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\record_flash_highlighted.png",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\drawable-xhdpi\\record_flash_highlighted.png"
+    },
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\record_exitsure_normal.png",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\drawable-xhdpi\\record_exitsure_normal.png"
+    },
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_launcher.png",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\record_exit_disable.png",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\drawable-xhdpi\\record_exit_disable.png"
+    },
+    {
+        "merged": "E:\\MyApplication\\KSYStreamerDemo\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\record_switch_camera_highlighted.png",
+        "source": "E:\\MyApplication\\KSYStreamerDemo\\res\\drawable-xhdpi\\record_switch_camera_highlighted.png"
+    }
+]
