@@ -10,9 +10,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Baidu-AD-Demo" />
+            <option value="$PROJECT_DIR$/CircleTextProgressBar" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
             <option value="$PROJECT_DIR$/KSC-AudioRecord-Demo" />
             <option value="$PROJECT_DIR$/KSC-Channel-Demo" />
+            <option value="$PROJECT_DIR$/KSC-MobileAds-Demo" />
             <option value="$PROJECT_DIR$/KSC-SDK-Analytics" />
             <option value="$PROJECT_DIR$/KSC-SDK-ChannelAPI" />
             <option value="$PROJECT_DIR$/KSC-SDK-MobileAds" />
@@ -40,9 +42,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Baidu-AD-Demo" />
+            <option value="$PROJECT_DIR$/CircleTextProgressBar" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
             <option value="$PROJECT_DIR$/KSC-AudioRecord-Demo" />
             <option value="$PROJECT_DIR$/KSC-Channel-Demo" />
+            <option value="$PROJECT_DIR$/KSC-MobileAds-Demo" />
             <option value="$PROJECT_DIR$/KSC-SDK-Analytics" />
             <option value="$PROJECT_DIR$/KSC-SDK-ChannelAPI" />
             <option value="$PROJECT_DIR$/KSC-SDK-MobileAds" />

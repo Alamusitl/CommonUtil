@@ -3,9 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Baidu-AD-Demo/Baidu-AD-Demo.iml" filepath="$PROJECT_DIR$/Baidu-AD-Demo/Baidu-AD-Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CircleTextProgressBar/CircleTextProgressBar.iml" filepath="$PROJECT_DIR$/CircleTextProgressBar/CircleTextProgressBar.iml" />
       <module fileurl="file://$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" filepath="$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-AudioRecord-Demo/KSC-AudioRecord-Demo.iml" filepath="$PROJECT_DIR$/KSC-AudioRecord-Demo/KSC-AudioRecord-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-Channel-Demo/KSC-Channel-Demo.iml" filepath="$PROJECT_DIR$/KSC-Channel-Demo/KSC-Channel-Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KSC-MobileAds-Demo/KSC-MobileAds-Demo.iml" filepath="$PROJECT_DIR$/KSC-MobileAds-Demo/KSC-MobileAds-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Analytics/KSC-SDK-Analytics.iml" filepath="$PROJECT_DIR$/KSC-SDK-Analytics/KSC-SDK-Analytics.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-ChannelAPI/KSC-SDK-ChannelAPI.iml" filepath="$PROJECT_DIR$/KSC-SDK-ChannelAPI/KSC-SDK-ChannelAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-MobileAds/KSC-SDK-MobileAds.iml" filepath="$PROJECT_DIR$/KSC-SDK-MobileAds/KSC-SDK-MobileAds.iml" />

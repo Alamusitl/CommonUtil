@@ -133,7 +133,7 @@ public class KSCUpdate {
         String param = "app_id=" + appId + "&full_id=" + KSCPackageUtils.getVersionCode(activity) + "&resource_id=" + resourceVersion + "&channel=" + channel + "&platform=android";
         String encryptParam = KSCHelpUtils.encodeParam(param, KSCUpdateKeyCode.AES_PRIVATE_KEY);
         if (encryptParam == null) {
-            mCheckUpdateCallBack.onError("check update param error, try again!");
+            mCheckUpdateCallBack.onError("checkUpdate encrypt param error, try again!");
             return;
         }
         String url = KSCUpdateKeyCode.GET_VERSION_LIST_URL + "/springmvc/update/getverlist/?r=" + encryptParam;
@@ -146,19 +146,22 @@ public class KSCUpdate {
                     String versionList = KSCHelpUtils.decodeParam(response.getBodyString(), KSCUpdateKeyCode.AES_PRIVATE_KEY);
                     try {
                         JSONObject list = new JSONObject(versionList);
-                        if (list.length() == 0) {
-                            message.what = KSCUpdateStatusCode.EVENT_UPDATE_NO_UPDATE;
-                        } else if (list.has("detail")) {
+                        if (list.has("detail")) {
                             message.what = KSCUpdateStatusCode.EVENT_UPDATE_CHECK_FAIL;
                             message.obj = list.optString("detail");
                         } else {
-                            message.what = KSCUpdateStatusCode.EVENT_UPDATE_HAS_UPDATE;
-                            if (!useSelf) {
-                                message.arg1 = 1;
+                            JSONArray result = list.optJSONArray("KSCUpdateKeyCode.KEY_VERSION_LIST");
+                            if (result.length() == 0) {
+                                message.what = KSCUpdateStatusCode.EVENT_UPDATE_NO_UPDATE;
                             } else {
-                                message.arg1 = 0;
+                                message.what = KSCUpdateStatusCode.EVENT_UPDATE_HAS_UPDATE;
+                                if (!useSelf) {
+                                    message.arg1 = 1;
+                                } else {
+                                    message.arg1 = 0;
+                                }
+                                message.obj = versionList;
                             }
-                            message.obj = versionList;
                         }
                     } catch (JSONException e) {
                         KSCLog.e("update response convert error, JSONException", e);
