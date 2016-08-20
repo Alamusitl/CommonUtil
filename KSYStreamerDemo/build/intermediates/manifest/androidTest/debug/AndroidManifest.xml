@@ -9,8 +9,8 @@
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.ksy.recordlib.demo"
-                     android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for com.ksy.recordlib.demo"/>
+                     android:handleProfiling="false"
+                     android:label="Tests for com.ksy.recordlib.demo"
+                     android:targetPackage="com.ksy.recordlib.demo"/>
 </manifest>

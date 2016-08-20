@@ -15,7 +15,6 @@
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" filepath="$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-ScreenRecord-Demo/KSC-ScreenRecord-Demo.iml" filepath="$PROJECT_DIR$/KSC-ScreenRecord-Demo/KSC-ScreenRecord-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-Update-Demo/KSC-Update-Demo.iml" filepath="$PROJECT_DIR$/KSC-Update-Demo/KSC-Update-Demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/KSYStreamerDemo/KSYStreamerDemo.iml" filepath="$PROJECT_DIR$/KSYStreamerDemo/KSYStreamerDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/SensorsAnalyticsSDK/SensorsAnalyticsSDK.iml" filepath="$PROJECT_DIR$/SensorsAnalyticsSDK/SensorsAnalyticsSDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdk-360-1.3.0_468/sdk-360-1.3.0_468.iml" filepath="$PROJECT_DIR$/sdk-360-1.3.0_468/sdk-360-1.3.0_468.iml" />
