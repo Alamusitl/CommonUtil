@@ -15,7 +15,6 @@
  */
 package com.yanzhenjie.countdownprogress;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -24,7 +23,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.os.Build;
 import android.support.annotation.ColorInt;
 import android.util.AttributeSet;
 import android.widget.TextView;
@@ -40,6 +38,14 @@ public class CircleTextProgressbar extends TextView {
      * View的显示区域。
      */
     final Rect bounds = new Rect();
+    /**
+     * 画笔。
+     */
+    private Paint mPaint = new Paint();
+    /**
+     * 进度条的矩形区域。
+     */
+    private RectF mArcRect = new RectF();
     /**
      * 外部轮廓的颜色。
      */
@@ -64,14 +70,6 @@ public class CircleTextProgressbar extends TextView {
      * 进度条的宽度。
      */
     private int progressLineWidth = 8;
-    /**
-     * 画笔。
-     */
-    private Paint mPaint = new Paint();
-    /**
-     * 进度条的矩形区域。
-     */
-    private RectF mArcRect = new RectF();
     /**
      * 进度。
      */
@@ -127,12 +125,6 @@ public class CircleTextProgressbar extends TextView {
 
     public CircleTextProgressbar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        initialize(context, attrs);
-    }
-
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public CircleTextProgressbar(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
         initialize(context, attrs);
     }
 
@@ -369,7 +361,7 @@ public class CircleTextProgressbar extends TextView {
         int deleteWidth = progressLineWidth + outLineWidth;
         mArcRect.set(bounds.left + deleteWidth / 2, bounds.top + deleteWidth / 2, bounds.right - deleteWidth / 2, bounds.bottom - deleteWidth / 2);
 
-        canvas.drawArc(mArcRect, 0, 360 * progress / 100, false, mPaint);
+        canvas.drawArc(mArcRect, -90, 360 * progress / 100, false, mPaint);
     }
 
     @Override

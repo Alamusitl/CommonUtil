@@ -1,14 +1,22 @@
 package com.ksc.client.ads.view;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
@@ -22,11 +30,57 @@ import java.io.IOException;
 public class KSCMobileAdActivity extends Activity {
 
     private static final String TAG = KSCMobileAdActivity.class.getSimpleName();
-
-    private View.OnClickListener mCloseClickListener = new View.OnClickListener() {
+    private final int VIDEO_PREPARED = 0;
+    private final int VIDEO_PLAYING = 1;
+    private final int VIDEO_PAUSE = 2;
+    private final int VIDEO_RESUME = 3;
+    private final int VIDEO_CLOSE = 4;
+    private final int VIDEO_COMPLETION = 5;
+    private RelativeLayout mRootView;
+    private ImageView mCloseView;
+    private ImageView mMuteView;
+    private KSCCountDownView mCountDownTimeView;
+    private KSCVideoView mMediaPlayer;
+    private WebView mLandingPage;
+    private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
-        public void onClick(View view) {
-            closeView();
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case VIDEO_PREPARED:
+                    refreshCountDownTimeView(msg.arg1, msg.arg2);
+                    break;
+                case VIDEO_PLAYING:
+                    if (((mMediaPlayer.getCurrentPosition() + 1000) / (float) mMediaPlayer.getDuration()) > (1 / (float) 3)) {
+                        showCloseView();
+                    }
+                    refreshCountDownTimeView(msg.arg1, msg.arg2);
+                    break;
+                case VIDEO_PAUSE:
+                    mMediaPlayer.pause();
+                    break;
+                case VIDEO_RESUME:
+                    mMediaPlayer.start();
+                    break;
+                case VIDEO_CLOSE:
+                    mMediaPlayer.stop();
+                    closeView();
+                    break;
+                case VIDEO_COMPLETION:
+                    showLandingPage();
+                    break;
+            }
+        }
+    };
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
         }
     };
 
@@ -36,28 +90,79 @@ public class KSCMobileAdActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        RelativeLayout rootView = new RelativeLayout(this);
-        addContentView(rootView, lp);
+        initView();
+        initListener();
 
-        KSCVideoView mediaPlayer = new KSCVideoView(this);
-        rootView.addView(mediaPlayer, lp);
+        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "test.mp4";
+        try {
+            mMediaPlayer.setVideoPath(path);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void initView() {
+        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        mRootView = new RelativeLayout(this);
+        addContentView(mRootView, lp);
+
+        mMediaPlayer = new KSCVideoView(this);
+        mRootView.addView(mMediaPlayer, lp);
 
         lp = new LayoutParams(100, 100);
-        ImageView viewClose = new ImageView(this);
-        viewClose.setId(KSCViewUtils.generateViewId());
+        mCloseView = new ImageView(this);
+        mCloseView.setId(KSCViewUtils.generateViewId());
         lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
         lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-        lp.setMargins(0, 15, 15, 0);
-        viewClose.setOnClickListener(mCloseClickListener);
-        viewClose.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, "ksc_controller_close.png"));
-        viewClose.setBackgroundColor(Color.WHITE);
-        rootView.addView(viewClose, lp);
+        lp.setMargins(0, 20, 20, 0);
+        mCloseView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, "ksc_controller_close.png"));
+        mCloseView.setBackgroundColor(Color.TRANSPARENT);
+        mCloseView.setVisibility(View.GONE);
+        mRootView.addView(mCloseView, lp);
 
-        mediaPlayer.setVideoPlayCallBack(new KSCVideoPlayCallBack() {
+        lp = new LayoutParams(100, 100);
+        mCountDownTimeView = new KSCCountDownView(this);
+        mCountDownTimeView.setId(KSCViewUtils.generateViewId());
+        lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        lp.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+        lp.setMargins(20, 0, 0, 20);
+        mCountDownTimeView.setBackgroundColor(Color.TRANSPARENT);
+        mCountDownTimeView.setOutLineWidth(2);
+        mCountDownTimeView.setOutLineColor(Color.BLACK);
+        mCountDownTimeView.setProgressLineWidth(8);
+        mCountDownTimeView.setProgressLineColor(Color.BLUE);
+        mCountDownTimeView.setInnerCircleColor(Color.WHITE);
+        mCountDownTimeView.setTotalCountDownTime(15);
+        mCountDownTimeView.setCurrentCountDownTime(15);
+        mCountDownTimeView.setContentColor(Color.BLACK);
+        mCountDownTimeView.setContentSize(50);
+        mCountDownTimeView.setProgressType(KSCCountDownView.ProgressType.COUNT);
+        mRootView.addView(mCountDownTimeView, lp);
+    }
+
+    private void initListener() {
+        mCloseView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mHandler.sendEmptyMessage(VIDEO_PAUSE);
+                showCloseConfirmDialog();
+            }
+        });
+        mMediaPlayer.setVideoPlayCallBack(new KSCVideoPlayCallBack() {
+
+            @Override
+            public void onPrepared() {
+                Message message = mHandler.obtainMessage();
+                message.what = VIDEO_PREPARED;
+                message.arg1 = mMediaPlayer.getDuration();
+                message.arg2 = mMediaPlayer.getCurrentPosition();
+                mHandler.sendMessage(message);
+            }
+
             @Override
             public void onStart() {
                 Log.i(TAG, "onStart: ");
+                mHandler.post(mGetVideoProgressTask);
             }
 
             @Override
@@ -68,11 +173,14 @@ public class KSCMobileAdActivity extends Activity {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
                 Log.i(TAG, "onCompletion: ");
+                mHandler.removeCallbacks(mGetVideoProgressTask);
+                mHandler.sendEmptyMessage(VIDEO_COMPLETION);
             }
 
             @Override
             public void onError(MediaPlayer mediaPlayer, int what, int extra) {
                 Log.i(TAG, "onError: what=" + what + ", extra=" + extra);
+                mHandler.removeCallbacks(mGetVideoProgressTask);
             }
 
             @Override
@@ -82,15 +190,18 @@ public class KSCMobileAdActivity extends Activity {
 
             @Override
             public void onCloseVideo(int progress) {
-
+                mHandler.removeCallbacks(mGetVideoProgressTask);
             }
         });
-        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "test.mp4";
-        try {
-            mediaPlayer.setVideoPath(path);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    }
+
+    private void refreshCountDownTimeView(int duration, int currentPosition) {
+        mCountDownTimeView.setTotalCountDownTime(duration);
+        mCountDownTimeView.setCurrentCountDownTime(duration - currentPosition);
+    }
+
+    private void showCloseView() {
+        mCloseView.setVisibility(View.VISIBLE);
     }
 
     private void closeView() {
@@ -98,4 +209,35 @@ public class KSCMobileAdActivity extends Activity {
         finish();
     }
 
+    private void showCloseConfirmDialog() {
+        final AlertDialog dialog = new AlertDialog.Builder(this).setMessage("现在关闭将不会获得奖励!").create();
+        dialog.setButton(DialogInterface.BUTTON_POSITIVE, "关闭", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialog.cancel();
+                mHandler.sendEmptyMessage(VIDEO_CLOSE);
+            }
+        });
+        dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "继续", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialog.cancel();
+                mHandler.sendEmptyMessage(VIDEO_RESUME);
+            }
+        });
+        dialog.show();
+    }
+
+    private void showLandingPage() {
+        mRootView.removeView(mCountDownTimeView);
+        mRootView.removeAllViews();
+        mLandingPage = new WebView(this);
+        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        mRootView.addView(mLandingPage, lp);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return true;
+    }
 }

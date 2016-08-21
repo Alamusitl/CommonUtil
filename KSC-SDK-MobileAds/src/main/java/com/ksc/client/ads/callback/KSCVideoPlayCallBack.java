@@ -7,6 +7,9 @@ import android.media.MediaPlayer;
  */
 public interface KSCVideoPlayCallBack {
 
+    // 视频准备完成
+    void onPrepared();
+
     // 开始播放
     void onStart();
 

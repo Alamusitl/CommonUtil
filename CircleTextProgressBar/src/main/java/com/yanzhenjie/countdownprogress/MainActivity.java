@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 圆心点击变色。
      */
-    private CircleTextProgressbar mTvCicleColor;
+    private CircleTextProgressbar mTvCircleColor;
 
     /**
      * 顺数进度条。
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         mTvDefault = (CircleTextProgressbar) findViewById(R.id.tv_default);
         mTvFive = (CircleTextProgressbar) findViewById(R.id.tv_five_text);
-        mTvCicleColor = (CircleTextProgressbar) findViewById(R.id.tv_red_circle_color);
+        mTvCircleColor = (CircleTextProgressbar) findViewById(R.id.tv_red_circle_color);
 
         // 和系统进度条一样，由0-100。
         mTvCount = (CircleTextProgressbar) findViewById(R.id.tv_count);
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.menu_start) {
             mTvDefault.reStart();
             mTvFive.reStart();
-            mTvCicleColor.reStart();
+            mTvCircleColor.reStart();
             mTvCount.reStart();
             mTvWide.reStart();
             mTvNarrow.reStart();
