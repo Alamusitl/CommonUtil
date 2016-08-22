@@ -12,6 +12,7 @@ public class HttpRequestParam {
     public static final int DEFAULT_TIME_OUT_MS = 3 * 1000;
 
     private static final String DEFAULT_PARAMS_ENCODING = "UTF-8";
+    private String mContentType = "application/x-www-form-urlencoded";
     private String mUrl;
     private String mDownloadPath;
     private int mMethod;
@@ -71,8 +72,12 @@ public class HttpRequestParam {
         return DEFAULT_PARAMS_ENCODING;
     }
 
+    public void setContentType(String contentType) {
+        mContentType = contentType;
+    }
+
     public String getBodyContentType() {
-        return "application/x-www-form-urlencoded; charset=" + getParamsEncoding();
+        return mContentType + "; charset=" + getParamsEncoding();
     }
 
     public String getDownloadPath() {

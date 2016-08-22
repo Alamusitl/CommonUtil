@@ -53,7 +53,7 @@ public class KSCDeviceUtils {
                     return null;
                 }
                 if (!TextUtils.isEmpty(imei)) {
-                    return "imei_" + imei;
+                    return imei;
                 }
             }
         } catch (SecurityException e) {

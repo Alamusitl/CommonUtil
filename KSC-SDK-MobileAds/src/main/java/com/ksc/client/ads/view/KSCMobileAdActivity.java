@@ -3,10 +3,11 @@ package com.ksc.client.ads.view;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -21,10 +22,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 
+import com.ksc.client.ads.KSCMobileAdKeyCode;
 import com.ksc.client.ads.KSCViewUtils;
 import com.ksc.client.ads.callback.KSCVideoPlayCallBack;
 
-import java.io.File;
 import java.io.IOException;
 
 public class KSCMobileAdActivity extends Activity {
@@ -36,12 +37,13 @@ public class KSCMobileAdActivity extends Activity {
     private final int VIDEO_RESUME = 3;
     private final int VIDEO_CLOSE = 4;
     private final int VIDEO_COMPLETION = 5;
-    private RelativeLayout mRootView;
+    private final int VIDEO_MUTE = 6;
     private ImageView mCloseView;
     private ImageView mMuteView;
     private KSCCountDownView mCountDownTimeView;
     private KSCVideoView mMediaPlayer;
     private WebView mLandingPage;
+    private boolean mIsMute = false;
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -68,6 +70,9 @@ public class KSCMobileAdActivity extends Activity {
                 case VIDEO_COMPLETION:
                     showLandingPage();
                     break;
+                case VIDEO_MUTE:
+                    muteVideoVolume();
+                    break;
             }
         }
     };
@@ -93,33 +98,43 @@ public class KSCMobileAdActivity extends Activity {
         initView();
         initListener();
 
-        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "test.mp4";
+        Intent intent = getIntent();
+        String type = intent.getStringExtra(KSCMobileAdKeyCode.VIDEO_TYPE);
+        String path = intent.getStringExtra(KSCMobileAdKeyCode.VIDEO_PATH);
+
         try {
-            mMediaPlayer.setVideoPath(path);
+            if (type.equals(KSCMobileAdKeyCode.VIDEO_IN_CACHE)) {
+                mMediaPlayer.setVideoPath(path);
+            } else if (type.equals(KSCMobileAdKeyCode.VIDEO_IN_STREAM)) {
+                mMediaPlayer.setVideoURI(Uri.parse(path));
+            }
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e(TAG, "onCreate: set MediaPlayer DataSource exception", e);
         }
     }
 
     private void initView() {
         LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        mRootView = new RelativeLayout(this);
+        RelativeLayout mRootView = new RelativeLayout(this);
         addContentView(mRootView, lp);
 
+        // 播放器
         mMediaPlayer = new KSCVideoView(this);
         mRootView.addView(mMediaPlayer, lp);
 
+        // 关闭按钮
         lp = new LayoutParams(100, 100);
         mCloseView = new ImageView(this);
         mCloseView.setId(KSCViewUtils.generateViewId());
         lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
         lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         lp.setMargins(0, 20, 20, 0);
-        mCloseView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, "ksc_controller_close.png"));
+        mCloseView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, KSCMobileAdKeyCode.VIDEO_VIEW_CLOSE));
         mCloseView.setBackgroundColor(Color.TRANSPARENT);
         mCloseView.setVisibility(View.GONE);
         mRootView.addView(mCloseView, lp);
 
+        // 倒计时视图
         lp = new LayoutParams(100, 100);
         mCountDownTimeView = new KSCCountDownView(this);
         mCountDownTimeView.setId(KSCViewUtils.generateViewId());
@@ -138,6 +153,17 @@ public class KSCMobileAdActivity extends Activity {
         mCountDownTimeView.setContentSize(50);
         mCountDownTimeView.setProgressType(KSCCountDownView.ProgressType.COUNT);
         mRootView.addView(mCountDownTimeView, lp);
+
+        // 静音按钮
+        lp = new LayoutParams(100, 100);
+        mMuteView = new ImageView(this);
+        mMuteView.setId(KSCViewUtils.generateViewId());
+        lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+        lp.setMargins(0, 0, 20, 20);
+        mMuteView.setBackgroundColor(Color.TRANSPARENT);
+        mMuteView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, KSCMobileAdKeyCode.VIDEO_VIEW_MUTE));
+        mRootView.addView(mMuteView, lp);
     }
 
     private void initListener() {
@@ -146,6 +172,12 @@ public class KSCMobileAdActivity extends Activity {
             public void onClick(View view) {
                 mHandler.sendEmptyMessage(VIDEO_PAUSE);
                 showCloseConfirmDialog();
+            }
+        });
+        mMuteView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mHandler.sendEmptyMessage(VIDEO_MUTE);
             }
         });
         mMediaPlayer.setVideoPlayCallBack(new KSCVideoPlayCallBack() {
@@ -229,11 +261,32 @@ public class KSCMobileAdActivity extends Activity {
     }
 
     private void showLandingPage() {
-        mRootView.removeView(mCountDownTimeView);
-        mRootView.removeAllViews();
-        mLandingPage = new WebView(this);
-        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        mRootView.addView(mLandingPage, lp);
+        mHandler.sendEmptyMessage(VIDEO_CLOSE);
+//        mRootView.removeView(mCountDownTimeView);
+//        mRootView.removeAllViews();
+//        mLandingPage = new WebView(this);
+//        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+//        mRootView.addView(mLandingPage, lp);
+    }
+
+    private void muteVideoVolume() {
+        if (mIsMute) {
+            mIsMute = false;
+            mMediaPlayer.resumeVolume();
+        } else {
+            mIsMute = true;
+            mMediaPlayer.closeVolume();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 
     @Override
