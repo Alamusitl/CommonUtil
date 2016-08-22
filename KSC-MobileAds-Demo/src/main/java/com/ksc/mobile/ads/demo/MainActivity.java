@@ -1,7 +1,6 @@
 package com.ksc.mobile.ads.demo;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -23,30 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         KSCADAgent.getInstance().init(this);
-
-        if (Build.VERSION.SDK_INT > 23) {
-            System.out.println(Build.VERSION.BASE_OS);
-            System.out.println(Build.VERSION.PREVIEW_SDK_INT);
-            System.out.println(Build.VERSION.SECURITY_PATCH);
-        }
-        System.out.println(Build.VERSION.CODENAME);
-        System.out.println(Build.VERSION.INCREMENTAL);
-        System.out.println(Build.VERSION.RELEASE);
-        System.out.println(Build.VERSION.SDK_INT);
-        System.out.println(Build.BOARD);
-        System.out.println(Build.BOOTLOADER);
-        System.out.println(Build.BRAND);
-        System.out.println(Build.DEVICE);
-        System.out.println(Build.DISPLAY);
-        System.out.println(Build.FINGERPRINT);
-        System.out.println(Build.HARDWARE);
-        System.out.println(Build.HOST);
-        System.out.println(Build.ID);
-        System.out.println(Build.MANUFACTURER);
-        System.out.println(Build.MODEL);
-        System.out.println(Build.PRODUCT);
-        System.out.println(Build.SERIAL);
-
 
         findViewById(R.id.btnShowVideoAd).setOnClickListener(new View.OnClickListener() {
             @Override

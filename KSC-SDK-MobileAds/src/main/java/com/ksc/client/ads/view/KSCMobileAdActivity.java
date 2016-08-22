@@ -120,6 +120,7 @@ public class KSCMobileAdActivity extends Activity {
 
         // 播放器
         mMediaPlayer = new KSCVideoView(this);
+        mMediaPlayer.setBackgroundColor(Color.WHITE);
         mRootView.addView(mMediaPlayer, lp);
 
         // 关闭按钮
@@ -145,11 +146,11 @@ public class KSCMobileAdActivity extends Activity {
         mCountDownTimeView.setOutLineWidth(2);
         mCountDownTimeView.setOutLineColor(Color.BLACK);
         mCountDownTimeView.setProgressLineWidth(8);
-        mCountDownTimeView.setProgressLineColor(Color.BLUE);
-        mCountDownTimeView.setInnerCircleColor(Color.WHITE);
+        mCountDownTimeView.setProgressLineColor(Color.WHITE);
+        mCountDownTimeView.setInnerCircleColor(Color.BLACK);
         mCountDownTimeView.setTotalCountDownTime(15);
         mCountDownTimeView.setCurrentCountDownTime(15);
-        mCountDownTimeView.setContentColor(Color.BLACK);
+        mCountDownTimeView.setContentColor(Color.WHITE);
         mCountDownTimeView.setContentSize(50);
         mCountDownTimeView.setProgressType(KSCCountDownView.ProgressType.COUNT);
         mRootView.addView(mCountDownTimeView, lp);
@@ -291,6 +292,10 @@ public class KSCMobileAdActivity extends Activity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        return true;
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
+
 }

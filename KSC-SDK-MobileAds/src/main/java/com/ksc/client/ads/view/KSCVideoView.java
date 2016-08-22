@@ -223,7 +223,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         // Initialize the loadingView
         mLoadingView = new ProgressBar(context);
         layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        layoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
+        layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
         mLoadingView.setLayoutParams(layoutParams);
         addView(mLoadingView);
     }

@@ -149,23 +149,7 @@ public class KSCCountDownView extends TextView {
         mPaint.setColor(mProgressLineColor);
         int deleteWidth = (mProgressLineWidth + mOutLineWidth) / 2;
         mArcRect.set(mBounds.left + deleteWidth, mBounds.top + deleteWidth, mBounds.right - deleteWidth, mBounds.bottom - deleteWidth);
-//        int center = (int) (outRadius - mOutLineWidth - (mProgressLineWidth / 2));
-//        System.out.println("X=" + mBounds.centerX());
-//        System.out.println("Y=" + mBounds.centerY());
-//        System.out.println("left=" + mBounds.left + ", top=" + mBounds.top + ", right=" + mBounds.right + ", bottom=" + mBounds.bottom);
-//        System.out.println(center);
-//        mArcRect.set(mBounds.centerX() - center, mBounds.centerX() + center, mBounds.centerX() + center, mBounds.centerX() - center);
         canvas.drawArc(mArcRect, -90, 360 * mProgress, false, mPaint);
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-//        int lineWidth = (mOutLineWidth + mProgressLineWidth) * 4;
-//        int width = getMeasuredWidth();
-//        int height = getMeasuredHeight();
-//        int size = (width > height ? width : height) + lineWidth;
-//        setMeasuredDimension(size, size);
     }
 
     @Override
@@ -282,10 +266,10 @@ public class KSCCountDownView extends TextView {
     public void setProgress(int currentCountDownTime, int totalCountDownTime) {
         switch (mProgressType) {
             case COUNT:
-                mProgress = currentCountDownTime / (float) totalCountDownTime;
+                mProgress = 1 - (currentCountDownTime / (float) totalCountDownTime);
                 break;
             case COUNT_BACK:
-                mProgress = totalCountDownTime - (currentCountDownTime / (float) totalCountDownTime);
+                mProgress = currentCountDownTime / (float) totalCountDownTime;
                 break;
         }
     }
@@ -372,27 +356,6 @@ public class KSCCountDownView extends TextView {
     /******************************************
      * Operation method
      ******************************************/
-
-    /**
-     * 开始进度条
-     */
-    public void start() {
-
-    }
-
-    /**
-     * 暂停进度条
-     */
-    public void pause() {
-
-    }
-
-    /**
-     * 停止进度条
-     */
-    public void stop() {
-
-    }
 
     /**
      * 验证是否重新绘制圆的颜色
