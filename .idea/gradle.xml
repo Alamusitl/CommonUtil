@@ -10,7 +10,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Baidu-AD-Demo" />
-            <option value="$PROJECT_DIR$/CircleTextProgressBar" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
             <option value="$PROJECT_DIR$/KSC-AudioRecord-Demo" />
             <option value="$PROJECT_DIR$/KSC-Channel-Demo" />
@@ -41,7 +40,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Baidu-AD-Demo" />
-            <option value="$PROJECT_DIR$/CircleTextProgressBar" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
             <option value="$PROJECT_DIR$/KSC-AudioRecord-Demo" />
             <option value="$PROJECT_DIR$/KSC-Channel-Demo" />
