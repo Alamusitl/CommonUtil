@@ -78,9 +78,6 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         super.onDetachedFromWindow();
         if (!mDetachedByFullScreen) {
             if (mMediaPlayer != null) {
-                if (mCurrentState != KSCMediaState.IDLE && mVideoPlayCallBack != null) {
-                    mVideoPlayCallBack.onCloseVideo(getCurrentPosition());
-                }
                 mMediaPlayer.setOnPreparedListener(null);
                 mMediaPlayer.setOnErrorListener(null);
                 mMediaPlayer.setOnSeekCompleteListener(null);
@@ -252,9 +249,6 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      * prepare for mediaPlayer
      */
     private void prepare() {
-        if (mVideoPlayCallBack != null) {
-            mVideoPlayCallBack.onClickAd();
-        }
         startLoading();
         mVideoIsReady = false;
         mInitialVideoWidth = -1;

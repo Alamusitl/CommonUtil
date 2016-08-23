@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -22,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 
+import com.ksc.client.ads.KSCMediaState;
 import com.ksc.client.ads.KSCMobileAdKeyCode;
 import com.ksc.client.ads.KSCViewUtils;
 import com.ksc.client.ads.callback.KSCVideoPlayCallBack;
@@ -31,47 +33,47 @@ import java.io.IOException;
 public class KSCMobileAdActivity extends Activity {
 
     private static final String TAG = KSCMobileAdActivity.class.getSimpleName();
-    private final int VIDEO_PREPARED = 0;
-    private final int VIDEO_PLAYING = 1;
-    private final int VIDEO_PAUSE = 2;
-    private final int VIDEO_RESUME = 3;
-    private final int VIDEO_CLOSE = 4;
-    private final int VIDEO_COMPLETION = 5;
-    private final int VIDEO_MUTE = 6;
     private ImageView mCloseView;
     private ImageView mMuteView;
     private KSCCountDownView mCountDownTimeView;
     private KSCVideoView mMediaPlayer;
     private WebView mLandingPage;
     private boolean mIsMute = false;
+    private boolean mCanConfigChange = false;
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
+//            KSCBlackBoard.getTransformHandler().sendEmptyMessage(msg.what);
             switch (msg.what) {
-                case VIDEO_PREPARED:
+                case KSCMobileAdKeyCode.KEY_VIDEO_PREPARED:
                     refreshCountDownTimeView(msg.arg1, msg.arg2);
                     break;
-                case VIDEO_PLAYING:
+                case KSCMobileAdKeyCode.KEY_VIDEO_PLAYING:
                     if (((mMediaPlayer.getCurrentPosition() + 1000) / (float) mMediaPlayer.getDuration()) > (1 / (float) 3)) {
                         showCloseView();
                     }
                     refreshCountDownTimeView(msg.arg1, msg.arg2);
                     break;
-                case VIDEO_PAUSE:
+                case KSCMobileAdKeyCode.KEY_VIDEO_PAUSE:
                     mMediaPlayer.pause();
                     break;
-                case VIDEO_RESUME:
+                case KSCMobileAdKeyCode.KEY_VIDEO_RESUME:
                     mMediaPlayer.start();
                     break;
-                case VIDEO_CLOSE:
+                case KSCMobileAdKeyCode.KEY_VIDEO_CLOSE:
+                    mHandler.removeCallbacks(mGetVideoProgressTask);
                     mMediaPlayer.stop();
-                    closeView();
+                    closeView(KSCMobileAdKeyCode.KEY_ACTIVITY_CLOSE_VIDEO);
                     break;
-                case VIDEO_COMPLETION:
+                case KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION:
                     showLandingPage();
                     break;
-                case VIDEO_MUTE:
+                case KSCMobileAdKeyCode.KEY_VIDEO_MUTE:
                     muteVideoVolume();
+                    break;
+                case KSCMobileAdKeyCode.KEY_VIDEO_ERROR:
+                    break;
+                case KSCMobileAdKeyCode.KEY_VIEW_CLOSE:
                     break;
             }
         }
@@ -81,7 +83,7 @@ public class KSCMobileAdActivity extends Activity {
         public void run() {
             mHandler.removeCallbacks(mGetVideoProgressTask);
             Message message = mHandler.obtainMessage();
-            message.what = VIDEO_PLAYING;
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
             message.arg1 = mMediaPlayer.getDuration();
             message.arg2 = mMediaPlayer.getCurrentPosition();
             mHandler.sendMessage(message);
@@ -171,22 +173,21 @@ public class KSCMobileAdActivity extends Activity {
         mCloseView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                mHandler.sendEmptyMessage(VIDEO_PAUSE);
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_PAUSE);
                 showCloseConfirmDialog();
             }
         });
         mMuteView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                mHandler.sendEmptyMessage(VIDEO_MUTE);
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_MUTE);
             }
         });
         mMediaPlayer.setVideoPlayCallBack(new KSCVideoPlayCallBack() {
-
             @Override
             public void onPrepared() {
                 Message message = mHandler.obtainMessage();
-                message.what = VIDEO_PREPARED;
+                message.what = KSCMobileAdKeyCode.KEY_VIDEO_PREPARED;
                 message.arg1 = mMediaPlayer.getDuration();
                 message.arg2 = mMediaPlayer.getCurrentPosition();
                 mHandler.sendMessage(message);
@@ -207,24 +208,16 @@ public class KSCMobileAdActivity extends Activity {
             public void onCompletion(MediaPlayer mediaPlayer) {
                 Log.i(TAG, "onCompletion: ");
                 mHandler.removeCallbacks(mGetVideoProgressTask);
-                mHandler.sendEmptyMessage(VIDEO_COMPLETION);
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION);
             }
 
             @Override
             public void onError(MediaPlayer mediaPlayer, int what, int extra) {
                 Log.i(TAG, "onError: what=" + what + ", extra=" + extra);
                 mHandler.removeCallbacks(mGetVideoProgressTask);
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_ERROR);
             }
 
-            @Override
-            public void onClickAd() {
-                Log.i(TAG, "onClickAd: ");
-            }
-
-            @Override
-            public void onCloseVideo(int progress) {
-                mHandler.removeCallbacks(mGetVideoProgressTask);
-            }
         });
     }
 
@@ -237,8 +230,10 @@ public class KSCMobileAdActivity extends Activity {
         mCloseView.setVisibility(View.VISIBLE);
     }
 
-    private void closeView() {
-        setResult(RESULT_CANCELED);
+    private void closeView(String value) {
+        Intent intent = new Intent();
+        intent.putExtra(KSCMobileAdKeyCode.KEY_ACTIVITY_CLOSE, value);
+        setResult(RESULT_OK, intent);
         finish();
     }
 
@@ -248,21 +243,21 @@ public class KSCMobileAdActivity extends Activity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialog.cancel();
-                mHandler.sendEmptyMessage(VIDEO_CLOSE);
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_CLOSE);
             }
         });
         dialog.setButton(DialogInterface.BUTTON_NEGATIVE, "继续", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialog.cancel();
-                mHandler.sendEmptyMessage(VIDEO_RESUME);
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_RESUME);
             }
         });
         dialog.show();
     }
 
     private void showLandingPage() {
-        mHandler.sendEmptyMessage(VIDEO_CLOSE);
+        mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_CLOSE);
 //        mRootView.removeView(mCountDownTimeView);
 //        mRootView.removeAllViews();
 //        mLandingPage = new WebView(this);
@@ -281,21 +276,30 @@ public class KSCMobileAdActivity extends Activity {
     }
 
     @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
+        if (mMediaPlayer.getCurrentState() == KSCMediaState.PAUSED) {
+            mMediaPlayer.start();
+        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        if (mMediaPlayer.getCurrentState() == KSCMediaState.STARTED) {
+            mMediaPlayer.pause();
+        }
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
+        return keyCode == KeyEvent.KEYCODE_BACK || super.onKeyDown(keyCode, event);
     }
 
 }

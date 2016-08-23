@@ -3,6 +3,7 @@ package com.ksc.client.ads.callback;
 import android.media.MediaPlayer;
 
 /**
+ * 视频播放进度回调
  * Created by Alamusi on 2016/8/18.
  */
 public interface KSCVideoPlayCallBack {
@@ -22,9 +23,4 @@ public interface KSCVideoPlayCallBack {
     // 错误
     void onError(MediaPlayer mediaPlayer, int what, int extra);
 
-    // 点击广告
-    void onClickAd();
-
-    // 关闭视频
-    void onCloseVideo(int progress);
 }

@@ -12,7 +12,9 @@ public class KSCLog {
     public static boolean mIsDebug = false;
 
     public static void d(String info) {
-        Log.d(TAG, info);
+        if (mIsDebug) {
+            Log.d(TAG, info);
+        }
     }
 
     public static void d(String tag, String info) {
