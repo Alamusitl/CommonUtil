@@ -11,7 +11,7 @@
         <activity
             android:name=".MainActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
-            android:screenOrientation="sensorPortrait"
+            android:screenOrientation="sensor"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

@@ -12,6 +12,7 @@ public class KSCMobileAdKeyCode {
 
     public static final String VIDEO_VIEW_CLOSE = "ksc_controller_close.png";
     public static final String VIDEO_VIEW_MUTE = "ksc_controller_mute.png";
+    public static final String VIDEO_VIEW_VOLUME_RESUME = "ksc_controller_volume_resume.png";
 
     public static final int KEY_ACTIVITY_REQUEST = 20000;
     public static final String KEY_ACTIVITY_CLOSE = "keyCloseActivity";

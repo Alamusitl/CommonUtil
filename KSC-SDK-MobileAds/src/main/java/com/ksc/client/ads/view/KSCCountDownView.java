@@ -149,7 +149,7 @@ public class KSCCountDownView extends TextView {
         mPaint.setColor(mProgressLineColor);
         int deleteWidth = (mProgressLineWidth + mOutLineWidth) / 2;
         mArcRect.set(mBounds.left + deleteWidth, mBounds.top + deleteWidth, mBounds.right - deleteWidth, mBounds.bottom - deleteWidth);
-        canvas.drawArc(mArcRect, -90, 360 * mProgress, false, mPaint);
+        canvas.drawArc(mArcRect, 270, -360 * mProgress, false, mPaint);
     }
 
     @Override
@@ -312,7 +312,7 @@ public class KSCCountDownView extends TextView {
     public void setCurrentCountDownTime(int currentCountDownTime) {
         mCurrentCountDownTime = currentCountDownTime;
         setProgress(mCurrentCountDownTime, mTotalCountDownTime);
-        setContent(String.valueOf(mCurrentCountDownTime / 1000));
+        setContent(String.valueOf((mTotalCountDownTime - mCurrentCountDownTime) / 1000));
         invalidate();
     }
 

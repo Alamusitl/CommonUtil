@@ -8,7 +8,9 @@
         android:supportsRtl="true">
         <activity
             android:name="com.ksc.client.ads.view.KSCMobileAdActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="sensor"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
         </activity>
     </application>
 

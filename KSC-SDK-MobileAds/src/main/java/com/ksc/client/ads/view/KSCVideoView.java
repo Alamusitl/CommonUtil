@@ -2,6 +2,7 @@ package com.ksc.client.ads.view;
 
 import android.app.Service;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -20,7 +21,6 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
@@ -40,14 +40,10 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     private SurfaceView mSurfaceView;
     private SurfaceHolder mHolder;
     private View mLoadingView;
-    private ViewGroup mParentView;
-    private ViewGroup.LayoutParams mLastLayoutParams;
     private boolean mSurfaceIsReady;
     private boolean mVideoIsReady;
     private boolean mAutoPlay;
-    private boolean mIsFullScreen;
     private boolean mIsCompleted;
-    private boolean mDetachedByFullScreen;
     private int mInitialVideoWidth;
     private int mInitialVideoHeight;
     private KSCMediaState mCurrentState;
@@ -57,42 +53,39 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     public KSCVideoView(Context context) {
         super(context);
         mContext = context;
-        initUI(context);
+        initView(context);
     }
 
     public KSCVideoView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
-        initUI(context);
+        initView(context);
     }
 
     public KSCVideoView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
-        initUI(context);
+        initView(context);
     }
 
     @Override
     protected void onDetachedFromWindow() {
-        Log.d(TAG, "onDetachedFromWindow called, detachedByFullScreen=" + mDetachedByFullScreen);
+        Log.d(TAG, "onDetachedFromWindow called");
         super.onDetachedFromWindow();
-        if (!mDetachedByFullScreen) {
-            if (mMediaPlayer != null) {
-                mMediaPlayer.setOnPreparedListener(null);
-                mMediaPlayer.setOnErrorListener(null);
-                mMediaPlayer.setOnSeekCompleteListener(null);
-                mMediaPlayer.setOnCompletionListener(null);
-                if (isPlaying()) {
-                    stop();
-                }
-                mMediaPlayer.release();
-                mMediaPlayer = null;
+        if (mMediaPlayer != null) {
+            mMediaPlayer.setOnPreparedListener(null);
+            mMediaPlayer.setOnErrorListener(null);
+            mMediaPlayer.setOnSeekCompleteListener(null);
+            mMediaPlayer.setOnCompletionListener(null);
+            if (isPlaying()) {
+                stop();
             }
-            mVideoIsReady = false;
-            mSurfaceIsReady = false;
-            mCurrentState = KSCMediaState.END;
+            mMediaPlayer.release();
+            mMediaPlayer = null;
         }
-        mDetachedByFullScreen = false;
+        mVideoIsReady = false;
+        mSurfaceIsReady = false;
+        mCurrentState = KSCMediaState.END;
     }
 
     @Override
@@ -189,18 +182,19 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      *
      * @param context Context
      */
-    protected void initUI(Context context) {
-        Log.d(TAG, "initUI called");
+    protected void initView(Context context) {
+        Log.d(TAG, "initView called");
         if (isInEditMode()) {
             return;
         }
         mAutoPlay = true;
-        mIsFullScreen = false;
         mCurrentState = KSCMediaState.IDLE;
         setBackgroundColor(Color.BLACK);
 
         // Initialize mediaPlayer
         mMediaPlayer = new MediaPlayer();
+        reset();
+        mMediaPlayer.setAudioStreamType(AudioManager.STREAM_SYSTEM);
 
         // Initialize the surfaceView
         mSurfaceView = new SurfaceView(context);
@@ -238,6 +232,9 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
             resize();
             stopLoading();
             mCurrentState = KSCMediaState.PREPARED;
+            if (mVideoPlayCallBack != null) {
+                mVideoPlayCallBack.onPrepared();
+            }
 
             if (mAutoPlay) {
                 start();
@@ -256,7 +253,6 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         mMediaPlayer.setOnPreparedListener(this);
         mMediaPlayer.setOnErrorListener(this);
         mMediaPlayer.setOnSeekCompleteListener(this);
-        mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         mCurrentState = KSCMediaState.PREPARING;
         mMediaPlayer.prepareAsync();
     }
@@ -271,21 +267,25 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         }
         View currentParent = (View) getParent();
         if (currentParent != null) {
-            float videoProportion = (float) mInitialVideoWidth / (float) mInitialVideoHeight;
             int screenWidth = currentParent.getWidth();
             int screenHeight = currentParent.getHeight();
-            float screenProportion = (float) screenWidth / (float) screenHeight;
-
-            int newWidth;
-            int newHeight;
-            if (videoProportion > screenProportion) {
-                newWidth = screenWidth;
-                newHeight = (int) ((float) screenWidth / videoProportion);
-            } else {
-                newWidth = (int) ((float) screenHeight * videoProportion);
-                newHeight = screenHeight;
+            int newWidth = screenWidth;
+            int newHeight = screenHeight;
+            if (mContext.getResources().getConfiguration().orientation == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
+                float videoProportion = (float) mInitialVideoWidth / (float) mInitialVideoHeight;
+                float screenProportion = (float) screenWidth / (float) screenHeight;
+                if (videoProportion > screenProportion) {
+                    newWidth = screenWidth;
+                    newHeight = (int) ((float) screenWidth / videoProportion);
+                } else {
+                    newWidth = (int) ((float) screenHeight * videoProportion);
+                    newHeight = screenHeight;
+                }
+                Log.d(TAG, "resize: newWidth=" + newWidth + ", newHeight=" + newHeight);
             }
-            Log.d(TAG, "resize: newWidth=" + newWidth + ", newHeight=" + newHeight);
+            if (newWidth == screenWidth && newHeight == screenHeight && mVideoPlayCallBack != null) {
+                mVideoPlayCallBack.onFullScreen();
+            }
             ViewGroup.LayoutParams layoutParams = mSurfaceView.getLayoutParams();
             if (layoutParams.width != newWidth || layoutParams.height != newHeight) {
                 layoutParams.width = newWidth;
@@ -360,45 +360,6 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         }
         if (isPlaying()) {
             pause();
-        }
-        if (!mIsFullScreen) {
-            mIsFullScreen = true;
-            View rootView = getRootView();
-            View v = rootView.findViewById(android.R.id.content);
-            ViewParent viewParent = getParent();
-            if (viewParent instanceof ViewGroup) {
-                if (mParentView == null) {
-                    mParentView = (ViewGroup) viewParent;
-                }
-                // Prevents MediaPlayer to became invalidated and released
-                mDetachedByFullScreen = true;
-                // Saves the last state (LayoutParams) of view to restore after
-                mLastLayoutParams = this.getLayoutParams();
-                mParentView.removeView(this);
-            } else {
-                Log.e(TAG, "Parent View is not a ViewGroup");
-            }
-            if (v instanceof ViewGroup) {
-                ((ViewGroup) v).addView(this);
-            } else {
-                Log.e(TAG, "RootView is not a ViewGroup");
-            }
-        } else {
-            mIsFullScreen = false;
-            ViewParent viewParent = getParent();
-            if (viewParent instanceof ViewGroup) {
-                // Check if parent view is still available
-                boolean parentHasParent = false;
-                if (mParentView != null && mParentView.getParent() != null) {
-                    parentHasParent = true;
-                    mDetachedByFullScreen = true;
-                }
-                ((ViewGroup) viewParent).removeView(this);
-                if (parentHasParent) {
-                    mParentView.addView(this);
-                    this.setLayoutParams(mLastLayoutParams);
-                }
-            }
         }
         resize();
         if (!isPlaying()) {
@@ -642,6 +603,9 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      */
     public void resumeVolume() {
         AudioManager audioManager = (AudioManager) mContext.getSystemService(Service.AUDIO_SERVICE);
+        if (mMediaPlayer != null) {
+            mMediaPlayer.setAudioStreamType(AudioManager.STREAM_SYSTEM);
+        }
         setVolume(audioManager.getStreamVolume(AudioManager.STREAM_SYSTEM), audioManager.getStreamVolume(AudioManager.STREAM_SYSTEM));
     }
 }
