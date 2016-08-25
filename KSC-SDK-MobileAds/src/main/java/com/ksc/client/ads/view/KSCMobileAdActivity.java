@@ -1,6 +1,5 @@
 package com.ksc.client.ads.view;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -11,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -18,10 +18,6 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.DownloadListener;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
@@ -43,7 +39,19 @@ public class KSCMobileAdActivity extends Activity {
     private KSCCountDownView mCountDownTimeView;
     private KSCVideoView mMediaPlayer;
     private boolean mIsMute = false;
-    private boolean mCanConfigChange = false;
+    private boolean mCanConfigChange = true;
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
+        }
+    };
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -89,18 +97,6 @@ public class KSCMobileAdActivity extends Activity {
             }
         }
     };
-    private Runnable mGetVideoProgressTask = new Runnable() {
-        @Override
-        public void run() {
-            mHandler.removeCallbacks(mGetVideoProgressTask);
-            Message message = mHandler.obtainMessage();
-            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mMediaPlayer.getDuration();
-            message.arg2 = mMediaPlayer.getCurrentPosition();
-            mHandler.sendMessage(message);
-            mHandler.postDelayed(mGetVideoProgressTask, 100);
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +119,7 @@ public class KSCMobileAdActivity extends Activity {
             }
         } catch (IOException e) {
             Log.e(TAG, "onCreate: set MediaPlayer DataSource exception", e);
+            closeView(KSCMobileAdKeyCode.KEY_ACTIVITY_CLOSE_ERROR);
         }
     }
 
@@ -251,22 +248,35 @@ public class KSCMobileAdActivity extends Activity {
     private void showCloseConfirmDialog() {
         mCloseView.setEnabled(false);
         mMuteView.setEnabled(false);
+        mCanConfigChange = false;
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+
+        System.out.println(dm.widthPixels + ":" + dm.heightPixels + ":" + dm.density);
+
+        int left_right_margin = dm.widthPixels / 4;
+        int top_bottom_margin = dm.heightPixels / 11 * 3;
         final KSCCloseVideoPromptView alertDialogView = new KSCCloseVideoPromptView(this);
-        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        int width = 320 * (int) dm.density;
+        int height = 165 * (int) dm.density;
+
+        LayoutParams lp = new LayoutParams(width, height);
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
-        lp.setMargins(300, 200, 300, 200);
-        alertDialogView.setPromptMsgText("注意: 视频播放不完全，将得不到奖励\n您确定要提前关闭吗？");
+//        lp.setMargins(left_right_margin, top_bottom_margin, left_right_margin, top_bottom_margin);
+        alertDialogView.setText("注意: 视频播放不完全，将得不到奖励！您确定要提前关闭吗？");
         alertDialogView.setCloseButtonText("关闭");
         alertDialogView.setContinueButtonText("继续观看");
         alertDialogView.setCloseButtonClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                mCanConfigChange = true;
                 mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_CLOSE);
             }
         });
         alertDialogView.setContinueButtonClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                mCanConfigChange = true;
                 mRootView.removeView(alertDialogView);
                 mCloseView.setEnabled(true);
                 mMuteView.setEnabled(true);
@@ -276,37 +286,25 @@ public class KSCMobileAdActivity extends Activity {
         mRootView.addView(alertDialogView, lp);
     }
 
-    @SuppressLint("SetJavaScriptEnabled")
     private void showLandingPage() {
-        mRootView.removeView(mCountDownTimeView);
-        mRootView.removeView(mMuteView);
-        mRootView.removeView(mMediaPlayer);
-        mCloseView.setOnClickListener(new OnClickListener() {
+        // 移除所有的View
+        mRootView.removeAllViews();
+        // 落地页
+        KSCLandingPageView landingPageView = new KSCLandingPageView(this);
+        landingPageView.setLandingViewUrl("http://adstatic.ksyun.com/landingpage/view/landingPage.html");
+        landingPageView.setCloseViewClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIEW_CLOSE);
             }
         });
-        WebView mLandingPage = new WebView(this);
-        mLandingPage.setWebViewClient(new WebViewClient());
-        mLandingPage.setWebChromeClient(new WebChromeClient());
-        WebSettings settings = mLandingPage.getSettings();
-        settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
-        settings.setAppCacheEnabled(true);
-        settings.setJavaScriptEnabled(true);
-        mLandingPage.setDownloadListener(new DownloadListener() {
+        landingPageView.setLandingViewDownloadListener(new DownloadListener() {
             @Override
-            public void onDownloadStart(String s, String s1, String s2, String s3, long l) {
-                Uri uri = Uri.parse(s);
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+            public void onDownloadStart(String url, String s1, String s2, String s3, long l) {
+
             }
         });
-        mLandingPage.loadUrl("http://shouji.baidu.com/game/9794980.html");
-        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        lp.addRule(RelativeLayout.BELOW, mCloseView.getId());
-        lp.setMargins(0, 20, 0, 0);
-        mRootView.addView(mLandingPage, lp);
+        mRootView.addView(landingPageView, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
     }
 
     private void muteVideoVolume() {
@@ -325,6 +323,11 @@ public class KSCMobileAdActivity extends Activity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         mMediaPlayer.setFullScreen();
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+
+        } else {
+
+        }
     }
 
     @Override

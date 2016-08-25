@@ -18,6 +18,7 @@ public class KSCMobileAdKeyCode {
     public static final String KEY_ACTIVITY_CLOSE = "keyCloseActivity";
     public static final String KEY_ACTIVITY_CLOSE_VIDEO = "closeVideo";
     public static final String KEY_ACTIVITY_CLOSE_H5 = "closeH5";
+    public static final String KEY_ACTIVITY_CLOSE_ERROR = "closePlayError";
 
     public static final int KEY_VIDEO_PREPARED = 0;
     public static final int KEY_VIDEO_PLAYING = 1;
