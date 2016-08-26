@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
+import android.view.ViewGroup;
 import android.webkit.DownloadListener;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -39,16 +40,7 @@ public class KSCLandingPageView extends RelativeLayout {
     @SuppressLint("SetJavaScriptEnabled")
     private void initView(Context context) {
         setBackgroundColor(Color.WHITE);
-        // 关闭View
-        mCloseView = new ImageView(context);
-        mCloseView.setId(KSCViewUtils.generateViewId());
-        mCloseView.setBackgroundColor(Color.TRANSPARENT);
-        mCloseView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(context, KSCMobileAdKeyCode.IMG_VIDEO_VIEW_CLOSE));
-        LayoutParams lp = new LayoutParams(100, 100);
-        lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-        lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-        lp.setMargins(0, 20, 20, 20);
-        addView(mCloseView, lp);
+        LayoutParams lp;
         // 显示H5的View
         mLandingView = new WebView(context);
         mLandingView.setWebViewClient(new WebViewClient());
@@ -57,10 +49,26 @@ public class KSCLandingPageView extends RelativeLayout {
         settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         settings.setAppCacheEnabled(true);
         settings.setJavaScriptEnabled(true);
-
         lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        lp.addRule(RelativeLayout.BELOW, mCloseView.getId());
         addView(mLandingView, lp);
+
+        // 关闭View
+        mCloseView = new ImageView(context);
+        mCloseView.setId(KSCViewUtils.generateViewId());
+        mCloseView.setBackgroundColor(Color.TRANSPARENT);
+        mCloseView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(context, KSCMobileAdKeyCode.IMG_VIDEO_VIEW_CLOSE));
+        lp = new LayoutParams(100, 100);
+        lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+        lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+        lp.setMargins(0, 20, 20, 20);
+        addView(mCloseView, lp);
+    }
+
+    public void setSize(int size) {
+        ViewGroup.LayoutParams lp = mCloseView.getLayoutParams();
+        lp.width = size;
+        lp.height = size;
+        mCloseView.setLayoutParams(lp);
     }
 
     public void setCloseViewClickListener(OnClickListener onClickListener) {

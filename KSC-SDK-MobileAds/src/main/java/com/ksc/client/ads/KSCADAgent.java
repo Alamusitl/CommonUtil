@@ -77,8 +77,7 @@ public class KSCADAgent {
                 case KSCMobileAdKeyCode.KEY_VIDEO_RESUME:
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_CLOSE:
-                    int position = Integer.parseInt((String) msg.obj);
-                    mEventListener.onVideoClose(position);
+                    mEventListener.onVideoClose(msg.arg1);
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION:
                     mEventListener.onVideoCompletion();

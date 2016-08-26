@@ -64,5 +64,22 @@ public class KSCMobileAdKeyCode {
      * 关闭落地页
      */
     public static final int KEY_VIEW_H5_CLOSE = 10;
+    /**
+     * H5界面点击下载
+     */
+    public static final int KEY_VIEW_H5_CLICK = 11;
+    /**
+     * 开始下载
+     */
+    public static final int KEY_DOWNLOAD_START = 12;
+    /**
+     * 下载成功
+     */
+    public static final int KEY_DOWNLOAD_SUCCESS = 13;
+    /**
+     * 下载失败
+     */
+    public static final int KEY_DOWNLOAD_FAIL = 14;
+
 
 }
