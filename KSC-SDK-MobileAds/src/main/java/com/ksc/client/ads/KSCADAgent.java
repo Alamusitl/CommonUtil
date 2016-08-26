@@ -174,7 +174,7 @@ public class KSCADAgent {
         KSCLog.d("KSCADAgent checkAppHasAd, isCache:" + isCache);
         HttpRequestParam requestParam = new HttpRequestParam("http://120.92.9.140:8080/api/def", HttpRequestParam.METHOD_POST);
         requestParam.setContentType("application/x-protobuf");
-        requestParam.setBody(KSCMobileAdProtoAPI.getInstance().getRequest(activity, mAppId, mChannelId).toString());
+        requestParam.setBody(KSCMobileAdProtoAPI.getInstance().getRequest(activity, mAppId, mChannelId).toByteString().toStringUtf8());
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(HttpResponse response) {

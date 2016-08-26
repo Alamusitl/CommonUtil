@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.ksc.client.ads.KSCADAgent;
-import com.ksc.client.ads.KSCMobileAdKeyCode;
 import com.ksc.client.ads.callback.KSCAdEventListener;
+import com.ksc.client.ads.config.KSCMobileAdKeyCode;
 import com.ksc.client.ads.view.KSCMobileAdActivity;
 
 import java.io.File;
@@ -87,6 +87,14 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_TYPE, KSCMobileAdKeyCode.VIDEO_IN_STREAM);
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_PATH, "http://v1.mukewang.com/a45016f4-08d6-4277-abe6-bcfd5244c201/L.mp4");
                 startActivityForResult(intent, KSCMobileAdKeyCode.KEY_ACTIVITY_REQUEST);
+            }
+        });
+
+        findViewById(R.id.btnTest).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, TestActivity.class);
+                startActivity(intent);
             }
         });
     }

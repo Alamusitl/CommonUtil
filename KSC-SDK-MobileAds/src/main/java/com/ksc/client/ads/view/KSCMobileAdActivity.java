@@ -45,18 +45,6 @@ public class KSCMobileAdActivity extends Activity {
     private boolean mIsMute = false;
     private boolean mPopCloseView = false;
     private Timer mTimer;
-    private Runnable mGetVideoProgressTask = new Runnable() {
-        @Override
-        public void run() {
-            mHandler.removeCallbacks(mGetVideoProgressTask);
-            Message message = mHandler.obtainMessage();
-            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mMediaPlayer.getDuration();
-            message.arg2 = mMediaPlayer.getCurrentPosition();
-            mHandler.sendMessage(message);
-            mHandler.postDelayed(mGetVideoProgressTask, 100);
-        }
-    };
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -115,6 +103,18 @@ public class KSCMobileAdActivity extends Activity {
                     closeActivity(KSCMobileAdKeyCode.KEY_ACTIVITY_CLOSE_H5);
                     break;
             }
+        }
+    };
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
         }
     };
 
@@ -357,6 +357,7 @@ public class KSCMobileAdActivity extends Activity {
             }
         });
         mRootView.addView(landingPageView, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+        showNetPromptView();
     }
 
     private void showNetPromptView() {
