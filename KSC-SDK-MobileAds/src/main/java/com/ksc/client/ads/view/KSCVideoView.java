@@ -194,7 +194,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         // Initialize mediaPlayer
         mMediaPlayer = new MediaPlayer();
         reset();
-        mMediaPlayer.setAudioStreamType(AudioManager.STREAM_SYSTEM);
+        mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 
         // Initialize the surfaceView
         mSurfaceView = new SurfaceView(context);
@@ -595,7 +595,12 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      * close the volume on this player.
      */
     public void closeVolume() {
-        setVolume(0, 0);
+        AudioManager audioManager = (AudioManager) mContext.getSystemService(Service.AUDIO_SERVICE);
+        if (VERSION.SDK_INT > VERSION_CODES.M) {
+            audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_MUTE, 0);
+        } else {
+            audioManager.setStreamMute(AudioManager.STREAM_MUSIC, true);
+        }
     }
 
     /**
@@ -604,8 +609,12 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     public void resumeVolume() {
         AudioManager audioManager = (AudioManager) mContext.getSystemService(Service.AUDIO_SERVICE);
         if (mMediaPlayer != null) {
-            mMediaPlayer.setAudioStreamType(AudioManager.STREAM_SYSTEM);
+            mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         }
-        setVolume(audioManager.getStreamVolume(AudioManager.STREAM_SYSTEM), audioManager.getStreamVolume(AudioManager.STREAM_SYSTEM));
+        if (VERSION.SDK_INT >= VERSION_CODES.M) {
+            audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_UNMUTE, 0);
+        } else {
+            audioManager.setStreamMute(AudioManager.STREAM_MUSIC, false);
+        }
     }
 }
