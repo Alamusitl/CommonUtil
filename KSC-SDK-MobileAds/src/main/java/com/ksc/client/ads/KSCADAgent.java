@@ -9,6 +9,7 @@ import android.os.Message;
 import android.util.SparseArray;
 
 import com.ksc.client.ads.callback.KSCAdEventListener;
+import com.ksc.client.ads.config.KSCMobileAdKeyCode;
 import com.ksc.client.ads.proto.KSCMobileAdProtoAPI;
 import com.ksc.client.ads.view.KSCMobileAdActivity;
 import com.ksc.client.toolbox.HttpError;
@@ -62,22 +63,37 @@ public class KSCADAgent {
     private Handler mHandler = new Handler(Looper.myLooper()) {
         @Override
         public void handleMessage(Message msg) {
+            if (mEventListener == null) {
+                return;
+            }
             switch (msg.what) {
                 case KSCMobileAdKeyCode.KEY_VIDEO_PREPARED:
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_PLAYING:
-                    break;
-                case KSCMobileAdKeyCode.KEY_VIDEO_RESUME:
+                    mEventListener.onVideoStart();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_PAUSE:
                     break;
-                case KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION:
+                case KSCMobileAdKeyCode.KEY_VIDEO_RESUME:
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_CLOSE:
+                    int position = Integer.parseInt((String) msg.obj);
+                    mEventListener.onVideoClose(position);
+                    break;
+                case KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION:
+                    mEventListener.onVideoCompletion();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_MUTE:
                     break;
-                case KSCMobileAdKeyCode.KEY_VIEW_CLOSE:
+                case KSCMobileAdKeyCode.KEY_VIDEO_ERROR:
+                    mEventListener.onVideoError((String) msg.obj);
+                    break;
+                case KSCMobileAdKeyCode.KEY_VIEW_VIDEO_CLOSE:
+                    break;
+                case KSCMobileAdKeyCode.KEY_VIEW_SHOW_CLOSE_CONFIRM:
+                    break;
+                case KSCMobileAdKeyCode.KEY_VIEW_H5_CLOSE:
+                    mEventListener.onLoadingPageClose();
                     break;
             }
         }

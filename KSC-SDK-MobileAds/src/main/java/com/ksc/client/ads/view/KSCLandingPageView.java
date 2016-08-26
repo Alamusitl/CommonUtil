@@ -12,8 +12,8 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.ksc.client.ads.KSCMobileAdKeyCode;
 import com.ksc.client.ads.KSCViewUtils;
+import com.ksc.client.ads.config.KSCMobileAdKeyCode;
 
 /**
  * Created by Alamusi on 2016/8/25.
@@ -43,7 +43,7 @@ public class KSCLandingPageView extends RelativeLayout {
         mCloseView = new ImageView(context);
         mCloseView.setId(KSCViewUtils.generateViewId());
         mCloseView.setBackgroundColor(Color.TRANSPARENT);
-        mCloseView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(context, KSCMobileAdKeyCode.VIDEO_VIEW_CLOSE));
+        mCloseView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(context, KSCMobileAdKeyCode.IMG_VIDEO_VIEW_CLOSE));
         LayoutParams lp = new LayoutParams(100, 100);
         lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
         lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);

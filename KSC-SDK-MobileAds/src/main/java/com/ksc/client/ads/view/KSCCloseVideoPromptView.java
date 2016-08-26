@@ -1,7 +1,6 @@
 package com.ksc.client.ads.view;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
@@ -15,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ksc.client.ads.KSCViewUtils;
+import com.ksc.client.ads.config.KSCColor;
 
 /**
  * Created by Alamusi on 2016/8/24.
@@ -24,12 +24,6 @@ public class KSCCloseVideoPromptView extends LinearLayout {
     private TextView mPromptMsg;
     private Button mCloseVideo;
     private Button mContinue;
-    private int color_white = Color.parseColor("#efefef");
-    private int wathet_blue = Color.parseColor("#0190ae");
-    private int dark_blue = Color.parseColor("#026175");
-    private int translucent_white = Color.parseColor("#D9FFFFFF");
-
-    private int mTextSize = 18;// sp
 
     public KSCCloseVideoPromptView(Context context) {
         super(context);
@@ -47,13 +41,14 @@ public class KSCCloseVideoPromptView extends LinearLayout {
      * @param context 上下文
      */
     private void initView(Context context) {
+        int mTextSize = 18;
         setOrientation(LinearLayout.VERTICAL);
         LinearLayout.LayoutParams parentLayoutParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0);
 
         //  提示信息
         mPromptMsg = new TextView(context);
         mPromptMsg.setId(KSCViewUtils.generateViewId());
-        mPromptMsg.setTextColor(dark_blue);
+        mPromptMsg.setTextColor(KSCColor.DARK_BLUE);
         mPromptMsg.setLineSpacing(5, 1);
         mPromptMsg.setTextSize(mTextSize);
         mPromptMsg.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
@@ -62,9 +57,9 @@ public class KSCCloseVideoPromptView extends LinearLayout {
 
         float[] textViewRadii = {30, 30, 30, 30, 0, 0, 0, 0};
         GradientDrawable promptViewBackground = new GradientDrawable();
-        promptViewBackground.setColor(translucent_white);
+        promptViewBackground.setColor(KSCColor.TRANSPARENT_WHITE_8);
         promptViewBackground.setCornerRadii(textViewRadii);
-        promptViewBackground.setStroke(0, translucent_white);
+        promptViewBackground.setStroke(0, KSCColor.TRANSPARENT_WHITE_8);
         setViewBackground(mPromptMsg, promptViewBackground);
         parentLayoutParam.weight = 2;
         addView(mPromptMsg, parentLayoutParam);
@@ -80,8 +75,8 @@ public class KSCCloseVideoPromptView extends LinearLayout {
         // 分割图片
         ImageView imgLine = new ImageView(context);
         imgLine.setId(KSCViewUtils.generateViewId());
-        imgLine.setBackgroundColor(color_white);
-        imgLine.setImageDrawable(new ColorDrawable(wathet_blue));
+        imgLine.setBackgroundColor(KSCColor.BACKGROUND_WHITE);
+        imgLine.setImageDrawable(new ColorDrawable(KSCColor.WATHET_BLUE));
         imgLine.setPadding(0, 30, 0, 30);
         lp = new RelativeLayout.LayoutParams(5, RelativeLayout.LayoutParams.MATCH_PARENT);
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
@@ -89,16 +84,16 @@ public class KSCCloseVideoPromptView extends LinearLayout {
 
         // 关闭按钮
         mCloseVideo = new Button(context);
-        mCloseVideo.setTextColor(wathet_blue);
-        mCloseVideo.setBackgroundColor(color_white);
+        mCloseVideo.setTextColor(KSCColor.WATHET_BLUE);
+        mCloseVideo.setBackgroundColor(KSCColor.BACKGROUND_WHITE);
         mCloseVideo.setId(KSCViewUtils.generateViewId());
         mCloseVideo.setGravity(Gravity.CENTER);
         mCloseVideo.setTextSize(mTextSize);
         float[] closeViewRadii = {0, 0, 0, 0, 0, 0, 30, 30};
         GradientDrawable closeViewBackground = new GradientDrawable();
-        closeViewBackground.setColor(color_white);
+        closeViewBackground.setColor(KSCColor.BACKGROUND_WHITE);
         closeViewBackground.setCornerRadii(closeViewRadii);
-        closeViewBackground.setStroke(0, color_white);
+        closeViewBackground.setStroke(0, KSCColor.BACKGROUND_WHITE);
         setViewBackground(mCloseVideo, closeViewBackground);
         lp = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         lp.addRule(RelativeLayout.LEFT_OF, imgLine.getId());
@@ -106,28 +101,20 @@ public class KSCCloseVideoPromptView extends LinearLayout {
 
         // 继续观看
         mContinue = new Button(context);
-        mContinue.setTextColor(wathet_blue);
-        mContinue.setBackgroundColor(color_white);
+        mContinue.setTextColor(KSCColor.WATHET_BLUE);
+        mContinue.setBackgroundColor(KSCColor.BACKGROUND_WHITE);
         mContinue.setId(KSCViewUtils.generateViewId());
         mContinue.setGravity(Gravity.CENTER);
         mContinue.setTextSize(mTextSize);
         float[] continueViewRadii = {0, 0, 0, 0, 30, 30, 0, 0};
         GradientDrawable continueViewBackground = new GradientDrawable();
-        continueViewBackground.setColor(color_white);
+        continueViewBackground.setColor(KSCColor.BACKGROUND_WHITE);
         continueViewBackground.setCornerRadii(continueViewRadii);
-        continueViewBackground.setStroke(0, color_white);
+        continueViewBackground.setStroke(0, KSCColor.BACKGROUND_WHITE);
         setViewBackground(mContinue, continueViewBackground);
         lp = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         lp.addRule(RelativeLayout.RIGHT_OF, imgLine.getId());
         controlView.addView(mContinue, lp);
-
-        setText();
-    }
-
-    private void setText() {
-        mPromptMsg.setText("注意: 视频播放不完全，将得不到奖励！您确定要提前关闭吗？");
-        mCloseVideo.setText("关闭");
-        mContinue.setText("继续观看");
     }
 
     /**

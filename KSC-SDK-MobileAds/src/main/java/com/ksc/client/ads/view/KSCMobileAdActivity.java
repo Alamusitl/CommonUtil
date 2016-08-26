@@ -24,11 +24,14 @@ import android.widget.RelativeLayout.LayoutParams;
 
 import com.ksc.client.ads.KSCBlackBoard;
 import com.ksc.client.ads.KSCMediaState;
-import com.ksc.client.ads.KSCMobileAdKeyCode;
 import com.ksc.client.ads.KSCViewUtils;
 import com.ksc.client.ads.callback.KSCVideoPlayCallBack;
+import com.ksc.client.ads.config.KSCColor;
+import com.ksc.client.ads.config.KSCMobileAdKeyCode;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class KSCMobileAdActivity extends Activity {
 
@@ -39,23 +42,14 @@ public class KSCMobileAdActivity extends Activity {
     private KSCCountDownView mCountDownTimeView;
     private KSCVideoView mMediaPlayer;
     private boolean mIsMute = false;
-    private boolean mCanConfigChange = true;
-    private Runnable mGetVideoProgressTask = new Runnable() {
-        @Override
-        public void run() {
-            mHandler.removeCallbacks(mGetVideoProgressTask);
-            Message message = mHandler.obtainMessage();
-            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mMediaPlayer.getDuration();
-            message.arg2 = mMediaPlayer.getCurrentPosition();
-            mHandler.sendMessage(message);
-            mHandler.postDelayed(mGetVideoProgressTask, 100);
-        }
-    };
+    private boolean mPopCloseView = false;
+    private Timer mTimer;
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
-            KSCBlackBoard.getTransformHandler().sendEmptyMessage(msg.what);
+            if (KSCBlackBoard.getTransformHandler() != null) {
+                KSCBlackBoard.getTransformHandler().sendEmptyMessage(msg.what);
+            }
             switch (msg.what) {
                 case KSCMobileAdKeyCode.KEY_VIDEO_PREPARED:
                     refreshCountDownTimeView(msg.arg1, msg.arg2);
@@ -90,11 +84,30 @@ public class KSCMobileAdActivity extends Activity {
                     muteVideoVolume();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_ERROR:
+                    closeView(KSCMobileAdKeyCode.KEY_ACTIVITY_CLOSE_ERROR);
                     break;
-                case KSCMobileAdKeyCode.KEY_VIEW_CLOSE:
+                case KSCMobileAdKeyCode.KEY_VIEW_VIDEO_CLOSE:
+                    showCloseView();
+                    break;
+                case KSCMobileAdKeyCode.KEY_VIEW_SHOW_CLOSE_CONFIRM:
+                    showCloseViewConfirmDialog();
+                    break;
+                case KSCMobileAdKeyCode.KEY_VIEW_H5_CLOSE:
                     closeView(KSCMobileAdKeyCode.KEY_ACTIVITY_CLOSE_H5);
                     break;
             }
+        }
+    };
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
         }
     };
 
@@ -116,10 +129,15 @@ public class KSCMobileAdActivity extends Activity {
                 mMediaPlayer.setVideoPath(path);
             } else if (type.equals(KSCMobileAdKeyCode.VIDEO_IN_STREAM)) {
                 mMediaPlayer.setVideoURI(Uri.parse(path));
+                mTimer = new Timer();
+                openTimer();
             }
         } catch (IOException e) {
             Log.e(TAG, "onCreate: set MediaPlayer DataSource exception", e);
-            closeView(KSCMobileAdKeyCode.KEY_ACTIVITY_CLOSE_ERROR);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_ERROR;
+            message.obj = e.getMessage();
+            mHandler.sendMessage(message);
         }
     }
 
@@ -130,7 +148,7 @@ public class KSCMobileAdActivity extends Activity {
 
         // 播放器
         mMediaPlayer = new KSCVideoView(this);
-        mMediaPlayer.setBackgroundColor(Color.parseColor("#B2000000"));
+        mMediaPlayer.setBackgroundColor(KSCColor.TRANSPARENT_BLACK_7);
         mRootView.addView(mMediaPlayer, lp);
 
         // 关闭按钮
@@ -140,7 +158,7 @@ public class KSCMobileAdActivity extends Activity {
         lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
         lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         lp.setMargins(0, 20, 20, 0);
-        mCloseView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, KSCMobileAdKeyCode.VIDEO_VIEW_CLOSE));
+        mCloseView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, KSCMobileAdKeyCode.IMG_VIDEO_VIEW_CLOSE));
         mCloseView.setBackgroundColor(Color.TRANSPARENT);
         mCloseView.setVisibility(View.GONE);
         mRootView.addView(mCloseView, lp);
@@ -173,7 +191,7 @@ public class KSCMobileAdActivity extends Activity {
         lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         lp.setMargins(0, 0, 20, 20);
         mMuteView.setBackgroundColor(Color.TRANSPARENT);
-        mMuteView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, KSCMobileAdKeyCode.VIDEO_VIEW_VOLUME_RESUME));
+        mMuteView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, KSCMobileAdKeyCode.IMG_VIDEO_VIEW_VOLUME_RESUME));
         mRootView.addView(mMuteView, lp);
     }
 
@@ -182,7 +200,7 @@ public class KSCMobileAdActivity extends Activity {
             @Override
             public void onClick(View view) {
                 mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_PAUSE);
-                showCloseConfirmDialog();
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIEW_SHOW_CLOSE_CONFIRM);
             }
         });
         mMuteView.setOnClickListener(new OnClickListener() {
@@ -223,7 +241,10 @@ public class KSCMobileAdActivity extends Activity {
             public void onError(MediaPlayer mediaPlayer, int what, int extra) {
                 Log.i(TAG, "onError: what=" + what + ", extra=" + extra);
                 mHandler.removeCallbacks(mGetVideoProgressTask);
-                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_ERROR);
+                Message message = mHandler.obtainMessage();
+                message.what = KSCMobileAdKeyCode.KEY_VIDEO_ERROR;
+                message.obj = what + ":" + extra;
+                mHandler.sendMessage(message);
             }
 
         });
@@ -235,48 +256,53 @@ public class KSCMobileAdActivity extends Activity {
     }
 
     private void showCloseView() {
-        mCloseView.setVisibility(View.VISIBLE);
+        if (!mCloseView.isShown()) {
+            mCloseView.setVisibility(View.VISIBLE);
+        }
     }
 
     private void closeView(String value) {
+        mRootView.removeAllViews();
+        if (mTimer != null) {
+            mTimer.cancel();
+        }
         Intent intent = new Intent();
         intent.putExtra(KSCMobileAdKeyCode.KEY_ACTIVITY_CLOSE, value);
         setResult(RESULT_OK, intent);
         finish();
     }
 
-    private void showCloseConfirmDialog() {
+    private void showCloseViewConfirmDialog() {
         mCloseView.setEnabled(false);
         mMuteView.setEnabled(false);
-        mCanConfigChange = false;
+        mPopCloseView = true;
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
-        System.out.println(dm.widthPixels + ":" + dm.heightPixels + ":" + dm.density);
-
-        int left_right_margin = dm.widthPixels / 4;
-        int top_bottom_margin = dm.heightPixels / 11 * 3;
         final KSCCloseVideoPromptView alertDialogView = new KSCCloseVideoPromptView(this);
         int width = 320 * (int) dm.density;
         int height = 165 * (int) dm.density;
 
         LayoutParams lp = new LayoutParams(width, height);
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
-//        lp.setMargins(left_right_margin, top_bottom_margin, left_right_margin, top_bottom_margin);
         alertDialogView.setText("注意: 视频播放不完全，将得不到奖励！您确定要提前关闭吗？");
         alertDialogView.setCloseButtonText("关闭");
         alertDialogView.setContinueButtonText("继续观看");
         alertDialogView.setCloseButtonClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                mCanConfigChange = true;
-                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_CLOSE);
+                mPopCloseView = false;
+                int currentPosition = 0;
+                if (mMediaPlayer != null) {
+                    currentPosition = mMediaPlayer.getCurrentPosition();
+                }
+                mHandler.sendMessage(mHandler.obtainMessage(KSCMobileAdKeyCode.KEY_VIDEO_CLOSE, currentPosition));
             }
         });
         alertDialogView.setContinueButtonClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                mCanConfigChange = true;
+                mPopCloseView = false;
                 mRootView.removeView(alertDialogView);
                 mCloseView.setEnabled(true);
                 mMuteView.setEnabled(true);
@@ -295,7 +321,7 @@ public class KSCMobileAdActivity extends Activity {
         landingPageView.setCloseViewClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIEW_CLOSE);
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIEW_H5_CLOSE);
             }
         });
         landingPageView.setLandingViewDownloadListener(new DownloadListener() {
@@ -310,23 +336,32 @@ public class KSCMobileAdActivity extends Activity {
     private void muteVideoVolume() {
         if (mIsMute) {
             mIsMute = false;
-            mMuteView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, KSCMobileAdKeyCode.VIDEO_VIEW_VOLUME_RESUME));
+            mMuteView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, KSCMobileAdKeyCode.IMG_VIDEO_VIEW_VOLUME_RESUME));
             mMediaPlayer.resumeVolume();
         } else {
             mIsMute = true;
-            mMuteView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, KSCMobileAdKeyCode.VIDEO_VIEW_MUTE));
+            mMuteView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, KSCMobileAdKeyCode.IMG_VIDEO_VIEW_MUTE));
             mMediaPlayer.closeVolume();
         }
+    }
+
+    private void openTimer() {
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_PAUSE);
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIEW_VIDEO_CLOSE);
+            }
+        };
+        mTimer.schedule(task, 5 * 1000);
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         mMediaPlayer.setFullScreen();
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-
-        } else {
-
+        if (mPopCloseView) {
+            mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_PAUSE);
         }
     }
 
