@@ -2,8 +2,6 @@ package com.ksc.client.util;
 
 import android.app.Activity;
 import android.content.Context;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -28,7 +26,7 @@ public class KSCDeviceUtils {
         if (!TextUtils.isEmpty(imei)) {
             return imei;
         }
-        String mac = getMac(context);
+        String mac = KSCNetUtils.getMac(context);
         if (!TextUtils.isEmpty(mac)) {
             return mac;
         }
@@ -54,27 +52,6 @@ public class KSCDeviceUtils {
                 }
                 if (!TextUtils.isEmpty(imei)) {
                     return imei;
-                }
-            }
-        } catch (SecurityException e) {
-            KSCLog.e(e.getMessage());
-        }
-        return null;
-    }
-
-    /**
-     * 获得Android 设备Mac地址
-     *
-     * @param context
-     * @return
-     */
-    public static String getMac(Context context) {
-        try {
-            WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-            if (wifi != null) {
-                WifiInfo info = wifi.getConnectionInfo();
-                if (info != null && !TextUtils.isEmpty(info.getMacAddress())) {
-                    return "mac_" + info.getMacAddress();
                 }
             }
         } catch (SecurityException e) {

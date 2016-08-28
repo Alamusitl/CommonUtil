@@ -3,7 +3,14 @@ package com.ksc.client.util;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
+
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
 
 /**
  * Created by Alamusi on 2016/6/23.
@@ -65,6 +72,52 @@ public class KSCNetUtils {
                 return "4G";
         }
         return networkInfo.getTypeName();
+    }
+
+    /**
+     * 获得IPV4地址
+     *
+     * @return IPV4地址
+     */
+    public static String getIp() {
+        String ip = "";
+        try {
+            for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements(); ) {
+                NetworkInterface networkInterface = en.nextElement();
+                for (Enumeration<InetAddress> ipAddress = networkInterface.getInetAddresses(); ipAddress.hasMoreElements(); ) {
+                    InetAddress inetAddress = ipAddress.nextElement();
+                    // ipv4地址
+                    if (!inetAddress.isLoopbackAddress() && !inetAddress.isLinkLocalAddress()) {
+                        ip = inetAddress.getHostAddress();
+                    }
+                }
+            }
+        } catch (Exception ex) {
+            KSCLog.e(ex.getMessage());
+        }
+        return ip;
+    }
+
+    /**
+     * 获得Android 设备Mac地址
+     *
+     * @param context 上下文
+     * @return Mac地址
+     */
+    public static String getMac(Context context) {
+        String mac = "";
+        try {
+            WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+            if (wifi != null) {
+                WifiInfo info = wifi.getConnectionInfo();
+                if (info != null && !TextUtils.isEmpty(info.getMacAddress())) {
+                    mac = info.getMacAddress();
+                }
+            }
+        } catch (SecurityException e) {
+            KSCLog.e(e.getMessage());
+        }
+        return mac;
     }
 
 
