@@ -43,6 +43,29 @@ public class KSCMD5Utils {
         }
     }
 
+    public static String md5(String msg) {
+        try {
+            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            messageDigest.update(msg.getBytes("UTF-8"));
+            byte[] encryptStr = messageDigest.digest();
+            if (encryptStr == null) {
+                return "";
+            }
+            StringBuilder builder = new StringBuilder();
+            for (byte anEncryptStr : encryptStr) {
+                if (Integer.toHexString(0xff & anEncryptStr).length() == 1) {
+                    builder.append("0").append(Integer.toHexString(0xff & anEncryptStr));
+                } else {
+                    builder.append(Integer.toHexString(0xff & anEncryptStr));
+                }
+            }
+            return builder.toString();
+        } catch (Exception e) {
+            KSCLog.e("md5 sign " + msg + " exception", e);
+            return "";
+        }
+    }
+
     /**
      * 把byte[]数组转换成十六进制字符串表示形式
      *

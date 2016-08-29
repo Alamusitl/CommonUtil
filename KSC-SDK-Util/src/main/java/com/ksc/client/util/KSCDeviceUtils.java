@@ -1,11 +1,10 @@
 package com.ksc.client.util;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import android.util.DisplayMetrics;
 
 import java.util.Locale;
 import java.util.UUID;
@@ -16,19 +15,19 @@ import java.util.UUID;
 public class KSCDeviceUtils {
 
     /**
-     * 获得设备ID
+     * 获得设备ID, 优先级：ANDROID_ID -> IMEI -> UUID
      *
-     * @param context
-     * @return
+     * @param context 上下文
+     * @return Android Id
      */
-    public static String getDeviceID(Context context) {
+    public static String getAndroidID(Context context) {
+        String androidId = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
+        if (!"9774d56d682e549c".equals(androidId)) {
+            return androidId;
+        }
         String imei = getImei(context);
         if (!TextUtils.isEmpty(imei)) {
             return imei;
-        }
-        String mac = KSCNetUtils.getMac(context);
-        if (!TextUtils.isEmpty(mac)) {
-            return mac;
         }
         return getUUID(context);
     }
@@ -36,8 +35,8 @@ public class KSCDeviceUtils {
     /**
      * 获得Android 设备IMEI
      *
-     * @param context
-     * @return
+     * @param context 上下文
+     * @return IMEI
      */
     public static String getImei(Context context) {
         try {
@@ -45,10 +44,10 @@ public class KSCDeviceUtils {
             if (mTelephonyMgr != null) {
                 String imei = mTelephonyMgr.getDeviceId();
                 if ("012345678912345".equals(imei)) {
-                    return null;
+                    return "";
                 }
                 if ("000000000000000".equals(imei)) {
-                    return null;
+                    return "";
                 }
                 if (!TextUtils.isEmpty(imei)) {
                     return imei;
@@ -57,13 +56,13 @@ public class KSCDeviceUtils {
         } catch (SecurityException e) {
             KSCLog.e(e.getMessage());
         }
-        return null;
+        return "";
     }
 
     /**
      * 获得一个不变的随机变量
      *
-     * @param context
+     * @param context 上下文
      * @return
      */
     public static String getUUID(Context context) {
@@ -73,18 +72,6 @@ public class KSCDeviceUtils {
             KSCPreferencesUtils.setUUID(context, uuid);
         }
         return uuid;
-    }
-
-    /**
-     * 获得手机屏幕宽高
-     *
-     * @param activity
-     * @return
-     */
-    public static String getScreenSize(Activity activity) {
-        DisplayMetrics outMetrics = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(outMetrics);
-        return outMetrics.widthPixels + "*" + outMetrics.heightPixels;
     }
 
     /**
