@@ -109,15 +109,15 @@ public class KSCNetUtils {
      */
     public static int getOperators(Context context) {
         int operatorsName = 0;
-        String IMSI = ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).getSubscriberId();
-        if (IMSI == null) {
+        String imsi = ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).getSubscriberId();
+        if (imsi == null) {
             return operatorsName;
         }
-        if (IMSI.startsWith("46000") || IMSI.startsWith("46002") || IMSI.startsWith("46007")) {
+        if (imsi.startsWith("46000") || imsi.startsWith("46002") || imsi.startsWith("46007")) {
             operatorsName = 1;
-        } else if (IMSI.startsWith("46001") || IMSI.startsWith("46006")) {
+        } else if (imsi.startsWith("46001") || imsi.startsWith("46006")) {
             operatorsName = 2;
-        } else if (IMSI.startsWith("46003") || IMSI.startsWith("46005")) {
+        } else if (imsi.startsWith("46003") || imsi.startsWith("46005")) {
             operatorsName = 3;
         }
         return operatorsName;
@@ -132,6 +132,9 @@ public class KSCNetUtils {
     public static int getCellId(Context context) {
         TelephonyManager manager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         String imsi = manager.getSubscriberId();
+        if (imsi == null || imsi.equals("")) {
+            return 0;
+        }
         int cellId;
         if (imsi.startsWith("46003") || imsi.startsWith("46005")) {
             CdmaCellLocation cdmaCellLocation = (CdmaCellLocation) manager.getCellLocation();

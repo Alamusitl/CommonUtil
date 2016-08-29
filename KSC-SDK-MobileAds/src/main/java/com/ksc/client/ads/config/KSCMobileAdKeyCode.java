@@ -14,12 +14,6 @@ public class KSCMobileAdKeyCode {
     public static final String IMG_VIDEO_VIEW_MUTE = "ksc_controller_mute.png";
     public static final String IMG_VIDEO_VIEW_VOLUME_RESUME = "ksc_controller_volume_resume.png";
 
-    public static final int KEY_ACTIVITY_REQUEST = 20000;// Activity RequestCode
-    public static final String KEY_ACTIVITY_CLOSE = "keyCloseActivity";// Activity返回Key值
-    public static final String KEY_ACTIVITY_CLOSE_VIDEO = "closeVideo";// Activity关闭返回的值，关闭视频
-    public static final String KEY_ACTIVITY_CLOSE_H5 = "closeH5";// Activity关闭返回的值，关闭H5
-    public static final String KEY_ACTIVITY_CLOSE_ERROR = "closePlayError";// Activity关闭返回的值，错误
-
     /**
      * 视频准备完成
      */
@@ -80,6 +74,5 @@ public class KSCMobileAdKeyCode {
      * 下载失败
      */
     public static final int KEY_DOWNLOAD_FAIL = 14;
-
 
 }

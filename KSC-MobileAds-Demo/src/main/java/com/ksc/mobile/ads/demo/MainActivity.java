@@ -23,9 +23,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         KSCADAgent.getInstance().setDebug(true);
-        KSCADAgent.getInstance().init(this, "", "", "", new KSCAdEventListener() {
+        KSCADAgent.getInstance().init(this, "ayce05f9", "test", "47435394", new KSCAdEventListener() {
+
             @Override
-            public void onAdExist(boolean isAdExist) {
+            public void onAdExist(boolean isAdExist, long code) {
 
             }
 
@@ -55,11 +56,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onLoadingPageShow(boolean showSuccess) {
-
-            }
-
-            @Override
             public void onLoadingPageClose() {
 
             }
@@ -77,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, KSCMobileAdActivity.class);
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_TYPE, KSCMobileAdKeyCode.VIDEO_IN_CACHE);
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_PATH, path);
-                startActivityForResult(intent, KSCMobileAdKeyCode.KEY_ACTIVITY_REQUEST);
+                startActivity(intent);
             }
         });
         findViewById(R.id.btnStreamVideoAd).setOnClickListener(new View.OnClickListener() {
@@ -86,17 +82,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, KSCMobileAdActivity.class);
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_TYPE, KSCMobileAdKeyCode.VIDEO_IN_STREAM);
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_PATH, "http://v1.mukewang.com/a45016f4-08d6-4277-abe6-bcfd5244c201/L.mp4");
-                startActivityForResult(intent, KSCMobileAdKeyCode.KEY_ACTIVITY_REQUEST);
-            }
-        });
-
-        findViewById(R.id.btnTest).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, TestActivity.class);
                 startActivity(intent);
             }
         });
+
     }
 
     @Override
@@ -117,9 +106,4 @@ public class MainActivity extends AppCompatActivity {
         KSCADAgent.getInstance().onDestroy();
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        KSCADAgent.getInstance().onActivityResult(requestCode, resultCode, data);
-    }
 }

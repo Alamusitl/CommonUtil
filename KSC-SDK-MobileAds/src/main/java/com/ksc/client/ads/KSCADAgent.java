@@ -8,9 +8,11 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.SparseArray;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.ksc.client.ads.callback.KSCAdEventListener;
 import com.ksc.client.ads.config.KSCMobileAdKeyCode;
 import com.ksc.client.ads.proto.KSCMobileAdProtoAPI;
+import com.ksc.client.ads.proto.KSCMobileAdsProto530;
 import com.ksc.client.ads.view.KSCMobileAdActivity;
 import com.ksc.client.toolbox.HttpError;
 import com.ksc.client.toolbox.HttpErrorListener;
@@ -94,6 +96,15 @@ public class KSCADAgent {
                 case KSCMobileAdKeyCode.KEY_VIEW_H5_CLOSE:
                     mEventListener.onLoadingPageClose();
                     break;
+                case KSCMobileAdKeyCode.KEY_VIEW_H5_CLICK:
+                    deleteCachedVideo();
+                    break;
+                case KSCMobileAdKeyCode.KEY_DOWNLOAD_START:
+                    break;
+                case KSCMobileAdKeyCode.KEY_DOWNLOAD_SUCCESS:
+                    break;
+                case KSCMobileAdKeyCode.KEY_DOWNLOAD_FAIL:
+                    break;
             }
         }
     };
@@ -109,7 +120,7 @@ public class KSCADAgent {
         mEventListener = eventListener;
         KSCBlackBoard.setTransformHandler(mHandler);
         setCachePath(activity);
-//        checkAppHasAd(activity, true);
+        checkAppHasAd(activity, true);
     }
 
     public void setDebug(boolean debug) {
@@ -128,25 +139,6 @@ public class KSCADAgent {
         KSCLog.d("KSCADAgent onDestroy");
     }
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        KSCLog.d("KSCADAgent onActivityResult");
-        if (requestCode == KSCMobileAdKeyCode.KEY_ACTIVITY_REQUEST) {
-            if (resultCode == Activity.RESULT_OK && mCachedVideoList.size() > 0) {
-                String cachePath = mCachedVideoList.get(0);
-                File cacheFile = new File(cachePath);
-                if (cacheFile.exists()) {
-                    boolean result = cacheFile.delete();
-                    if (result) {
-                        mCachedVideoList.remove(0);
-                    }
-                    if (mCachedVideoList.size() == 0) {
-                        mHasCached = false;
-                    }
-                }
-            }
-        }
-    }
-
     public void showAdVideo(Activity activity) {
         KSCLog.d("KSCADAgent showAdVideo");
         if (!mAdExist) {
@@ -159,13 +151,13 @@ public class KSCADAgent {
             Intent intent = new Intent(activity, KSCMobileAdActivity.class);
             intent.putExtra(KSCMobileAdKeyCode.VIDEO_TYPE, KSCMobileAdKeyCode.VIDEO_IN_STREAM);
             intent.putExtra(KSCMobileAdKeyCode.VIDEO_PATH, mAdVideoUrl);
-            activity.startActivityForResult(intent, KSCMobileAdKeyCode.KEY_ACTIVITY_REQUEST);
+            activity.startActivity(intent);
         }
         if (mHasCached && mCachedVideoList.size() > 0) {// 有缓存
             Intent intent = new Intent(activity, KSCMobileAdActivity.class);
             intent.putExtra(KSCMobileAdKeyCode.VIDEO_TYPE, KSCMobileAdKeyCode.VIDEO_IN_CACHE);
             intent.putExtra(KSCMobileAdKeyCode.VIDEO_PATH, mCachedVideoList.get(0));
-            activity.startActivityForResult(intent, KSCMobileAdKeyCode.KEY_ACTIVITY_REQUEST);
+            activity.startActivity(intent);
             checkAppHasAd(activity, true);
         }
     }
@@ -174,28 +166,11 @@ public class KSCADAgent {
         KSCLog.d("KSCADAgent checkAppHasAd, isCache:" + isCache);
         HttpRequestParam requestParam = new HttpRequestParam("http://120.92.9.140:8080/api/def", HttpRequestParam.METHOD_POST);
         requestParam.setContentType("application/x-protobuf");
-        requestParam.setBody(KSCMobileAdProtoAPI.getInstance().getRequest(activity, mAppId, mChannelId).toByteString().toStringUtf8());
+        requestParam.setBody(new String(KSCMobileAdProtoAPI.getInstance().getRequest(activity, mAppId, mChannelId, mAdSlotId).toByteArray()));
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(HttpResponse response) {
-                if (response.getCode() == 200) {// 存在广告
-                    mEventListener.onAdExist(true);
-                    String url = "http://v1.mukewang.com/a45016f4-08d6-4277-abe6-bcfd5244c201/L.mp4";
-                    String netType = KSCNetUtils.getNetType(activity);
-                    if (netType == null) {
-                        netType = "2G";
-                    }
-                    if (mCanCached && isCache && !netType.equals("2G")) {// 可缓存，是缓存，不是2G网络的时候缓存
-                        cacheAdVideo(url);
-                    }
-                    if (!isCache) {// 不缓存的时候播放流媒体
-                        mAdVideoUrl = url;
-                        showAdVideo(activity);
-                    }
-                } else {// 不存在广告
-                    mAdExist = false;
-                    mEventListener.onAdExist(false);
-                }
+                disposeAdResponse(activity, response, isCache);
             }
         }, new HttpErrorListener() {
             @Override
@@ -231,6 +206,54 @@ public class KSCADAgent {
 
     private void pushAdEvent() {
 
+    }
+
+    private void deleteCachedVideo() {
+        if (mCachedVideoList.size() > 0) {
+            String cachePath = mCachedVideoList.get(0);
+            File cacheFile = new File(cachePath);
+            if (cacheFile.exists()) {
+                boolean result = cacheFile.delete();
+                if (result) {
+                    mCachedVideoList.remove(0);
+                }
+                if (mCachedVideoList.size() == 0) {
+                    mHasCached = false;
+                }
+            }
+        }
+    }
+
+    private void disposeAdResponse(Activity activity, HttpResponse response, boolean isCache) {
+        String url = "http://v1.mukewang.com/a45016f4-08d6-4277-abe6-bcfd5244c201/L.mp4";
+        if (response.getCode() != 200) {// 存在广告
+            mAdExist = false;
+            mEventListener.onAdExist(false, -1);
+            return;
+        }
+        KSCMobileAdsProto530.MobadsResponse adResponse;
+        try {
+            adResponse = KSCMobileAdsProto530.MobadsResponse.parseFrom(response.getBody());
+        } catch (InvalidProtocolBufferException e) {
+            KSCLog.e("parse response to Mobile ads response exception", e);
+            return;
+        }
+        String requestId = adResponse.getRequestId();
+        long errorCode = adResponse.getErrorCode();
+        if (errorCode == 0) {
+            mEventListener.onAdExist(true, errorCode);
+            int netType = KSCNetUtils.getNetType(activity);
+            if (mCanCached && isCache && netType != KSCNetUtils.NETWORK_TYPE_2G) {// 可缓存，是缓存，不是2G网络的时候缓存
+                cacheAdVideo(url);
+            }
+            if (!isCache) {// 不缓存的时候播放流媒体
+                mAdVideoUrl = url;
+                showAdVideo(activity);
+            }
+        } else {
+            KSCLog.e("get ad error, error code = " + errorCode);
+            mEventListener.onAdExist(false, errorCode);
+        }
     }
 
     /**

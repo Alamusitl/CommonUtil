@@ -45,6 +45,18 @@ public class KSCMobileAdActivity extends Activity {
     private boolean mIsMute = false;
     private boolean mPopCloseView = false;
     private Timer mTimer;
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
+        }
+    };
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -82,7 +94,7 @@ public class KSCMobileAdActivity extends Activity {
                 case KSCMobileAdKeyCode.KEY_VIDEO_CLOSE:
                     mHandler.removeCallbacks(mGetVideoProgressTask);
                     mMediaPlayer.stop();
-                    closeActivity(KSCMobileAdKeyCode.KEY_ACTIVITY_CLOSE_VIDEO);
+                    closeActivity();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION:
                     showLandingPage();
@@ -91,7 +103,7 @@ public class KSCMobileAdActivity extends Activity {
                     muteVideoVolume();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_ERROR:
-                    closeActivity(KSCMobileAdKeyCode.KEY_ACTIVITY_CLOSE_ERROR);
+                    closeActivity();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIEW_VIDEO_CLOSE:
                     showCloseVideoView();
@@ -100,21 +112,15 @@ public class KSCMobileAdActivity extends Activity {
                     showCloseVideoConfirmDialog();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIEW_H5_CLOSE:
-                    closeActivity(KSCMobileAdKeyCode.KEY_ACTIVITY_CLOSE_H5);
+                    closeActivity();
+                    break;
+                case KSCMobileAdKeyCode.KEY_VIEW_H5_CLICK:
+                    disposeDownload();
+                    break;
+                case KSCMobileAdKeyCode.KEY_DOWNLOAD_START:
+                    closeActivity();
                     break;
             }
-        }
-    };
-    private Runnable mGetVideoProgressTask = new Runnable() {
-        @Override
-        public void run() {
-            mHandler.removeCallbacks(mGetVideoProgressTask);
-            Message message = mHandler.obtainMessage();
-            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mMediaPlayer.getDuration();
-            message.arg2 = mMediaPlayer.getCurrentPosition();
-            mHandler.sendMessage(message);
-            mHandler.postDelayed(mGetVideoProgressTask, 100);
         }
     };
 
@@ -274,14 +280,11 @@ public class KSCMobileAdActivity extends Activity {
         }
     }
 
-    private void closeActivity(String value) {
+    private void closeActivity() {
         mRootView.removeAllViews();
         if (mTimer != null) {
             mTimer.cancel();
         }
-        Intent intent = new Intent();
-        intent.putExtra(KSCMobileAdKeyCode.KEY_ACTIVITY_CLOSE, value);
-        setResult(RESULT_OK, intent);
         finish();
     }
 
@@ -344,20 +347,10 @@ public class KSCMobileAdActivity extends Activity {
         landingPageView.setLandingViewDownloadListener(new DownloadListener() {
             @Override
             public void onDownloadStart(String url, String s1, String s2, String s3, long l) {
-                if (!KSCNetUtils.isNetworkAvailable(KSCMobileAdActivity.this)) {
-                    showNetPromptView();
-                    return;
-                }
-                String netType = KSCNetUtils.getNetType(KSCMobileAdActivity.this);
-                if (netType == null || !netType.equals("WIFI")) {
-                    showNetPromptView();
-                } else {
-
-                }
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIEW_H5_CLICK);
             }
         });
         mRootView.addView(landingPageView, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-        showNetPromptView();
     }
 
     private void showNetPromptView() {
@@ -371,7 +364,7 @@ public class KSCMobileAdActivity extends Activity {
         netPromptView.setConfirmViewClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_DOWNLOAD_START);
             }
         });
         LayoutParams lp = new LayoutParams(width, height);
@@ -388,6 +381,19 @@ public class KSCMobileAdActivity extends Activity {
             mIsMute = true;
             mMuteView.setImageBitmap(KSCViewUtils.getBitmapFromAssets(this, KSCMobileAdKeyCode.IMG_VIDEO_VIEW_MUTE));
             mMediaPlayer.closeVolume();
+        }
+    }
+
+    private void disposeDownload() {
+        if (!KSCNetUtils.isNetworkAvailable(KSCMobileAdActivity.this)) {
+            showNetPromptView();
+            return;
+        }
+        int netType = KSCNetUtils.getNetType(KSCMobileAdActivity.this);
+        if (netType != KSCNetUtils.NETWORK_TYPE_WIFI) {
+            showNetPromptView();
+        } else {
+            mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_DOWNLOAD_START);
         }
     }
 

@@ -19,11 +19,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".TestActivity"
-            android:configChanges="keyboardHidden|screenSize|orientation"
-            android:screenOrientation="sensor"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
     </application>
 
 </manifest>

@@ -4,83 +4,83 @@
 package com.ksc.client.ads.proto;
 
 public final class KSCMobileAdsProto530 {
-    private static com.google.protobuf.Descriptors.Descriptor
+    private static final com.google.protobuf.Descriptors.Descriptor
             internal_static_com_ksc_client_ads_proto_MobadsRequest_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_Version_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_App_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_AdSlot_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_UdId_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_Size_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_Device_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_Network_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_WiFiAp_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_Gps_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_Video_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_MobadsResponse_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_MetaIndex_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_Ad_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_MaterialMeta_descriptor;
+    private static final com.google.protobuf.Descriptors.Descriptor
+            internal_static_com_ksc_client_ads_proto_Tracking_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_MobadsRequest_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_Version_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_Version_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_App_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_App_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_AdSlot_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_AdSlot_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_UdId_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_UdId_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_Size_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_Size_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_Device_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_Device_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_Network_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_Network_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_WiFiAp_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_WiFiAp_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_Gps_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_Gps_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_Video_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_Video_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_MobadsResponse_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_MobadsResponse_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_MetaIndex_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_MetaIndex_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_Ad_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_Ad_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_MaterialMeta_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_MaterialMeta_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_ksc_client_ads_proto_Tracking_descriptor;
     private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internal_static_com_ksc_client_ads_proto_Tracking_fieldAccessorTable;
@@ -88,7 +88,7 @@ public final class KSCMobileAdsProto530 {
             descriptor;
 
     static {
-        String[] descriptorData = {
+        java.lang.String[] descriptorData = {
                 "\n KSC_mobile_ads_Proto_5.3.0.proto\022\030com." +
                         "ksc.client.ads.proto\"\371\002\n\rMobadsRequest\022\022" +
                         "\n\nrequest_id\030\001 \001(\t\0226\n\013api_version\030\002 \001(\0132" +
@@ -189,134 +189,6 @@ public final class KSCMobileAdsProto530 {
                     public com.google.protobuf.ExtensionRegistry assignDescriptors(
                             com.google.protobuf.Descriptors.FileDescriptor root) {
                         descriptor = root;
-                        internal_static_com_ksc_client_ads_proto_MobadsRequest_descriptor =
-                                getDescriptor().getMessageTypes().get(0);
-                        internal_static_com_ksc_client_ads_proto_MobadsRequest_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_MobadsRequest_descriptor,
-                                new String[]{"RequestId", "ApiVersion", "Adslot", "App", "Device", "Network", "Gps", "IsDebug", "RequestNum",},
-                                MobadsRequest.class,
-                                MobadsRequest.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_Version_descriptor =
-                                getDescriptor().getMessageTypes().get(1);
-                        internal_static_com_ksc_client_ads_proto_Version_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_Version_descriptor,
-                                new String[]{"Major", "Minor", "Micro",},
-                                Version.class,
-                                Version.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_App_descriptor =
-                                getDescriptor().getMessageTypes().get(2);
-                        internal_static_com_ksc_client_ads_proto_App_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_App_descriptor,
-                                new String[]{"AppId", "ChannelId", "AppVersion", "AppPackage",},
-                                App.class,
-                                App.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_AdSlot_descriptor =
-                                getDescriptor().getMessageTypes().get(3);
-                        internal_static_com_ksc_client_ads_proto_AdSlot_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_AdSlot_descriptor,
-                                new String[]{"AdslotId", "AdslotSize", "Video", "AdslotType", "Ads",},
-                                AdSlot.class,
-                                AdSlot.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_UdId_descriptor =
-                                getDescriptor().getMessageTypes().get(4);
-                        internal_static_com_ksc_client_ads_proto_UdId_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_UdId_descriptor,
-                                new String[]{"Idfa", "Imei", "Mac", "AndroidId", "IdfaMd5", "ImeiMd5", "AndroididMd5",},
-                                UdId.class,
-                                UdId.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_Size_descriptor =
-                                getDescriptor().getMessageTypes().get(5);
-                        internal_static_com_ksc_client_ads_proto_Size_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_Size_descriptor,
-                                new String[]{"Width", "Height",},
-                                Size.class,
-                                Size.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_Device_descriptor =
-                                getDescriptor().getMessageTypes().get(6);
-                        internal_static_com_ksc_client_ads_proto_Device_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_Device_descriptor,
-                                new String[]{"DeviceType", "OsType", "OsVersion", "Vendor", "Model", "Udid", "ScreenSize",},
-                                Device.class,
-                                Device.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_Network_descriptor =
-                                getDescriptor().getMessageTypes().get(7);
-                        internal_static_com_ksc_client_ads_proto_Network_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_Network_descriptor,
-                                new String[]{"Ipv4", "ConnectionType", "OperatorType", "CellularId", "WifiAps",},
-                                Network.class,
-                                Network.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_WiFiAp_descriptor =
-                                getDescriptor().getMessageTypes().get(8);
-                        internal_static_com_ksc_client_ads_proto_WiFiAp_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_WiFiAp_descriptor,
-                                new String[]{"ApMac", "Rssi", "ApName", "IsConnected",},
-                                WiFiAp.class,
-                                WiFiAp.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_Gps_descriptor =
-                                getDescriptor().getMessageTypes().get(9);
-                        internal_static_com_ksc_client_ads_proto_Gps_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_Gps_descriptor,
-                                new String[]{"CoordinateType", "Longitude", "Latitude", "Timestamp",},
-                                Gps.class,
-                                Gps.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_Video_descriptor =
-                                getDescriptor().getMessageTypes().get(10);
-                        internal_static_com_ksc_client_ads_proto_Video_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_Video_descriptor,
-                                new String[]{"Title", "ContentLength", "Copyright",},
-                                Video.class,
-                                Video.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_MobadsResponse_descriptor =
-                                getDescriptor().getMessageTypes().get(11);
-                        internal_static_com_ksc_client_ads_proto_MobadsResponse_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_MobadsResponse_descriptor,
-                                new String[]{"RequestId", "ErrorCode", "Ads", "ExpirationTime", "RequestTimeS",},
-                                MobadsResponse.class,
-                                MobadsResponse.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_MetaIndex_descriptor =
-                                getDescriptor().getMessageTypes().get(12);
-                        internal_static_com_ksc_client_ads_proto_MetaIndex_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_MetaIndex_descriptor,
-                                new String[]{"TotalNum", "CurrentIndex",},
-                                MetaIndex.class,
-                                MetaIndex.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_Ad_descriptor =
-                                getDescriptor().getMessageTypes().get(13);
-                        internal_static_com_ksc_client_ads_proto_Ad_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_Ad_descriptor,
-                                new String[]{"AdslotId", "AdKey", "MetaGroup", "HtmlSnippet", "AdTracking",},
-                                Ad.class,
-                                Ad.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_MaterialMeta_descriptor =
-                                getDescriptor().getMessageTypes().get(14);
-                        internal_static_com_ksc_client_ads_proto_MaterialMeta_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_MaterialMeta_descriptor,
-                                new String[]{"CreativeType", "InteractionType", "WinNoticeUrl", "ClickUrl", "Title", "BrandName", "Description", "IconSrc", "ImageSrc", "AppPackage", "AppSize", "VideoUrl", "VideoDuration", "MetaIndex", "MaterialWidth", "MaterialHeight",},
-                                MaterialMeta.class,
-                                MaterialMeta.Builder.class);
-                        internal_static_com_ksc_client_ads_proto_Tracking_descriptor =
-                                getDescriptor().getMessageTypes().get(15);
-                        internal_static_com_ksc_client_ads_proto_Tracking_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_com_ksc_client_ads_proto_Tracking_descriptor,
-                                new String[]{"TrackingEvent", "TrackingUrl",},
-                                Tracking.class,
-                                Tracking.Builder.class);
                         return null;
                     }
                 };
@@ -324,6 +196,102 @@ public final class KSCMobileAdsProto530 {
                 .internalBuildGeneratedFileFrom(descriptorData,
                         new com.google.protobuf.Descriptors.FileDescriptor[]{
                         }, assigner);
+        internal_static_com_ksc_client_ads_proto_MobadsRequest_descriptor =
+                getDescriptor().getMessageTypes().get(0);
+        internal_static_com_ksc_client_ads_proto_MobadsRequest_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_MobadsRequest_descriptor,
+                new java.lang.String[]{"RequestId", "ApiVersion", "Adslot", "App", "Device", "Network", "Gps", "IsDebug", "RequestNum",});
+        internal_static_com_ksc_client_ads_proto_Version_descriptor =
+                getDescriptor().getMessageTypes().get(1);
+        internal_static_com_ksc_client_ads_proto_Version_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_Version_descriptor,
+                new java.lang.String[]{"Major", "Minor", "Micro",});
+        internal_static_com_ksc_client_ads_proto_App_descriptor =
+                getDescriptor().getMessageTypes().get(2);
+        internal_static_com_ksc_client_ads_proto_App_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_App_descriptor,
+                new java.lang.String[]{"AppId", "ChannelId", "AppVersion", "AppPackage",});
+        internal_static_com_ksc_client_ads_proto_AdSlot_descriptor =
+                getDescriptor().getMessageTypes().get(3);
+        internal_static_com_ksc_client_ads_proto_AdSlot_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_AdSlot_descriptor,
+                new java.lang.String[]{"AdslotId", "AdslotSize", "Video", "AdslotType", "Ads",});
+        internal_static_com_ksc_client_ads_proto_UdId_descriptor =
+                getDescriptor().getMessageTypes().get(4);
+        internal_static_com_ksc_client_ads_proto_UdId_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_UdId_descriptor,
+                new java.lang.String[]{"Idfa", "Imei", "Mac", "AndroidId", "IdfaMd5", "ImeiMd5", "AndroididMd5",});
+        internal_static_com_ksc_client_ads_proto_Size_descriptor =
+                getDescriptor().getMessageTypes().get(5);
+        internal_static_com_ksc_client_ads_proto_Size_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_Size_descriptor,
+                new java.lang.String[]{"Width", "Height",});
+        internal_static_com_ksc_client_ads_proto_Device_descriptor =
+                getDescriptor().getMessageTypes().get(6);
+        internal_static_com_ksc_client_ads_proto_Device_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_Device_descriptor,
+                new java.lang.String[]{"DeviceType", "OsType", "OsVersion", "Vendor", "Model", "Udid", "ScreenSize",});
+        internal_static_com_ksc_client_ads_proto_Network_descriptor =
+                getDescriptor().getMessageTypes().get(7);
+        internal_static_com_ksc_client_ads_proto_Network_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_Network_descriptor,
+                new java.lang.String[]{"Ipv4", "ConnectionType", "OperatorType", "CellularId", "WifiAps",});
+        internal_static_com_ksc_client_ads_proto_WiFiAp_descriptor =
+                getDescriptor().getMessageTypes().get(8);
+        internal_static_com_ksc_client_ads_proto_WiFiAp_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_WiFiAp_descriptor,
+                new java.lang.String[]{"ApMac", "Rssi", "ApName", "IsConnected",});
+        internal_static_com_ksc_client_ads_proto_Gps_descriptor =
+                getDescriptor().getMessageTypes().get(9);
+        internal_static_com_ksc_client_ads_proto_Gps_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_Gps_descriptor,
+                new java.lang.String[]{"CoordinateType", "Longitude", "Latitude", "Timestamp",});
+        internal_static_com_ksc_client_ads_proto_Video_descriptor =
+                getDescriptor().getMessageTypes().get(10);
+        internal_static_com_ksc_client_ads_proto_Video_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_Video_descriptor,
+                new java.lang.String[]{"Title", "ContentLength", "Copyright",});
+        internal_static_com_ksc_client_ads_proto_MobadsResponse_descriptor =
+                getDescriptor().getMessageTypes().get(11);
+        internal_static_com_ksc_client_ads_proto_MobadsResponse_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_MobadsResponse_descriptor,
+                new java.lang.String[]{"RequestId", "ErrorCode", "Ads", "ExpirationTime", "RequestTimeS",});
+        internal_static_com_ksc_client_ads_proto_MetaIndex_descriptor =
+                getDescriptor().getMessageTypes().get(12);
+        internal_static_com_ksc_client_ads_proto_MetaIndex_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_MetaIndex_descriptor,
+                new java.lang.String[]{"TotalNum", "CurrentIndex",});
+        internal_static_com_ksc_client_ads_proto_Ad_descriptor =
+                getDescriptor().getMessageTypes().get(13);
+        internal_static_com_ksc_client_ads_proto_Ad_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_Ad_descriptor,
+                new java.lang.String[]{"AdslotId", "AdKey", "MetaGroup", "HtmlSnippet", "AdTracking",});
+        internal_static_com_ksc_client_ads_proto_MaterialMeta_descriptor =
+                getDescriptor().getMessageTypes().get(14);
+        internal_static_com_ksc_client_ads_proto_MaterialMeta_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_MaterialMeta_descriptor,
+                new java.lang.String[]{"CreativeType", "InteractionType", "WinNoticeUrl", "ClickUrl", "Title", "BrandName", "Description", "IconSrc", "ImageSrc", "AppPackage", "AppSize", "VideoUrl", "VideoDuration", "MetaIndex", "MaterialWidth", "MaterialHeight",});
+        internal_static_com_ksc_client_ads_proto_Tracking_descriptor =
+                getDescriptor().getMessageTypes().get(15);
+        internal_static_com_ksc_client_ads_proto_Tracking_fieldAccessorTable = new
+                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+                internal_static_com_ksc_client_ads_proto_Tracking_descriptor,
+                new java.lang.String[]{"TrackingEvent", "TrackingUrl",});
     }
 
     private KSCMobileAdsProto530() {
@@ -338,605 +306,2315 @@ public final class KSCMobileAdsProto530 {
         return descriptor;
     }
 
-    public interface MobadsRequestOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface MobadsRequestOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.MobadsRequest)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional string request_id = 1;
+        /**
+         * <code>optional string request_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！接入方自定义请求ID，[a-zA-Z0-9]{32}
+         * </pre>
+         */
         boolean hasRequestId();
 
-        String getRequestId();
+        /**
+         * <code>optional string request_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！接入方自定义请求ID，[a-zA-Z0-9]{32}
+         * </pre>
+         */
+        java.lang.String getRequestId();
 
-        // optional .com.ksc.client.ads.proto.Version api_version = 2;
+        /**
+         * <code>optional string request_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！接入方自定义请求ID，[a-zA-Z0-9]{32}
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getRequestIdBytes();
+
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+         * </pre>
+         */
         boolean hasApiVersion();
 
-        Version getApiVersion();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Version getApiVersion();
 
-        VersionOrBuilder getApiVersionOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder getApiVersionOrBuilder();
 
-        // optional .com.ksc.client.ads.proto.AdSlot adslot = 7;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位信息
+         * </pre>
+         */
         boolean hasAdslot();
 
-        AdSlot getAdslot();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位信息
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot getAdslot();
 
-        AdSlotOrBuilder getAdslotOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位信息
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlotOrBuilder getAdslotOrBuilder();
 
-        // optional .com.ksc.client.ads.proto.App app = 3;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用信息
+         * </pre>
+         */
         boolean hasApp();
 
-        App getApp();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用信息
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.App getApp();
 
-        AppOrBuilder getAppOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用信息
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.AppOrBuilder getAppOrBuilder();
 
-        // optional .com.ksc.client.ads.proto.Device device = 4;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备信息
+         * </pre>
+         */
         boolean hasDevice();
 
-        Device getDevice();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备信息
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Device getDevice();
 
-        DeviceOrBuilder getDeviceOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备信息
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.DeviceOrBuilder getDeviceOrBuilder();
 
-        // optional .com.ksc.client.ads.proto.Network network = 5;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+         * <p/>
+         * <pre>
+         * 必填！网络环境信息
+         * </pre>
+         */
         boolean hasNetwork();
 
-        Network getNetwork();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+         * <p/>
+         * <pre>
+         * 必填！网络环境信息
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Network getNetwork();
 
-        NetworkOrBuilder getNetworkOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+         * <p/>
+         * <pre>
+         * 必填！网络环境信息
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.NetworkOrBuilder getNetworkOrBuilder();
 
-        // optional .com.ksc.client.ads.proto.Gps gps = 6;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+         * <p/>
+         * <pre>
+         * 选填！强烈建议填写，用于辅助触发LBS广告
+         * </pre>
+         */
         boolean hasGps();
 
-        Gps getGps();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+         * <p/>
+         * <pre>
+         * 选填！强烈建议填写，用于辅助触发LBS广告
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps getGps();
 
-        GpsOrBuilder getGpsOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+         * <p/>
+         * <pre>
+         * 选填！强烈建议填写，用于辅助触发LBS广告
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.GpsOrBuilder getGpsOrBuilder();
 
-        // optional bool is_debug = 8 [default = false];
+        /**
+         * <code>optional bool is_debug = 8 [default = false];</code>
+         * <p/>
+         * <pre>
+         * 选填！测试流量标记，可获取广告，但不被计费，勿用于线上请求
+         * </pre>
+         */
         boolean hasIsDebug();
 
+        /**
+         * <code>optional bool is_debug = 8 [default = false];</code>
+         * <p/>
+         * <pre>
+         * 选填！测试流量标记，可获取广告，但不被计费，勿用于线上请求
+         * </pre>
+         */
         boolean getIsDebug();
 
-        // optional uint32 request_num = 15;
+        /**
+         * <code>optional uint32 request_num = 15;</code>
+         * <p/>
+         * <pre>
+         * 请求次数
+         * </pre>
+         */
         boolean hasRequestNum();
 
+        /**
+         * <code>optional uint32 request_num = 15;</code>
+         * <p/>
+         * <pre>
+         * 请求次数
+         * </pre>
+         */
         int getRequestNum();
     }
 
-    public interface VersionOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface VersionOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.Version)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional uint32 major = 1 [default = 0];
+        /**
+         * <code>optional uint32 major = 1 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 必填！
+         * </pre>
+         */
         boolean hasMajor();
 
+        /**
+         * <code>optional uint32 major = 1 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 必填！
+         * </pre>
+         */
         int getMajor();
 
-        // optional uint32 minor = 2 [default = 0];
+        /**
+         * <code>optional uint32 minor = 2 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 选填！
+         * </pre>
+         */
         boolean hasMinor();
 
+        /**
+         * <code>optional uint32 minor = 2 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 选填！
+         * </pre>
+         */
         int getMinor();
 
-        // optional uint32 micro = 3 [default = 0];
+        /**
+         * <code>optional uint32 micro = 3 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 选填！
+         * </pre>
+         */
         boolean hasMicro();
 
+        /**
+         * <code>optional uint32 micro = 3 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 选填！
+         * </pre>
+         */
         int getMicro();
     }
 
-    public interface AppOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface AppOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.App)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional string app_id = 1 [default = ""];
+        /**
+         * <code>optional string app_id = 1 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！应用ID，在Mobile SSP（以下简称MSSP）完成注册，并上传应用通过审核后，平台会提供应用ID
+         * </pre>
+         */
         boolean hasAppId();
 
-        String getAppId();
+        /**
+         * <code>optional string app_id = 1 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！应用ID，在Mobile SSP（以下简称MSSP）完成注册，并上传应用通过审核后，平台会提供应用ID
+         * </pre>
+         */
+        java.lang.String getAppId();
 
-        // optional string channel_id = 2;
+        /**
+         * <code>optional string app_id = 1 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！应用ID，在Mobile SSP（以下简称MSSP）完成注册，并上传应用通过审核后，平台会提供应用ID
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getAppIdBytes();
+
+        /**
+         * <code>optional string channel_id = 2;</code>
+         * <p/>
+         * <pre>
+         * 选填！发布渠道ID，渠道接入方必需填写
+         * </pre>
+         */
         boolean hasChannelId();
 
-        String getChannelId();
+        /**
+         * <code>optional string channel_id = 2;</code>
+         * <p/>
+         * <pre>
+         * 选填！发布渠道ID，渠道接入方必需填写
+         * </pre>
+         */
+        java.lang.String getChannelId();
 
-        // optional .com.ksc.client.ads.proto.Version app_version = 3;
+        /**
+         * <code>optional string channel_id = 2;</code>
+         * <p/>
+         * <pre>
+         * 选填！发布渠道ID，渠道接入方必需填写
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getChannelIdBytes();
+
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用版本，将影响优选策略
+         * </pre>
+         */
         boolean hasAppVersion();
 
-        Version getAppVersion();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用版本，将影响优选策略
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Version getAppVersion();
 
-        VersionOrBuilder getAppVersionOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用版本，将影响优选策略
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder getAppVersionOrBuilder();
 
-        // optional string app_package = 4;
+        /**
+         * <code>optional string app_package = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用包名，需要跟应用提交时一一对应，中文需要UTF-8编码
+         * </pre>
+         */
         boolean hasAppPackage();
 
-        String getAppPackage();
+        /**
+         * <code>optional string app_package = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用包名，需要跟应用提交时一一对应，中文需要UTF-8编码
+         * </pre>
+         */
+        java.lang.String getAppPackage();
+
+        /**
+         * <code>optional string app_package = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用包名，需要跟应用提交时一一对应，中文需要UTF-8编码
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getAppPackageBytes();
     }
 
-    public interface AdSlotOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface AdSlotOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.AdSlot)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional string adslot_id = 1;
+        /**
+         * <code>optional string adslot_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位ID，需要媒体在MSSP平台进行设置！非常重要！
+         * </pre>
+         */
         boolean hasAdslotId();
 
-        String getAdslotId();
+        /**
+         * <code>optional string adslot_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位ID，需要媒体在MSSP平台进行设置！非常重要！
+         * </pre>
+         */
+        java.lang.String getAdslotId();
 
-        // optional .com.ksc.client.ads.proto.Size adslot_size = 2;
+        /**
+         * <code>optional string adslot_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位ID，需要媒体在MSSP平台进行设置！非常重要！
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getAdslotIdBytes();
+
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位尺寸
+         * </pre>
+         */
         boolean hasAdslotSize();
 
-        Size getAdslotSize();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位尺寸
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Size getAdslotSize();
 
-        SizeOrBuilder getAdslotSizeOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位尺寸
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder getAdslotSizeOrBuilder();
 
-        // optional .com.ksc.client.ads.proto.Video video = 4;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+         * <p/>
+         * <pre>
+         * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+         * </pre>
+         */
         boolean hasVideo();
 
-        Video getVideo();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+         * <p/>
+         * <pre>
+         * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Video getVideo();
 
-        VideoOrBuilder getVideoOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+         * <p/>
+         * <pre>
+         * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.VideoOrBuilder getVideoOrBuilder();
 
-        // optional uint32 adslot_type = 5;
+        /**
+         * <code>optional uint32 adslot_type = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告类型
+         * </pre>
+         */
         boolean hasAdslotType();
 
+        /**
+         * <code>optional uint32 adslot_type = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告类型
+         * </pre>
+         */
         int getAdslotType();
 
-        // optional uint32 ads = 15;
+        /**
+         * <code>optional uint32 ads = 15;</code>
+         * <p/>
+         * <pre>
+         * 返回广告条数,目前仅支持信息流.
+         * </pre>
+         */
         boolean hasAds();
 
+        /**
+         * <code>optional uint32 ads = 15;</code>
+         * <p/>
+         * <pre>
+         * 返回广告条数,目前仅支持信息流.
+         * </pre>
+         */
         int getAds();
     }
 
-    public interface UdIdOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface UdIdOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.UdId)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional string idfa = 1 [default = ""];
+        /**
+         * <code>optional string idfa = 1 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！iOS设备的IDFA，格式要求[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+         * </pre>
+         */
         boolean hasIdfa();
 
-        String getIdfa();
+        /**
+         * <code>optional string idfa = 1 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！iOS设备的IDFA，格式要求[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+         * </pre>
+         */
+        java.lang.String getIdfa();
 
-        // optional string imei = 2 [default = ""];
+        /**
+         * <code>optional string idfa = 1 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！iOS设备的IDFA，格式要求[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getIdfaBytes();
+
+        /**
+         * <code>optional string imei = 2 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！Android手机设备的IMEI，格式要求[0-9a-fA-F]{14,15}
+         * </pre>
+         */
         boolean hasImei();
 
-        String getImei();
+        /**
+         * <code>optional string imei = 2 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！Android手机设备的IMEI，格式要求[0-9a-fA-F]{14,15}
+         * </pre>
+         */
+        java.lang.String getImei();
 
-        // optional string mac = 3 [default = ""];
+        /**
+         * <code>optional string imei = 2 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！Android手机设备的IMEI，格式要求[0-9a-fA-F]{14,15}
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getImeiBytes();
+
+        /**
+         * <code>optional string mac = 3 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android非手机设备的WiFi网卡MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+         * </pre>
+         */
         boolean hasMac();
 
-        String getMac();
+        /**
+         * <code>optional string mac = 3 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android非手机设备的WiFi网卡MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+         * </pre>
+         */
+        java.lang.String getMac();
 
-        // optional string android_id = 5 [default = ""];
+        /**
+         * <code>optional string mac = 3 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android非手机设备的WiFi网卡MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getMacBytes();
+
+        /**
+         * <code>optional string android_id = 5 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！Android手机设备系统ID，格式要求[0-9A-Za-z]{16}
+         * </pre>
+         */
         boolean hasAndroidId();
 
-        String getAndroidId();
+        /**
+         * <code>optional string android_id = 5 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！Android手机设备系统ID，格式要求[0-9A-Za-z]{16}
+         * </pre>
+         */
+        java.lang.String getAndroidId();
 
-        // optional string idfa_md5 = 8 [default = ""];
+        /**
+         * <code>optional string android_id = 5 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！Android手机设备系统ID，格式要求[0-9A-Za-z]{16}
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getAndroidIdBytes();
+
+        /**
+         * <code>optional string idfa_md5 = 8 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * iOS设备的IDFA，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
         boolean hasIdfaMd5();
 
-        String getIdfaMd5();
+        /**
+         * <code>optional string idfa_md5 = 8 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * iOS设备的IDFA，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
+        java.lang.String getIdfaMd5();
 
-        // optional string imei_md5 = 4 [default = ""];
+        /**
+         * <code>optional string idfa_md5 = 8 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * iOS设备的IDFA，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getIdfaMd5Bytes();
+
+        /**
+         * <code>optional string imei_md5 = 4 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android手机设备的IMEI，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
         boolean hasImeiMd5();
 
-        String getImeiMd5();
+        /**
+         * <code>optional string imei_md5 = 4 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android手机设备的IMEI，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
+        java.lang.String getImeiMd5();
 
-        // optional string androidid_md5 = 9 [default = ""];
+        /**
+         * <code>optional string imei_md5 = 4 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android手机设备的IMEI，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getImeiMd5Bytes();
+
+        /**
+         * <code>optional string androidid_md5 = 9 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android手机设备系统ID，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
         boolean hasAndroididMd5();
 
-        String getAndroididMd5();
+        /**
+         * <code>optional string androidid_md5 = 9 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android手机设备系统ID，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
+        java.lang.String getAndroididMd5();
+
+        /**
+         * <code>optional string androidid_md5 = 9 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android手机设备系统ID，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getAndroididMd5Bytes();
     }
 
-    public interface SizeOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface SizeOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.Size)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional uint32 width = 1 [default = 0];
+        /**
+         * <code>optional uint32 width = 1 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 必填！宽度
+         * </pre>
+         */
         boolean hasWidth();
 
+        /**
+         * <code>optional uint32 width = 1 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 必填！宽度
+         * </pre>
+         */
         int getWidth();
 
-        // optional uint32 height = 2 [default = 0];
+        /**
+         * <code>optional uint32 height = 2 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 必填！高度
+         * </pre>
+         */
         boolean hasHeight();
 
+        /**
+         * <code>optional uint32 height = 2 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 必填！高度
+         * </pre>
+         */
         int getHeight();
     }
 
-    public interface DeviceOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface DeviceOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.Device)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional .com.ksc.client.ads.proto.Device.DeviceType device_type = 1;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device.DeviceType device_type = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备类型
+         * </pre>
+         */
         boolean hasDeviceType();
 
-        Device.DeviceType getDeviceType();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device.DeviceType device_type = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备类型
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.DeviceType getDeviceType();
 
-        // optional .com.ksc.client.ads.proto.Device.OsType os_type = 2;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device.OsType os_type = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！操作系统类型
+         * </pre>
+         */
         boolean hasOsType();
 
-        Device.OsType getOsType();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device.OsType os_type = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！操作系统类型
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.OsType getOsType();
 
-        // optional .com.ksc.client.ads.proto.Version os_version = 3;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！操作系统版本
+         * </pre>
+         */
         boolean hasOsVersion();
 
-        Version getOsVersion();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！操作系统版本
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Version getOsVersion();
 
-        VersionOrBuilder getOsVersionOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！操作系统版本
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder getOsVersionOrBuilder();
 
-        // optional bytes vendor = 4 [default = ""];
+        /**
+         * <code>optional bytes vendor = 4 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！设备厂商名称，中文需要UTF-8编码
+         * </pre>
+         */
         boolean hasVendor();
 
+        /**
+         * <code>optional bytes vendor = 4 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！设备厂商名称，中文需要UTF-8编码
+         * </pre>
+         */
         com.google.protobuf.ByteString getVendor();
 
-        // optional bytes model = 5 [default = ""];
+        /**
+         * <code>optional bytes model = 5 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！设备型号，中文需要UTF-8编码
+         * </pre>
+         */
         boolean hasModel();
 
+        /**
+         * <code>optional bytes model = 5 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！设备型号，中文需要UTF-8编码
+         * </pre>
+         */
         com.google.protobuf.ByteString getModel();
 
-        // optional .com.ksc.client.ads.proto.UdId udid = 6;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+         * <p/>
+         * <pre>
+         * 必填！唯一设备标识，必需按要求填写
+         * </pre>
+         */
         boolean hasUdid();
 
-        UdId getUdid();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+         * <p/>
+         * <pre>
+         * 必填！唯一设备标识，必需按要求填写
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId getUdid();
 
-        UdIdOrBuilder getUdidOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+         * <p/>
+         * <pre>
+         * 必填！唯一设备标识，必需按要求填写
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.UdIdOrBuilder getUdidOrBuilder();
 
-        // optional .com.ksc.client.ads.proto.Size screen_size = 7;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备屏幕宽高
+         * </pre>
+         */
         boolean hasScreenSize();
 
-        Size getScreenSize();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备屏幕宽高
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Size getScreenSize();
 
-        SizeOrBuilder getScreenSizeOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备屏幕宽高
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder getScreenSizeOrBuilder();
     }
 
-    public interface NetworkOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface NetworkOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.Network)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional string ipv4 = 1;
+        /**
+         * <code>optional string ipv4 = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！用户设备的公网IPv4地址，服务器对接必填，格式要求：255.255.255.255
+         * </pre>
+         */
         boolean hasIpv4();
 
-        String getIpv4();
+        /**
+         * <code>optional string ipv4 = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！用户设备的公网IPv4地址，服务器对接必填，格式要求：255.255.255.255
+         * </pre>
+         */
+        java.lang.String getIpv4();
 
-        // optional .com.ksc.client.ads.proto.Network.ConnectionType connection_type = 2;
+        /**
+         * <code>optional string ipv4 = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！用户设备的公网IPv4地址，服务器对接必填，格式要求：255.255.255.255
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getIpv4Bytes();
+
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network.ConnectionType connection_type = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！网络连接类型，用于判断网速
+         * </pre>
+         */
         boolean hasConnectionType();
 
-        Network.ConnectionType getConnectionType();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network.ConnectionType connection_type = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！网络连接类型，用于判断网速
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.ConnectionType getConnectionType();
 
-        // optional .com.ksc.client.ads.proto.Network.OperatorType operator_type = 3;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network.OperatorType operator_type = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！移动运营商类型，用于运营商定向广告
+         * </pre>
+         */
         boolean hasOperatorType();
 
-        Network.OperatorType getOperatorType();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network.OperatorType operator_type = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！移动运营商类型，用于运营商定向广告
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.OperatorType getOperatorType();
 
-        // optional string cellular_id = 4;
+        /**
+         * <code>optional string cellular_id = 4;</code>
+         * <p/>
+         * <pre>
+         * 选填！当前连接的运营商基站ID，用于快速用户定位
+         * </pre>
+         */
         boolean hasCellularId();
 
-        String getCellularId();
+        /**
+         * <code>optional string cellular_id = 4;</code>
+         * <p/>
+         * <pre>
+         * 选填！当前连接的运营商基站ID，用于快速用户定位
+         * </pre>
+         */
+        java.lang.String getCellularId();
 
-        // repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;
-        java.util.List<WiFiAp>
+        /**
+         * <code>optional string cellular_id = 4;</code>
+         * <p/>
+         * <pre>
+         * 选填！当前连接的运营商基站ID，用于快速用户定位
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getCellularIdBytes();
+
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+         * <p/>
+         * <pre>
+         * 选填！周边WiFi热点列表，用于精细用户定位
+         * </pre>
+         */
+        java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp>
         getWifiApsList();
 
-        WiFiAp getWifiAps(int index);
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+         * <p/>
+         * <pre>
+         * 选填！周边WiFi热点列表，用于精细用户定位
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp getWifiAps(int index);
 
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+         * <p/>
+         * <pre>
+         * 选填！周边WiFi热点列表，用于精细用户定位
+         * </pre>
+         */
         int getWifiApsCount();
 
-        java.util.List<? extends WiFiApOrBuilder>
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+         * <p/>
+         * <pre>
+         * 选填！周边WiFi热点列表，用于精细用户定位
+         * </pre>
+         */
+        java.util.List<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiApOrBuilder>
         getWifiApsOrBuilderList();
 
-        WiFiApOrBuilder getWifiApsOrBuilder(
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+         * <p/>
+         * <pre>
+         * 选填！周边WiFi热点列表，用于精细用户定位
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiApOrBuilder getWifiApsOrBuilder(
                 int index);
     }
 
-    public interface WiFiApOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface WiFiApOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.WiFiAp)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional string ap_mac = 1;
+        /**
+         * <code>optional string ap_mac = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+         * </pre>
+         */
         boolean hasApMac();
 
-        String getApMac();
+        /**
+         * <code>optional string ap_mac = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+         * </pre>
+         */
+        java.lang.String getApMac();
 
-        // optional int32 rssi = 2;
+        /**
+         * <code>optional string ap_mac = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getApMacBytes();
+
+        /**
+         * <code>optional int32 rssi = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点信号强度，通常是负数
+         * </pre>
+         */
         boolean hasRssi();
 
+        /**
+         * <code>optional int32 rssi = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点信号强度，通常是负数
+         * </pre>
+         */
         int getRssi();
 
-        // optional bytes ap_name = 3;
+        /**
+         * <code>optional bytes ap_name = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点名称，可不传递，建议传递当前接入热点的名称，用于判断用户当前所处场所，中文需要UTF-8编码
+         * </pre>
+         */
         boolean hasApName();
 
+        /**
+         * <code>optional bytes ap_name = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点名称，可不传递，建议传递当前接入热点的名称，用于判断用户当前所处场所，中文需要UTF-8编码
+         * </pre>
+         */
         com.google.protobuf.ByteString getApName();
 
-        // optional bool is_connected = 4;
+        /**
+         * <code>optional bool is_connected = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！是否是当前连接热点，配合热点名称可用于识别用户所处场所
+         * </pre>
+         */
         boolean hasIsConnected();
 
+        /**
+         * <code>optional bool is_connected = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！是否是当前连接热点，配合热点名称可用于识别用户所处场所
+         * </pre>
+         */
         boolean getIsConnected();
     }
 
-    public interface GpsOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface GpsOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.Gps)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional .com.ksc.client.ads.proto.Gps.CoordinateType coordinate_type = 1;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Gps.CoordinateType coordinate_type = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！坐标类型
+         * </pre>
+         */
         boolean hasCoordinateType();
 
-        Gps.CoordinateType getCoordinateType();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Gps.CoordinateType coordinate_type = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！坐标类型
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.CoordinateType getCoordinateType();
 
-        // optional double longitude = 2;
+        /**
+         * <code>optional double longitude = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！经度
+         * </pre>
+         */
         boolean hasLongitude();
 
+        /**
+         * <code>optional double longitude = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！经度
+         * </pre>
+         */
         double getLongitude();
 
-        // optional double latitude = 3;
+        /**
+         * <code>optional double latitude = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！纬度
+         * </pre>
+         */
         boolean hasLatitude();
 
+        /**
+         * <code>optional double latitude = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！纬度
+         * </pre>
+         */
         double getLatitude();
 
-        // optional uint32 timestamp = 4;
+        /**
+         * <code>optional uint32 timestamp = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！时间戳，单位秒
+         * </pre>
+         */
         boolean hasTimestamp();
 
+        /**
+         * <code>optional uint32 timestamp = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！时间戳，单位秒
+         * </pre>
+         */
         int getTimestamp();
     }
 
-    public interface VideoOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface VideoOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.Video)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional bytes title = 1;
+        /**
+         * <code>optional bytes title = 1;</code>
+         * <p/>
+         * <pre>
+         * 视频标题，UTF-8编码
+         * </pre>
+         */
         boolean hasTitle();
 
+        /**
+         * <code>optional bytes title = 1;</code>
+         * <p/>
+         * <pre>
+         * 视频标题，UTF-8编码
+         * </pre>
+         */
         com.google.protobuf.ByteString getTitle();
 
-        // optional uint32 content_length = 2;
+        /**
+         * <code>optional uint32 content_length = 2;</code>
+         * <p/>
+         * <pre>
+         * 视频内容长度
+         * </pre>
+         */
         boolean hasContentLength();
 
+        /**
+         * <code>optional uint32 content_length = 2;</code>
+         * <p/>
+         * <pre>
+         * 视频内容长度
+         * </pre>
+         */
         int getContentLength();
 
-        // optional .com.ksc.client.ads.proto.Video.CopyRight copyright = 3;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Video.CopyRight copyright = 3;</code>
+         * <p/>
+         * <pre>
+         * 视频版权信息
+         * </pre>
+         */
         boolean hasCopyright();
 
-        Video.CopyRight getCopyright();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Video.CopyRight copyright = 3;</code>
+         * <p/>
+         * <pre>
+         * 视频版权信息
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.CopyRight getCopyright();
     }
 
-    public interface MobadsResponseOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface MobadsResponseOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.MobadsResponse)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional string request_id = 1;
+        /**
+         * <code>optional string request_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 对应请求的接入方自定义请求ID
+         * </pre>
+         */
         boolean hasRequestId();
 
-        String getRequestId();
+        /**
+         * <code>optional string request_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 对应请求的接入方自定义请求ID
+         * </pre>
+         */
+        java.lang.String getRequestId();
 
-        // optional uint64 error_code = 2;
+        /**
+         * <code>optional string request_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 对应请求的接入方自定义请求ID
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getRequestIdBytes();
+
+        /**
+         * <code>optional uint64 error_code = 2;</code>
+         * <p/>
+         * <pre>
+         * 请求响应出错时的错误码，用于问题排查
+         * </pre>
+         */
         boolean hasErrorCode();
 
+        /**
+         * <code>optional uint64 error_code = 2;</code>
+         * <p/>
+         * <pre>
+         * 请求响应出错时的错误码，用于问题排查
+         * </pre>
+         */
         long getErrorCode();
 
-        // repeated .com.ksc.client.ads.proto.Ad ads = 3;
-        java.util.List<Ad>
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+         * <p/>
+         * <pre>
+         * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+         * </pre>
+         */
+        java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad>
         getAdsList();
 
-        Ad getAds(int index);
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+         * <p/>
+         * <pre>
+         * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad getAds(int index);
 
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+         * <p/>
+         * <pre>
+         * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+         * </pre>
+         */
         int getAdsCount();
 
-        java.util.List<? extends AdOrBuilder>
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+         * <p/>
+         * <pre>
+         * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+         * </pre>
+         */
+        java.util.List<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.AdOrBuilder>
         getAdsOrBuilderList();
 
-        AdOrBuilder getAdsOrBuilder(
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+         * <p/>
+         * <pre>
+         * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.AdOrBuilder getAdsOrBuilder(
                 int index);
 
-        // optional uint32 expiration_time = 4;
+        /**
+         * <code>optional uint32 expiration_time = 4;</code>
+         * <p/>
+         * <pre>
+         * 广告清单过期时间戳，单位秒
+         * </pre>
+         */
         boolean hasExpirationTime();
 
+        /**
+         * <code>optional uint32 expiration_time = 4;</code>
+         * <p/>
+         * <pre>
+         * 广告清单过期时间戳，单位秒
+         * </pre>
+         */
         int getExpirationTime();
 
-        // optional double request_time_s = 15;
+        /**
+         * <code>optional double request_time_s = 15;</code>
+         * <p/>
+         * <pre>
+         * optional string search_key = 5; // 当次请求生成的唯一表示ID（deprecated）
+         * </pre>
+         */
         boolean hasRequestTimeS();
 
+        /**
+         * <code>optional double request_time_s = 15;</code>
+         * <p/>
+         * <pre>
+         * optional string search_key = 5; // 当次请求生成的唯一表示ID（deprecated）
+         * </pre>
+         */
         double getRequestTimeS();
     }
 
-    public interface MetaIndexOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface MetaIndexOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.MetaIndex)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional uint32 total_num = 1;
+        /**
+         * <code>optional uint32 total_num = 1;</code>
+         * <p/>
+         * <pre>
+         * 每条广告对应元素组中元数据个数
+         * </pre>
+         */
         boolean hasTotalNum();
 
+        /**
+         * <code>optional uint32 total_num = 1;</code>
+         * <p/>
+         * <pre>
+         * 每条广告对应元素组中元数据个数
+         * </pre>
+         */
         int getTotalNum();
 
-        // optional uint32 current_index = 2;
+        /**
+         * <code>optional uint32 current_index = 2;</code>
+         * <p/>
+         * <pre>
+         * 当前元数据所在索引
+         * </pre>
+         */
         boolean hasCurrentIndex();
 
+        /**
+         * <code>optional uint32 current_index = 2;</code>
+         * <p/>
+         * <pre>
+         * 当前元数据所在索引
+         * </pre>
+         */
         int getCurrentIndex();
     }
 
-    public interface AdOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface AdOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.Ad)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional string adslot_id = 1;
+        /**
+         * <code>optional string adslot_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 对应请求时填写的广告位ID
+         * </pre>
+         */
         boolean hasAdslotId();
 
-        String getAdslotId();
+        /**
+         * <code>optional string adslot_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 对应请求时填写的广告位ID
+         * </pre>
+         */
+        java.lang.String getAdslotId();
 
-        // optional string ad_key = 4;
+        /**
+         * <code>optional string adslot_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 对应请求时填写的广告位ID
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getAdslotIdBytes();
+
+        /**
+         * <code>optional string ad_key = 4;</code>
+         * <p/>
+         * <pre>
+         * 对当前返回广告的签名，可以唯一标识广告
+         * </pre>
+         */
         boolean hasAdKey();
 
-        String getAdKey();
+        /**
+         * <code>optional string ad_key = 4;</code>
+         * <p/>
+         * <pre>
+         * 对当前返回广告的签名，可以唯一标识广告
+         * </pre>
+         */
+        java.lang.String getAdKey();
 
-        // repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;
-        java.util.List<MaterialMeta>
+        /**
+         * <code>optional string ad_key = 4;</code>
+         * <p/>
+         * <pre>
+         * 对当前返回广告的签名，可以唯一标识广告
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getAdKeyBytes();
+
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+         * <p/>
+         * <pre>
+         * 物料元数据组，在一个广告中含有多个物料元信息时使用
+         * </pre>
+         */
+        java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta>
         getMetaGroupList();
 
-        MaterialMeta getMetaGroup(int index);
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+         * <p/>
+         * <pre>
+         * 物料元数据组，在一个广告中含有多个物料元信息时使用
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta getMetaGroup(int index);
 
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+         * <p/>
+         * <pre>
+         * 物料元数据组，在一个广告中含有多个物料元信息时使用
+         * </pre>
+         */
         int getMetaGroupCount();
 
-        java.util.List<? extends MaterialMetaOrBuilder>
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+         * <p/>
+         * <pre>
+         * 物料元数据组，在一个广告中含有多个物料元信息时使用
+         * </pre>
+         */
+        java.util.List<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMetaOrBuilder>
         getMetaGroupOrBuilderList();
 
-        MaterialMetaOrBuilder getMetaGroupOrBuilder(
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+         * <p/>
+         * <pre>
+         * 物料元数据组，在一个广告中含有多个物料元信息时使用
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMetaOrBuilder getMetaGroupOrBuilder(
                 int index);
 
-        // optional bytes html_snippet = 2;
+        /**
+         * <code>optional bytes html_snippet = 2;</code>
+         * <p/>
+         * <pre>
+         *    optional MaterialMeta material_meta = 3;  // [deprecated]物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
+         * </pre>
+         */
         boolean hasHtmlSnippet();
 
+        /**
+         * <code>optional bytes html_snippet = 2;</code>
+         * <p/>
+         * <pre>
+         *    optional MaterialMeta material_meta = 3;  // [deprecated]物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
+         * </pre>
+         */
         com.google.protobuf.ByteString getHtmlSnippet();
 
-        // repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;
-        java.util.List<Tracking>
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告监控信息
+         * </pre>
+         */
+        java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking>
         getAdTrackingList();
 
-        Tracking getAdTracking(int index);
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告监控信息
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking getAdTracking(int index);
 
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告监控信息
+         * </pre>
+         */
         int getAdTrackingCount();
 
-        java.util.List<? extends TrackingOrBuilder>
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告监控信息
+         * </pre>
+         */
+        java.util.List<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.TrackingOrBuilder>
         getAdTrackingOrBuilderList();
 
-        TrackingOrBuilder getAdTrackingOrBuilder(
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告监控信息
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.TrackingOrBuilder getAdTrackingOrBuilder(
                 int index);
     }
 
-    public interface MaterialMetaOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface MaterialMetaOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.MaterialMeta)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional .com.ksc.client.ads.proto.MaterialMeta.CreativeType creative_type = 1;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MaterialMeta.CreativeType creative_type = 1;</code>
+         * <p/>
+         * <pre>
+         * 创意类型
+         * </pre>
+         */
         boolean hasCreativeType();
 
-        MaterialMeta.CreativeType getCreativeType();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MaterialMeta.CreativeType creative_type = 1;</code>
+         * <p/>
+         * <pre>
+         * 创意类型
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.CreativeType getCreativeType();
 
-        // optional .com.ksc.client.ads.proto.MaterialMeta.InteractionType interaction_type = 2;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MaterialMeta.InteractionType interaction_type = 2;</code>
+         * <p/>
+         * <pre>
+         * 交互类型
+         * </pre>
+         */
         boolean hasInteractionType();
 
-        MaterialMeta.InteractionType getInteractionType();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MaterialMeta.InteractionType interaction_type = 2;</code>
+         * <p/>
+         * <pre>
+         * 交互类型
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.InteractionType getInteractionType();
 
-        // repeated string win_notice_url = 3;
-        java.util.List<String> getWinNoticeUrlList();
+        /**
+         * <code>repeated string win_notice_url = 3;</code>
+         * <p/>
+         * <pre>
+         * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+         * </pre>
+         */
+        com.google.protobuf.ProtocolStringList
+        getWinNoticeUrlList();
 
+        /**
+         * <code>repeated string win_notice_url = 3;</code>
+         * <p/>
+         * <pre>
+         * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+         * </pre>
+         */
         int getWinNoticeUrlCount();
 
-        String getWinNoticeUrl(int index);
+        /**
+         * <code>repeated string win_notice_url = 3;</code>
+         * <p/>
+         * <pre>
+         * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+         * </pre>
+         */
+        java.lang.String getWinNoticeUrl(int index);
 
-        // optional string click_url = 4;
+        /**
+         * <code>repeated string win_notice_url = 3;</code>
+         * <p/>
+         * <pre>
+         * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getWinNoticeUrlBytes(int index);
+
+        /**
+         * <code>optional string click_url = 4;</code>
+         * <p/>
+         * <pre>
+         * 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+         * </pre>
+         */
         boolean hasClickUrl();
 
-        String getClickUrl();
+        /**
+         * <code>optional string click_url = 4;</code>
+         * <p/>
+         * <pre>
+         * 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+         * </pre>
+         */
+        java.lang.String getClickUrl();
 
-        // optional bytes title = 5;
+        /**
+         * <code>optional string click_url = 4;</code>
+         * <p/>
+         * <pre>
+         * 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getClickUrlBytes();
+
+        /**
+         * <code>optional bytes title = 5;</code>
+         * <p/>
+         * <pre>
+         * 推广标题，中文需要UTF-8编码
+         * </pre>
+         */
         boolean hasTitle();
 
+        /**
+         * <code>optional bytes title = 5;</code>
+         * <p/>
+         * <pre>
+         * 推广标题，中文需要UTF-8编码
+         * </pre>
+         */
         com.google.protobuf.ByteString getTitle();
 
-        // optional string brand_name = 16;
+        /**
+         * <code>optional string brand_name = 16;</code>
+         * <p/>
+         * <pre>
+         * 广告品牌名称，下载类则为app名称（如“手机百度”），非下载类则为品牌名称（如“小米”）
+         * </pre>
+         */
         boolean hasBrandName();
 
-        String getBrandName();
+        /**
+         * <code>optional string brand_name = 16;</code>
+         * <p/>
+         * <pre>
+         * 广告品牌名称，下载类则为app名称（如“手机百度”），非下载类则为品牌名称（如“小米”）
+         * </pre>
+         */
+        java.lang.String getBrandName();
 
-        // repeated bytes description = 6;
+        /**
+         * <code>optional string brand_name = 16;</code>
+         * <p/>
+         * <pre>
+         * 广告品牌名称，下载类则为app名称（如“手机百度”），非下载类则为品牌名称（如“小米”）
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getBrandNameBytes();
+
+        /**
+         * <code>repeated bytes description = 6;</code>
+         * <p/>
+         * <pre>
+         * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+         * </pre>
+         */
         java.util.List<com.google.protobuf.ByteString> getDescriptionList();
 
+        /**
+         * <code>repeated bytes description = 6;</code>
+         * <p/>
+         * <pre>
+         * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+         * </pre>
+         */
         int getDescriptionCount();
 
+        /**
+         * <code>repeated bytes description = 6;</code>
+         * <p/>
+         * <pre>
+         * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+         * </pre>
+         */
         com.google.protobuf.ByteString getDescription(int index);
 
-        // repeated string icon_src = 7;
-        java.util.List<String> getIconSrcList();
+        /**
+         * <code>repeated string icon_src = 7;</code>
+         * <p/>
+         * <pre>
+         * 广告图标地址，注意：单个广告可能有多张图标返回
+         * </pre>
+         */
+        com.google.protobuf.ProtocolStringList
+        getIconSrcList();
 
+        /**
+         * <code>repeated string icon_src = 7;</code>
+         * <p/>
+         * <pre>
+         * 广告图标地址，注意：单个广告可能有多张图标返回
+         * </pre>
+         */
         int getIconSrcCount();
 
-        String getIconSrc(int index);
+        /**
+         * <code>repeated string icon_src = 7;</code>
+         * <p/>
+         * <pre>
+         * 广告图标地址，注意：单个广告可能有多张图标返回
+         * </pre>
+         */
+        java.lang.String getIconSrc(int index);
 
-        // repeated string image_src = 8;
-        java.util.List<String> getImageSrcList();
+        /**
+         * <code>repeated string icon_src = 7;</code>
+         * <p/>
+         * <pre>
+         * 广告图标地址，注意：单个广告可能有多张图标返回
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getIconSrcBytes(int index);
 
+        /**
+         * <code>repeated string image_src = 8;</code>
+         * <p/>
+         * <pre>
+         * 广告图片地址，注意：单个广告可能有多张图片返回
+         * </pre>
+         */
+        com.google.protobuf.ProtocolStringList
+        getImageSrcList();
+
+        /**
+         * <code>repeated string image_src = 8;</code>
+         * <p/>
+         * <pre>
+         * 广告图片地址，注意：单个广告可能有多张图片返回
+         * </pre>
+         */
         int getImageSrcCount();
 
-        String getImageSrc(int index);
+        /**
+         * <code>repeated string image_src = 8;</code>
+         * <p/>
+         * <pre>
+         * 广告图片地址，注意：单个广告可能有多张图片返回
+         * </pre>
+         */
+        java.lang.String getImageSrc(int index);
 
-        // optional string app_package = 9;
+        /**
+         * <code>repeated string image_src = 8;</code>
+         * <p/>
+         * <pre>
+         * 广告图片地址，注意：单个广告可能有多张图片返回
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getImageSrcBytes(int index);
+
+        /**
+         * <code>optional string app_package = 9;</code>
+         * <p/>
+         * <pre>
+         * 下载类广告应用包名
+         * </pre>
+         */
         boolean hasAppPackage();
 
-        String getAppPackage();
+        /**
+         * <code>optional string app_package = 9;</code>
+         * <p/>
+         * <pre>
+         * 下载类广告应用包名
+         * </pre>
+         */
+        java.lang.String getAppPackage();
 
-        // optional uint32 app_size = 10;
+        /**
+         * <code>optional string app_package = 9;</code>
+         * <p/>
+         * <pre>
+         * 下载类广告应用包名
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getAppPackageBytes();
+
+        /**
+         * <code>optional uint32 app_size = 10;</code>
+         * <p/>
+         * <pre>
+         * 下载类广告应用大小
+         * </pre>
+         */
         boolean hasAppSize();
 
+        /**
+         * <code>optional uint32 app_size = 10;</code>
+         * <p/>
+         * <pre>
+         * 下载类广告应用大小
+         * </pre>
+         */
         int getAppSize();
 
-        // optional string video_url = 11;
+        /**
+         * <code>optional string video_url = 11;</code>
+         * <p/>
+         * <pre>
+         * 广告视频物料地址
+         * </pre>
+         */
         boolean hasVideoUrl();
 
-        String getVideoUrl();
+        /**
+         * <code>optional string video_url = 11;</code>
+         * <p/>
+         * <pre>
+         * 广告视频物料地址
+         * </pre>
+         */
+        java.lang.String getVideoUrl();
 
-        // optional uint32 video_duration = 12;
+        /**
+         * <code>optional string video_url = 11;</code>
+         * <p/>
+         * <pre>
+         * 广告视频物料地址
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getVideoUrlBytes();
+
+        /**
+         * <code>optional uint32 video_duration = 12;</code>
+         * <p/>
+         * <pre>
+         * 广告视频物料时长
+         * </pre>
+         */
         boolean hasVideoDuration();
 
+        /**
+         * <code>optional uint32 video_duration = 12;</code>
+         * <p/>
+         * <pre>
+         * 广告视频物料时长
+         * </pre>
+         */
         int getVideoDuration();
 
-        // optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+         * <p/>
+         * <pre>
+         * 当前元数据在一条广告元素组中的索引结构
+         * </pre>
+         */
         boolean hasMetaIndex();
 
-        MetaIndex getMetaIndex();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+         * <p/>
+         * <pre>
+         * 当前元数据在一条广告元素组中的索引结构
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex getMetaIndex();
 
-        MetaIndexOrBuilder getMetaIndexOrBuilder();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+         * <p/>
+         * <pre>
+         * 当前元数据在一条广告元素组中的索引结构
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndexOrBuilder getMetaIndexOrBuilder();
 
-        // optional uint32 material_width = 14;
+        /**
+         * <code>optional uint32 material_width = 14;</code>
+         * <p/>
+         * <pre>
+         * 物料的宽度:如果是图片,表示图片的宽度;如果是视频(含有视频截图),则为视频宽度;如果是图文或文本,则不会填充此字段
+         * </pre>
+         */
         boolean hasMaterialWidth();
 
+        /**
+         * <code>optional uint32 material_width = 14;</code>
+         * <p/>
+         * <pre>
+         * 物料的宽度:如果是图片,表示图片的宽度;如果是视频(含有视频截图),则为视频宽度;如果是图文或文本,则不会填充此字段
+         * </pre>
+         */
         int getMaterialWidth();
 
-        // optional uint32 material_height = 15;
+        /**
+         * <code>optional uint32 material_height = 15;</code>
+         * <p/>
+         * <pre>
+         * 物料的高度:如果是图片,表示图片的高度;如果是视频(含有视频截图),则为视频高度;如果是图文或文本,则不会填充此字段
+         * </pre>
+         */
         boolean hasMaterialHeight();
 
+        /**
+         * <code>optional uint32 material_height = 15;</code>
+         * <p/>
+         * <pre>
+         * 物料的高度:如果是图片,表示图片的高度;如果是视频(含有视频截图),则为视频高度;如果是图文或文本,则不会填充此字段
+         * </pre>
+         */
         int getMaterialHeight();
     }
 
-    public interface TrackingOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface TrackingOrBuilder extends
+            // @@protoc_insertion_point(interface_extends:com.ksc.client.ads.proto.Tracking)
+            com.google.protobuf.MessageOrBuilder {
 
-        // optional .com.ksc.client.ads.proto.Tracking.TrackingEvent tracking_event = 1;
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Tracking.TrackingEvent tracking_event = 1;</code>
+         * <p/>
+         * <pre>
+         * 被跟踪的广告展示过程事件
+         * </pre>
+         */
         boolean hasTrackingEvent();
 
-        Tracking.TrackingEvent getTrackingEvent();
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Tracking.TrackingEvent tracking_event = 1;</code>
+         * <p/>
+         * <pre>
+         * 被跟踪的广告展示过程事件
+         * </pre>
+         */
+        com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.TrackingEvent getTrackingEvent();
 
-        // repeated string tracking_url = 2;
-        java.util.List<String> getTrackingUrlList();
+        /**
+         * <code>repeated string tracking_url = 2;</code>
+         * <p/>
+         * <pre>
+         * 事件监控URL
+         * </pre>
+         */
+        com.google.protobuf.ProtocolStringList
+        getTrackingUrlList();
 
+        /**
+         * <code>repeated string tracking_url = 2;</code>
+         * <p/>
+         * <pre>
+         * 事件监控URL
+         * </pre>
+         */
         int getTrackingUrlCount();
 
-        String getTrackingUrl(int index);
+        /**
+         * <code>repeated string tracking_url = 2;</code>
+         * <p/>
+         * <pre>
+         * 事件监控URL
+         * </pre>
+         */
+        java.lang.String getTrackingUrl(int index);
+
+        /**
+         * <code>repeated string tracking_url = 2;</code>
+         * <p/>
+         * <pre>
+         * 事件监控URL
+         * </pre>
+         */
+        com.google.protobuf.ByteString
+        getTrackingUrlBytes(int index);
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.MobadsRequest}
+     * <p/>
+     * <pre>
+     * API请求结构
+     * </pre>
+     */
     public static final class MobadsRequest extends
-            com.google.protobuf.GeneratedMessage
-            implements MobadsRequestOrBuilder {
-        // optional string request_id = 1;
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.MobadsRequest)
+            MobadsRequestOrBuilder {
         public static final int REQUEST_ID_FIELD_NUMBER = 1;
-        // optional .com.ksc.client.ads.proto.Version api_version = 2;
         public static final int API_VERSION_FIELD_NUMBER = 2;
-        // optional .com.ksc.client.ads.proto.AdSlot adslot = 7;
         public static final int ADSLOT_FIELD_NUMBER = 7;
-        // optional .com.ksc.client.ads.proto.App app = 3;
         public static final int APP_FIELD_NUMBER = 3;
-        // optional .com.ksc.client.ads.proto.Device device = 4;
         public static final int DEVICE_FIELD_NUMBER = 4;
-        // optional .com.ksc.client.ads.proto.Network network = 5;
         public static final int NETWORK_FIELD_NUMBER = 5;
-        // optional .com.ksc.client.ads.proto.Gps gps = 6;
         public static final int GPS_FIELD_NUMBER = 6;
-        // optional bool is_debug = 8 [default = false];
         public static final int IS_DEBUG_FIELD_NUMBER = 8;
-        // optional uint32 request_num = 15;
         public static final int REQUEST_NUM_FIELD_NUMBER = 15;
         private static final MobadsRequest defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<MobadsRequest> PARSER =
+                new com.google.protobuf.AbstractParser<MobadsRequest>() {
+                    public MobadsRequest parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new MobadsRequest(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new MobadsRequest(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
-        private Object requestId_;
-        private Version apiVersion_;
-        private AdSlot adslot_;
-        private App app_;
-        private Device device_;
-        private Network network_;
-        private Gps gps_;
+        private java.lang.Object requestId_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Version apiVersion_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot adslot_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.App app_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Device device_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Network network_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps gps_;
         private boolean isDebug_;
         private int requestNum_;
         private byte memoizedIsInitialized = -1;
         private int memoizedSerializedSize = -1;
 
         // Use MobadsRequest.newBuilder() to construct.
-        private MobadsRequest(Builder builder) {
+        private MobadsRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
         }
 
         private MobadsRequest(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        }
+
+        private MobadsRequest(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            requestId_ = bs;
+                            break;
+                        }
+                        case 18: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                                subBuilder = apiVersion_.toBuilder();
+                            }
+                            apiVersion_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(apiVersion_);
+                                apiVersion_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000002;
+                            break;
+                        }
+                        case 26: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.App.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                                subBuilder = app_.toBuilder();
+                            }
+                            app_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.App.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(app_);
+                                app_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000008;
+                            break;
+                        }
+                        case 34: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                                subBuilder = device_.toBuilder();
+                            }
+                            device_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(device_);
+                                device_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000010;
+                            break;
+                        }
+                        case 42: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                                subBuilder = network_.toBuilder();
+                            }
+                            network_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(network_);
+                                network_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000020;
+                            break;
+                        }
+                        case 50: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000040) == 0x00000040)) {
+                                subBuilder = gps_.toBuilder();
+                            }
+                            gps_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(gps_);
+                                gps_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000040;
+                            break;
+                        }
+                        case 58: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                                subBuilder = adslot_.toBuilder();
+                            }
+                            adslot_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(adslot_);
+                                adslot_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000004;
+                            break;
+                        }
+                        case 64: {
+                            bitField0_ |= 0x00000080;
+                            isDebug_ = input.readBool();
+                            break;
+                        }
+                        case 120: {
+                            bitField0_ |= 0x00000100;
+                            requestNum_ = input.readUInt32();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static MobadsRequest getDefaultInstance() {
@@ -945,90 +2623,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsRequest_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsRequest_descriptor;
         }
 
-        public static MobadsRequest parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static MobadsRequest parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static MobadsRequest parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static MobadsRequest parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static MobadsRequest parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static MobadsRequest parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static MobadsRequest parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static MobadsRequest parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static MobadsRequest parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static MobadsRequest parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(MobadsRequest prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -1036,35 +2700,71 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsRequest_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsRequest_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<MobadsRequest> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional string request_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！接入方自定义请求ID，[a-zA-Z0-9]{32}
+         * </pre>
+         */
         public boolean hasRequestId() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
-        public String getRequestId() {
-            Object ref = requestId_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string request_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！接入方自定义请求ID，[a-zA-Z0-9]{32}
+         * </pre>
+         */
+        public java.lang.String getRequestId() {
+            java.lang.Object ref = requestId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     requestId_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getRequestIdBytes() {
-            Object ref = requestId_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string request_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！接入方自定义请求ID，[a-zA-Z0-9]{32}
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getRequestIdBytes() {
+            java.lang.Object ref = requestId_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 requestId_ = b;
                 return b;
             } else {
@@ -1072,109 +2772,264 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+         * </pre>
+         */
         public boolean hasApiVersion() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
-        public Version getApiVersion() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Version getApiVersion() {
             return apiVersion_;
         }
 
-        public VersionOrBuilder getApiVersionOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder getApiVersionOrBuilder() {
             return apiVersion_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位信息
+         * </pre>
+         */
         public boolean hasAdslot() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
-        public AdSlot getAdslot() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位信息
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot getAdslot() {
             return adslot_;
         }
 
-        public AdSlotOrBuilder getAdslotOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位信息
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlotOrBuilder getAdslotOrBuilder() {
             return adslot_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用信息
+         * </pre>
+         */
         public boolean hasApp() {
             return ((bitField0_ & 0x00000008) == 0x00000008);
         }
 
-        public App getApp() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用信息
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.App getApp() {
             return app_;
         }
 
-        public AppOrBuilder getAppOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用信息
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.AppOrBuilder getAppOrBuilder() {
             return app_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备信息
+         * </pre>
+         */
         public boolean hasDevice() {
             return ((bitField0_ & 0x00000010) == 0x00000010);
         }
 
-        public Device getDevice() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备信息
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Device getDevice() {
             return device_;
         }
 
-        public DeviceOrBuilder getDeviceOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备信息
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.DeviceOrBuilder getDeviceOrBuilder() {
             return device_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+         * <p/>
+         * <pre>
+         * 必填！网络环境信息
+         * </pre>
+         */
         public boolean hasNetwork() {
             return ((bitField0_ & 0x00000020) == 0x00000020);
         }
 
-        public Network getNetwork() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+         * <p/>
+         * <pre>
+         * 必填！网络环境信息
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Network getNetwork() {
             return network_;
         }
 
-        public NetworkOrBuilder getNetworkOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+         * <p/>
+         * <pre>
+         * 必填！网络环境信息
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.NetworkOrBuilder getNetworkOrBuilder() {
             return network_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+         * <p/>
+         * <pre>
+         * 选填！强烈建议填写，用于辅助触发LBS广告
+         * </pre>
+         */
         public boolean hasGps() {
             return ((bitField0_ & 0x00000040) == 0x00000040);
         }
 
-        public Gps getGps() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+         * <p/>
+         * <pre>
+         * 选填！强烈建议填写，用于辅助触发LBS广告
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps getGps() {
             return gps_;
         }
 
-        public GpsOrBuilder getGpsOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+         * <p/>
+         * <pre>
+         * 选填！强烈建议填写，用于辅助触发LBS广告
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.GpsOrBuilder getGpsOrBuilder() {
             return gps_;
         }
 
+        /**
+         * <code>optional bool is_debug = 8 [default = false];</code>
+         * <p/>
+         * <pre>
+         * 选填！测试流量标记，可获取广告，但不被计费，勿用于线上请求
+         * </pre>
+         */
         public boolean hasIsDebug() {
             return ((bitField0_ & 0x00000080) == 0x00000080);
         }
 
+        /**
+         * <code>optional bool is_debug = 8 [default = false];</code>
+         * <p/>
+         * <pre>
+         * 选填！测试流量标记，可获取广告，但不被计费，勿用于线上请求
+         * </pre>
+         */
         public boolean getIsDebug() {
             return isDebug_;
         }
 
+        /**
+         * <code>optional uint32 request_num = 15;</code>
+         * <p/>
+         * <pre>
+         * 请求次数
+         * </pre>
+         */
         public boolean hasRequestNum() {
             return ((bitField0_ & 0x00000100) == 0x00000100);
         }
 
+        /**
+         * <code>optional uint32 request_num = 15;</code>
+         * <p/>
+         * <pre>
+         * 请求次数
+         * </pre>
+         */
         public int getRequestNum() {
             return requestNum_;
         }
 
         private void initFields() {
             requestId_ = "";
-            apiVersion_ = Version.getDefaultInstance();
-            adslot_ = AdSlot.getDefaultInstance();
-            app_ = App.getDefaultInstance();
-            device_ = Device.getDefaultInstance();
-            network_ = Network.getDefaultInstance();
-            gps_ = Gps.getDefaultInstance();
+            apiVersion_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
+            adslot_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.getDefaultInstance();
+            app_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.App.getDefaultInstance();
+            device_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.getDefaultInstance();
+            network_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.getDefaultInstance();
+            gps_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.getDefaultInstance();
             isDebug_ = false;
             requestNum_ = 0;
         }
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -1259,8 +3114,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -1273,46 +3128,45 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.MobadsRequest}
+         * <p/>
+         * <pre>
+         * API请求结构
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements MobadsRequestOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.MobadsRequest)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequestOrBuilder {
             private int bitField0_;
-            // optional string request_id = 1;
-            private Object requestId_ = "";
-            // optional .com.ksc.client.ads.proto.Version api_version = 2;
-            private Version apiVersion_ = Version.getDefaultInstance();
+            private java.lang.Object requestId_ = "";
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Version apiVersion_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    Version, Version.Builder, VersionOrBuilder> apiVersionBuilder_;
-            // optional .com.ksc.client.ads.proto.AdSlot adslot = 7;
-            private AdSlot adslot_ = AdSlot.getDefaultInstance();
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Version, com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder> apiVersionBuilder_;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot adslot_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    AdSlot, AdSlot.Builder, AdSlotOrBuilder> adslotBuilder_;
-            // optional .com.ksc.client.ads.proto.App app = 3;
-            private App app_ = App.getDefaultInstance();
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot, com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlotOrBuilder> adslotBuilder_;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.App app_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.App.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    App, App.Builder, AppOrBuilder> appBuilder_;
-            // optional .com.ksc.client.ads.proto.Device device = 4;
-            private Device device_ = Device.getDefaultInstance();
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.App, com.ksc.client.ads.proto.KSCMobileAdsProto530.App.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.AppOrBuilder> appBuilder_;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Device device_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    Device, Device.Builder, DeviceOrBuilder> deviceBuilder_;
-            // optional .com.ksc.client.ads.proto.Network network = 5;
-            private Network network_ = Network.getDefaultInstance();
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Device, com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.DeviceOrBuilder> deviceBuilder_;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Network network_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    Network, Network.Builder, NetworkOrBuilder> networkBuilder_;
-            // optional .com.ksc.client.ads.proto.Gps gps = 6;
-            private Gps gps_ = Gps.getDefaultInstance();
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Network, com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.NetworkOrBuilder> networkBuilder_;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps gps_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    Gps, Gps.Builder, GpsOrBuilder> gpsBuilder_;
-            // optional bool is_debug = 8 [default = false];
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps, com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.GpsOrBuilder> gpsBuilder_;
             private boolean isDebug_;
-            // optional uint32 request_num = 15;
             private int requestNum_;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest.newBuilder()
@@ -1320,23 +3174,26 @@ public final class KSCMobileAdsProto530 {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsRequest_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsRequest_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsRequest_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsRequest_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -1355,37 +3212,37 @@ public final class KSCMobileAdsProto530 {
                 requestId_ = "";
                 bitField0_ = (bitField0_ & ~0x00000001);
                 if (apiVersionBuilder_ == null) {
-                    apiVersion_ = Version.getDefaultInstance();
+                    apiVersion_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
                 } else {
                     apiVersionBuilder_.clear();
                 }
                 bitField0_ = (bitField0_ & ~0x00000002);
                 if (adslotBuilder_ == null) {
-                    adslot_ = AdSlot.getDefaultInstance();
+                    adslot_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.getDefaultInstance();
                 } else {
                     adslotBuilder_.clear();
                 }
                 bitField0_ = (bitField0_ & ~0x00000004);
                 if (appBuilder_ == null) {
-                    app_ = App.getDefaultInstance();
+                    app_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.App.getDefaultInstance();
                 } else {
                     appBuilder_.clear();
                 }
                 bitField0_ = (bitField0_ & ~0x00000008);
                 if (deviceBuilder_ == null) {
-                    device_ = Device.getDefaultInstance();
+                    device_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.getDefaultInstance();
                 } else {
                     deviceBuilder_.clear();
                 }
                 bitField0_ = (bitField0_ & ~0x00000010);
                 if (networkBuilder_ == null) {
-                    network_ = Network.getDefaultInstance();
+                    network_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.getDefaultInstance();
                 } else {
                     networkBuilder_.clear();
                 }
                 bitField0_ = (bitField0_ & ~0x00000020);
                 if (gpsBuilder_ == null) {
-                    gps_ = Gps.getDefaultInstance();
+                    gps_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.getDefaultInstance();
                 } else {
                     gpsBuilder_.clear();
                 }
@@ -1403,33 +3260,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return MobadsRequest.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsRequest_descriptor;
             }
 
-            public MobadsRequest getDefaultInstanceForType() {
-                return MobadsRequest.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest.getDefaultInstance();
             }
 
-            public MobadsRequest build() {
-                MobadsRequest result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private MobadsRequest buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                MobadsRequest result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public MobadsRequest buildPartial() {
-                MobadsRequest result = new MobadsRequest(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1498,18 +3345,20 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof MobadsRequest) {
-                    return mergeFrom((MobadsRequest) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(MobadsRequest other) {
-                if (other == MobadsRequest.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest.getDefaultInstance()) return this;
                 if (other.hasRequestId()) {
-                    setRequestId(other.getRequestId());
+                    bitField0_ |= 0x00000001;
+                    requestId_ = other.requestId_;
+                    onChanged();
                 }
                 if (other.hasApiVersion()) {
                     mergeApiVersion(other.getApiVersion());
@@ -1547,120 +3396,62 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            bitField0_ |= 0x00000001;
-                            requestId_ = input.readBytes();
-                            break;
-                        }
-                        case 18: {
-                            Version.Builder subBuilder = Version.newBuilder();
-                            if (hasApiVersion()) {
-                                subBuilder.mergeFrom(getApiVersion());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setApiVersion(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 26: {
-                            App.Builder subBuilder = App.newBuilder();
-                            if (hasApp()) {
-                                subBuilder.mergeFrom(getApp());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setApp(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 34: {
-                            Device.Builder subBuilder = Device.newBuilder();
-                            if (hasDevice()) {
-                                subBuilder.mergeFrom(getDevice());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setDevice(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 42: {
-                            Network.Builder subBuilder = Network.newBuilder();
-                            if (hasNetwork()) {
-                                subBuilder.mergeFrom(getNetwork());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setNetwork(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 50: {
-                            Gps.Builder subBuilder = Gps.newBuilder();
-                            if (hasGps()) {
-                                subBuilder.mergeFrom(getGps());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setGps(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 58: {
-                            AdSlot.Builder subBuilder = AdSlot.newBuilder();
-                            if (hasAdslot()) {
-                                subBuilder.mergeFrom(getAdslot());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setAdslot(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 64: {
-                            bitField0_ |= 0x00000080;
-                            isDebug_ = input.readBool();
-                            break;
-                        }
-                        case 120: {
-                            bitField0_ |= 0x00000100;
-                            requestNum_ = input.readUInt32();
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsRequest) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional string request_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！接入方自定义请求ID，[a-zA-Z0-9]{32}
+             * </pre>
+             */
             public boolean hasRequestId() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
-            public String getRequestId() {
-                Object ref = requestId_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    requestId_ = s;
+            /**
+             * <code>optional string request_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！接入方自定义请求ID，[a-zA-Z0-9]{32}
+             * </pre>
+             */
+            public java.lang.String getRequestId() {
+                java.lang.Object ref = requestId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        requestId_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setRequestId(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000001;
-                requestId_ = value;
-                onChanged();
-            }
-
-            public Builder setRequestId(String value) {
+            /**
+             * <code>optional string request_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！接入方自定义请求ID，[a-zA-Z0-9]{32}
+             * </pre>
+             */
+            public Builder setRequestId(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -1670,6 +3461,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string request_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！接入方自定义请求ID，[a-zA-Z0-9]{32}
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getRequestIdBytes() {
+                java.lang.Object ref = requestId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    requestId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string request_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！接入方自定义请求ID，[a-zA-Z0-9]{32}
+             * </pre>
+             */
+            public Builder setRequestIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                requestId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string request_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！接入方自定义请求ID，[a-zA-Z0-9]{32}
+             * </pre>
+             */
             public Builder clearRequestId() {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 requestId_ = getDefaultInstance().getRequestId();
@@ -1677,11 +3514,25 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+             * </pre>
+             */
             public boolean hasApiVersion() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
-            public Version getApiVersion() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Version getApiVersion() {
                 if (apiVersionBuilder_ == null) {
                     return apiVersion_;
                 } else {
@@ -1689,19 +3540,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setApiVersion(
-                    Version.Builder builderForValue) {
-                if (apiVersionBuilder_ == null) {
-                    apiVersion_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    apiVersionBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            public Builder setApiVersion(Version value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+             * </pre>
+             */
+            public Builder setApiVersion(com.ksc.client.ads.proto.KSCMobileAdsProto530.Version value) {
                 if (apiVersionBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -1715,12 +3561,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeApiVersion(Version value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+             * </pre>
+             */
+            public Builder setApiVersion(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder builderForValue) {
+                if (apiVersionBuilder_ == null) {
+                    apiVersion_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    apiVersionBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000002;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+             * </pre>
+             */
+            public Builder mergeApiVersion(com.ksc.client.ads.proto.KSCMobileAdsProto530.Version value) {
                 if (apiVersionBuilder_ == null) {
                     if (((bitField0_ & 0x00000002) == 0x00000002) &&
-                            apiVersion_ != Version.getDefaultInstance()) {
+                            apiVersion_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance()) {
                         apiVersion_ =
-                                Version.newBuilder(apiVersion_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.newBuilder(apiVersion_).mergeFrom(value).buildPartial();
                     } else {
                         apiVersion_ = value;
                     }
@@ -1732,9 +3604,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+             * </pre>
+             */
             public Builder clearApiVersion() {
                 if (apiVersionBuilder_ == null) {
-                    apiVersion_ = Version.getDefaultInstance();
+                    apiVersion_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
                     onChanged();
                 } else {
                     apiVersionBuilder_.clear();
@@ -1743,13 +3622,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Version.Builder getApiVersionBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder getApiVersionBuilder() {
                 bitField0_ |= 0x00000002;
                 onChanged();
                 return getApiVersionFieldBuilder().getBuilder();
             }
 
-            public VersionOrBuilder getApiVersionOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder getApiVersionOrBuilder() {
                 if (apiVersionBuilder_ != null) {
                     return apiVersionBuilder_.getMessageOrBuilder();
                 } else {
@@ -1757,13 +3650,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version api_version = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！API版本，按照当前接入所参照的API文档版本赋值，影响所有后续逻辑。填写错误会导致拒绝请求。
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    Version, Version.Builder, VersionOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Version, com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder>
             getApiVersionFieldBuilder() {
                 if (apiVersionBuilder_ == null) {
                     apiVersionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            Version, Version.Builder, VersionOrBuilder>(
-                            apiVersion_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Version, com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder>(
+                            getApiVersion(),
                             getParentForChildren(),
                             isClean());
                     apiVersion_ = null;
@@ -1771,11 +3671,25 @@ public final class KSCMobileAdsProto530 {
                 return apiVersionBuilder_;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位信息
+             * </pre>
+             */
             public boolean hasAdslot() {
                 return ((bitField0_ & 0x00000004) == 0x00000004);
             }
 
-            public AdSlot getAdslot() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot getAdslot() {
                 if (adslotBuilder_ == null) {
                     return adslot_;
                 } else {
@@ -1783,19 +3697,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setAdslot(
-                    AdSlot.Builder builderForValue) {
-                if (adslotBuilder_ == null) {
-                    adslot_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    adslotBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            public Builder setAdslot(AdSlot value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位信息
+             * </pre>
+             */
+            public Builder setAdslot(com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot value) {
                 if (adslotBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -1809,12 +3718,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeAdslot(AdSlot value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位信息
+             * </pre>
+             */
+            public Builder setAdslot(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.Builder builderForValue) {
+                if (adslotBuilder_ == null) {
+                    adslot_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    adslotBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000004;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位信息
+             * </pre>
+             */
+            public Builder mergeAdslot(com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot value) {
                 if (adslotBuilder_ == null) {
                     if (((bitField0_ & 0x00000004) == 0x00000004) &&
-                            adslot_ != AdSlot.getDefaultInstance()) {
+                            adslot_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.getDefaultInstance()) {
                         adslot_ =
-                                AdSlot.newBuilder(adslot_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.newBuilder(adslot_).mergeFrom(value).buildPartial();
                     } else {
                         adslot_ = value;
                     }
@@ -1826,9 +3761,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位信息
+             * </pre>
+             */
             public Builder clearAdslot() {
                 if (adslotBuilder_ == null) {
-                    adslot_ = AdSlot.getDefaultInstance();
+                    adslot_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.getDefaultInstance();
                     onChanged();
                 } else {
                     adslotBuilder_.clear();
@@ -1837,13 +3779,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public AdSlot.Builder getAdslotBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.Builder getAdslotBuilder() {
                 bitField0_ |= 0x00000004;
                 onChanged();
                 return getAdslotFieldBuilder().getBuilder();
             }
 
-            public AdSlotOrBuilder getAdslotOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlotOrBuilder getAdslotOrBuilder() {
                 if (adslotBuilder_ != null) {
                     return adslotBuilder_.getMessageOrBuilder();
                 } else {
@@ -1851,13 +3807,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.AdSlot adslot = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位信息
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    AdSlot, AdSlot.Builder, AdSlotOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot, com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlotOrBuilder>
             getAdslotFieldBuilder() {
                 if (adslotBuilder_ == null) {
                     adslotBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            AdSlot, AdSlot.Builder, AdSlotOrBuilder>(
-                            adslot_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot, com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlotOrBuilder>(
+                            getAdslot(),
                             getParentForChildren(),
                             isClean());
                     adslot_ = null;
@@ -1865,11 +3828,25 @@ public final class KSCMobileAdsProto530 {
                 return adslotBuilder_;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用信息
+             * </pre>
+             */
             public boolean hasApp() {
                 return ((bitField0_ & 0x00000008) == 0x00000008);
             }
 
-            public App getApp() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.App getApp() {
                 if (appBuilder_ == null) {
                     return app_;
                 } else {
@@ -1877,19 +3854,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setApp(
-                    App.Builder builderForValue) {
-                if (appBuilder_ == null) {
-                    app_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    appBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000008;
-                return this;
-            }
-
-            public Builder setApp(App value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用信息
+             * </pre>
+             */
+            public Builder setApp(com.ksc.client.ads.proto.KSCMobileAdsProto530.App value) {
                 if (appBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -1903,12 +3875,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeApp(App value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用信息
+             * </pre>
+             */
+            public Builder setApp(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.App.Builder builderForValue) {
+                if (appBuilder_ == null) {
+                    app_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    appBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000008;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用信息
+             * </pre>
+             */
+            public Builder mergeApp(com.ksc.client.ads.proto.KSCMobileAdsProto530.App value) {
                 if (appBuilder_ == null) {
                     if (((bitField0_ & 0x00000008) == 0x00000008) &&
-                            app_ != App.getDefaultInstance()) {
+                            app_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.App.getDefaultInstance()) {
                         app_ =
-                                App.newBuilder(app_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.App.newBuilder(app_).mergeFrom(value).buildPartial();
                     } else {
                         app_ = value;
                     }
@@ -1920,9 +3918,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用信息
+             * </pre>
+             */
             public Builder clearApp() {
                 if (appBuilder_ == null) {
-                    app_ = App.getDefaultInstance();
+                    app_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.App.getDefaultInstance();
                     onChanged();
                 } else {
                     appBuilder_.clear();
@@ -1931,13 +3936,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public App.Builder getAppBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.App.Builder getAppBuilder() {
                 bitField0_ |= 0x00000008;
                 onChanged();
                 return getAppFieldBuilder().getBuilder();
             }
 
-            public AppOrBuilder getAppOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.AppOrBuilder getAppOrBuilder() {
                 if (appBuilder_ != null) {
                     return appBuilder_.getMessageOrBuilder();
                 } else {
@@ -1945,13 +3964,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.App app = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用信息
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    App, App.Builder, AppOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.App, com.ksc.client.ads.proto.KSCMobileAdsProto530.App.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.AppOrBuilder>
             getAppFieldBuilder() {
                 if (appBuilder_ == null) {
                     appBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            App, App.Builder, AppOrBuilder>(
-                            app_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.App, com.ksc.client.ads.proto.KSCMobileAdsProto530.App.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.AppOrBuilder>(
+                            getApp(),
                             getParentForChildren(),
                             isClean());
                     app_ = null;
@@ -1959,11 +3985,25 @@ public final class KSCMobileAdsProto530 {
                 return appBuilder_;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备信息
+             * </pre>
+             */
             public boolean hasDevice() {
                 return ((bitField0_ & 0x00000010) == 0x00000010);
             }
 
-            public Device getDevice() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Device getDevice() {
                 if (deviceBuilder_ == null) {
                     return device_;
                 } else {
@@ -1971,19 +4011,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setDevice(
-                    Device.Builder builderForValue) {
-                if (deviceBuilder_ == null) {
-                    device_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    deviceBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000010;
-                return this;
-            }
-
-            public Builder setDevice(Device value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备信息
+             * </pre>
+             */
+            public Builder setDevice(com.ksc.client.ads.proto.KSCMobileAdsProto530.Device value) {
                 if (deviceBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -1997,12 +4032,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeDevice(Device value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备信息
+             * </pre>
+             */
+            public Builder setDevice(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.Builder builderForValue) {
+                if (deviceBuilder_ == null) {
+                    device_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    deviceBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000010;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备信息
+             * </pre>
+             */
+            public Builder mergeDevice(com.ksc.client.ads.proto.KSCMobileAdsProto530.Device value) {
                 if (deviceBuilder_ == null) {
                     if (((bitField0_ & 0x00000010) == 0x00000010) &&
-                            device_ != Device.getDefaultInstance()) {
+                            device_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.getDefaultInstance()) {
                         device_ =
-                                Device.newBuilder(device_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.newBuilder(device_).mergeFrom(value).buildPartial();
                     } else {
                         device_ = value;
                     }
@@ -2014,9 +4075,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备信息
+             * </pre>
+             */
             public Builder clearDevice() {
                 if (deviceBuilder_ == null) {
-                    device_ = Device.getDefaultInstance();
+                    device_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.getDefaultInstance();
                     onChanged();
                 } else {
                     deviceBuilder_.clear();
@@ -2025,13 +4093,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Device.Builder getDeviceBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.Builder getDeviceBuilder() {
                 bitField0_ |= 0x00000010;
                 onChanged();
                 return getDeviceFieldBuilder().getBuilder();
             }
 
-            public DeviceOrBuilder getDeviceOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.DeviceOrBuilder getDeviceOrBuilder() {
                 if (deviceBuilder_ != null) {
                     return deviceBuilder_.getMessageOrBuilder();
                 } else {
@@ -2039,13 +4121,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device device = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备信息
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    Device, Device.Builder, DeviceOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Device, com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.DeviceOrBuilder>
             getDeviceFieldBuilder() {
                 if (deviceBuilder_ == null) {
                     deviceBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            Device, Device.Builder, DeviceOrBuilder>(
-                            device_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Device, com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.DeviceOrBuilder>(
+                            getDevice(),
                             getParentForChildren(),
                             isClean());
                     device_ = null;
@@ -2053,11 +4142,25 @@ public final class KSCMobileAdsProto530 {
                 return deviceBuilder_;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络环境信息
+             * </pre>
+             */
             public boolean hasNetwork() {
                 return ((bitField0_ & 0x00000020) == 0x00000020);
             }
 
-            public Network getNetwork() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络环境信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Network getNetwork() {
                 if (networkBuilder_ == null) {
                     return network_;
                 } else {
@@ -2065,19 +4168,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setNetwork(
-                    Network.Builder builderForValue) {
-                if (networkBuilder_ == null) {
-                    network_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    networkBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000020;
-                return this;
-            }
-
-            public Builder setNetwork(Network value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络环境信息
+             * </pre>
+             */
+            public Builder setNetwork(com.ksc.client.ads.proto.KSCMobileAdsProto530.Network value) {
                 if (networkBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -2091,12 +4189,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeNetwork(Network value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络环境信息
+             * </pre>
+             */
+            public Builder setNetwork(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.Builder builderForValue) {
+                if (networkBuilder_ == null) {
+                    network_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    networkBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000020;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络环境信息
+             * </pre>
+             */
+            public Builder mergeNetwork(com.ksc.client.ads.proto.KSCMobileAdsProto530.Network value) {
                 if (networkBuilder_ == null) {
                     if (((bitField0_ & 0x00000020) == 0x00000020) &&
-                            network_ != Network.getDefaultInstance()) {
+                            network_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.getDefaultInstance()) {
                         network_ =
-                                Network.newBuilder(network_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.newBuilder(network_).mergeFrom(value).buildPartial();
                     } else {
                         network_ = value;
                     }
@@ -2108,9 +4232,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络环境信息
+             * </pre>
+             */
             public Builder clearNetwork() {
                 if (networkBuilder_ == null) {
-                    network_ = Network.getDefaultInstance();
+                    network_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.getDefaultInstance();
                     onChanged();
                 } else {
                     networkBuilder_.clear();
@@ -2119,13 +4250,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Network.Builder getNetworkBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络环境信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.Builder getNetworkBuilder() {
                 bitField0_ |= 0x00000020;
                 onChanged();
                 return getNetworkFieldBuilder().getBuilder();
             }
 
-            public NetworkOrBuilder getNetworkOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络环境信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.NetworkOrBuilder getNetworkOrBuilder() {
                 if (networkBuilder_ != null) {
                     return networkBuilder_.getMessageOrBuilder();
                 } else {
@@ -2133,13 +4278,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network network = 5;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络环境信息
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    Network, Network.Builder, NetworkOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Network, com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.NetworkOrBuilder>
             getNetworkFieldBuilder() {
                 if (networkBuilder_ == null) {
                     networkBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            Network, Network.Builder, NetworkOrBuilder>(
-                            network_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Network, com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.NetworkOrBuilder>(
+                            getNetwork(),
                             getParentForChildren(),
                             isClean());
                     network_ = null;
@@ -2147,11 +4299,25 @@ public final class KSCMobileAdsProto530 {
                 return networkBuilder_;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+             * <p/>
+             * <pre>
+             * 选填！强烈建议填写，用于辅助触发LBS广告
+             * </pre>
+             */
             public boolean hasGps() {
                 return ((bitField0_ & 0x00000040) == 0x00000040);
             }
 
-            public Gps getGps() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+             * <p/>
+             * <pre>
+             * 选填！强烈建议填写，用于辅助触发LBS广告
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps getGps() {
                 if (gpsBuilder_ == null) {
                     return gps_;
                 } else {
@@ -2159,19 +4325,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setGps(
-                    Gps.Builder builderForValue) {
-                if (gpsBuilder_ == null) {
-                    gps_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    gpsBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000040;
-                return this;
-            }
-
-            public Builder setGps(Gps value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+             * <p/>
+             * <pre>
+             * 选填！强烈建议填写，用于辅助触发LBS广告
+             * </pre>
+             */
+            public Builder setGps(com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps value) {
                 if (gpsBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -2185,12 +4346,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeGps(Gps value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+             * <p/>
+             * <pre>
+             * 选填！强烈建议填写，用于辅助触发LBS广告
+             * </pre>
+             */
+            public Builder setGps(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.Builder builderForValue) {
+                if (gpsBuilder_ == null) {
+                    gps_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    gpsBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000040;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+             * <p/>
+             * <pre>
+             * 选填！强烈建议填写，用于辅助触发LBS广告
+             * </pre>
+             */
+            public Builder mergeGps(com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps value) {
                 if (gpsBuilder_ == null) {
                     if (((bitField0_ & 0x00000040) == 0x00000040) &&
-                            gps_ != Gps.getDefaultInstance()) {
+                            gps_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.getDefaultInstance()) {
                         gps_ =
-                                Gps.newBuilder(gps_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.newBuilder(gps_).mergeFrom(value).buildPartial();
                     } else {
                         gps_ = value;
                     }
@@ -2202,9 +4389,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+             * <p/>
+             * <pre>
+             * 选填！强烈建议填写，用于辅助触发LBS广告
+             * </pre>
+             */
             public Builder clearGps() {
                 if (gpsBuilder_ == null) {
-                    gps_ = Gps.getDefaultInstance();
+                    gps_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.getDefaultInstance();
                     onChanged();
                 } else {
                     gpsBuilder_.clear();
@@ -2213,13 +4407,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Gps.Builder getGpsBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+             * <p/>
+             * <pre>
+             * 选填！强烈建议填写，用于辅助触发LBS广告
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.Builder getGpsBuilder() {
                 bitField0_ |= 0x00000040;
                 onChanged();
                 return getGpsFieldBuilder().getBuilder();
             }
 
-            public GpsOrBuilder getGpsOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+             * <p/>
+             * <pre>
+             * 选填！强烈建议填写，用于辅助触发LBS广告
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.GpsOrBuilder getGpsOrBuilder() {
                 if (gpsBuilder_ != null) {
                     return gpsBuilder_.getMessageOrBuilder();
                 } else {
@@ -2227,13 +4435,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps gps = 6;</code>
+             * <p/>
+             * <pre>
+             * 选填！强烈建议填写，用于辅助触发LBS广告
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    Gps, Gps.Builder, GpsOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps, com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.GpsOrBuilder>
             getGpsFieldBuilder() {
                 if (gpsBuilder_ == null) {
                     gpsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            Gps, Gps.Builder, GpsOrBuilder>(
-                            gps_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps, com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.GpsOrBuilder>(
+                            getGps(),
                             getParentForChildren(),
                             isClean());
                     gps_ = null;
@@ -2241,14 +4456,35 @@ public final class KSCMobileAdsProto530 {
                 return gpsBuilder_;
             }
 
+            /**
+             * <code>optional bool is_debug = 8 [default = false];</code>
+             * <p/>
+             * <pre>
+             * 选填！测试流量标记，可获取广告，但不被计费，勿用于线上请求
+             * </pre>
+             */
             public boolean hasIsDebug() {
                 return ((bitField0_ & 0x00000080) == 0x00000080);
             }
 
+            /**
+             * <code>optional bool is_debug = 8 [default = false];</code>
+             * <p/>
+             * <pre>
+             * 选填！测试流量标记，可获取广告，但不被计费，勿用于线上请求
+             * </pre>
+             */
             public boolean getIsDebug() {
                 return isDebug_;
             }
 
+            /**
+             * <code>optional bool is_debug = 8 [default = false];</code>
+             * <p/>
+             * <pre>
+             * 选填！测试流量标记，可获取广告，但不被计费，勿用于线上请求
+             * </pre>
+             */
             public Builder setIsDebug(boolean value) {
                 bitField0_ |= 0x00000080;
                 isDebug_ = value;
@@ -2256,6 +4492,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional bool is_debug = 8 [default = false];</code>
+             * <p/>
+             * <pre>
+             * 选填！测试流量标记，可获取广告，但不被计费，勿用于线上请求
+             * </pre>
+             */
             public Builder clearIsDebug() {
                 bitField0_ = (bitField0_ & ~0x00000080);
                 isDebug_ = false;
@@ -2263,14 +4506,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 request_num = 15;</code>
+             * <p/>
+             * <pre>
+             * 请求次数
+             * </pre>
+             */
             public boolean hasRequestNum() {
                 return ((bitField0_ & 0x00000100) == 0x00000100);
             }
 
+            /**
+             * <code>optional uint32 request_num = 15;</code>
+             * <p/>
+             * <pre>
+             * 请求次数
+             * </pre>
+             */
             public int getRequestNum() {
                 return requestNum_;
             }
 
+            /**
+             * <code>optional uint32 request_num = 15;</code>
+             * <p/>
+             * <pre>
+             * 请求次数
+             * </pre>
+             */
             public Builder setRequestNum(int value) {
                 bitField0_ |= 0x00000100;
                 requestNum_ = value;
@@ -2278,6 +4542,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 request_num = 15;</code>
+             * <p/>
+             * <pre>
+             * 请求次数
+             * </pre>
+             */
             public Builder clearRequestNum() {
                 bitField0_ = (bitField0_ & ~0x00000100);
                 requestNum_ = 0;
@@ -2291,36 +4562,103 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.MobadsRequest)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.Version}
+     * <p/>
+     * <pre>
+     * 版本号信息
+     * </pre>
+     */
     public static final class Version extends
-            com.google.protobuf.GeneratedMessage
-            implements VersionOrBuilder {
-        // optional uint32 major = 1 [default = 0];
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.Version)
+            VersionOrBuilder {
         public static final int MAJOR_FIELD_NUMBER = 1;
-        // optional uint32 minor = 2 [default = 0];
         public static final int MINOR_FIELD_NUMBER = 2;
-        // optional uint32 micro = 3 [default = 0];
         public static final int MICRO_FIELD_NUMBER = 3;
         private static final Version defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<Version> PARSER =
+                new com.google.protobuf.AbstractParser<Version>() {
+                    public Version parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new Version(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new Version(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
         private int major_;
         private int minor_;
         private int micro_;
         private byte memoizedIsInitialized = -1;
         private int memoizedSerializedSize = -1;
-
         // Use Version.newBuilder() to construct.
-        private Version(Builder builder) {
+        private Version(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
         }
 
         private Version(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        }
+
+        private Version(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+                            bitField0_ |= 0x00000001;
+                            major_ = input.readUInt32();
+                            break;
+                        }
+                        case 16: {
+                            bitField0_ |= 0x00000002;
+                            minor_ = input.readUInt32();
+                            break;
+                        }
+                        case 24: {
+                            bitField0_ |= 0x00000004;
+                            micro_ = input.readUInt32();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static Version getDefaultInstance() {
@@ -2329,90 +4667,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Version_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Version_descriptor;
         }
 
-        public static Version parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Version parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Version parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Version parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Version parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Version parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Version parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Version parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Version parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Version parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Version parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Version parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static Version parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Version parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static Version parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Version parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static Version parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Version parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Version parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Version parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(Version prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.Version prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -2420,31 +4744,86 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Version_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Version_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Version> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional uint32 major = 1 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 必填！
+         * </pre>
+         */
         public boolean hasMajor() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
+        /**
+         * <code>optional uint32 major = 1 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 必填！
+         * </pre>
+         */
         public int getMajor() {
             return major_;
         }
 
+        /**
+         * <code>optional uint32 minor = 2 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 选填！
+         * </pre>
+         */
         public boolean hasMinor() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
+        /**
+         * <code>optional uint32 minor = 2 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 选填！
+         * </pre>
+         */
         public int getMinor() {
             return minor_;
         }
 
+        /**
+         * <code>optional uint32 micro = 3 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 选填！
+         * </pre>
+         */
         public boolean hasMicro() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
+        /**
+         * <code>optional uint32 micro = 3 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 选填！
+         * </pre>
+         */
         public int getMicro() {
             return micro_;
         }
@@ -2457,7 +4836,8 @@ public final class KSCMobileAdsProto530 {
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -2500,8 +4880,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -2514,22 +4894,27 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.Version}
+         * <p/>
+         * <pre>
+         * 版本号信息
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements VersionOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.Version)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder {
             private int bitField0_;
-            // optional uint32 major = 1 [default = 0];
             private int major_;
-            // optional uint32 minor = 2 [default = 0];
             private int minor_;
-            // optional uint32 micro = 3 [default = 0];
             private int micro_;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.newBuilder()
@@ -2537,23 +4922,26 @@ public final class KSCMobileAdsProto530 {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Version_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Version_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Version_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Version_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -2578,33 +4966,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return Version.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Version_descriptor;
             }
 
-            public Version getDefaultInstanceForType() {
-                return Version.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Version getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
             }
 
-            public Version build() {
-                Version result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Version build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Version result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private Version buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                Version result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public Version buildPartial() {
-                Version result = new Version(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Version buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Version result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.Version(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -2625,16 +5003,16 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof Version) {
-                    return mergeFrom((Version) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.Version) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.Version) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(Version other) {
-                if (other == Version.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.Version other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance()) return this;
                 if (other.hasMajor()) {
                     setMajor(other.getMajor());
                 }
@@ -2656,52 +5034,49 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 8: {
-                            bitField0_ |= 0x00000001;
-                            major_ = input.readUInt32();
-                            break;
-                        }
-                        case 16: {
-                            bitField0_ |= 0x00000002;
-                            minor_ = input.readUInt32();
-                            break;
-                        }
-                        case 24: {
-                            bitField0_ |= 0x00000004;
-                            micro_ = input.readUInt32();
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Version parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.Version) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional uint32 major = 1 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 必填！
+             * </pre>
+             */
             public boolean hasMajor() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
+            /**
+             * <code>optional uint32 major = 1 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 必填！
+             * </pre>
+             */
             public int getMajor() {
                 return major_;
             }
 
+            /**
+             * <code>optional uint32 major = 1 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 必填！
+             * </pre>
+             */
             public Builder setMajor(int value) {
                 bitField0_ |= 0x00000001;
                 major_ = value;
@@ -2709,6 +5084,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 major = 1 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 必填！
+             * </pre>
+             */
             public Builder clearMajor() {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 major_ = 0;
@@ -2716,14 +5098,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 minor = 2 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 选填！
+             * </pre>
+             */
             public boolean hasMinor() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
+            /**
+             * <code>optional uint32 minor = 2 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 选填！
+             * </pre>
+             */
             public int getMinor() {
                 return minor_;
             }
 
+            /**
+             * <code>optional uint32 minor = 2 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 选填！
+             * </pre>
+             */
             public Builder setMinor(int value) {
                 bitField0_ |= 0x00000002;
                 minor_ = value;
@@ -2731,6 +5134,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 minor = 2 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 选填！
+             * </pre>
+             */
             public Builder clearMinor() {
                 bitField0_ = (bitField0_ & ~0x00000002);
                 minor_ = 0;
@@ -2738,14 +5148,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 micro = 3 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 选填！
+             * </pre>
+             */
             public boolean hasMicro() {
                 return ((bitField0_ & 0x00000004) == 0x00000004);
             }
 
+            /**
+             * <code>optional uint32 micro = 3 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 选填！
+             * </pre>
+             */
             public int getMicro() {
                 return micro_;
             }
 
+            /**
+             * <code>optional uint32 micro = 3 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 选填！
+             * </pre>
+             */
             public Builder setMicro(int value) {
                 bitField0_ |= 0x00000004;
                 micro_ = value;
@@ -2753,6 +5184,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 micro = 3 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 选填！
+             * </pre>
+             */
             public Builder clearMicro() {
                 bitField0_ = (bitField0_ & ~0x00000004);
                 micro_ = 0;
@@ -2766,39 +5204,122 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.Version)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.App}
+     * <p/>
+     * <pre>
+     * 应用信息
+     * </pre>
+     */
     public static final class App extends
-            com.google.protobuf.GeneratedMessage
-            implements AppOrBuilder {
-        // optional string app_id = 1 [default = ""];
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.App)
+            AppOrBuilder {
         public static final int APP_ID_FIELD_NUMBER = 1;
-        // optional string channel_id = 2;
         public static final int CHANNEL_ID_FIELD_NUMBER = 2;
-        // optional .com.ksc.client.ads.proto.Version app_version = 3;
         public static final int APP_VERSION_FIELD_NUMBER = 3;
-        // optional string app_package = 4;
         public static final int APP_PACKAGE_FIELD_NUMBER = 4;
         private static final App defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<App> PARSER =
+                new com.google.protobuf.AbstractParser<App>() {
+                    public App parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new App(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new App(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
-        private Object appId_;
-        private Object channelId_;
-        private Version appVersion_;
-        private Object appPackage_;
+        private java.lang.Object appId_;
+        private java.lang.Object channelId_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Version appVersion_;
+        private java.lang.Object appPackage_;
         private byte memoizedIsInitialized = -1;
         private int memoizedSerializedSize = -1;
 
         // Use App.newBuilder() to construct.
-        private App(Builder builder) {
+        private App(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
         }
 
         private App(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        }
+
+        private App(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            appId_ = bs;
+                            break;
+                        }
+                        case 18: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000002;
+                            channelId_ = bs;
+                            break;
+                        }
+                        case 26: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                                subBuilder = appVersion_.toBuilder();
+                            }
+                            appVersion_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(appVersion_);
+                                appVersion_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000004;
+                            break;
+                        }
+                        case 34: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000008;
+                            appPackage_ = bs;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static App getDefaultInstance() {
@@ -2807,90 +5328,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_App_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_App_descriptor;
         }
 
-        public static App parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.App parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static App parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.App parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static App parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.App parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static App parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.App parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static App parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.App parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static App parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.App parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static App parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.App parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static App parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.App parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static App parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.App parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static App parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.App parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(App prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.App prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -2898,35 +5405,71 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_App_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_App_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.App.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.App.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<App> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional string app_id = 1 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！应用ID，在Mobile SSP（以下简称MSSP）完成注册，并上传应用通过审核后，平台会提供应用ID
+         * </pre>
+         */
         public boolean hasAppId() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
-        public String getAppId() {
-            Object ref = appId_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string app_id = 1 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！应用ID，在Mobile SSP（以下简称MSSP）完成注册，并上传应用通过审核后，平台会提供应用ID
+         * </pre>
+         */
+        public java.lang.String getAppId() {
+            java.lang.Object ref = appId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     appId_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getAppIdBytes() {
-            Object ref = appId_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string app_id = 1 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！应用ID，在Mobile SSP（以下简称MSSP）完成注册，并上传应用通过审核后，平台会提供应用ID
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getAppIdBytes() {
+            java.lang.Object ref = appId_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 appId_ = b;
                 return b;
             } else {
@@ -2934,30 +5477,53 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional string channel_id = 2;</code>
+         * <p/>
+         * <pre>
+         * 选填！发布渠道ID，渠道接入方必需填写
+         * </pre>
+         */
         public boolean hasChannelId() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
-        public String getChannelId() {
-            Object ref = channelId_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string channel_id = 2;</code>
+         * <p/>
+         * <pre>
+         * 选填！发布渠道ID，渠道接入方必需填写
+         * </pre>
+         */
+        public java.lang.String getChannelId() {
+            java.lang.Object ref = channelId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     channelId_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getChannelIdBytes() {
-            Object ref = channelId_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string channel_id = 2;</code>
+         * <p/>
+         * <pre>
+         * 选填！发布渠道ID，渠道接入方必需填写
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getChannelIdBytes() {
+            java.lang.Object ref = channelId_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 channelId_ = b;
                 return b;
             } else {
@@ -2965,42 +5531,86 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用版本，将影响优选策略
+         * </pre>
+         */
         public boolean hasAppVersion() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
-        public Version getAppVersion() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用版本，将影响优选策略
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Version getAppVersion() {
             return appVersion_;
         }
 
-        public VersionOrBuilder getAppVersionOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用版本，将影响优选策略
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder getAppVersionOrBuilder() {
             return appVersion_;
         }
 
+        /**
+         * <code>optional string app_package = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用包名，需要跟应用提交时一一对应，中文需要UTF-8编码
+         * </pre>
+         */
         public boolean hasAppPackage() {
             return ((bitField0_ & 0x00000008) == 0x00000008);
         }
 
-        public String getAppPackage() {
-            Object ref = appPackage_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string app_package = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用包名，需要跟应用提交时一一对应，中文需要UTF-8编码
+         * </pre>
+         */
+        public java.lang.String getAppPackage() {
+            java.lang.Object ref = appPackage_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     appPackage_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getAppPackageBytes() {
-            Object ref = appPackage_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string app_package = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！应用包名，需要跟应用提交时一一对应，中文需要UTF-8编码
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getAppPackageBytes() {
+            java.lang.Object ref = appPackage_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 appPackage_ = b;
                 return b;
             } else {
@@ -3011,13 +5621,14 @@ public final class KSCMobileAdsProto530 {
         private void initFields() {
             appId_ = "";
             channelId_ = "";
-            appVersion_ = Version.getDefaultInstance();
+            appVersion_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
             appPackage_ = "";
         }
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -3067,8 +5678,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -3081,50 +5692,57 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.App}
+         * <p/>
+         * <pre>
+         * 应用信息
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements AppOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.App)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.AppOrBuilder {
             private int bitField0_;
-            // optional string app_id = 1 [default = ""];
-            private Object appId_ = "";
-            // optional string channel_id = 2;
-            private Object channelId_ = "";
-            // optional .com.ksc.client.ads.proto.Version app_version = 3;
-            private Version appVersion_ = Version.getDefaultInstance();
+            private java.lang.Object appId_ = "";
+            private java.lang.Object channelId_ = "";
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Version appVersion_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    Version, Version.Builder, VersionOrBuilder> appVersionBuilder_;
-            // optional string app_package = 4;
-            private Object appPackage_ = "";
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Version, com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder> appVersionBuilder_;
+            private java.lang.Object appPackage_ = "";
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.App.newBuilder()
             private Builder() {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_App_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_App_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_App_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_App_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.App.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.App.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -3140,7 +5758,7 @@ public final class KSCMobileAdsProto530 {
                 channelId_ = "";
                 bitField0_ = (bitField0_ & ~0x00000002);
                 if (appVersionBuilder_ == null) {
-                    appVersion_ = Version.getDefaultInstance();
+                    appVersion_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
                 } else {
                     appVersionBuilder_.clear();
                 }
@@ -3156,33 +5774,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return App.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_App_descriptor;
             }
 
-            public App getDefaultInstanceForType() {
-                return App.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.App getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.App.getDefaultInstance();
             }
 
-            public App build() {
-                App result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.App build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.App result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private App buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                App result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public App buildPartial() {
-                App result = new App(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.App buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.App result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.App(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3211,27 +5819,33 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof App) {
-                    return mergeFrom((App) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.App) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.App) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(App other) {
-                if (other == App.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.App other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.App.getDefaultInstance()) return this;
                 if (other.hasAppId()) {
-                    setAppId(other.getAppId());
+                    bitField0_ |= 0x00000001;
+                    appId_ = other.appId_;
+                    onChanged();
                 }
                 if (other.hasChannelId()) {
-                    setChannelId(other.getChannelId());
+                    bitField0_ |= 0x00000002;
+                    channelId_ = other.channelId_;
+                    onChanged();
                 }
                 if (other.hasAppVersion()) {
                     mergeAppVersion(other.getAppVersion());
                 }
                 if (other.hasAppPackage()) {
-                    setAppPackage(other.getAppPackage());
+                    bitField0_ |= 0x00000008;
+                    appPackage_ = other.appPackage_;
+                    onChanged();
                 }
                 this.mergeUnknownFields(other.getUnknownFields());
                 return this;
@@ -3245,75 +5859,62 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            bitField0_ |= 0x00000001;
-                            appId_ = input.readBytes();
-                            break;
-                        }
-                        case 18: {
-                            bitField0_ |= 0x00000002;
-                            channelId_ = input.readBytes();
-                            break;
-                        }
-                        case 26: {
-                            Version.Builder subBuilder = Version.newBuilder();
-                            if (hasAppVersion()) {
-                                subBuilder.mergeFrom(getAppVersion());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setAppVersion(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 34: {
-                            bitField0_ |= 0x00000008;
-                            appPackage_ = input.readBytes();
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.App parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.App) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional string app_id = 1 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！应用ID，在Mobile SSP（以下简称MSSP）完成注册，并上传应用通过审核后，平台会提供应用ID
+             * </pre>
+             */
             public boolean hasAppId() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
-            public String getAppId() {
-                Object ref = appId_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    appId_ = s;
+            /**
+             * <code>optional string app_id = 1 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！应用ID，在Mobile SSP（以下简称MSSP）完成注册，并上传应用通过审核后，平台会提供应用ID
+             * </pre>
+             */
+            public java.lang.String getAppId() {
+                java.lang.Object ref = appId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        appId_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setAppId(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000001;
-                appId_ = value;
-                onChanged();
-            }
-
-            public Builder setAppId(String value) {
+            /**
+             * <code>optional string app_id = 1 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！应用ID，在Mobile SSP（以下简称MSSP）完成注册，并上传应用通过审核后，平台会提供应用ID
+             * </pre>
+             */
+            public Builder setAppId(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -3323,6 +5924,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string app_id = 1 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！应用ID，在Mobile SSP（以下简称MSSP）完成注册，并上传应用通过审核后，平台会提供应用ID
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getAppIdBytes() {
+                java.lang.Object ref = appId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    appId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string app_id = 1 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！应用ID，在Mobile SSP（以下简称MSSP）完成注册，并上传应用通过审核后，平台会提供应用ID
+             * </pre>
+             */
+            public Builder setAppIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                appId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string app_id = 1 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！应用ID，在Mobile SSP（以下简称MSSP）完成注册，并上传应用通过审核后，平台会提供应用ID
+             * </pre>
+             */
             public Builder clearAppId() {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 appId_ = getDefaultInstance().getAppId();
@@ -3330,28 +5977,48 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string channel_id = 2;</code>
+             * <p/>
+             * <pre>
+             * 选填！发布渠道ID，渠道接入方必需填写
+             * </pre>
+             */
             public boolean hasChannelId() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
-            public String getChannelId() {
-                Object ref = channelId_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    channelId_ = s;
+            /**
+             * <code>optional string channel_id = 2;</code>
+             * <p/>
+             * <pre>
+             * 选填！发布渠道ID，渠道接入方必需填写
+             * </pre>
+             */
+            public java.lang.String getChannelId() {
+                java.lang.Object ref = channelId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        channelId_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setChannelId(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000002;
-                channelId_ = value;
-                onChanged();
-            }
-
-            public Builder setChannelId(String value) {
+            /**
+             * <code>optional string channel_id = 2;</code>
+             * <p/>
+             * <pre>
+             * 选填！发布渠道ID，渠道接入方必需填写
+             * </pre>
+             */
+            public Builder setChannelId(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -3361,6 +6028,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string channel_id = 2;</code>
+             * <p/>
+             * <pre>
+             * 选填！发布渠道ID，渠道接入方必需填写
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getChannelIdBytes() {
+                java.lang.Object ref = channelId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    channelId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string channel_id = 2;</code>
+             * <p/>
+             * <pre>
+             * 选填！发布渠道ID，渠道接入方必需填写
+             * </pre>
+             */
+            public Builder setChannelIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000002;
+                channelId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string channel_id = 2;</code>
+             * <p/>
+             * <pre>
+             * 选填！发布渠道ID，渠道接入方必需填写
+             * </pre>
+             */
             public Builder clearChannelId() {
                 bitField0_ = (bitField0_ & ~0x00000002);
                 channelId_ = getDefaultInstance().getChannelId();
@@ -3368,11 +6081,25 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用版本，将影响优选策略
+             * </pre>
+             */
             public boolean hasAppVersion() {
                 return ((bitField0_ & 0x00000004) == 0x00000004);
             }
 
-            public Version getAppVersion() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用版本，将影响优选策略
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Version getAppVersion() {
                 if (appVersionBuilder_ == null) {
                     return appVersion_;
                 } else {
@@ -3380,19 +6107,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setAppVersion(
-                    Version.Builder builderForValue) {
-                if (appVersionBuilder_ == null) {
-                    appVersion_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    appVersionBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            public Builder setAppVersion(Version value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用版本，将影响优选策略
+             * </pre>
+             */
+            public Builder setAppVersion(com.ksc.client.ads.proto.KSCMobileAdsProto530.Version value) {
                 if (appVersionBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -3406,12 +6128,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeAppVersion(Version value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用版本，将影响优选策略
+             * </pre>
+             */
+            public Builder setAppVersion(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder builderForValue) {
+                if (appVersionBuilder_ == null) {
+                    appVersion_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    appVersionBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000004;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用版本，将影响优选策略
+             * </pre>
+             */
+            public Builder mergeAppVersion(com.ksc.client.ads.proto.KSCMobileAdsProto530.Version value) {
                 if (appVersionBuilder_ == null) {
                     if (((bitField0_ & 0x00000004) == 0x00000004) &&
-                            appVersion_ != Version.getDefaultInstance()) {
+                            appVersion_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance()) {
                         appVersion_ =
-                                Version.newBuilder(appVersion_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.newBuilder(appVersion_).mergeFrom(value).buildPartial();
                     } else {
                         appVersion_ = value;
                     }
@@ -3423,9 +6171,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用版本，将影响优选策略
+             * </pre>
+             */
             public Builder clearAppVersion() {
                 if (appVersionBuilder_ == null) {
-                    appVersion_ = Version.getDefaultInstance();
+                    appVersion_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
                     onChanged();
                 } else {
                     appVersionBuilder_.clear();
@@ -3434,13 +6189,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Version.Builder getAppVersionBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用版本，将影响优选策略
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder getAppVersionBuilder() {
                 bitField0_ |= 0x00000004;
                 onChanged();
                 return getAppVersionFieldBuilder().getBuilder();
             }
 
-            public VersionOrBuilder getAppVersionOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用版本，将影响优选策略
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder getAppVersionOrBuilder() {
                 if (appVersionBuilder_ != null) {
                     return appVersionBuilder_.getMessageOrBuilder();
                 } else {
@@ -3448,13 +6217,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version app_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用版本，将影响优选策略
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    Version, Version.Builder, VersionOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Version, com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder>
             getAppVersionFieldBuilder() {
                 if (appVersionBuilder_ == null) {
                     appVersionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            Version, Version.Builder, VersionOrBuilder>(
-                            appVersion_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Version, com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder>(
+                            getAppVersion(),
                             getParentForChildren(),
                             isClean());
                     appVersion_ = null;
@@ -3462,28 +6238,48 @@ public final class KSCMobileAdsProto530 {
                 return appVersionBuilder_;
             }
 
+            /**
+             * <code>optional string app_package = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用包名，需要跟应用提交时一一对应，中文需要UTF-8编码
+             * </pre>
+             */
             public boolean hasAppPackage() {
                 return ((bitField0_ & 0x00000008) == 0x00000008);
             }
 
-            public String getAppPackage() {
-                Object ref = appPackage_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    appPackage_ = s;
+            /**
+             * <code>optional string app_package = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用包名，需要跟应用提交时一一对应，中文需要UTF-8编码
+             * </pre>
+             */
+            public java.lang.String getAppPackage() {
+                java.lang.Object ref = appPackage_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        appPackage_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setAppPackage(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000008;
-                appPackage_ = value;
-                onChanged();
-            }
-
-            public Builder setAppPackage(String value) {
+            /**
+             * <code>optional string app_package = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用包名，需要跟应用提交时一一对应，中文需要UTF-8编码
+             * </pre>
+             */
+            public Builder setAppPackage(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -3493,6 +6289,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string app_package = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用包名，需要跟应用提交时一一对应，中文需要UTF-8编码
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getAppPackageBytes() {
+                java.lang.Object ref = appPackage_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    appPackage_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string app_package = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用包名，需要跟应用提交时一一对应，中文需要UTF-8编码
+             * </pre>
+             */
+            public Builder setAppPackageBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000008;
+                appPackage_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string app_package = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！应用包名，需要跟应用提交时一一对应，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder clearAppPackage() {
                 bitField0_ = (bitField0_ & ~0x00000008);
                 appPackage_ = getDefaultInstance().getAppPackage();
@@ -3506,42 +6348,134 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.App)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.AdSlot}
+     * <p/>
+     * <pre>
+     * 广告位信息
+     * </pre>
+     */
     public static final class AdSlot extends
-            com.google.protobuf.GeneratedMessage
-            implements AdSlotOrBuilder {
-        // optional string adslot_id = 1;
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.AdSlot)
+            AdSlotOrBuilder {
         public static final int ADSLOT_ID_FIELD_NUMBER = 1;
-        // optional .com.ksc.client.ads.proto.Size adslot_size = 2;
         public static final int ADSLOT_SIZE_FIELD_NUMBER = 2;
-        // optional .com.ksc.client.ads.proto.Video video = 4;
         public static final int VIDEO_FIELD_NUMBER = 4;
-        // optional uint32 adslot_type = 5;
         public static final int ADSLOT_TYPE_FIELD_NUMBER = 5;
-        // optional uint32 ads = 15;
         public static final int ADS_FIELD_NUMBER = 15;
         private static final AdSlot defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<AdSlot> PARSER =
+                new com.google.protobuf.AbstractParser<AdSlot>() {
+                    public AdSlot parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new AdSlot(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new AdSlot(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
-        private Object adslotId_;
-        private Size adslotSize_;
-        private Video video_;
+        private java.lang.Object adslotId_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Size adslotSize_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Video video_;
         private int adslotType_;
         private int ads_;
         private byte memoizedIsInitialized = -1;
         private int memoizedSerializedSize = -1;
 
         // Use AdSlot.newBuilder() to construct.
-        private AdSlot(Builder builder) {
+        private AdSlot(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
+        }
+        private AdSlot(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
 
-        private AdSlot(boolean noInit) {
+        private AdSlot(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            adslotId_ = bs;
+                            break;
+                        }
+                        case 18: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                                subBuilder = adslotSize_.toBuilder();
+                            }
+                            adslotSize_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(adslotSize_);
+                                adslotSize_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000002;
+                            break;
+                        }
+                        case 34: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                                subBuilder = video_.toBuilder();
+                            }
+                            video_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(video_);
+                                video_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000004;
+                            break;
+                        }
+                        case 40: {
+                            bitField0_ |= 0x00000008;
+                            adslotType_ = input.readUInt32();
+                            break;
+                        }
+                        case 120: {
+                            bitField0_ |= 0x00000010;
+                            ads_ = input.readUInt32();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static AdSlot getDefaultInstance() {
@@ -3550,90 +6484,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_AdSlot_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_AdSlot_descriptor;
         }
 
-        public static AdSlot parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static AdSlot parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static AdSlot parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static AdSlot parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static AdSlot parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static AdSlot parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static AdSlot parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static AdSlot parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static AdSlot parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static AdSlot parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(AdSlot prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -3641,35 +6561,71 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_AdSlot_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_AdSlot_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<AdSlot> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional string adslot_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位ID，需要媒体在MSSP平台进行设置！非常重要！
+         * </pre>
+         */
         public boolean hasAdslotId() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
-        public String getAdslotId() {
-            Object ref = adslotId_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string adslot_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位ID，需要媒体在MSSP平台进行设置！非常重要！
+         * </pre>
+         */
+        public java.lang.String getAdslotId() {
+            java.lang.Object ref = adslotId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     adslotId_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getAdslotIdBytes() {
-            Object ref = adslotId_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string adslot_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位ID，需要媒体在MSSP平台进行设置！非常重要！
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getAdslotIdBytes() {
+            java.lang.Object ref = adslotId_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 adslotId_ = b;
                 return b;
             } else {
@@ -3677,57 +6633,128 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位尺寸
+         * </pre>
+         */
         public boolean hasAdslotSize() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
-        public Size getAdslotSize() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位尺寸
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Size getAdslotSize() {
             return adslotSize_;
         }
 
-        public SizeOrBuilder getAdslotSizeOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！广告位尺寸
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder getAdslotSizeOrBuilder() {
             return adslotSize_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+         * <p/>
+         * <pre>
+         * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+         * </pre>
+         */
         public boolean hasVideo() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
-        public Video getVideo() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+         * <p/>
+         * <pre>
+         * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Video getVideo() {
             return video_;
         }
 
-        public VideoOrBuilder getVideoOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+         * <p/>
+         * <pre>
+         * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.VideoOrBuilder getVideoOrBuilder() {
             return video_;
         }
 
+        /**
+         * <code>optional uint32 adslot_type = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告类型
+         * </pre>
+         */
         public boolean hasAdslotType() {
             return ((bitField0_ & 0x00000008) == 0x00000008);
         }
 
+        /**
+         * <code>optional uint32 adslot_type = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告类型
+         * </pre>
+         */
         public int getAdslotType() {
             return adslotType_;
         }
 
+        /**
+         * <code>optional uint32 ads = 15;</code>
+         * <p/>
+         * <pre>
+         * 返回广告条数,目前仅支持信息流.
+         * </pre>
+         */
         public boolean hasAds() {
             return ((bitField0_ & 0x00000010) == 0x00000010);
         }
 
+        /**
+         * <code>optional uint32 ads = 15;</code>
+         * <p/>
+         * <pre>
+         * 返回广告条数,目前仅支持信息流.
+         * </pre>
+         */
         public int getAds() {
             return ads_;
         }
 
         private void initFields() {
             adslotId_ = "";
-            adslotSize_ = Size.getDefaultInstance();
-            video_ = Video.getDefaultInstance();
+            adslotSize_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.getDefaultInstance();
+            video_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.getDefaultInstance();
             adslotType_ = 0;
             ads_ = 0;
         }
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -3784,8 +6811,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -3798,30 +6825,33 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.AdSlot}
+         * <p/>
+         * <pre>
+         * 广告位信息
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements AdSlotOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.AdSlot)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlotOrBuilder {
             private int bitField0_;
-            // optional string adslot_id = 1;
-            private Object adslotId_ = "";
-            // optional .com.ksc.client.ads.proto.Size adslot_size = 2;
-            private Size adslotSize_ = Size.getDefaultInstance();
+            private java.lang.Object adslotId_ = "";
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Size adslotSize_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    Size, Size.Builder, SizeOrBuilder> adslotSizeBuilder_;
-            // optional .com.ksc.client.ads.proto.Video video = 4;
-            private Video video_ = Video.getDefaultInstance();
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Size, com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder> adslotSizeBuilder_;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Video video_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    Video, Video.Builder, VideoOrBuilder> videoBuilder_;
-            // optional uint32 adslot_type = 5;
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Video, com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.VideoOrBuilder> videoBuilder_;
             private int adslotType_;
-            // optional uint32 ads = 15;
             private int ads_;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.newBuilder()
@@ -3829,23 +6859,26 @@ public final class KSCMobileAdsProto530 {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_AdSlot_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_AdSlot_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_AdSlot_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_AdSlot_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -3860,13 +6893,13 @@ public final class KSCMobileAdsProto530 {
                 adslotId_ = "";
                 bitField0_ = (bitField0_ & ~0x00000001);
                 if (adslotSizeBuilder_ == null) {
-                    adslotSize_ = Size.getDefaultInstance();
+                    adslotSize_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.getDefaultInstance();
                 } else {
                     adslotSizeBuilder_.clear();
                 }
                 bitField0_ = (bitField0_ & ~0x00000002);
                 if (videoBuilder_ == null) {
-                    video_ = Video.getDefaultInstance();
+                    video_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.getDefaultInstance();
                 } else {
                     videoBuilder_.clear();
                 }
@@ -3884,33 +6917,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return AdSlot.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_AdSlot_descriptor;
             }
 
-            public AdSlot getDefaultInstanceForType() {
-                return AdSlot.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.getDefaultInstance();
             }
 
-            public AdSlot build() {
-                AdSlot result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private AdSlot buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                AdSlot result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public AdSlot buildPartial() {
-                AdSlot result = new AdSlot(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -3947,18 +6970,20 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof AdSlot) {
-                    return mergeFrom((AdSlot) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(AdSlot other) {
-                if (other == AdSlot.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot.getDefaultInstance()) return this;
                 if (other.hasAdslotId()) {
-                    setAdslotId(other.getAdslotId());
+                    bitField0_ |= 0x00000001;
+                    adslotId_ = other.adslotId_;
+                    onChanged();
                 }
                 if (other.hasAdslotSize()) {
                     mergeAdslotSize(other.getAdslotSize());
@@ -3984,84 +7009,62 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            bitField0_ |= 0x00000001;
-                            adslotId_ = input.readBytes();
-                            break;
-                        }
-                        case 18: {
-                            Size.Builder subBuilder = Size.newBuilder();
-                            if (hasAdslotSize()) {
-                                subBuilder.mergeFrom(getAdslotSize());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setAdslotSize(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 34: {
-                            Video.Builder subBuilder = Video.newBuilder();
-                            if (hasVideo()) {
-                                subBuilder.mergeFrom(getVideo());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setVideo(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 40: {
-                            bitField0_ |= 0x00000008;
-                            adslotType_ = input.readUInt32();
-                            break;
-                        }
-                        case 120: {
-                            bitField0_ |= 0x00000010;
-                            ads_ = input.readUInt32();
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.AdSlot) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional string adslot_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位ID，需要媒体在MSSP平台进行设置！非常重要！
+             * </pre>
+             */
             public boolean hasAdslotId() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
-            public String getAdslotId() {
-                Object ref = adslotId_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    adslotId_ = s;
+            /**
+             * <code>optional string adslot_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位ID，需要媒体在MSSP平台进行设置！非常重要！
+             * </pre>
+             */
+            public java.lang.String getAdslotId() {
+                java.lang.Object ref = adslotId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        adslotId_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setAdslotId(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000001;
-                adslotId_ = value;
-                onChanged();
-            }
-
-            public Builder setAdslotId(String value) {
+            /**
+             * <code>optional string adslot_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位ID，需要媒体在MSSP平台进行设置！非常重要！
+             * </pre>
+             */
+            public Builder setAdslotId(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -4071,6 +7074,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string adslot_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位ID，需要媒体在MSSP平台进行设置！非常重要！
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getAdslotIdBytes() {
+                java.lang.Object ref = adslotId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    adslotId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string adslot_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位ID，需要媒体在MSSP平台进行设置！非常重要！
+             * </pre>
+             */
+            public Builder setAdslotIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                adslotId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string adslot_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位ID，需要媒体在MSSP平台进行设置！非常重要！
+             * </pre>
+             */
             public Builder clearAdslotId() {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 adslotId_ = getDefaultInstance().getAdslotId();
@@ -4078,11 +7127,25 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位尺寸
+             * </pre>
+             */
             public boolean hasAdslotSize() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
-            public Size getAdslotSize() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位尺寸
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Size getAdslotSize() {
                 if (adslotSizeBuilder_ == null) {
                     return adslotSize_;
                 } else {
@@ -4090,19 +7153,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setAdslotSize(
-                    Size.Builder builderForValue) {
-                if (adslotSizeBuilder_ == null) {
-                    adslotSize_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    adslotSizeBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000002;
-                return this;
-            }
-
-            public Builder setAdslotSize(Size value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位尺寸
+             * </pre>
+             */
+            public Builder setAdslotSize(com.ksc.client.ads.proto.KSCMobileAdsProto530.Size value) {
                 if (adslotSizeBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -4116,12 +7174,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeAdslotSize(Size value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位尺寸
+             * </pre>
+             */
+            public Builder setAdslotSize(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder builderForValue) {
+                if (adslotSizeBuilder_ == null) {
+                    adslotSize_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    adslotSizeBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000002;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位尺寸
+             * </pre>
+             */
+            public Builder mergeAdslotSize(com.ksc.client.ads.proto.KSCMobileAdsProto530.Size value) {
                 if (adslotSizeBuilder_ == null) {
                     if (((bitField0_ & 0x00000002) == 0x00000002) &&
-                            adslotSize_ != Size.getDefaultInstance()) {
+                            adslotSize_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.getDefaultInstance()) {
                         adslotSize_ =
-                                Size.newBuilder(adslotSize_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.newBuilder(adslotSize_).mergeFrom(value).buildPartial();
                     } else {
                         adslotSize_ = value;
                     }
@@ -4133,9 +7217,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位尺寸
+             * </pre>
+             */
             public Builder clearAdslotSize() {
                 if (adslotSizeBuilder_ == null) {
-                    adslotSize_ = Size.getDefaultInstance();
+                    adslotSize_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.getDefaultInstance();
                     onChanged();
                 } else {
                     adslotSizeBuilder_.clear();
@@ -4144,13 +7235,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Size.Builder getAdslotSizeBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位尺寸
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder getAdslotSizeBuilder() {
                 bitField0_ |= 0x00000002;
                 onChanged();
                 return getAdslotSizeFieldBuilder().getBuilder();
             }
 
-            public SizeOrBuilder getAdslotSizeOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位尺寸
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder getAdslotSizeOrBuilder() {
                 if (adslotSizeBuilder_ != null) {
                     return adslotSizeBuilder_.getMessageOrBuilder();
                 } else {
@@ -4158,13 +7263,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size adslot_size = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！广告位尺寸
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    Size, Size.Builder, SizeOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Size, com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder>
             getAdslotSizeFieldBuilder() {
                 if (adslotSizeBuilder_ == null) {
                     adslotSizeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            Size, Size.Builder, SizeOrBuilder>(
-                            adslotSize_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Size, com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder>(
+                            getAdslotSize(),
                             getParentForChildren(),
                             isClean());
                     adslotSize_ = null;
@@ -4172,11 +7284,25 @@ public final class KSCMobileAdsProto530 {
                 return adslotSizeBuilder_;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+             * <p/>
+             * <pre>
+             * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+             * </pre>
+             */
             public boolean hasVideo() {
                 return ((bitField0_ & 0x00000004) == 0x00000004);
             }
 
-            public Video getVideo() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+             * <p/>
+             * <pre>
+             * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Video getVideo() {
                 if (videoBuilder_ == null) {
                     return video_;
                 } else {
@@ -4184,19 +7310,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setVideo(
-                    Video.Builder builderForValue) {
-                if (videoBuilder_ == null) {
-                    video_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    videoBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            public Builder setVideo(Video value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+             * <p/>
+             * <pre>
+             * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+             * </pre>
+             */
+            public Builder setVideo(com.ksc.client.ads.proto.KSCMobileAdsProto530.Video value) {
                 if (videoBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -4210,12 +7331,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeVideo(Video value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+             * <p/>
+             * <pre>
+             * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+             * </pre>
+             */
+            public Builder setVideo(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.Builder builderForValue) {
+                if (videoBuilder_ == null) {
+                    video_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    videoBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000004;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+             * <p/>
+             * <pre>
+             * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+             * </pre>
+             */
+            public Builder mergeVideo(com.ksc.client.ads.proto.KSCMobileAdsProto530.Video value) {
                 if (videoBuilder_ == null) {
                     if (((bitField0_ & 0x00000004) == 0x00000004) &&
-                            video_ != Video.getDefaultInstance()) {
+                            video_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.getDefaultInstance()) {
                         video_ =
-                                Video.newBuilder(video_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.newBuilder(video_).mergeFrom(value).buildPartial();
                     } else {
                         video_ = value;
                     }
@@ -4227,9 +7374,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+             * <p/>
+             * <pre>
+             * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder clearVideo() {
                 if (videoBuilder_ == null) {
-                    video_ = Video.getDefaultInstance();
+                    video_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.getDefaultInstance();
                     onChanged();
                 } else {
                     videoBuilder_.clear();
@@ -4238,13 +7392,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Video.Builder getVideoBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+             * <p/>
+             * <pre>
+             * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.Builder getVideoBuilder() {
                 bitField0_ |= 0x00000004;
                 onChanged();
                 return getVideoFieldBuilder().getBuilder();
             }
 
-            public VideoOrBuilder getVideoOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+             * <p/>
+             * <pre>
+             * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.VideoOrBuilder getVideoOrBuilder() {
                 if (videoBuilder_ != null) {
                     return videoBuilder_.getMessageOrBuilder();
                 } else {
@@ -4252,13 +7420,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video video = 4;</code>
+             * <p/>
+             * <pre>
+             * repeated bytes topics = 3; // 选填！[deprecated] 主题，用于咨询、论坛类app，传递当前版块的主题，中文需要UTF-8编码
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    Video, Video.Builder, VideoOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Video, com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.VideoOrBuilder>
             getVideoFieldBuilder() {
                 if (videoBuilder_ == null) {
                     videoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            Video, Video.Builder, VideoOrBuilder>(
-                            video_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Video, com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.VideoOrBuilder>(
+                            getVideo(),
                             getParentForChildren(),
                             isClean());
                     video_ = null;
@@ -4266,14 +7441,35 @@ public final class KSCMobileAdsProto530 {
                 return videoBuilder_;
             }
 
+            /**
+             * <code>optional uint32 adslot_type = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告类型
+             * </pre>
+             */
             public boolean hasAdslotType() {
                 return ((bitField0_ & 0x00000008) == 0x00000008);
             }
 
+            /**
+             * <code>optional uint32 adslot_type = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告类型
+             * </pre>
+             */
             public int getAdslotType() {
                 return adslotType_;
             }
 
+            /**
+             * <code>optional uint32 adslot_type = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告类型
+             * </pre>
+             */
             public Builder setAdslotType(int value) {
                 bitField0_ |= 0x00000008;
                 adslotType_ = value;
@@ -4281,6 +7477,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 adslot_type = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告类型
+             * </pre>
+             */
             public Builder clearAdslotType() {
                 bitField0_ = (bitField0_ & ~0x00000008);
                 adslotType_ = 0;
@@ -4288,14 +7491,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 ads = 15;</code>
+             * <p/>
+             * <pre>
+             * 返回广告条数,目前仅支持信息流.
+             * </pre>
+             */
             public boolean hasAds() {
                 return ((bitField0_ & 0x00000010) == 0x00000010);
             }
 
+            /**
+             * <code>optional uint32 ads = 15;</code>
+             * <p/>
+             * <pre>
+             * 返回广告条数,目前仅支持信息流.
+             * </pre>
+             */
             public int getAds() {
                 return ads_;
             }
 
+            /**
+             * <code>optional uint32 ads = 15;</code>
+             * <p/>
+             * <pre>
+             * 返回广告条数,目前仅支持信息流.
+             * </pre>
+             */
             public Builder setAds(int value) {
                 bitField0_ |= 0x00000010;
                 ads_ = value;
@@ -4303,6 +7527,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 ads = 15;</code>
+             * <p/>
+             * <pre>
+             * 返回广告条数,目前仅支持信息流.
+             * </pre>
+             */
             public Builder clearAds() {
                 bitField0_ = (bitField0_ & ~0x00000010);
                 ads_ = 0;
@@ -4316,48 +7547,139 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.AdSlot)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.UdId}
+     * <p/>
+     * <pre>
+     * 唯一用户标识，优先使用明文，必需按要求填写，具体填写指导详见接口说明文档
+     * </pre>
+     */
     public static final class UdId extends
-            com.google.protobuf.GeneratedMessage
-            implements UdIdOrBuilder {
-        // optional string idfa = 1 [default = ""];
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.UdId)
+            UdIdOrBuilder {
         public static final int IDFA_FIELD_NUMBER = 1;
-        // optional string imei = 2 [default = ""];
         public static final int IMEI_FIELD_NUMBER = 2;
-        // optional string mac = 3 [default = ""];
         public static final int MAC_FIELD_NUMBER = 3;
-        // optional string android_id = 5 [default = ""];
         public static final int ANDROID_ID_FIELD_NUMBER = 5;
-        // optional string idfa_md5 = 8 [default = ""];
         public static final int IDFA_MD5_FIELD_NUMBER = 8;
-        // optional string imei_md5 = 4 [default = ""];
         public static final int IMEI_MD5_FIELD_NUMBER = 4;
-        // optional string androidid_md5 = 9 [default = ""];
         public static final int ANDROIDID_MD5_FIELD_NUMBER = 9;
         private static final UdId defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<UdId> PARSER =
+                new com.google.protobuf.AbstractParser<UdId>() {
+                    public UdId parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new UdId(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new UdId(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
-        private Object idfa_;
-        private Object imei_;
-        private Object mac_;
-        private Object androidId_;
-        private Object idfaMd5_;
-        private Object imeiMd5_;
-        private Object androididMd5_;
+        private java.lang.Object idfa_;
+        private java.lang.Object imei_;
+        private java.lang.Object mac_;
+        private java.lang.Object androidId_;
+        private java.lang.Object idfaMd5_;
+        private java.lang.Object imeiMd5_;
+        private java.lang.Object androididMd5_;
         private byte memoizedIsInitialized = -1;
         private int memoizedSerializedSize = -1;
 
         // Use UdId.newBuilder() to construct.
-        private UdId(Builder builder) {
+        private UdId(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
         }
 
         private UdId(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        }
+
+        private UdId(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            idfa_ = bs;
+                            break;
+                        }
+                        case 18: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000002;
+                            imei_ = bs;
+                            break;
+                        }
+                        case 26: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000004;
+                            mac_ = bs;
+                            break;
+                        }
+                        case 34: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000020;
+                            imeiMd5_ = bs;
+                            break;
+                        }
+                        case 42: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000008;
+                            androidId_ = bs;
+                            break;
+                        }
+                        case 66: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000010;
+                            idfaMd5_ = bs;
+                            break;
+                        }
+                        case 74: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000040;
+                            androididMd5_ = bs;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static UdId getDefaultInstance() {
@@ -4366,90 +7688,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_UdId_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_UdId_descriptor;
         }
 
-        public static UdId parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static UdId parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static UdId parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static UdId parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static UdId parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static UdId parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static UdId parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static UdId parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static UdId parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static UdId parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(UdId prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -4457,35 +7765,71 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_UdId_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_UdId_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<UdId> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional string idfa = 1 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！iOS设备的IDFA，格式要求[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+         * </pre>
+         */
         public boolean hasIdfa() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
-        public String getIdfa() {
-            Object ref = idfa_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string idfa = 1 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！iOS设备的IDFA，格式要求[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+         * </pre>
+         */
+        public java.lang.String getIdfa() {
+            java.lang.Object ref = idfa_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     idfa_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getIdfaBytes() {
-            Object ref = idfa_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string idfa = 1 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！iOS设备的IDFA，格式要求[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getIdfaBytes() {
+            java.lang.Object ref = idfa_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 idfa_ = b;
                 return b;
             } else {
@@ -4493,30 +7837,53 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional string imei = 2 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！Android手机设备的IMEI，格式要求[0-9a-fA-F]{14,15}
+         * </pre>
+         */
         public boolean hasImei() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
-        public String getImei() {
-            Object ref = imei_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string imei = 2 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！Android手机设备的IMEI，格式要求[0-9a-fA-F]{14,15}
+         * </pre>
+         */
+        public java.lang.String getImei() {
+            java.lang.Object ref = imei_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     imei_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getImeiBytes() {
-            Object ref = imei_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string imei = 2 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！Android手机设备的IMEI，格式要求[0-9a-fA-F]{14,15}
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getImeiBytes() {
+            java.lang.Object ref = imei_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 imei_ = b;
                 return b;
             } else {
@@ -4524,30 +7891,53 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional string mac = 3 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android非手机设备的WiFi网卡MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+         * </pre>
+         */
         public boolean hasMac() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
-        public String getMac() {
-            Object ref = mac_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string mac = 3 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android非手机设备的WiFi网卡MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+         * </pre>
+         */
+        public java.lang.String getMac() {
+            java.lang.Object ref = mac_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     mac_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getMacBytes() {
-            Object ref = mac_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string mac = 3 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android非手机设备的WiFi网卡MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getMacBytes() {
+            java.lang.Object ref = mac_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 mac_ = b;
                 return b;
             } else {
@@ -4555,30 +7945,53 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional string android_id = 5 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！Android手机设备系统ID，格式要求[0-9A-Za-z]{16}
+         * </pre>
+         */
         public boolean hasAndroidId() {
             return ((bitField0_ & 0x00000008) == 0x00000008);
         }
 
-        public String getAndroidId() {
-            Object ref = androidId_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string android_id = 5 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！Android手机设备系统ID，格式要求[0-9A-Za-z]{16}
+         * </pre>
+         */
+        public java.lang.String getAndroidId() {
+            java.lang.Object ref = androidId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     androidId_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getAndroidIdBytes() {
-            Object ref = androidId_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string android_id = 5 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！Android手机设备系统ID，格式要求[0-9A-Za-z]{16}
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getAndroidIdBytes() {
+            java.lang.Object ref = androidId_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 androidId_ = b;
                 return b;
             } else {
@@ -4586,30 +7999,53 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional string idfa_md5 = 8 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * iOS设备的IDFA，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
         public boolean hasIdfaMd5() {
             return ((bitField0_ & 0x00000010) == 0x00000010);
         }
 
-        public String getIdfaMd5() {
-            Object ref = idfaMd5_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string idfa_md5 = 8 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * iOS设备的IDFA，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
+        public java.lang.String getIdfaMd5() {
+            java.lang.Object ref = idfaMd5_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     idfaMd5_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getIdfaMd5Bytes() {
-            Object ref = idfaMd5_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string idfa_md5 = 8 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * iOS设备的IDFA，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getIdfaMd5Bytes() {
+            java.lang.Object ref = idfaMd5_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 idfaMd5_ = b;
                 return b;
             } else {
@@ -4617,30 +8053,53 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional string imei_md5 = 4 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android手机设备的IMEI，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
         public boolean hasImeiMd5() {
             return ((bitField0_ & 0x00000020) == 0x00000020);
         }
 
-        public String getImeiMd5() {
-            Object ref = imeiMd5_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string imei_md5 = 4 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android手机设备的IMEI，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
+        public java.lang.String getImeiMd5() {
+            java.lang.Object ref = imeiMd5_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     imeiMd5_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getImeiMd5Bytes() {
-            Object ref = imeiMd5_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string imei_md5 = 4 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android手机设备的IMEI，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getImeiMd5Bytes() {
+            java.lang.Object ref = imeiMd5_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 imeiMd5_ = b;
                 return b;
             } else {
@@ -4648,30 +8107,53 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional string androidid_md5 = 9 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android手机设备系统ID，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
         public boolean hasAndroididMd5() {
             return ((bitField0_ & 0x00000040) == 0x00000040);
         }
 
-        public String getAndroididMd5() {
-            Object ref = androididMd5_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string androidid_md5 = 9 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android手机设备系统ID，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
+        public java.lang.String getAndroididMd5() {
+            java.lang.Object ref = androididMd5_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     androididMd5_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getAndroididMd5Bytes() {
-            Object ref = androididMd5_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string androidid_md5 = 9 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * Android手机设备系统ID，经过MD5加密，格式要求[0-9A-Za-z]{32}
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getAndroididMd5Bytes() {
+            java.lang.Object ref = androididMd5_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 androididMd5_ = b;
                 return b;
             } else {
@@ -4691,7 +8173,8 @@ public final class KSCMobileAdsProto530 {
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -4762,8 +8245,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -4776,54 +8259,58 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.UdId}
+         * <p/>
+         * <pre>
+         * 唯一用户标识，优先使用明文，必需按要求填写，具体填写指导详见接口说明文档
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements UdIdOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.UdId)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.UdIdOrBuilder {
             private int bitField0_;
-            // optional string idfa = 1 [default = ""];
-            private Object idfa_ = "";
-            // optional string imei = 2 [default = ""];
-            private Object imei_ = "";
-            // optional string mac = 3 [default = ""];
-            private Object mac_ = "";
-            // optional string android_id = 5 [default = ""];
-            private Object androidId_ = "";
-            // optional string idfa_md5 = 8 [default = ""];
-            private Object idfaMd5_ = "";
-            // optional string imei_md5 = 4 [default = ""];
-            private Object imeiMd5_ = "";
-            // optional string androidid_md5 = 9 [default = ""];
-            private Object androididMd5_ = "";
+            private java.lang.Object idfa_ = "";
+            private java.lang.Object imei_ = "";
+            private java.lang.Object mac_ = "";
+            private java.lang.Object androidId_ = "";
+            private java.lang.Object idfaMd5_ = "";
+            private java.lang.Object imeiMd5_ = "";
+            private java.lang.Object androididMd5_ = "";
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.newBuilder()
             private Builder() {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_UdId_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_UdId_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_UdId_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_UdId_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -4856,33 +8343,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return UdId.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_UdId_descriptor;
             }
 
-            public UdId getDefaultInstanceForType() {
-                return UdId.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.getDefaultInstance();
             }
 
-            public UdId build() {
-                UdId result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private UdId buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                UdId result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public UdId buildPartial() {
-                UdId result = new UdId(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4919,36 +8396,50 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof UdId) {
-                    return mergeFrom((UdId) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(UdId other) {
-                if (other == UdId.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.getDefaultInstance()) return this;
                 if (other.hasIdfa()) {
-                    setIdfa(other.getIdfa());
+                    bitField0_ |= 0x00000001;
+                    idfa_ = other.idfa_;
+                    onChanged();
                 }
                 if (other.hasImei()) {
-                    setImei(other.getImei());
+                    bitField0_ |= 0x00000002;
+                    imei_ = other.imei_;
+                    onChanged();
                 }
                 if (other.hasMac()) {
-                    setMac(other.getMac());
+                    bitField0_ |= 0x00000004;
+                    mac_ = other.mac_;
+                    onChanged();
                 }
                 if (other.hasAndroidId()) {
-                    setAndroidId(other.getAndroidId());
+                    bitField0_ |= 0x00000008;
+                    androidId_ = other.androidId_;
+                    onChanged();
                 }
                 if (other.hasIdfaMd5()) {
-                    setIdfaMd5(other.getIdfaMd5());
+                    bitField0_ |= 0x00000010;
+                    idfaMd5_ = other.idfaMd5_;
+                    onChanged();
                 }
                 if (other.hasImeiMd5()) {
-                    setImeiMd5(other.getImeiMd5());
+                    bitField0_ |= 0x00000020;
+                    imeiMd5_ = other.imeiMd5_;
+                    onChanged();
                 }
                 if (other.hasAndroididMd5()) {
-                    setAndroididMd5(other.getAndroididMd5());
+                    bitField0_ |= 0x00000040;
+                    androididMd5_ = other.androididMd5_;
+                    onChanged();
                 }
                 this.mergeUnknownFields(other.getUnknownFields());
                 return this;
@@ -4962,86 +8453,62 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            bitField0_ |= 0x00000001;
-                            idfa_ = input.readBytes();
-                            break;
-                        }
-                        case 18: {
-                            bitField0_ |= 0x00000002;
-                            imei_ = input.readBytes();
-                            break;
-                        }
-                        case 26: {
-                            bitField0_ |= 0x00000004;
-                            mac_ = input.readBytes();
-                            break;
-                        }
-                        case 34: {
-                            bitField0_ |= 0x00000020;
-                            imeiMd5_ = input.readBytes();
-                            break;
-                        }
-                        case 42: {
-                            bitField0_ |= 0x00000008;
-                            androidId_ = input.readBytes();
-                            break;
-                        }
-                        case 66: {
-                            bitField0_ |= 0x00000010;
-                            idfaMd5_ = input.readBytes();
-                            break;
-                        }
-                        case 74: {
-                            bitField0_ |= 0x00000040;
-                            androididMd5_ = input.readBytes();
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional string idfa = 1 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！iOS设备的IDFA，格式要求[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+             * </pre>
+             */
             public boolean hasIdfa() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
-            public String getIdfa() {
-                Object ref = idfa_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    idfa_ = s;
+            /**
+             * <code>optional string idfa = 1 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！iOS设备的IDFA，格式要求[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+             * </pre>
+             */
+            public java.lang.String getIdfa() {
+                java.lang.Object ref = idfa_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        idfa_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setIdfa(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000001;
-                idfa_ = value;
-                onChanged();
-            }
-
-            public Builder setIdfa(String value) {
+            /**
+             * <code>optional string idfa = 1 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！iOS设备的IDFA，格式要求[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+             * </pre>
+             */
+            public Builder setIdfa(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -5051,6 +8518,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string idfa = 1 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！iOS设备的IDFA，格式要求[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getIdfaBytes() {
+                java.lang.Object ref = idfa_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    idfa_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string idfa = 1 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！iOS设备的IDFA，格式要求[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+             * </pre>
+             */
+            public Builder setIdfaBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                idfa_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string idfa = 1 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！iOS设备的IDFA，格式要求[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+             * </pre>
+             */
             public Builder clearIdfa() {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 idfa_ = getDefaultInstance().getIdfa();
@@ -5058,28 +8571,48 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string imei = 2 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！Android手机设备的IMEI，格式要求[0-9a-fA-F]{14,15}
+             * </pre>
+             */
             public boolean hasImei() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
-            public String getImei() {
-                Object ref = imei_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    imei_ = s;
+            /**
+             * <code>optional string imei = 2 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！Android手机设备的IMEI，格式要求[0-9a-fA-F]{14,15}
+             * </pre>
+             */
+            public java.lang.String getImei() {
+                java.lang.Object ref = imei_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        imei_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setImei(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000002;
-                imei_ = value;
-                onChanged();
-            }
-
-            public Builder setImei(String value) {
+            /**
+             * <code>optional string imei = 2 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！Android手机设备的IMEI，格式要求[0-9a-fA-F]{14,15}
+             * </pre>
+             */
+            public Builder setImei(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -5089,6 +8622,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string imei = 2 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！Android手机设备的IMEI，格式要求[0-9a-fA-F]{14,15}
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getImeiBytes() {
+                java.lang.Object ref = imei_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    imei_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string imei = 2 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！Android手机设备的IMEI，格式要求[0-9a-fA-F]{14,15}
+             * </pre>
+             */
+            public Builder setImeiBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000002;
+                imei_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string imei = 2 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！Android手机设备的IMEI，格式要求[0-9a-fA-F]{14,15}
+             * </pre>
+             */
             public Builder clearImei() {
                 bitField0_ = (bitField0_ & ~0x00000002);
                 imei_ = getDefaultInstance().getImei();
@@ -5096,28 +8675,48 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string mac = 3 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android非手机设备的WiFi网卡MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+             * </pre>
+             */
             public boolean hasMac() {
                 return ((bitField0_ & 0x00000004) == 0x00000004);
             }
 
-            public String getMac() {
-                Object ref = mac_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    mac_ = s;
+            /**
+             * <code>optional string mac = 3 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android非手机设备的WiFi网卡MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+             * </pre>
+             */
+            public java.lang.String getMac() {
+                java.lang.Object ref = mac_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        mac_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setMac(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000004;
-                mac_ = value;
-                onChanged();
-            }
-
-            public Builder setMac(String value) {
+            /**
+             * <code>optional string mac = 3 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android非手机设备的WiFi网卡MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+             * </pre>
+             */
+            public Builder setMac(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -5127,6 +8726,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string mac = 3 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android非手机设备的WiFi网卡MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getMacBytes() {
+                java.lang.Object ref = mac_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    mac_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string mac = 3 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android非手机设备的WiFi网卡MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+             * </pre>
+             */
+            public Builder setMacBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000004;
+                mac_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string mac = 3 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android非手机设备的WiFi网卡MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+             * </pre>
+             */
             public Builder clearMac() {
                 bitField0_ = (bitField0_ & ~0x00000004);
                 mac_ = getDefaultInstance().getMac();
@@ -5134,28 +8779,48 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string android_id = 5 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！Android手机设备系统ID，格式要求[0-9A-Za-z]{16}
+             * </pre>
+             */
             public boolean hasAndroidId() {
                 return ((bitField0_ & 0x00000008) == 0x00000008);
             }
 
-            public String getAndroidId() {
-                Object ref = androidId_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    androidId_ = s;
+            /**
+             * <code>optional string android_id = 5 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！Android手机设备系统ID，格式要求[0-9A-Za-z]{16}
+             * </pre>
+             */
+            public java.lang.String getAndroidId() {
+                java.lang.Object ref = androidId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        androidId_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setAndroidId(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000008;
-                androidId_ = value;
-                onChanged();
-            }
-
-            public Builder setAndroidId(String value) {
+            /**
+             * <code>optional string android_id = 5 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！Android手机设备系统ID，格式要求[0-9A-Za-z]{16}
+             * </pre>
+             */
+            public Builder setAndroidId(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -5165,6 +8830,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string android_id = 5 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！Android手机设备系统ID，格式要求[0-9A-Za-z]{16}
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getAndroidIdBytes() {
+                java.lang.Object ref = androidId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    androidId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string android_id = 5 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！Android手机设备系统ID，格式要求[0-9A-Za-z]{16}
+             * </pre>
+             */
+            public Builder setAndroidIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000008;
+                androidId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string android_id = 5 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！Android手机设备系统ID，格式要求[0-9A-Za-z]{16}
+             * </pre>
+             */
             public Builder clearAndroidId() {
                 bitField0_ = (bitField0_ & ~0x00000008);
                 androidId_ = getDefaultInstance().getAndroidId();
@@ -5172,28 +8883,48 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string idfa_md5 = 8 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * iOS设备的IDFA，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
             public boolean hasIdfaMd5() {
                 return ((bitField0_ & 0x00000010) == 0x00000010);
             }
 
-            public String getIdfaMd5() {
-                Object ref = idfaMd5_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    idfaMd5_ = s;
+            /**
+             * <code>optional string idfa_md5 = 8 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * iOS设备的IDFA，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
+            public java.lang.String getIdfaMd5() {
+                java.lang.Object ref = idfaMd5_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        idfaMd5_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setIdfaMd5(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000010;
-                idfaMd5_ = value;
-                onChanged();
-            }
-
-            public Builder setIdfaMd5(String value) {
+            /**
+             * <code>optional string idfa_md5 = 8 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * iOS设备的IDFA，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
+            public Builder setIdfaMd5(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -5203,6 +8934,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string idfa_md5 = 8 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * iOS设备的IDFA，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getIdfaMd5Bytes() {
+                java.lang.Object ref = idfaMd5_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    idfaMd5_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string idfa_md5 = 8 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * iOS设备的IDFA，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
+            public Builder setIdfaMd5Bytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000010;
+                idfaMd5_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string idfa_md5 = 8 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * iOS设备的IDFA，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
             public Builder clearIdfaMd5() {
                 bitField0_ = (bitField0_ & ~0x00000010);
                 idfaMd5_ = getDefaultInstance().getIdfaMd5();
@@ -5210,28 +8987,48 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string imei_md5 = 4 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android手机设备的IMEI，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
             public boolean hasImeiMd5() {
                 return ((bitField0_ & 0x00000020) == 0x00000020);
             }
 
-            public String getImeiMd5() {
-                Object ref = imeiMd5_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    imeiMd5_ = s;
+            /**
+             * <code>optional string imei_md5 = 4 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android手机设备的IMEI，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
+            public java.lang.String getImeiMd5() {
+                java.lang.Object ref = imeiMd5_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        imeiMd5_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setImeiMd5(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000020;
-                imeiMd5_ = value;
-                onChanged();
-            }
-
-            public Builder setImeiMd5(String value) {
+            /**
+             * <code>optional string imei_md5 = 4 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android手机设备的IMEI，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
+            public Builder setImeiMd5(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -5241,6 +9038,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string imei_md5 = 4 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android手机设备的IMEI，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getImeiMd5Bytes() {
+                java.lang.Object ref = imeiMd5_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    imeiMd5_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string imei_md5 = 4 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android手机设备的IMEI，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
+            public Builder setImeiMd5Bytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000020;
+                imeiMd5_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string imei_md5 = 4 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android手机设备的IMEI，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
             public Builder clearImeiMd5() {
                 bitField0_ = (bitField0_ & ~0x00000020);
                 imeiMd5_ = getDefaultInstance().getImeiMd5();
@@ -5248,28 +9091,48 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string androidid_md5 = 9 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android手机设备系统ID，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
             public boolean hasAndroididMd5() {
                 return ((bitField0_ & 0x00000040) == 0x00000040);
             }
 
-            public String getAndroididMd5() {
-                Object ref = androididMd5_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    androididMd5_ = s;
+            /**
+             * <code>optional string androidid_md5 = 9 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android手机设备系统ID，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
+            public java.lang.String getAndroididMd5() {
+                java.lang.Object ref = androididMd5_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        androididMd5_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setAndroididMd5(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000040;
-                androididMd5_ = value;
-                onChanged();
-            }
-
-            public Builder setAndroididMd5(String value) {
+            /**
+             * <code>optional string androidid_md5 = 9 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android手机设备系统ID，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
+            public Builder setAndroididMd5(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -5279,6 +9142,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string androidid_md5 = 9 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android手机设备系统ID，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getAndroididMd5Bytes() {
+                java.lang.Object ref = androididMd5_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    androididMd5_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string androidid_md5 = 9 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android手机设备系统ID，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
+            public Builder setAndroididMd5Bytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000040;
+                androididMd5_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string androidid_md5 = 9 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * Android手机设备系统ID，经过MD5加密，格式要求[0-9A-Za-z]{32}
+             * </pre>
+             */
             public Builder clearAndroididMd5() {
                 bitField0_ = (bitField0_ & ~0x00000040);
                 androididMd5_ = getDefaultInstance().getAndroididMd5();
@@ -5292,21 +9201,37 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.UdId)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.Size}
+     * <p/>
+     * <pre>
+     * 二维尺寸信息
+     * </pre>
+     */
     public static final class Size extends
-            com.google.protobuf.GeneratedMessage
-            implements SizeOrBuilder {
-        // optional uint32 width = 1 [default = 0];
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.Size)
+            SizeOrBuilder {
         public static final int WIDTH_FIELD_NUMBER = 1;
-        // optional uint32 height = 2 [default = 0];
         public static final int HEIGHT_FIELD_NUMBER = 2;
         private static final Size defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<Size> PARSER =
+                new com.google.protobuf.AbstractParser<Size>() {
+                    public Size parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new Size(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new Size(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
         private int width_;
         private int height_;
@@ -5314,11 +9239,58 @@ public final class KSCMobileAdsProto530 {
         private int memoizedSerializedSize = -1;
 
         // Use Size.newBuilder() to construct.
-        private Size(Builder builder) {
+        private Size(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
+        }
+        private Size(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
 
-        private Size(boolean noInit) {
+        private Size(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+                            bitField0_ |= 0x00000001;
+                            width_ = input.readUInt32();
+                            break;
+                        }
+                        case 16: {
+                            bitField0_ |= 0x00000002;
+                            height_ = input.readUInt32();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static Size getDefaultInstance() {
@@ -5327,90 +9299,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Size_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Size_descriptor;
         }
 
-        public static Size parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Size parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Size parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Size parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Size parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Size parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Size parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Size parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Size parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Size parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Size parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Size parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static Size parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Size parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static Size parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Size parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static Size parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Size parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Size parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Size parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(Size prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.Size prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -5418,23 +9376,64 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Size_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Size_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Size> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional uint32 width = 1 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 必填！宽度
+         * </pre>
+         */
         public boolean hasWidth() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
+        /**
+         * <code>optional uint32 width = 1 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 必填！宽度
+         * </pre>
+         */
         public int getWidth() {
             return width_;
         }
 
+        /**
+         * <code>optional uint32 height = 2 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 必填！高度
+         * </pre>
+         */
         public boolean hasHeight() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
+        /**
+         * <code>optional uint32 height = 2 [default = 0];</code>
+         * <p/>
+         * <pre>
+         * 必填！高度
+         * </pre>
+         */
         public int getHeight() {
             return height_;
         }
@@ -5446,7 +9445,8 @@ public final class KSCMobileAdsProto530 {
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -5482,8 +9482,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -5496,20 +9496,26 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.Size}
+         * <p/>
+         * <pre>
+         * 二维尺寸信息
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements SizeOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.Size)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder {
             private int bitField0_;
-            // optional uint32 width = 1 [default = 0];
             private int width_;
-            // optional uint32 height = 2 [default = 0];
             private int height_;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.newBuilder()
@@ -5517,23 +9523,26 @@ public final class KSCMobileAdsProto530 {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Size_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Size_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Size_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Size_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -5556,33 +9565,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return Size.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Size_descriptor;
             }
 
-            public Size getDefaultInstanceForType() {
-                return Size.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Size getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.getDefaultInstance();
             }
 
-            public Size build() {
-                Size result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Size build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Size result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private Size buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                Size result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public Size buildPartial() {
-                Size result = new Size(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Size buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Size result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.Size(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5599,16 +9598,16 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof Size) {
-                    return mergeFrom((Size) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.Size) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.Size) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(Size other) {
-                if (other == Size.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.Size other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.getDefaultInstance()) return this;
                 if (other.hasWidth()) {
                     setWidth(other.getWidth());
                 }
@@ -5627,47 +9626,49 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 8: {
-                            bitField0_ |= 0x00000001;
-                            width_ = input.readUInt32();
-                            break;
-                        }
-                        case 16: {
-                            bitField0_ |= 0x00000002;
-                            height_ = input.readUInt32();
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Size parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.Size) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional uint32 width = 1 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 必填！宽度
+             * </pre>
+             */
             public boolean hasWidth() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
+            /**
+             * <code>optional uint32 width = 1 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 必填！宽度
+             * </pre>
+             */
             public int getWidth() {
                 return width_;
             }
 
+            /**
+             * <code>optional uint32 width = 1 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 必填！宽度
+             * </pre>
+             */
             public Builder setWidth(int value) {
                 bitField0_ |= 0x00000001;
                 width_ = value;
@@ -5675,6 +9676,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 width = 1 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 必填！宽度
+             * </pre>
+             */
             public Builder clearWidth() {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 width_ = 0;
@@ -5682,14 +9690,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 height = 2 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 必填！高度
+             * </pre>
+             */
             public boolean hasHeight() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
+            /**
+             * <code>optional uint32 height = 2 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 必填！高度
+             * </pre>
+             */
             public int getHeight() {
                 return height_;
             }
 
+            /**
+             * <code>optional uint32 height = 2 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 必填！高度
+             * </pre>
+             */
             public Builder setHeight(int value) {
                 bitField0_ |= 0x00000002;
                 height_ = value;
@@ -5697,6 +9726,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 height = 2 [default = 0];</code>
+             * <p/>
+             * <pre>
+             * 必填！高度
+             * </pre>
+             */
             public Builder clearHeight() {
                 bitField0_ = (bitField0_ & ~0x00000002);
                 height_ = 0;
@@ -5710,48 +9746,168 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.Size)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.Device}
+     * <p/>
+     * <pre>
+     * 设备信息
+     * </pre>
+     */
     public static final class Device extends
-            com.google.protobuf.GeneratedMessage
-            implements DeviceOrBuilder {
-        // optional .com.ksc.client.ads.proto.Device.DeviceType device_type = 1;
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.Device)
+            DeviceOrBuilder {
         public static final int DEVICE_TYPE_FIELD_NUMBER = 1;
-        // optional .com.ksc.client.ads.proto.Device.OsType os_type = 2;
         public static final int OS_TYPE_FIELD_NUMBER = 2;
-        // optional .com.ksc.client.ads.proto.Version os_version = 3;
         public static final int OS_VERSION_FIELD_NUMBER = 3;
-        // optional bytes vendor = 4 [default = ""];
         public static final int VENDOR_FIELD_NUMBER = 4;
-        // optional bytes model = 5 [default = ""];
         public static final int MODEL_FIELD_NUMBER = 5;
-        // optional .com.ksc.client.ads.proto.UdId udid = 6;
         public static final int UDID_FIELD_NUMBER = 6;
-        // optional .com.ksc.client.ads.proto.Size screen_size = 7;
         public static final int SCREEN_SIZE_FIELD_NUMBER = 7;
         private static final Device defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<Device> PARSER =
+                new com.google.protobuf.AbstractParser<Device>() {
+                    public Device parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new Device(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new Device(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
-        private DeviceType deviceType_;
-        private OsType osType_;
-        private Version osVersion_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.DeviceType deviceType_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.OsType osType_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Version osVersion_;
         private com.google.protobuf.ByteString vendor_;
         private com.google.protobuf.ByteString model_;
-        private UdId udid_;
-        private Size screenSize_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId udid_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Size screenSize_;
         private byte memoizedIsInitialized = -1;
         private int memoizedSerializedSize = -1;
 
         // Use Device.newBuilder() to construct.
-        private Device(Builder builder) {
+        private Device(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
         }
 
         private Device(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        }
+
+        private Device(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+                            int rawValue = input.readEnum();
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.DeviceType value = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.DeviceType.valueOf(rawValue);
+                            if (value == null) {
+                                unknownFields.mergeVarintField(1, rawValue);
+                            } else {
+                                bitField0_ |= 0x00000001;
+                                deviceType_ = value;
+                            }
+                            break;
+                        }
+                        case 16: {
+                            int rawValue = input.readEnum();
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.OsType value = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.OsType.valueOf(rawValue);
+                            if (value == null) {
+                                unknownFields.mergeVarintField(2, rawValue);
+                            } else {
+                                bitField0_ |= 0x00000002;
+                                osType_ = value;
+                            }
+                            break;
+                        }
+                        case 26: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                                subBuilder = osVersion_.toBuilder();
+                            }
+                            osVersion_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(osVersion_);
+                                osVersion_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000004;
+                            break;
+                        }
+                        case 34: {
+                            bitField0_ |= 0x00000008;
+                            vendor_ = input.readBytes();
+                            break;
+                        }
+                        case 42: {
+                            bitField0_ |= 0x00000010;
+                            model_ = input.readBytes();
+                            break;
+                        }
+                        case 50: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000020) == 0x00000020)) {
+                                subBuilder = udid_.toBuilder();
+                            }
+                            udid_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(udid_);
+                                udid_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000020;
+                            break;
+                        }
+                        case 58: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000040) == 0x00000040)) {
+                                subBuilder = screenSize_.toBuilder();
+                            }
+                            screenSize_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(screenSize_);
+                                screenSize_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000040;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static Device getDefaultInstance() {
@@ -5760,90 +9916,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Device_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Device_descriptor;
         }
 
-        public static Device parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Device parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Device parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Device parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Device parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Device parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Device parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Device parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Device parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Device parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Device parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Device parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static Device parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Device parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static Device parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Device parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static Device parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Device parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Device parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Device parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(Device prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.Device prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -5851,92 +9993,225 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Device_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Device_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Device> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device.DeviceType device_type = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备类型
+         * </pre>
+         */
         public boolean hasDeviceType() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
-        public DeviceType getDeviceType() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device.DeviceType device_type = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备类型
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.DeviceType getDeviceType() {
             return deviceType_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device.OsType os_type = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！操作系统类型
+         * </pre>
+         */
         public boolean hasOsType() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
-        public OsType getOsType() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Device.OsType os_type = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！操作系统类型
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.OsType getOsType() {
             return osType_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！操作系统版本
+         * </pre>
+         */
         public boolean hasOsVersion() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
-        public Version getOsVersion() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！操作系统版本
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Version getOsVersion() {
             return osVersion_;
         }
 
-        public VersionOrBuilder getOsVersionOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！操作系统版本
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder getOsVersionOrBuilder() {
             return osVersion_;
         }
 
+        /**
+         * <code>optional bytes vendor = 4 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！设备厂商名称，中文需要UTF-8编码
+         * </pre>
+         */
         public boolean hasVendor() {
             return ((bitField0_ & 0x00000008) == 0x00000008);
         }
 
+        /**
+         * <code>optional bytes vendor = 4 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！设备厂商名称，中文需要UTF-8编码
+         * </pre>
+         */
         public com.google.protobuf.ByteString getVendor() {
             return vendor_;
         }
 
+        /**
+         * <code>optional bytes model = 5 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！设备型号，中文需要UTF-8编码
+         * </pre>
+         */
         public boolean hasModel() {
             return ((bitField0_ & 0x00000010) == 0x00000010);
         }
 
+        /**
+         * <code>optional bytes model = 5 [default = ""];</code>
+         * <p/>
+         * <pre>
+         * 必填！设备型号，中文需要UTF-8编码
+         * </pre>
+         */
         public com.google.protobuf.ByteString getModel() {
             return model_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+         * <p/>
+         * <pre>
+         * 必填！唯一设备标识，必需按要求填写
+         * </pre>
+         */
         public boolean hasUdid() {
             return ((bitField0_ & 0x00000020) == 0x00000020);
         }
 
-        public UdId getUdid() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+         * <p/>
+         * <pre>
+         * 必填！唯一设备标识，必需按要求填写
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId getUdid() {
             return udid_;
         }
 
-        public UdIdOrBuilder getUdidOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+         * <p/>
+         * <pre>
+         * 必填！唯一设备标识，必需按要求填写
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.UdIdOrBuilder getUdidOrBuilder() {
             return udid_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备屏幕宽高
+         * </pre>
+         */
         public boolean hasScreenSize() {
             return ((bitField0_ & 0x00000040) == 0x00000040);
         }
 
-        public Size getScreenSize() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备屏幕宽高
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Size getScreenSize() {
             return screenSize_;
         }
 
-        public SizeOrBuilder getScreenSizeOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+         * <p/>
+         * <pre>
+         * 必填！设备屏幕宽高
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder getScreenSizeOrBuilder() {
             return screenSize_;
         }
 
         private void initFields() {
-            deviceType_ = DeviceType.PHONE;
-            osType_ = OsType.ANDROID;
-            osVersion_ = Version.getDefaultInstance();
+            deviceType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.DeviceType.PHONE;
+            osType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.OsType.ANDROID;
+            osVersion_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
             vendor_ = com.google.protobuf.Internal.bytesDefaultValue("");
             model_ = com.google.protobuf.Internal.bytesDefaultValue("");
-            udid_ = UdId.getDefaultInstance();
-            screenSize_ = Size.getDefaultInstance();
+            udid_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.getDefaultInstance();
+            screenSize_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.getDefaultInstance();
         }
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -6007,8 +10282,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -6021,23 +10296,56 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf enum {@code com.ksc.client.ads.proto.Device.DeviceType}
+         * <p/>
+         * <pre>
+         * 设备类型
+         * </pre>
+         */
         public enum DeviceType
                 implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>PHONE = 1;</code>
+             * <p/>
+             * <pre>
+             * 手机，含iTouch
+             * </pre>
+             */
             PHONE(0, 1),
+            /**
+             * <code>TABLET = 2;</code>
+             * <p/>
+             * <pre>
+             * 平板
+             * </pre>
+             */
             TABLET(1, 2),;
 
+            /**
+             * <code>PHONE = 1;</code>
+             * <p/>
+             * <pre>
+             * 手机，含iTouch
+             * </pre>
+             */
             public static final int PHONE_VALUE = 1;
+            /**
+             * <code>TABLET = 2;</code>
+             * <p/>
+             * <pre>
+             * 平板
+             * </pre>
+             */
             public static final int TABLET_VALUE = 2;
-            private static final DeviceType[] VALUES = {
-                    PHONE, TABLET,
-            };
+            private static final DeviceType[] VALUES = values();
             private static com.google.protobuf.Internal.EnumLiteMap<DeviceType>
                     internalValueMap =
                     new com.google.protobuf.Internal.EnumLiteMap<DeviceType>() {
@@ -6071,13 +10379,13 @@ public final class KSCMobileAdsProto530 {
 
             public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
-                return Device.getDescriptor().getEnumTypes().get(0);
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.getDescriptor().getEnumTypes().get(0);
             }
 
             public static DeviceType valueOf(
                     com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
                 if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException(
+                    throw new java.lang.IllegalArgumentException(
                             "EnumValueDescriptor is not for this type.");
                 }
                 return VALUES[desc.getIndex()];
@@ -6100,16 +10408,49 @@ public final class KSCMobileAdsProto530 {
             // @@protoc_insertion_point(enum_scope:com.ksc.client.ads.proto.Device.DeviceType)
         }
 
+        /**
+         * Protobuf enum {@code com.ksc.client.ads.proto.Device.OsType}
+         * <p/>
+         * <pre>
+         * 操作系统类型
+         * </pre>
+         */
         public enum OsType
                 implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>ANDROID = 1;</code>
+             * <p/>
+             * <pre>
+             * Android
+             * </pre>
+             */
             ANDROID(0, 1),
+            /**
+             * <code>IOS = 2;</code>
+             * <p/>
+             * <pre>
+             * iOS
+             * </pre>
+             */
             IOS(1, 2),;
 
+            /**
+             * <code>ANDROID = 1;</code>
+             * <p/>
+             * <pre>
+             * Android
+             * </pre>
+             */
             public static final int ANDROID_VALUE = 1;
+            /**
+             * <code>IOS = 2;</code>
+             * <p/>
+             * <pre>
+             * iOS
+             * </pre>
+             */
             public static final int IOS_VALUE = 2;
-            private static final OsType[] VALUES = {
-                    ANDROID, IOS,
-            };
+            private static final OsType[] VALUES = values();
             private static com.google.protobuf.Internal.EnumLiteMap<OsType>
                     internalValueMap =
                     new com.google.protobuf.Internal.EnumLiteMap<OsType>() {
@@ -6143,13 +10484,13 @@ public final class KSCMobileAdsProto530 {
 
             public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
-                return Device.getDescriptor().getEnumTypes().get(1);
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.getDescriptor().getEnumTypes().get(1);
             }
 
             public static OsType valueOf(
                     com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
                 if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException(
+                    throw new java.lang.IllegalArgumentException(
                             "EnumValueDescriptor is not for this type.");
                 }
                 return VALUES[desc.getIndex()];
@@ -6172,53 +10513,57 @@ public final class KSCMobileAdsProto530 {
             // @@protoc_insertion_point(enum_scope:com.ksc.client.ads.proto.Device.OsType)
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.Device}
+         * <p/>
+         * <pre>
+         * 设备信息
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements DeviceOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.Device)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.DeviceOrBuilder {
             private int bitField0_;
-            // optional .com.ksc.client.ads.proto.Device.DeviceType device_type = 1;
-            private DeviceType deviceType_ = DeviceType.PHONE;
-            // optional .com.ksc.client.ads.proto.Device.OsType os_type = 2;
-            private OsType osType_ = OsType.ANDROID;
-            // optional .com.ksc.client.ads.proto.Version os_version = 3;
-            private Version osVersion_ = Version.getDefaultInstance();
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.DeviceType deviceType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.DeviceType.PHONE;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.OsType osType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.OsType.ANDROID;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Version osVersion_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    Version, Version.Builder, VersionOrBuilder> osVersionBuilder_;
-            // optional bytes vendor = 4 [default = ""];
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Version, com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder> osVersionBuilder_;
             private com.google.protobuf.ByteString vendor_ = com.google.protobuf.Internal.bytesDefaultValue("");
-            // optional bytes model = 5 [default = ""];
             private com.google.protobuf.ByteString model_ = com.google.protobuf.Internal.bytesDefaultValue("");
-            // optional .com.ksc.client.ads.proto.UdId udid = 6;
-            private UdId udid_ = UdId.getDefaultInstance();
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId udid_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    UdId, UdId.Builder, UdIdOrBuilder> udidBuilder_;
-            // optional .com.ksc.client.ads.proto.Size screen_size = 7;
-            private Size screenSize_ = Size.getDefaultInstance();
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId, com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.UdIdOrBuilder> udidBuilder_;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Size screenSize_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    Size, Size.Builder, SizeOrBuilder> screenSizeBuilder_;
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Size, com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder> screenSizeBuilder_;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.newBuilder()
             private Builder() {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Device_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Device_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Device_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Device_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -6231,12 +10576,12 @@ public final class KSCMobileAdsProto530 {
 
             public Builder clear() {
                 super.clear();
-                deviceType_ = DeviceType.PHONE;
+                deviceType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.DeviceType.PHONE;
                 bitField0_ = (bitField0_ & ~0x00000001);
-                osType_ = OsType.ANDROID;
+                osType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.OsType.ANDROID;
                 bitField0_ = (bitField0_ & ~0x00000002);
                 if (osVersionBuilder_ == null) {
-                    osVersion_ = Version.getDefaultInstance();
+                    osVersion_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
                 } else {
                     osVersionBuilder_.clear();
                 }
@@ -6246,13 +10591,13 @@ public final class KSCMobileAdsProto530 {
                 model_ = com.google.protobuf.Internal.bytesDefaultValue("");
                 bitField0_ = (bitField0_ & ~0x00000010);
                 if (udidBuilder_ == null) {
-                    udid_ = UdId.getDefaultInstance();
+                    udid_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.getDefaultInstance();
                 } else {
                     udidBuilder_.clear();
                 }
                 bitField0_ = (bitField0_ & ~0x00000020);
                 if (screenSizeBuilder_ == null) {
-                    screenSize_ = Size.getDefaultInstance();
+                    screenSize_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.getDefaultInstance();
                 } else {
                     screenSizeBuilder_.clear();
                 }
@@ -6266,33 +10611,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return Device.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Device_descriptor;
             }
 
-            public Device getDefaultInstanceForType() {
-                return Device.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Device getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.getDefaultInstance();
             }
 
-            public Device build() {
-                Device result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Device build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Device result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private Device buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                Device result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public Device buildPartial() {
-                Device result = new Device(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Device buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Device result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.Device(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6341,16 +10676,16 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof Device) {
-                    return mergeFrom((Device) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.Device) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.Device) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(Device other) {
-                if (other == Device.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.Device other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.getDefaultInstance()) return this;
                 if (other.hasDeviceType()) {
                     setDeviceType(other.getDeviceType());
                 }
@@ -6384,97 +10719,50 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 8: {
-                            int rawValue = input.readEnum();
-                            DeviceType value = DeviceType.valueOf(rawValue);
-                            if (value == null) {
-                                unknownFields.mergeVarintField(1, rawValue);
-                            } else {
-                                bitField0_ |= 0x00000001;
-                                deviceType_ = value;
-                            }
-                            break;
-                        }
-                        case 16: {
-                            int rawValue = input.readEnum();
-                            OsType value = OsType.valueOf(rawValue);
-                            if (value == null) {
-                                unknownFields.mergeVarintField(2, rawValue);
-                            } else {
-                                bitField0_ |= 0x00000002;
-                                osType_ = value;
-                            }
-                            break;
-                        }
-                        case 26: {
-                            Version.Builder subBuilder = Version.newBuilder();
-                            if (hasOsVersion()) {
-                                subBuilder.mergeFrom(getOsVersion());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setOsVersion(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 34: {
-                            bitField0_ |= 0x00000008;
-                            vendor_ = input.readBytes();
-                            break;
-                        }
-                        case 42: {
-                            bitField0_ |= 0x00000010;
-                            model_ = input.readBytes();
-                            break;
-                        }
-                        case 50: {
-                            UdId.Builder subBuilder = UdId.newBuilder();
-                            if (hasUdid()) {
-                                subBuilder.mergeFrom(getUdid());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setUdid(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 58: {
-                            Size.Builder subBuilder = Size.newBuilder();
-                            if (hasScreenSize()) {
-                                subBuilder.mergeFrom(getScreenSize());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setScreenSize(subBuilder.buildPartial());
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Device parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.Device) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device.DeviceType device_type = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备类型
+             * </pre>
+             */
             public boolean hasDeviceType() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
-            public DeviceType getDeviceType() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device.DeviceType device_type = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备类型
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.DeviceType getDeviceType() {
                 return deviceType_;
             }
 
-            public Builder setDeviceType(DeviceType value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device.DeviceType device_type = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备类型
+             * </pre>
+             */
+            public Builder setDeviceType(com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.DeviceType value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -6484,22 +10772,50 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device.DeviceType device_type = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备类型
+             * </pre>
+             */
             public Builder clearDeviceType() {
                 bitField0_ = (bitField0_ & ~0x00000001);
-                deviceType_ = DeviceType.PHONE;
+                deviceType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.DeviceType.PHONE;
                 onChanged();
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device.OsType os_type = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统类型
+             * </pre>
+             */
             public boolean hasOsType() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
-            public OsType getOsType() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device.OsType os_type = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统类型
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.OsType getOsType() {
                 return osType_;
             }
 
-            public Builder setOsType(OsType value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device.OsType os_type = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统类型
+             * </pre>
+             */
+            public Builder setOsType(com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.OsType value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -6509,18 +10825,39 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Device.OsType os_type = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统类型
+             * </pre>
+             */
             public Builder clearOsType() {
                 bitField0_ = (bitField0_ & ~0x00000002);
-                osType_ = OsType.ANDROID;
+                osType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Device.OsType.ANDROID;
                 onChanged();
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统版本
+             * </pre>
+             */
             public boolean hasOsVersion() {
                 return ((bitField0_ & 0x00000004) == 0x00000004);
             }
 
-            public Version getOsVersion() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统版本
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Version getOsVersion() {
                 if (osVersionBuilder_ == null) {
                     return osVersion_;
                 } else {
@@ -6528,19 +10865,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setOsVersion(
-                    Version.Builder builderForValue) {
-                if (osVersionBuilder_ == null) {
-                    osVersion_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    osVersionBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000004;
-                return this;
-            }
-
-            public Builder setOsVersion(Version value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统版本
+             * </pre>
+             */
+            public Builder setOsVersion(com.ksc.client.ads.proto.KSCMobileAdsProto530.Version value) {
                 if (osVersionBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -6554,12 +10886,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeOsVersion(Version value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统版本
+             * </pre>
+             */
+            public Builder setOsVersion(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder builderForValue) {
+                if (osVersionBuilder_ == null) {
+                    osVersion_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    osVersionBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000004;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统版本
+             * </pre>
+             */
+            public Builder mergeOsVersion(com.ksc.client.ads.proto.KSCMobileAdsProto530.Version value) {
                 if (osVersionBuilder_ == null) {
                     if (((bitField0_ & 0x00000004) == 0x00000004) &&
-                            osVersion_ != Version.getDefaultInstance()) {
+                            osVersion_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance()) {
                         osVersion_ =
-                                Version.newBuilder(osVersion_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.newBuilder(osVersion_).mergeFrom(value).buildPartial();
                     } else {
                         osVersion_ = value;
                     }
@@ -6571,9 +10929,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统版本
+             * </pre>
+             */
             public Builder clearOsVersion() {
                 if (osVersionBuilder_ == null) {
-                    osVersion_ = Version.getDefaultInstance();
+                    osVersion_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.getDefaultInstance();
                     onChanged();
                 } else {
                     osVersionBuilder_.clear();
@@ -6582,13 +10947,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Version.Builder getOsVersionBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统版本
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder getOsVersionBuilder() {
                 bitField0_ |= 0x00000004;
                 onChanged();
                 return getOsVersionFieldBuilder().getBuilder();
             }
 
-            public VersionOrBuilder getOsVersionOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统版本
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder getOsVersionOrBuilder() {
                 if (osVersionBuilder_ != null) {
                     return osVersionBuilder_.getMessageOrBuilder();
                 } else {
@@ -6596,13 +10975,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Version os_version = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！操作系统版本
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    Version, Version.Builder, VersionOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Version, com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder>
             getOsVersionFieldBuilder() {
                 if (osVersionBuilder_ == null) {
                     osVersionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            Version, Version.Builder, VersionOrBuilder>(
-                            osVersion_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Version, com.ksc.client.ads.proto.KSCMobileAdsProto530.Version.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.VersionOrBuilder>(
+                            getOsVersion(),
                             getParentForChildren(),
                             isClean());
                     osVersion_ = null;
@@ -6610,14 +10996,35 @@ public final class KSCMobileAdsProto530 {
                 return osVersionBuilder_;
             }
 
+            /**
+             * <code>optional bytes vendor = 4 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！设备厂商名称，中文需要UTF-8编码
+             * </pre>
+             */
             public boolean hasVendor() {
                 return ((bitField0_ & 0x00000008) == 0x00000008);
             }
 
+            /**
+             * <code>optional bytes vendor = 4 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！设备厂商名称，中文需要UTF-8编码
+             * </pre>
+             */
             public com.google.protobuf.ByteString getVendor() {
                 return vendor_;
             }
 
+            /**
+             * <code>optional bytes vendor = 4 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！设备厂商名称，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder setVendor(com.google.protobuf.ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
@@ -6628,6 +11035,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional bytes vendor = 4 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！设备厂商名称，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder clearVendor() {
                 bitField0_ = (bitField0_ & ~0x00000008);
                 vendor_ = getDefaultInstance().getVendor();
@@ -6635,14 +11049,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional bytes model = 5 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！设备型号，中文需要UTF-8编码
+             * </pre>
+             */
             public boolean hasModel() {
                 return ((bitField0_ & 0x00000010) == 0x00000010);
             }
 
+            /**
+             * <code>optional bytes model = 5 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！设备型号，中文需要UTF-8编码
+             * </pre>
+             */
             public com.google.protobuf.ByteString getModel() {
                 return model_;
             }
 
+            /**
+             * <code>optional bytes model = 5 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！设备型号，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder setModel(com.google.protobuf.ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
@@ -6653,6 +11088,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional bytes model = 5 [default = ""];</code>
+             * <p/>
+             * <pre>
+             * 必填！设备型号，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder clearModel() {
                 bitField0_ = (bitField0_ & ~0x00000010);
                 model_ = getDefaultInstance().getModel();
@@ -6660,11 +11102,25 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+             * <p/>
+             * <pre>
+             * 必填！唯一设备标识，必需按要求填写
+             * </pre>
+             */
             public boolean hasUdid() {
                 return ((bitField0_ & 0x00000020) == 0x00000020);
             }
 
-            public UdId getUdid() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+             * <p/>
+             * <pre>
+             * 必填！唯一设备标识，必需按要求填写
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId getUdid() {
                 if (udidBuilder_ == null) {
                     return udid_;
                 } else {
@@ -6672,19 +11128,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setUdid(
-                    UdId.Builder builderForValue) {
-                if (udidBuilder_ == null) {
-                    udid_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    udidBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000020;
-                return this;
-            }
-
-            public Builder setUdid(UdId value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+             * <p/>
+             * <pre>
+             * 必填！唯一设备标识，必需按要求填写
+             * </pre>
+             */
+            public Builder setUdid(com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId value) {
                 if (udidBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -6698,12 +11149,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeUdid(UdId value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+             * <p/>
+             * <pre>
+             * 必填！唯一设备标识，必需按要求填写
+             * </pre>
+             */
+            public Builder setUdid(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.Builder builderForValue) {
+                if (udidBuilder_ == null) {
+                    udid_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    udidBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000020;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+             * <p/>
+             * <pre>
+             * 必填！唯一设备标识，必需按要求填写
+             * </pre>
+             */
+            public Builder mergeUdid(com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId value) {
                 if (udidBuilder_ == null) {
                     if (((bitField0_ & 0x00000020) == 0x00000020) &&
-                            udid_ != UdId.getDefaultInstance()) {
+                            udid_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.getDefaultInstance()) {
                         udid_ =
-                                UdId.newBuilder(udid_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.newBuilder(udid_).mergeFrom(value).buildPartial();
                     } else {
                         udid_ = value;
                     }
@@ -6715,9 +11192,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+             * <p/>
+             * <pre>
+             * 必填！唯一设备标识，必需按要求填写
+             * </pre>
+             */
             public Builder clearUdid() {
                 if (udidBuilder_ == null) {
-                    udid_ = UdId.getDefaultInstance();
+                    udid_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.getDefaultInstance();
                     onChanged();
                 } else {
                     udidBuilder_.clear();
@@ -6726,13 +11210,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public UdId.Builder getUdidBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+             * <p/>
+             * <pre>
+             * 必填！唯一设备标识，必需按要求填写
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.Builder getUdidBuilder() {
                 bitField0_ |= 0x00000020;
                 onChanged();
                 return getUdidFieldBuilder().getBuilder();
             }
 
-            public UdIdOrBuilder getUdidOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+             * <p/>
+             * <pre>
+             * 必填！唯一设备标识，必需按要求填写
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.UdIdOrBuilder getUdidOrBuilder() {
                 if (udidBuilder_ != null) {
                     return udidBuilder_.getMessageOrBuilder();
                 } else {
@@ -6740,13 +11238,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.UdId udid = 6;</code>
+             * <p/>
+             * <pre>
+             * 必填！唯一设备标识，必需按要求填写
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    UdId, UdId.Builder, UdIdOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId, com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.UdIdOrBuilder>
             getUdidFieldBuilder() {
                 if (udidBuilder_ == null) {
                     udidBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            UdId, UdId.Builder, UdIdOrBuilder>(
-                            udid_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId, com.ksc.client.ads.proto.KSCMobileAdsProto530.UdId.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.UdIdOrBuilder>(
+                            getUdid(),
                             getParentForChildren(),
                             isClean());
                     udid_ = null;
@@ -6754,11 +11259,25 @@ public final class KSCMobileAdsProto530 {
                 return udidBuilder_;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备屏幕宽高
+             * </pre>
+             */
             public boolean hasScreenSize() {
                 return ((bitField0_ & 0x00000040) == 0x00000040);
             }
 
-            public Size getScreenSize() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备屏幕宽高
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Size getScreenSize() {
                 if (screenSizeBuilder_ == null) {
                     return screenSize_;
                 } else {
@@ -6766,19 +11285,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setScreenSize(
-                    Size.Builder builderForValue) {
-                if (screenSizeBuilder_ == null) {
-                    screenSize_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    screenSizeBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00000040;
-                return this;
-            }
-
-            public Builder setScreenSize(Size value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备屏幕宽高
+             * </pre>
+             */
+            public Builder setScreenSize(com.ksc.client.ads.proto.KSCMobileAdsProto530.Size value) {
                 if (screenSizeBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -6792,12 +11306,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeScreenSize(Size value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备屏幕宽高
+             * </pre>
+             */
+            public Builder setScreenSize(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder builderForValue) {
+                if (screenSizeBuilder_ == null) {
+                    screenSize_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    screenSizeBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00000040;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备屏幕宽高
+             * </pre>
+             */
+            public Builder mergeScreenSize(com.ksc.client.ads.proto.KSCMobileAdsProto530.Size value) {
                 if (screenSizeBuilder_ == null) {
                     if (((bitField0_ & 0x00000040) == 0x00000040) &&
-                            screenSize_ != Size.getDefaultInstance()) {
+                            screenSize_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.getDefaultInstance()) {
                         screenSize_ =
-                                Size.newBuilder(screenSize_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.newBuilder(screenSize_).mergeFrom(value).buildPartial();
                     } else {
                         screenSize_ = value;
                     }
@@ -6809,9 +11349,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备屏幕宽高
+             * </pre>
+             */
             public Builder clearScreenSize() {
                 if (screenSizeBuilder_ == null) {
-                    screenSize_ = Size.getDefaultInstance();
+                    screenSize_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.getDefaultInstance();
                     onChanged();
                 } else {
                     screenSizeBuilder_.clear();
@@ -6820,13 +11367,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Size.Builder getScreenSizeBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备屏幕宽高
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder getScreenSizeBuilder() {
                 bitField0_ |= 0x00000040;
                 onChanged();
                 return getScreenSizeFieldBuilder().getBuilder();
             }
 
-            public SizeOrBuilder getScreenSizeOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备屏幕宽高
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder getScreenSizeOrBuilder() {
                 if (screenSizeBuilder_ != null) {
                     return screenSizeBuilder_.getMessageOrBuilder();
                 } else {
@@ -6834,13 +11395,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Size screen_size = 7;</code>
+             * <p/>
+             * <pre>
+             * 必填！设备屏幕宽高
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    Size, Size.Builder, SizeOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Size, com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder>
             getScreenSizeFieldBuilder() {
                 if (screenSizeBuilder_ == null) {
                     screenSizeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            Size, Size.Builder, SizeOrBuilder>(
-                            screenSize_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Size, com.ksc.client.ads.proto.KSCMobileAdsProto530.Size.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.SizeOrBuilder>(
+                            getScreenSize(),
                             getParentForChildren(),
                             isClean());
                     screenSize_ = null;
@@ -6854,42 +11422,138 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.Device)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.Network}
+     * <p/>
+     * <pre>
+     * 网络环境信息
+     * </pre>
+     */
     public static final class Network extends
-            com.google.protobuf.GeneratedMessage
-            implements NetworkOrBuilder {
-        // optional string ipv4 = 1;
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.Network)
+            NetworkOrBuilder {
         public static final int IPV4_FIELD_NUMBER = 1;
-        // optional .com.ksc.client.ads.proto.Network.ConnectionType connection_type = 2;
         public static final int CONNECTION_TYPE_FIELD_NUMBER = 2;
-        // optional .com.ksc.client.ads.proto.Network.OperatorType operator_type = 3;
         public static final int OPERATOR_TYPE_FIELD_NUMBER = 3;
-        // optional string cellular_id = 4;
         public static final int CELLULAR_ID_FIELD_NUMBER = 4;
-        // repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;
         public static final int WIFI_APS_FIELD_NUMBER = 5;
         private static final Network defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<Network> PARSER =
+                new com.google.protobuf.AbstractParser<Network>() {
+                    public Network parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new Network(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new Network(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
-        private Object ipv4_;
-        private ConnectionType connectionType_;
-        private OperatorType operatorType_;
-        private Object cellularId_;
-        private java.util.List<WiFiAp> wifiAps_;
+        private java.lang.Object ipv4_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.ConnectionType connectionType_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.OperatorType operatorType_;
+        private java.lang.Object cellularId_;
+        private java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp> wifiAps_;
         private byte memoizedIsInitialized = -1;
         private int memoizedSerializedSize = -1;
 
         // Use Network.newBuilder() to construct.
-        private Network(Builder builder) {
+        private Network(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
         }
 
         private Network(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        }
+
+        private Network(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            ipv4_ = bs;
+                            break;
+                        }
+                        case 16: {
+                            int rawValue = input.readEnum();
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.ConnectionType value = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.ConnectionType.valueOf(rawValue);
+                            if (value == null) {
+                                unknownFields.mergeVarintField(2, rawValue);
+                            } else {
+                                bitField0_ |= 0x00000002;
+                                connectionType_ = value;
+                            }
+                            break;
+                        }
+                        case 24: {
+                            int rawValue = input.readEnum();
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.OperatorType value = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.OperatorType.valueOf(rawValue);
+                            if (value == null) {
+                                unknownFields.mergeVarintField(3, rawValue);
+                            } else {
+                                bitField0_ |= 0x00000004;
+                                operatorType_ = value;
+                            }
+                            break;
+                        }
+                        case 34: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000008;
+                            cellularId_ = bs;
+                            break;
+                        }
+                        case 42: {
+                            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                                wifiAps_ = new java.util.ArrayList<com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp>();
+                                mutable_bitField0_ |= 0x00000010;
+                            }
+                            wifiAps_.add(input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.PARSER, extensionRegistry));
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                    wifiAps_ = java.util.Collections.unmodifiableList(wifiAps_);
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static Network getDefaultInstance() {
@@ -6898,90 +11562,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Network_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Network_descriptor;
         }
 
-        public static Network parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Network parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Network parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Network parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Network parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Network parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Network parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Network parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Network parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Network parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Network parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Network parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static Network parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Network parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static Network parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Network parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static Network parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Network parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Network parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Network parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(Network prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.Network prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -6989,35 +11639,71 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Network_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Network_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Network> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional string ipv4 = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！用户设备的公网IPv4地址，服务器对接必填，格式要求：255.255.255.255
+         * </pre>
+         */
         public boolean hasIpv4() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
-        public String getIpv4() {
-            Object ref = ipv4_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string ipv4 = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！用户设备的公网IPv4地址，服务器对接必填，格式要求：255.255.255.255
+         * </pre>
+         */
+        public java.lang.String getIpv4() {
+            java.lang.Object ref = ipv4_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     ipv4_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getIpv4Bytes() {
-            Object ref = ipv4_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string ipv4 = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！用户设备的公网IPv4地址，服务器对接必填，格式要求：255.255.255.255
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getIpv4Bytes() {
+            java.lang.Object ref = ipv4_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 ipv4_ = b;
                 return b;
             } else {
@@ -7025,46 +11711,97 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network.ConnectionType connection_type = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！网络连接类型，用于判断网速
+         * </pre>
+         */
         public boolean hasConnectionType() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
-        public ConnectionType getConnectionType() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network.ConnectionType connection_type = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！网络连接类型，用于判断网速
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.ConnectionType getConnectionType() {
             return connectionType_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network.OperatorType operator_type = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！移动运营商类型，用于运营商定向广告
+         * </pre>
+         */
         public boolean hasOperatorType() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
-        public OperatorType getOperatorType() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Network.OperatorType operator_type = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！移动运营商类型，用于运营商定向广告
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.OperatorType getOperatorType() {
             return operatorType_;
         }
 
+        /**
+         * <code>optional string cellular_id = 4;</code>
+         * <p/>
+         * <pre>
+         * 选填！当前连接的运营商基站ID，用于快速用户定位
+         * </pre>
+         */
         public boolean hasCellularId() {
             return ((bitField0_ & 0x00000008) == 0x00000008);
         }
 
-        public String getCellularId() {
-            Object ref = cellularId_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string cellular_id = 4;</code>
+         * <p/>
+         * <pre>
+         * 选填！当前连接的运营商基站ID，用于快速用户定位
+         * </pre>
+         */
+        public java.lang.String getCellularId() {
+            java.lang.Object ref = cellularId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     cellularId_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getCellularIdBytes() {
-            Object ref = cellularId_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string cellular_id = 4;</code>
+         * <p/>
+         * <pre>
+         * 选填！当前连接的运营商基站ID，用于快速用户定位
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getCellularIdBytes() {
+            java.lang.Object ref = cellularId_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 cellularId_ = b;
                 return b;
             } else {
@@ -7072,39 +11809,75 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
-        public java.util.List<WiFiAp> getWifiApsList() {
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+         * <p/>
+         * <pre>
+         * 选填！周边WiFi热点列表，用于精细用户定位
+         * </pre>
+         */
+        public java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp> getWifiApsList() {
             return wifiAps_;
         }
 
-        public java.util.List<? extends WiFiApOrBuilder>
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+         * <p/>
+         * <pre>
+         * 选填！周边WiFi热点列表，用于精细用户定位
+         * </pre>
+         */
+        public java.util.List<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiApOrBuilder>
         getWifiApsOrBuilderList() {
             return wifiAps_;
         }
 
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+         * <p/>
+         * <pre>
+         * 选填！周边WiFi热点列表，用于精细用户定位
+         * </pre>
+         */
         public int getWifiApsCount() {
             return wifiAps_.size();
         }
 
-        public WiFiAp getWifiAps(int index) {
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+         * <p/>
+         * <pre>
+         * 选填！周边WiFi热点列表，用于精细用户定位
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp getWifiAps(int index) {
             return wifiAps_.get(index);
         }
 
-        public WiFiApOrBuilder getWifiApsOrBuilder(
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+         * <p/>
+         * <pre>
+         * 选填！周边WiFi热点列表，用于精细用户定位
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiApOrBuilder getWifiApsOrBuilder(
                 int index) {
             return wifiAps_.get(index);
         }
 
         private void initFields() {
             ipv4_ = "";
-            connectionType_ = ConnectionType.CONNECTION_UNKNOWN;
-            operatorType_ = OperatorType.UNKNOWN_OPERATOR;
+            connectionType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.ConnectionType.CONNECTION_UNKNOWN;
+            operatorType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.OperatorType.UNKNOWN_OPERATOR;
             cellularId_ = "";
             wifiAps_ = java.util.Collections.emptyList();
         }
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -7161,8 +11934,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -7175,37 +11948,168 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf enum {@code com.ksc.client.ads.proto.Network.ConnectionType}
+         * <p/>
+         * <pre>
+         * 网络连接类型
+         * </pre>
+         */
         public enum ConnectionType
                 implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>CONNECTION_UNKNOWN = 0;</code>
+             * <p/>
+             * <pre>
+             * 无法探测当前网络状态
+             * </pre>
+             */
             CONNECTION_UNKNOWN(0, 0),
+            /**
+             * <code>CELL_UNKNOWN = 1;</code>
+             * <p/>
+             * <pre>
+             * 蜂窝数据接入，未知网络类型
+             * </pre>
+             */
             CELL_UNKNOWN(1, 1),
+            /**
+             * <code>CELL_2G = 2;</code>
+             * <p/>
+             * <pre>
+             * 蜂窝数据2G网络
+             * </pre>
+             */
             CELL_2G(2, 2),
+            /**
+             * <code>CELL_3G = 3;</code>
+             * <p/>
+             * <pre>
+             * 蜂窝数据3G网络
+             * </pre>
+             */
             CELL_3G(3, 3),
+            /**
+             * <code>CELL_4G = 4;</code>
+             * <p/>
+             * <pre>
+             * 蜂窝数据4G网络
+             * </pre>
+             */
             CELL_4G(4, 4),
+            /**
+             * <code>CELL_5G = 5;</code>
+             * <p/>
+             * <pre>
+             * 蜂窝数据5G网络
+             * </pre>
+             */
             CELL_5G(5, 5),
+            /**
+             * <code>WIFI = 100;</code>
+             * <p/>
+             * <pre>
+             * Wi-Fi网络接入
+             * </pre>
+             */
             WIFI(6, 100),
+            /**
+             * <code>ETHERNET = 101;</code>
+             * <p/>
+             * <pre>
+             * 以太网接入
+             * </pre>
+             */
             ETHERNET(7, 101),
+            /**
+             * <code>NEW_TYPE = 999;</code>
+             * <p/>
+             * <pre>
+             * 未知新类型
+             * </pre>
+             */
             NEW_TYPE(8, 999),;
 
+            /**
+             * <code>CONNECTION_UNKNOWN = 0;</code>
+             * <p/>
+             * <pre>
+             * 无法探测当前网络状态
+             * </pre>
+             */
             public static final int CONNECTION_UNKNOWN_VALUE = 0;
+            /**
+             * <code>CELL_UNKNOWN = 1;</code>
+             * <p/>
+             * <pre>
+             * 蜂窝数据接入，未知网络类型
+             * </pre>
+             */
             public static final int CELL_UNKNOWN_VALUE = 1;
+            /**
+             * <code>CELL_2G = 2;</code>
+             * <p/>
+             * <pre>
+             * 蜂窝数据2G网络
+             * </pre>
+             */
             public static final int CELL_2G_VALUE = 2;
+            /**
+             * <code>CELL_3G = 3;</code>
+             * <p/>
+             * <pre>
+             * 蜂窝数据3G网络
+             * </pre>
+             */
             public static final int CELL_3G_VALUE = 3;
+            /**
+             * <code>CELL_4G = 4;</code>
+             * <p/>
+             * <pre>
+             * 蜂窝数据4G网络
+             * </pre>
+             */
             public static final int CELL_4G_VALUE = 4;
+            /**
+             * <code>CELL_5G = 5;</code>
+             * <p/>
+             * <pre>
+             * 蜂窝数据5G网络
+             * </pre>
+             */
             public static final int CELL_5G_VALUE = 5;
+            /**
+             * <code>WIFI = 100;</code>
+             * <p/>
+             * <pre>
+             * Wi-Fi网络接入
+             * </pre>
+             */
             public static final int WIFI_VALUE = 100;
+            /**
+             * <code>ETHERNET = 101;</code>
+             * <p/>
+             * <pre>
+             * 以太网接入
+             * </pre>
+             */
             public static final int ETHERNET_VALUE = 101;
+            /**
+             * <code>NEW_TYPE = 999;</code>
+             * <p/>
+             * <pre>
+             * 未知新类型
+             * </pre>
+             */
             public static final int NEW_TYPE_VALUE = 999;
-            private static final ConnectionType[] VALUES = {
-                    CONNECTION_UNKNOWN, CELL_UNKNOWN, CELL_2G, CELL_3G, CELL_4G, CELL_5G, WIFI, ETHERNET, NEW_TYPE,
-            };
+            private static final ConnectionType[] VALUES = values();
             private static com.google.protobuf.Internal.EnumLiteMap<ConnectionType>
                     internalValueMap =
                     new com.google.protobuf.Internal.EnumLiteMap<ConnectionType>() {
@@ -7253,13 +12157,13 @@ public final class KSCMobileAdsProto530 {
 
             public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
-                return Network.getDescriptor().getEnumTypes().get(0);
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.getDescriptor().getEnumTypes().get(0);
             }
 
             public static ConnectionType valueOf(
                     com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
                 if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException(
+                    throw new java.lang.IllegalArgumentException(
                             "EnumValueDescriptor is not for this type.");
                 }
                 return VALUES[desc.getIndex()];
@@ -7282,22 +12186,97 @@ public final class KSCMobileAdsProto530 {
             // @@protoc_insertion_point(enum_scope:com.ksc.client.ads.proto.Network.ConnectionType)
         }
 
+        /**
+         * Protobuf enum {@code com.ksc.client.ads.proto.Network.OperatorType}
+         * <p/>
+         * <pre>
+         * 移动运营商类型
+         * </pre>
+         */
         public enum OperatorType
                 implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>UNKNOWN_OPERATOR = 0;</code>
+             * <p/>
+             * <pre>
+             * 未知的运营商
+             * </pre>
+             */
             UNKNOWN_OPERATOR(0, 0),
+            /**
+             * <code>CHINA_MOBILE = 1;</code>
+             * <p/>
+             * <pre>
+             * 中国移动
+             * </pre>
+             */
             CHINA_MOBILE(1, 1),
+            /**
+             * <code>CHINA_TELECOM = 2;</code>
+             * <p/>
+             * <pre>
+             * 中国电信
+             * </pre>
+             */
             CHINA_TELECOM(2, 2),
+            /**
+             * <code>CHINA_UNICOM = 3;</code>
+             * <p/>
+             * <pre>
+             * 中国联通
+             * </pre>
+             */
             CHINA_UNICOM(3, 3),
+            /**
+             * <code>OTHER_OPERATOR = 99;</code>
+             * <p/>
+             * <pre>
+             * 其他运营商
+             * </pre>
+             */
             OTHER_OPERATOR(4, 99),;
 
+            /**
+             * <code>UNKNOWN_OPERATOR = 0;</code>
+             * <p/>
+             * <pre>
+             * 未知的运营商
+             * </pre>
+             */
             public static final int UNKNOWN_OPERATOR_VALUE = 0;
+            /**
+             * <code>CHINA_MOBILE = 1;</code>
+             * <p/>
+             * <pre>
+             * 中国移动
+             * </pre>
+             */
             public static final int CHINA_MOBILE_VALUE = 1;
+            /**
+             * <code>CHINA_TELECOM = 2;</code>
+             * <p/>
+             * <pre>
+             * 中国电信
+             * </pre>
+             */
             public static final int CHINA_TELECOM_VALUE = 2;
+            /**
+             * <code>CHINA_UNICOM = 3;</code>
+             * <p/>
+             * <pre>
+             * 中国联通
+             * </pre>
+             */
             public static final int CHINA_UNICOM_VALUE = 3;
+            /**
+             * <code>OTHER_OPERATOR = 99;</code>
+             * <p/>
+             * <pre>
+             * 其他运营商
+             * </pre>
+             */
             public static final int OTHER_OPERATOR_VALUE = 99;
-            private static final OperatorType[] VALUES = {
-                    UNKNOWN_OPERATOR, CHINA_MOBILE, CHINA_TELECOM, CHINA_UNICOM, OTHER_OPERATOR,
-            };
+            private static final OperatorType[] VALUES = values();
             private static com.google.protobuf.Internal.EnumLiteMap<OperatorType>
                     internalValueMap =
                     new com.google.protobuf.Internal.EnumLiteMap<OperatorType>() {
@@ -7337,13 +12316,13 @@ public final class KSCMobileAdsProto530 {
 
             public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
-                return Network.getDescriptor().getEnumTypes().get(1);
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.getDescriptor().getEnumTypes().get(1);
             }
 
             public static OperatorType valueOf(
                     com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
                 if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException(
+                    throw new java.lang.IllegalArgumentException(
                             "EnumValueDescriptor is not for this type.");
                 }
                 return VALUES[desc.getIndex()];
@@ -7366,46 +12345,52 @@ public final class KSCMobileAdsProto530 {
             // @@protoc_insertion_point(enum_scope:com.ksc.client.ads.proto.Network.OperatorType)
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.Network}
+         * <p/>
+         * <pre>
+         * 网络环境信息
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements NetworkOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.Network)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.NetworkOrBuilder {
             private int bitField0_;
-            // optional string ipv4 = 1;
-            private Object ipv4_ = "";
-            // optional .com.ksc.client.ads.proto.Network.ConnectionType connection_type = 2;
-            private ConnectionType connectionType_ = ConnectionType.CONNECTION_UNKNOWN;
-            // optional .com.ksc.client.ads.proto.Network.OperatorType operator_type = 3;
-            private OperatorType operatorType_ = OperatorType.UNKNOWN_OPERATOR;
-            // optional string cellular_id = 4;
-            private Object cellularId_ = "";
-            // repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;
-            private java.util.List<WiFiAp> wifiAps_ =
+            private java.lang.Object ipv4_ = "";
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.ConnectionType connectionType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.ConnectionType.CONNECTION_UNKNOWN;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.OperatorType operatorType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.OperatorType.UNKNOWN_OPERATOR;
+            private java.lang.Object cellularId_ = "";
+            private java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp> wifiAps_ =
                     java.util.Collections.emptyList();
             private com.google.protobuf.RepeatedFieldBuilder<
-                    WiFiAp, WiFiAp.Builder, WiFiApOrBuilder> wifiApsBuilder_;
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiApOrBuilder> wifiApsBuilder_;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.newBuilder()
             private Builder() {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Network_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Network_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Network_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Network_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -7418,9 +12403,9 @@ public final class KSCMobileAdsProto530 {
                 super.clear();
                 ipv4_ = "";
                 bitField0_ = (bitField0_ & ~0x00000001);
-                connectionType_ = ConnectionType.CONNECTION_UNKNOWN;
+                connectionType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.ConnectionType.CONNECTION_UNKNOWN;
                 bitField0_ = (bitField0_ & ~0x00000002);
-                operatorType_ = OperatorType.UNKNOWN_OPERATOR;
+                operatorType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.OperatorType.UNKNOWN_OPERATOR;
                 bitField0_ = (bitField0_ & ~0x00000004);
                 cellularId_ = "";
                 bitField0_ = (bitField0_ & ~0x00000008);
@@ -7439,33 +12424,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return Network.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Network_descriptor;
             }
 
-            public Network getDefaultInstanceForType() {
-                return Network.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Network getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.getDefaultInstance();
             }
 
-            public Network build() {
-                Network result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Network build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Network result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private Network buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                Network result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public Network buildPartial() {
-                Network result = new Network(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Network buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Network result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.Network(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -7499,18 +12474,20 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof Network) {
-                    return mergeFrom((Network) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.Network) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.Network) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(Network other) {
-                if (other == Network.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.Network other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.getDefaultInstance()) return this;
                 if (other.hasIpv4()) {
-                    setIpv4(other.getIpv4());
+                    bitField0_ |= 0x00000001;
+                    ipv4_ = other.ipv4_;
+                    onChanged();
                 }
                 if (other.hasConnectionType()) {
                     setConnectionType(other.getConnectionType());
@@ -7519,7 +12496,9 @@ public final class KSCMobileAdsProto530 {
                     setOperatorType(other.getOperatorType());
                 }
                 if (other.hasCellularId()) {
-                    setCellularId(other.getCellularId());
+                    bitField0_ |= 0x00000008;
+                    cellularId_ = other.cellularId_;
+                    onChanged();
                 }
                 if (wifiApsBuilder_ == null) {
                     if (!other.wifiAps_.isEmpty()) {
@@ -7559,89 +12538,62 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            bitField0_ |= 0x00000001;
-                            ipv4_ = input.readBytes();
-                            break;
-                        }
-                        case 16: {
-                            int rawValue = input.readEnum();
-                            ConnectionType value = ConnectionType.valueOf(rawValue);
-                            if (value == null) {
-                                unknownFields.mergeVarintField(2, rawValue);
-                            } else {
-                                bitField0_ |= 0x00000002;
-                                connectionType_ = value;
-                            }
-                            break;
-                        }
-                        case 24: {
-                            int rawValue = input.readEnum();
-                            OperatorType value = OperatorType.valueOf(rawValue);
-                            if (value == null) {
-                                unknownFields.mergeVarintField(3, rawValue);
-                            } else {
-                                bitField0_ |= 0x00000004;
-                                operatorType_ = value;
-                            }
-                            break;
-                        }
-                        case 34: {
-                            bitField0_ |= 0x00000008;
-                            cellularId_ = input.readBytes();
-                            break;
-                        }
-                        case 42: {
-                            WiFiAp.Builder subBuilder = WiFiAp.newBuilder();
-                            input.readMessage(subBuilder, extensionRegistry);
-                            addWifiAps(subBuilder.buildPartial());
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Network parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.Network) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional string ipv4 = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！用户设备的公网IPv4地址，服务器对接必填，格式要求：255.255.255.255
+             * </pre>
+             */
             public boolean hasIpv4() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
-            public String getIpv4() {
-                Object ref = ipv4_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    ipv4_ = s;
+            /**
+             * <code>optional string ipv4 = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！用户设备的公网IPv4地址，服务器对接必填，格式要求：255.255.255.255
+             * </pre>
+             */
+            public java.lang.String getIpv4() {
+                java.lang.Object ref = ipv4_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        ipv4_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setIpv4(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000001;
-                ipv4_ = value;
-                onChanged();
-            }
-
-            public Builder setIpv4(String value) {
+            /**
+             * <code>optional string ipv4 = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！用户设备的公网IPv4地址，服务器对接必填，格式要求：255.255.255.255
+             * </pre>
+             */
+            public Builder setIpv4(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -7651,6 +12603,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string ipv4 = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！用户设备的公网IPv4地址，服务器对接必填，格式要求：255.255.255.255
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getIpv4Bytes() {
+                java.lang.Object ref = ipv4_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    ipv4_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string ipv4 = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！用户设备的公网IPv4地址，服务器对接必填，格式要求：255.255.255.255
+             * </pre>
+             */
+            public Builder setIpv4Bytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                ipv4_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string ipv4 = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！用户设备的公网IPv4地址，服务器对接必填，格式要求：255.255.255.255
+             * </pre>
+             */
             public Builder clearIpv4() {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 ipv4_ = getDefaultInstance().getIpv4();
@@ -7658,15 +12656,36 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network.ConnectionType connection_type = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络连接类型，用于判断网速
+             * </pre>
+             */
             public boolean hasConnectionType() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
-            public ConnectionType getConnectionType() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network.ConnectionType connection_type = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络连接类型，用于判断网速
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.ConnectionType getConnectionType() {
                 return connectionType_;
             }
 
-            public Builder setConnectionType(ConnectionType value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network.ConnectionType connection_type = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络连接类型，用于判断网速
+             * </pre>
+             */
+            public Builder setConnectionType(com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.ConnectionType value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -7676,22 +12695,50 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network.ConnectionType connection_type = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！网络连接类型，用于判断网速
+             * </pre>
+             */
             public Builder clearConnectionType() {
                 bitField0_ = (bitField0_ & ~0x00000002);
-                connectionType_ = ConnectionType.CONNECTION_UNKNOWN;
+                connectionType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.ConnectionType.CONNECTION_UNKNOWN;
                 onChanged();
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network.OperatorType operator_type = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！移动运营商类型，用于运营商定向广告
+             * </pre>
+             */
             public boolean hasOperatorType() {
                 return ((bitField0_ & 0x00000004) == 0x00000004);
             }
 
-            public OperatorType getOperatorType() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network.OperatorType operator_type = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！移动运营商类型，用于运营商定向广告
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.OperatorType getOperatorType() {
                 return operatorType_;
             }
 
-            public Builder setOperatorType(OperatorType value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network.OperatorType operator_type = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！移动运营商类型，用于运营商定向广告
+             * </pre>
+             */
+            public Builder setOperatorType(com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.OperatorType value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -7701,35 +12748,62 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Network.OperatorType operator_type = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！移动运营商类型，用于运营商定向广告
+             * </pre>
+             */
             public Builder clearOperatorType() {
                 bitField0_ = (bitField0_ & ~0x00000004);
-                operatorType_ = OperatorType.UNKNOWN_OPERATOR;
+                operatorType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Network.OperatorType.UNKNOWN_OPERATOR;
                 onChanged();
                 return this;
             }
 
+            /**
+             * <code>optional string cellular_id = 4;</code>
+             * <p/>
+             * <pre>
+             * 选填！当前连接的运营商基站ID，用于快速用户定位
+             * </pre>
+             */
             public boolean hasCellularId() {
                 return ((bitField0_ & 0x00000008) == 0x00000008);
             }
 
-            public String getCellularId() {
-                Object ref = cellularId_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    cellularId_ = s;
+            /**
+             * <code>optional string cellular_id = 4;</code>
+             * <p/>
+             * <pre>
+             * 选填！当前连接的运营商基站ID，用于快速用户定位
+             * </pre>
+             */
+            public java.lang.String getCellularId() {
+                java.lang.Object ref = cellularId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        cellularId_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setCellularId(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000008;
-                cellularId_ = value;
-                onChanged();
-            }
-
-            public Builder setCellularId(String value) {
+            /**
+             * <code>optional string cellular_id = 4;</code>
+             * <p/>
+             * <pre>
+             * 选填！当前连接的运营商基站ID，用于快速用户定位
+             * </pre>
+             */
+            public Builder setCellularId(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -7739,6 +12813,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string cellular_id = 4;</code>
+             * <p/>
+             * <pre>
+             * 选填！当前连接的运营商基站ID，用于快速用户定位
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getCellularIdBytes() {
+                java.lang.Object ref = cellularId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    cellularId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string cellular_id = 4;</code>
+             * <p/>
+             * <pre>
+             * 选填！当前连接的运营商基站ID，用于快速用户定位
+             * </pre>
+             */
+            public Builder setCellularIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000008;
+                cellularId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string cellular_id = 4;</code>
+             * <p/>
+             * <pre>
+             * 选填！当前连接的运营商基站ID，用于快速用户定位
+             * </pre>
+             */
             public Builder clearCellularId() {
                 bitField0_ = (bitField0_ & ~0x00000008);
                 cellularId_ = getDefaultInstance().getCellularId();
@@ -7748,12 +12868,19 @@ public final class KSCMobileAdsProto530 {
 
             private void ensureWifiApsIsMutable() {
                 if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-                    wifiAps_ = new java.util.ArrayList<WiFiAp>(wifiAps_);
+                    wifiAps_ = new java.util.ArrayList<com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp>(wifiAps_);
                     bitField0_ |= 0x00000010;
                 }
             }
 
-            public java.util.List<WiFiAp> getWifiApsList() {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
+            public java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp> getWifiApsList() {
                 if (wifiApsBuilder_ == null) {
                     return java.util.Collections.unmodifiableList(wifiAps_);
                 } else {
@@ -7761,6 +12888,13 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
             public int getWifiApsCount() {
                 if (wifiApsBuilder_ == null) {
                     return wifiAps_.size();
@@ -7769,7 +12903,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public WiFiAp getWifiAps(int index) {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp getWifiAps(int index) {
                 if (wifiApsBuilder_ == null) {
                     return wifiAps_.get(index);
                 } else {
@@ -7777,8 +12918,15 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
             public Builder setWifiAps(
-                    int index, WiFiAp value) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp value) {
                 if (wifiApsBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -7792,8 +12940,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
             public Builder setWifiAps(
-                    int index, WiFiAp.Builder builderForValue) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.Builder builderForValue) {
                 if (wifiApsBuilder_ == null) {
                     ensureWifiApsIsMutable();
                     wifiAps_.set(index, builderForValue.build());
@@ -7804,7 +12959,14 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder addWifiAps(WiFiAp value) {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
+            public Builder addWifiAps(com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp value) {
                 if (wifiApsBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -7818,8 +12980,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
             public Builder addWifiAps(
-                    int index, WiFiAp value) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp value) {
                 if (wifiApsBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -7833,8 +13002,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
             public Builder addWifiAps(
-                    WiFiAp.Builder builderForValue) {
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.Builder builderForValue) {
                 if (wifiApsBuilder_ == null) {
                     ensureWifiApsIsMutable();
                     wifiAps_.add(builderForValue.build());
@@ -7845,8 +13021,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
             public Builder addWifiAps(
-                    int index, WiFiAp.Builder builderForValue) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.Builder builderForValue) {
                 if (wifiApsBuilder_ == null) {
                     ensureWifiApsIsMutable();
                     wifiAps_.add(index, builderForValue.build());
@@ -7857,11 +13040,19 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
             public Builder addAllWifiAps(
-                    Iterable<? extends WiFiAp> values) {
+                    java.lang.Iterable<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp> values) {
                 if (wifiApsBuilder_ == null) {
                     ensureWifiApsIsMutable();
-                    addAll(values, wifiAps_);
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                            values, wifiAps_);
                     onChanged();
                 } else {
                     wifiApsBuilder_.addAllMessages(values);
@@ -7869,6 +13060,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
             public Builder clearWifiAps() {
                 if (wifiApsBuilder_ == null) {
                     wifiAps_ = java.util.Collections.emptyList();
@@ -7880,6 +13078,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
             public Builder removeWifiAps(int index) {
                 if (wifiApsBuilder_ == null) {
                     ensureWifiApsIsMutable();
@@ -7891,12 +13096,26 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public WiFiAp.Builder getWifiApsBuilder(
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.Builder getWifiApsBuilder(
                     int index) {
                 return getWifiApsFieldBuilder().getBuilder(index);
             }
 
-            public WiFiApOrBuilder getWifiApsOrBuilder(
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiApOrBuilder getWifiApsOrBuilder(
                     int index) {
                 if (wifiApsBuilder_ == null) {
                     return wifiAps_.get(index);
@@ -7905,7 +13124,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public java.util.List<? extends WiFiApOrBuilder>
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
+            public java.util.List<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiApOrBuilder>
             getWifiApsOrBuilderList() {
                 if (wifiApsBuilder_ != null) {
                     return wifiApsBuilder_.getMessageOrBuilderList();
@@ -7914,28 +13140,49 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public WiFiAp.Builder addWifiApsBuilder() {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.Builder addWifiApsBuilder() {
                 return getWifiApsFieldBuilder().addBuilder(
-                        WiFiAp.getDefaultInstance());
+                        com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.getDefaultInstance());
             }
 
-            public WiFiAp.Builder addWifiApsBuilder(
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.Builder addWifiApsBuilder(
                     int index) {
                 return getWifiApsFieldBuilder().addBuilder(
-                        index, WiFiAp.getDefaultInstance());
+                        index, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.getDefaultInstance());
             }
 
-            public java.util.List<WiFiAp.Builder>
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.WiFiAp wifi_aps = 5;</code>
+             * <p/>
+             * <pre>
+             * 选填！周边WiFi热点列表，用于精细用户定位
+             * </pre>
+             */
+            public java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.Builder>
             getWifiApsBuilderList() {
                 return getWifiApsFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilder<
-                    WiFiAp, WiFiAp.Builder, WiFiApOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiApOrBuilder>
             getWifiApsFieldBuilder() {
                 if (wifiApsBuilder_ == null) {
                     wifiApsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                            WiFiAp, WiFiAp.Builder, WiFiApOrBuilder>(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiApOrBuilder>(
                             wifiAps_,
                             ((bitField0_ & 0x00000010) == 0x00000010),
                             getParentForChildren(),
@@ -7951,27 +13198,41 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.Network)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.WiFiAp}
+     * <p/>
+     * <pre>
+     * WiFi热点信息
+     * </pre>
+     */
     public static final class WiFiAp extends
-            com.google.protobuf.GeneratedMessage
-            implements WiFiApOrBuilder {
-        // optional string ap_mac = 1;
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.WiFiAp)
+            WiFiApOrBuilder {
         public static final int AP_MAC_FIELD_NUMBER = 1;
-        // optional int32 rssi = 2;
         public static final int RSSI_FIELD_NUMBER = 2;
-        // optional bytes ap_name = 3;
         public static final int AP_NAME_FIELD_NUMBER = 3;
-        // optional bool is_connected = 4;
         public static final int IS_CONNECTED_FIELD_NUMBER = 4;
         private static final WiFiAp defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<WiFiAp> PARSER =
+                new com.google.protobuf.AbstractParser<WiFiAp>() {
+                    public WiFiAp parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new WiFiAp(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new WiFiAp(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
-        private Object apMac_;
+        private java.lang.Object apMac_;
         private int rssi_;
         private com.google.protobuf.ByteString apName_;
         private boolean isConnected_;
@@ -7979,11 +13240,70 @@ public final class KSCMobileAdsProto530 {
         private int memoizedSerializedSize = -1;
 
         // Use WiFiAp.newBuilder() to construct.
-        private WiFiAp(Builder builder) {
+        private WiFiAp(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
         }
 
         private WiFiAp(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        }
+
+        private WiFiAp(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            apMac_ = bs;
+                            break;
+                        }
+                        case 16: {
+                            bitField0_ |= 0x00000002;
+                            rssi_ = input.readInt32();
+                            break;
+                        }
+                        case 26: {
+                            bitField0_ |= 0x00000004;
+                            apName_ = input.readBytes();
+                            break;
+                        }
+                        case 32: {
+                            bitField0_ |= 0x00000008;
+                            isConnected_ = input.readBool();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static WiFiAp getDefaultInstance() {
@@ -7992,90 +13312,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_WiFiAp_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_WiFiAp_descriptor;
         }
 
-        public static WiFiAp parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static WiFiAp parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static WiFiAp parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static WiFiAp parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static WiFiAp parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static WiFiAp parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static WiFiAp parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static WiFiAp parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static WiFiAp parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static WiFiAp parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(WiFiAp prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -8083,35 +13389,71 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_WiFiAp_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_WiFiAp_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<WiFiAp> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional string ap_mac = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+         * </pre>
+         */
         public boolean hasApMac() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
-        public String getApMac() {
-            Object ref = apMac_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string ap_mac = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+         * </pre>
+         */
+        public java.lang.String getApMac() {
+            java.lang.Object ref = apMac_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     apMac_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getApMacBytes() {
-            Object ref = apMac_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string ap_mac = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getApMacBytes() {
+            java.lang.Object ref = apMac_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 apMac_ = b;
                 return b;
             } else {
@@ -8119,26 +13461,68 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional int32 rssi = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点信号强度，通常是负数
+         * </pre>
+         */
         public boolean hasRssi() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
+        /**
+         * <code>optional int32 rssi = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点信号强度，通常是负数
+         * </pre>
+         */
         public int getRssi() {
             return rssi_;
         }
 
+        /**
+         * <code>optional bytes ap_name = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点名称，可不传递，建议传递当前接入热点的名称，用于判断用户当前所处场所，中文需要UTF-8编码
+         * </pre>
+         */
         public boolean hasApName() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
+        /**
+         * <code>optional bytes ap_name = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！热点名称，可不传递，建议传递当前接入热点的名称，用于判断用户当前所处场所，中文需要UTF-8编码
+         * </pre>
+         */
         public com.google.protobuf.ByteString getApName() {
             return apName_;
         }
 
+        /**
+         * <code>optional bool is_connected = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！是否是当前连接热点，配合热点名称可用于识别用户所处场所
+         * </pre>
+         */
         public boolean hasIsConnected() {
             return ((bitField0_ & 0x00000008) == 0x00000008);
         }
 
+        /**
+         * <code>optional bool is_connected = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！是否是当前连接热点，配合热点名称可用于识别用户所处场所
+         * </pre>
+         */
         public boolean getIsConnected() {
             return isConnected_;
         }
@@ -8152,7 +13536,8 @@ public final class KSCMobileAdsProto530 {
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -8202,8 +13587,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -8216,24 +13601,28 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.WiFiAp}
+         * <p/>
+         * <pre>
+         * WiFi热点信息
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements WiFiApOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.WiFiAp)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiApOrBuilder {
             private int bitField0_;
-            // optional string ap_mac = 1;
-            private Object apMac_ = "";
-            // optional int32 rssi = 2;
+            private java.lang.Object apMac_ = "";
             private int rssi_;
-            // optional bytes ap_name = 3;
             private com.google.protobuf.ByteString apName_ = com.google.protobuf.ByteString.EMPTY;
-            // optional bool is_connected = 4;
             private boolean isConnected_;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.newBuilder()
@@ -8241,23 +13630,26 @@ public final class KSCMobileAdsProto530 {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_WiFiAp_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_WiFiAp_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_WiFiAp_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_WiFiAp_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -8284,33 +13676,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return WiFiAp.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_WiFiAp_descriptor;
             }
 
-            public WiFiAp getDefaultInstanceForType() {
-                return WiFiAp.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.getDefaultInstance();
             }
 
-            public WiFiAp build() {
-                WiFiAp result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private WiFiAp buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                WiFiAp result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public WiFiAp buildPartial() {
-                WiFiAp result = new WiFiAp(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -8335,18 +13717,20 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof WiFiAp) {
-                    return mergeFrom((WiFiAp) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(WiFiAp other) {
-                if (other == WiFiAp.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp.getDefaultInstance()) return this;
                 if (other.hasApMac()) {
-                    setApMac(other.getApMac());
+                    bitField0_ |= 0x00000001;
+                    apMac_ = other.apMac_;
+                    onChanged();
                 }
                 if (other.hasRssi()) {
                     setRssi(other.getRssi());
@@ -8369,71 +13753,62 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            bitField0_ |= 0x00000001;
-                            apMac_ = input.readBytes();
-                            break;
-                        }
-                        case 16: {
-                            bitField0_ |= 0x00000002;
-                            rssi_ = input.readInt32();
-                            break;
-                        }
-                        case 26: {
-                            bitField0_ |= 0x00000004;
-                            apName_ = input.readBytes();
-                            break;
-                        }
-                        case 32: {
-                            bitField0_ |= 0x00000008;
-                            isConnected_ = input.readBool();
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.WiFiAp) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional string ap_mac = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+             * </pre>
+             */
             public boolean hasApMac() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
-            public String getApMac() {
-                Object ref = apMac_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    apMac_ = s;
+            /**
+             * <code>optional string ap_mac = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+             * </pre>
+             */
+            public java.lang.String getApMac() {
+                java.lang.Object ref = apMac_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        apMac_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setApMac(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000001;
-                apMac_ = value;
-                onChanged();
-            }
-
-            public Builder setApMac(String value) {
+            /**
+             * <code>optional string ap_mac = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+             * </pre>
+             */
+            public Builder setApMac(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -8443,6 +13818,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string ap_mac = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getApMacBytes() {
+                java.lang.Object ref = apMac_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    apMac_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string ap_mac = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+             * </pre>
+             */
+            public Builder setApMacBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                apMac_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string ap_mac = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点MAC地址，格式要求[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}
+             * </pre>
+             */
             public Builder clearApMac() {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 apMac_ = getDefaultInstance().getApMac();
@@ -8450,14 +13871,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional int32 rssi = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点信号强度，通常是负数
+             * </pre>
+             */
             public boolean hasRssi() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
+            /**
+             * <code>optional int32 rssi = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点信号强度，通常是负数
+             * </pre>
+             */
             public int getRssi() {
                 return rssi_;
             }
 
+            /**
+             * <code>optional int32 rssi = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点信号强度，通常是负数
+             * </pre>
+             */
             public Builder setRssi(int value) {
                 bitField0_ |= 0x00000002;
                 rssi_ = value;
@@ -8465,6 +13907,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional int32 rssi = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点信号强度，通常是负数
+             * </pre>
+             */
             public Builder clearRssi() {
                 bitField0_ = (bitField0_ & ~0x00000002);
                 rssi_ = 0;
@@ -8472,14 +13921,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional bytes ap_name = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点名称，可不传递，建议传递当前接入热点的名称，用于判断用户当前所处场所，中文需要UTF-8编码
+             * </pre>
+             */
             public boolean hasApName() {
                 return ((bitField0_ & 0x00000004) == 0x00000004);
             }
 
+            /**
+             * <code>optional bytes ap_name = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点名称，可不传递，建议传递当前接入热点的名称，用于判断用户当前所处场所，中文需要UTF-8编码
+             * </pre>
+             */
             public com.google.protobuf.ByteString getApName() {
                 return apName_;
             }
 
+            /**
+             * <code>optional bytes ap_name = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点名称，可不传递，建议传递当前接入热点的名称，用于判断用户当前所处场所，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder setApName(com.google.protobuf.ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
@@ -8490,6 +13960,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional bytes ap_name = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！热点名称，可不传递，建议传递当前接入热点的名称，用于判断用户当前所处场所，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder clearApName() {
                 bitField0_ = (bitField0_ & ~0x00000004);
                 apName_ = getDefaultInstance().getApName();
@@ -8497,14 +13974,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional bool is_connected = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！是否是当前连接热点，配合热点名称可用于识别用户所处场所
+             * </pre>
+             */
             public boolean hasIsConnected() {
                 return ((bitField0_ & 0x00000008) == 0x00000008);
             }
 
+            /**
+             * <code>optional bool is_connected = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！是否是当前连接热点，配合热点名称可用于识别用户所处场所
+             * </pre>
+             */
             public boolean getIsConnected() {
                 return isConnected_;
             }
 
+            /**
+             * <code>optional bool is_connected = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！是否是当前连接热点，配合热点名称可用于识别用户所处场所
+             * </pre>
+             */
             public Builder setIsConnected(boolean value) {
                 bitField0_ |= 0x00000008;
                 isConnected_ = value;
@@ -8512,6 +14010,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional bool is_connected = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！是否是当前连接热点，配合热点名称可用于识别用户所处场所
+             * </pre>
+             */
             public Builder clearIsConnected() {
                 bitField0_ = (bitField0_ & ~0x00000008);
                 isConnected_ = false;
@@ -8525,27 +14030,41 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.WiFiAp)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.Gps}
+     * <p/>
+     * <pre>
+     * GPS信息
+     * </pre>
+     */
     public static final class Gps extends
-            com.google.protobuf.GeneratedMessage
-            implements GpsOrBuilder {
-        // optional .com.ksc.client.ads.proto.Gps.CoordinateType coordinate_type = 1;
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.Gps)
+            GpsOrBuilder {
         public static final int COORDINATE_TYPE_FIELD_NUMBER = 1;
-        // optional double longitude = 2;
         public static final int LONGITUDE_FIELD_NUMBER = 2;
-        // optional double latitude = 3;
         public static final int LATITUDE_FIELD_NUMBER = 3;
-        // optional uint32 timestamp = 4;
         public static final int TIMESTAMP_FIELD_NUMBER = 4;
         private static final Gps defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<Gps> PARSER =
+                new com.google.protobuf.AbstractParser<Gps>() {
+                    public Gps parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new Gps(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new Gps(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
-        private CoordinateType coordinateType_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.CoordinateType coordinateType_;
         private double longitude_;
         private double latitude_;
         private int timestamp_;
@@ -8553,11 +14072,75 @@ public final class KSCMobileAdsProto530 {
         private int memoizedSerializedSize = -1;
 
         // Use Gps.newBuilder() to construct.
-        private Gps(Builder builder) {
+        private Gps(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
         }
 
         private Gps(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        }
+
+        private Gps(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+                            int rawValue = input.readEnum();
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.CoordinateType value = com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.CoordinateType.valueOf(rawValue);
+                            if (value == null) {
+                                unknownFields.mergeVarintField(1, rawValue);
+                            } else {
+                                bitField0_ |= 0x00000001;
+                                coordinateType_ = value;
+                            }
+                            break;
+                        }
+                        case 17: {
+                            bitField0_ |= 0x00000002;
+                            longitude_ = input.readDouble();
+                            break;
+                        }
+                        case 25: {
+                            bitField0_ |= 0x00000004;
+                            latitude_ = input.readDouble();
+                            break;
+                        }
+                        case 32: {
+                            bitField0_ |= 0x00000008;
+                            timestamp_ = input.readUInt32();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static Gps getDefaultInstance() {
@@ -8566,90 +14149,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Gps_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Gps_descriptor;
         }
 
-        public static Gps parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Gps parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Gps parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Gps parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Gps parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Gps parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static Gps parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static Gps parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static Gps parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Gps parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(Gps prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -8657,45 +14226,114 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Gps_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Gps_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Gps> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Gps.CoordinateType coordinate_type = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！坐标类型
+         * </pre>
+         */
         public boolean hasCoordinateType() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
-        public CoordinateType getCoordinateType() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Gps.CoordinateType coordinate_type = 1;</code>
+         * <p/>
+         * <pre>
+         * 必填！坐标类型
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.CoordinateType getCoordinateType() {
             return coordinateType_;
         }
 
+        /**
+         * <code>optional double longitude = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！经度
+         * </pre>
+         */
         public boolean hasLongitude() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
+        /**
+         * <code>optional double longitude = 2;</code>
+         * <p/>
+         * <pre>
+         * 必填！经度
+         * </pre>
+         */
         public double getLongitude() {
             return longitude_;
         }
 
+        /**
+         * <code>optional double latitude = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！纬度
+         * </pre>
+         */
         public boolean hasLatitude() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
+        /**
+         * <code>optional double latitude = 3;</code>
+         * <p/>
+         * <pre>
+         * 必填！纬度
+         * </pre>
+         */
         public double getLatitude() {
             return latitude_;
         }
 
+        /**
+         * <code>optional uint32 timestamp = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！时间戳，单位秒
+         * </pre>
+         */
         public boolean hasTimestamp() {
             return ((bitField0_ & 0x00000008) == 0x00000008);
         }
 
+        /**
+         * <code>optional uint32 timestamp = 4;</code>
+         * <p/>
+         * <pre>
+         * 必填！时间戳，单位秒
+         * </pre>
+         */
         public int getTimestamp() {
             return timestamp_;
         }
 
         private void initFields() {
-            coordinateType_ = CoordinateType.WGS84;
+            coordinateType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.CoordinateType.WGS84;
             longitude_ = 0D;
             latitude_ = 0D;
             timestamp_ = 0;
@@ -8703,7 +14341,8 @@ public final class KSCMobileAdsProto530 {
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -8753,8 +14392,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -8767,25 +14406,72 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf enum {@code com.ksc.client.ads.proto.Gps.CoordinateType}
+         * <p/>
+         * <pre>
+         * GPS坐标类型
+         * </pre>
+         */
         public enum CoordinateType
                 implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>WGS84 = 1;</code>
+             * <p/>
+             * <pre>
+             * 全球卫星定位系统坐标系
+             * </pre>
+             */
             WGS84(0, 1),
+            /**
+             * <code>GCJ02 = 2;</code>
+             * <p/>
+             * <pre>
+             * 国家测绘局坐标系
+             * </pre>
+             */
             GCJ02(1, 2),
+            /**
+             * <code>BD09 = 3;</code>
+             * <p/>
+             * <pre>
+             * 百度坐标系
+             * </pre>
+             */
             BD09(2, 3),;
 
+            /**
+             * <code>WGS84 = 1;</code>
+             * <p/>
+             * <pre>
+             * 全球卫星定位系统坐标系
+             * </pre>
+             */
             public static final int WGS84_VALUE = 1;
+            /**
+             * <code>GCJ02 = 2;</code>
+             * <p/>
+             * <pre>
+             * 国家测绘局坐标系
+             * </pre>
+             */
             public static final int GCJ02_VALUE = 2;
+            /**
+             * <code>BD09 = 3;</code>
+             * <p/>
+             * <pre>
+             * 百度坐标系
+             * </pre>
+             */
             public static final int BD09_VALUE = 3;
-            private static final CoordinateType[] VALUES = {
-                    WGS84, GCJ02, BD09,
-            };
+            private static final CoordinateType[] VALUES = values();
             private static com.google.protobuf.Internal.EnumLiteMap<CoordinateType>
                     internalValueMap =
                     new com.google.protobuf.Internal.EnumLiteMap<CoordinateType>() {
@@ -8821,13 +14507,13 @@ public final class KSCMobileAdsProto530 {
 
             public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
-                return Gps.getDescriptor().getEnumTypes().get(0);
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.getDescriptor().getEnumTypes().get(0);
             }
 
             public static CoordinateType valueOf(
                     com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
                 if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException(
+                    throw new java.lang.IllegalArgumentException(
                             "EnumValueDescriptor is not for this type.");
                 }
                 return VALUES[desc.getIndex()];
@@ -8850,17 +14536,21 @@ public final class KSCMobileAdsProto530 {
             // @@protoc_insertion_point(enum_scope:com.ksc.client.ads.proto.Gps.CoordinateType)
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.Gps}
+         * <p/>
+         * <pre>
+         * GPS信息
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements GpsOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.Gps)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.GpsOrBuilder {
             private int bitField0_;
-            // optional .com.ksc.client.ads.proto.Gps.CoordinateType coordinate_type = 1;
-            private CoordinateType coordinateType_ = CoordinateType.WGS84;
-            // optional double longitude = 2;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.CoordinateType coordinateType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.CoordinateType.WGS84;
             private double longitude_;
-            // optional double latitude = 3;
             private double latitude_;
-            // optional uint32 timestamp = 4;
             private int timestamp_;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.newBuilder()
@@ -8868,23 +14558,26 @@ public final class KSCMobileAdsProto530 {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Gps_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Gps_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Gps_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Gps_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -8894,7 +14587,7 @@ public final class KSCMobileAdsProto530 {
 
             public Builder clear() {
                 super.clear();
-                coordinateType_ = CoordinateType.WGS84;
+                coordinateType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.CoordinateType.WGS84;
                 bitField0_ = (bitField0_ & ~0x00000001);
                 longitude_ = 0D;
                 bitField0_ = (bitField0_ & ~0x00000002);
@@ -8911,33 +14604,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return Gps.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Gps_descriptor;
             }
 
-            public Gps getDefaultInstanceForType() {
-                return Gps.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.getDefaultInstance();
             }
 
-            public Gps build() {
-                Gps result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private Gps buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                Gps result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public Gps buildPartial() {
-                Gps result = new Gps(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -8962,16 +14645,16 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof Gps) {
-                    return mergeFrom((Gps) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(Gps other) {
-                if (other == Gps.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.getDefaultInstance()) return this;
                 if (other.hasCoordinateType()) {
                     setCoordinateType(other.getCoordinateType());
                 }
@@ -8996,64 +14679,50 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 8: {
-                            int rawValue = input.readEnum();
-                            CoordinateType value = CoordinateType.valueOf(rawValue);
-                            if (value == null) {
-                                unknownFields.mergeVarintField(1, rawValue);
-                            } else {
-                                bitField0_ |= 0x00000001;
-                                coordinateType_ = value;
-                            }
-                            break;
-                        }
-                        case 17: {
-                            bitField0_ |= 0x00000002;
-                            longitude_ = input.readDouble();
-                            break;
-                        }
-                        case 25: {
-                            bitField0_ |= 0x00000004;
-                            latitude_ = input.readDouble();
-                            break;
-                        }
-                        case 32: {
-                            bitField0_ |= 0x00000008;
-                            timestamp_ = input.readUInt32();
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps.CoordinateType coordinate_type = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！坐标类型
+             * </pre>
+             */
             public boolean hasCoordinateType() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
-            public CoordinateType getCoordinateType() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps.CoordinateType coordinate_type = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！坐标类型
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.CoordinateType getCoordinateType() {
                 return coordinateType_;
             }
 
-            public Builder setCoordinateType(CoordinateType value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps.CoordinateType coordinate_type = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！坐标类型
+             * </pre>
+             */
+            public Builder setCoordinateType(com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.CoordinateType value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -9063,21 +14732,49 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Gps.CoordinateType coordinate_type = 1;</code>
+             * <p/>
+             * <pre>
+             * 必填！坐标类型
+             * </pre>
+             */
             public Builder clearCoordinateType() {
                 bitField0_ = (bitField0_ & ~0x00000001);
-                coordinateType_ = CoordinateType.WGS84;
+                coordinateType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Gps.CoordinateType.WGS84;
                 onChanged();
                 return this;
             }
 
+            /**
+             * <code>optional double longitude = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！经度
+             * </pre>
+             */
             public boolean hasLongitude() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
+            /**
+             * <code>optional double longitude = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！经度
+             * </pre>
+             */
             public double getLongitude() {
                 return longitude_;
             }
 
+            /**
+             * <code>optional double longitude = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！经度
+             * </pre>
+             */
             public Builder setLongitude(double value) {
                 bitField0_ |= 0x00000002;
                 longitude_ = value;
@@ -9085,6 +14782,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional double longitude = 2;</code>
+             * <p/>
+             * <pre>
+             * 必填！经度
+             * </pre>
+             */
             public Builder clearLongitude() {
                 bitField0_ = (bitField0_ & ~0x00000002);
                 longitude_ = 0D;
@@ -9092,14 +14796,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional double latitude = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！纬度
+             * </pre>
+             */
             public boolean hasLatitude() {
                 return ((bitField0_ & 0x00000004) == 0x00000004);
             }
 
+            /**
+             * <code>optional double latitude = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！纬度
+             * </pre>
+             */
             public double getLatitude() {
                 return latitude_;
             }
 
+            /**
+             * <code>optional double latitude = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！纬度
+             * </pre>
+             */
             public Builder setLatitude(double value) {
                 bitField0_ |= 0x00000004;
                 latitude_ = value;
@@ -9107,6 +14832,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional double latitude = 3;</code>
+             * <p/>
+             * <pre>
+             * 必填！纬度
+             * </pre>
+             */
             public Builder clearLatitude() {
                 bitField0_ = (bitField0_ & ~0x00000004);
                 latitude_ = 0D;
@@ -9114,14 +14846,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 timestamp = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！时间戳，单位秒
+             * </pre>
+             */
             public boolean hasTimestamp() {
                 return ((bitField0_ & 0x00000008) == 0x00000008);
             }
 
+            /**
+             * <code>optional uint32 timestamp = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！时间戳，单位秒
+             * </pre>
+             */
             public int getTimestamp() {
                 return timestamp_;
             }
 
+            /**
+             * <code>optional uint32 timestamp = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！时间戳，单位秒
+             * </pre>
+             */
             public Builder setTimestamp(int value) {
                 bitField0_ |= 0x00000008;
                 timestamp_ = value;
@@ -9129,6 +14882,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 timestamp = 4;</code>
+             * <p/>
+             * <pre>
+             * 必填！时间戳，单位秒
+             * </pre>
+             */
             public Builder clearTimestamp() {
                 bitField0_ = (bitField0_ & ~0x00000008);
                 timestamp_ = 0;
@@ -9142,36 +14902,104 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.Gps)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.Video}
+     */
     public static final class Video extends
-            com.google.protobuf.GeneratedMessage
-            implements VideoOrBuilder {
-        // optional bytes title = 1;
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.Video)
+            VideoOrBuilder {
         public static final int TITLE_FIELD_NUMBER = 1;
-        // optional uint32 content_length = 2;
         public static final int CONTENT_LENGTH_FIELD_NUMBER = 2;
-        // optional .com.ksc.client.ads.proto.Video.CopyRight copyright = 3;
         public static final int COPYRIGHT_FIELD_NUMBER = 3;
         private static final Video defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<Video> PARSER =
+                new com.google.protobuf.AbstractParser<Video>() {
+                    public Video parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new Video(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new Video(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
         private com.google.protobuf.ByteString title_;
         private int contentLength_;
-        private CopyRight copyright_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.CopyRight copyright_;
         private byte memoizedIsInitialized = -1;
         private int memoizedSerializedSize = -1;
-
         // Use Video.newBuilder() to construct.
-        private Video(Builder builder) {
+        private Video(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
+        }
+        private Video(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
 
-        private Video(boolean noInit) {
+        private Video(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            bitField0_ |= 0x00000001;
+                            title_ = input.readBytes();
+                            break;
+                        }
+                        case 16: {
+                            bitField0_ |= 0x00000002;
+                            contentLength_ = input.readUInt32();
+                            break;
+                        }
+                        case 24: {
+                            int rawValue = input.readEnum();
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.CopyRight value = com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.CopyRight.valueOf(rawValue);
+                            if (value == null) {
+                                unknownFields.mergeVarintField(3, rawValue);
+                            } else {
+                                bitField0_ |= 0x00000004;
+                                copyright_ = value;
+                            }
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static Video getDefaultInstance() {
@@ -9180,90 +15008,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Video_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Video_descriptor;
         }
 
-        public static Video parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Video parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Video parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Video parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Video parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Video parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Video parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Video parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Video parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Video parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Video parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Video parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static Video parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Video parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static Video parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Video parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static Video parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Video parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Video parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Video parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(Video prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.Video prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -9271,44 +15085,100 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Video_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Video_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Video> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional bytes title = 1;</code>
+         * <p/>
+         * <pre>
+         * 视频标题，UTF-8编码
+         * </pre>
+         */
         public boolean hasTitle() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
+        /**
+         * <code>optional bytes title = 1;</code>
+         * <p/>
+         * <pre>
+         * 视频标题，UTF-8编码
+         * </pre>
+         */
         public com.google.protobuf.ByteString getTitle() {
             return title_;
         }
 
+        /**
+         * <code>optional uint32 content_length = 2;</code>
+         * <p/>
+         * <pre>
+         * 视频内容长度
+         * </pre>
+         */
         public boolean hasContentLength() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
+        /**
+         * <code>optional uint32 content_length = 2;</code>
+         * <p/>
+         * <pre>
+         * 视频内容长度
+         * </pre>
+         */
         public int getContentLength() {
             return contentLength_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Video.CopyRight copyright = 3;</code>
+         * <p/>
+         * <pre>
+         * 视频版权信息
+         * </pre>
+         */
         public boolean hasCopyright() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
-        public CopyRight getCopyright() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Video.CopyRight copyright = 3;</code>
+         * <p/>
+         * <pre>
+         * 视频版权信息
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.CopyRight getCopyright() {
             return copyright_;
         }
 
         private void initFields() {
             title_ = com.google.protobuf.ByteString.EMPTY;
             contentLength_ = 0;
-            copyright_ = CopyRight.CR_NONE;
+            copyright_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.CopyRight.CR_NONE;
         }
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -9351,8 +15221,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -9365,27 +15235,52 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf enum {@code com.ksc.client.ads.proto.Video.CopyRight}
+         */
         public enum CopyRight
                 implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>CR_NONE = 0;</code>
+             */
             CR_NONE(0, 0),
+            /**
+             * <code>CR_EXIST = 1;</code>
+             */
             CR_EXIST(1, 1),
+            /**
+             * <code>CR_UGC = 2;</code>
+             */
             CR_UGC(2, 2),
+            /**
+             * <code>CR_OTHER = 3;</code>
+             */
             CR_OTHER(3, 3),;
 
+            /**
+             * <code>CR_NONE = 0;</code>
+             */
             public static final int CR_NONE_VALUE = 0;
+            /**
+             * <code>CR_EXIST = 1;</code>
+             */
             public static final int CR_EXIST_VALUE = 1;
+            /**
+             * <code>CR_UGC = 2;</code>
+             */
             public static final int CR_UGC_VALUE = 2;
+            /**
+             * <code>CR_OTHER = 3;</code>
+             */
             public static final int CR_OTHER_VALUE = 3;
-            private static final CopyRight[] VALUES = {
-                    CR_NONE, CR_EXIST, CR_UGC, CR_OTHER,
-            };
+            private static final CopyRight[] VALUES = values();
             private static com.google.protobuf.Internal.EnumLiteMap<CopyRight>
                     internalValueMap =
                     new com.google.protobuf.Internal.EnumLiteMap<CopyRight>() {
@@ -9423,13 +15318,13 @@ public final class KSCMobileAdsProto530 {
 
             public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
-                return Video.getDescriptor().getEnumTypes().get(0);
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.getDescriptor().getEnumTypes().get(0);
             }
 
             public static CopyRight valueOf(
                     com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
                 if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException(
+                    throw new java.lang.IllegalArgumentException(
                             "EnumValueDescriptor is not for this type.");
                 }
                 return VALUES[desc.getIndex()];
@@ -9452,39 +15347,43 @@ public final class KSCMobileAdsProto530 {
             // @@protoc_insertion_point(enum_scope:com.ksc.client.ads.proto.Video.CopyRight)
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.Video}
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements VideoOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.Video)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.VideoOrBuilder {
             private int bitField0_;
-            // optional bytes title = 1;
             private com.google.protobuf.ByteString title_ = com.google.protobuf.ByteString.EMPTY;
-            // optional uint32 content_length = 2;
             private int contentLength_;
-            // optional .com.ksc.client.ads.proto.Video.CopyRight copyright = 3;
-            private CopyRight copyright_ = CopyRight.CR_NONE;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.CopyRight copyright_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.CopyRight.CR_NONE;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.newBuilder()
             private Builder() {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Video_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Video_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Video_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Video_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -9498,7 +15397,7 @@ public final class KSCMobileAdsProto530 {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 contentLength_ = 0;
                 bitField0_ = (bitField0_ & ~0x00000002);
-                copyright_ = CopyRight.CR_NONE;
+                copyright_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.CopyRight.CR_NONE;
                 bitField0_ = (bitField0_ & ~0x00000004);
                 return this;
             }
@@ -9509,33 +15408,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return Video.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Video_descriptor;
             }
 
-            public Video getDefaultInstanceForType() {
-                return Video.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Video getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.getDefaultInstance();
             }
 
-            public Video build() {
-                Video result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Video build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Video result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private Video buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                Video result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public Video buildPartial() {
-                Video result = new Video(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Video buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Video result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.Video(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -9556,16 +15445,16 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof Video) {
-                    return mergeFrom((Video) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.Video) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.Video) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(Video other) {
-                if (other == Video.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.Video other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.getDefaultInstance()) return this;
                 if (other.hasTitle()) {
                     setTitle(other.getTitle());
                 }
@@ -9587,58 +15476,49 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            bitField0_ |= 0x00000001;
-                            title_ = input.readBytes();
-                            break;
-                        }
-                        case 16: {
-                            bitField0_ |= 0x00000002;
-                            contentLength_ = input.readUInt32();
-                            break;
-                        }
-                        case 24: {
-                            int rawValue = input.readEnum();
-                            CopyRight value = CopyRight.valueOf(rawValue);
-                            if (value == null) {
-                                unknownFields.mergeVarintField(3, rawValue);
-                            } else {
-                                bitField0_ |= 0x00000004;
-                                copyright_ = value;
-                            }
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Video parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.Video) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional bytes title = 1;</code>
+             * <p/>
+             * <pre>
+             * 视频标题，UTF-8编码
+             * </pre>
+             */
             public boolean hasTitle() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
+            /**
+             * <code>optional bytes title = 1;</code>
+             * <p/>
+             * <pre>
+             * 视频标题，UTF-8编码
+             * </pre>
+             */
             public com.google.protobuf.ByteString getTitle() {
                 return title_;
             }
 
+            /**
+             * <code>optional bytes title = 1;</code>
+             * <p/>
+             * <pre>
+             * 视频标题，UTF-8编码
+             * </pre>
+             */
             public Builder setTitle(com.google.protobuf.ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
@@ -9649,6 +15529,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional bytes title = 1;</code>
+             * <p/>
+             * <pre>
+             * 视频标题，UTF-8编码
+             * </pre>
+             */
             public Builder clearTitle() {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 title_ = getDefaultInstance().getTitle();
@@ -9656,14 +15543,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 content_length = 2;</code>
+             * <p/>
+             * <pre>
+             * 视频内容长度
+             * </pre>
+             */
             public boolean hasContentLength() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
+            /**
+             * <code>optional uint32 content_length = 2;</code>
+             * <p/>
+             * <pre>
+             * 视频内容长度
+             * </pre>
+             */
             public int getContentLength() {
                 return contentLength_;
             }
 
+            /**
+             * <code>optional uint32 content_length = 2;</code>
+             * <p/>
+             * <pre>
+             * 视频内容长度
+             * </pre>
+             */
             public Builder setContentLength(int value) {
                 bitField0_ |= 0x00000002;
                 contentLength_ = value;
@@ -9671,6 +15579,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 content_length = 2;</code>
+             * <p/>
+             * <pre>
+             * 视频内容长度
+             * </pre>
+             */
             public Builder clearContentLength() {
                 bitField0_ = (bitField0_ & ~0x00000002);
                 contentLength_ = 0;
@@ -9678,15 +15593,36 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video.CopyRight copyright = 3;</code>
+             * <p/>
+             * <pre>
+             * 视频版权信息
+             * </pre>
+             */
             public boolean hasCopyright() {
                 return ((bitField0_ & 0x00000004) == 0x00000004);
             }
 
-            public CopyRight getCopyright() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video.CopyRight copyright = 3;</code>
+             * <p/>
+             * <pre>
+             * 视频版权信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.CopyRight getCopyright() {
                 return copyright_;
             }
 
-            public Builder setCopyright(CopyRight value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video.CopyRight copyright = 3;</code>
+             * <p/>
+             * <pre>
+             * 视频版权信息
+             * </pre>
+             */
+            public Builder setCopyright(com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.CopyRight value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -9696,9 +15632,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Video.CopyRight copyright = 3;</code>
+             * <p/>
+             * <pre>
+             * 视频版权信息
+             * </pre>
+             */
             public Builder clearCopyright() {
                 bitField0_ = (bitField0_ & ~0x00000004);
-                copyright_ = CopyRight.CR_NONE;
+                copyright_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Video.CopyRight.CR_NONE;
                 onChanged();
                 return this;
             }
@@ -9709,42 +15652,124 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.Video)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.MobadsResponse}
+     * <p/>
+     * <pre>
+     * 广告应答结构
+     * </pre>
+     */
     public static final class MobadsResponse extends
-            com.google.protobuf.GeneratedMessage
-            implements MobadsResponseOrBuilder {
-        // optional string request_id = 1;
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.MobadsResponse)
+            MobadsResponseOrBuilder {
         public static final int REQUEST_ID_FIELD_NUMBER = 1;
-        // optional uint64 error_code = 2;
         public static final int ERROR_CODE_FIELD_NUMBER = 2;
-        // repeated .com.ksc.client.ads.proto.Ad ads = 3;
         public static final int ADS_FIELD_NUMBER = 3;
-        // optional uint32 expiration_time = 4;
         public static final int EXPIRATION_TIME_FIELD_NUMBER = 4;
-        // optional double request_time_s = 15;
         public static final int REQUEST_TIME_S_FIELD_NUMBER = 15;
         private static final MobadsResponse defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<MobadsResponse> PARSER =
+                new com.google.protobuf.AbstractParser<MobadsResponse>() {
+                    public MobadsResponse parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new MobadsResponse(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new MobadsResponse(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
-        private Object requestId_;
+        private java.lang.Object requestId_;
         private long errorCode_;
-        private java.util.List<Ad> ads_;
+        private java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad> ads_;
         private int expirationTime_;
         private double requestTimeS_;
         private byte memoizedIsInitialized = -1;
         private int memoizedSerializedSize = -1;
 
         // Use MobadsResponse.newBuilder() to construct.
-        private MobadsResponse(Builder builder) {
+        private MobadsResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
+        }
+        private MobadsResponse(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
 
-        private MobadsResponse(boolean noInit) {
+        private MobadsResponse(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            requestId_ = bs;
+                            break;
+                        }
+                        case 16: {
+                            bitField0_ |= 0x00000002;
+                            errorCode_ = input.readUInt64();
+                            break;
+                        }
+                        case 26: {
+                            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                                ads_ = new java.util.ArrayList<com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad>();
+                                mutable_bitField0_ |= 0x00000004;
+                            }
+                            ads_.add(input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.PARSER, extensionRegistry));
+                            break;
+                        }
+                        case 32: {
+                            bitField0_ |= 0x00000004;
+                            expirationTime_ = input.readUInt32();
+                            break;
+                        }
+                        case 121: {
+                            bitField0_ |= 0x00000008;
+                            requestTimeS_ = input.readDouble();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                    ads_ = java.util.Collections.unmodifiableList(ads_);
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static MobadsResponse getDefaultInstance() {
@@ -9753,90 +15778,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsResponse_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsResponse_descriptor;
         }
 
-        public static MobadsResponse parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static MobadsResponse parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static MobadsResponse parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static MobadsResponse parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static MobadsResponse parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static MobadsResponse parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static MobadsResponse parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static MobadsResponse parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static MobadsResponse parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static MobadsResponse parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(MobadsResponse prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -9844,35 +15855,71 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsResponse_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsResponse_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<MobadsResponse> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional string request_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 对应请求的接入方自定义请求ID
+         * </pre>
+         */
         public boolean hasRequestId() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
-        public String getRequestId() {
-            Object ref = requestId_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string request_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 对应请求的接入方自定义请求ID
+         * </pre>
+         */
+        public java.lang.String getRequestId() {
+            java.lang.Object ref = requestId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     requestId_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getRequestIdBytes() {
-            Object ref = requestId_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string request_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 对应请求的接入方自定义请求ID
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getRequestIdBytes() {
+            java.lang.Object ref = requestId_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 requestId_ = b;
                 return b;
             } else {
@@ -9880,48 +15927,125 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional uint64 error_code = 2;</code>
+         * <p/>
+         * <pre>
+         * 请求响应出错时的错误码，用于问题排查
+         * </pre>
+         */
         public boolean hasErrorCode() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
+        /**
+         * <code>optional uint64 error_code = 2;</code>
+         * <p/>
+         * <pre>
+         * 请求响应出错时的错误码，用于问题排查
+         * </pre>
+         */
         public long getErrorCode() {
             return errorCode_;
         }
 
-        public java.util.List<Ad> getAdsList() {
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+         * <p/>
+         * <pre>
+         * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+         * </pre>
+         */
+        public java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad> getAdsList() {
             return ads_;
         }
 
-        public java.util.List<? extends AdOrBuilder>
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+         * <p/>
+         * <pre>
+         * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+         * </pre>
+         */
+        public java.util.List<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.AdOrBuilder>
         getAdsOrBuilderList() {
             return ads_;
         }
 
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+         * <p/>
+         * <pre>
+         * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+         * </pre>
+         */
         public int getAdsCount() {
             return ads_.size();
         }
 
-        public Ad getAds(int index) {
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+         * <p/>
+         * <pre>
+         * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad getAds(int index) {
             return ads_.get(index);
         }
 
-        public AdOrBuilder getAdsOrBuilder(
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+         * <p/>
+         * <pre>
+         * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.AdOrBuilder getAdsOrBuilder(
                 int index) {
             return ads_.get(index);
         }
 
+        /**
+         * <code>optional uint32 expiration_time = 4;</code>
+         * <p/>
+         * <pre>
+         * 广告清单过期时间戳，单位秒
+         * </pre>
+         */
         public boolean hasExpirationTime() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
+        /**
+         * <code>optional uint32 expiration_time = 4;</code>
+         * <p/>
+         * <pre>
+         * 广告清单过期时间戳，单位秒
+         * </pre>
+         */
         public int getExpirationTime() {
             return expirationTime_;
         }
 
+        /**
+         * <code>optional double request_time_s = 15;</code>
+         * <p/>
+         * <pre>
+         * optional string search_key = 5; // 当次请求生成的唯一表示ID（deprecated）
+         * </pre>
+         */
         public boolean hasRequestTimeS() {
             return ((bitField0_ & 0x00000008) == 0x00000008);
         }
 
+        /**
+         * <code>optional double request_time_s = 15;</code>
+         * <p/>
+         * <pre>
+         * optional string search_key = 5; // 当次请求生成的唯一表示ID（deprecated）
+         * </pre>
+         */
         public double getRequestTimeS() {
             return requestTimeS_;
         }
@@ -9936,7 +16060,8 @@ public final class KSCMobileAdsProto530 {
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -9993,8 +16118,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -10007,29 +16132,32 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.MobadsResponse}
+         * <p/>
+         * <pre>
+         * 广告应答结构
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements MobadsResponseOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.MobadsResponse)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponseOrBuilder {
             private int bitField0_;
-            // optional string request_id = 1;
-            private Object requestId_ = "";
-            // optional uint64 error_code = 2;
+            private java.lang.Object requestId_ = "";
             private long errorCode_;
-            // repeated .com.ksc.client.ads.proto.Ad ads = 3;
-            private java.util.List<Ad> ads_ =
+            private java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad> ads_ =
                     java.util.Collections.emptyList();
             private com.google.protobuf.RepeatedFieldBuilder<
-                    Ad, Ad.Builder, AdOrBuilder> adsBuilder_;
-            // optional uint32 expiration_time = 4;
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad, com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.AdOrBuilder> adsBuilder_;
             private int expirationTime_;
-            // optional double request_time_s = 15;
             private double requestTimeS_;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse.newBuilder()
@@ -10037,23 +16165,26 @@ public final class KSCMobileAdsProto530 {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsResponse_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsResponse_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsResponse_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsResponse_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -10087,33 +16218,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return MobadsResponse.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MobadsResponse_descriptor;
             }
 
-            public MobadsResponse getDefaultInstanceForType() {
-                return MobadsResponse.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse.getDefaultInstance();
             }
 
-            public MobadsResponse build() {
-                MobadsResponse result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private MobadsResponse buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                MobadsResponse result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public MobadsResponse buildPartial() {
-                MobadsResponse result = new MobadsResponse(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -10147,18 +16268,20 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof MobadsResponse) {
-                    return mergeFrom((MobadsResponse) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(MobadsResponse other) {
-                if (other == MobadsResponse.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse.getDefaultInstance()) return this;
                 if (other.hasRequestId()) {
-                    setRequestId(other.getRequestId());
+                    bitField0_ |= 0x00000001;
+                    requestId_ = other.requestId_;
+                    onChanged();
                 }
                 if (other.hasErrorCode()) {
                     setErrorCode(other.getErrorCode());
@@ -10207,77 +16330,62 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            bitField0_ |= 0x00000001;
-                            requestId_ = input.readBytes();
-                            break;
-                        }
-                        case 16: {
-                            bitField0_ |= 0x00000002;
-                            errorCode_ = input.readUInt64();
-                            break;
-                        }
-                        case 26: {
-                            Ad.Builder subBuilder = Ad.newBuilder();
-                            input.readMessage(subBuilder, extensionRegistry);
-                            addAds(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 32: {
-                            bitField0_ |= 0x00000008;
-                            expirationTime_ = input.readUInt32();
-                            break;
-                        }
-                        case 121: {
-                            bitField0_ |= 0x00000010;
-                            requestTimeS_ = input.readDouble();
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.MobadsResponse) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional string request_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 对应请求的接入方自定义请求ID
+             * </pre>
+             */
             public boolean hasRequestId() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
-            public String getRequestId() {
-                Object ref = requestId_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    requestId_ = s;
+            /**
+             * <code>optional string request_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 对应请求的接入方自定义请求ID
+             * </pre>
+             */
+            public java.lang.String getRequestId() {
+                java.lang.Object ref = requestId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        requestId_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setRequestId(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000001;
-                requestId_ = value;
-                onChanged();
-            }
-
-            public Builder setRequestId(String value) {
+            /**
+             * <code>optional string request_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 对应请求的接入方自定义请求ID
+             * </pre>
+             */
+            public Builder setRequestId(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -10287,6 +16395,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string request_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 对应请求的接入方自定义请求ID
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getRequestIdBytes() {
+                java.lang.Object ref = requestId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    requestId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string request_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 对应请求的接入方自定义请求ID
+             * </pre>
+             */
+            public Builder setRequestIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                requestId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string request_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 对应请求的接入方自定义请求ID
+             * </pre>
+             */
             public Builder clearRequestId() {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 requestId_ = getDefaultInstance().getRequestId();
@@ -10294,14 +16448,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint64 error_code = 2;</code>
+             * <p/>
+             * <pre>
+             * 请求响应出错时的错误码，用于问题排查
+             * </pre>
+             */
             public boolean hasErrorCode() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
+            /**
+             * <code>optional uint64 error_code = 2;</code>
+             * <p/>
+             * <pre>
+             * 请求响应出错时的错误码，用于问题排查
+             * </pre>
+             */
             public long getErrorCode() {
                 return errorCode_;
             }
 
+            /**
+             * <code>optional uint64 error_code = 2;</code>
+             * <p/>
+             * <pre>
+             * 请求响应出错时的错误码，用于问题排查
+             * </pre>
+             */
             public Builder setErrorCode(long value) {
                 bitField0_ |= 0x00000002;
                 errorCode_ = value;
@@ -10309,6 +16484,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint64 error_code = 2;</code>
+             * <p/>
+             * <pre>
+             * 请求响应出错时的错误码，用于问题排查
+             * </pre>
+             */
             public Builder clearErrorCode() {
                 bitField0_ = (bitField0_ & ~0x00000002);
                 errorCode_ = 0L;
@@ -10318,12 +16500,19 @@ public final class KSCMobileAdsProto530 {
 
             private void ensureAdsIsMutable() {
                 if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-                    ads_ = new java.util.ArrayList<Ad>(ads_);
+                    ads_ = new java.util.ArrayList<com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad>(ads_);
                     bitField0_ |= 0x00000004;
                 }
             }
 
-            public java.util.List<Ad> getAdsList() {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
+            public java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad> getAdsList() {
                 if (adsBuilder_ == null) {
                     return java.util.Collections.unmodifiableList(ads_);
                 } else {
@@ -10331,6 +16520,13 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
             public int getAdsCount() {
                 if (adsBuilder_ == null) {
                     return ads_.size();
@@ -10339,7 +16535,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Ad getAds(int index) {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad getAds(int index) {
                 if (adsBuilder_ == null) {
                     return ads_.get(index);
                 } else {
@@ -10347,8 +16550,15 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
             public Builder setAds(
-                    int index, Ad value) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad value) {
                 if (adsBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -10362,8 +16572,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
             public Builder setAds(
-                    int index, Ad.Builder builderForValue) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.Builder builderForValue) {
                 if (adsBuilder_ == null) {
                     ensureAdsIsMutable();
                     ads_.set(index, builderForValue.build());
@@ -10374,7 +16591,14 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder addAds(Ad value) {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
+            public Builder addAds(com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad value) {
                 if (adsBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -10388,8 +16612,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
             public Builder addAds(
-                    int index, Ad value) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad value) {
                 if (adsBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -10403,8 +16634,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
             public Builder addAds(
-                    Ad.Builder builderForValue) {
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.Builder builderForValue) {
                 if (adsBuilder_ == null) {
                     ensureAdsIsMutable();
                     ads_.add(builderForValue.build());
@@ -10415,8 +16653,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
             public Builder addAds(
-                    int index, Ad.Builder builderForValue) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.Builder builderForValue) {
                 if (adsBuilder_ == null) {
                     ensureAdsIsMutable();
                     ads_.add(index, builderForValue.build());
@@ -10427,11 +16672,19 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
             public Builder addAllAds(
-                    Iterable<? extends Ad> values) {
+                    java.lang.Iterable<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad> values) {
                 if (adsBuilder_ == null) {
                     ensureAdsIsMutable();
-                    addAll(values, ads_);
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                            values, ads_);
                     onChanged();
                 } else {
                     adsBuilder_.addAllMessages(values);
@@ -10439,6 +16692,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
             public Builder clearAds() {
                 if (adsBuilder_ == null) {
                     ads_ = java.util.Collections.emptyList();
@@ -10450,6 +16710,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
             public Builder removeAds(int index) {
                 if (adsBuilder_ == null) {
                     ensureAdsIsMutable();
@@ -10461,12 +16728,26 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Ad.Builder getAdsBuilder(
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.Builder getAdsBuilder(
                     int index) {
                 return getAdsFieldBuilder().getBuilder(index);
             }
 
-            public AdOrBuilder getAdsOrBuilder(
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.AdOrBuilder getAdsOrBuilder(
                     int index) {
                 if (adsBuilder_ == null) {
                     return ads_.get(index);
@@ -10475,7 +16756,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public java.util.List<? extends AdOrBuilder>
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
+            public java.util.List<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.AdOrBuilder>
             getAdsOrBuilderList() {
                 if (adsBuilder_ != null) {
                     return adsBuilder_.getMessageOrBuilderList();
@@ -10484,28 +16772,49 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Ad.Builder addAdsBuilder() {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.Builder addAdsBuilder() {
                 return getAdsFieldBuilder().addBuilder(
-                        Ad.getDefaultInstance());
+                        com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.getDefaultInstance());
             }
 
-            public Ad.Builder addAdsBuilder(
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.Builder addAdsBuilder(
                     int index) {
                 return getAdsFieldBuilder().addBuilder(
-                        index, Ad.getDefaultInstance());
+                        index, com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.getDefaultInstance());
             }
 
-            public java.util.List<Ad.Builder>
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Ad ads = 3;</code>
+             * <p/>
+             * <pre>
+             * 应答广告清单，一次请求可以返回多个广告，需要逐个解析
+             * </pre>
+             */
+            public java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.Builder>
             getAdsBuilderList() {
                 return getAdsFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilder<
-                    Ad, Ad.Builder, AdOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad, com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.AdOrBuilder>
             getAdsFieldBuilder() {
                 if (adsBuilder_ == null) {
                     adsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                            Ad, Ad.Builder, AdOrBuilder>(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad, com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.AdOrBuilder>(
                             ads_,
                             ((bitField0_ & 0x00000004) == 0x00000004),
                             getParentForChildren(),
@@ -10515,14 +16824,35 @@ public final class KSCMobileAdsProto530 {
                 return adsBuilder_;
             }
 
+            /**
+             * <code>optional uint32 expiration_time = 4;</code>
+             * <p/>
+             * <pre>
+             * 广告清单过期时间戳，单位秒
+             * </pre>
+             */
             public boolean hasExpirationTime() {
                 return ((bitField0_ & 0x00000008) == 0x00000008);
             }
 
+            /**
+             * <code>optional uint32 expiration_time = 4;</code>
+             * <p/>
+             * <pre>
+             * 广告清单过期时间戳，单位秒
+             * </pre>
+             */
             public int getExpirationTime() {
                 return expirationTime_;
             }
 
+            /**
+             * <code>optional uint32 expiration_time = 4;</code>
+             * <p/>
+             * <pre>
+             * 广告清单过期时间戳，单位秒
+             * </pre>
+             */
             public Builder setExpirationTime(int value) {
                 bitField0_ |= 0x00000008;
                 expirationTime_ = value;
@@ -10530,6 +16860,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 expiration_time = 4;</code>
+             * <p/>
+             * <pre>
+             * 广告清单过期时间戳，单位秒
+             * </pre>
+             */
             public Builder clearExpirationTime() {
                 bitField0_ = (bitField0_ & ~0x00000008);
                 expirationTime_ = 0;
@@ -10537,14 +16874,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional double request_time_s = 15;</code>
+             * <p/>
+             * <pre>
+             * optional string search_key = 5; // 当次请求生成的唯一表示ID（deprecated）
+             * </pre>
+             */
             public boolean hasRequestTimeS() {
                 return ((bitField0_ & 0x00000010) == 0x00000010);
             }
 
+            /**
+             * <code>optional double request_time_s = 15;</code>
+             * <p/>
+             * <pre>
+             * optional string search_key = 5; // 当次请求生成的唯一表示ID（deprecated）
+             * </pre>
+             */
             public double getRequestTimeS() {
                 return requestTimeS_;
             }
 
+            /**
+             * <code>optional double request_time_s = 15;</code>
+             * <p/>
+             * <pre>
+             * optional string search_key = 5; // 当次请求生成的唯一表示ID（deprecated）
+             * </pre>
+             */
             public Builder setRequestTimeS(double value) {
                 bitField0_ |= 0x00000010;
                 requestTimeS_ = value;
@@ -10552,6 +16910,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional double request_time_s = 15;</code>
+             * <p/>
+             * <pre>
+             * optional string search_key = 5; // 当次请求生成的唯一表示ID（deprecated）
+             * </pre>
+             */
             public Builder clearRequestTimeS() {
                 bitField0_ = (bitField0_ & ~0x00000010);
                 requestTimeS_ = 0D;
@@ -10565,21 +16930,40 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.MobadsResponse)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.MetaIndex}
+     * <p/>
+     * <pre>
+     * 广告元数据组索引结构
+     * 一条广告可能包含多个物料元信息,我们统称这些元信息为广告元数据组
+     * 返回广告时，total_num表明当前广告包含的物料元数据个数，current_index表明当前的物料元数据在元数据组中的索引
+     * 请求多个广告返回时，ad_key唯一标识一个广告元数据组(一个广告)，MetaIndex标识一个元数据组中的每个元数据信息
+     * </pre>
+     */
     public static final class MetaIndex extends
-            com.google.protobuf.GeneratedMessage
-            implements MetaIndexOrBuilder {
-        // optional uint32 total_num = 1;
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.MetaIndex)
+            MetaIndexOrBuilder {
         public static final int TOTAL_NUM_FIELD_NUMBER = 1;
-        // optional uint32 current_index = 2;
         public static final int CURRENT_INDEX_FIELD_NUMBER = 2;
         private static final MetaIndex defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<MetaIndex> PARSER =
+                new com.google.protobuf.AbstractParser<MetaIndex>() {
+                    public MetaIndex parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new MetaIndex(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new MetaIndex(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
         private int totalNum_;
         private int currentIndex_;
@@ -10587,11 +16971,58 @@ public final class KSCMobileAdsProto530 {
         private int memoizedSerializedSize = -1;
 
         // Use MetaIndex.newBuilder() to construct.
-        private MetaIndex(Builder builder) {
+        private MetaIndex(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
+        }
+        private MetaIndex(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
 
-        private MetaIndex(boolean noInit) {
+        private MetaIndex(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+                            bitField0_ |= 0x00000001;
+                            totalNum_ = input.readUInt32();
+                            break;
+                        }
+                        case 16: {
+                            bitField0_ |= 0x00000002;
+                            currentIndex_ = input.readUInt32();
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static MetaIndex getDefaultInstance() {
@@ -10600,90 +17031,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MetaIndex_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MetaIndex_descriptor;
         }
 
-        public static MetaIndex parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static MetaIndex parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static MetaIndex parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static MetaIndex parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static MetaIndex parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static MetaIndex parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static MetaIndex parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static MetaIndex parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static MetaIndex parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static MetaIndex parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(MetaIndex prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -10691,23 +17108,64 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MetaIndex_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MetaIndex_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<MetaIndex> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional uint32 total_num = 1;</code>
+         * <p/>
+         * <pre>
+         * 每条广告对应元素组中元数据个数
+         * </pre>
+         */
         public boolean hasTotalNum() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
+        /**
+         * <code>optional uint32 total_num = 1;</code>
+         * <p/>
+         * <pre>
+         * 每条广告对应元素组中元数据个数
+         * </pre>
+         */
         public int getTotalNum() {
             return totalNum_;
         }
 
+        /**
+         * <code>optional uint32 current_index = 2;</code>
+         * <p/>
+         * <pre>
+         * 当前元数据所在索引
+         * </pre>
+         */
         public boolean hasCurrentIndex() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
+        /**
+         * <code>optional uint32 current_index = 2;</code>
+         * <p/>
+         * <pre>
+         * 当前元数据所在索引
+         * </pre>
+         */
         public int getCurrentIndex() {
             return currentIndex_;
         }
@@ -10719,7 +17177,8 @@ public final class KSCMobileAdsProto530 {
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -10755,8 +17214,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -10769,20 +17228,29 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.MetaIndex}
+         * <p/>
+         * <pre>
+         * 广告元数据组索引结构
+         * 一条广告可能包含多个物料元信息,我们统称这些元信息为广告元数据组
+         * 返回广告时，total_num表明当前广告包含的物料元数据个数，current_index表明当前的物料元数据在元数据组中的索引
+         * 请求多个广告返回时，ad_key唯一标识一个广告元数据组(一个广告)，MetaIndex标识一个元数据组中的每个元数据信息
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements MetaIndexOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.MetaIndex)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndexOrBuilder {
             private int bitField0_;
-            // optional uint32 total_num = 1;
             private int totalNum_;
-            // optional uint32 current_index = 2;
             private int currentIndex_;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.newBuilder()
@@ -10790,23 +17258,26 @@ public final class KSCMobileAdsProto530 {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MetaIndex_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MetaIndex_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MetaIndex_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MetaIndex_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -10829,33 +17300,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return MetaIndex.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MetaIndex_descriptor;
             }
 
-            public MetaIndex getDefaultInstanceForType() {
-                return MetaIndex.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.getDefaultInstance();
             }
 
-            public MetaIndex build() {
-                MetaIndex result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private MetaIndex buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                MetaIndex result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public MetaIndex buildPartial() {
-                MetaIndex result = new MetaIndex(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -10872,16 +17333,16 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof MetaIndex) {
-                    return mergeFrom((MetaIndex) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(MetaIndex other) {
-                if (other == MetaIndex.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.getDefaultInstance()) return this;
                 if (other.hasTotalNum()) {
                     setTotalNum(other.getTotalNum());
                 }
@@ -10900,47 +17361,49 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 8: {
-                            bitField0_ |= 0x00000001;
-                            totalNum_ = input.readUInt32();
-                            break;
-                        }
-                        case 16: {
-                            bitField0_ |= 0x00000002;
-                            currentIndex_ = input.readUInt32();
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional uint32 total_num = 1;</code>
+             * <p/>
+             * <pre>
+             * 每条广告对应元素组中元数据个数
+             * </pre>
+             */
             public boolean hasTotalNum() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
+            /**
+             * <code>optional uint32 total_num = 1;</code>
+             * <p/>
+             * <pre>
+             * 每条广告对应元素组中元数据个数
+             * </pre>
+             */
             public int getTotalNum() {
                 return totalNum_;
             }
 
+            /**
+             * <code>optional uint32 total_num = 1;</code>
+             * <p/>
+             * <pre>
+             * 每条广告对应元素组中元数据个数
+             * </pre>
+             */
             public Builder setTotalNum(int value) {
                 bitField0_ |= 0x00000001;
                 totalNum_ = value;
@@ -10948,6 +17411,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 total_num = 1;</code>
+             * <p/>
+             * <pre>
+             * 每条广告对应元素组中元数据个数
+             * </pre>
+             */
             public Builder clearTotalNum() {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 totalNum_ = 0;
@@ -10955,14 +17425,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 current_index = 2;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据所在索引
+             * </pre>
+             */
             public boolean hasCurrentIndex() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
+            /**
+             * <code>optional uint32 current_index = 2;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据所在索引
+             * </pre>
+             */
             public int getCurrentIndex() {
                 return currentIndex_;
             }
 
+            /**
+             * <code>optional uint32 current_index = 2;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据所在索引
+             * </pre>
+             */
             public Builder setCurrentIndex(int value) {
                 bitField0_ |= 0x00000002;
                 currentIndex_ = value;
@@ -10970,6 +17461,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 current_index = 2;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据所在索引
+             * </pre>
+             */
             public Builder clearCurrentIndex() {
                 bitField0_ = (bitField0_ & ~0x00000002);
                 currentIndex_ = 0;
@@ -10983,42 +17481,131 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.MetaIndex)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.Ad}
+     * <p/>
+     * <pre>
+     * 广告信息
+     * </pre>
+     */
     public static final class Ad extends
-            com.google.protobuf.GeneratedMessage
-            implements AdOrBuilder {
-        // optional string adslot_id = 1;
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.Ad)
+            AdOrBuilder {
         public static final int ADSLOT_ID_FIELD_NUMBER = 1;
-        // optional string ad_key = 4;
         public static final int AD_KEY_FIELD_NUMBER = 4;
-        // repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;
         public static final int META_GROUP_FIELD_NUMBER = 6;
-        // optional bytes html_snippet = 2;
         public static final int HTML_SNIPPET_FIELD_NUMBER = 2;
-        // repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;
         public static final int AD_TRACKING_FIELD_NUMBER = 5;
         private static final Ad defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<Ad> PARSER =
+                new com.google.protobuf.AbstractParser<Ad>() {
+                    public Ad parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new Ad(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new Ad(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
-        private Object adslotId_;
-        private Object adKey_;
-        private java.util.List<MaterialMeta> metaGroup_;
+        private java.lang.Object adslotId_;
+        private java.lang.Object adKey_;
+        private java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta> metaGroup_;
         private com.google.protobuf.ByteString htmlSnippet_;
-        private java.util.List<Tracking> adTracking_;
+        private java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking> adTracking_;
         private byte memoizedIsInitialized = -1;
         private int memoizedSerializedSize = -1;
 
         // Use Ad.newBuilder() to construct.
-        private Ad(Builder builder) {
+        private Ad(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
+        }
+        private Ad(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
         }
 
-        private Ad(boolean noInit) {
+        private Ad(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 10: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000001;
+                            adslotId_ = bs;
+                            break;
+                        }
+                        case 18: {
+                            bitField0_ |= 0x00000004;
+                            htmlSnippet_ = input.readBytes();
+                            break;
+                        }
+                        case 34: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000002;
+                            adKey_ = bs;
+                            break;
+                        }
+                        case 42: {
+                            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                                adTracking_ = new java.util.ArrayList<com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking>();
+                                mutable_bitField0_ |= 0x00000010;
+                            }
+                            adTracking_.add(input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.PARSER, extensionRegistry));
+                            break;
+                        }
+                        case 50: {
+                            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                                metaGroup_ = new java.util.ArrayList<com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta>();
+                                mutable_bitField0_ |= 0x00000004;
+                            }
+                            metaGroup_.add(input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.PARSER, extensionRegistry));
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                    adTracking_ = java.util.Collections.unmodifiableList(adTracking_);
+                }
+                if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                    metaGroup_ = java.util.Collections.unmodifiableList(metaGroup_);
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static Ad getDefaultInstance() {
@@ -11027,90 +17614,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Ad_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Ad_descriptor;
         }
 
-        public static Ad parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Ad parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Ad parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Ad parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Ad parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Ad parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static Ad parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static Ad parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static Ad parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Ad parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(Ad prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -11118,35 +17691,71 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Ad_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Ad_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Ad> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional string adslot_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 对应请求时填写的广告位ID
+         * </pre>
+         */
         public boolean hasAdslotId() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
-        public String getAdslotId() {
-            Object ref = adslotId_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string adslot_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 对应请求时填写的广告位ID
+         * </pre>
+         */
+        public java.lang.String getAdslotId() {
+            java.lang.Object ref = adslotId_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     adslotId_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getAdslotIdBytes() {
-            Object ref = adslotId_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string adslot_id = 1;</code>
+         * <p/>
+         * <pre>
+         * 对应请求时填写的广告位ID
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getAdslotIdBytes() {
+            java.lang.Object ref = adslotId_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 adslotId_ = b;
                 return b;
             } else {
@@ -11154,30 +17763,53 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional string ad_key = 4;</code>
+         * <p/>
+         * <pre>
+         * 对当前返回广告的签名，可以唯一标识广告
+         * </pre>
+         */
         public boolean hasAdKey() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
-        public String getAdKey() {
-            Object ref = adKey_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string ad_key = 4;</code>
+         * <p/>
+         * <pre>
+         * 对当前返回广告的签名，可以唯一标识广告
+         * </pre>
+         */
+        public java.lang.String getAdKey() {
+            java.lang.Object ref = adKey_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     adKey_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getAdKeyBytes() {
-            Object ref = adKey_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string ad_key = 4;</code>
+         * <p/>
+         * <pre>
+         * 对当前返回广告的签名，可以唯一标识广告
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getAdKeyBytes() {
+            java.lang.Object ref = adKey_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 adKey_ = b;
                 return b;
             } else {
@@ -11185,54 +17817,138 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
-        public java.util.List<MaterialMeta> getMetaGroupList() {
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+         * <p/>
+         * <pre>
+         * 物料元数据组，在一个广告中含有多个物料元信息时使用
+         * </pre>
+         */
+        public java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta> getMetaGroupList() {
             return metaGroup_;
         }
 
-        public java.util.List<? extends MaterialMetaOrBuilder>
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+         * <p/>
+         * <pre>
+         * 物料元数据组，在一个广告中含有多个物料元信息时使用
+         * </pre>
+         */
+        public java.util.List<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMetaOrBuilder>
         getMetaGroupOrBuilderList() {
             return metaGroup_;
         }
 
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+         * <p/>
+         * <pre>
+         * 物料元数据组，在一个广告中含有多个物料元信息时使用
+         * </pre>
+         */
         public int getMetaGroupCount() {
             return metaGroup_.size();
         }
 
-        public MaterialMeta getMetaGroup(int index) {
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+         * <p/>
+         * <pre>
+         * 物料元数据组，在一个广告中含有多个物料元信息时使用
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta getMetaGroup(int index) {
             return metaGroup_.get(index);
         }
 
-        public MaterialMetaOrBuilder getMetaGroupOrBuilder(
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+         * <p/>
+         * <pre>
+         * 物料元数据组，在一个广告中含有多个物料元信息时使用
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMetaOrBuilder getMetaGroupOrBuilder(
                 int index) {
             return metaGroup_.get(index);
         }
 
+        /**
+         * <code>optional bytes html_snippet = 2;</code>
+         * <p/>
+         * <pre>
+         *    optional MaterialMeta material_meta = 3;  // [deprecated]物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
+         * </pre>
+         */
         public boolean hasHtmlSnippet() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
+        /**
+         * <code>optional bytes html_snippet = 2;</code>
+         * <p/>
+         * <pre>
+         *    optional MaterialMeta material_meta = 3;  // [deprecated]物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
+         * </pre>
+         */
         public com.google.protobuf.ByteString getHtmlSnippet() {
             return htmlSnippet_;
         }
 
-        public java.util.List<Tracking> getAdTrackingList() {
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告监控信息
+         * </pre>
+         */
+        public java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking> getAdTrackingList() {
             return adTracking_;
         }
 
-        public java.util.List<? extends TrackingOrBuilder>
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告监控信息
+         * </pre>
+         */
+        public java.util.List<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.TrackingOrBuilder>
         getAdTrackingOrBuilderList() {
             return adTracking_;
         }
 
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告监控信息
+         * </pre>
+         */
         public int getAdTrackingCount() {
             return adTracking_.size();
         }
 
-        public Tracking getAdTracking(int index) {
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告监控信息
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking getAdTracking(int index) {
             return adTracking_.get(index);
         }
 
-        public TrackingOrBuilder getAdTrackingOrBuilder(
+        /**
+         * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+         * <p/>
+         * <pre>
+         * 广告监控信息
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.TrackingOrBuilder getAdTrackingOrBuilder(
                 int index) {
             return adTracking_.get(index);
         }
@@ -11247,7 +17963,8 @@ public final class KSCMobileAdsProto530 {
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -11304,8 +18021,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -11318,56 +18035,62 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.Ad}
+         * <p/>
+         * <pre>
+         * 广告信息
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements AdOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.Ad)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.AdOrBuilder {
             private int bitField0_;
-            // optional string adslot_id = 1;
-            private Object adslotId_ = "";
-            // optional string ad_key = 4;
-            private Object adKey_ = "";
-            // repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;
-            private java.util.List<MaterialMeta> metaGroup_ =
+            private java.lang.Object adslotId_ = "";
+            private java.lang.Object adKey_ = "";
+            private java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta> metaGroup_ =
                     java.util.Collections.emptyList();
             private com.google.protobuf.RepeatedFieldBuilder<
-                    MaterialMeta, MaterialMeta.Builder, MaterialMetaOrBuilder> metaGroupBuilder_;
-            // optional bytes html_snippet = 2;
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMetaOrBuilder> metaGroupBuilder_;
             private com.google.protobuf.ByteString htmlSnippet_ = com.google.protobuf.ByteString.EMPTY;
-            // repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;
-            private java.util.List<Tracking> adTracking_ =
+            private java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking> adTracking_ =
                     java.util.Collections.emptyList();
             private com.google.protobuf.RepeatedFieldBuilder<
-                    Tracking, Tracking.Builder, TrackingOrBuilder> adTrackingBuilder_;
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking, com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.TrackingOrBuilder> adTrackingBuilder_;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.newBuilder()
             private Builder() {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Ad_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Ad_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Ad_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Ad_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -11406,33 +18129,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return Ad.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Ad_descriptor;
             }
 
-            public Ad getDefaultInstanceForType() {
-                return Ad.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.getDefaultInstance();
             }
 
-            public Ad build() {
-                Ad result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private Ad buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                Ad result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public Ad buildPartial() {
-                Ad result = new Ad(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -11471,21 +18184,25 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof Ad) {
-                    return mergeFrom((Ad) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(Ad other) {
-                if (other == Ad.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad.getDefaultInstance()) return this;
                 if (other.hasAdslotId()) {
-                    setAdslotId(other.getAdslotId());
+                    bitField0_ |= 0x00000001;
+                    adslotId_ = other.adslotId_;
+                    onChanged();
                 }
                 if (other.hasAdKey()) {
-                    setAdKey(other.getAdKey());
+                    bitField0_ |= 0x00000002;
+                    adKey_ = other.adKey_;
+                    onChanged();
                 }
                 if (metaGroupBuilder_ == null) {
                     if (!other.metaGroup_.isEmpty()) {
@@ -11554,78 +18271,62 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 10: {
-                            bitField0_ |= 0x00000001;
-                            adslotId_ = input.readBytes();
-                            break;
-                        }
-                        case 18: {
-                            bitField0_ |= 0x00000008;
-                            htmlSnippet_ = input.readBytes();
-                            break;
-                        }
-                        case 34: {
-                            bitField0_ |= 0x00000002;
-                            adKey_ = input.readBytes();
-                            break;
-                        }
-                        case 42: {
-                            Tracking.Builder subBuilder = Tracking.newBuilder();
-                            input.readMessage(subBuilder, extensionRegistry);
-                            addAdTracking(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 50: {
-                            MaterialMeta.Builder subBuilder = MaterialMeta.newBuilder();
-                            input.readMessage(subBuilder, extensionRegistry);
-                            addMetaGroup(subBuilder.buildPartial());
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.Ad) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional string adslot_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 对应请求时填写的广告位ID
+             * </pre>
+             */
             public boolean hasAdslotId() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
-            public String getAdslotId() {
-                Object ref = adslotId_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    adslotId_ = s;
+            /**
+             * <code>optional string adslot_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 对应请求时填写的广告位ID
+             * </pre>
+             */
+            public java.lang.String getAdslotId() {
+                java.lang.Object ref = adslotId_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        adslotId_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setAdslotId(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000001;
-                adslotId_ = value;
-                onChanged();
-            }
-
-            public Builder setAdslotId(String value) {
+            /**
+             * <code>optional string adslot_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 对应请求时填写的广告位ID
+             * </pre>
+             */
+            public Builder setAdslotId(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -11635,6 +18336,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string adslot_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 对应请求时填写的广告位ID
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getAdslotIdBytes() {
+                java.lang.Object ref = adslotId_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    adslotId_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string adslot_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 对应请求时填写的广告位ID
+             * </pre>
+             */
+            public Builder setAdslotIdBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000001;
+                adslotId_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string adslot_id = 1;</code>
+             * <p/>
+             * <pre>
+             * 对应请求时填写的广告位ID
+             * </pre>
+             */
             public Builder clearAdslotId() {
                 bitField0_ = (bitField0_ & ~0x00000001);
                 adslotId_ = getDefaultInstance().getAdslotId();
@@ -11642,28 +18389,48 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string ad_key = 4;</code>
+             * <p/>
+             * <pre>
+             * 对当前返回广告的签名，可以唯一标识广告
+             * </pre>
+             */
             public boolean hasAdKey() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
-            public String getAdKey() {
-                Object ref = adKey_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    adKey_ = s;
+            /**
+             * <code>optional string ad_key = 4;</code>
+             * <p/>
+             * <pre>
+             * 对当前返回广告的签名，可以唯一标识广告
+             * </pre>
+             */
+            public java.lang.String getAdKey() {
+                java.lang.Object ref = adKey_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        adKey_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setAdKey(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000002;
-                adKey_ = value;
-                onChanged();
-            }
-
-            public Builder setAdKey(String value) {
+            /**
+             * <code>optional string ad_key = 4;</code>
+             * <p/>
+             * <pre>
+             * 对当前返回广告的签名，可以唯一标识广告
+             * </pre>
+             */
+            public Builder setAdKey(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -11673,6 +18440,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string ad_key = 4;</code>
+             * <p/>
+             * <pre>
+             * 对当前返回广告的签名，可以唯一标识广告
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getAdKeyBytes() {
+                java.lang.Object ref = adKey_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    adKey_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string ad_key = 4;</code>
+             * <p/>
+             * <pre>
+             * 对当前返回广告的签名，可以唯一标识广告
+             * </pre>
+             */
+            public Builder setAdKeyBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000002;
+                adKey_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string ad_key = 4;</code>
+             * <p/>
+             * <pre>
+             * 对当前返回广告的签名，可以唯一标识广告
+             * </pre>
+             */
             public Builder clearAdKey() {
                 bitField0_ = (bitField0_ & ~0x00000002);
                 adKey_ = getDefaultInstance().getAdKey();
@@ -11682,12 +18495,19 @@ public final class KSCMobileAdsProto530 {
 
             private void ensureMetaGroupIsMutable() {
                 if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-                    metaGroup_ = new java.util.ArrayList<MaterialMeta>(metaGroup_);
+                    metaGroup_ = new java.util.ArrayList<com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta>(metaGroup_);
                     bitField0_ |= 0x00000004;
                 }
             }
 
-            public java.util.List<MaterialMeta> getMetaGroupList() {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
+            public java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta> getMetaGroupList() {
                 if (metaGroupBuilder_ == null) {
                     return java.util.Collections.unmodifiableList(metaGroup_);
                 } else {
@@ -11695,6 +18515,13 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
             public int getMetaGroupCount() {
                 if (metaGroupBuilder_ == null) {
                     return metaGroup_.size();
@@ -11703,7 +18530,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public MaterialMeta getMetaGroup(int index) {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta getMetaGroup(int index) {
                 if (metaGroupBuilder_ == null) {
                     return metaGroup_.get(index);
                 } else {
@@ -11711,8 +18545,15 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
             public Builder setMetaGroup(
-                    int index, MaterialMeta value) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta value) {
                 if (metaGroupBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -11726,8 +18567,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
             public Builder setMetaGroup(
-                    int index, MaterialMeta.Builder builderForValue) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.Builder builderForValue) {
                 if (metaGroupBuilder_ == null) {
                     ensureMetaGroupIsMutable();
                     metaGroup_.set(index, builderForValue.build());
@@ -11738,7 +18586,14 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder addMetaGroup(MaterialMeta value) {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
+            public Builder addMetaGroup(com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta value) {
                 if (metaGroupBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -11752,8 +18607,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
             public Builder addMetaGroup(
-                    int index, MaterialMeta value) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta value) {
                 if (metaGroupBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -11767,8 +18629,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
             public Builder addMetaGroup(
-                    MaterialMeta.Builder builderForValue) {
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.Builder builderForValue) {
                 if (metaGroupBuilder_ == null) {
                     ensureMetaGroupIsMutable();
                     metaGroup_.add(builderForValue.build());
@@ -11779,8 +18648,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
             public Builder addMetaGroup(
-                    int index, MaterialMeta.Builder builderForValue) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.Builder builderForValue) {
                 if (metaGroupBuilder_ == null) {
                     ensureMetaGroupIsMutable();
                     metaGroup_.add(index, builderForValue.build());
@@ -11791,11 +18667,19 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
             public Builder addAllMetaGroup(
-                    Iterable<? extends MaterialMeta> values) {
+                    java.lang.Iterable<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta> values) {
                 if (metaGroupBuilder_ == null) {
                     ensureMetaGroupIsMutable();
-                    addAll(values, metaGroup_);
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                            values, metaGroup_);
                     onChanged();
                 } else {
                     metaGroupBuilder_.addAllMessages(values);
@@ -11803,6 +18687,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
             public Builder clearMetaGroup() {
                 if (metaGroupBuilder_ == null) {
                     metaGroup_ = java.util.Collections.emptyList();
@@ -11814,6 +18705,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
             public Builder removeMetaGroup(int index) {
                 if (metaGroupBuilder_ == null) {
                     ensureMetaGroupIsMutable();
@@ -11825,12 +18723,26 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public MaterialMeta.Builder getMetaGroupBuilder(
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.Builder getMetaGroupBuilder(
                     int index) {
                 return getMetaGroupFieldBuilder().getBuilder(index);
             }
 
-            public MaterialMetaOrBuilder getMetaGroupOrBuilder(
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMetaOrBuilder getMetaGroupOrBuilder(
                     int index) {
                 if (metaGroupBuilder_ == null) {
                     return metaGroup_.get(index);
@@ -11839,7 +18751,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public java.util.List<? extends MaterialMetaOrBuilder>
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
+            public java.util.List<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMetaOrBuilder>
             getMetaGroupOrBuilderList() {
                 if (metaGroupBuilder_ != null) {
                     return metaGroupBuilder_.getMessageOrBuilderList();
@@ -11848,28 +18767,49 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public MaterialMeta.Builder addMetaGroupBuilder() {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.Builder addMetaGroupBuilder() {
                 return getMetaGroupFieldBuilder().addBuilder(
-                        MaterialMeta.getDefaultInstance());
+                        com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.getDefaultInstance());
             }
 
-            public MaterialMeta.Builder addMetaGroupBuilder(
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.Builder addMetaGroupBuilder(
                     int index) {
                 return getMetaGroupFieldBuilder().addBuilder(
-                        index, MaterialMeta.getDefaultInstance());
+                        index, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.getDefaultInstance());
             }
 
-            public java.util.List<MaterialMeta.Builder>
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.MaterialMeta meta_group = 6;</code>
+             * <p/>
+             * <pre>
+             * 物料元数据组，在一个广告中含有多个物料元信息时使用
+             * </pre>
+             */
+            public java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.Builder>
             getMetaGroupBuilderList() {
                 return getMetaGroupFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilder<
-                    MaterialMeta, MaterialMeta.Builder, MaterialMetaOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMetaOrBuilder>
             getMetaGroupFieldBuilder() {
                 if (metaGroupBuilder_ == null) {
                     metaGroupBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                            MaterialMeta, MaterialMeta.Builder, MaterialMetaOrBuilder>(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMetaOrBuilder>(
                             metaGroup_,
                             ((bitField0_ & 0x00000004) == 0x00000004),
                             getParentForChildren(),
@@ -11879,14 +18819,35 @@ public final class KSCMobileAdsProto530 {
                 return metaGroupBuilder_;
             }
 
+            /**
+             * <code>optional bytes html_snippet = 2;</code>
+             * <p/>
+             * <pre>
+             *    optional MaterialMeta material_meta = 3;  // [deprecated]物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
+             * </pre>
+             */
             public boolean hasHtmlSnippet() {
                 return ((bitField0_ & 0x00000008) == 0x00000008);
             }
 
+            /**
+             * <code>optional bytes html_snippet = 2;</code>
+             * <p/>
+             * <pre>
+             *    optional MaterialMeta material_meta = 3;  // [deprecated]物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
+             * </pre>
+             */
             public com.google.protobuf.ByteString getHtmlSnippet() {
                 return htmlSnippet_;
             }
 
+            /**
+             * <code>optional bytes html_snippet = 2;</code>
+             * <p/>
+             * <pre>
+             *    optional MaterialMeta material_meta = 3;  // [deprecated]物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
+             * </pre>
+             */
             public Builder setHtmlSnippet(com.google.protobuf.ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
@@ -11897,6 +18858,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional bytes html_snippet = 2;</code>
+             * <p/>
+             * <pre>
+             *    optional MaterialMeta material_meta = 3;  // [deprecated]物料元数据，在MSSP设置广告位返回创意元数据时使用此字段
+             * </pre>
+             */
             public Builder clearHtmlSnippet() {
                 bitField0_ = (bitField0_ & ~0x00000008);
                 htmlSnippet_ = getDefaultInstance().getHtmlSnippet();
@@ -11906,12 +18874,19 @@ public final class KSCMobileAdsProto530 {
 
             private void ensureAdTrackingIsMutable() {
                 if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-                    adTracking_ = new java.util.ArrayList<Tracking>(adTracking_);
+                    adTracking_ = new java.util.ArrayList<com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking>(adTracking_);
                     bitField0_ |= 0x00000010;
                 }
             }
 
-            public java.util.List<Tracking> getAdTrackingList() {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
+            public java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking> getAdTrackingList() {
                 if (adTrackingBuilder_ == null) {
                     return java.util.Collections.unmodifiableList(adTracking_);
                 } else {
@@ -11919,6 +18894,13 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
             public int getAdTrackingCount() {
                 if (adTrackingBuilder_ == null) {
                     return adTracking_.size();
@@ -11927,7 +18909,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Tracking getAdTracking(int index) {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking getAdTracking(int index) {
                 if (adTrackingBuilder_ == null) {
                     return adTracking_.get(index);
                 } else {
@@ -11935,8 +18924,15 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
             public Builder setAdTracking(
-                    int index, Tracking value) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking value) {
                 if (adTrackingBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -11950,8 +18946,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
             public Builder setAdTracking(
-                    int index, Tracking.Builder builderForValue) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.Builder builderForValue) {
                 if (adTrackingBuilder_ == null) {
                     ensureAdTrackingIsMutable();
                     adTracking_.set(index, builderForValue.build());
@@ -11962,7 +18965,14 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder addAdTracking(Tracking value) {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
+            public Builder addAdTracking(com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking value) {
                 if (adTrackingBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -11976,8 +18986,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
             public Builder addAdTracking(
-                    int index, Tracking value) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking value) {
                 if (adTrackingBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -11991,8 +19008,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
             public Builder addAdTracking(
-                    Tracking.Builder builderForValue) {
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.Builder builderForValue) {
                 if (adTrackingBuilder_ == null) {
                     ensureAdTrackingIsMutable();
                     adTracking_.add(builderForValue.build());
@@ -12003,8 +19027,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
             public Builder addAdTracking(
-                    int index, Tracking.Builder builderForValue) {
+                    int index, com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.Builder builderForValue) {
                 if (adTrackingBuilder_ == null) {
                     ensureAdTrackingIsMutable();
                     adTracking_.add(index, builderForValue.build());
@@ -12015,11 +19046,19 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
             public Builder addAllAdTracking(
-                    Iterable<? extends Tracking> values) {
+                    java.lang.Iterable<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking> values) {
                 if (adTrackingBuilder_ == null) {
                     ensureAdTrackingIsMutable();
-                    addAll(values, adTracking_);
+                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                            values, adTracking_);
                     onChanged();
                 } else {
                     adTrackingBuilder_.addAllMessages(values);
@@ -12027,6 +19066,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
             public Builder clearAdTracking() {
                 if (adTrackingBuilder_ == null) {
                     adTracking_ = java.util.Collections.emptyList();
@@ -12038,6 +19084,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
             public Builder removeAdTracking(int index) {
                 if (adTrackingBuilder_ == null) {
                     ensureAdTrackingIsMutable();
@@ -12049,12 +19102,26 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Tracking.Builder getAdTrackingBuilder(
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.Builder getAdTrackingBuilder(
                     int index) {
                 return getAdTrackingFieldBuilder().getBuilder(index);
             }
 
-            public TrackingOrBuilder getAdTrackingOrBuilder(
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.TrackingOrBuilder getAdTrackingOrBuilder(
                     int index) {
                 if (adTrackingBuilder_ == null) {
                     return adTracking_.get(index);
@@ -12063,7 +19130,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public java.util.List<? extends TrackingOrBuilder>
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
+            public java.util.List<? extends com.ksc.client.ads.proto.KSCMobileAdsProto530.TrackingOrBuilder>
             getAdTrackingOrBuilderList() {
                 if (adTrackingBuilder_ != null) {
                     return adTrackingBuilder_.getMessageOrBuilderList();
@@ -12072,28 +19146,49 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Tracking.Builder addAdTrackingBuilder() {
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.Builder addAdTrackingBuilder() {
                 return getAdTrackingFieldBuilder().addBuilder(
-                        Tracking.getDefaultInstance());
+                        com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.getDefaultInstance());
             }
 
-            public Tracking.Builder addAdTrackingBuilder(
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.Builder addAdTrackingBuilder(
                     int index) {
                 return getAdTrackingFieldBuilder().addBuilder(
-                        index, Tracking.getDefaultInstance());
+                        index, com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.getDefaultInstance());
             }
 
-            public java.util.List<Tracking.Builder>
+            /**
+             * <code>repeated .com.ksc.client.ads.proto.Tracking ad_tracking = 5;</code>
+             * <p/>
+             * <pre>
+             * 广告监控信息
+             * </pre>
+             */
+            public java.util.List<com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.Builder>
             getAdTrackingBuilderList() {
                 return getAdTrackingFieldBuilder().getBuilderList();
             }
 
             private com.google.protobuf.RepeatedFieldBuilder<
-                    Tracking, Tracking.Builder, TrackingOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking, com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.TrackingOrBuilder>
             getAdTrackingFieldBuilder() {
                 if (adTrackingBuilder_ == null) {
                     adTrackingBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                            Tracking, Tracking.Builder, TrackingOrBuilder>(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking, com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.TrackingOrBuilder>(
                             adTracking_,
                             ((bitField0_ & 0x00000010) == 0x00000010),
                             getParentForChildren(),
@@ -12109,75 +19204,246 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.Ad)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.MaterialMeta}
+     * <p/>
+     * <pre>
+     * 广告物料元数据信息
+     * </pre>
+     */
     public static final class MaterialMeta extends
-            com.google.protobuf.GeneratedMessage
-            implements MaterialMetaOrBuilder {
-        // optional .com.ksc.client.ads.proto.MaterialMeta.CreativeType creative_type = 1;
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.MaterialMeta)
+            MaterialMetaOrBuilder {
         public static final int CREATIVE_TYPE_FIELD_NUMBER = 1;
-        // optional .com.ksc.client.ads.proto.MaterialMeta.InteractionType interaction_type = 2;
         public static final int INTERACTION_TYPE_FIELD_NUMBER = 2;
-        // repeated string win_notice_url = 3;
         public static final int WIN_NOTICE_URL_FIELD_NUMBER = 3;
-        // optional string click_url = 4;
         public static final int CLICK_URL_FIELD_NUMBER = 4;
-        // optional bytes title = 5;
         public static final int TITLE_FIELD_NUMBER = 5;
-        // optional string brand_name = 16;
         public static final int BRAND_NAME_FIELD_NUMBER = 16;
-        // repeated bytes description = 6;
         public static final int DESCRIPTION_FIELD_NUMBER = 6;
-        // repeated string icon_src = 7;
         public static final int ICON_SRC_FIELD_NUMBER = 7;
-        // repeated string image_src = 8;
         public static final int IMAGE_SRC_FIELD_NUMBER = 8;
-        // optional string app_package = 9;
         public static final int APP_PACKAGE_FIELD_NUMBER = 9;
-        // optional uint32 app_size = 10;
         public static final int APP_SIZE_FIELD_NUMBER = 10;
-        // optional string video_url = 11;
         public static final int VIDEO_URL_FIELD_NUMBER = 11;
-        // optional uint32 video_duration = 12;
         public static final int VIDEO_DURATION_FIELD_NUMBER = 12;
-        // optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;
         public static final int META_INDEX_FIELD_NUMBER = 13;
-        // optional uint32 material_width = 14;
         public static final int MATERIAL_WIDTH_FIELD_NUMBER = 14;
-        // optional uint32 material_height = 15;
         public static final int MATERIAL_HEIGHT_FIELD_NUMBER = 15;
         private static final MaterialMeta defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<MaterialMeta> PARSER =
+                new com.google.protobuf.AbstractParser<MaterialMeta>() {
+                    public MaterialMeta parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new MaterialMeta(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new MaterialMeta(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
-        private CreativeType creativeType_;
-        private InteractionType interactionType_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.CreativeType creativeType_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.InteractionType interactionType_;
         private com.google.protobuf.LazyStringList winNoticeUrl_;
-        private Object clickUrl_;
+        private java.lang.Object clickUrl_;
         private com.google.protobuf.ByteString title_;
-        private Object brandName_;
+        private java.lang.Object brandName_;
         private java.util.List<com.google.protobuf.ByteString> description_;
         private com.google.protobuf.LazyStringList iconSrc_;
         private com.google.protobuf.LazyStringList imageSrc_;
-        private Object appPackage_;
+        private java.lang.Object appPackage_;
         private int appSize_;
-        private Object videoUrl_;
+        private java.lang.Object videoUrl_;
         private int videoDuration_;
-        private MetaIndex metaIndex_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex metaIndex_;
         private int materialWidth_;
         private int materialHeight_;
         private byte memoizedIsInitialized = -1;
         private int memoizedSerializedSize = -1;
 
         // Use MaterialMeta.newBuilder() to construct.
-        private MaterialMeta(Builder builder) {
+        private MaterialMeta(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
         }
 
         private MaterialMeta(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        }
+
+        private MaterialMeta(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+                            int rawValue = input.readEnum();
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.CreativeType value = com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.CreativeType.valueOf(rawValue);
+                            if (value == null) {
+                                unknownFields.mergeVarintField(1, rawValue);
+                            } else {
+                                bitField0_ |= 0x00000001;
+                                creativeType_ = value;
+                            }
+                            break;
+                        }
+                        case 16: {
+                            int rawValue = input.readEnum();
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.InteractionType value = com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.InteractionType.valueOf(rawValue);
+                            if (value == null) {
+                                unknownFields.mergeVarintField(2, rawValue);
+                            } else {
+                                bitField0_ |= 0x00000002;
+                                interactionType_ = value;
+                            }
+                            break;
+                        }
+                        case 26: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                                winNoticeUrl_ = new com.google.protobuf.LazyStringArrayList();
+                                mutable_bitField0_ |= 0x00000004;
+                            }
+                            winNoticeUrl_.add(bs);
+                            break;
+                        }
+                        case 34: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000004;
+                            clickUrl_ = bs;
+                            break;
+                        }
+                        case 42: {
+                            bitField0_ |= 0x00000008;
+                            title_ = input.readBytes();
+                            break;
+                        }
+                        case 50: {
+                            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                                description_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
+                                mutable_bitField0_ |= 0x00000040;
+                            }
+                            description_.add(input.readBytes());
+                            break;
+                        }
+                        case 58: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                                iconSrc_ = new com.google.protobuf.LazyStringArrayList();
+                                mutable_bitField0_ |= 0x00000080;
+                            }
+                            iconSrc_.add(bs);
+                            break;
+                        }
+                        case 66: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                                imageSrc_ = new com.google.protobuf.LazyStringArrayList();
+                                mutable_bitField0_ |= 0x00000100;
+                            }
+                            imageSrc_.add(bs);
+                            break;
+                        }
+                        case 74: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000020;
+                            appPackage_ = bs;
+                            break;
+                        }
+                        case 80: {
+                            bitField0_ |= 0x00000040;
+                            appSize_ = input.readUInt32();
+                            break;
+                        }
+                        case 90: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000080;
+                            videoUrl_ = bs;
+                            break;
+                        }
+                        case 96: {
+                            bitField0_ |= 0x00000100;
+                            videoDuration_ = input.readUInt32();
+                            break;
+                        }
+                        case 106: {
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.Builder subBuilder = null;
+                            if (((bitField0_ & 0x00000200) == 0x00000200)) {
+                                subBuilder = metaIndex_.toBuilder();
+                            }
+                            metaIndex_ = input.readMessage(com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.PARSER, extensionRegistry);
+                            if (subBuilder != null) {
+                                subBuilder.mergeFrom(metaIndex_);
+                                metaIndex_ = subBuilder.buildPartial();
+                            }
+                            bitField0_ |= 0x00000200;
+                            break;
+                        }
+                        case 112: {
+                            bitField0_ |= 0x00000400;
+                            materialWidth_ = input.readUInt32();
+                            break;
+                        }
+                        case 120: {
+                            bitField0_ |= 0x00000800;
+                            materialHeight_ = input.readUInt32();
+                            break;
+                        }
+                        case 130: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            bitField0_ |= 0x00000010;
+                            brandName_ = bs;
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                    winNoticeUrl_ = winNoticeUrl_.getUnmodifiableView();
+                }
+                if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                    description_ = java.util.Collections.unmodifiableList(description_);
+                }
+                if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                    iconSrc_ = iconSrc_.getUnmodifiableView();
+                }
+                if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                    imageSrc_ = imageSrc_.getUnmodifiableView();
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static MaterialMeta getDefaultInstance() {
@@ -12186,90 +19452,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MaterialMeta_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MaterialMeta_descriptor;
         }
 
-        public static MaterialMeta parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static MaterialMeta parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static MaterialMeta parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static MaterialMeta parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static MaterialMeta parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static MaterialMeta parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static MaterialMeta parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static MaterialMeta parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static MaterialMeta parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static MaterialMeta parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(MaterialMeta prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -12277,64 +19529,161 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MaterialMeta_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MaterialMeta_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<MaterialMeta> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MaterialMeta.CreativeType creative_type = 1;</code>
+         * <p/>
+         * <pre>
+         * 创意类型
+         * </pre>
+         */
         public boolean hasCreativeType() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
-        public CreativeType getCreativeType() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MaterialMeta.CreativeType creative_type = 1;</code>
+         * <p/>
+         * <pre>
+         * 创意类型
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.CreativeType getCreativeType() {
             return creativeType_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MaterialMeta.InteractionType interaction_type = 2;</code>
+         * <p/>
+         * <pre>
+         * 交互类型
+         * </pre>
+         */
         public boolean hasInteractionType() {
             return ((bitField0_ & 0x00000002) == 0x00000002);
         }
 
-        public InteractionType getInteractionType() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MaterialMeta.InteractionType interaction_type = 2;</code>
+         * <p/>
+         * <pre>
+         * 交互类型
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.InteractionType getInteractionType() {
             return interactionType_;
         }
 
-        public java.util.List<String>
+        /**
+         * <code>repeated string win_notice_url = 3;</code>
+         * <p/>
+         * <pre>
+         * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+         * </pre>
+         */
+        public com.google.protobuf.ProtocolStringList
         getWinNoticeUrlList() {
             return winNoticeUrl_;
         }
 
+        /**
+         * <code>repeated string win_notice_url = 3;</code>
+         * <p/>
+         * <pre>
+         * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+         * </pre>
+         */
         public int getWinNoticeUrlCount() {
             return winNoticeUrl_.size();
         }
 
-        public String getWinNoticeUrl(int index) {
+        /**
+         * <code>repeated string win_notice_url = 3;</code>
+         * <p/>
+         * <pre>
+         * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+         * </pre>
+         */
+        public java.lang.String getWinNoticeUrl(int index) {
             return winNoticeUrl_.get(index);
         }
 
+        /**
+         * <code>repeated string win_notice_url = 3;</code>
+         * <p/>
+         * <pre>
+         * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getWinNoticeUrlBytes(int index) {
+            return winNoticeUrl_.getByteString(index);
+        }
+
+        /**
+         * <code>optional string click_url = 4;</code>
+         * <p/>
+         * <pre>
+         * 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+         * </pre>
+         */
         public boolean hasClickUrl() {
             return ((bitField0_ & 0x00000004) == 0x00000004);
         }
 
-        public String getClickUrl() {
-            Object ref = clickUrl_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string click_url = 4;</code>
+         * <p/>
+         * <pre>
+         * 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+         * </pre>
+         */
+        public java.lang.String getClickUrl() {
+            java.lang.Object ref = clickUrl_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     clickUrl_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getClickUrlBytes() {
-            Object ref = clickUrl_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string click_url = 4;</code>
+         * <p/>
+         * <pre>
+         * 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getClickUrlBytes() {
+            java.lang.Object ref = clickUrl_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 clickUrl_ = b;
                 return b;
             } else {
@@ -12342,38 +19691,75 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional bytes title = 5;</code>
+         * <p/>
+         * <pre>
+         * 推广标题，中文需要UTF-8编码
+         * </pre>
+         */
         public boolean hasTitle() {
             return ((bitField0_ & 0x00000008) == 0x00000008);
         }
 
+        /**
+         * <code>optional bytes title = 5;</code>
+         * <p/>
+         * <pre>
+         * 推广标题，中文需要UTF-8编码
+         * </pre>
+         */
         public com.google.protobuf.ByteString getTitle() {
             return title_;
         }
 
+        /**
+         * <code>optional string brand_name = 16;</code>
+         * <p/>
+         * <pre>
+         * 广告品牌名称，下载类则为app名称（如“手机百度”），非下载类则为品牌名称（如“小米”）
+         * </pre>
+         */
         public boolean hasBrandName() {
             return ((bitField0_ & 0x00000010) == 0x00000010);
         }
 
-        public String getBrandName() {
-            Object ref = brandName_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string brand_name = 16;</code>
+         * <p/>
+         * <pre>
+         * 广告品牌名称，下载类则为app名称（如“手机百度”），非下载类则为品牌名称（如“小米”）
+         * </pre>
+         */
+        public java.lang.String getBrandName() {
+            java.lang.Object ref = brandName_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     brandName_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getBrandNameBytes() {
-            Object ref = brandName_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string brand_name = 16;</code>
+         * <p/>
+         * <pre>
+         * 广告品牌名称，下载类则为app名称（如“手机百度”），非下载类则为品牌名称（如“小米”）
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getBrandNameBytes() {
+            java.lang.Object ref = brandName_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 brandName_ = b;
                 return b;
             } else {
@@ -12381,69 +19767,179 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>repeated bytes description = 6;</code>
+         * <p/>
+         * <pre>
+         * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+         * </pre>
+         */
         public java.util.List<com.google.protobuf.ByteString>
         getDescriptionList() {
             return description_;
         }
 
+        /**
+         * <code>repeated bytes description = 6;</code>
+         * <p/>
+         * <pre>
+         * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+         * </pre>
+         */
         public int getDescriptionCount() {
             return description_.size();
         }
 
+        /**
+         * <code>repeated bytes description = 6;</code>
+         * <p/>
+         * <pre>
+         * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+         * </pre>
+         */
         public com.google.protobuf.ByteString getDescription(int index) {
             return description_.get(index);
         }
 
-        public java.util.List<String>
+        /**
+         * <code>repeated string icon_src = 7;</code>
+         * <p/>
+         * <pre>
+         * 广告图标地址，注意：单个广告可能有多张图标返回
+         * </pre>
+         */
+        public com.google.protobuf.ProtocolStringList
         getIconSrcList() {
             return iconSrc_;
         }
 
+        /**
+         * <code>repeated string icon_src = 7;</code>
+         * <p/>
+         * <pre>
+         * 广告图标地址，注意：单个广告可能有多张图标返回
+         * </pre>
+         */
         public int getIconSrcCount() {
             return iconSrc_.size();
         }
 
-        public String getIconSrc(int index) {
+        /**
+         * <code>repeated string icon_src = 7;</code>
+         * <p/>
+         * <pre>
+         * 广告图标地址，注意：单个广告可能有多张图标返回
+         * </pre>
+         */
+        public java.lang.String getIconSrc(int index) {
             return iconSrc_.get(index);
         }
 
-        public java.util.List<String>
+        /**
+         * <code>repeated string icon_src = 7;</code>
+         * <p/>
+         * <pre>
+         * 广告图标地址，注意：单个广告可能有多张图标返回
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getIconSrcBytes(int index) {
+            return iconSrc_.getByteString(index);
+        }
+
+        /**
+         * <code>repeated string image_src = 8;</code>
+         * <p/>
+         * <pre>
+         * 广告图片地址，注意：单个广告可能有多张图片返回
+         * </pre>
+         */
+        public com.google.protobuf.ProtocolStringList
         getImageSrcList() {
             return imageSrc_;
         }
 
+        /**
+         * <code>repeated string image_src = 8;</code>
+         * <p/>
+         * <pre>
+         * 广告图片地址，注意：单个广告可能有多张图片返回
+         * </pre>
+         */
         public int getImageSrcCount() {
             return imageSrc_.size();
         }
 
-        public String getImageSrc(int index) {
+        /**
+         * <code>repeated string image_src = 8;</code>
+         * <p/>
+         * <pre>
+         * 广告图片地址，注意：单个广告可能有多张图片返回
+         * </pre>
+         */
+        public java.lang.String getImageSrc(int index) {
             return imageSrc_.get(index);
         }
 
+        /**
+         * <code>repeated string image_src = 8;</code>
+         * <p/>
+         * <pre>
+         * 广告图片地址，注意：单个广告可能有多张图片返回
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getImageSrcBytes(int index) {
+            return imageSrc_.getByteString(index);
+        }
+
+        /**
+         * <code>optional string app_package = 9;</code>
+         * <p/>
+         * <pre>
+         * 下载类广告应用包名
+         * </pre>
+         */
         public boolean hasAppPackage() {
             return ((bitField0_ & 0x00000020) == 0x00000020);
         }
 
-        public String getAppPackage() {
-            Object ref = appPackage_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string app_package = 9;</code>
+         * <p/>
+         * <pre>
+         * 下载类广告应用包名
+         * </pre>
+         */
+        public java.lang.String getAppPackage() {
+            java.lang.Object ref = appPackage_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     appPackage_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getAppPackageBytes() {
-            Object ref = appPackage_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string app_package = 9;</code>
+         * <p/>
+         * <pre>
+         * 下载类广告应用包名
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getAppPackageBytes() {
+            java.lang.Object ref = appPackage_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 appPackage_ = b;
                 return b;
             } else {
@@ -12451,38 +19947,75 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional uint32 app_size = 10;</code>
+         * <p/>
+         * <pre>
+         * 下载类广告应用大小
+         * </pre>
+         */
         public boolean hasAppSize() {
             return ((bitField0_ & 0x00000040) == 0x00000040);
         }
 
+        /**
+         * <code>optional uint32 app_size = 10;</code>
+         * <p/>
+         * <pre>
+         * 下载类广告应用大小
+         * </pre>
+         */
         public int getAppSize() {
             return appSize_;
         }
 
+        /**
+         * <code>optional string video_url = 11;</code>
+         * <p/>
+         * <pre>
+         * 广告视频物料地址
+         * </pre>
+         */
         public boolean hasVideoUrl() {
             return ((bitField0_ & 0x00000080) == 0x00000080);
         }
 
-        public String getVideoUrl() {
-            Object ref = videoUrl_;
-            if (ref instanceof String) {
-                return (String) ref;
+        /**
+         * <code>optional string video_url = 11;</code>
+         * <p/>
+         * <pre>
+         * 广告视频物料地址
+         * </pre>
+         */
+        public java.lang.String getVideoUrl() {
+            java.lang.Object ref = videoUrl_;
+            if (ref instanceof java.lang.String) {
+                return (java.lang.String) ref;
             } else {
                 com.google.protobuf.ByteString bs =
                         (com.google.protobuf.ByteString) ref;
-                String s = bs.toStringUtf8();
-                if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+                java.lang.String s = bs.toStringUtf8();
+                if (bs.isValidUtf8()) {
                     videoUrl_ = s;
                 }
                 return s;
             }
         }
 
-        private com.google.protobuf.ByteString getVideoUrlBytes() {
-            Object ref = videoUrl_;
-            if (ref instanceof String) {
+        /**
+         * <code>optional string video_url = 11;</code>
+         * <p/>
+         * <pre>
+         * 广告视频物料地址
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getVideoUrlBytes() {
+            java.lang.Object ref = videoUrl_;
+            if (ref instanceof java.lang.String) {
                 com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                        com.google.protobuf.ByteString.copyFromUtf8(
+                                (java.lang.String) ref);
                 videoUrl_ = b;
                 return b;
             } else {
@@ -12490,45 +20023,108 @@ public final class KSCMobileAdsProto530 {
             }
         }
 
+        /**
+         * <code>optional uint32 video_duration = 12;</code>
+         * <p/>
+         * <pre>
+         * 广告视频物料时长
+         * </pre>
+         */
         public boolean hasVideoDuration() {
             return ((bitField0_ & 0x00000100) == 0x00000100);
         }
 
+        /**
+         * <code>optional uint32 video_duration = 12;</code>
+         * <p/>
+         * <pre>
+         * 广告视频物料时长
+         * </pre>
+         */
         public int getVideoDuration() {
             return videoDuration_;
         }
 
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+         * <p/>
+         * <pre>
+         * 当前元数据在一条广告元素组中的索引结构
+         * </pre>
+         */
         public boolean hasMetaIndex() {
             return ((bitField0_ & 0x00000200) == 0x00000200);
         }
 
-        public MetaIndex getMetaIndex() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+         * <p/>
+         * <pre>
+         * 当前元数据在一条广告元素组中的索引结构
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex getMetaIndex() {
             return metaIndex_;
         }
 
-        public MetaIndexOrBuilder getMetaIndexOrBuilder() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+         * <p/>
+         * <pre>
+         * 当前元数据在一条广告元素组中的索引结构
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndexOrBuilder getMetaIndexOrBuilder() {
             return metaIndex_;
         }
 
+        /**
+         * <code>optional uint32 material_width = 14;</code>
+         * <p/>
+         * <pre>
+         * 物料的宽度:如果是图片,表示图片的宽度;如果是视频(含有视频截图),则为视频宽度;如果是图文或文本,则不会填充此字段
+         * </pre>
+         */
         public boolean hasMaterialWidth() {
             return ((bitField0_ & 0x00000400) == 0x00000400);
         }
 
+        /**
+         * <code>optional uint32 material_width = 14;</code>
+         * <p/>
+         * <pre>
+         * 物料的宽度:如果是图片,表示图片的宽度;如果是视频(含有视频截图),则为视频宽度;如果是图文或文本,则不会填充此字段
+         * </pre>
+         */
         public int getMaterialWidth() {
             return materialWidth_;
         }
 
+        /**
+         * <code>optional uint32 material_height = 15;</code>
+         * <p/>
+         * <pre>
+         * 物料的高度:如果是图片,表示图片的高度;如果是视频(含有视频截图),则为视频高度;如果是图文或文本,则不会填充此字段
+         * </pre>
+         */
         public boolean hasMaterialHeight() {
             return ((bitField0_ & 0x00000800) == 0x00000800);
         }
 
+        /**
+         * <code>optional uint32 material_height = 15;</code>
+         * <p/>
+         * <pre>
+         * 物料的高度:如果是图片,表示图片的高度;如果是视频(含有视频截图),则为视频高度;如果是图文或文本,则不会填充此字段
+         * </pre>
+         */
         public int getMaterialHeight() {
             return materialHeight_;
         }
 
         private void initFields() {
-            creativeType_ = CreativeType.NO_TYPE;
-            interactionType_ = InteractionType.NO_INTERACTION;
+            creativeType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.CreativeType.NO_TYPE;
+            interactionType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.InteractionType.NO_INTERACTION;
             winNoticeUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
             clickUrl_ = "";
             title_ = com.google.protobuf.ByteString.EMPTY;
@@ -12540,14 +20136,15 @@ public final class KSCMobileAdsProto530 {
             appSize_ = 0;
             videoUrl_ = "";
             videoDuration_ = 0;
-            metaIndex_ = MetaIndex.getDefaultInstance();
+            metaIndex_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.getDefaultInstance();
             materialWidth_ = 0;
             materialHeight_ = 0;
         }
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -12701,8 +20298,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -12715,31 +20312,120 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf enum {@code com.ksc.client.ads.proto.MaterialMeta.CreativeType}
+         * <p/>
+         * <pre>
+         * 创意类型
+         * </pre>
+         */
         public enum CreativeType
                 implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>NO_TYPE = 0;</code>
+             * <p/>
+             * <pre>
+             * 无创意类型，主要针对原生自定义素材广告，不再制定返回广告的创意类型，根据广告位设置对返回字段进行读取即可
+             * </pre>
+             */
             NO_TYPE(0, 0),
+            /**
+             * <code>TEXT = 1;</code>
+             * <p/>
+             * <pre>
+             * 纯文字广告，一般由title、description构成
+             * </pre>
+             */
             TEXT(1, 1),
+            /**
+             * <code>IMAGE = 2;</code>
+             * <p/>
+             * <pre>
+             * 纯图片广告，一般由单张image_src构成
+             * </pre>
+             */
             IMAGE(2, 2),
+            /**
+             * <code>TEXT_ICON = 3;</code>
+             * <p/>
+             * <pre>
+             * 图文混合广告，一般由单张icon_src和title、description构成
+             * </pre>
+             */
             TEXT_ICON(3, 3),
+            /**
+             * <code>VIDEO = 4;</code>
+             * <p/>
+             * <pre>
+             * 视频广告，一般由视频URL和视频时长构成
+             * </pre>
+             */
             VIDEO(4, 4),
+            /**
+             * <code>VIDEO_HTML = 9;</code>
+             * <p/>
+             * <pre>
+             * 激励视频广告, 一般由视频URL/视频时长和一个落地页面构成.
+             * </pre>
+             */
             VIDEO_HTML(5, 9),;
 
+            /**
+             * <code>NO_TYPE = 0;</code>
+             * <p/>
+             * <pre>
+             * 无创意类型，主要针对原生自定义素材广告，不再制定返回广告的创意类型，根据广告位设置对返回字段进行读取即可
+             * </pre>
+             */
             public static final int NO_TYPE_VALUE = 0;
+            /**
+             * <code>TEXT = 1;</code>
+             * <p/>
+             * <pre>
+             * 纯文字广告，一般由title、description构成
+             * </pre>
+             */
             public static final int TEXT_VALUE = 1;
+            /**
+             * <code>IMAGE = 2;</code>
+             * <p/>
+             * <pre>
+             * 纯图片广告，一般由单张image_src构成
+             * </pre>
+             */
             public static final int IMAGE_VALUE = 2;
+            /**
+             * <code>TEXT_ICON = 3;</code>
+             * <p/>
+             * <pre>
+             * 图文混合广告，一般由单张icon_src和title、description构成
+             * </pre>
+             */
             public static final int TEXT_ICON_VALUE = 3;
+            /**
+             * <code>VIDEO = 4;</code>
+             * <p/>
+             * <pre>
+             * 视频广告，一般由视频URL和视频时长构成
+             * </pre>
+             */
             public static final int VIDEO_VALUE = 4;
+            /**
+             * <code>VIDEO_HTML = 9;</code>
+             * <p/>
+             * <pre>
+             * 激励视频广告, 一般由视频URL/视频时长和一个落地页面构成.
+             * </pre>
+             */
             public static final int VIDEO_HTML_VALUE = 9;
-            private static final CreativeType[] VALUES = {
-                    NO_TYPE, TEXT, IMAGE, TEXT_ICON, VIDEO, VIDEO_HTML,
-            };
+            private static final CreativeType[] VALUES = values();
             private static com.google.protobuf.Internal.EnumLiteMap<CreativeType>
                     internalValueMap =
                     new com.google.protobuf.Internal.EnumLiteMap<CreativeType>() {
@@ -12781,13 +20467,13 @@ public final class KSCMobileAdsProto530 {
 
             public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
-                return MaterialMeta.getDescriptor().getEnumTypes().get(0);
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.getDescriptor().getEnumTypes().get(0);
             }
 
             public static CreativeType valueOf(
                     com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
                 if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException(
+                    throw new java.lang.IllegalArgumentException(
                             "EnumValueDescriptor is not for this type.");
                 }
                 return VALUES[desc.getIndex()];
@@ -12810,20 +20496,81 @@ public final class KSCMobileAdsProto530 {
             // @@protoc_insertion_point(enum_scope:com.ksc.client.ads.proto.MaterialMeta.CreativeType)
         }
 
+        /**
+         * Protobuf enum {@code com.ksc.client.ads.proto.MaterialMeta.InteractionType}
+         * <p/>
+         * <pre>
+         * 交互类型
+         * </pre>
+         */
         public enum InteractionType
                 implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>NO_INTERACTION = 0;</code>
+             * <p/>
+             * <pre>
+             * 无动作，即广告广告点击后无需进行任何响应
+             * </pre>
+             */
             NO_INTERACTION(0, 0),
+            /**
+             * <code>SURFING = 1;</code>
+             * <p/>
+             * <pre>
+             * 使用浏览器打开网页
+             * </pre>
+             */
             SURFING(1, 1),
+            /**
+             * <code>DOWNLOAD = 2;</code>
+             * <p/>
+             * <pre>
+             * 下载应用
+             * </pre>
+             */
             DOWNLOAD(2, 2),
+            /**
+             * <code>OPTIONAL = 9;</code>
+             * <p/>
+             * <pre>
+             * 可选交互类型,针对app. 开发者可选择是打开详情页还是直接下载推广应用.需要开发者替换click_url中的宏${ACCT_TYPE}. 0表示打开详情页,35表示直接下载.
+             * </pre>
+             */
             OPTIONAL(3, 9),;
 
+            /**
+             * <code>NO_INTERACTION = 0;</code>
+             * <p/>
+             * <pre>
+             * 无动作，即广告广告点击后无需进行任何响应
+             * </pre>
+             */
             public static final int NO_INTERACTION_VALUE = 0;
+            /**
+             * <code>SURFING = 1;</code>
+             * <p/>
+             * <pre>
+             * 使用浏览器打开网页
+             * </pre>
+             */
             public static final int SURFING_VALUE = 1;
+            /**
+             * <code>DOWNLOAD = 2;</code>
+             * <p/>
+             * <pre>
+             * 下载应用
+             * </pre>
+             */
             public static final int DOWNLOAD_VALUE = 2;
+            /**
+             * <code>OPTIONAL = 9;</code>
+             * <p/>
+             * <pre>
+             * 可选交互类型,针对app. 开发者可选择是打开详情页还是直接下载推广应用.需要开发者替换click_url中的宏${ACCT_TYPE}. 0表示打开详情页,35表示直接下载.
+             * </pre>
+             */
             public static final int OPTIONAL_VALUE = 9;
-            private static final InteractionType[] VALUES = {
-                    NO_INTERACTION, SURFING, DOWNLOAD, OPTIONAL,
-            };
+            private static final InteractionType[] VALUES = values();
             private static com.google.protobuf.Internal.EnumLiteMap<InteractionType>
                     internalValueMap =
                     new com.google.protobuf.Internal.EnumLiteMap<InteractionType>() {
@@ -12861,13 +20608,13 @@ public final class KSCMobileAdsProto530 {
 
             public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
-                return MaterialMeta.getDescriptor().getEnumTypes().get(1);
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.getDescriptor().getEnumTypes().get(1);
             }
 
             public static InteractionType valueOf(
                     com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
                 if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException(
+                    throw new java.lang.IllegalArgumentException(
                             "EnumValueDescriptor is not for this type.");
                 }
                 return VALUES[desc.getIndex()];
@@ -12890,43 +20637,35 @@ public final class KSCMobileAdsProto530 {
             // @@protoc_insertion_point(enum_scope:com.ksc.client.ads.proto.MaterialMeta.InteractionType)
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.MaterialMeta}
+         * <p/>
+         * <pre>
+         * 广告物料元数据信息
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements MaterialMetaOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.MaterialMeta)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMetaOrBuilder {
             private int bitField0_;
-            // optional .com.ksc.client.ads.proto.MaterialMeta.CreativeType creative_type = 1;
-            private CreativeType creativeType_ = CreativeType.NO_TYPE;
-            // optional .com.ksc.client.ads.proto.MaterialMeta.InteractionType interaction_type = 2;
-            private InteractionType interactionType_ = InteractionType.NO_INTERACTION;
-            // repeated string win_notice_url = 3;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.CreativeType creativeType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.CreativeType.NO_TYPE;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.InteractionType interactionType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.InteractionType.NO_INTERACTION;
             private com.google.protobuf.LazyStringList winNoticeUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            // optional string click_url = 4;
-            private Object clickUrl_ = "";
-            // optional bytes title = 5;
+            private java.lang.Object clickUrl_ = "";
             private com.google.protobuf.ByteString title_ = com.google.protobuf.ByteString.EMPTY;
-            // optional string brand_name = 16;
-            private Object brandName_ = "";
-            // repeated bytes description = 6;
+            private java.lang.Object brandName_ = "";
             private java.util.List<com.google.protobuf.ByteString> description_ = java.util.Collections.emptyList();
-            // repeated string icon_src = 7;
             private com.google.protobuf.LazyStringList iconSrc_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            // repeated string image_src = 8;
             private com.google.protobuf.LazyStringList imageSrc_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            // optional string app_package = 9;
-            private Object appPackage_ = "";
-            // optional uint32 app_size = 10;
+            private java.lang.Object appPackage_ = "";
             private int appSize_;
-            // optional string video_url = 11;
-            private Object videoUrl_ = "";
-            // optional uint32 video_duration = 12;
+            private java.lang.Object videoUrl_ = "";
             private int videoDuration_;
-            // optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;
-            private MetaIndex metaIndex_ = MetaIndex.getDefaultInstance();
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex metaIndex_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.getDefaultInstance();
             private com.google.protobuf.SingleFieldBuilder<
-                    MetaIndex, MetaIndex.Builder, MetaIndexOrBuilder> metaIndexBuilder_;
-            // optional uint32 material_width = 14;
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex, com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndexOrBuilder> metaIndexBuilder_;
             private int materialWidth_;
-            // optional uint32 material_height = 15;
             private int materialHeight_;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.newBuilder()
@@ -12934,23 +20673,26 @@ public final class KSCMobileAdsProto530 {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MaterialMeta_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MaterialMeta_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MaterialMeta_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MaterialMeta_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -12961,9 +20703,9 @@ public final class KSCMobileAdsProto530 {
 
             public Builder clear() {
                 super.clear();
-                creativeType_ = CreativeType.NO_TYPE;
+                creativeType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.CreativeType.NO_TYPE;
                 bitField0_ = (bitField0_ & ~0x00000001);
-                interactionType_ = InteractionType.NO_INTERACTION;
+                interactionType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.InteractionType.NO_INTERACTION;
                 bitField0_ = (bitField0_ & ~0x00000002);
                 winNoticeUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
                 bitField0_ = (bitField0_ & ~0x00000004);
@@ -12988,7 +20730,7 @@ public final class KSCMobileAdsProto530 {
                 videoDuration_ = 0;
                 bitField0_ = (bitField0_ & ~0x00001000);
                 if (metaIndexBuilder_ == null) {
-                    metaIndex_ = MetaIndex.getDefaultInstance();
+                    metaIndex_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.getDefaultInstance();
                 } else {
                     metaIndexBuilder_.clear();
                 }
@@ -13006,33 +20748,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return MaterialMeta.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_MaterialMeta_descriptor;
             }
 
-            public MaterialMeta getDefaultInstanceForType() {
-                return MaterialMeta.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.getDefaultInstance();
             }
 
-            public MaterialMeta build() {
-                MaterialMeta result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private MaterialMeta buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                MaterialMeta result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public MaterialMeta buildPartial() {
-                MaterialMeta result = new MaterialMeta(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -13044,8 +20776,7 @@ public final class KSCMobileAdsProto530 {
                 }
                 result.interactionType_ = interactionType_;
                 if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                    winNoticeUrl_ = new com.google.protobuf.UnmodifiableLazyStringList(
-                            winNoticeUrl_);
+                    winNoticeUrl_ = winNoticeUrl_.getUnmodifiableView();
                     bitField0_ = (bitField0_ & ~0x00000004);
                 }
                 result.winNoticeUrl_ = winNoticeUrl_;
@@ -13067,14 +20798,12 @@ public final class KSCMobileAdsProto530 {
                 }
                 result.description_ = description_;
                 if (((bitField0_ & 0x00000080) == 0x00000080)) {
-                    iconSrc_ = new com.google.protobuf.UnmodifiableLazyStringList(
-                            iconSrc_);
+                    iconSrc_ = iconSrc_.getUnmodifiableView();
                     bitField0_ = (bitField0_ & ~0x00000080);
                 }
                 result.iconSrc_ = iconSrc_;
                 if (((bitField0_ & 0x00000100) == 0x00000100)) {
-                    imageSrc_ = new com.google.protobuf.UnmodifiableLazyStringList(
-                            imageSrc_);
+                    imageSrc_ = imageSrc_.getUnmodifiableView();
                     bitField0_ = (bitField0_ & ~0x00000100);
                 }
                 result.imageSrc_ = imageSrc_;
@@ -13116,16 +20845,16 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof MaterialMeta) {
-                    return mergeFrom((MaterialMeta) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(MaterialMeta other) {
-                if (other == MaterialMeta.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.getDefaultInstance()) return this;
                 if (other.hasCreativeType()) {
                     setCreativeType(other.getCreativeType());
                 }
@@ -13143,13 +20872,17 @@ public final class KSCMobileAdsProto530 {
                     onChanged();
                 }
                 if (other.hasClickUrl()) {
-                    setClickUrl(other.getClickUrl());
+                    bitField0_ |= 0x00000008;
+                    clickUrl_ = other.clickUrl_;
+                    onChanged();
                 }
                 if (other.hasTitle()) {
                     setTitle(other.getTitle());
                 }
                 if (other.hasBrandName()) {
-                    setBrandName(other.getBrandName());
+                    bitField0_ |= 0x00000020;
+                    brandName_ = other.brandName_;
+                    onChanged();
                 }
                 if (!other.description_.isEmpty()) {
                     if (description_.isEmpty()) {
@@ -13182,13 +20915,17 @@ public final class KSCMobileAdsProto530 {
                     onChanged();
                 }
                 if (other.hasAppPackage()) {
-                    setAppPackage(other.getAppPackage());
+                    bitField0_ |= 0x00000200;
+                    appPackage_ = other.appPackage_;
+                    onChanged();
                 }
                 if (other.hasAppSize()) {
                     setAppSize(other.getAppSize());
                 }
                 if (other.hasVideoUrl()) {
-                    setVideoUrl(other.getVideoUrl());
+                    bitField0_ |= 0x00000800;
+                    videoUrl_ = other.videoUrl_;
+                    onChanged();
                 }
                 if (other.hasVideoDuration()) {
                     setVideoDuration(other.getVideoDuration());
@@ -13214,134 +20951,50 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 8: {
-                            int rawValue = input.readEnum();
-                            CreativeType value = CreativeType.valueOf(rawValue);
-                            if (value == null) {
-                                unknownFields.mergeVarintField(1, rawValue);
-                            } else {
-                                bitField0_ |= 0x00000001;
-                                creativeType_ = value;
-                            }
-                            break;
-                        }
-                        case 16: {
-                            int rawValue = input.readEnum();
-                            InteractionType value = InteractionType.valueOf(rawValue);
-                            if (value == null) {
-                                unknownFields.mergeVarintField(2, rawValue);
-                            } else {
-                                bitField0_ |= 0x00000002;
-                                interactionType_ = value;
-                            }
-                            break;
-                        }
-                        case 26: {
-                            ensureWinNoticeUrlIsMutable();
-                            winNoticeUrl_.add(input.readBytes());
-                            break;
-                        }
-                        case 34: {
-                            bitField0_ |= 0x00000008;
-                            clickUrl_ = input.readBytes();
-                            break;
-                        }
-                        case 42: {
-                            bitField0_ |= 0x00000010;
-                            title_ = input.readBytes();
-                            break;
-                        }
-                        case 50: {
-                            ensureDescriptionIsMutable();
-                            description_.add(input.readBytes());
-                            break;
-                        }
-                        case 58: {
-                            ensureIconSrcIsMutable();
-                            iconSrc_.add(input.readBytes());
-                            break;
-                        }
-                        case 66: {
-                            ensureImageSrcIsMutable();
-                            imageSrc_.add(input.readBytes());
-                            break;
-                        }
-                        case 74: {
-                            bitField0_ |= 0x00000200;
-                            appPackage_ = input.readBytes();
-                            break;
-                        }
-                        case 80: {
-                            bitField0_ |= 0x00000400;
-                            appSize_ = input.readUInt32();
-                            break;
-                        }
-                        case 90: {
-                            bitField0_ |= 0x00000800;
-                            videoUrl_ = input.readBytes();
-                            break;
-                        }
-                        case 96: {
-                            bitField0_ |= 0x00001000;
-                            videoDuration_ = input.readUInt32();
-                            break;
-                        }
-                        case 106: {
-                            MetaIndex.Builder subBuilder = MetaIndex.newBuilder();
-                            if (hasMetaIndex()) {
-                                subBuilder.mergeFrom(getMetaIndex());
-                            }
-                            input.readMessage(subBuilder, extensionRegistry);
-                            setMetaIndex(subBuilder.buildPartial());
-                            break;
-                        }
-                        case 112: {
-                            bitField0_ |= 0x00004000;
-                            materialWidth_ = input.readUInt32();
-                            break;
-                        }
-                        case 120: {
-                            bitField0_ |= 0x00008000;
-                            materialHeight_ = input.readUInt32();
-                            break;
-                        }
-                        case 130: {
-                            bitField0_ |= 0x00000020;
-                            brandName_ = input.readBytes();
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MaterialMeta.CreativeType creative_type = 1;</code>
+             * <p/>
+             * <pre>
+             * 创意类型
+             * </pre>
+             */
             public boolean hasCreativeType() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
-            public CreativeType getCreativeType() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MaterialMeta.CreativeType creative_type = 1;</code>
+             * <p/>
+             * <pre>
+             * 创意类型
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.CreativeType getCreativeType() {
                 return creativeType_;
             }
 
-            public Builder setCreativeType(CreativeType value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MaterialMeta.CreativeType creative_type = 1;</code>
+             * <p/>
+             * <pre>
+             * 创意类型
+             * </pre>
+             */
+            public Builder setCreativeType(com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.CreativeType value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -13351,22 +21004,50 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MaterialMeta.CreativeType creative_type = 1;</code>
+             * <p/>
+             * <pre>
+             * 创意类型
+             * </pre>
+             */
             public Builder clearCreativeType() {
                 bitField0_ = (bitField0_ & ~0x00000001);
-                creativeType_ = CreativeType.NO_TYPE;
+                creativeType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.CreativeType.NO_TYPE;
                 onChanged();
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MaterialMeta.InteractionType interaction_type = 2;</code>
+             * <p/>
+             * <pre>
+             * 交互类型
+             * </pre>
+             */
             public boolean hasInteractionType() {
                 return ((bitField0_ & 0x00000002) == 0x00000002);
             }
 
-            public InteractionType getInteractionType() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MaterialMeta.InteractionType interaction_type = 2;</code>
+             * <p/>
+             * <pre>
+             * 交互类型
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.InteractionType getInteractionType() {
                 return interactionType_;
             }
 
-            public Builder setInteractionType(InteractionType value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MaterialMeta.InteractionType interaction_type = 2;</code>
+             * <p/>
+             * <pre>
+             * 交互类型
+             * </pre>
+             */
+            public Builder setInteractionType(com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.InteractionType value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -13376,9 +21057,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MaterialMeta.InteractionType interaction_type = 2;</code>
+             * <p/>
+             * <pre>
+             * 交互类型
+             * </pre>
+             */
             public Builder clearInteractionType() {
                 bitField0_ = (bitField0_ & ~0x00000002);
-                interactionType_ = InteractionType.NO_INTERACTION;
+                interactionType_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta.InteractionType.NO_INTERACTION;
                 onChanged();
                 return this;
             }
@@ -13390,21 +21078,61 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public java.util.List<String>
+            /**
+             * <code>repeated string win_notice_url = 3;</code>
+             * <p/>
+             * <pre>
+             * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+             * </pre>
+             */
+            public com.google.protobuf.ProtocolStringList
             getWinNoticeUrlList() {
-                return java.util.Collections.unmodifiableList(winNoticeUrl_);
+                return winNoticeUrl_.getUnmodifiableView();
             }
 
+            /**
+             * <code>repeated string win_notice_url = 3;</code>
+             * <p/>
+             * <pre>
+             * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+             * </pre>
+             */
             public int getWinNoticeUrlCount() {
                 return winNoticeUrl_.size();
             }
 
-            public String getWinNoticeUrl(int index) {
+            /**
+             * <code>repeated string win_notice_url = 3;</code>
+             * <p/>
+             * <pre>
+             * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+             * </pre>
+             */
+            public java.lang.String getWinNoticeUrl(int index) {
                 return winNoticeUrl_.get(index);
             }
 
+            /**
+             * <code>repeated string win_notice_url = 3;</code>
+             * <p/>
+             * <pre>
+             * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getWinNoticeUrlBytes(int index) {
+                return winNoticeUrl_.getByteString(index);
+            }
+
+            /**
+             * <code>repeated string win_notice_url = 3;</code>
+             * <p/>
+             * <pre>
+             * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+             * </pre>
+             */
             public Builder setWinNoticeUrl(
-                    int index, String value) {
+                    int index, java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -13414,7 +21142,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder addWinNoticeUrl(String value) {
+            /**
+             * <code>repeated string win_notice_url = 3;</code>
+             * <p/>
+             * <pre>
+             * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+             * </pre>
+             */
+            public Builder addWinNoticeUrl(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -13424,14 +21160,29 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated string win_notice_url = 3;</code>
+             * <p/>
+             * <pre>
+             * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+             * </pre>
+             */
             public Builder addAllWinNoticeUrl(
-                    Iterable<String> values) {
+                    java.lang.Iterable<java.lang.String> values) {
                 ensureWinNoticeUrlIsMutable();
-                addAll(values, winNoticeUrl_);
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                        values, winNoticeUrl_);
                 onChanged();
                 return this;
             }
 
+            /**
+             * <code>repeated string win_notice_url = 3;</code>
+             * <p/>
+             * <pre>
+             * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+             * </pre>
+             */
             public Builder clearWinNoticeUrl() {
                 winNoticeUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
                 bitField0_ = (bitField0_ & ~0x00000004);
@@ -13439,34 +21190,66 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            void addWinNoticeUrl(com.google.protobuf.ByteString value) {
+            /**
+             * <code>repeated string win_notice_url = 3;</code>
+             * <p/>
+             * <pre>
+             * 曝光日志URL列表，在曝光后必须在客户端逐个汇报完
+             * </pre>
+             */
+            public Builder addWinNoticeUrlBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
                 ensureWinNoticeUrlIsMutable();
                 winNoticeUrl_.add(value);
                 onChanged();
+                return this;
             }
 
+            /**
+             * <code>optional string click_url = 4;</code>
+             * <p/>
+             * <pre>
+             * 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+             * </pre>
+             */
             public boolean hasClickUrl() {
                 return ((bitField0_ & 0x00000008) == 0x00000008);
             }
 
-            public String getClickUrl() {
-                Object ref = clickUrl_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    clickUrl_ = s;
+            /**
+             * <code>optional string click_url = 4;</code>
+             * <p/>
+             * <pre>
+             * 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+             * </pre>
+             */
+            public java.lang.String getClickUrl() {
+                java.lang.Object ref = clickUrl_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        clickUrl_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setClickUrl(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000008;
-                clickUrl_ = value;
-                onChanged();
-            }
-
-            public Builder setClickUrl(String value) {
+            /**
+             * <code>optional string click_url = 4;</code>
+             * <p/>
+             * <pre>
+             * 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+             * </pre>
+             */
+            public Builder setClickUrl(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -13476,6 +21259,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string click_url = 4;</code>
+             * <p/>
+             * <pre>
+             * 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getClickUrlBytes() {
+                java.lang.Object ref = clickUrl_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    clickUrl_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string click_url = 4;</code>
+             * <p/>
+             * <pre>
+             * 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+             * </pre>
+             */
+            public Builder setClickUrlBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000008;
+                clickUrl_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string click_url = 4;</code>
+             * <p/>
+             * <pre>
+             * 点击行为地址，用户点击后，在客户端进行响应，会经过多次302跳转最终到达目标地址
+             * </pre>
+             */
             public Builder clearClickUrl() {
                 bitField0_ = (bitField0_ & ~0x00000008);
                 clickUrl_ = getDefaultInstance().getClickUrl();
@@ -13483,14 +21312,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional bytes title = 5;</code>
+             * <p/>
+             * <pre>
+             * 推广标题，中文需要UTF-8编码
+             * </pre>
+             */
             public boolean hasTitle() {
                 return ((bitField0_ & 0x00000010) == 0x00000010);
             }
 
+            /**
+             * <code>optional bytes title = 5;</code>
+             * <p/>
+             * <pre>
+             * 推广标题，中文需要UTF-8编码
+             * </pre>
+             */
             public com.google.protobuf.ByteString getTitle() {
                 return title_;
             }
 
+            /**
+             * <code>optional bytes title = 5;</code>
+             * <p/>
+             * <pre>
+             * 推广标题，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder setTitle(com.google.protobuf.ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
@@ -13501,6 +21351,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional bytes title = 5;</code>
+             * <p/>
+             * <pre>
+             * 推广标题，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder clearTitle() {
                 bitField0_ = (bitField0_ & ~0x00000010);
                 title_ = getDefaultInstance().getTitle();
@@ -13508,28 +21365,48 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string brand_name = 16;</code>
+             * <p/>
+             * <pre>
+             * 广告品牌名称，下载类则为app名称（如“手机百度”），非下载类则为品牌名称（如“小米”）
+             * </pre>
+             */
             public boolean hasBrandName() {
                 return ((bitField0_ & 0x00000020) == 0x00000020);
             }
 
-            public String getBrandName() {
-                Object ref = brandName_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    brandName_ = s;
+            /**
+             * <code>optional string brand_name = 16;</code>
+             * <p/>
+             * <pre>
+             * 广告品牌名称，下载类则为app名称（如“手机百度”），非下载类则为品牌名称（如“小米”）
+             * </pre>
+             */
+            public java.lang.String getBrandName() {
+                java.lang.Object ref = brandName_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        brandName_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setBrandName(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000020;
-                brandName_ = value;
-                onChanged();
-            }
-
-            public Builder setBrandName(String value) {
+            /**
+             * <code>optional string brand_name = 16;</code>
+             * <p/>
+             * <pre>
+             * 广告品牌名称，下载类则为app名称（如“手机百度”），非下载类则为品牌名称（如“小米”）
+             * </pre>
+             */
+            public Builder setBrandName(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -13539,6 +21416,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string brand_name = 16;</code>
+             * <p/>
+             * <pre>
+             * 广告品牌名称，下载类则为app名称（如“手机百度”），非下载类则为品牌名称（如“小米”）
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getBrandNameBytes() {
+                java.lang.Object ref = brandName_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    brandName_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string brand_name = 16;</code>
+             * <p/>
+             * <pre>
+             * 广告品牌名称，下载类则为app名称（如“手机百度”），非下载类则为品牌名称（如“小米”）
+             * </pre>
+             */
+            public Builder setBrandNameBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000020;
+                brandName_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string brand_name = 16;</code>
+             * <p/>
+             * <pre>
+             * 广告品牌名称，下载类则为app名称（如“手机百度”），非下载类则为品牌名称（如“小米”）
+             * </pre>
+             */
             public Builder clearBrandName() {
                 bitField0_ = (bitField0_ & ~0x00000020);
                 brandName_ = getDefaultInstance().getBrandName();
@@ -13553,19 +21476,47 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>repeated bytes description = 6;</code>
+             * <p/>
+             * <pre>
+             * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+             * </pre>
+             */
             public java.util.List<com.google.protobuf.ByteString>
             getDescriptionList() {
                 return java.util.Collections.unmodifiableList(description_);
             }
 
+            /**
+             * <code>repeated bytes description = 6;</code>
+             * <p/>
+             * <pre>
+             * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+             * </pre>
+             */
             public int getDescriptionCount() {
                 return description_.size();
             }
 
+            /**
+             * <code>repeated bytes description = 6;</code>
+             * <p/>
+             * <pre>
+             * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+             * </pre>
+             */
             public com.google.protobuf.ByteString getDescription(int index) {
                 return description_.get(index);
             }
 
+            /**
+             * <code>repeated bytes description = 6;</code>
+             * <p/>
+             * <pre>
+             * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder setDescription(
                     int index, com.google.protobuf.ByteString value) {
                 if (value == null) {
@@ -13577,6 +21528,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated bytes description = 6;</code>
+             * <p/>
+             * <pre>
+             * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder addDescription(com.google.protobuf.ByteString value) {
                 if (value == null) {
                     throw new NullPointerException();
@@ -13587,14 +21545,29 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated bytes description = 6;</code>
+             * <p/>
+             * <pre>
+             * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder addAllDescription(
-                    Iterable<? extends com.google.protobuf.ByteString> values) {
+                    java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
                 ensureDescriptionIsMutable();
-                addAll(values, description_);
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                        values, description_);
                 onChanged();
                 return this;
             }
 
+            /**
+             * <code>repeated bytes description = 6;</code>
+             * <p/>
+             * <pre>
+             * 广告描述，默认只有一个元素，暂时约定最多只有两个元素，具体情况已线上广告实际返回结果为准，中文需要UTF-8编码
+             * </pre>
+             */
             public Builder clearDescription() {
                 description_ = java.util.Collections.emptyList();
                 bitField0_ = (bitField0_ & ~0x00000040);
@@ -13609,21 +21582,61 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public java.util.List<String>
+            /**
+             * <code>repeated string icon_src = 7;</code>
+             * <p/>
+             * <pre>
+             * 广告图标地址，注意：单个广告可能有多张图标返回
+             * </pre>
+             */
+            public com.google.protobuf.ProtocolStringList
             getIconSrcList() {
-                return java.util.Collections.unmodifiableList(iconSrc_);
+                return iconSrc_.getUnmodifiableView();
             }
 
+            /**
+             * <code>repeated string icon_src = 7;</code>
+             * <p/>
+             * <pre>
+             * 广告图标地址，注意：单个广告可能有多张图标返回
+             * </pre>
+             */
             public int getIconSrcCount() {
                 return iconSrc_.size();
             }
 
-            public String getIconSrc(int index) {
+            /**
+             * <code>repeated string icon_src = 7;</code>
+             * <p/>
+             * <pre>
+             * 广告图标地址，注意：单个广告可能有多张图标返回
+             * </pre>
+             */
+            public java.lang.String getIconSrc(int index) {
                 return iconSrc_.get(index);
             }
 
+            /**
+             * <code>repeated string icon_src = 7;</code>
+             * <p/>
+             * <pre>
+             * 广告图标地址，注意：单个广告可能有多张图标返回
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getIconSrcBytes(int index) {
+                return iconSrc_.getByteString(index);
+            }
+
+            /**
+             * <code>repeated string icon_src = 7;</code>
+             * <p/>
+             * <pre>
+             * 广告图标地址，注意：单个广告可能有多张图标返回
+             * </pre>
+             */
             public Builder setIconSrc(
-                    int index, String value) {
+                    int index, java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -13633,7 +21646,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder addIconSrc(String value) {
+            /**
+             * <code>repeated string icon_src = 7;</code>
+             * <p/>
+             * <pre>
+             * 广告图标地址，注意：单个广告可能有多张图标返回
+             * </pre>
+             */
+            public Builder addIconSrc(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -13643,14 +21664,29 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated string icon_src = 7;</code>
+             * <p/>
+             * <pre>
+             * 广告图标地址，注意：单个广告可能有多张图标返回
+             * </pre>
+             */
             public Builder addAllIconSrc(
-                    Iterable<String> values) {
+                    java.lang.Iterable<java.lang.String> values) {
                 ensureIconSrcIsMutable();
-                addAll(values, iconSrc_);
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                        values, iconSrc_);
                 onChanged();
                 return this;
             }
 
+            /**
+             * <code>repeated string icon_src = 7;</code>
+             * <p/>
+             * <pre>
+             * 广告图标地址，注意：单个广告可能有多张图标返回
+             * </pre>
+             */
             public Builder clearIconSrc() {
                 iconSrc_ = com.google.protobuf.LazyStringArrayList.EMPTY;
                 bitField0_ = (bitField0_ & ~0x00000080);
@@ -13658,10 +21694,22 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            void addIconSrc(com.google.protobuf.ByteString value) {
+            /**
+             * <code>repeated string icon_src = 7;</code>
+             * <p/>
+             * <pre>
+             * 广告图标地址，注意：单个广告可能有多张图标返回
+             * </pre>
+             */
+            public Builder addIconSrcBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
                 ensureIconSrcIsMutable();
                 iconSrc_.add(value);
                 onChanged();
+                return this;
             }
 
             private void ensureImageSrcIsMutable() {
@@ -13671,21 +21719,61 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public java.util.List<String>
+            /**
+             * <code>repeated string image_src = 8;</code>
+             * <p/>
+             * <pre>
+             * 广告图片地址，注意：单个广告可能有多张图片返回
+             * </pre>
+             */
+            public com.google.protobuf.ProtocolStringList
             getImageSrcList() {
-                return java.util.Collections.unmodifiableList(imageSrc_);
+                return imageSrc_.getUnmodifiableView();
             }
 
+            /**
+             * <code>repeated string image_src = 8;</code>
+             * <p/>
+             * <pre>
+             * 广告图片地址，注意：单个广告可能有多张图片返回
+             * </pre>
+             */
             public int getImageSrcCount() {
                 return imageSrc_.size();
             }
 
-            public String getImageSrc(int index) {
+            /**
+             * <code>repeated string image_src = 8;</code>
+             * <p/>
+             * <pre>
+             * 广告图片地址，注意：单个广告可能有多张图片返回
+             * </pre>
+             */
+            public java.lang.String getImageSrc(int index) {
                 return imageSrc_.get(index);
             }
 
+            /**
+             * <code>repeated string image_src = 8;</code>
+             * <p/>
+             * <pre>
+             * 广告图片地址，注意：单个广告可能有多张图片返回
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getImageSrcBytes(int index) {
+                return imageSrc_.getByteString(index);
+            }
+
+            /**
+             * <code>repeated string image_src = 8;</code>
+             * <p/>
+             * <pre>
+             * 广告图片地址，注意：单个广告可能有多张图片返回
+             * </pre>
+             */
             public Builder setImageSrc(
-                    int index, String value) {
+                    int index, java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -13695,7 +21783,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder addImageSrc(String value) {
+            /**
+             * <code>repeated string image_src = 8;</code>
+             * <p/>
+             * <pre>
+             * 广告图片地址，注意：单个广告可能有多张图片返回
+             * </pre>
+             */
+            public Builder addImageSrc(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -13705,14 +21801,29 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated string image_src = 8;</code>
+             * <p/>
+             * <pre>
+             * 广告图片地址，注意：单个广告可能有多张图片返回
+             * </pre>
+             */
             public Builder addAllImageSrc(
-                    Iterable<String> values) {
+                    java.lang.Iterable<java.lang.String> values) {
                 ensureImageSrcIsMutable();
-                addAll(values, imageSrc_);
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                        values, imageSrc_);
                 onChanged();
                 return this;
             }
 
+            /**
+             * <code>repeated string image_src = 8;</code>
+             * <p/>
+             * <pre>
+             * 广告图片地址，注意：单个广告可能有多张图片返回
+             * </pre>
+             */
             public Builder clearImageSrc() {
                 imageSrc_ = com.google.protobuf.LazyStringArrayList.EMPTY;
                 bitField0_ = (bitField0_ & ~0x00000100);
@@ -13720,34 +21831,66 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            void addImageSrc(com.google.protobuf.ByteString value) {
+            /**
+             * <code>repeated string image_src = 8;</code>
+             * <p/>
+             * <pre>
+             * 广告图片地址，注意：单个广告可能有多张图片返回
+             * </pre>
+             */
+            public Builder addImageSrcBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
                 ensureImageSrcIsMutable();
                 imageSrc_.add(value);
                 onChanged();
+                return this;
             }
 
+            /**
+             * <code>optional string app_package = 9;</code>
+             * <p/>
+             * <pre>
+             * 下载类广告应用包名
+             * </pre>
+             */
             public boolean hasAppPackage() {
                 return ((bitField0_ & 0x00000200) == 0x00000200);
             }
 
-            public String getAppPackage() {
-                Object ref = appPackage_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    appPackage_ = s;
+            /**
+             * <code>optional string app_package = 9;</code>
+             * <p/>
+             * <pre>
+             * 下载类广告应用包名
+             * </pre>
+             */
+            public java.lang.String getAppPackage() {
+                java.lang.Object ref = appPackage_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        appPackage_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setAppPackage(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000200;
-                appPackage_ = value;
-                onChanged();
-            }
-
-            public Builder setAppPackage(String value) {
+            /**
+             * <code>optional string app_package = 9;</code>
+             * <p/>
+             * <pre>
+             * 下载类广告应用包名
+             * </pre>
+             */
+            public Builder setAppPackage(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -13757,6 +21900,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string app_package = 9;</code>
+             * <p/>
+             * <pre>
+             * 下载类广告应用包名
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getAppPackageBytes() {
+                java.lang.Object ref = appPackage_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    appPackage_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string app_package = 9;</code>
+             * <p/>
+             * <pre>
+             * 下载类广告应用包名
+             * </pre>
+             */
+            public Builder setAppPackageBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000200;
+                appPackage_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string app_package = 9;</code>
+             * <p/>
+             * <pre>
+             * 下载类广告应用包名
+             * </pre>
+             */
             public Builder clearAppPackage() {
                 bitField0_ = (bitField0_ & ~0x00000200);
                 appPackage_ = getDefaultInstance().getAppPackage();
@@ -13764,14 +21953,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 app_size = 10;</code>
+             * <p/>
+             * <pre>
+             * 下载类广告应用大小
+             * </pre>
+             */
             public boolean hasAppSize() {
                 return ((bitField0_ & 0x00000400) == 0x00000400);
             }
 
+            /**
+             * <code>optional uint32 app_size = 10;</code>
+             * <p/>
+             * <pre>
+             * 下载类广告应用大小
+             * </pre>
+             */
             public int getAppSize() {
                 return appSize_;
             }
 
+            /**
+             * <code>optional uint32 app_size = 10;</code>
+             * <p/>
+             * <pre>
+             * 下载类广告应用大小
+             * </pre>
+             */
             public Builder setAppSize(int value) {
                 bitField0_ |= 0x00000400;
                 appSize_ = value;
@@ -13779,6 +21989,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 app_size = 10;</code>
+             * <p/>
+             * <pre>
+             * 下载类广告应用大小
+             * </pre>
+             */
             public Builder clearAppSize() {
                 bitField0_ = (bitField0_ & ~0x00000400);
                 appSize_ = 0;
@@ -13786,28 +22003,48 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string video_url = 11;</code>
+             * <p/>
+             * <pre>
+             * 广告视频物料地址
+             * </pre>
+             */
             public boolean hasVideoUrl() {
                 return ((bitField0_ & 0x00000800) == 0x00000800);
             }
 
-            public String getVideoUrl() {
-                Object ref = videoUrl_;
-                if (!(ref instanceof String)) {
-                    String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-                    videoUrl_ = s;
+            /**
+             * <code>optional string video_url = 11;</code>
+             * <p/>
+             * <pre>
+             * 广告视频物料地址
+             * </pre>
+             */
+            public java.lang.String getVideoUrl() {
+                java.lang.Object ref = videoUrl_;
+                if (!(ref instanceof java.lang.String)) {
+                    com.google.protobuf.ByteString bs =
+                            (com.google.protobuf.ByteString) ref;
+                    java.lang.String s = bs.toStringUtf8();
+                    if (bs.isValidUtf8()) {
+                        videoUrl_ = s;
+                    }
                     return s;
                 } else {
-                    return (String) ref;
+                    return (java.lang.String) ref;
                 }
             }
 
-            void setVideoUrl(com.google.protobuf.ByteString value) {
-                bitField0_ |= 0x00000800;
-                videoUrl_ = value;
-                onChanged();
-            }
-
-            public Builder setVideoUrl(String value) {
+            /**
+             * <code>optional string video_url = 11;</code>
+             * <p/>
+             * <pre>
+             * 广告视频物料地址
+             * </pre>
+             */
+            public Builder setVideoUrl(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -13817,6 +22054,52 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional string video_url = 11;</code>
+             * <p/>
+             * <pre>
+             * 广告视频物料地址
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getVideoUrlBytes() {
+                java.lang.Object ref = videoUrl_;
+                if (ref instanceof String) {
+                    com.google.protobuf.ByteString b =
+                            com.google.protobuf.ByteString.copyFromUtf8(
+                                    (java.lang.String) ref);
+                    videoUrl_ = b;
+                    return b;
+                } else {
+                    return (com.google.protobuf.ByteString) ref;
+                }
+            }
+
+            /**
+             * <code>optional string video_url = 11;</code>
+             * <p/>
+             * <pre>
+             * 广告视频物料地址
+             * </pre>
+             */
+            public Builder setVideoUrlBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
+                bitField0_ |= 0x00000800;
+                videoUrl_ = value;
+                onChanged();
+                return this;
+            }
+
+            /**
+             * <code>optional string video_url = 11;</code>
+             * <p/>
+             * <pre>
+             * 广告视频物料地址
+             * </pre>
+             */
             public Builder clearVideoUrl() {
                 bitField0_ = (bitField0_ & ~0x00000800);
                 videoUrl_ = getDefaultInstance().getVideoUrl();
@@ -13824,14 +22107,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 video_duration = 12;</code>
+             * <p/>
+             * <pre>
+             * 广告视频物料时长
+             * </pre>
+             */
             public boolean hasVideoDuration() {
                 return ((bitField0_ & 0x00001000) == 0x00001000);
             }
 
+            /**
+             * <code>optional uint32 video_duration = 12;</code>
+             * <p/>
+             * <pre>
+             * 广告视频物料时长
+             * </pre>
+             */
             public int getVideoDuration() {
                 return videoDuration_;
             }
 
+            /**
+             * <code>optional uint32 video_duration = 12;</code>
+             * <p/>
+             * <pre>
+             * 广告视频物料时长
+             * </pre>
+             */
             public Builder setVideoDuration(int value) {
                 bitField0_ |= 0x00001000;
                 videoDuration_ = value;
@@ -13839,6 +22143,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 video_duration = 12;</code>
+             * <p/>
+             * <pre>
+             * 广告视频物料时长
+             * </pre>
+             */
             public Builder clearVideoDuration() {
                 bitField0_ = (bitField0_ & ~0x00001000);
                 videoDuration_ = 0;
@@ -13846,11 +22157,25 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据在一条广告元素组中的索引结构
+             * </pre>
+             */
             public boolean hasMetaIndex() {
                 return ((bitField0_ & 0x00002000) == 0x00002000);
             }
 
-            public MetaIndex getMetaIndex() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据在一条广告元素组中的索引结构
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex getMetaIndex() {
                 if (metaIndexBuilder_ == null) {
                     return metaIndex_;
                 } else {
@@ -13858,19 +22183,14 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public Builder setMetaIndex(
-                    MetaIndex.Builder builderForValue) {
-                if (metaIndexBuilder_ == null) {
-                    metaIndex_ = builderForValue.build();
-                    onChanged();
-                } else {
-                    metaIndexBuilder_.setMessage(builderForValue.build());
-                }
-                bitField0_ |= 0x00002000;
-                return this;
-            }
-
-            public Builder setMetaIndex(MetaIndex value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据在一条广告元素组中的索引结构
+             * </pre>
+             */
+            public Builder setMetaIndex(com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex value) {
                 if (metaIndexBuilder_ == null) {
                     if (value == null) {
                         throw new NullPointerException();
@@ -13884,12 +22204,38 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder mergeMetaIndex(MetaIndex value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据在一条广告元素组中的索引结构
+             * </pre>
+             */
+            public Builder setMetaIndex(
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.Builder builderForValue) {
+                if (metaIndexBuilder_ == null) {
+                    metaIndex_ = builderForValue.build();
+                    onChanged();
+                } else {
+                    metaIndexBuilder_.setMessage(builderForValue.build());
+                }
+                bitField0_ |= 0x00002000;
+                return this;
+            }
+
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据在一条广告元素组中的索引结构
+             * </pre>
+             */
+            public Builder mergeMetaIndex(com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex value) {
                 if (metaIndexBuilder_ == null) {
                     if (((bitField0_ & 0x00002000) == 0x00002000) &&
-                            metaIndex_ != MetaIndex.getDefaultInstance()) {
+                            metaIndex_ != com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.getDefaultInstance()) {
                         metaIndex_ =
-                                MetaIndex.newBuilder(metaIndex_).mergeFrom(value).buildPartial();
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.newBuilder(metaIndex_).mergeFrom(value).buildPartial();
                     } else {
                         metaIndex_ = value;
                     }
@@ -13901,9 +22247,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据在一条广告元素组中的索引结构
+             * </pre>
+             */
             public Builder clearMetaIndex() {
                 if (metaIndexBuilder_ == null) {
-                    metaIndex_ = MetaIndex.getDefaultInstance();
+                    metaIndex_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.getDefaultInstance();
                     onChanged();
                 } else {
                     metaIndexBuilder_.clear();
@@ -13912,13 +22265,27 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public MetaIndex.Builder getMetaIndexBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据在一条广告元素组中的索引结构
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.Builder getMetaIndexBuilder() {
                 bitField0_ |= 0x00002000;
                 onChanged();
                 return getMetaIndexFieldBuilder().getBuilder();
             }
 
-            public MetaIndexOrBuilder getMetaIndexOrBuilder() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据在一条广告元素组中的索引结构
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndexOrBuilder getMetaIndexOrBuilder() {
                 if (metaIndexBuilder_ != null) {
                     return metaIndexBuilder_.getMessageOrBuilder();
                 } else {
@@ -13926,13 +22293,20 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.MetaIndex meta_index = 13;</code>
+             * <p/>
+             * <pre>
+             * 当前元数据在一条广告元素组中的索引结构
+             * </pre>
+             */
             private com.google.protobuf.SingleFieldBuilder<
-                    MetaIndex, MetaIndex.Builder, MetaIndexOrBuilder>
+                    com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex, com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndexOrBuilder>
             getMetaIndexFieldBuilder() {
                 if (metaIndexBuilder_ == null) {
                     metaIndexBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-                            MetaIndex, MetaIndex.Builder, MetaIndexOrBuilder>(
-                            metaIndex_,
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex, com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndex.Builder, com.ksc.client.ads.proto.KSCMobileAdsProto530.MetaIndexOrBuilder>(
+                            getMetaIndex(),
                             getParentForChildren(),
                             isClean());
                     metaIndex_ = null;
@@ -13940,14 +22314,35 @@ public final class KSCMobileAdsProto530 {
                 return metaIndexBuilder_;
             }
 
+            /**
+             * <code>optional uint32 material_width = 14;</code>
+             * <p/>
+             * <pre>
+             * 物料的宽度:如果是图片,表示图片的宽度;如果是视频(含有视频截图),则为视频宽度;如果是图文或文本,则不会填充此字段
+             * </pre>
+             */
             public boolean hasMaterialWidth() {
                 return ((bitField0_ & 0x00004000) == 0x00004000);
             }
 
+            /**
+             * <code>optional uint32 material_width = 14;</code>
+             * <p/>
+             * <pre>
+             * 物料的宽度:如果是图片,表示图片的宽度;如果是视频(含有视频截图),则为视频宽度;如果是图文或文本,则不会填充此字段
+             * </pre>
+             */
             public int getMaterialWidth() {
                 return materialWidth_;
             }
 
+            /**
+             * <code>optional uint32 material_width = 14;</code>
+             * <p/>
+             * <pre>
+             * 物料的宽度:如果是图片,表示图片的宽度;如果是视频(含有视频截图),则为视频宽度;如果是图文或文本,则不会填充此字段
+             * </pre>
+             */
             public Builder setMaterialWidth(int value) {
                 bitField0_ |= 0x00004000;
                 materialWidth_ = value;
@@ -13955,6 +22350,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 material_width = 14;</code>
+             * <p/>
+             * <pre>
+             * 物料的宽度:如果是图片,表示图片的宽度;如果是视频(含有视频截图),则为视频宽度;如果是图文或文本,则不会填充此字段
+             * </pre>
+             */
             public Builder clearMaterialWidth() {
                 bitField0_ = (bitField0_ & ~0x00004000);
                 materialWidth_ = 0;
@@ -13962,14 +22364,35 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 material_height = 15;</code>
+             * <p/>
+             * <pre>
+             * 物料的高度:如果是图片,表示图片的高度;如果是视频(含有视频截图),则为视频高度;如果是图文或文本,则不会填充此字段
+             * </pre>
+             */
             public boolean hasMaterialHeight() {
                 return ((bitField0_ & 0x00008000) == 0x00008000);
             }
 
+            /**
+             * <code>optional uint32 material_height = 15;</code>
+             * <p/>
+             * <pre>
+             * 物料的高度:如果是图片,表示图片的高度;如果是视频(含有视频截图),则为视频高度;如果是图文或文本,则不会填充此字段
+             * </pre>
+             */
             public int getMaterialHeight() {
                 return materialHeight_;
             }
 
+            /**
+             * <code>optional uint32 material_height = 15;</code>
+             * <p/>
+             * <pre>
+             * 物料的高度:如果是图片,表示图片的高度;如果是视频(含有视频截图),则为视频高度;如果是图文或文本,则不会填充此字段
+             * </pre>
+             */
             public Builder setMaterialHeight(int value) {
                 bitField0_ |= 0x00008000;
                 materialHeight_ = value;
@@ -13977,6 +22400,13 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional uint32 material_height = 15;</code>
+             * <p/>
+             * <pre>
+             * 物料的高度:如果是图片,表示图片的高度;如果是视频(含有视频截图),则为视频高度;如果是图文或文本,则不会填充此字段
+             * </pre>
+             */
             public Builder clearMaterialHeight() {
                 bitField0_ = (bitField0_ & ~0x00008000);
                 materialHeight_ = 0;
@@ -13990,33 +22420,110 @@ public final class KSCMobileAdsProto530 {
         // @@protoc_insertion_point(class_scope:com.ksc.client.ads.proto.MaterialMeta)
     }
 
+    /**
+     * Protobuf type {@code com.ksc.client.ads.proto.Tracking}
+     * <p/>
+     * <pre>
+     * 广告效果跟踪信息
+     * </pre>
+     */
     public static final class Tracking extends
-            com.google.protobuf.GeneratedMessage
-            implements TrackingOrBuilder {
-        // optional .com.ksc.client.ads.proto.Tracking.TrackingEvent tracking_event = 1;
+            com.google.protobuf.GeneratedMessage implements
+            // @@protoc_insertion_point(message_implements:com.ksc.client.ads.proto.Tracking)
+            TrackingOrBuilder {
         public static final int TRACKING_EVENT_FIELD_NUMBER = 1;
-        // repeated string tracking_url = 2;
         public static final int TRACKING_URL_FIELD_NUMBER = 2;
         private static final Tracking defaultInstance;
         private static final long serialVersionUID = 0L;
+        public static com.google.protobuf.Parser<Tracking> PARSER =
+                new com.google.protobuf.AbstractParser<Tracking>() {
+                    public Tracking parsePartialFrom(
+                            com.google.protobuf.CodedInputStream input,
+                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                            throws com.google.protobuf.InvalidProtocolBufferException {
+                        return new Tracking(input, extensionRegistry);
+                    }
+                };
 
         static {
             defaultInstance = new Tracking(true);
             defaultInstance.initFields();
         }
 
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
         private int bitField0_;
-        private TrackingEvent trackingEvent_;
+        private com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.TrackingEvent trackingEvent_;
         private com.google.protobuf.LazyStringList trackingUrl_;
         private byte memoizedIsInitialized = -1;
         private int memoizedSerializedSize = -1;
 
         // Use Tracking.newBuilder() to construct.
-        private Tracking(Builder builder) {
+        private Tracking(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
             super(builder);
+            this.unknownFields = builder.getUnknownFields();
         }
 
         private Tracking(boolean noInit) {
+            this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+        }
+
+        private Tracking(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+            initFields();
+            int mutable_bitField0_ = 0;
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            try {
+                boolean done = false;
+                while (!done) {
+                    int tag = input.readTag();
+                    switch (tag) {
+                        case 0:
+                            done = true;
+                            break;
+                        default: {
+                            if (!parseUnknownField(input, unknownFields,
+                                    extensionRegistry, tag)) {
+                                done = true;
+                            }
+                            break;
+                        }
+                        case 8: {
+                            int rawValue = input.readEnum();
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.TrackingEvent value = com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.TrackingEvent.valueOf(rawValue);
+                            if (value == null) {
+                                unknownFields.mergeVarintField(1, rawValue);
+                            } else {
+                                bitField0_ |= 0x00000001;
+                                trackingEvent_ = value;
+                            }
+                            break;
+                        }
+                        case 18: {
+                            com.google.protobuf.ByteString bs = input.readBytes();
+                            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                                trackingUrl_ = new com.google.protobuf.LazyStringArrayList();
+                                mutable_bitField0_ |= 0x00000002;
+                            }
+                            trackingUrl_.add(bs);
+                            break;
+                        }
+                    }
+                }
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(this);
+            } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(
+                        e.getMessage()).setUnfinishedMessage(this);
+            } finally {
+                if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                    trackingUrl_ = trackingUrl_.getUnmodifiableView();
+                }
+                this.unknownFields = unknownFields.build();
+                makeExtensionsImmutable();
+            }
         }
 
         public static Tracking getDefaultInstance() {
@@ -14025,90 +22532,76 @@ public final class KSCMobileAdsProto530 {
 
         public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Tracking_descriptor;
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Tracking_descriptor;
         }
 
-        public static Tracking parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking parseFrom(
                 com.google.protobuf.ByteString data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Tracking parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking parseFrom(
                 com.google.protobuf.ByteString data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Tracking parseFrom(byte[] data)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking parseFrom(byte[] data)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data).buildParsed();
+            return PARSER.parseFrom(data);
         }
 
-        public static Tracking parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking parseFrom(
                 byte[] data,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws com.google.protobuf.InvalidProtocolBufferException {
-            return newBuilder().mergeFrom(data, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static Tracking parseFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking parseFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Tracking parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking parseFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static Tracking parseDelimitedFrom(java.io.InputStream input)
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking parseDelimitedFrom(java.io.InputStream input)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input);
         }
 
-        public static Tracking parseDelimitedFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking parseDelimitedFrom(
                 java.io.InputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            Builder builder = newBuilder();
-            if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-                return builder.buildParsed();
-            } else {
-                return null;
-            }
+            return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static Tracking parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking parseFrom(
                 com.google.protobuf.CodedInputStream input)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input).buildParsed();
+            return PARSER.parseFrom(input);
         }
 
-        public static Tracking parseFrom(
+        public static com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking parseFrom(
                 com.google.protobuf.CodedInputStream input,
                 com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                 throws java.io.IOException {
-            return newBuilder().mergeFrom(input, extensionRegistry)
-                    .buildParsed();
+            return PARSER.parseFrom(input, extensionRegistry);
         }
 
         public static Builder newBuilder() {
             return Builder.create();
         }
 
-        public static Builder newBuilder(Tracking prototype) {
+        public static Builder newBuilder(com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking prototype) {
             return newBuilder().mergeFrom(prototype);
         }
 
@@ -14116,40 +22609,101 @@ public final class KSCMobileAdsProto530 {
             return defaultInstance;
         }
 
-        protected FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Tracking_fieldAccessorTable;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+            return this.unknownFields;
         }
 
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+            return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Tracking_fieldAccessorTable
+                    .ensureFieldAccessorsInitialized(
+                            com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.Builder.class);
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Tracking> getParserForType() {
+            return PARSER;
+        }
+
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Tracking.TrackingEvent tracking_event = 1;</code>
+         * <p/>
+         * <pre>
+         * 被跟踪的广告展示过程事件
+         * </pre>
+         */
         public boolean hasTrackingEvent() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
         }
 
-        public TrackingEvent getTrackingEvent() {
+        /**
+         * <code>optional .com.ksc.client.ads.proto.Tracking.TrackingEvent tracking_event = 1;</code>
+         * <p/>
+         * <pre>
+         * 被跟踪的广告展示过程事件
+         * </pre>
+         */
+        public com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.TrackingEvent getTrackingEvent() {
             return trackingEvent_;
         }
 
-        public java.util.List<String>
+        /**
+         * <code>repeated string tracking_url = 2;</code>
+         * <p/>
+         * <pre>
+         * 事件监控URL
+         * </pre>
+         */
+        public com.google.protobuf.ProtocolStringList
         getTrackingUrlList() {
             return trackingUrl_;
         }
 
+        /**
+         * <code>repeated string tracking_url = 2;</code>
+         * <p/>
+         * <pre>
+         * 事件监控URL
+         * </pre>
+         */
         public int getTrackingUrlCount() {
             return trackingUrl_.size();
         }
 
-        public String getTrackingUrl(int index) {
+        /**
+         * <code>repeated string tracking_url = 2;</code>
+         * <p/>
+         * <pre>
+         * 事件监控URL
+         * </pre>
+         */
+        public java.lang.String getTrackingUrl(int index) {
             return trackingUrl_.get(index);
         }
 
+        /**
+         * <code>repeated string tracking_url = 2;</code>
+         * <p/>
+         * <pre>
+         * 事件监控URL
+         * </pre>
+         */
+        public com.google.protobuf.ByteString
+        getTrackingUrlBytes(int index) {
+            return trackingUrl_.getByteString(index);
+        }
+
         private void initFields() {
-            trackingEvent_ = TrackingEvent.AD_CLICK;
+            trackingEvent_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.TrackingEvent.AD_CLICK;
             trackingUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         }
 
         public final boolean isInitialized() {
             byte isInitialized = memoizedIsInitialized;
-            if (isInitialized != -1) return isInitialized == 1;
+            if (isInitialized == 1) return true;
+            if (isInitialized == 0) return false;
 
             memoizedIsInitialized = 1;
             return true;
@@ -14190,8 +22744,8 @@ public final class KSCMobileAdsProto530 {
             return size;
         }
 
-        @Override
-        protected Object writeReplace()
+        @java.lang.Override
+        protected java.lang.Object writeReplace()
                 throws java.io.ObjectStreamException {
             return super.writeReplace();
         }
@@ -14204,39 +22758,184 @@ public final class KSCMobileAdsProto530 {
             return newBuilder(this);
         }
 
-        @Override
+        @java.lang.Override
         protected Builder newBuilderForType(
-                BuilderParent parent) {
+                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             Builder builder = new Builder(parent);
             return builder;
         }
 
+        /**
+         * Protobuf enum {@code com.ksc.client.ads.proto.Tracking.TrackingEvent}
+         * <p/>
+         * <pre>
+         * 广告展示过程事件类型
+         * </pre>
+         */
         public enum TrackingEvent
                 implements com.google.protobuf.ProtocolMessageEnum {
+            /**
+             * <code>AD_CLICK = 0;</code>
+             * <p/>
+             * <pre>
+             * 广告展示过程共性事件
+             * </pre>
+             */
             AD_CLICK(0, 0),
+            /**
+             * <code>AD_EXPOSURE = 1;</code>
+             * <p/>
+             * <pre>
+             * 广告被展现
+             * </pre>
+             */
             AD_EXPOSURE(1, 1),
+            /**
+             * <code>AD_CLOSE = 2;</code>
+             * <p/>
+             * <pre>
+             * 广告被关闭
+             * </pre>
+             */
             AD_CLOSE(2, 2),
+            /**
+             * <code>VIDEO_AD_START = 101000;</code>
+             * <p/>
+             * <pre>
+             * 视频类广告展示过程事件
+             * </pre>
+             */
             VIDEO_AD_START(3, 101000),
+            /**
+             * <code>VIDEO_AD_FULL_SCREEN = 101001;</code>
+             * <p/>
+             * <pre>
+             * 视频全屏
+             * </pre>
+             */
             VIDEO_AD_FULL_SCREEN(4, 101001),
+            /**
+             * <code>VIDEO_AD_END = 101002;</code>
+             * <p/>
+             * <pre>
+             * 视频播放结束(正常和非正常)
+             * </pre>
+             */
             VIDEO_AD_END(5, 101002),
+            /**
+             * <code>VIDEO_AD_START_CARD_CLICK = 101003;</code>
+             * <p/>
+             * <pre>
+             * 点击预览图播放视频
+             * </pre>
+             */
             VIDEO_AD_START_CARD_CLICK(6, 101003),
+            /**
+             * <code>APP_AD_DOWNLOAD = 102000;</code>
+             * <p/>
+             * <pre>
+             * 下载类广告推广APP相关事件
+             * </pre>
+             */
             APP_AD_DOWNLOAD(7, 102000),
+            /**
+             * <code>APP_AD_INSTALL = 102001;</code>
+             * <p/>
+             * <pre>
+             * 安装推广APP
+             * </pre>
+             */
             APP_AD_INSTALL(8, 102001),
+            /**
+             * <code>APP_AD_ACTIVE = 102002;</code>
+             * <p/>
+             * <pre>
+             * 激活推广APP
+             * </pre>
+             */
             APP_AD_ACTIVE(9, 102002),;
 
+            /**
+             * <code>AD_CLICK = 0;</code>
+             * <p/>
+             * <pre>
+             * 广告展示过程共性事件
+             * </pre>
+             */
             public static final int AD_CLICK_VALUE = 0;
+            /**
+             * <code>AD_EXPOSURE = 1;</code>
+             * <p/>
+             * <pre>
+             * 广告被展现
+             * </pre>
+             */
             public static final int AD_EXPOSURE_VALUE = 1;
+            /**
+             * <code>AD_CLOSE = 2;</code>
+             * <p/>
+             * <pre>
+             * 广告被关闭
+             * </pre>
+             */
             public static final int AD_CLOSE_VALUE = 2;
+            /**
+             * <code>VIDEO_AD_START = 101000;</code>
+             * <p/>
+             * <pre>
+             * 视频类广告展示过程事件
+             * </pre>
+             */
             public static final int VIDEO_AD_START_VALUE = 101000;
+            /**
+             * <code>VIDEO_AD_FULL_SCREEN = 101001;</code>
+             * <p/>
+             * <pre>
+             * 视频全屏
+             * </pre>
+             */
             public static final int VIDEO_AD_FULL_SCREEN_VALUE = 101001;
+            /**
+             * <code>VIDEO_AD_END = 101002;</code>
+             * <p/>
+             * <pre>
+             * 视频播放结束(正常和非正常)
+             * </pre>
+             */
             public static final int VIDEO_AD_END_VALUE = 101002;
+            /**
+             * <code>VIDEO_AD_START_CARD_CLICK = 101003;</code>
+             * <p/>
+             * <pre>
+             * 点击预览图播放视频
+             * </pre>
+             */
             public static final int VIDEO_AD_START_CARD_CLICK_VALUE = 101003;
+            /**
+             * <code>APP_AD_DOWNLOAD = 102000;</code>
+             * <p/>
+             * <pre>
+             * 下载类广告推广APP相关事件
+             * </pre>
+             */
             public static final int APP_AD_DOWNLOAD_VALUE = 102000;
+            /**
+             * <code>APP_AD_INSTALL = 102001;</code>
+             * <p/>
+             * <pre>
+             * 安装推广APP
+             * </pre>
+             */
             public static final int APP_AD_INSTALL_VALUE = 102001;
+            /**
+             * <code>APP_AD_ACTIVE = 102002;</code>
+             * <p/>
+             * <pre>
+             * 激活推广APP
+             * </pre>
+             */
             public static final int APP_AD_ACTIVE_VALUE = 102002;
-            private static final TrackingEvent[] VALUES = {
-                    AD_CLICK, AD_EXPOSURE, AD_CLOSE, VIDEO_AD_START, VIDEO_AD_FULL_SCREEN, VIDEO_AD_END, VIDEO_AD_START_CARD_CLICK, APP_AD_DOWNLOAD, APP_AD_INSTALL, APP_AD_ACTIVE,
-            };
+            private static final TrackingEvent[] VALUES = values();
             private static com.google.protobuf.Internal.EnumLiteMap<TrackingEvent>
                     internalValueMap =
                     new com.google.protobuf.Internal.EnumLiteMap<TrackingEvent>() {
@@ -14286,13 +22985,13 @@ public final class KSCMobileAdsProto530 {
 
             public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
-                return Tracking.getDescriptor().getEnumTypes().get(0);
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.getDescriptor().getEnumTypes().get(0);
             }
 
             public static TrackingEvent valueOf(
                     com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
                 if (desc.getType() != getDescriptor()) {
-                    throw new IllegalArgumentException(
+                    throw new java.lang.IllegalArgumentException(
                             "EnumValueDescriptor is not for this type.");
                 }
                 return VALUES[desc.getIndex()];
@@ -14315,13 +23014,19 @@ public final class KSCMobileAdsProto530 {
             // @@protoc_insertion_point(enum_scope:com.ksc.client.ads.proto.Tracking.TrackingEvent)
         }
 
+        /**
+         * Protobuf type {@code com.ksc.client.ads.proto.Tracking}
+         * <p/>
+         * <pre>
+         * 广告效果跟踪信息
+         * </pre>
+         */
         public static final class Builder extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements TrackingOrBuilder {
+                com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+                // @@protoc_insertion_point(builder_implements:com.ksc.client.ads.proto.Tracking)
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.TrackingOrBuilder {
             private int bitField0_;
-            // optional .com.ksc.client.ads.proto.Tracking.TrackingEvent tracking_event = 1;
-            private TrackingEvent trackingEvent_ = TrackingEvent.AD_CLICK;
-            // repeated string tracking_url = 2;
+            private com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.TrackingEvent trackingEvent_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.TrackingEvent.AD_CLICK;
             private com.google.protobuf.LazyStringList trackingUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
 
             // Construct using com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.newBuilder()
@@ -14329,23 +23034,26 @@ public final class KSCMobileAdsProto530 {
                 maybeForceBuilderInitialization();
             }
 
-            private Builder(BuilderParent parent) {
+            private Builder(
+                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
                 super(parent);
                 maybeForceBuilderInitialization();
             }
 
             public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Tracking_descriptor;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Tracking_descriptor;
             }
 
             private static Builder create() {
                 return new Builder();
             }
 
-            protected FieldAccessorTable
+            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-                return KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Tracking_fieldAccessorTable;
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Tracking_fieldAccessorTable
+                        .ensureFieldAccessorsInitialized(
+                                com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.class, com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.Builder.class);
             }
 
             private void maybeForceBuilderInitialization() {
@@ -14355,7 +23063,7 @@ public final class KSCMobileAdsProto530 {
 
             public Builder clear() {
                 super.clear();
-                trackingEvent_ = TrackingEvent.AD_CLICK;
+                trackingEvent_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.TrackingEvent.AD_CLICK;
                 bitField0_ = (bitField0_ & ~0x00000001);
                 trackingUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
                 bitField0_ = (bitField0_ & ~0x00000002);
@@ -14368,33 +23076,23 @@ public final class KSCMobileAdsProto530 {
 
             public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-                return Tracking.getDescriptor();
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.internal_static_com_ksc_client_ads_proto_Tracking_descriptor;
             }
 
-            public Tracking getDefaultInstanceForType() {
-                return Tracking.getDefaultInstance();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking getDefaultInstanceForType() {
+                return com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.getDefaultInstance();
             }
 
-            public Tracking build() {
-                Tracking result = buildPartial();
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking build() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking result = buildPartial();
                 if (!result.isInitialized()) {
                     throw newUninitializedMessageException(result);
                 }
                 return result;
             }
 
-            private Tracking buildParsed()
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                Tracking result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(
-                            result).asInvalidProtocolBufferException();
-                }
-                return result;
-            }
-
-            public Tracking buildPartial() {
-                Tracking result = new Tracking(this);
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking buildPartial() {
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking result = new com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking(this);
                 int from_bitField0_ = bitField0_;
                 int to_bitField0_ = 0;
                 if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -14402,8 +23100,7 @@ public final class KSCMobileAdsProto530 {
                 }
                 result.trackingEvent_ = trackingEvent_;
                 if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                    trackingUrl_ = new com.google.protobuf.UnmodifiableLazyStringList(
-                            trackingUrl_);
+                    trackingUrl_ = trackingUrl_.getUnmodifiableView();
                     bitField0_ = (bitField0_ & ~0x00000002);
                 }
                 result.trackingUrl_ = trackingUrl_;
@@ -14413,16 +23110,16 @@ public final class KSCMobileAdsProto530 {
             }
 
             public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof Tracking) {
-                    return mergeFrom((Tracking) other);
+                if (other instanceof com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking) {
+                    return mergeFrom((com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking) other);
                 } else {
                     super.mergeFrom(other);
                     return this;
                 }
             }
 
-            public Builder mergeFrom(Tracking other) {
-                if (other == Tracking.getDefaultInstance()) return this;
+            public Builder mergeFrom(com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking other) {
+                if (other == com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.getDefaultInstance()) return this;
                 if (other.hasTrackingEvent()) {
                     setTrackingEvent(other.getTrackingEvent());
                 }
@@ -14448,54 +23145,50 @@ public final class KSCMobileAdsProto530 {
                     com.google.protobuf.CodedInputStream input,
                     com.google.protobuf.ExtensionRegistryLite extensionRegistry)
                     throws java.io.IOException {
-                com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                        com.google.protobuf.UnknownFieldSet.newBuilder(
-                                this.getUnknownFields());
-                while (true) {
-                    int tag = input.readTag();
-                    switch (tag) {
-                        case 0:
-                            this.setUnknownFields(unknownFields.build());
-                            onChanged();
-                            return this;
-                        default: {
-                            if (!parseUnknownField(input, unknownFields,
-                                    extensionRegistry, tag)) {
-                                this.setUnknownFields(unknownFields.build());
-                                onChanged();
-                                return this;
-                            }
-                            break;
-                        }
-                        case 8: {
-                            int rawValue = input.readEnum();
-                            TrackingEvent value = TrackingEvent.valueOf(rawValue);
-                            if (value == null) {
-                                unknownFields.mergeVarintField(1, rawValue);
-                            } else {
-                                bitField0_ |= 0x00000001;
-                                trackingEvent_ = value;
-                            }
-                            break;
-                        }
-                        case 18: {
-                            ensureTrackingUrlIsMutable();
-                            trackingUrl_.add(input.readBytes());
-                            break;
-                        }
+                com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking parsedMessage = null;
+                try {
+                    parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                    parsedMessage = (com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking) e.getUnfinishedMessage();
+                    throw e;
+                } finally {
+                    if (parsedMessage != null) {
+                        mergeFrom(parsedMessage);
                     }
                 }
+                return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Tracking.TrackingEvent tracking_event = 1;</code>
+             * <p/>
+             * <pre>
+             * 被跟踪的广告展示过程事件
+             * </pre>
+             */
             public boolean hasTrackingEvent() {
                 return ((bitField0_ & 0x00000001) == 0x00000001);
             }
 
-            public TrackingEvent getTrackingEvent() {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Tracking.TrackingEvent tracking_event = 1;</code>
+             * <p/>
+             * <pre>
+             * 被跟踪的广告展示过程事件
+             * </pre>
+             */
+            public com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.TrackingEvent getTrackingEvent() {
                 return trackingEvent_;
             }
 
-            public Builder setTrackingEvent(TrackingEvent value) {
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Tracking.TrackingEvent tracking_event = 1;</code>
+             * <p/>
+             * <pre>
+             * 被跟踪的广告展示过程事件
+             * </pre>
+             */
+            public Builder setTrackingEvent(com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.TrackingEvent value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -14505,9 +23198,16 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>optional .com.ksc.client.ads.proto.Tracking.TrackingEvent tracking_event = 1;</code>
+             * <p/>
+             * <pre>
+             * 被跟踪的广告展示过程事件
+             * </pre>
+             */
             public Builder clearTrackingEvent() {
                 bitField0_ = (bitField0_ & ~0x00000001);
-                trackingEvent_ = TrackingEvent.AD_CLICK;
+                trackingEvent_ = com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking.TrackingEvent.AD_CLICK;
                 onChanged();
                 return this;
             }
@@ -14519,21 +23219,61 @@ public final class KSCMobileAdsProto530 {
                 }
             }
 
-            public java.util.List<String>
+            /**
+             * <code>repeated string tracking_url = 2;</code>
+             * <p/>
+             * <pre>
+             * 事件监控URL
+             * </pre>
+             */
+            public com.google.protobuf.ProtocolStringList
             getTrackingUrlList() {
-                return java.util.Collections.unmodifiableList(trackingUrl_);
+                return trackingUrl_.getUnmodifiableView();
             }
 
+            /**
+             * <code>repeated string tracking_url = 2;</code>
+             * <p/>
+             * <pre>
+             * 事件监控URL
+             * </pre>
+             */
             public int getTrackingUrlCount() {
                 return trackingUrl_.size();
             }
 
-            public String getTrackingUrl(int index) {
+            /**
+             * <code>repeated string tracking_url = 2;</code>
+             * <p/>
+             * <pre>
+             * 事件监控URL
+             * </pre>
+             */
+            public java.lang.String getTrackingUrl(int index) {
                 return trackingUrl_.get(index);
             }
 
+            /**
+             * <code>repeated string tracking_url = 2;</code>
+             * <p/>
+             * <pre>
+             * 事件监控URL
+             * </pre>
+             */
+            public com.google.protobuf.ByteString
+            getTrackingUrlBytes(int index) {
+                return trackingUrl_.getByteString(index);
+            }
+
+            /**
+             * <code>repeated string tracking_url = 2;</code>
+             * <p/>
+             * <pre>
+             * 事件监控URL
+             * </pre>
+             */
             public Builder setTrackingUrl(
-                    int index, String value) {
+                    int index, java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -14543,7 +23283,15 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            public Builder addTrackingUrl(String value) {
+            /**
+             * <code>repeated string tracking_url = 2;</code>
+             * <p/>
+             * <pre>
+             * 事件监控URL
+             * </pre>
+             */
+            public Builder addTrackingUrl(
+                    java.lang.String value) {
                 if (value == null) {
                     throw new NullPointerException();
                 }
@@ -14553,14 +23301,29 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
+            /**
+             * <code>repeated string tracking_url = 2;</code>
+             * <p/>
+             * <pre>
+             * 事件监控URL
+             * </pre>
+             */
             public Builder addAllTrackingUrl(
-                    Iterable<String> values) {
+                    java.lang.Iterable<java.lang.String> values) {
                 ensureTrackingUrlIsMutable();
-                addAll(values, trackingUrl_);
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                        values, trackingUrl_);
                 onChanged();
                 return this;
             }
 
+            /**
+             * <code>repeated string tracking_url = 2;</code>
+             * <p/>
+             * <pre>
+             * 事件监控URL
+             * </pre>
+             */
             public Builder clearTrackingUrl() {
                 trackingUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
                 bitField0_ = (bitField0_ & ~0x00000002);
@@ -14568,10 +23331,22 @@ public final class KSCMobileAdsProto530 {
                 return this;
             }
 
-            void addTrackingUrl(com.google.protobuf.ByteString value) {
+            /**
+             * <code>repeated string tracking_url = 2;</code>
+             * <p/>
+             * <pre>
+             * 事件监控URL
+             * </pre>
+             */
+            public Builder addTrackingUrlBytes(
+                    com.google.protobuf.ByteString value) {
+                if (value == null) {
+                    throw new NullPointerException();
+                }
                 ensureTrackingUrlIsMutable();
                 trackingUrl_.add(value);
                 onChanged();
+                return this;
             }
 
             // @@protoc_insertion_point(builder_scope:com.ksc.client.ads.proto.Tracking)

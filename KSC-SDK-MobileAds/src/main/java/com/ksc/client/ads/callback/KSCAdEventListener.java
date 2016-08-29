@@ -10,8 +10,9 @@ public interface KSCAdEventListener {
      * 是否有广告
      *
      * @param isAdExist 有广告为true，反之false
+     * @param code      错误码
      */
-    void onAdExist(boolean isAdExist);
+    void onAdExist(boolean isAdExist, long code);
 
     /**
      * 广告视频是否缓存了
@@ -43,13 +44,6 @@ public interface KSCAdEventListener {
      * @param reason 错误原因
      */
     void onVideoError(String reason);
-
-    /**
-     * 显示落地页成功
-     *
-     * @param showSuccess 是否显示成功
-     */
-    void onLoadingPageShow(boolean showSuccess);
 
     /**
      * 落地页关闭

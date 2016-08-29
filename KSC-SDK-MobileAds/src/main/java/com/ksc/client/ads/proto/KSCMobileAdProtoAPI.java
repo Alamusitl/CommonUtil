@@ -10,6 +10,7 @@ import com.google.protobuf.ByteString;
 import com.ksc.client.util.KSCDeviceUtils;
 import com.ksc.client.util.KSCLocationUtils;
 import com.ksc.client.util.KSCLog;
+import com.ksc.client.util.KSCMD5Utils;
 import com.ksc.client.util.KSCNetUtils;
 import com.ksc.client.util.KSCPackageUtils;
 
@@ -28,17 +29,19 @@ public class KSCMobileAdProtoAPI {
     /**
      * 获得请求广告的请求
      *
-     * @param activity
-     * @param appId
-     * @param channelId
+     * @param activity  上下文
+     * @param appId     AppId
+     * @param channelId 渠道Id
+     * @param adSlot_id 广告位ID
      * @return 请求
      */
-    public KSCMobileAdsProto530.MobadsRequest getRequest(Activity activity, String appId, String channelId,
-                                                         String adSlot_id) {
+    public KSCMobileAdsProto530.MobadsRequest getRequest(Activity activity, String appId, String channelId, String adSlot_id) {
+        DisplayMetrics dm = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
         KSCMobileAdsProto530.MobadsRequest.Builder requestBuilder = KSCMobileAdsProto530.MobadsRequest.newBuilder();
         requestBuilder.setRequestId(appId + adSlot_id + System.currentTimeMillis());
         requestBuilder.setApiVersion(getApiVersion());
-        requestBuilder.setAdslot(getAdSlot(adSlot_id));
+        requestBuilder.setAdslot(getAdSlot(adSlot_id, dm.widthPixels, dm.heightPixels));
         requestBuilder.setApp(getAppInfo(activity, appId, channelId));
         requestBuilder.setDevice(getDeviceInfo(activity));
         requestBuilder.setNetwork(getNetwork(activity));
@@ -63,16 +66,16 @@ public class KSCMobileAdProtoAPI {
     /**
      * 获得广告位信息
      *
-     * @param adSlot_id
-     * @param width
-     * @param height
+     * @param adSlot_id 广告ID
+     * @param width     广告宽度
+     * @param height    广告高度
      * @return 广告位信息
      */
     private KSCMobileAdsProto530.AdSlot getAdSlot(String adSlot_id, int width, int height) {
         KSCMobileAdsProto530.AdSlot.Builder adSlotBuilder = KSCMobileAdsProto530.AdSlot.newBuilder();
         adSlotBuilder.setAdslotId(adSlot_id);
         adSlotBuilder.setAdslotSize(getAdSlotSize(width, height));
-        adSlotBuilder.setVideo(getVideo(title, contentLength, copyRight));
+        adSlotBuilder.setVideo(getVideo("测试", 15000, KSCMobileAdsProto530.Video.CopyRight.CR_EXIST));
         adSlotBuilder.setAdslotType(-8);// 广告位类型
         adSlotBuilder.setAds(1);// 返回广告数量
         return adSlotBuilder.build();
@@ -184,7 +187,7 @@ public class KSCMobileAdProtoAPI {
         }
         deviceBuilder.setUdid(getUdId(activity));
         deviceBuilder.setScreenSize(getScreenSize(activity));
-        return null;
+        return deviceBuilder.build();
     }
 
     /**
@@ -230,12 +233,14 @@ public class KSCMobileAdProtoAPI {
      * @return 唯一标识信息
      */
     private KSCMobileAdsProto530.UdId getUdId(Activity activity) {
+        String imei = KSCDeviceUtils.getImei(activity);
+        String androidId = KSCDeviceUtils.getAndroidID(activity);
         KSCMobileAdsProto530.UdId.Builder udIdBuilder = KSCMobileAdsProto530.UdId.newBuilder();
-        udIdBuilder.setImei(KSCDeviceUtils.getImei(activity));
-        udIdBuilder.setMac("");
-        udIdBuilder.setAndroidId("");
-        udIdBuilder.setImeiMd5("");
-        udIdBuilder.setAndroididMd5("");
+        udIdBuilder.setImei(imei);
+        udIdBuilder.setMac(KSCNetUtils.getMac(activity));
+        udIdBuilder.setAndroidId(androidId);
+        udIdBuilder.setImeiMd5(KSCMD5Utils.md5(imei));
+        udIdBuilder.setAndroididMd5(KSCMD5Utils.md5(androidId));
         return udIdBuilder.build();
     }
 
@@ -247,10 +252,43 @@ public class KSCMobileAdProtoAPI {
     private KSCMobileAdsProto530.Network getNetwork(Context context) {
         KSCMobileAdsProto530.Network.Builder networkBuilder = KSCMobileAdsProto530.Network.newBuilder();
         networkBuilder.setIpv4(KSCNetUtils.getIp());
-        networkBuilder.setConnectionType();
-        networkBuilder.setOperatorType();
-        networkBuilder.setCellularId();
-        networkBuilder.setWifiAps(0, getWifiAp(context));
+        int netType = KSCNetUtils.getNetType(context);
+        if (netType == KSCNetUtils.NETWORK_TYPE_INVALID) {
+            networkBuilder.setConnectionType(KSCMobileAdsProto530.Network.ConnectionType.CONNECTION_UNKNOWN);
+        } else if (netType == KSCNetUtils.NETWORK_TYPE_WIFI) {
+            networkBuilder.setConnectionType(KSCMobileAdsProto530.Network.ConnectionType.WIFI);
+        } else if (netType == KSCNetUtils.NETWORK_TYPE_ETHERNET) {
+            networkBuilder.setConnectionType(KSCMobileAdsProto530.Network.ConnectionType.ETHERNET);
+        } else if (netType == KSCNetUtils.NETWORK_TYPE_2G) {
+            networkBuilder.setConnectionType(KSCMobileAdsProto530.Network.ConnectionType.CELL_2G);
+        } else if (netType == KSCNetUtils.NETWORK_TYPE_3G) {
+            networkBuilder.setConnectionType(KSCMobileAdsProto530.Network.ConnectionType.CELL_3G);
+        } else if (netType == KSCNetUtils.NETWORK_TYPE_4G) {
+            networkBuilder.setConnectionType(KSCMobileAdsProto530.Network.ConnectionType.CELL_4G);
+        } else if (netType == KSCNetUtils.NETWORK_TYPE_UNKNOWN) {
+            networkBuilder.setConnectionType(KSCMobileAdsProto530.Network.ConnectionType.CELL_UNKNOWN);
+        } else {
+            networkBuilder.setConnectionType(KSCMobileAdsProto530.Network.ConnectionType.NEW_TYPE);
+        }
+        switch (KSCNetUtils.getOperators(context)) {
+            case 0:
+                networkBuilder.setOperatorType(KSCMobileAdsProto530.Network.OperatorType.UNKNOWN_OPERATOR);
+                break;
+            case 1:
+                networkBuilder.setOperatorType(KSCMobileAdsProto530.Network.OperatorType.CHINA_MOBILE);
+                break;
+            case 2:
+                networkBuilder.setOperatorType(KSCMobileAdsProto530.Network.OperatorType.CHINA_UNICOM);
+                break;
+            case 3:
+                networkBuilder.setOperatorType(KSCMobileAdsProto530.Network.OperatorType.CHINA_TELECOM);
+                break;
+            default:
+                networkBuilder.setOperatorType(KSCMobileAdsProto530.Network.OperatorType.OTHER_OPERATOR);
+                break;
+        }
+        networkBuilder.setCellularId(String.valueOf(KSCNetUtils.getCellId(context)));
+//        networkBuilder.setWifiAps(1, getWifiAp(context));
         return networkBuilder.build();
     }
 
@@ -262,9 +300,9 @@ public class KSCMobileAdProtoAPI {
     private KSCMobileAdsProto530.WiFiAp getWifiAp(Context context) {
         KSCMobileAdsProto530.WiFiAp.Builder wifiBuilder = KSCMobileAdsProto530.WiFiAp.newBuilder();
         wifiBuilder.setApMac(KSCNetUtils.getMac(context));
-        wifiBuilder.setRssi();
-        wifiBuilder.setApName();
-        wifiBuilder.setIsConnected();
+        wifiBuilder.setRssi(KSCNetUtils.getRssi(context));
+        wifiBuilder.setApName(ByteString.copyFromUtf8(KSCNetUtils.getWifiName(context)));
+        wifiBuilder.setIsConnected(KSCNetUtils.isWifiConnected(context));
         return wifiBuilder.build();
     }
 
