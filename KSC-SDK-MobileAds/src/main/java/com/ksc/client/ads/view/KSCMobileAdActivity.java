@@ -45,18 +45,6 @@ public class KSCMobileAdActivity extends Activity {
     private boolean mIsMute = false;
     private boolean mPopCloseView = false;
     private Timer mTimer;
-    private Runnable mGetVideoProgressTask = new Runnable() {
-        @Override
-        public void run() {
-            mHandler.removeCallbacks(mGetVideoProgressTask);
-            Message message = mHandler.obtainMessage();
-            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mMediaPlayer.getDuration();
-            message.arg2 = mMediaPlayer.getCurrentPosition();
-            mHandler.sendMessage(message);
-            mHandler.postDelayed(mGetVideoProgressTask, 100);
-        }
-    };
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -90,6 +78,9 @@ public class KSCMobileAdActivity extends Activity {
                         mHandler.post(mGetVideoProgressTask);
                         mMediaPlayer.start();
                     }
+                    if (mPopCloseView) {
+                        mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_PAUSE);
+                    }
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_CLOSE:
                     mHandler.removeCallbacks(mGetVideoProgressTask);
@@ -121,6 +112,18 @@ public class KSCMobileAdActivity extends Activity {
                     closeActivity();
                     break;
             }
+        }
+    };
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
         }
     };
 
@@ -347,7 +350,10 @@ public class KSCMobileAdActivity extends Activity {
         landingPageView.setLandingViewDownloadListener(new DownloadListener() {
             @Override
             public void onDownloadStart(String url, String s1, String s2, String s3, long l) {
-                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIEW_H5_CLICK);
+                Message message = mHandler.obtainMessage();
+                message.what = KSCMobileAdKeyCode.KEY_VIEW_H5_CLICK;
+                message.obj = url;
+                mHandler.sendMessage(message);
             }
         });
         mRootView.addView(landingPageView, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
