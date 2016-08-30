@@ -13,8 +13,8 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.ksc.client.ads.KSCViewUtils;
 import com.ksc.client.ads.config.KSCMobileAdKeyCode;
+import com.ksc.client.util.KSCViewUtils;
 
 /**
  * Created by Alamusi on 2016/8/25.

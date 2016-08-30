@@ -13,8 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.ksc.client.ads.KSCViewUtils;
 import com.ksc.client.ads.config.KSCColor;
+import com.ksc.client.util.KSCViewUtils;
 
 /**
  * Created by Alamusi on 2016/8/25.

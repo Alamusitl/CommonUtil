@@ -1,4 +1,4 @@
-package com.ksc.client.ads;
+package com.ksc.client.util;
 
 import android.content.Context;
 import android.content.res.AssetManager;
