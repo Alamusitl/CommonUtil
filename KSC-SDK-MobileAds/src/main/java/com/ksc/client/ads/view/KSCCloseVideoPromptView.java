@@ -89,14 +89,14 @@ public class KSCCloseVideoPromptView extends LinearLayout {
         mCloseVideo.setId(KSCViewUtils.generateViewId());
         mCloseVideo.setGravity(Gravity.CENTER);
         mCloseVideo.setTextSize(mTextSize);
-        float[] closeViewRadii = {0, 0, 0, 0, 0, 0, 30, 30};
+        float[] closeViewRadii = {0, 0, 0, 0, 30, 30, 0, 0};
         GradientDrawable closeViewBackground = new GradientDrawable();
         closeViewBackground.setColor(KSCColor.BACKGROUND_WHITE);
         closeViewBackground.setCornerRadii(closeViewRadii);
         closeViewBackground.setStroke(0, KSCColor.BACKGROUND_WHITE);
         setViewBackground(mCloseVideo, closeViewBackground);
         lp = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        lp.addRule(RelativeLayout.LEFT_OF, imgLine.getId());
+        lp.addRule(RelativeLayout.RIGHT_OF, imgLine.getId());
         controlView.addView(mCloseVideo, lp);
 
         // 继续观看
@@ -106,14 +106,14 @@ public class KSCCloseVideoPromptView extends LinearLayout {
         mContinue.setId(KSCViewUtils.generateViewId());
         mContinue.setGravity(Gravity.CENTER);
         mContinue.setTextSize(mTextSize);
-        float[] continueViewRadii = {0, 0, 0, 0, 30, 30, 0, 0};
+        float[] continueViewRadii = {0, 0, 0, 0, 0, 0, 30, 30};
         GradientDrawable continueViewBackground = new GradientDrawable();
         continueViewBackground.setColor(KSCColor.BACKGROUND_WHITE);
         continueViewBackground.setCornerRadii(continueViewRadii);
         continueViewBackground.setStroke(0, KSCColor.BACKGROUND_WHITE);
         setViewBackground(mContinue, continueViewBackground);
         lp = new RelativeLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        lp.addRule(RelativeLayout.RIGHT_OF, imgLine.getId());
+        lp.addRule(RelativeLayout.LEFT_OF, imgLine.getId());
         controlView.addView(mContinue, lp);
     }
 
