@@ -12,8 +12,6 @@ import android.os.Message;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.ksc.client.util.KSCLog;
-
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -191,7 +189,7 @@ public class DownloadService extends IntentService {
         }
         boolean result = downloadFile.delete();
         if (!result) {
-            KSCLog.e("delete download file:" + path + " fail");
+            Log.e(TAG, "delete download file:" + path + " fail");
         }
     }
 
