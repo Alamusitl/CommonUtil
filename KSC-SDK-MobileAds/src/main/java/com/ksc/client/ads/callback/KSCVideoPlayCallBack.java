@@ -36,7 +36,9 @@ public interface KSCVideoPlayCallBack {
 
     /**
      * 视频播放器错误
+     *
+     * @param errorMsg 错误信息
      */
-    void onMediaPlayerError();
+    void onMediaPlayerError(String errorMsg);
 
 }

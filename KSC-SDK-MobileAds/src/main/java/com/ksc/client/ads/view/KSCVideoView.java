@@ -660,7 +660,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     private void mediaPlayerError() {
         Log.e(TAG, "mediaPlayerError");
         if (mVideoPlayCallBack != null) {
-            mVideoPlayCallBack.onMediaPlayerError();
+            mVideoPlayCallBack.onMediaPlayerError("media player is not initial");
         }
     }
 }
