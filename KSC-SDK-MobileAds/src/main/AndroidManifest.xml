@@ -12,6 +12,10 @@
             android:screenOrientation="sensor"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
         </activity>
+        <service
+            android:name="com.ksc.client.ads.DownloadService"
+            android:exported="false">
+        </service>
     </application>
 
 </manifest>

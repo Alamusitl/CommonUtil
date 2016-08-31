@@ -1,6 +1,7 @@
 package com.ksc.client.ads;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
 import android.os.Handler;
@@ -62,6 +63,9 @@ public class KSCADAgent {
      */
     private SparseArray<String> mCachedVideoList = new SparseArray<>();
 
+    private String mDownloadApkUrl;
+    private Context mContext;
+
     private Handler mHandler = new Handler(Looper.myLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -98,8 +102,10 @@ public class KSCADAgent {
                     break;
                 case KSCMobileAdKeyCode.KEY_VIEW_H5_CLICK:
                     deleteCachedVideo();
+                    mDownloadApkUrl = (String) msg.obj;
                     break;
                 case KSCMobileAdKeyCode.KEY_DOWNLOAD_START:
+                    startDownloadApk(mDownloadApkUrl);
                     break;
                 case KSCMobileAdKeyCode.KEY_DOWNLOAD_SUCCESS:
                     break;
@@ -114,6 +120,7 @@ public class KSCADAgent {
     }
 
     public void init(Activity activity, String appId, String channelId, String adSlotId, KSCAdEventListener eventListener) {
+        mContext = activity;
         mAppId = appId;
         mChannelId = channelId;
         mAdSlotId = adSlotId;
@@ -148,6 +155,9 @@ public class KSCADAgent {
             checkAppHasAd(activity, false);
         }
         if (!mHasCached && mAdVideoUrl != null) {// 没有缓存，有视频链接
+            if (!KSCNetUtils.isNetworkAvailable(activity)) {
+                return;
+            }
             Intent intent = new Intent(activity, KSCMobileAdActivity.class);
             intent.putExtra(KSCMobileAdKeyCode.VIDEO_TYPE, KSCMobileAdKeyCode.VIDEO_IN_STREAM);
             intent.putExtra(KSCMobileAdKeyCode.VIDEO_PATH, mAdVideoUrl);
@@ -254,6 +264,14 @@ public class KSCADAgent {
             KSCLog.e("get ad error, error code = " + errorCode);
             mEventListener.onAdExist(false, errorCode);
         }
+    }
+
+    private void startDownloadApk(String url) {
+        Intent intent = new Intent(mContext, DownloadService.class);
+        intent.putExtra(DownloadService.EXTRA_DOWNLOAD_URL, url);
+        intent.putExtra(DownloadService.EXTRA_DOWNLOAD_PATH, "");
+        intent.putExtra(DownloadService.EXTRA_SHOW_NOTIFY, false);
+        mContext.startService(intent);
     }
 
     /**

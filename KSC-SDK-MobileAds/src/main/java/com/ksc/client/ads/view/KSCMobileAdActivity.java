@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -45,18 +44,6 @@ public class KSCMobileAdActivity extends Activity {
     private boolean mIsMute = false;
     private boolean mPopCloseView = false;
     private Timer mTimer;
-    private Runnable mGetVideoProgressTask = new Runnable() {
-        @Override
-        public void run() {
-            mHandler.removeCallbacks(mGetVideoProgressTask);
-            Message message = mHandler.obtainMessage();
-            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mMediaPlayer.getDuration();
-            message.arg2 = mMediaPlayer.getCurrentPosition();
-            mHandler.sendMessage(message);
-            mHandler.postDelayed(mGetVideoProgressTask, 100);
-        }
-    };
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -124,6 +111,18 @@ public class KSCMobileAdActivity extends Activity {
                     closeActivity();
                     break;
             }
+        }
+    };
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
         }
     };
 
@@ -253,14 +252,14 @@ public class KSCMobileAdActivity extends Activity {
             }
 
             @Override
-            public void onCompletion(MediaPlayer mediaPlayer) {
+            public void onCompletion() {
                 Log.i(TAG, "onCompletion: ");
                 mHandler.removeCallbacks(mGetVideoProgressTask);
                 mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION);
             }
 
             @Override
-            public void onError(MediaPlayer mediaPlayer, int what, int extra) {
+            public void onError(int what, int extra) {
                 Log.i(TAG, "onError: what=" + what + ", extra=" + extra);
                 mHandler.removeCallbacks(mGetVideoProgressTask);
                 Message message = mHandler.obtainMessage();
@@ -269,6 +268,10 @@ public class KSCMobileAdActivity extends Activity {
                 mHandler.sendMessage(message);
             }
 
+            @Override
+            public void onMediaPlayerError() {
+                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_ERROR);
+            }
         });
     }
 

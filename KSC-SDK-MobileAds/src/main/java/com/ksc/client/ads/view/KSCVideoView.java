@@ -6,8 +6,10 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnBufferingUpdateListener;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaPlayer.OnErrorListener;
+import android.media.MediaPlayer.OnInfoListener;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.media.MediaPlayer.OnSeekCompleteListener;
 import android.net.Uri;
@@ -32,7 +34,7 @@ import java.io.IOException;
 /**
  * Created by Alamusi on 2016/8/18.
  */
-public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callback, OnPreparedListener, OnErrorListener, OnSeekCompleteListener, OnCompletionListener {
+public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callback, OnPreparedListener, OnErrorListener, OnSeekCompleteListener, OnCompletionListener, OnInfoListener, OnBufferingUpdateListener {
 
     private static final String TAG = KSCVideoView.class.getSimpleName();
     private Context mContext;
@@ -46,6 +48,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     private boolean mIsCompleted;
     private int mInitialVideoWidth;
     private int mInitialVideoHeight;
+    private int mBufferProgress;
     private KSCMediaState mCurrentState;
     private KSCMediaState mLastState;
     private KSCVideoPlayCallBack mVideoPlayCallBack;
@@ -77,6 +80,8 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
             mMediaPlayer.setOnErrorListener(null);
             mMediaPlayer.setOnSeekCompleteListener(null);
             mMediaPlayer.setOnCompletionListener(null);
+            mMediaPlayer.setOnInfoListener(null);
+            mMediaPlayer.setOnBufferingUpdateListener(null);
             if (isPlaying()) {
                 stop();
             }
@@ -132,7 +137,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
             start();
         }
         if (mVideoPlayCallBack != null) {
-            mVideoPlayCallBack.onCompletion(mediaPlayer);
+            mVideoPlayCallBack.onCompletion();
         }
     }
 
@@ -142,7 +147,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         stopLoading();
         mCurrentState = KSCMediaState.ERROR;
         if (mVideoPlayCallBack != null) {
-            mVideoPlayCallBack.onError(mediaPlayer, i, i1);
+            mVideoPlayCallBack.onError(i, i1);
         }
         return false;
     }
@@ -175,6 +180,16 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
             }
         }
 
+    }
+
+    @Override
+    public void onBufferingUpdate(MediaPlayer mediaPlayer, int i) {
+        mBufferProgress = i;
+    }
+
+    @Override
+    public boolean onInfo(MediaPlayer mediaPlayer, int i, int i1) {
+        return false;
     }
 
     /**
@@ -250,9 +265,12 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         mVideoIsReady = false;
         mInitialVideoWidth = -1;
         mInitialVideoHeight = -1;
+        mBufferProgress = 0;
         mMediaPlayer.setOnPreparedListener(this);
         mMediaPlayer.setOnErrorListener(this);
         mMediaPlayer.setOnSeekCompleteListener(this);
+        mMediaPlayer.setOnInfoListener(this);
+        mMediaPlayer.setOnBufferingUpdateListener(this);
         mCurrentState = KSCMediaState.PREPARING;
         mMediaPlayer.prepareAsync();
     }
@@ -356,7 +374,8 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      */
     public void setFullScreen() {
         if (mMediaPlayer == null) {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
+            return;
         }
         if (isPlaying()) {
             pause();
@@ -378,7 +397,8 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         } else if (mCurrentState == KSCMediaState.IDLE) {
             return 0;
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
+            return 0;
         }
     }
 
@@ -391,7 +411,8 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         if (mMediaPlayer != null) {
             return mMediaPlayer.getDuration();
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
+            return 0;
         }
     }
 
@@ -404,7 +425,8 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         if (mMediaPlayer != null) {
             return mMediaPlayer.getVideoWidth();
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
+            return 0;
         }
     }
 
@@ -417,7 +439,8 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         if (mMediaPlayer != null) {
             return mMediaPlayer.getVideoHeight();
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
+            return 0;
         }
     }
 
@@ -430,7 +453,8 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         if (mMediaPlayer != null) {
             return mMediaPlayer.isLooping();
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
+            return false;
         }
     }
 
@@ -443,7 +467,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         if (mMediaPlayer != null) {
             mMediaPlayer.setLooping(looping);
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
         }
     }
 
@@ -456,7 +480,8 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         if (mMediaPlayer != null) {
             return mMediaPlayer.isPlaying();
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
+            return false;
         }
     }
 
@@ -469,7 +494,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
             mCurrentState = KSCMediaState.IDLE;
             mMediaPlayer.reset();
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
         }
     }
 
@@ -488,7 +513,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
             mMediaPlayer.start();
             mVideoPlayCallBack.onStart();
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
         }
     }
 
@@ -501,7 +526,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
             mCurrentState = KSCMediaState.PAUSED;
             mMediaPlayer.pause();
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
         }
     }
 
@@ -514,7 +539,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
             mCurrentState = KSCMediaState.STOPPED;
             mMediaPlayer.stop();
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
         }
     }
 
@@ -534,7 +559,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
                 startLoading();
             }
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
         }
     }
 
@@ -548,13 +573,14 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         Log.d(TAG, "setVideoPath called, path:" + path);
         if (mMediaPlayer != null) {
             if (mCurrentState != KSCMediaState.IDLE) {
-                throw new RuntimeException("FSVideoView Invalid State: " + mCurrentState);
+                mediaPlayerError();
+                return;
             }
             mCurrentState = KSCMediaState.INITIALIZED;
             mMediaPlayer.setDataSource(path);
             prepare();
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
         }
     }
 
@@ -567,13 +593,14 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     public void setVideoURI(Uri uri) throws IOException {
         if (mMediaPlayer != null) {
             if (mCurrentState != KSCMediaState.IDLE) {
-                throw new RuntimeException("FSVideoView Invalid State: " + mCurrentState);
+                mediaPlayerError();
+                return;
             }
             mCurrentState = KSCMediaState.INITIALIZED;
             mMediaPlayer.setDataSource(mContext, uri);
             prepare();
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
         }
     }
 
@@ -587,7 +614,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         if (mMediaPlayer != null) {
             mMediaPlayer.setVolume(left, right);
         } else {
-            throw new RuntimeException("Media Player is not initialized");
+            mediaPlayerError();
         }
     }
 
@@ -615,6 +642,25 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
             audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_UNMUTE, 0);
         } else {
             audioManager.setStreamMute(AudioManager.STREAM_MUSIC, false);
+        }
+    }
+
+    /**
+     * 获得缓冲视频进度
+     *
+     * @return 缓冲百分比
+     */
+    public int getBufferProgress() {
+        return mBufferProgress;
+    }
+
+    /**
+     * 视频播放器错误
+     */
+    private void mediaPlayerError() {
+        Log.e(TAG, "mediaPlayerError");
+        if (mVideoPlayCallBack != null) {
+            mVideoPlayCallBack.onMediaPlayerError();
         }
     }
 }
