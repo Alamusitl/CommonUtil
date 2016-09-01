@@ -1,11 +1,13 @@
 package com.ksc.client.util;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Process;
+import android.support.v4.app.ActivityCompat;
 
 import java.util.List;
 
@@ -14,7 +16,7 @@ import java.util.List;
  */
 public class KSCLocationUtils {
 
-    public static double getLongitude(Context context) {
+    public static double getLongitude(Activity context) {
         Location location = getLocation(context);
         if (location == null) {
             return 0;
@@ -23,7 +25,7 @@ public class KSCLocationUtils {
         }
     }
 
-    public static double getLatitude(Context context) {
+    public static double getLatitude(Activity context) {
         Location location = getLocation(context);
         if (location == null) {
             return 0;
@@ -32,7 +34,7 @@ public class KSCLocationUtils {
         }
     }
 
-    private synchronized static Location getLocation(Context context) {
+    private synchronized static Location getLocation(Activity context) {
         String locationProvider;
         LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         List<String> providers = lm.getProviders(true);
@@ -45,7 +47,7 @@ public class KSCLocationUtils {
             return null;
         }
         if (context.checkPermission(Manifest.permission.ACCESS_FINE_LOCATION, Process.myPid(), Process.myUid()) != PackageManager.PERMISSION_GRANTED && context.checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION, Process.myPid(), Process.myUid()) != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(context, new String[], );
+            ActivityCompat.requestPermissions(context, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 0);
             return null;
         }
         return lm.getLastKnownLocation(locationProvider);
