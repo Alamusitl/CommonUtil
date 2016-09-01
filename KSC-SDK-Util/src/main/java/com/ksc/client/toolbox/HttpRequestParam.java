@@ -17,7 +17,7 @@ public class HttpRequestParam {
     private String mDownloadPath;
     private int mMethod;
     private int mTimeOutMs;
-    private String mPostParams;
+    private byte[] mPostParams;
     private Map<String, String> mHeaders;
 
     public HttpRequestParam(String url) {
@@ -49,15 +49,15 @@ public class HttpRequestParam {
     }
 
     public byte[] getBody() {
-        if (mPostParams == null) {
-            return null;
-        } else {
-            return mPostParams.getBytes();
-        }
+        return mPostParams;
+    }
+
+    public void setBody(byte[] body) {
+        mPostParams = body;
     }
 
     public void setBody(String params) {
-        mPostParams = params;
+        mPostParams = params.getBytes();
     }
 
     public Map<String, String> getHeaders() {
