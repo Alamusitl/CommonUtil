@@ -7,6 +7,7 @@ import android.os.Build;
 import android.util.DisplayMetrics;
 
 import com.google.protobuf.ByteString;
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.ksc.client.util.KSCDeviceUtils;
 import com.ksc.client.util.KSCLocationUtils;
 import com.ksc.client.util.KSCLog;
@@ -22,6 +23,8 @@ import java.net.URLEncoder;
  */
 public class KSCMobileAdProtoAPI {
 
+    private KSCMobileAdsProto530.MobadsResponse mAdResponse;
+
     public static KSCMobileAdProtoAPI getInstance() {
         return SingletonHolder.INSTANCE;
     }
@@ -31,18 +34,26 @@ public class KSCMobileAdProtoAPI {
      *
      * @param activity  上下文
      * @param appId     AppId
-     * @param channelId 渠道Id
      * @param adSlot_id 广告位ID
      * @return 请求
      */
-    public KSCMobileAdsProto530.MobadsRequest getRequest(Activity activity, String appId, String channelId, String adSlot_id) {
+    public KSCMobileAdsProto530.MobadsRequest getRequest(Activity activity, String appId, String adSlot_id) {
         DisplayMetrics dm = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
         KSCMobileAdsProto530.MobadsRequest.Builder requestBuilder = KSCMobileAdsProto530.MobadsRequest.newBuilder();
-        requestBuilder.setRequestId(appId + adSlot_id + System.currentTimeMillis());
+        String requestId = appId + adSlot_id + System.currentTimeMillis();
+        int length = requestId.length();
+        if (length > 32) {
+            requestId = requestId.substring(0, 32);
+        } else if (length < 32) {
+            for (int i = 0; i < 32 - length; i++) {
+                requestId = requestId + "0";
+            }
+        }
+        requestBuilder.setRequestId(requestId);
         requestBuilder.setApiVersion(getApiVersion());
         requestBuilder.setAdslot(getAdSlot(adSlot_id, dm.widthPixels, dm.heightPixels));
-        requestBuilder.setApp(getAppInfo(activity, appId, channelId));
+        requestBuilder.setApp(getAppInfo(activity, appId));
         requestBuilder.setDevice(getDeviceInfo(activity));
         requestBuilder.setNetwork(getNetwork(activity));
         requestBuilder.setGps(getGps(activity));
@@ -75,8 +86,8 @@ public class KSCMobileAdProtoAPI {
         KSCMobileAdsProto530.AdSlot.Builder adSlotBuilder = KSCMobileAdsProto530.AdSlot.newBuilder();
         adSlotBuilder.setAdslotId(adSlot_id);
         adSlotBuilder.setAdslotSize(getAdSlotSize(width, height));
-        adSlotBuilder.setVideo(getVideo("测试", 15000, KSCMobileAdsProto530.Video.CopyRight.CR_EXIST));
-        adSlotBuilder.setAdslotType(-8);// 广告位类型
+        adSlotBuilder.setVideo(getVideo("奖励视频", 15000, KSCMobileAdsProto530.Video.CopyRight.CR_EXIST));
+        adSlotBuilder.setAdslotType(8);// 广告位类型
         adSlotBuilder.setAds(1);// 返回广告数量
         return adSlotBuilder.build();
     }
@@ -114,15 +125,14 @@ public class KSCMobileAdProtoAPI {
     /**
      * 获得应用信息
      *
-     * @param context   上下文
-     * @param appId     应用ID，在Mobile SSP 注册
-     * @param channelId 渠道ID
+     * @param context 上下文
+     * @param appId   应用ID，在Mobile SSP 注册
      * @return 应用信息
      */
-    private KSCMobileAdsProto530.App getAppInfo(Context context, String appId, String channelId) {
+    private KSCMobileAdsProto530.App getAppInfo(Context context, String appId) {
         KSCMobileAdsProto530.App.Builder appBuilder = KSCMobileAdsProto530.App.newBuilder();
         appBuilder.setAppId(appId);
-        appBuilder.setChannelId(channelId);
+        appBuilder.setChannelId("");
         appBuilder.setAppVersion(getAppVersion(context));
         appBuilder.setAppPackage(KSCPackageUtils.getPackageName(context));
         return appBuilder.build();
@@ -140,7 +150,7 @@ public class KSCMobileAdProtoAPI {
         if (versionName == null || versionName.equals("")) {
             return versionBuilder.build();
         }
-        String[] appVersion = versionName.split(".");
+        String[] appVersion = versionName.split("\\.");
         for (int i = 0; i < appVersion.length; i++) {
             if (i == 0) {
                 versionBuilder.setMajor(Integer.valueOf(appVersion[i]));
@@ -197,7 +207,7 @@ public class KSCMobileAdProtoAPI {
      */
     private KSCMobileAdsProto530.Version getOsVersion() {
         KSCMobileAdsProto530.Version.Builder versionBuilder = KSCMobileAdsProto530.Version.newBuilder();
-        String[] systemOsVersion = Build.VERSION.RELEASE.split(".");
+        String[] systemOsVersion = Build.VERSION.RELEASE.split("\\.");
         for (int i = 0; i < systemOsVersion.length; i++) {
             if (i == 0) {
                 versionBuilder.setMajor(Integer.valueOf(systemOsVersion[i]));
@@ -288,7 +298,7 @@ public class KSCMobileAdProtoAPI {
                 break;
         }
         networkBuilder.setCellularId(String.valueOf(KSCNetUtils.getCellId(context)));
-//        networkBuilder.setWifiAps(1, getWifiAp(context));
+        networkBuilder.addWifiAps(getWifiAp(context));
         return networkBuilder.build();
     }
 
@@ -311,13 +321,58 @@ public class KSCMobileAdProtoAPI {
      *
      * @return GPS信息
      */
-    private KSCMobileAdsProto530.Gps getGps(Context context) {
+    private KSCMobileAdsProto530.Gps getGps(Activity context) {
         KSCMobileAdsProto530.Gps.Builder gpsBuilder = KSCMobileAdsProto530.Gps.newBuilder();
         gpsBuilder.setCoordinateType(KSCMobileAdsProto530.Gps.CoordinateType.WGS84);
         gpsBuilder.setLongitude(KSCLocationUtils.getLongitude(context));
         gpsBuilder.setLatitude(KSCLocationUtils.getLatitude(context));
         gpsBuilder.setTimestamp((int) (System.currentTimeMillis() / 1000));
         return gpsBuilder.build();
+    }
+
+    public KSCMobileAdsProto530.MobadsResponse getAdResponse() {
+        return mAdResponse;
+    }
+
+    public void setAdResponse(byte[] response) {
+        try {
+            mAdResponse = KSCMobileAdsProto530.MobadsResponse.parseFrom(response);
+        } catch (InvalidProtocolBufferException e) {
+            KSCLog.e("parse response to Mobile ads response exception", e);
+        }
+    }
+
+    public String getRequestId() {
+        if (mAdResponse != null) {
+            return mAdResponse.getRequestId();
+        } else {
+            return "";
+        }
+    }
+
+    public long getErrorCode() {
+        if (mAdResponse != null) {
+            return mAdResponse.getErrorCode();
+        } else {
+            return -1;
+        }
+    }
+
+    public int getAdCount() {
+        if (mAdResponse != null) {
+            return mAdResponse.getAdsCount();
+        } else {
+            return 0;
+        }
+    }
+
+    public String getTrackingUrl(int index) {
+        if (mAdResponse != null) {
+            KSCMobileAdsProto530.Ad ad = mAdResponse.getAds(index);
+            return ad.getAdTracking(0).getTrackingUrl(0);
+        } else {
+            return null;
+        }
     }
 
     private static class SingletonHolder {

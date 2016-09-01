@@ -47,13 +47,15 @@ public interface KSCAdEventListener {
 
     /**
      * 落地页关闭
+     *
+     * @param status 直接关闭为false，点击关闭为true
      */
-    void onLoadingPageClose();
+    void onLandingPageClose(boolean status);
 
     /**
      * 网络错误
      *
-     * @param error
+     * @param error 错误原因
      */
     void onNetRequestError(String error);
 }

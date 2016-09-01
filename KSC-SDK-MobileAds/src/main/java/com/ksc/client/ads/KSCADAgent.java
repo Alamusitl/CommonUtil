@@ -9,7 +9,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.SparseArray;
 
-import com.google.protobuf.InvalidProtocolBufferException;
 import com.ksc.client.ads.callback.KSCAdEventListener;
 import com.ksc.client.ads.config.KSCMobileAdKeyCode;
 import com.ksc.client.ads.proto.KSCMobileAdProtoAPI;
@@ -44,7 +43,6 @@ public class KSCADAgent {
      */
     private String mAdVideoUrl;
     private String mAppId;
-    private String mChannelId;
     private String mAdSlotId;
     /**
      * 是否可以缓存，网络为2G或本地存储无效的时候为不可缓存
@@ -98,9 +96,10 @@ public class KSCADAgent {
                 case KSCMobileAdKeyCode.KEY_VIEW_SHOW_CLOSE_CONFIRM:
                     break;
                 case KSCMobileAdKeyCode.KEY_VIEW_H5_CLOSE:
-                    mEventListener.onLoadingPageClose();
+                    mEventListener.onLandingPageClose(false);
                     break;
                 case KSCMobileAdKeyCode.KEY_VIEW_H5_CLICK:
+                    mEventListener.onLandingPageClose(true);
                     deleteCachedVideo();
                     mDownloadApkUrl = (String) msg.obj;
                     break;
@@ -119,10 +118,9 @@ public class KSCADAgent {
         return SingletonHolder.INSTANCE;
     }
 
-    public void init(Activity activity, String appId, String channelId, String adSlotId, KSCAdEventListener eventListener) {
-        mContext = activity;
+    public void init(Activity activity, String appId, String adSlotId, KSCAdEventListener eventListener) {
+        mContext = activity.getApplicationContext();
         mAppId = appId;
-        mChannelId = channelId;
         mAdSlotId = adSlotId;
         mEventListener = eventListener;
         KSCBlackBoard.setTransformHandler(mHandler);
@@ -156,6 +154,7 @@ public class KSCADAgent {
         }
         if (!mHasCached && mAdVideoUrl != null) {// 没有缓存，有视频链接
             if (!KSCNetUtils.isNetworkAvailable(activity)) {
+                mEventListener.onNetRequestError("network is not available");
                 return;
             }
             Intent intent = new Intent(activity, KSCMobileAdActivity.class);
@@ -174,9 +173,9 @@ public class KSCADAgent {
 
     private void checkAppHasAd(final Activity activity, final boolean isCache) {
         KSCLog.d("KSCADAgent checkAppHasAd, isCache:" + isCache);
-        HttpRequestParam requestParam = new HttpRequestParam("http://120.92.9.140:8080/api/def", HttpRequestParam.METHOD_POST);
+        HttpRequestParam requestParam = new HttpRequestParam("http://123.59.14.199:8084/api/test/9", HttpRequestParam.METHOD_POST);
         requestParam.setContentType("application/x-protobuf");
-        requestParam.setBody(new String(KSCMobileAdProtoAPI.getInstance().getRequest(activity, mAppId, mChannelId, mAdSlotId).toByteArray()));
+        requestParam.setBody(new String(KSCMobileAdProtoAPI.getInstance().getRequest(activity, mAppId, mAdSlotId).toByteArray()));
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(HttpResponse response) {
@@ -210,8 +209,7 @@ public class KSCADAgent {
                 mHasCached = false;
                 mEventListener.onVideoCached(false);
             }
-        }, new Handler(Looper.myLooper()));
-
+        }, new Handler(Looper.getMainLooper()));
     }
 
     private void pushAdEvent() {
@@ -235,29 +233,25 @@ public class KSCADAgent {
     }
 
     private void disposeAdResponse(Activity activity, HttpResponse response, boolean isCache) {
-        String url = "http://v1.mukewang.com/a45016f4-08d6-4277-abe6-bcfd5244c201/L.mp4";
         if (response.getCode() != 200) {// 存在广告
+            KSCLog.e("http response error, code=" + response.getCode());
             mAdExist = false;
             mEventListener.onAdExist(false, -1);
             return;
         }
-        KSCMobileAdsProto530.MobadsResponse adResponse;
-        try {
-            adResponse = KSCMobileAdsProto530.MobadsResponse.parseFrom(response.getBody());
-        } catch (InvalidProtocolBufferException e) {
-            KSCLog.e("parse response to Mobile ads response exception", e);
-            return;
-        }
-        String requestId = adResponse.getRequestId();
-        long errorCode = adResponse.getErrorCode();
+        byte[] result = response.getBody();
+        KSCMobileAdProtoAPI.getInstance().setAdResponse(response.getBody());
+        KSCMobileAdsProto530.MobadsResponse mobadsResponse = KSCMobileAdProtoAPI.getInstance().getAdResponse();
+        String requestId = KSCMobileAdProtoAPI.getInstance().getRequestId();
+        long errorCode = KSCMobileAdProtoAPI.getInstance().getErrorCode();
         if (errorCode == 0) {
             mEventListener.onAdExist(true, errorCode);
             int netType = KSCNetUtils.getNetType(activity);
             if (mCanCached && isCache && netType != KSCNetUtils.NETWORK_TYPE_2G) {// 可缓存，是缓存，不是2G网络的时候缓存
-                cacheAdVideo(url);
+                cacheAdVideo("");
             }
             if (!isCache) {// 不缓存的时候播放流媒体
-                mAdVideoUrl = url;
+                mAdVideoUrl = "";
                 showAdVideo(activity);
             }
         } else {

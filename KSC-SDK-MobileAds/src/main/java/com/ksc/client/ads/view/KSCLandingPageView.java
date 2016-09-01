@@ -2,11 +2,15 @@ package com.ksc.client.ads.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.webkit.DownloadListener;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -43,8 +47,7 @@ public class KSCLandingPageView extends RelativeLayout {
         LayoutParams lp;
         // 显示H5的View
         mLandingView = new WebView(context);
-        mLandingView.setWebViewClient(new WebViewClient());
-        mLandingView.setWebChromeClient(new WebChromeClient());
+        setWebViewClient();
         WebSettings settings = mLandingView.getSettings();
         settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         settings.setAppCacheEnabled(true);
@@ -81,5 +84,62 @@ public class KSCLandingPageView extends RelativeLayout {
 
     public void setLandingViewUrl(String url) {
         mLandingView.loadUrl(url);
+    }
+
+    private void setWebViewClient() {
+        mLandingView.setWebViewClient(new WebViewClient() {
+            @SuppressWarnings("deprecation")
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                return super.shouldOverrideUrlLoading(view, request);
+            }
+
+            @Override
+            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+                super.onReceivedError(view, request, error);
+            }
+
+            @Override
+            public void onReceivedHttpError(WebView view, WebResourceRequest request, WebResourceResponse errorResponse) {
+                super.onReceivedHttpError(view, request, errorResponse);
+            }
+        });
+        mLandingView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+            }
+
+            @Override
+            public void onReceivedTitle(WebView view, String title) {
+                super.onReceivedTitle(view, title);
+            }
+
+            @Override
+            public void onReceivedIcon(WebView view, Bitmap icon) {
+                super.onReceivedIcon(view, icon);
+            }
+
+            @Override
+            public void onReceivedTouchIconUrl(WebView view, String url, boolean precomposed) {
+                super.onReceivedTouchIconUrl(view, url, precomposed);
+            }
+        });
     }
 }

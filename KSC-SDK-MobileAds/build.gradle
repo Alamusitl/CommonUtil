@@ -1,3 +1,5 @@
+import proguard.gradle.ProGuardTask
+
 apply plugin: 'com.android.library'
 
 android {
@@ -16,6 +18,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+task makeMobileAdJar(type: Jar, dependsOn: build) {
+    delete 'build/libs/sdk-mobile-ad.jar'
+    baseName 'sdk-mobile-ad'
+    from('build/intermediates/classes/release')
+    from fileTree(dir: 'src/main', includes: ['assets/**'])
+    exclude('android/')
+    exclude('com/ksc/client/util/')
+    exclude('com/ksc/client/ads/BuildConfig.class', 'com/ksc/client/ads/R.class')
+    exclude('com/ksc/client/ads/R$attr.class', 'com/ksc/client/ads/R$string.class')
+}
+
+task ProguardMobileAdJar(type: ProGuardTask, dependsOn: makeMobileAdJar) {
+    delete 'build/libs/sdk-proguard-mobile-ad.jar'
+    injars 'build/libs/sdk-mobile-ad.jar'
+    outjars 'build/libs/sdk-proguard-mobile-ad.jar'
+    configuration 'proguard-rules.pro'
 }
 
 dependencies {
