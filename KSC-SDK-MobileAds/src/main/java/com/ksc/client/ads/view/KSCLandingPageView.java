@@ -86,6 +86,10 @@ public class KSCLandingPageView extends RelativeLayout {
         mLandingView.loadUrl(url);
     }
 
+    public void setLandingViewData(String data) {
+        mLandingView.loadData(data, "text/html", "UTF-8");
+    }
+
     private void setWebViewClient() {
         mLandingView.setWebViewClient(new WebViewClient() {
             @SuppressWarnings("deprecation")

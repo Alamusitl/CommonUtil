@@ -6,9 +6,10 @@ package com.ksc.client.ads.config;
 public class KSCMobileAdKeyCode {
 
     public static final String VIDEO_TYPE = "videoType";
+    public static final String VIDEO_PATH = "videoPath";
+    public static final String VIDEO_H5_PATH = "videoH5Path";
     public static final String VIDEO_IN_CACHE = "videoInCache";
     public static final String VIDEO_IN_STREAM = "videoInStream";
-    public static final String VIDEO_PATH = "videoPath";
 
     public static final String IMG_VIDEO_VIEW_CLOSE = "ksc_controller_close.png";
     public static final String IMG_VIDEO_VIEW_MUTE = "ksc_controller_mute.png";
@@ -49,7 +50,7 @@ public class KSCMobileAdKeyCode {
     /**
      * 弹出关闭按钮
      */
-    public static final int KEY_VIEW_VIDEO_CLOSE = 8;
+    public static final int KEY_VIEW_SHOW_VIDEO_CLOSE = 8;
     /**
      * 显示关闭视频弹框
      */

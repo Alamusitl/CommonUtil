@@ -44,6 +44,19 @@ public class KSCMobileAdActivity extends Activity {
     private boolean mIsMute = false;
     private boolean mPopCloseView = false;
     private Timer mTimer;
+    private byte[] mH5Path;
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
+        }
+    };
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -95,7 +108,7 @@ public class KSCMobileAdActivity extends Activity {
                 case KSCMobileAdKeyCode.KEY_VIDEO_ERROR:
                     closeActivity();
                     break;
-                case KSCMobileAdKeyCode.KEY_VIEW_VIDEO_CLOSE:
+                case KSCMobileAdKeyCode.KEY_VIEW_SHOW_VIDEO_CLOSE:
                     showCloseVideoView();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIEW_SHOW_CLOSE_CONFIRM:
@@ -113,18 +126,6 @@ public class KSCMobileAdActivity extends Activity {
             }
         }
     };
-    private Runnable mGetVideoProgressTask = new Runnable() {
-        @Override
-        public void run() {
-            mHandler.removeCallbacks(mGetVideoProgressTask);
-            Message message = mHandler.obtainMessage();
-            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mMediaPlayer.getDuration();
-            message.arg2 = mMediaPlayer.getCurrentPosition();
-            mHandler.sendMessage(message);
-            mHandler.postDelayed(mGetVideoProgressTask, 100);
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,7 +140,7 @@ public class KSCMobileAdActivity extends Activity {
         Intent intent = getIntent();
         String type = intent.getStringExtra(KSCMobileAdKeyCode.VIDEO_TYPE);
         String path = intent.getStringExtra(KSCMobileAdKeyCode.VIDEO_PATH);
-
+        mH5Path = intent.getByteArrayExtra(KSCMobileAdKeyCode.VIDEO_H5_PATH);
         try {
             if (type.equals(KSCMobileAdKeyCode.VIDEO_IN_CACHE)) {
                 mMediaPlayer.setVideoPath(path);
@@ -256,7 +257,10 @@ public class KSCMobileAdActivity extends Activity {
             public void onCompletion() {
                 Log.i(TAG, "onCompletion: ");
                 mHandler.removeCallbacks(mGetVideoProgressTask);
-                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION);
+                Message message = mHandler.obtainMessage();
+                message.what = KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION;
+                message.arg1 = mMediaPlayer.getDuration();
+                mHandler.sendMessage(message);
             }
 
             @Override
@@ -346,8 +350,7 @@ public class KSCMobileAdActivity extends Activity {
         int size = 33 * (int) dm.density;
         KSCLandingPageView landingPageView = new KSCLandingPageView(this);
         landingPageView.setSize(size);
-//        landingPageView.setLandingViewUrl("http://adstatic.ksyun.com/landingpage/view/landingPage.html");
-        landingPageView.setLandingViewUrl("file:///android_asset/landingPage.html");
+        landingPageView.setLandingViewData(new String(mH5Path));
         landingPageView.setCloseViewClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -359,7 +362,6 @@ public class KSCMobileAdActivity extends Activity {
             public void onDownloadStart(String url, String s1, String s2, String s3, long l) {
                 Message message = mHandler.obtainMessage();
                 message.what = KSCMobileAdKeyCode.KEY_VIEW_H5_CLICK;
-                message.obj = url;
                 mHandler.sendMessage(message);
             }
         });
@@ -415,7 +417,7 @@ public class KSCMobileAdActivity extends Activity {
             TimerTask task = new TimerTask() {
                 @Override
                 public void run() {
-                    mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIEW_VIDEO_CLOSE);
+                    mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIEW_SHOW_VIDEO_CLOSE);
                 }
             };
             mTimer.schedule(task, duration / 3);

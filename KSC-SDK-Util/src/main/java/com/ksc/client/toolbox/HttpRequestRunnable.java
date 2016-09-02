@@ -5,11 +5,11 @@ import android.os.Handler;
 import com.ksc.client.util.KSCLog;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -45,7 +45,9 @@ public class HttpRequestRunnable implements Runnable {
             HttpURLConnection connection = HttpUtils.openConnection(parseUrl, mRequestParams);
             if (connection == null) {
                 KSCLog.e("open connection fail, url: " + url);
-                mHttpErrorListener.onErrorResponse(new HttpError("connection can not be null"));
+                if (mHttpErrorListener != null) {
+                    mHttpErrorListener.onErrorResponse(new HttpError("connection can not be null"));
+                }
                 return;
             }
             if (mHeaders != null && mHeaders.size() > 0) {
@@ -74,31 +76,35 @@ public class HttpRequestRunnable implements Runnable {
                     responseHeaders.put(header.getKey(), header.getValue().get(0));
                 }
             }
-            mHttpListener.onResponse(new HttpResponse(responseCode, body, responseHeaders, false));
+            if (mHttpListener != null) {
+                mHttpListener.onResponse(new HttpResponse(responseCode, body, responseHeaders, false));
+            }
             connection.disconnect();
             mIsRunning = false;
         } catch (MalformedURLException e) {
             mIsRunning = false;
             KSCLog.e("can not malformed url:" + mRequestParams.getUrl());
-            mHttpErrorListener.onErrorResponse(new HttpError(e.getMessage()));
+            if (mHttpErrorListener != null) {
+                mHttpErrorListener.onErrorResponse(new HttpError(e.getMessage()));
+            }
         } catch (IOException e) {
             mIsRunning = false;
             KSCLog.e("can not open connection, url:" + mRequestParams.getUrl());
-            mHttpErrorListener.onErrorResponse(new HttpError(e.getMessage()));
+            if (mHttpErrorListener != null) {
+                mHttpErrorListener.onErrorResponse(new HttpError(e.getMessage()));
+            }
         }
     }
 
     private byte[] processGetParam(HttpURLConnection connection) throws IOException {
-        byte[] body;
-        BufferedReader bfr = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String line;
-        StringBuilder result = new StringBuilder();
-        while (((line = bfr.readLine()) != null) && mIsRunning) {
-            result.append(line);
+        InputStream inputStream = connection.getInputStream();
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        byte[] buf = new byte[100];
+        int rc;
+        while ((rc = inputStream.read(buf, 0, 100)) > 0) {
+            byteArrayOutputStream.write(buf, 0, rc);
         }
-        body = result.toString().getBytes();
-        bfr.close();
-        return body;
+        return byteArrayOutputStream.toByteArray();
     }
 
     private byte[] processDownloadFile(HttpURLConnection connection) throws IOException {

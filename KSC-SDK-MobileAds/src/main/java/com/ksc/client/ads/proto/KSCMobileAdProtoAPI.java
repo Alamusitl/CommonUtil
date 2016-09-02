@@ -8,6 +8,7 @@ import android.util.DisplayMetrics;
 
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.ksc.client.ads.bean.KSCVideoAdBean;
 import com.ksc.client.util.KSCDeviceUtils;
 import com.ksc.client.util.KSCLocationUtils;
 import com.ksc.client.util.KSCLog;
@@ -17,13 +18,18 @@ import com.ksc.client.util.KSCPackageUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Alamusi on 2016/8/22.
  */
 public class KSCMobileAdProtoAPI {
 
-    private KSCMobileAdsProto530.MobadsResponse mAdResponse;
+    private long mErrorCode;
+    private String mRequestId;
 
     public static KSCMobileAdProtoAPI getInstance() {
         return SingletonHolder.INSTANCE;
@@ -66,12 +72,12 @@ public class KSCMobileAdProtoAPI {
      *
      * @return API版本号信息
      */
-    private KSCMobileAdsProto530.Version getApiVersion() {
+    private KSCMobileAdsProto530.Version.Builder getApiVersion() {
         KSCMobileAdsProto530.Version.Builder versionBuilder = KSCMobileAdsProto530.Version.newBuilder();
         versionBuilder.setMajor(5);
         versionBuilder.setMinor(3);
         versionBuilder.setMicro(0);
-        return versionBuilder.build();
+        return versionBuilder;
     }
 
     /**
@@ -82,14 +88,14 @@ public class KSCMobileAdProtoAPI {
      * @param height    广告高度
      * @return 广告位信息
      */
-    private KSCMobileAdsProto530.AdSlot getAdSlot(String adSlot_id, int width, int height) {
+    private KSCMobileAdsProto530.AdSlot.Builder getAdSlot(String adSlot_id, int width, int height) {
         KSCMobileAdsProto530.AdSlot.Builder adSlotBuilder = KSCMobileAdsProto530.AdSlot.newBuilder();
         adSlotBuilder.setAdslotId(adSlot_id);
         adSlotBuilder.setAdslotSize(getAdSlotSize(width, height));
         adSlotBuilder.setVideo(getVideo("奖励视频", 15000, KSCMobileAdsProto530.Video.CopyRight.CR_EXIST));
         adSlotBuilder.setAdslotType(8);// 广告位类型
         adSlotBuilder.setAds(1);// 返回广告数量
-        return adSlotBuilder.build();
+        return adSlotBuilder;
     }
 
     /**
@@ -99,11 +105,11 @@ public class KSCMobileAdProtoAPI {
      * @param height 高度
      * @return 广告位尺寸
      */
-    private KSCMobileAdsProto530.Size getAdSlotSize(int width, int height) {
+    private KSCMobileAdsProto530.Size.Builder getAdSlotSize(int width, int height) {
         KSCMobileAdsProto530.Size.Builder sizeBuilder = KSCMobileAdsProto530.Size.newBuilder();
         sizeBuilder.setWidth(width);
         sizeBuilder.setHeight(height);
-        return sizeBuilder.build();
+        return sizeBuilder;
     }
 
     /**
@@ -114,12 +120,12 @@ public class KSCMobileAdProtoAPI {
      * @param copyRight     版权信息
      * @return 视频信息
      */
-    private KSCMobileAdsProto530.Video getVideo(String title, int contentLength, KSCMobileAdsProto530.Video.CopyRight copyRight) {
+    private KSCMobileAdsProto530.Video.Builder getVideo(String title, int contentLength, KSCMobileAdsProto530.Video.CopyRight copyRight) {
         KSCMobileAdsProto530.Video.Builder videoBuilder = KSCMobileAdsProto530.Video.newBuilder();
         videoBuilder.setTitle(ByteString.copyFromUtf8(title));
         videoBuilder.setContentLength(contentLength);
         videoBuilder.setCopyright(copyRight);
-        return videoBuilder.build();
+        return videoBuilder;
     }
 
     /**
@@ -129,13 +135,13 @@ public class KSCMobileAdProtoAPI {
      * @param appId   应用ID，在Mobile SSP 注册
      * @return 应用信息
      */
-    private KSCMobileAdsProto530.App getAppInfo(Context context, String appId) {
+    private KSCMobileAdsProto530.App.Builder getAppInfo(Context context, String appId) {
         KSCMobileAdsProto530.App.Builder appBuilder = KSCMobileAdsProto530.App.newBuilder();
         appBuilder.setAppId(appId);
         appBuilder.setChannelId("");
         appBuilder.setAppVersion(getAppVersion(context));
         appBuilder.setAppPackage(KSCPackageUtils.getPackageName(context));
-        return appBuilder.build();
+        return appBuilder;
     }
 
     /**
@@ -144,11 +150,11 @@ public class KSCMobileAdProtoAPI {
      * @param context 上下文
      * @return APP版本信息
      */
-    private KSCMobileAdsProto530.Version getAppVersion(Context context) {
+    private KSCMobileAdsProto530.Version.Builder getAppVersion(Context context) {
         KSCMobileAdsProto530.Version.Builder versionBuilder = KSCMobileAdsProto530.Version.newBuilder();
         String versionName = KSCPackageUtils.getVersionName(context);
         if (versionName == null || versionName.equals("")) {
-            return versionBuilder.build();
+            return versionBuilder;
         }
         String[] appVersion = versionName.split("\\.");
         for (int i = 0; i < appVersion.length; i++) {
@@ -160,7 +166,7 @@ public class KSCMobileAdProtoAPI {
                 versionBuilder.setMicro(Integer.valueOf(appVersion[i]));
             }
         }
-        return versionBuilder.build();
+        return versionBuilder;
     }
 
     /**
@@ -169,13 +175,13 @@ public class KSCMobileAdProtoAPI {
      * @param activity 上下文
      * @return 屏幕信息
      */
-    private KSCMobileAdsProto530.Size getScreenSize(Activity activity) {
+    private KSCMobileAdsProto530.Size.Builder getScreenSize(Activity activity) {
         DisplayMetrics matrix = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(matrix);
         KSCMobileAdsProto530.Size.Builder sizeBuilder = KSCMobileAdsProto530.Size.newBuilder();
         sizeBuilder.setWidth(matrix.widthPixels);
         sizeBuilder.setHeight(matrix.heightPixels);
-        return sizeBuilder.build();
+        return sizeBuilder;
     }
 
     /**
@@ -184,7 +190,7 @@ public class KSCMobileAdProtoAPI {
      * @param activity 上下文
      * @return 设备信息
      */
-    private KSCMobileAdsProto530.Device getDeviceInfo(Activity activity) {
+    private KSCMobileAdsProto530.Device.Builder getDeviceInfo(Activity activity) {
         KSCMobileAdsProto530.Device.Builder deviceBuilder = KSCMobileAdsProto530.Device.newBuilder();
         deviceBuilder.setDeviceType(getDeviceType(activity));
         deviceBuilder.setOsType(KSCMobileAdsProto530.Device.OsType.ANDROID);
@@ -197,7 +203,7 @@ public class KSCMobileAdProtoAPI {
         }
         deviceBuilder.setUdid(getUdId(activity));
         deviceBuilder.setScreenSize(getScreenSize(activity));
-        return deviceBuilder.build();
+        return deviceBuilder;
     }
 
     /**
@@ -205,7 +211,7 @@ public class KSCMobileAdProtoAPI {
      *
      * @return 操作系统版本信息
      */
-    private KSCMobileAdsProto530.Version getOsVersion() {
+    private KSCMobileAdsProto530.Version.Builder getOsVersion() {
         KSCMobileAdsProto530.Version.Builder versionBuilder = KSCMobileAdsProto530.Version.newBuilder();
         String[] systemOsVersion = Build.VERSION.RELEASE.split("\\.");
         for (int i = 0; i < systemOsVersion.length; i++) {
@@ -217,7 +223,7 @@ public class KSCMobileAdProtoAPI {
                 versionBuilder.setMicro(Integer.valueOf(systemOsVersion[i]));
             }
         }
-        return versionBuilder.build();
+        return versionBuilder;
     }
 
     /**
@@ -242,7 +248,7 @@ public class KSCMobileAdProtoAPI {
      * @param activity 上下文
      * @return 唯一标识信息
      */
-    private KSCMobileAdsProto530.UdId getUdId(Activity activity) {
+    private KSCMobileAdsProto530.UdId.Builder getUdId(Activity activity) {
         String imei = KSCDeviceUtils.getImei(activity);
         String androidId = KSCDeviceUtils.getAndroidID(activity);
         KSCMobileAdsProto530.UdId.Builder udIdBuilder = KSCMobileAdsProto530.UdId.newBuilder();
@@ -251,7 +257,7 @@ public class KSCMobileAdProtoAPI {
         udIdBuilder.setAndroidId(androidId);
         udIdBuilder.setImeiMd5(KSCMD5Utils.md5(imei));
         udIdBuilder.setAndroididMd5(KSCMD5Utils.md5(androidId));
-        return udIdBuilder.build();
+        return udIdBuilder;
     }
 
     /**
@@ -259,7 +265,7 @@ public class KSCMobileAdProtoAPI {
      *
      * @return 网络环境信息
      */
-    private KSCMobileAdsProto530.Network getNetwork(Context context) {
+    private KSCMobileAdsProto530.Network.Builder getNetwork(Context context) {
         KSCMobileAdsProto530.Network.Builder networkBuilder = KSCMobileAdsProto530.Network.newBuilder();
         networkBuilder.setIpv4(KSCNetUtils.getIp());
         int netType = KSCNetUtils.getNetType(context);
@@ -299,7 +305,7 @@ public class KSCMobileAdProtoAPI {
         }
         networkBuilder.setCellularId(String.valueOf(KSCNetUtils.getCellId(context)));
         networkBuilder.addWifiAps(getWifiAp(context));
-        return networkBuilder.build();
+        return networkBuilder;
     }
 
     /**
@@ -307,13 +313,13 @@ public class KSCMobileAdProtoAPI {
      *
      * @return WIFI热点信息
      */
-    private KSCMobileAdsProto530.WiFiAp getWifiAp(Context context) {
+    private KSCMobileAdsProto530.WiFiAp.Builder getWifiAp(Context context) {
         KSCMobileAdsProto530.WiFiAp.Builder wifiBuilder = KSCMobileAdsProto530.WiFiAp.newBuilder();
         wifiBuilder.setApMac(KSCNetUtils.getMac(context));
         wifiBuilder.setRssi(KSCNetUtils.getRssi(context));
         wifiBuilder.setApName(ByteString.copyFromUtf8(KSCNetUtils.getWifiName(context)));
         wifiBuilder.setIsConnected(KSCNetUtils.isWifiConnected(context));
-        return wifiBuilder.build();
+        return wifiBuilder;
     }
 
     /**
@@ -321,58 +327,95 @@ public class KSCMobileAdProtoAPI {
      *
      * @return GPS信息
      */
-    private KSCMobileAdsProto530.Gps getGps(Activity context) {
+    private KSCMobileAdsProto530.Gps.Builder getGps(Activity context) {
         KSCMobileAdsProto530.Gps.Builder gpsBuilder = KSCMobileAdsProto530.Gps.newBuilder();
         gpsBuilder.setCoordinateType(KSCMobileAdsProto530.Gps.CoordinateType.WGS84);
         gpsBuilder.setLongitude(KSCLocationUtils.getLongitude(context));
         gpsBuilder.setLatitude(KSCLocationUtils.getLatitude(context));
         gpsBuilder.setTimestamp((int) (System.currentTimeMillis() / 1000));
-        return gpsBuilder.build();
+        return gpsBuilder;
     }
 
-    public KSCMobileAdsProto530.MobadsResponse getAdResponse() {
-        return mAdResponse;
-    }
-
-    public void setAdResponse(byte[] response) {
+    /**
+     * 解析返回数据并返回可用广告视频列表
+     *
+     * @param response 服务器返回数据
+     * @return 广告视频列表
+     */
+    public List<KSCVideoAdBean> getVideoList(byte[] response) {
+        long lastTime = System.currentTimeMillis();
+        List<KSCVideoAdBean> mList = new ArrayList<>();
+        KSCMobileAdsProto530.MobadsResponse adResponse;
         try {
-            mAdResponse = KSCMobileAdsProto530.MobadsResponse.parseFrom(response);
+            adResponse = KSCMobileAdsProto530.MobadsResponse.parseFrom(response);
         } catch (InvalidProtocolBufferException e) {
             KSCLog.e("parse response to Mobile ads response exception", e);
+            adResponse = null;
         }
+        if (adResponse == null) {
+            return mList;
+        }
+        mErrorCode = adResponse.getErrorCode();
+        mRequestId = adResponse.getRequestId();
+        List<KSCMobileAdsProto530.Ad> adList = adResponse.getAdsList();
+        if (adList == null || adList.size() == 0) {
+            return mList;
+        }
+        for (KSCMobileAdsProto530.Ad ad : adList) {
+            List<KSCMobileAdsProto530.MaterialMeta> metaList = ad.getMetaGroupList();
+            if (metaList == null || metaList.size() == 0) {
+                continue;
+            }
+            List<KSCMobileAdsProto530.Tracking> trackList = ad.getAdTrackingList();
+            Map<KSCMobileAdsProto530.Tracking.TrackingEvent, List<String>> trackMap = new HashMap<>();
+            if (trackList != null && trackList.size() != 0) {
+                for (KSCMobileAdsProto530.Tracking tracking : trackList) {
+                    List<String> urlList = new ArrayList<>();
+                    for (String url : tracking.getTrackingUrlList()) {
+                        if (url == null || url.equals("")) {
+                            continue;
+                        }
+                        urlList.add(url);
+                    }
+                    trackMap.put(tracking.getTrackingEvent(), urlList);
+                }
+            }
+
+            String adSlotId = ad.getAdslotId();
+            String adKey = ad.getAdKey();
+            byte[] html = ad.getHtmlSnippet().toByteArray();
+            for (KSCMobileAdsProto530.MaterialMeta meta : metaList) {
+                KSCVideoAdBean bean = new KSCVideoAdBean();
+                bean.setAdSlotId(adSlotId);
+                bean.setAdKey(adKey);
+                bean.setHtml(html);
+                bean.setVideoUrl(meta.getVideoUrl());
+                bean.setClickUrl(meta.getClickUrl());
+                bean.setInteractionType(meta.getInteractionType());
+                bean.setCreativeType(meta.getCreativeType());
+                bean.setTrackingUrl(trackMap);
+                mList.add(bean);
+            }
+        }
+        return mList;
     }
 
+    /**
+     * 获得请求ID
+     *
+     * @return RequestId
+     */
     public String getRequestId() {
-        if (mAdResponse != null) {
-            return mAdResponse.getRequestId();
-        } else {
-            return "";
-        }
+        return mRequestId;
     }
 
+    /**
+     * 获得返回码
+     *
+     * @return 返回码
+     */
     public long getErrorCode() {
-        if (mAdResponse != null) {
-            return mAdResponse.getErrorCode();
-        } else {
-            return -1;
-        }
-    }
-
-    public int getAdCount() {
-        if (mAdResponse != null) {
-            return mAdResponse.getAdsCount();
-        } else {
-            return 0;
-        }
-    }
-
-    public String getTrackingUrl(int index) {
-        if (mAdResponse != null) {
-            KSCMobileAdsProto530.Ad ad = mAdResponse.getAds(index);
-            return ad.getAdTracking(0).getTrackingUrl(0);
-        } else {
-            return null;
-        }
+        return mErrorCode;
     }
 
     private static class SingletonHolder {

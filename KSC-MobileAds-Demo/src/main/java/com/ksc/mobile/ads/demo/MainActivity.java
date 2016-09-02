@@ -1,18 +1,13 @@
 package com.ksc.mobile.ads.demo;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.ksc.client.ads.KSCADAgent;
 import com.ksc.client.ads.callback.KSCAdEventListener;
-import com.ksc.client.ads.config.KSCMobileAdKeyCode;
-import com.ksc.client.ads.view.KSCMobileAdActivity;
-
-import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,69 +18,65 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         KSCADAgent.getInstance().setDebug(true);
-        KSCADAgent.getInstance().init(this, "ayce05f9", "test", "47435394", new KSCAdEventListener() {
+        String appId = "ayce05f9";// 测试参数， 正式请替换自己的渠道
+        String adSlotId = "47435394";// 测试参数，正式请替换自己的参数
+        KSCADAgent.getInstance().init(this, appId, adSlotId, new KSCAdEventListener() {
 
             @Override
             public void onAdExist(boolean isAdExist, long code) {
-
+                if (isAdExist) {
+                    Toast("有广告");
+                } else {
+                    Toast("没有广告");
+                }
             }
 
             @Override
             public void onVideoCached(boolean isCached) {
-
+                if (isCached) {
+                    Toast("已缓存广告视频");
+                } else {
+                    Toast("缓存广告视频失败");
+                }
             }
 
             @Override
             public void onVideoStart() {
-
+//                Toast("开始播放");
             }
 
             @Override
             public void onVideoCompletion() {
-
+                Toast("播放完成");
             }
 
             @Override
             public void onVideoClose(int currentPosition) {
-
+                Toast("关闭广告视频，当前进度[" + currentPosition / 1000 + "]");
             }
 
             @Override
             public void onVideoError(String reason) {
-
+                Toast("视频播放错误，错误信息[" + reason + "]");
             }
 
             @Override
-            public void onLoadingPageClose() {
-
+            public void onLandingPageClose(boolean status) {
+                Toast("落地页关闭");
             }
 
             @Override
             public void onNetRequestError(String error) {
-
+                Toast("网络请求错误，错误信息[" + error + "]");
             }
         });
 
         findViewById(R.id.btnShowVideoAd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "test.mp4";
-                Intent intent = new Intent(MainActivity.this, KSCMobileAdActivity.class);
-                intent.putExtra(KSCMobileAdKeyCode.VIDEO_TYPE, KSCMobileAdKeyCode.VIDEO_IN_CACHE);
-                intent.putExtra(KSCMobileAdKeyCode.VIDEO_PATH, path);
-                startActivity(intent);
+                KSCADAgent.getInstance().showAdVideo(MainActivity.this);
             }
         });
-        findViewById(R.id.btnStreamVideoAd).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, KSCMobileAdActivity.class);
-                intent.putExtra(KSCMobileAdKeyCode.VIDEO_TYPE, KSCMobileAdKeyCode.VIDEO_IN_STREAM);
-                intent.putExtra(KSCMobileAdKeyCode.VIDEO_PATH, "http://v1.mukewang.com/a45016f4-08d6-4277-abe6-bcfd5244c201/L.mp4");
-                startActivity(intent);
-            }
-        });
-
     }
 
     @Override
@@ -104,6 +95,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         KSCADAgent.getInstance().onDestroy();
+    }
+
+    private void Toast(final String msg) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }

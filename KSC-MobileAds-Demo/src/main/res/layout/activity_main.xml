@@ -18,16 +18,4 @@
         android:layout_marginTop="28dp"
         android:text="Show Video Ad"/>
 
-    <Button
-        android:id="@+id/btnStreamVideoAd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnShowVideoAd"
-        android:layout_marginTop="41dp"
-        android:text="Show Stream Video AD"/>
-
 </RelativeLayout>
