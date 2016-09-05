@@ -27,6 +27,7 @@ public class DownloadService extends IntentService {
     public static final String EXTRA_DOWNLOAD_URL = "downloadUrl";
     public static final String EXTRA_SHOW_NOTIFY = "downloadShowNotify";
     public static final String EXTRA_DOWNLOAD_PATH = "downloadPath";
+    public static final String EXTRA_DOWNLOAD_APP_NAME = "downloadAppName";
     private static final String TAG = DownloadService.class.getSimpleName();
 
     private static final int KEY_NOTIFICATION_ID = 0;
@@ -40,6 +41,7 @@ public class DownloadService extends IntentService {
     private PendingIntent pendingIntent;
     private boolean mShowNotify = false;
     private int mLastPresent = 0;
+    private String mDownloadAppName;
 
     private Handler mHandler = new Handler(Looper.myLooper()) {
         @Override
@@ -52,7 +54,7 @@ public class DownloadService extends IntentService {
                         long totalSize = msg.arg2;
                         int present = (int) ((currentSize * 100) / (double) totalSize);
                         if (present - mLastPresent >= 1) {
-                            showNotification(present);
+                            showNotification(present, mDownloadAppName);
                         }
                         mLastPresent = present;
                     }
@@ -80,13 +82,14 @@ public class DownloadService extends IntentService {
         String downloadUrl = intent.getStringExtra(EXTRA_DOWNLOAD_URL);
         mShowNotify = intent.getBooleanExtra(EXTRA_SHOW_NOTIFY, false);
         String downloadPath = intent.getStringExtra(EXTRA_DOWNLOAD_PATH);
+        mDownloadAppName = intent.getStringExtra(EXTRA_DOWNLOAD_APP_NAME);
         if (mShowNotify) {
-            showNotification(0);
+            showNotification(0, mDownloadAppName);
         }
         startDownload(downloadUrl, downloadPath);
     }
 
-    private void showNotification(int progress) {
+    private void showNotification(int progress, String appName) {
         if (mManager == null) {
             mManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         }
@@ -96,8 +99,7 @@ public class DownloadService extends IntentService {
         if (mBuilder == null) {
             int iconId = android.R.drawable.stat_sys_download;
             String tickerText = "开始下载";
-            String contentTitle = "测试";
-            mBuilder = new NotificationCompat.Builder(this).setSmallIcon(iconId).setTicker(tickerText).setContentIntent(pendingIntent).setContentTitle(contentTitle);
+            mBuilder = new NotificationCompat.Builder(this).setSmallIcon(iconId).setTicker(tickerText).setContentIntent(pendingIntent).setContentTitle(appName);
         }
         mBuilder.setContentText("正在下载 " + progress + "%");
         mBuilder.setProgress(100, progress, false);

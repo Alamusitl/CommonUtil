@@ -24,6 +24,7 @@ import com.ksc.client.util.KSCLog;
 import com.ksc.client.util.KSCNetUtils;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -51,7 +52,7 @@ public class KSCADAgent {
      */
     private boolean mAdExist = true;
 
-    private List<KSCVideoAdBean> mVideoList;
+    private List<KSCVideoAdBean> mVideoList = new ArrayList<>();
 
     private Context mContext;
 
@@ -75,6 +76,7 @@ public class KSCADAgent {
                 case KSCMobileAdKeyCode.KEY_VIDEO_CLOSE:
                     mEventListener.onVideoClose(msg.arg1);
                     pushAdEvent(KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_END_VALUE, msg.arg1);
+                    deleteCachedVideo();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION:
                     mEventListener.onVideoCompletion();
@@ -86,14 +88,9 @@ public class KSCADAgent {
                     mEventListener.onVideoError((String) msg.obj);
                     pushAdEvent(KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_END_VALUE, 0);
                     break;
-                case KSCMobileAdKeyCode.KEY_VIEW_SHOW_VIDEO_CLOSE:
-                    break;
-                case KSCMobileAdKeyCode.KEY_VIEW_SHOW_CLOSE_CONFIRM:
-                    break;
                 case KSCMobileAdKeyCode.KEY_VIEW_H5_CLOSE:
                     mEventListener.onLandingPageClose(false);
-                    break;
-                case KSCMobileAdKeyCode.KEY_VIEW_H5_CLICK:
+                    deleteCachedVideo();
                     break;
                 case KSCMobileAdKeyCode.KEY_DOWNLOAD_START:
                     mEventListener.onLandingPageClose(true);
@@ -163,7 +160,11 @@ public class KSCADAgent {
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_PATH, videoAdBean.getDownloadPath());
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_H5_PATH, videoAdBean.getHtml());
                 activity.startActivity(intent);
-                checkAppHasAd(activity, true);
+                if (mVideoList.size() == 1) {
+                    checkAppHasAd(activity, true);
+                } else {
+                    cacheAdVideo(1, mVideoList.get(1).getVideoUrl());
+                }
             }
         }
     }
@@ -195,11 +196,19 @@ public class KSCADAgent {
             mEventListener.onAdExist(false, -1);
             return;
         }
-        mVideoList = KSCMobileAdProtoAPI.getInstance().getVideoList(response.getBody());
+        List<KSCVideoAdBean> newList = KSCMobileAdProtoAPI.getInstance().getVideoList(response.getBody());
+        if (newList.size() == 0) {
+            KSCLog.d("server response ad list size is 0, step!");
+            return;
+        }
+        for (KSCVideoAdBean bean : newList) {
+            mVideoList.add(bean);
+        }
         long errorCode = KSCMobileAdProtoAPI.getInstance().getErrorCode();
         if (errorCode == 0) {
             mEventListener.onAdExist(true, errorCode);
             if (mVideoList.size() == 0) {
+                KSCLog.d("current ad list size is 0, step!");
                 return;
             }
             KSCVideoAdBean videoAdBean = mVideoList.get(0);
@@ -207,10 +216,12 @@ public class KSCADAgent {
             if (url != null) {
                 int netType = KSCNetUtils.getNetType(activity);
                 if (mCanCached && isCache && netType != KSCNetUtils.NETWORK_TYPE_2G) {// 可缓存，是缓存，不是2G网络的时候缓存
-                    cacheAdVideo(url);
+                    cacheAdVideo(0, url);
                 } else if (!isCache) {// 不缓存的时候播放流媒体
                     showAdVideo(activity);
                 }
+            } else {
+                KSCLog.d("materialMeta video url is null, step!");
             }
         } else {
             KSCLog.e("get ad error, error code = [" + errorCode + "]");
@@ -218,7 +229,7 @@ public class KSCADAgent {
         }
     }
 
-    private void cacheAdVideo(String url) {
+    private void cacheAdVideo(final int index, String url) {
         KSCLog.d("KSCADAgent cacheAdVideo, url:" + url);
         final String localVideoPath = mCacheVideoPath + File.separator + System.currentTimeMillis() + ".mp4";
         HttpRequestParam requestParam = new HttpRequestParam(url);
@@ -226,13 +237,15 @@ public class KSCADAgent {
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(HttpResponse response) {
-                mVideoList.get(0).setDownloadPath(localVideoPath);
+                mVideoList.get(index).setDownloadPath(localVideoPath);
+                KSCLog.d("cached video success, video path=" + localVideoPath);
                 mEventListener.onVideoCached(true);
             }
         }, new HttpErrorListener() {
             @Override
             public void onErrorResponse(HttpError error) {
                 mEventListener.onNetRequestError("网络错误[" + error.getMessage() + "]");
+                KSCLog.d("cached video fail, video path=" + localVideoPath);
                 mEventListener.onVideoCached(false);
             }
         }, new Handler(Looper.getMainLooper()));
@@ -261,9 +274,13 @@ public class KSCADAgent {
             if (cacheFile.exists()) {
                 boolean result = cacheFile.delete();
                 if (result) {
-                    System.out.println("delete video");
+                    KSCLog.d("delete video success, path=" + cachePath);
                     mVideoList.remove(0);
+                } else {
+                    KSCLog.d("delete video fail, path=" + cachePath);
                 }
+            } else {
+                KSCLog.d("cached video not exist, path=" + cachePath);
             }
         }
     }
@@ -273,17 +290,19 @@ public class KSCADAgent {
             return;
         }
         String url = mVideoList.get(0).getClickUrl();
+        String downloadAppName = mVideoList.get(0).getBrandName() == null ? "" : mVideoList.get(0).getBrandName();
         String downloadPath;
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             downloadPath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + Environment.DIRECTORY_DOWNLOADS;
         } else {
             downloadPath = Environment.getDataDirectory().getAbsolutePath() + File.separator + Environment.DIRECTORY_DOWNLOADS;
         }
-        downloadPath += File.separator + "download.apk";
+        downloadPath += File.separator + "download-" + System.currentTimeMillis() + ".apk";
         Intent intent = new Intent(mContext, DownloadService.class);
         intent.putExtra(DownloadService.EXTRA_DOWNLOAD_URL, url);
         intent.putExtra(DownloadService.EXTRA_DOWNLOAD_PATH, downloadPath);
-        intent.putExtra(DownloadService.EXTRA_SHOW_NOTIFY, false);
+        intent.putExtra(DownloadService.EXTRA_SHOW_NOTIFY, true);
+        intent.putExtra(DownloadService.EXTRA_DOWNLOAD_APP_NAME, downloadAppName);
         mContext.startService(intent);
     }
 

@@ -368,13 +368,13 @@ public class KSCMobileAdActivity extends Activity {
         mRootView.addView(landingPageView, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
     }
 
-    private void showNetPromptView() {
+    private void showNetPromptView(String msg) {
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width = 320 * (int) dm.density;
         int height = 165 * (int) dm.density;
         KSCNetPromptView netPromptView = new KSCNetPromptView(this);
-        netPromptView.setText("当前处于非WIFI环境下，您确定要下载吗？", "确定");
+        netPromptView.setText(msg, "确定");
         netPromptView.setSize(width, height);
         netPromptView.setConfirmViewClickListener(new OnClickListener() {
             @Override
@@ -401,12 +401,12 @@ public class KSCMobileAdActivity extends Activity {
 
     private void disposeDownload() {
         if (!KSCNetUtils.isNetworkAvailable(KSCMobileAdActivity.this)) {
-            showNetPromptView();
+            showNetPromptView("当前网络不可用，请检查!");
             return;
         }
         int netType = KSCNetUtils.getNetType(KSCMobileAdActivity.this);
         if (netType != KSCNetUtils.NETWORK_TYPE_WIFI) {
-            showNetPromptView();
+            showNetPromptView("当前处于非WIFI环境下，您确定要下载吗？");
         } else {
             mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_DOWNLOAD_START);
         }

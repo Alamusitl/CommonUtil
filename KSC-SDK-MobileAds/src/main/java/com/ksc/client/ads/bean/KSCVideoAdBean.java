@@ -17,6 +17,7 @@ public class KSCVideoAdBean {
     private String mVideoUrl;
     private String mClickUrl;
     private String mDownloadPath;
+    private String mBrandName;
     private MaterialMeta.InteractionType mInteractionType;
     private MaterialMeta.CreativeType mCreativeType;
     private Map<Tracking.TrackingEvent, List<String>> mTrackingUrl;
@@ -67,6 +68,14 @@ public class KSCVideoAdBean {
 
     public void setDownloadPath(String downloadPath) {
         mDownloadPath = downloadPath;
+    }
+
+    public String getBrandName() {
+        return mBrandName;
+    }
+
+    public void setBrandName(String brandName) {
+        mBrandName = brandName;
     }
 
     public MaterialMeta.InteractionType getInteractionType() {

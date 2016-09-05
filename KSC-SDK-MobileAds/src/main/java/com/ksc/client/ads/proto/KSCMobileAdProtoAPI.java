@@ -393,6 +393,7 @@ public class KSCMobileAdProtoAPI {
                 bean.setClickUrl(meta.getClickUrl());
                 bean.setInteractionType(meta.getInteractionType());
                 bean.setCreativeType(meta.getCreativeType());
+                bean.setBrandName(meta.getBrandName());
                 bean.setTrackingUrl(trackMap);
                 mList.add(bean);
             }
