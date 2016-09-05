@@ -37,6 +37,7 @@
 -keep public class * extends android.content.ContentProvider
 -keep public class * extends android.app.backup.BackupAgentHelper
 -keep public class * extends android.preference.Preference
+-keep public class com.android.vending.licensing.ILicensingService
 -keep public class * extends android.support.**
 -dontwarn android.support.**
 
@@ -88,4 +89,5 @@
     public <fields>;
     public <methods>;
 }
+-keep public abstract interface com.ksc.client.toolbox.**
 -dontwarn com.ksc.client.toolbox.**

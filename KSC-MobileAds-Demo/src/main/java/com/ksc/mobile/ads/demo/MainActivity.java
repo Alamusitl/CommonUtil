@@ -1,7 +1,7 @@
 package com.ksc.mobile.ads.demo;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.ksc.client.ads.KSCADAgent;
 import com.ksc.client.ads.callback.KSCAdEventListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onVideoStart() {
-//                Toast("开始播放");
+                Toast("开始播放");
             }
 
             @Override

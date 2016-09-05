@@ -20,6 +20,7 @@
 -dontskipnonpubliclibraryclasses
 -dontpreverify
 -verbose
+-dontoptimize
 # 忽略警告
 -ignorewarnings
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
@@ -77,6 +78,10 @@
     public static <fields>;
 }
 
+-keep class com.ksc.client.ads.bean.* {
+    public <fields>;
+    public <methods>;
+}
 -keep interface com.ksc.client.ads.callback.* {
     public <methods>;
 }
@@ -84,14 +89,49 @@
     public <fields>;
     public <methods>;
 }
--keep class com.ksc.client.ads.proto.KSCMobileAdsProto530
--keep class com.ksc.client.ads.proto.KSCMobileAdProtoAPI{*;}
--keep class com.ksc.client.ads.view.*{
+-keep class com.ksc.client.ads.proto.**{*;}
+-keep class com.ksc.client.ads.view.KSCCloseVideoPromptView {
     public <fields>;
     public <methods>;
 }
--keep class com.ksc.client.ads.DownloadService{*;}
--keep class com.ksc.client.ads.KSCADAgent{*;}
+-keep class com.ksc.client.ads.view.KSCCountDownView {
+    public protected <fields>;
+    public protected <methods>;
+}
+-keep class com.ksc.client.ads.view.KSCCountDownView$* {*;}
+-keep class com.ksc.client.ads.view.KSCLandingPageView {
+    public <fields>;
+    public <methods>;
+}
+-keep class com.ksc.client.ads.view.KSCLandingPageView$* {*;}
+-keep class com.ksc.client.ads.view.KSCMobileAdActivity {
+    public protected <fields>;
+    public protected <methods>;
+}
+-keep class com.ksc.client.ads.view.KSCMobileAdActivity$* {*;}
+-keep class com.ksc.client.ads.view.KSCNetPromptView {
+    public <fields>;
+    public <methods>;
+}
+-keep class com.ksc.client.ads.view.KSCNetPromptView$* {*;}
+-keep class com.ksc.client.ads.view.KSCVideoView {
+    public <fields>;
+    public <methods>;
+}
+-keep class com.ksc.client.ads.view.KSCVideoView$* {*;}
+-keep class com.ksc.client.ads.DownloadService{
+    public protected <fields>;
+    public protected <methods>;
+}
+-keep class com.ksc.client.ads.DownloadService$*{*;}
+-keep class com.ksc.client.ads.KSCADAgent{
+    public protected <fields>;
+    public protected <methods>;
+}
+-keep class com.ksc.client.ads.KSCADAgent$*{*;}
 -keep class com.ksc.client.ads.KSCBlackBoard{*;}
 -keep class com.ksc.client.ads.KSCMediaState{*;}
 -dontwarn com.ksc.client.ads.**
+
+-keep class com.ksc.client.util.**{*;}
+-keep class com.ksc.client.toolbox.**{*;}

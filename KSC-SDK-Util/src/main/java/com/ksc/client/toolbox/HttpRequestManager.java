@@ -22,13 +22,13 @@ public class HttpRequestManager {
         }
     }
 
-    public static void execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener) {
+    public static synchronized void execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener) {
         init();
         HttpRequestRunnable request = new HttpRequestRunnable(requestParam, listener, errorListener);
         mFixedThreadPool.execute(request);
     }
 
-    public static HttpRequestRunnable execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, Handler handler) {
+    public static synchronized HttpRequestRunnable execute(HttpRequestParam requestParam, HttpListener listener, HttpErrorListener errorListener, Handler handler) {
         init();
         HttpRequestRunnable request = new HttpRequestRunnable(requestParam, listener, errorListener);
         request.setHandler(handler);

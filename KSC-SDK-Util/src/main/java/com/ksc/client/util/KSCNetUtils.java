@@ -165,7 +165,7 @@ public class KSCNetUtils {
                 }
             }
         } catch (Exception ex) {
-            KSCLog.e(ex.getMessage());
+            KSCLog.e(ex.getMessage() == null ? "" : ex.getMessage(), ex);
         }
         return ip;
     }
@@ -186,8 +186,8 @@ public class KSCNetUtils {
                     mac = info.getMacAddress();
                 }
             }
-        } catch (SecurityException e) {
-            KSCLog.e(e.getMessage());
+        } catch (SecurityException ex) {
+            KSCLog.e(ex.getMessage() == null ? "" : ex.getMessage(), ex);
         }
         return mac;
     }
