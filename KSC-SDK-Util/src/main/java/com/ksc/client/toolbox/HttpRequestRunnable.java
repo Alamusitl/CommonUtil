@@ -58,7 +58,7 @@ public class HttpRequestRunnable implements Runnable {
             HttpUtils.setConnectionParametersForRequest(connection, mRequestParams);
             connection.connect();
             int responseCode = connection.getResponseCode();
-            KSCLog.i("Connection response code : " + responseCode);
+            KSCLog.d("Connection response code : " + responseCode + ", url=" + url);
             if (responseCode == -1) {
                 throw new IOException("Could not retrieve response code from HttpUrlConnection");
             }

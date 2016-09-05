@@ -20,60 +20,64 @@ public class KSCMobileAdKeyCode {
      */
     public static final int KEY_VIDEO_PREPARED = 0;
     /**
+     * 视频开始播放
+     */
+    public static final int KEY_VIDEO_START = 1;
+    /**
      * 视频正在播放
      */
-    public static final int KEY_VIDEO_PLAYING = 1;
+    public static final int KEY_VIDEO_PLAYING = 2;
     /**
      * 视频暂停播放
      */
-    public static final int KEY_VIDEO_PAUSE = 2;
+    public static final int KEY_VIDEO_PAUSE = 3;
     /**
      * 视频恢复播放
      */
-    public static final int KEY_VIDEO_RESUME = 3;
+    public static final int KEY_VIDEO_RESUME = 4;
     /**
      * 视频关闭
      */
-    public static final int KEY_VIDEO_CLOSE = 4;
+    public static final int KEY_VIDEO_CLOSE = 5;
     /**
      * 视频播放完成
      */
-    public static final int KEY_VIDEO_COMPLETION = 5;
+    public static final int KEY_VIDEO_COMPLETION = 6;
     /**
      * 视频静音或取消静音
      */
-    public static final int KEY_VIDEO_MUTE = 6;
+    public static final int KEY_VIDEO_MUTE = 7;
     /**
      * 视频播放错误
      */
-    public static final int KEY_VIDEO_ERROR = 7;
+    public static final int KEY_VIDEO_ERROR = 8;
     /**
      * 弹出关闭按钮
      */
-    public static final int KEY_VIEW_SHOW_VIDEO_CLOSE = 8;
+    public static final int KEY_VIEW_SHOW_VIDEO_CLOSE = 9;
     /**
      * 显示关闭视频弹框
      */
-    public static final int KEY_VIEW_SHOW_CLOSE_CONFIRM = 9;
+    public static final int KEY_VIEW_SHOW_CLOSE_CONFIRM = 10;
     /**
      * 关闭落地页
      */
-    public static final int KEY_VIEW_H5_CLOSE = 10;
+    public static final int KEY_VIEW_H5_CLOSE = 11;
     /**
      * H5界面点击下载
      */
-    public static final int KEY_VIEW_H5_CLICK = 11;
+    public static final int KEY_VIEW_H5_CLICK = 12;
     /**
      * 开始下载
      */
-    public static final int KEY_DOWNLOAD_START = 12;
+    public static final int KEY_DOWNLOAD_START = 13;
     /**
      * 下载成功
      */
-    public static final int KEY_DOWNLOAD_SUCCESS = 13;
+    public static final int KEY_DOWNLOAD_SUCCESS = 14;
     /**
      * 下载失败
      */
-    public static final int KEY_DOWNLOAD_FAIL = 14;
+    public static final int KEY_DOWNLOAD_FAIL = 15;
 
 }

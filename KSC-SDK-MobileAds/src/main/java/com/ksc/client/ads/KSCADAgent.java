@@ -63,15 +63,9 @@ public class KSCADAgent {
                 return;
             }
             switch (msg.what) {
-                case KSCMobileAdKeyCode.KEY_VIDEO_PREPARED:
-                    break;
-                case KSCMobileAdKeyCode.KEY_VIDEO_PLAYING:
+                case KSCMobileAdKeyCode.KEY_VIDEO_START:
                     mEventListener.onVideoStart();
                     pushAdEvent(KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_START_VALUE, msg.arg2);
-                    break;
-                case KSCMobileAdKeyCode.KEY_VIDEO_PAUSE:
-                    break;
-                case KSCMobileAdKeyCode.KEY_VIDEO_RESUME:
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_CLOSE:
                     mEventListener.onVideoClose(msg.arg1);
@@ -116,7 +110,7 @@ public class KSCADAgent {
         mEventListener = eventListener;
         KSCBlackBoard.setTransformHandler(mHandler);
         setCachePath(activity);
-        checkAppHasAd(activity, true);
+        checkAppHasAd(activity, 0, true);
     }
 
     public void setDebug(boolean debug) {
@@ -141,7 +135,7 @@ public class KSCADAgent {
             return;
         }
         if (mVideoList.size() == 0) {// 本地没有视频信息
-            checkAppHasAd(activity, false);
+            checkAppHasAd(activity, 0, false);
         } else if (mVideoList.size() > 0) {
             KSCVideoAdBean videoAdBean = mVideoList.get(0);
             if (videoAdBean.getDownloadPath() == null || videoAdBean.getDownloadPath().equals("")) {// 没有缓存，有视频链接
@@ -161,7 +155,7 @@ public class KSCADAgent {
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_H5_PATH, videoAdBean.getHtml());
                 activity.startActivity(intent);
                 if (mVideoList.size() == 1) {
-                    checkAppHasAd(activity, true);
+                    checkAppHasAd(activity, 1, true);
                 } else {
                     cacheAdVideo(1, mVideoList.get(1).getVideoUrl());
                 }
@@ -169,7 +163,7 @@ public class KSCADAgent {
         }
     }
 
-    private void checkAppHasAd(final Activity activity, final boolean isCache) {
+    private void checkAppHasAd(final Activity activity, final int index, final boolean isCache) {
         KSCLog.d("KSCADAgent checkAppHasAd, isCache:" + isCache);
         HttpRequestParam requestParam = new HttpRequestParam("http://123.59.14.199:8084/api/test/9", HttpRequestParam.METHOD_POST);
         requestParam.setContentType("application/x-protobuf");
@@ -178,7 +172,7 @@ public class KSCADAgent {
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(HttpResponse response) {
-                disposeAdResponse(activity, response, isCache);
+                disposeAdResponse(activity, response, index, isCache);
             }
         }, new HttpErrorListener() {
             @Override
@@ -189,7 +183,7 @@ public class KSCADAgent {
         });
     }
 
-    private void disposeAdResponse(Activity activity, HttpResponse response, boolean isCache) {
+    private void disposeAdResponse(Activity activity, HttpResponse response, int index, boolean isCache) {
         if (response.getCode() != 200) {// 存在广告
             KSCLog.e("http response error, code=[" + response.getCode() + "]");
             mAdExist = false;
@@ -211,12 +205,12 @@ public class KSCADAgent {
                 KSCLog.d("current ad list size is 0, step!");
                 return;
             }
-            KSCVideoAdBean videoAdBean = mVideoList.get(0);
+            KSCVideoAdBean videoAdBean = mVideoList.get(index);
             String url = videoAdBean.getVideoUrl();
             if (url != null) {
                 int netType = KSCNetUtils.getNetType(activity);
                 if (mCanCached && isCache && netType != KSCNetUtils.NETWORK_TYPE_2G) {// 可缓存，是缓存，不是2G网络的时候缓存
-                    cacheAdVideo(0, url);
+                    cacheAdVideo(index, url);
                 } else if (!isCache) {// 不缓存的时候播放流媒体
                     showAdVideo(activity);
                 }
