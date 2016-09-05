@@ -5,10 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/Baidu-AD-Demo/Baidu-AD-Demo.iml" filepath="$PROJECT_DIR$/Baidu-AD-Demo/Baidu-AD-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" filepath="$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-AudioRecord-Demo/KSC-AudioRecord-Demo.iml" filepath="$PROJECT_DIR$/KSC-AudioRecord-Demo/KSC-AudioRecord-Demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/KSC-Channel-Demo/KSC-Channel-Demo.iml" filepath="$PROJECT_DIR$/KSC-Channel-Demo/KSC-Channel-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-MobileAds-Demo/KSC-MobileAds-Demo.iml" filepath="$PROJECT_DIR$/KSC-MobileAds-Demo/KSC-MobileAds-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Analytics/KSC-SDK-Analytics.iml" filepath="$PROJECT_DIR$/KSC-SDK-Analytics/KSC-SDK-Analytics.iml" />
-      <module fileurl="file://$PROJECT_DIR$/KSC-SDK-ChannelAPI/KSC-SDK-ChannelAPI.iml" filepath="$PROJECT_DIR$/KSC-SDK-ChannelAPI/KSC-SDK-ChannelAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-MobileAds/KSC-SDK-MobileAds.iml" filepath="$PROJECT_DIR$/KSC-SDK-MobileAds/KSC-SDK-MobileAds.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Update/KSC-SDK-Update.iml" filepath="$PROJECT_DIR$/KSC-SDK-Update/KSC-SDK-Update.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" filepath="$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" />
@@ -16,18 +14,6 @@
       <module fileurl="file://$PROJECT_DIR$/KSC-Update-Demo/KSC-Update-Demo.iml" filepath="$PROJECT_DIR$/KSC-Update-Demo/KSC-Update-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/SensorsAnalyticsSDK/SensorsAnalyticsSDK.iml" filepath="$PROJECT_DIR$/SensorsAnalyticsSDK/SensorsAnalyticsSDK.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdk-360-1.3.0_468/sdk-360-1.3.0_468.iml" filepath="$PROJECT_DIR$/sdk-360-1.3.0_468/sdk-360-1.3.0_468.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdk-anzhi-3.5.2/sdk-anzhi-3.5.2.iml" filepath="$PROJECT_DIR$/sdk-anzhi-3.5.2/sdk-anzhi-3.5.2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdk-baidu-3.6.3/sdk-baidu-3.6.3.iml" filepath="$PROJECT_DIR$/sdk-baidu-3.6.3/sdk-baidu-3.6.3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdk-dangle-4.2/sdk-dangle-4.2.iml" filepath="$PROJECT_DIR$/sdk-dangle-4.2/sdk-dangle-4.2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdk-guopan-2.2.0/sdk-guopan-2.2.0.iml" filepath="$PROJECT_DIR$/sdk-guopan-2.2.0/sdk-guopan-2.2.0.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdk-jifeng-4.3/sdk-jifeng-4.3.iml" filepath="$PROJECT_DIR$/sdk-jifeng-4.3/sdk-jifeng-4.3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdk-pps-4.2.0/sdk-pps-4.2.0.iml" filepath="$PROJECT_DIR$/sdk-pps-4.2.0/sdk-pps-4.2.0.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdk-pptv-4.5.03.160317/sdk-pptv-4.5.03.160317.iml" filepath="$PROJECT_DIR$/sdk-pptv-4.5.03.160317/sdk-pptv-4.5.03.160317.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdk-uc-4.1.6/sdk-uc-4.1.6.iml" filepath="$PROJECT_DIR$/sdk-uc-4.1.6/sdk-uc-4.1.6.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdk-wandoujia-5.1.2/sdk-wandoujia-5.1.2.iml" filepath="$PROJECT_DIR$/sdk-wandoujia-5.1.2/sdk-wandoujia-5.1.2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdk-xiaomi-4.6.11/sdk-xiaomi-4.6.11.iml" filepath="$PROJECT_DIR$/sdk-xiaomi-4.6.11/sdk-xiaomi-4.6.11.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdk-yingyonghui-6.2.0/sdk-yingyonghui-6.2.0.iml" filepath="$PROJECT_DIR$/sdk-yingyonghui-6.2.0/sdk-yingyonghui-6.2.0.iml" />
     </modules>
   </component>
 </project>
