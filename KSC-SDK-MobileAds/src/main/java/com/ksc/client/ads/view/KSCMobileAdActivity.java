@@ -39,6 +39,7 @@ public class KSCMobileAdActivity extends Activity {
     private RelativeLayout mRootView;
     private ImageView mCloseView;
     private ImageView mMuteView;
+    private KSCLandingPageView mLandingPageView;
     private KSCCountDownView mCountDownTimeView;
     private KSCVideoView mMediaPlayer;
     private boolean mIsMute = false;
@@ -134,14 +135,15 @@ public class KSCMobileAdActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        initView();
-        initListener();
-
         Intent intent = getIntent();
         String type = intent.getStringExtra(KSCMobileAdKeyCode.VIDEO_TYPE);
         String path = intent.getStringExtra(KSCMobileAdKeyCode.VIDEO_PATH);
         mH5Path = intent.getByteArrayExtra(KSCMobileAdKeyCode.VIDEO_H5_PATH);
         Log.d(TAG, "onCreate: type=" + type + ", path=" + path);
+
+        initView();
+        initListener();
+
         try {
             if (type.equals(KSCMobileAdKeyCode.VIDEO_IN_CACHE)) {
                 mMediaPlayer.setVideoPath(path);
@@ -162,6 +164,8 @@ public class KSCMobileAdActivity extends Activity {
         LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         mRootView = new RelativeLayout(this);
         addContentView(mRootView, lp);
+
+        createLandingPage();
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -345,23 +349,21 @@ public class KSCMobileAdActivity extends Activity {
         mRootView.addView(alertDialogView, lp);
     }
 
-    private void showLandingPage() {
-        // 移除所有的View
-        mRootView.removeAllViews();
+    private void createLandingPage() {
         // 落地页
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int size = 33 * (int) dm.density;
-        KSCLandingPageView landingPageView = new KSCLandingPageView(this);
-        landingPageView.setSize(size);
-        landingPageView.setLandingViewData(new String(mH5Path));
-        landingPageView.setCloseViewClickListener(new OnClickListener() {
+        mLandingPageView = new KSCLandingPageView(this);
+        mLandingPageView.setSize(size);
+        mLandingPageView.setLandingViewData(new String(mH5Path));
+        mLandingPageView.setCloseViewClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIEW_H5_CLOSE);
             }
         });
-        landingPageView.setLandingViewDownloadListener(new DownloadListener() {
+        mLandingPageView.setLandingViewDownloadListener(new DownloadListener() {
             @Override
             public void onDownloadStart(String url, String s1, String s2, String s3, long l) {
                 Message message = mHandler.obtainMessage();
@@ -369,7 +371,17 @@ public class KSCMobileAdActivity extends Activity {
                 mHandler.sendMessage(message);
             }
         });
-        mRootView.addView(landingPageView, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+        mLandingPageView.setVisibility(View.GONE);
+        mRootView.addView(mLandingPageView, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+    }
+
+    private void showLandingPage() {
+        // 移除所有的View
+        mRootView.removeView(mCloseView);
+        mRootView.removeView(mMuteView);
+        mRootView.removeView(mCountDownTimeView);
+        mRootView.removeView(mMediaPlayer);
+        mLandingPageView.setVisibility(View.VISIBLE);
     }
 
     private void showNetPromptView(String msg) {
