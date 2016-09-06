@@ -4,12 +4,18 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ksc.client.ads.KSCADAgent;
 import com.ksc.client.ads.callback.KSCAdEventListener;
 
 public class MainActivity extends Activity {
+
+    private Button mShowVideo;
+    private TextView mTvRest;
+    private int mCurrentRest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +39,12 @@ public class MainActivity extends Activity {
 
             @Override
             public void onVideoCached(boolean isCached) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mShowVideo.setEnabled(true);
+                    }
+                });
                 if (isCached) {
                     Toast("已缓存广告视频");
                 } else {
@@ -48,11 +60,19 @@ public class MainActivity extends Activity {
             @Override
             public void onVideoCompletion() {
                 Toast("播放完成");
+                mCurrentRest = Integer.parseInt(String.valueOf(mTvRest.getText())) + 20;
+                MainActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mTvRest.setText(String.valueOf(mCurrentRest));
+                    }
+                });
+                Toast("奖励已发放");
             }
 
             @Override
             public void onVideoClose(int currentPosition) {
-                Toast("关闭广告视频，当前进度[" + currentPosition / 1000 + "]");
+                Toast("关闭广告视频，当前进度[" + currentPosition / 1000 + "]秒");
             }
 
             @Override
@@ -71,7 +91,10 @@ public class MainActivity extends Activity {
             }
         });
 
-        findViewById(R.id.btnShowVideoAd).setOnClickListener(new View.OnClickListener() {
+        mShowVideo = (Button) findViewById(R.id.btnShowVideoAd);
+        mTvRest = (TextView) findViewById(R.id.tvRest);
+        mShowVideo.setEnabled(false);
+        mShowVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 KSCADAgent.getInstance().showAdVideo(MainActivity.this);
