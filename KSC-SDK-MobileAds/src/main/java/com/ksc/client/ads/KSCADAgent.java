@@ -24,6 +24,7 @@ import com.ksc.client.util.KSCLog;
 import com.ksc.client.util.KSCNetUtils;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -264,6 +265,10 @@ public class KSCADAgent {
     private void deleteCachedVideo() {
         if (mVideoList.size() > 0) {
             String cachePath = mVideoList.get(0).getDownloadPath();
+            if (cachePath == null || cachePath.equals("")) {
+                mVideoList.remove(0);
+                return;
+            }
             File cacheFile = new File(cachePath);
             if (cacheFile.exists()) {
                 boolean result = cacheFile.delete();
@@ -292,6 +297,23 @@ public class KSCADAgent {
             downloadPath = Environment.getDataDirectory().getAbsolutePath() + File.separator + Environment.DIRECTORY_DOWNLOADS;
         }
         downloadPath += File.separator + "download-" + System.currentTimeMillis() + ".apk";
+        File file = new File(downloadPath);
+        if (!file.getParentFile().exists()) {
+            boolean result = file.getParentFile().mkdirs();
+            if (!result) {
+                return;
+            }
+        }
+        if (!file.exists()) {
+            try {
+                boolean result = file.createNewFile();
+                if (!result) {
+                    KSCLog.e("create download file fail");
+                }
+            } catch (IOException e) {
+                KSCLog.e("create download file exception", e);
+            }
+        }
         Intent intent = new Intent(mContext, DownloadService.class);
         intent.putExtra(DownloadService.EXTRA_DOWNLOAD_URL, url);
         intent.putExtra(DownloadService.EXTRA_DOWNLOAD_PATH, downloadPath);
