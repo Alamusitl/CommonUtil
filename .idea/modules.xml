@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Baidu-AD-Demo/Baidu-AD-Demo.iml" filepath="$PROJECT_DIR$/Baidu-AD-Demo/Baidu-AD-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" filepath="$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-AudioRecord-Demo/KSC-AudioRecord-Demo.iml" filepath="$PROJECT_DIR$/KSC-AudioRecord-Demo/KSC-AudioRecord-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-MobileAds-Demo/KSC-MobileAds-Demo.iml" filepath="$PROJECT_DIR$/KSC-MobileAds-Demo/KSC-MobileAds-Demo.iml" />
