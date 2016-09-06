@@ -71,7 +71,7 @@ public class KSCADAgent {
                 case KSCMobileAdKeyCode.KEY_VIDEO_CLOSE:
                     mEventListener.onVideoClose(msg.arg1);
                     pushAdEvent(KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_END_VALUE, msg.arg1);
-                    deleteCachedVideo();
+                    clearCache(false);
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION:
                     mEventListener.onVideoCompletion();
@@ -85,12 +85,12 @@ public class KSCADAgent {
                     break;
                 case KSCMobileAdKeyCode.KEY_VIEW_H5_CLOSE:
                     mEventListener.onLandingPageClose(false);
-                    deleteCachedVideo();
+                    clearCache(false);
                     break;
                 case KSCMobileAdKeyCode.KEY_DOWNLOAD_START:
                     mEventListener.onLandingPageClose(true);
                     startDownloadApk();
-                    deleteCachedVideo();
+                    clearCache(false);
                     break;
                 case KSCMobileAdKeyCode.KEY_DOWNLOAD_SUCCESS:
                     break;
@@ -104,6 +104,14 @@ public class KSCADAgent {
         return SingletonHolder.INSTANCE;
     }
 
+    /**
+     * 初始化SDK
+     *
+     * @param activity      上下文
+     * @param appId         MSSP分配的APPID
+     * @param adSlotId      MSSP分配的AdSlotId
+     * @param eventListener 广告事件监听
+     */
     public void init(Activity activity, String appId, String adSlotId, KSCAdEventListener eventListener) {
         mContext = activity.getApplicationContext();
         mAppId = appId;
@@ -114,22 +122,42 @@ public class KSCADAgent {
         checkAppHasAd(activity, 0, true);
     }
 
+    /**
+     * 设置DebugMode，目前只作用在log
+     *
+     * @param debug 是否debug
+     */
     public void setDebug(boolean debug) {
         KSCLog.mIsDebug = debug;
     }
 
+    /**
+     * 生命周期方法onResume
+     */
     public void onResume() {
         KSCLog.d("KSCADAgent onResume");
     }
 
+    /**
+     * 生命周期方法onPause
+     */
     public void onPause() {
         KSCLog.d("KSCADAgent onPause");
     }
 
+    /**
+     * 生命周期方法onDestroy
+     */
     public void onDestroy() {
         KSCLog.d("KSCADAgent onDestroy");
+        clearCache(true);
     }
 
+    /**
+     * 播放广告视频
+     *
+     * @param activity 上下文
+     */
     public void showAdVideo(Activity activity) {
         KSCLog.d("KSCADAgent showAdVideo");
         if (!mAdExist) {
@@ -164,6 +192,13 @@ public class KSCADAgent {
         }
     }
 
+    /**
+     * 请求广告
+     *
+     * @param activity 上下文
+     * @param index    缓存索引
+     * @param isCache  是否缓存
+     */
     private void checkAppHasAd(final Activity activity, final int index, final boolean isCache) {
         KSCLog.d("KSCADAgent checkAppHasAd, isCache:" + isCache);
         HttpRequestParam requestParam = new HttpRequestParam(KSCMobileAdKeyCode.MOBILE_AD_URL, HttpRequestParam.METHOD_POST);
@@ -184,6 +219,16 @@ public class KSCADAgent {
         });
     }
 
+    /**
+     * 处理请求广告的返回
+     * 加入缓存列表
+     * 缓存信息或播放视频
+     *
+     * @param activity 上下文
+     * @param response 返回信息
+     * @param index    缓存索引
+     * @param isCache  是否缓存
+     */
     private void disposeAdResponse(Activity activity, HttpResponse response, int index, boolean isCache) {
         if (response.getCode() != 200) {// 存在广告
             KSCLog.e("http response error, code=[" + response.getCode() + "]");
@@ -224,6 +269,12 @@ public class KSCADAgent {
         }
     }
 
+    /**
+     * 缓存视频
+     *
+     * @param index 缓存信息的索引
+     * @param url   缓存视频的URL
+     */
     private void cacheAdVideo(final int index, String url) {
         KSCLog.d("KSCADAgent cacheAdVideo, url:" + url);
         final String localVideoPath = mCacheVideoPath + File.separator + System.currentTimeMillis() + ".mp4";
@@ -246,6 +297,12 @@ public class KSCADAgent {
         }, new Handler(Looper.getMainLooper()));
     }
 
+    /**
+     * 上报广告事件
+     *
+     * @param value    事件ID
+     * @param position 当前视频播放进度
+     */
     private void pushAdEvent(int value, int position) {
         List<String> urlList;
         if (value == KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_START_VALUE) {
@@ -262,28 +319,37 @@ public class KSCADAgent {
         }
     }
 
-    private void deleteCachedVideo() {
-        if (mVideoList.size() > 0) {
-            String cachePath = mVideoList.get(0).getDownloadPath();
-            if (cachePath == null || cachePath.equals("")) {
+    /**
+     * 清除缓存信息和缓存视频
+     *
+     * @param isClearAll 是否全部清理，true为全部清理，false为只清除第0个
+     */
+    private void clearCache(boolean isClearAll) {
+        do {
+            if (mVideoList.size() > 0) {
+                String cachePath = mVideoList.get(0).getDownloadPath();
                 mVideoList.remove(0);
-                return;
-            }
-            File cacheFile = new File(cachePath);
-            if (cacheFile.exists()) {
-                boolean result = cacheFile.delete();
-                if (result) {
-                    KSCLog.d("delete video success, path=" + cachePath);
-                    mVideoList.remove(0);
-                } else {
-                    KSCLog.d("delete video fail, path=" + cachePath);
+                if (cachePath == null || cachePath.equals("")) {
+                    continue;
                 }
-            } else {
-                KSCLog.d("cached video not exist, path=" + cachePath);
+                File cacheFile = new File(cachePath);
+                if (cacheFile.exists()) {
+                    boolean result = cacheFile.delete();
+                    if (result) {
+                        KSCLog.d("delete video success, path=" + cachePath);
+                    } else {
+                        KSCLog.d("delete video fail, path=" + cachePath);
+                    }
+                } else {
+                    KSCLog.d("cached video not exist, path=" + cachePath);
+                }
             }
-        }
+        } while (isClearAll);
     }
 
+    /**
+     * 开启下载Service
+     */
     private void startDownloadApk() {
         if (mVideoList.size() == 0) {
             return;

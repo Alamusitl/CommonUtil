@@ -97,6 +97,14 @@ public class MainActivity extends Activity {
         mShowVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (mShowVideo.isEnabled()) {
+                            mShowVideo.setEnabled(false);
+                        }
+                    }
+                });
                 KSCADAgent.getInstance().showAdVideo(MainActivity.this);
             }
         });
