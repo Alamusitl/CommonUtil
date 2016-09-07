@@ -6,6 +6,7 @@ import org.json.JSONObject;
  * Created by Alamusi on 2016/6/27.
  */
 public class KSCJsonUtils {
+
     public static String getString(JSONObject data, String key) {
         if (data == null || key == null) {
             return null;

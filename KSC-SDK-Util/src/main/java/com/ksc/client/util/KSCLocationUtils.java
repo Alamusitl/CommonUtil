@@ -37,7 +37,13 @@ public class KSCLocationUtils {
     private synchronized static Location getLocation(Activity context) {
         String locationProvider;
         LocationManager lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        if (lm == null) {
+            return null;
+        }
         List<String> providers = lm.getProviders(true);
+        if (providers == null || providers.size() == 0) {
+            return null;
+        }
         if (providers.contains(LocationManager.GPS_PROVIDER)) {
             locationProvider = LocationManager.GPS_PROVIDER;
         } else if (providers.contains(LocationManager.NETWORK_PROVIDER)) {
