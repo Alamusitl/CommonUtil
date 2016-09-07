@@ -2,11 +2,11 @@ package com.ksc.mobile.ads.demo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ksc.client.ads.KSCADAgent;
 import com.ksc.client.ads.callback.KSCAdEventListener;
@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
 
     private Button mShowVideo;
     private TextView mTvRest;
+    private TextView mLogMsg;
     private int mCurrentRest;
 
     @Override
@@ -93,6 +94,8 @@ public class MainActivity extends Activity {
 
         mShowVideo = (Button) findViewById(R.id.btnShowVideoAd);
         mTvRest = (TextView) findViewById(R.id.tvRest);
+        mLogMsg = (TextView) findViewById(R.id.tvLogMsg);
+        mLogMsg.setMovementMethod(new ScrollingMovementMethod());
         mShowVideo.setEnabled(false);
         mShowVideo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,7 +135,7 @@ public class MainActivity extends Activity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                mLogMsg.setText(mLogMsg.getText() + "\n" + msg);
             }
         });
     }
