@@ -659,6 +659,9 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         }
     }
 
+    /**
+     * 释放MediaPlayer
+     */
     public void release() {
         if (mMediaPlayer != null) {
             mMediaPlayer.reset();

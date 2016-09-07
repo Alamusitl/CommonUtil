@@ -45,10 +45,6 @@ public class KSCADAgent {
     private String mAppId;
     private String mAdSlotId;
     /**
-     * 是否可以缓存，网络为2G或本地存储无效的时候为不可缓存
-     */
-    private boolean mCanCached = true;
-    /**
      * 是否存在广告
      */
     private boolean mAdExist = true;
@@ -118,7 +114,7 @@ public class KSCADAgent {
         mAdSlotId = adSlotId;
         mEventListener = eventListener;
         KSCBlackBoard.setTransformHandler(mHandler);
-        setCachePath(activity);
+        mCacheVideoPath = activity.getDir("ad", Context.MODE_PRIVATE).getAbsolutePath();
         checkAppHasAd(activity, 0, true);
     }
 
@@ -167,17 +163,21 @@ public class KSCADAgent {
             checkAppHasAd(activity, 0, false);
         } else if (mVideoList.size() > 0) {
             KSCVideoAdBean videoAdBean = mVideoList.get(0);
-            if (videoAdBean.getDownloadPath() == null || videoAdBean.getDownloadPath().equals("")) {// 没有缓存，有视频链接
+            File cachedFile = new File(videoAdBean.getDownloadPath());
+            String playUri;
+            if (!cachedFile.exists()) {
                 if (!KSCNetUtils.isNetworkAvailable(activity)) {
                     mEventListener.onNetRequestError("network is not available");
                     return;
                 }
+                playUri = videoAdBean.getVideoUrl();
                 Intent intent = new Intent(activity, KSCMobileAdActivity.class);
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_TYPE, KSCMobileAdKeyCode.VIDEO_IN_STREAM);
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_PATH, videoAdBean.getVideoUrl());
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_H5_PATH, videoAdBean.getHtml());
                 activity.startActivity(intent);
-            } else {// 有缓存
+            } else {
+                playUri = videoAdBean.getDownloadPath();
                 Intent intent = new Intent(activity, KSCMobileAdActivity.class);
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_TYPE, KSCMobileAdKeyCode.VIDEO_IN_CACHE);
                 intent.putExtra(KSCMobileAdKeyCode.VIDEO_PATH, videoAdBean.getDownloadPath());
@@ -186,9 +186,10 @@ public class KSCADAgent {
                 if (mVideoList.size() == 1) {
                     checkAppHasAd(activity, 1, true);
                 } else {
-                    cacheAdVideo(1, mVideoList.get(1).getVideoUrl());
+                    cacheAdVideo(mVideoList.get(1));
                 }
             }
+            KSCLog.d("current play uri=" + playUri);
         }
     }
 
@@ -242,6 +243,7 @@ public class KSCADAgent {
             return;
         }
         for (KSCVideoAdBean bean : newList) {
+            bean.setDownloadPath(mCacheVideoPath + File.separator + System.currentTimeMillis() + ".mp4");
             mVideoList.add(bean);
         }
         long errorCode = KSCMobileAdProtoAPI.getInstance().getErrorCode();
@@ -255,8 +257,8 @@ public class KSCADAgent {
             String url = videoAdBean.getVideoUrl();
             if (url != null) {
                 int netType = KSCNetUtils.getNetType(activity);
-                if (mCanCached && isCache && netType != KSCNetUtils.NETWORK_TYPE_2G) {// 可缓存，是缓存，不是2G网络的时候缓存
-                    cacheAdVideo(index, url);
+                if (isCache && netType != KSCNetUtils.NETWORK_TYPE_2G) {// 可缓存，是缓存，不是2G网络的时候缓存
+                    cacheAdVideo(videoAdBean);
                 } else if (!isCache) {// 不缓存的时候播放流媒体
                     showAdVideo(activity);
                 }
@@ -272,26 +274,23 @@ public class KSCADAgent {
     /**
      * 缓存视频
      *
-     * @param index 缓存信息的索引
-     * @param url   缓存视频的URL
+     * @param adBean 广告信息Bean
      */
-    private void cacheAdVideo(final int index, String url) {
-        KSCLog.d("KSCADAgent cacheAdVideo, url:" + url);
-        final String localVideoPath = mCacheVideoPath + File.separator + System.currentTimeMillis() + ".mp4";
-        HttpRequestParam requestParam = new HttpRequestParam(url);
-        requestParam.setDownloadPath(localVideoPath);
+    private void cacheAdVideo(final KSCVideoAdBean adBean) {
+        KSCLog.d("KSCADAgent cacheAdVideo, url:" + adBean.getVideoUrl());
+        HttpRequestParam requestParam = new HttpRequestParam(adBean.getVideoUrl());
+        requestParam.setDownloadPath(adBean.getDownloadPath());
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(HttpResponse response) {
-                mVideoList.get(index).setDownloadPath(localVideoPath);
-                KSCLog.d("cached video success, video path=" + localVideoPath);
+                KSCLog.d("cached video success, video path=" + adBean.getDownloadPath());
                 mEventListener.onVideoCached(true);
             }
         }, new HttpErrorListener() {
             @Override
             public void onErrorResponse(HttpError error) {
                 mEventListener.onNetRequestError("网络错误[" + error.getMessage() + "]");
-                KSCLog.d("cached video fail, video path=" + localVideoPath);
+                KSCLog.d("cached video fail, video path=" + adBean.getDownloadPath());
                 mEventListener.onVideoCached(false);
             }
         }, new Handler(Looper.getMainLooper()));
@@ -386,65 +385,6 @@ public class KSCADAgent {
         intent.putExtra(DownloadService.EXTRA_SHOW_NOTIFY, true);
         intent.putExtra(DownloadService.EXTRA_DOWNLOAD_APP_NAME, downloadAppName);
         mContext.startService(intent);
-    }
-
-    /**
-     * 设置缓存视频路径
-     *
-     * @param activity 当前的Activity
-     */
-    private void setCachePath(Activity activity) {
-        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            getExternalCachePath(activity);
-        } else {
-            getInnerCachePath(activity);
-        }
-    }
-
-    /**
-     * 设置SD卡的目录为缓存路径
-     *
-     * @param activity 当前的Activity
-     */
-    private void getExternalCachePath(Activity activity) {
-        File cachePath = activity.getExternalCacheDir();
-        if (cachePath == null) {
-            getInnerCachePath(activity);
-        } else {
-            if (!cachePath.exists()) {
-                boolean mkResult = cachePath.mkdirs();
-                if (mkResult) {
-                    mCacheVideoPath = cachePath.getAbsolutePath();
-                } else {
-                    getInnerCachePath(activity);
-                }
-            } else {
-                mCacheVideoPath = cachePath.getAbsolutePath();
-            }
-        }
-    }
-
-    /**
-     * 设置机器内存为缓存目录
-     *
-     * @param activity 当前的Activity
-     */
-    private void getInnerCachePath(Activity activity) {
-        File cachePath = activity.getCacheDir();
-        if (cachePath == null) {
-            mCanCached = false;
-        } else {
-            if (!cachePath.exists()) {
-                boolean mkResult = cachePath.mkdirs();
-                if (mkResult) {
-                    mCacheVideoPath = cachePath.getAbsolutePath();
-                } else {
-                    mCanCached = false;
-                }
-            } else {
-                mCacheVideoPath = cachePath.getAbsolutePath();
-            }
-        }
     }
 
     private static class SingletonHolder {
