@@ -1,6 +1,5 @@
 package com.ksc.client.ads.view;
 
-import android.app.Service;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -618,7 +617,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      * close the volume on this player.
      */
     public void closeVolume() {
-        AudioManager audioManager = (AudioManager) mContext.getSystemService(Service.AUDIO_SERVICE);
+        AudioManager audioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
         if (VERSION.SDK_INT > VERSION_CODES.M) {
             audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_MUTE, 0);
         } else {
@@ -630,7 +629,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      * open the volume on this player.
      */
     public void resumeVolume() {
-        AudioManager audioManager = (AudioManager) mContext.getSystemService(Service.AUDIO_SERVICE);
+        AudioManager audioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
         if (mMediaPlayer != null) {
             mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         }

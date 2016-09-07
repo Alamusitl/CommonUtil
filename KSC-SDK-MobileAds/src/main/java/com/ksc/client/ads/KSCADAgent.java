@@ -303,6 +303,9 @@ public class KSCADAgent {
      * @param position 当前视频播放进度
      */
     private void pushAdEvent(int value, int position) {
+        if (mVideoList.size() == 0) {
+            return;
+        }
         List<String> urlList;
         if (value == KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_START_VALUE) {
             urlList = mVideoList.get(0).getTrackingUrl().get(KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_START);
@@ -324,6 +327,7 @@ public class KSCADAgent {
      * @param isClearAll 是否全部清理，true为全部清理，false为只清除第0个
      */
     private void clearCache(boolean isClearAll) {
+        KSCLog.d("clear cached start");
         do {
             if (mVideoList.size() > 0) {
                 String cachePath = mVideoList.get(0).getDownloadPath();
@@ -342,8 +346,11 @@ public class KSCADAgent {
                 } else {
                     KSCLog.d("cached video not exist, path=" + cachePath);
                 }
+            } else {
+                break;
             }
         } while (isClearAll);
+        KSCLog.d("clear cached end");
     }
 
     /**
