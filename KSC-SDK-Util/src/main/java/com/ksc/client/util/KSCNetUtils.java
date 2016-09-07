@@ -130,18 +130,25 @@ public class KSCNetUtils {
      * @return 基站ID
      */
     public static int getCellId(Context context) {
+        int cellId = 0;
         TelephonyManager manager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        if (manager == null) {
+            return cellId;
+        }
         String imsi = manager.getSubscriberId();
         if (imsi == null || imsi.equals("")) {
-            return 0;
+            return cellId;
         }
-        int cellId;
         if (imsi.startsWith("46003") || imsi.startsWith("46005")) {
             CdmaCellLocation cdmaCellLocation = (CdmaCellLocation) manager.getCellLocation();
-            cellId = cdmaCellLocation.getBaseStationId();
+            if (cdmaCellLocation != null) {
+                cellId = cdmaCellLocation.getBaseStationId();
+            }
         } else {
             GsmCellLocation gsmCellLocation = (GsmCellLocation) manager.getCellLocation();
-            cellId = gsmCellLocation.getCid();
+            if (gsmCellLocation != null) {
+                cellId = gsmCellLocation.getCid();
+            }
         }
         return cellId;
     }
@@ -156,8 +163,14 @@ public class KSCNetUtils {
         try {
             for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements(); ) {
                 NetworkInterface networkInterface = en.nextElement();
+                if (networkInterface == null) {
+                    continue;
+                }
                 for (Enumeration<InetAddress> ipAddress = networkInterface.getInetAddresses(); ipAddress.hasMoreElements(); ) {
                     InetAddress inetAddress = ipAddress.nextElement();
+                    if (inetAddress == null) {
+                        continue;
+                    }
                     // ipv4地址
                     if (!inetAddress.isLoopbackAddress() && !inetAddress.isLinkLocalAddress()) {
                         ip = inetAddress.getHostAddress();
@@ -200,7 +213,13 @@ public class KSCNetUtils {
      */
     public static int getRssi(Context context) {
         WifiManager manager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        if (manager == null) {
+            return 0;
+        }
         WifiInfo wifiInfo = manager.getConnectionInfo();
+        if (wifiInfo == null) {
+            return 0;
+        }
         return wifiInfo.getRssi();
     }
 
@@ -212,8 +231,13 @@ public class KSCNetUtils {
      */
     public static String getWifiName(Context context) {
         WifiManager manager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        if (manager == null) {
+            return "";
+        }
         WifiInfo wifiInfo = manager.getConnectionInfo();
-        manager.getWifiState();
+        if (wifiInfo == null) {
+            return "";
+        }
         return wifiInfo.getSSID();
     }
 
@@ -225,6 +249,9 @@ public class KSCNetUtils {
      */
     public static boolean isWifiConnected(Context context) {
         ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (manager == null) {
+            return false;
+        }
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
         return networkInfo != null && networkInfo.isConnected() && networkInfo.getType() == ConnectivityManager.TYPE_WIFI;
     }
