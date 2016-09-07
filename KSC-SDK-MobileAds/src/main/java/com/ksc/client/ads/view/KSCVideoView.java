@@ -85,6 +85,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
             if (isPlaying()) {
                 stop();
             }
+            mMediaPlayer.reset();
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
@@ -97,13 +98,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
         Log.d(TAG, "surfaceCreated Called");
         mMediaPlayer.setDisplay(mHolder);
-        if (!mSurfaceIsReady) {
-            mSurfaceIsReady = true;
-            if (mCurrentState != KSCMediaState.PREPARED && mCurrentState != KSCMediaState.STARTED
-                    && mCurrentState != KSCMediaState.PAUSED && mCurrentState != KSCMediaState.PLAYBACKCOMPLETED) {
-                tryToPrepare();
-            }
-        }
+        mSurfaceIsReady = true;
     }
 
     @Override
@@ -661,6 +656,14 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         Log.e(TAG, "mediaPlayerError");
         if (mVideoPlayCallBack != null) {
             mVideoPlayCallBack.onMediaPlayerError("media player is not initial");
+        }
+    }
+
+    public void release() {
+        if (mMediaPlayer != null) {
+            mMediaPlayer.reset();
+            mMediaPlayer.release();
+            mMediaPlayer = null;
         }
     }
 }
