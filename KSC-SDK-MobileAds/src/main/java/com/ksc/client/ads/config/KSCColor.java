@@ -7,7 +7,6 @@ import android.graphics.Color;
  */
 public class KSCColor {
 
-    public static final int TRANSPARENT_BLACK_7 = Color.parseColor("#B2000000");// 30%透明的黑色
     public static final int TRANSPARENT_WHITE_8 = Color.parseColor("#D9FFFFFF");// 15%透明白色
     public static final int BACKGROUND_WHITE = Color.parseColor("#EFEFEF");// 按钮背景白色
     public static final int BACKGROUND_RED = Color.parseColor("#B51010");// 按钮背景颜色，红色

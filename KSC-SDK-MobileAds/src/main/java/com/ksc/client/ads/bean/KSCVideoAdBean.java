@@ -13,7 +13,7 @@ public class KSCVideoAdBean {
 
     private String mAdSlotId;
     private String mAdKey;
-    private byte[] mHtml;
+    private String mHtml;
     private String mVideoUrl;
     private String mClickUrl;
     private String mDownloadPath;
@@ -38,11 +38,11 @@ public class KSCVideoAdBean {
         this.mAdKey = adKey;
     }
 
-    public byte[] getHtml() {
+    public String getHtml() {
         return mHtml;
     }
 
-    public void setHtml(byte[] html) {
+    public void setHtml(String html) {
         this.mHtml = html;
     }
 

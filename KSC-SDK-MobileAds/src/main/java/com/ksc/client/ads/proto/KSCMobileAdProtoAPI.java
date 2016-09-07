@@ -383,12 +383,11 @@ public class KSCMobileAdProtoAPI {
 
             String adSlotId = ad.getAdslotId();
             String adKey = ad.getAdKey();
-            byte[] html = ad.getHtmlSnippet().toByteArray();
             for (KSCMobileAdsProto530.MaterialMeta meta : metaList) {
                 KSCVideoAdBean bean = new KSCVideoAdBean();
                 bean.setAdSlotId(adSlotId);
                 bean.setAdKey(adKey);
-                bean.setHtml(html);
+                bean.setHtml(ad.getHtmlSnippet().toStringUtf8());
                 bean.setVideoUrl(meta.getVideoUrl());
                 bean.setClickUrl(meta.getClickUrl());
                 bean.setInteractionType(meta.getInteractionType());
