@@ -586,6 +586,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      * @throws IOException
      */
     public void setVideoURI(Uri uri) throws IOException {
+        Log.d(TAG, "setVideoPath called, uri:" + uri.toString());
         if (mMediaPlayer != null) {
             if (mCurrentState != KSCMediaState.IDLE) {
                 mediaPlayerError();

@@ -147,7 +147,7 @@ public class KSCMobileAdActivity extends Activity {
 
         try {
             if (type.equals(KSCMobileAdKeyCode.VIDEO_IN_CACHE)) {
-                mMediaPlayer.setVideoPath(path);
+                mMediaPlayer.setVideoURI(Uri.parse(path));
             } else if (type.equals(KSCMobileAdKeyCode.VIDEO_IN_STREAM)) {
                 mMediaPlayer.setVideoURI(Uri.parse(path));
                 mTimer = new Timer();
@@ -156,7 +156,7 @@ public class KSCMobileAdActivity extends Activity {
             Log.e(TAG, "onCreate: set MediaPlayer DataSource exception", e);
             Message message = mHandler.obtainMessage();
             message.what = KSCMobileAdKeyCode.KEY_VIDEO_ERROR;
-            message.obj = e.getMessage();
+            message.obj = "set MediaPlayer DataSource exception:" + e.getMessage();
             mHandler.sendMessage(message);
         }
     }
