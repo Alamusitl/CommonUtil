@@ -48,6 +48,19 @@ public class KSCMobileAdActivity extends Activity {
     private boolean mPopCloseView = false;
     private Timer mTimer;
     private String mH5Path;
+    private int mCurrentPosition;
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
+        }
+    };
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -114,18 +127,6 @@ public class KSCMobileAdActivity extends Activity {
                     closeActivity();
                     break;
             }
-        }
-    };
-    private Runnable mGetVideoProgressTask = new Runnable() {
-        @Override
-        public void run() {
-            mHandler.removeCallbacks(mGetVideoProgressTask);
-            Message message = mHandler.obtainMessage();
-            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mMediaPlayer.getDuration();
-            message.arg2 = mMediaPlayer.getCurrentPosition();
-            mHandler.sendMessage(message);
-            mHandler.postDelayed(mGetVideoProgressTask, 100);
         }
     };
 
@@ -228,6 +229,10 @@ public class KSCMobileAdActivity extends Activity {
                 message.obj = errorMsg;
                 mHandler.sendMessage(message);
             }
+
+            @Override
+            public void onSeekCompletion() {
+            }
         });
     }
 
@@ -329,7 +334,7 @@ public class KSCMobileAdActivity extends Activity {
 
         LayoutParams lp = new LayoutParams(width, height);
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
-        alertDialogView.setText("注意: 视频播放不完全，将得不到奖励！您确定要提前关闭吗？");
+        alertDialogView.setText("现在关闭将无法得到奖励，确定关闭？");
         alertDialogView.setCloseButtonText("关闭");
         alertDialogView.setContinueButtonText("继续观看");
         alertDialogView.setCloseButtonClickListener(new OnClickListener() {
@@ -390,7 +395,7 @@ public class KSCMobileAdActivity extends Activity {
         mLandingPageView.setVisibility(View.VISIBLE);
     }
 
-    private void showNetPromptView(String msg) {
+    private void showNetPromptView(final int i, String msg) {
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width = 320 * (int) dm.density;
@@ -401,7 +406,11 @@ public class KSCMobileAdActivity extends Activity {
         netPromptView.setConfirmViewClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_DOWNLOAD_START);
+                if (i == 2) {
+                    mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_DOWNLOAD_START);
+                } else {
+                    mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_DOWNLOAD_FAIL);
+                }
             }
         });
         LayoutParams lp = new LayoutParams(width, height);
@@ -423,12 +432,12 @@ public class KSCMobileAdActivity extends Activity {
 
     private void disposeDownload() {
         if (!KSCNetUtils.isNetworkAvailable(KSCMobileAdActivity.this)) {
-            showNetPromptView("当前网络不可用，请检查!");
+            showNetPromptView(1, "当前网络环境不佳，请稍后再试");
             return;
         }
         int netType = KSCNetUtils.getNetType(KSCMobileAdActivity.this);
         if (netType != KSCNetUtils.NETWORK_TYPE_WIFI) {
-            showNetPromptView("当前处于非WIFI环境下，您确定要下载吗？");
+            showNetPromptView(2, "当前处于非wifi环境，确认下载？");
         } else {
             mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_DOWNLOAD_START);
         }

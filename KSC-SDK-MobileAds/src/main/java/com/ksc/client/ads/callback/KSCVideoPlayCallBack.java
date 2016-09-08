@@ -41,4 +41,9 @@ public interface KSCVideoPlayCallBack {
      */
     void onMediaPlayerError(String errorMsg);
 
+    /**
+     * 视频跳转完成
+     */
+    void onSeekCompletion();
+
 }

@@ -49,7 +49,6 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     private int mInitialVideoHeight;
     private int mBufferProgress;
     private KSCMediaState mCurrentState;
-    private KSCMediaState mLastState;
     private KSCVideoPlayCallBack mVideoPlayCallBack;
 
     public KSCVideoView(Context context) {
@@ -81,10 +80,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
             mMediaPlayer.setOnCompletionListener(null);
             mMediaPlayer.setOnInfoListener(null);
             mMediaPlayer.setOnBufferingUpdateListener(null);
-            if (isPlaying()) {
-                stop();
-            }
-            mMediaPlayer.reset();
+            mMediaPlayer.stop();
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
@@ -122,9 +118,6 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
         Log.d(TAG, "surfaceDestroyed Called");
         mSurfaceIsReady = false;
-        if (isPlaying()) {
-            pause();
-        }
     }
 
     @Override
@@ -163,31 +156,18 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     public void onSeekComplete(MediaPlayer mediaPlayer) {
         Log.d(TAG, "onSeekComplete Called");
         stopLoading();
-        if (mLastState != null) {
-            switch (mLastState) {
-                case STARTED:
-                    start();
-                    break;
-                case PAUSED:
-                    pause();
-                    break;
-                case PREPARED:
-                    mCurrentState = KSCMediaState.PREPARED;
-                    break;
-                case PLAYBACKCOMPLETED:
-                    mCurrentState = KSCMediaState.PLAYBACKCOMPLETED;
-                    break;
-            }
-        }
+        mVideoPlayCallBack.onSeekCompletion();
     }
 
     @Override
     public void onBufferingUpdate(MediaPlayer mediaPlayer, int i) {
         mBufferProgress = i;
+        Log.d(TAG, "onBufferingUpdate: " + i);
     }
 
     @Override
     public boolean onInfo(MediaPlayer mediaPlayer, int i, int i1) {
+        Log.d(TAG, "onInfo: what=" + i + ", extra=" + i1);
         return false;
     }
 
@@ -552,8 +532,6 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         Log.d(TAG, "seekTo called, position=" + position);
         if (mMediaPlayer != null) {
             if (mMediaPlayer.getDuration() > -1 && position < mMediaPlayer.getDuration()) {
-                mLastState = mCurrentState;
-                pause();
                 mMediaPlayer.seekTo(position);
                 startLoading();
             }
