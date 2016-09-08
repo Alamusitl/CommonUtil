@@ -73,8 +73,6 @@ public class KSCADAgent {
                     mEventListener.onVideoCompletion();
                     pushAdEvent(KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_END_VALUE, msg.arg1);
                     break;
-                case KSCMobileAdKeyCode.KEY_VIDEO_MUTE:
-                    break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_ERROR:
                     mEventListener.onVideoError((String) msg.obj);
                     pushAdEvent(KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_END_VALUE, 0);
@@ -87,10 +85,6 @@ public class KSCADAgent {
                     mEventListener.onLandingPageClose(true);
                     startDownloadApk();
                     clearCache(false);
-                    break;
-                case KSCMobileAdKeyCode.KEY_DOWNLOAD_SUCCESS:
-                    break;
-                case KSCMobileAdKeyCode.KEY_DOWNLOAD_FAIL:
                     break;
             }
         }

@@ -51,19 +51,14 @@ public class KSCMobileAdActivity extends Activity {
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
-            if (KSCBlackBoard.getTransformHandler() != null) {
-                Message message = KSCBlackBoard.getTransformHandler().obtainMessage();
-                message.what = msg.what;
-                message.arg1 = msg.arg1;
-                message.arg2 = msg.arg2;
-                message.obj = msg.obj;
-                KSCBlackBoard.getTransformHandler().sendMessage(message);
-            }
             switch (msg.what) {
                 case KSCMobileAdKeyCode.KEY_VIDEO_PREPARED:
                     showControlView();
                     refreshCountDownTimeView(msg.arg1, msg.arg2);
                     openTimer(msg.arg1);
+                    break;
+                case KSCMobileAdKeyCode.KEY_VIDEO_START:
+                    dispatchMsg(msg);
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_PLAYING:
                     if (((msg.arg2 + 1000) / (float) msg.arg1) > (1 / (float) 3)) {
@@ -85,17 +80,20 @@ public class KSCMobileAdActivity extends Activity {
                     }
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_CLOSE:
+                    dispatchMsg(msg);
                     mHandler.removeCallbacks(mGetVideoProgressTask);
                     mMediaPlayer.stop();
                     closeActivity();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION:
+                    dispatchMsg(msg);
                     showLandingPage();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_MUTE:
                     muteVideoVolume();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_ERROR:
+                    dispatchMsg(msg);
                     closeActivity();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIEW_SHOW_VIDEO_CLOSE:
@@ -105,12 +103,14 @@ public class KSCMobileAdActivity extends Activity {
                     showCloseVideoConfirmDialog();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIEW_H5_CLOSE:
+                    dispatchMsg(msg);
                     closeActivity();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIEW_H5_CLICK:
                     disposeDownload();
                     break;
                 case KSCMobileAdKeyCode.KEY_DOWNLOAD_START:
+                    dispatchMsg(msg);
                     closeActivity();
                     break;
             }
@@ -443,6 +443,17 @@ public class KSCMobileAdActivity extends Activity {
                 }
             };
             mTimer.schedule(task, duration / 3);
+        }
+    }
+
+    private void dispatchMsg(Message msg) {
+        if (KSCBlackBoard.getTransformHandler() != null) {
+            Message message = KSCBlackBoard.getTransformHandler().obtainMessage();
+            message.what = msg.what;
+            message.arg1 = msg.arg1;
+            message.arg2 = msg.arg2;
+            message.obj = msg.obj;
+            KSCBlackBoard.getTransformHandler().sendMessage(message);
         }
     }
 
