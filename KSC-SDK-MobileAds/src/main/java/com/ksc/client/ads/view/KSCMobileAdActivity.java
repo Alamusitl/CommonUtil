@@ -48,7 +48,6 @@ public class KSCMobileAdActivity extends Activity {
     private boolean mPopCloseView = false;
     private Timer mTimer;
     private String mH5Path;
-    private int mVideoDuration;
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -67,7 +66,7 @@ public class KSCMobileAdActivity extends Activity {
                     openTimer(msg.arg1);
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_PLAYING:
-                    if (((msg.arg2 + 1000) / (float) mVideoDuration) > (1 / (float) 3)) {
+                    if (((msg.arg2 + 1000) / (float) msg.arg1) > (1 / (float) 3)) {
                         showCloseVideoView();
                     }
                     refreshCountDownTimeView(msg.arg1, msg.arg2);
@@ -80,11 +79,9 @@ public class KSCMobileAdActivity extends Activity {
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_RESUME:
                     if (mMediaPlayer != null && mMediaPlayer.getCurrentState() == KSCMediaState.PAUSED) {
-                        mHandler.post(mGetVideoProgressTask);
-                        mMediaPlayer.start();
-                    }
-                    if (mPopCloseView) {
-                        mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_PAUSE);
+                        if (!mPopCloseView) {
+                            mMediaPlayer.start();
+                        }
                     }
                     break;
                 case KSCMobileAdKeyCode.KEY_VIDEO_CLOSE:
@@ -125,7 +122,7 @@ public class KSCMobileAdActivity extends Activity {
             mHandler.removeCallbacks(mGetVideoProgressTask);
             Message message = mHandler.obtainMessage();
             message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mVideoDuration;
+            message.arg1 = mMediaPlayer.getDuration();
             message.arg2 = mMediaPlayer.getCurrentPosition();
             mHandler.sendMessage(message);
             mHandler.postDelayed(mGetVideoProgressTask, 100);
@@ -150,7 +147,7 @@ public class KSCMobileAdActivity extends Activity {
 
         try {
             if (type.equals(KSCMobileAdKeyCode.VIDEO_IN_CACHE)) {
-                mMediaPlayer.setVideoURI(Uri.parse(path));
+                mMediaPlayer.setVideoPath(path);
             } else if (type.equals(KSCMobileAdKeyCode.VIDEO_IN_STREAM)) {
                 mMediaPlayer.setVideoURI(Uri.parse(path));
                 mTimer = new Timer();
@@ -181,10 +178,9 @@ public class KSCMobileAdActivity extends Activity {
         mMediaPlayer.setVideoPlayCallBack(new KSCVideoPlayCallBack() {
             @Override
             public void onPrepared() {
-                mVideoDuration = mMediaPlayer.getDuration();
                 Message message = mHandler.obtainMessage();
                 message.what = KSCMobileAdKeyCode.KEY_VIDEO_PREPARED;
-                message.arg1 = mVideoDuration;
+                message.arg1 = mMediaPlayer.getDuration();
                 message.arg2 = mMediaPlayer.getCurrentPosition();
                 mHandler.sendMessage(message);
             }
@@ -193,7 +189,9 @@ public class KSCMobileAdActivity extends Activity {
             public void onStart() {
                 Log.i(TAG, "onStart: ");
                 mHandler.post(mGetVideoProgressTask);
-                mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_START);
+                if (mMediaPlayer != null && mMediaPlayer.getCurrentPosition() == 0) {
+                    mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_START);
+                }
             }
 
             @Override
@@ -207,7 +205,7 @@ public class KSCMobileAdActivity extends Activity {
                 mHandler.removeCallbacks(mGetVideoProgressTask);
                 Message message = mHandler.obtainMessage();
                 message.what = KSCMobileAdKeyCode.KEY_VIDEO_COMPLETION;
-                message.arg1 = mVideoDuration;
+                message.arg1 = mMediaPlayer.getDuration();
                 mHandler.sendMessage(message);
             }
 

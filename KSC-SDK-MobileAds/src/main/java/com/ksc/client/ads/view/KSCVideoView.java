@@ -97,7 +97,13 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
         Log.d(TAG, "surfaceCreated Called");
         mMediaPlayer.setDisplay(mHolder);
-        mSurfaceIsReady = true;
+        if (!mSurfaceIsReady) {
+            mSurfaceIsReady = true;
+            if (mCurrentState != KSCMediaState.PREPARED && mCurrentState != KSCMediaState.STARTED
+                    && mCurrentState != KSCMediaState.PAUSED && mCurrentState != KSCMediaState.PLAYBACKCOMPLETED) {
+                tryToPrepare();
+            }
+        }
     }
 
     @Override
@@ -173,7 +179,6 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
                     break;
             }
         }
-
     }
 
     @Override
@@ -265,6 +270,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         mMediaPlayer.setOnSeekCompleteListener(this);
         mMediaPlayer.setOnInfoListener(this);
         mMediaPlayer.setOnBufferingUpdateListener(this);
+        mMediaPlayer.setOnCompletionListener(this);
         mCurrentState = KSCMediaState.PREPARING;
         mMediaPlayer.prepareAsync();
     }
@@ -499,7 +505,6 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         Log.d(TAG, "start called");
         if (mMediaPlayer != null) {
             mCurrentState = KSCMediaState.STARTED;
-            mMediaPlayer.setOnCompletionListener(this);
             if (mIsCompleted) {
                 mIsCompleted = false;
                 mMediaPlayer.seekTo(0);
