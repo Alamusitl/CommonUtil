@@ -52,6 +52,7 @@ public class KSCLandingPageView extends RelativeLayout {
         settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         settings.setAppCacheEnabled(true);
         settings.setJavaScriptEnabled(true);
+        settings.setDefaultTextEncodingName("UTF-8");
         lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         addView(mLandingView, lp);
 
@@ -87,7 +88,7 @@ public class KSCLandingPageView extends RelativeLayout {
     }
 
     public void setLandingViewData(String data) {
-        mLandingView.loadData(data, "text/html", "UTF-8");
+        mLandingView.loadDataWithBaseURL(null, data, "text/html", "UTF-8", null);
     }
 
     private void setWebViewClient() {
