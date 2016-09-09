@@ -49,12 +49,10 @@ public class KSCLocationUtils {
             KSCLog.e("get Location: no useless location provider");
             return null;
         }
-        if (!KSCPermissionUtils.checkPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) && !KSCPermissionUtils.checkPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)) {
-            KSCPermissionUtils.requestPermission(context, Manifest.permission.ACCESS_FINE_LOCATION, KSCPermissionUtils.REQUEST_PERMISSION_ACCESS_FINE_LOCATION);
-            KSCPermissionUtils.requestPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION, KSCPermissionUtils.REQUEST_PERMISSION_ACCESS_COARSE_LOCATION);
-            return null;
-        } else {
+        if (KSCPermissionUtils.checkRequestPermission(context, Manifest.permission_group.LOCATION, KSCPermissionUtils.REQUEST_PERMISSION_CODE)) {
             return lm.getLastKnownLocation(locationProvider);
+        } else {
+            return null;
         }
     }
 }

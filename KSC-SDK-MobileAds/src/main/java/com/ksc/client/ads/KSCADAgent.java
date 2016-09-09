@@ -24,6 +24,7 @@ import com.ksc.client.toolbox.HttpRequestParam;
 import com.ksc.client.toolbox.HttpResponse;
 import com.ksc.client.util.KSCLog;
 import com.ksc.client.util.KSCNetUtils;
+import com.ksc.client.util.KSCPermissionUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -131,6 +132,7 @@ public class KSCADAgent {
         mEventListener = eventListener;
         KSCBlackBoard.setTransformHandler(mHandler);
         HttpRequestManager.init();
+        KSCPermissionUtils.requestNeedPermission(activity);
         mCacheVideoPath = activity.getDir("ad", Context.MODE_PRIVATE).getAbsolutePath();
         KSCLog.d("cache ad dir " + mCacheVideoPath);
         checkAppHasAd(activity, 0, true);
@@ -166,6 +168,17 @@ public class KSCADAgent {
         KSCLog.d("KSCADAgent onDestroy");
         clearCache(true);
         HttpRequestManager.destroy();
+    }
+
+    /**
+     * 授权结果回调
+     *
+     * @param requestCode  授权请求码，1000
+     * @param permissions  需要授权权限的集合
+     * @param grantResults 授权信息的集合
+     */
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        KSCPermissionUtils.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     /**
@@ -274,11 +287,12 @@ public class KSCADAgent {
         }
         long errorCode = KSCMobileAdProtoAPI.getInstance().getErrorCode();
         if (errorCode == 0) {
-            mEventListener.onAdExist(true, errorCode);
             if (mVideoList.size() == 0) {
                 KSCLog.d("current ad list size is 0, step!");
+                mEventListener.onAdExist(false, errorCode);
                 return;
             }
+            mEventListener.onAdExist(true, errorCode);
             KSCVideoAdBean videoAdBean = mVideoList.get(index);
             String url = videoAdBean.getVideoUrl();
             if (url != null) {

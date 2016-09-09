@@ -138,9 +138,7 @@ public class KSCNetUtils {
             if (manager == null) {
                 return cellId;
             }
-            if (!KSCPermissionUtils.checkPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)) {
-                KSCPermissionUtils.requestPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION, KSCPermissionUtils.REQUEST_PERMISSION_ACCESS_COARSE_LOCATION);
-            } else {
+            if (KSCPermissionUtils.checkRequestPermission(context, Manifest.permission_group.LOCATION, KSCPermissionUtils.REQUEST_PERMISSION_CODE)) {
                 String imsi = manager.getSubscriberId();
                 if (imsi == null || imsi.equals("")) {
                     return cellId;

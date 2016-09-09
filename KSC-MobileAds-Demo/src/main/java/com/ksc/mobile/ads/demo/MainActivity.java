@@ -129,6 +129,12 @@ public class MainActivity extends Activity {
         KSCADAgent.getInstance().onDestroy();
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        KSCADAgent.getInstance().onRequestPermissionsResult(requestCode, permissions, grantResults);
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
     private void Toast(final String msg) {
         runOnUiThread(new Runnable() {
             @Override
