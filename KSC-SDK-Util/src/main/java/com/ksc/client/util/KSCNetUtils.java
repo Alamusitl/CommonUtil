@@ -131,24 +131,28 @@ public class KSCNetUtils {
      */
     public static int getCellId(Context context) {
         int cellId = 0;
-        TelephonyManager manager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        if (manager == null) {
-            return cellId;
-        }
-        String imsi = manager.getSubscriberId();
-        if (imsi == null || imsi.equals("")) {
-            return cellId;
-        }
-        if (imsi.startsWith("46003") || imsi.startsWith("46005")) {
-            CdmaCellLocation cdmaCellLocation = (CdmaCellLocation) manager.getCellLocation();
-            if (cdmaCellLocation != null) {
-                cellId = cdmaCellLocation.getBaseStationId();
+        try {
+            TelephonyManager manager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+            if (manager == null) {
+                return cellId;
             }
-        } else {
-            GsmCellLocation gsmCellLocation = (GsmCellLocation) manager.getCellLocation();
-            if (gsmCellLocation != null) {
-                cellId = gsmCellLocation.getCid();
+            String imsi = manager.getSubscriberId();
+            if (imsi == null || imsi.equals("")) {
+                return cellId;
             }
+            if (imsi.startsWith("46003") || imsi.startsWith("46005")) {
+                CdmaCellLocation cdmaCellLocation = (CdmaCellLocation) manager.getCellLocation();
+                if (cdmaCellLocation != null) {
+                    cellId = cdmaCellLocation.getBaseStationId();
+                }
+            } else {
+                GsmCellLocation gsmCellLocation = (GsmCellLocation) manager.getCellLocation();
+                if (gsmCellLocation != null) {
+                    cellId = gsmCellLocation.getCid();
+                }
+            }
+        } catch (Exception e) {
+            KSCLog.e("get cell id exception", e);
         }
         return cellId;
     }

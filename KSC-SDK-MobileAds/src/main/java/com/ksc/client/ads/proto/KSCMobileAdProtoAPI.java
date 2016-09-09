@@ -44,26 +44,30 @@ public class KSCMobileAdProtoAPI {
      * @return 请求
      */
     public KSCMobileAdsProto530.MobadsRequest getRequest(Activity activity, String appId, String adSlot_id) {
-        DisplayMetrics dm = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
         KSCMobileAdsProto530.MobadsRequest.Builder requestBuilder = KSCMobileAdsProto530.MobadsRequest.newBuilder();
-        String requestId = appId + adSlot_id + System.currentTimeMillis();
-        int length = requestId.length();
-        if (length > 32) {
-            requestId = requestId.substring(0, 32);
-        } else if (length < 32) {
-            for (int i = 0; i < 32 - length; i++) {
-                requestId = requestId + "0";
+        try {
+            DisplayMetrics dm = new DisplayMetrics();
+            activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+            String requestId = appId + adSlot_id + System.currentTimeMillis();
+            int length = requestId.length();
+            if (length > 32) {
+                requestId = requestId.substring(0, 32);
+            } else if (length < 32) {
+                for (int i = 0; i < 32 - length; i++) {
+                    requestId = requestId + "0";
+                }
             }
+            requestBuilder.setRequestId(requestId);
+            requestBuilder.setApiVersion(getApiVersion());
+            requestBuilder.setAdslot(getAdSlot(adSlot_id, dm.widthPixels, dm.heightPixels));
+            requestBuilder.setApp(getAppInfo(activity, appId));
+            requestBuilder.setDevice(getDeviceInfo(activity));
+            requestBuilder.setNetwork(getNetwork(activity));
+            requestBuilder.setGps(getGps(activity));
+            requestBuilder.setIsDebug(false);
+        } catch (Exception e) {
+            KSCLog.e("get ad request exception", e.getMessage());
         }
-        requestBuilder.setRequestId(requestId);
-        requestBuilder.setApiVersion(getApiVersion());
-        requestBuilder.setAdslot(getAdSlot(adSlot_id, dm.widthPixels, dm.heightPixels));
-        requestBuilder.setApp(getAppInfo(activity, appId));
-        requestBuilder.setDevice(getDeviceInfo(activity));
-        requestBuilder.setNetwork(getNetwork(activity));
-        requestBuilder.setGps(getGps(activity));
-        requestBuilder.setIsDebug(false);
         return requestBuilder.build();
     }
 
