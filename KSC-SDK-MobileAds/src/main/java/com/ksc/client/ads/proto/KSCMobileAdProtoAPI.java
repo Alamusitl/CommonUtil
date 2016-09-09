@@ -343,7 +343,6 @@ public class KSCMobileAdProtoAPI {
      * @return 广告视频列表
      */
     public List<KSCVideoAdBean> getVideoList(byte[] response) {
-        long lastTime = System.currentTimeMillis();
         List<KSCVideoAdBean> mList = new ArrayList<>();
         KSCMobileAdsProto530.MobadsResponse adResponse;
         try {
@@ -367,7 +366,7 @@ public class KSCMobileAdProtoAPI {
                 continue;
             }
             List<KSCMobileAdsProto530.Tracking> trackList = ad.getAdTrackingList();
-            Map<KSCMobileAdsProto530.Tracking.TrackingEvent, List<String>> trackMap = new HashMap<>();
+            Map<Integer, List<String>> trackMap = new HashMap<>();
             if (trackList != null && trackList.size() != 0) {
                 for (KSCMobileAdsProto530.Tracking tracking : trackList) {
                     List<String> urlList = new ArrayList<>();
@@ -377,7 +376,7 @@ public class KSCMobileAdProtoAPI {
                         }
                         urlList.add(url);
                     }
-                    trackMap.put(tracking.getTrackingEvent(), urlList);
+                    trackMap.put(tracking.getTrackingEvent().getNumber(), urlList);
                 }
             }
 
@@ -393,6 +392,13 @@ public class KSCMobileAdProtoAPI {
                 bean.setInteractionType(meta.getInteractionType());
                 bean.setCreativeType(meta.getCreativeType());
                 bean.setBrandName(meta.getBrandName());
+                List<String> mLandingPageTrack = meta.getWinNoticeUrlList();
+                for (String url : mLandingPageTrack) {
+                    if (url == null || url.equals("")) {
+                        mLandingPageTrack.remove(url);
+                    }
+                }
+                trackMap.put(KSCMobileAdsProto530.Tracking.TrackingEvent.AD_EXPOSURE_VALUE, mLandingPageTrack);
                 bean.setTrackingUrl(trackMap);
                 mList.add(bean);
             }

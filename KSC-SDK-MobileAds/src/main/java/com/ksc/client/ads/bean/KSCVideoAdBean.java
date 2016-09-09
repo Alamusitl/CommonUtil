@@ -1,7 +1,6 @@
 package com.ksc.client.ads.bean;
 
 import com.ksc.client.ads.proto.KSCMobileAdsProto530.MaterialMeta;
-import com.ksc.client.ads.proto.KSCMobileAdsProto530.Tracking;
 
 import java.util.List;
 import java.util.Map;
@@ -20,7 +19,7 @@ public class KSCVideoAdBean {
     private String mBrandName;
     private MaterialMeta.InteractionType mInteractionType;
     private MaterialMeta.CreativeType mCreativeType;
-    private Map<Tracking.TrackingEvent, List<String>> mTrackingUrl;
+    private Map<Integer, List<String>> mTrackingUrl;
 
     public String getAdSlotId() {
         return mAdSlotId;
@@ -94,11 +93,11 @@ public class KSCVideoAdBean {
         this.mCreativeType = creativeType;
     }
 
-    public Map<Tracking.TrackingEvent, List<String>> getTrackingUrl() {
+    public Map<Integer, List<String>> getTrackingUrl() {
         return mTrackingUrl;
     }
 
-    public void setTrackingUrl(Map<Tracking.TrackingEvent, List<String>> trackingUrl) {
+    public void setTrackingUrl(Map<Integer, List<String>> trackingUrl) {
         this.mTrackingUrl = trackingUrl;
     }
 }

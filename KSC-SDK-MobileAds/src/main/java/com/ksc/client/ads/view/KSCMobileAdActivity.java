@@ -48,6 +48,18 @@ public class KSCMobileAdActivity extends Activity {
     private boolean mPopCloseView = false;
     private Timer mTimer;
     private String mH5Path;
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
+        }
+    };
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -102,11 +114,15 @@ public class KSCMobileAdActivity extends Activity {
                 case KSCMobileAdKeyCode.KEY_VIEW_SHOW_CLOSE_CONFIRM:
                     showCloseVideoConfirmDialog();
                     break;
+                case KSCMobileAdKeyCode.KEY_VIEW_H5_SHOW:
+                    dispatchMsg(msg);
+                    break;
                 case KSCMobileAdKeyCode.KEY_VIEW_H5_CLOSE:
                     dispatchMsg(msg);
                     closeActivity();
                     break;
                 case KSCMobileAdKeyCode.KEY_VIEW_H5_CLICK:
+                    dispatchMsg(msg);
                     disposeDownload();
                     break;
                 case KSCMobileAdKeyCode.KEY_DOWNLOAD_START:
@@ -114,18 +130,6 @@ public class KSCMobileAdActivity extends Activity {
                     closeActivity();
                     break;
             }
-        }
-    };
-    private Runnable mGetVideoProgressTask = new Runnable() {
-        @Override
-        public void run() {
-            mHandler.removeCallbacks(mGetVideoProgressTask);
-            Message message = mHandler.obtainMessage();
-            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mMediaPlayer.getDuration();
-            message.arg2 = mMediaPlayer.getCurrentPosition();
-            mHandler.sendMessage(message);
-            mHandler.postDelayed(mGetVideoProgressTask, 100);
         }
     };
 
@@ -392,6 +396,7 @@ public class KSCMobileAdActivity extends Activity {
         mRootView.removeView(mCountDownTimeView);
         mRootView.removeView(mMediaPlayer);
         mLandingPageView.setVisibility(View.VISIBLE);
+        mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIEW_H5_SHOW);
     }
 
     private void showNetPromptView(final int i, String msg) {

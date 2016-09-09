@@ -77,6 +77,12 @@ public class KSCADAgent {
                     mEventListener.onVideoError((String) msg.obj);
                     pushAdEvent(KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_END_VALUE, 0);
                     break;
+                case KSCMobileAdKeyCode.KEY_VIEW_H5_SHOW:
+                    pushAdEvent(KSCMobileAdsProto530.Tracking.TrackingEvent.AD_EXPOSURE_VALUE, 0);
+                    break;
+                case KSCMobileAdKeyCode.KEY_VIEW_H5_CLICK:
+                    pushAdEvent(KSCMobileAdsProto530.Tracking.TrackingEvent.AD_CLICK_VALUE, 0);
+                    break;
                 case KSCMobileAdKeyCode.KEY_VIEW_H5_CLOSE:
                     mEventListener.onLandingPageClose(false);
                     clearCache(false);
@@ -296,20 +302,28 @@ public class KSCADAgent {
      * @param value    事件ID
      * @param position 当前视频播放进度
      */
-    private void pushAdEvent(int value, int position) {
+    private synchronized void pushAdEvent(int value, int position) {
         if (mVideoList.size() == 0) {
             return;
         }
         List<String> urlList;
-        if (value == KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_START_VALUE) {
-            urlList = mVideoList.get(0).getTrackingUrl().get(KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_START);
-        } else if (value == KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_END_VALUE) {
-            urlList = mVideoList.get(0).getTrackingUrl().get(KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_END);
+        if (value == KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_START_VALUE || value == KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_END_VALUE) {
+            urlList = mVideoList.get(0).getTrackingUrl().get(value);
+            List<String> formatUrlList = new ArrayList<>();
+            for (String url : urlList) {
+                String newUrl = url;
+                if (url.contains("${PROGRESS}")) {
+                    newUrl = url.replace("${PROGRESS}", String.valueOf(position));
+                }
+                formatUrlList.add(newUrl);
+            }
+            urlList = formatUrlList;
+        } else if (value == KSCMobileAdsProto530.Tracking.TrackingEvent.AD_EXPOSURE_VALUE || value == KSCMobileAdsProto530.Tracking.TrackingEvent.AD_CLICK_VALUE) {
+            urlList = mVideoList.get(0).getTrackingUrl().get(value);
         } else {
-            urlList = mVideoList.get(0).getTrackingUrl().get(KSCMobileAdsProto530.Tracking.TrackingEvent.VIDEO_AD_FULL_SCREEN);
+            urlList = new ArrayList<>();
         }
         for (String url : urlList) {
-            url = url.replace("${PROGRESS}", String.valueOf(position));
             HttpRequestParam request = new HttpRequestParam(url);
             HttpRequestManager.execute(request, null, null);
         }
