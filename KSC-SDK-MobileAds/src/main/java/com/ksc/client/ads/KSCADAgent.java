@@ -7,6 +7,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.ksc.client.ads.bean.KSCVideoAdBean;
@@ -112,12 +113,26 @@ public class KSCADAgent {
      * @param eventListener 广告事件监听
      */
     public void init(Activity activity, String appId, String adSlotId, KSCAdEventListener eventListener) {
+        if (activity == null) {
+            KSCLog.e("init sdk activity is null, please check!");
+            return;
+        }
+        if (TextUtils.isEmpty(adSlotId) || TextUtils.isEmpty(appId)) {
+            KSCLog.e("appId or adSlotId is empty, please check!");
+            return;
+        }
+        if (eventListener == null) {
+            KSCLog.e("ad sdk listener is null, please check!");
+            return;
+        }
         mContext = activity.getApplicationContext();
         mAppId = appId;
         mAdSlotId = adSlotId;
         mEventListener = eventListener;
         KSCBlackBoard.setTransformHandler(mHandler);
+        HttpRequestManager.init();
         mCacheVideoPath = activity.getDir("ad", Context.MODE_PRIVATE).getAbsolutePath();
+        KSCLog.d("cache ad dir " + mCacheVideoPath);
         checkAppHasAd(activity, 0, true);
     }
 
@@ -150,6 +165,7 @@ public class KSCADAgent {
     public void onDestroy() {
         KSCLog.d("KSCADAgent onDestroy");
         clearCache(true);
+        HttpRequestManager.destroy();
     }
 
     /**

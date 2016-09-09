@@ -24,9 +24,21 @@ public class MainActivity extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        KSCADAgent.getInstance().setDebug(true);
-        String appId = "ayce05f9";// 测试参数， 正式请替换自己的渠道
-        String adSlotId = "47435394";// 测试参数，正式请替换自己的参数
+        mShowVideo = (Button) findViewById(R.id.btnShowVideoAd);
+        mTvRest = (TextView) findViewById(R.id.tvRest);
+        mLogMsg = (TextView) findViewById(R.id.tvLogMsg);
+        mLogMsg.setMovementMethod(new ScrollingMovementMethod());
+        mShowVideo.setEnabled(false);
+        mShowVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                KSCADAgent.getInstance().showAdVideo(MainActivity.this);
+            }
+        });
+
+        KSCADAgent.getInstance().setDebug(true);// 正式发布时请改为false，true时调试模式，将打印debug log
+        String appId = "4qby7kup";// 测试参数， 正式请替换自己的渠道
+        String adSlotId = "pe2otiaf";// 测试参数，正式请替换自己的参数
         KSCADAgent.getInstance().init(this, appId, adSlotId, new KSCAdEventListener() {
 
             @Override
@@ -35,6 +47,12 @@ public class MainActivity extends Activity {
                     Toast("有广告");
                 } else {
                     Toast("没有广告");
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mShowVideo.setEnabled(true);
+                        }
+                    });
                 }
             }
 
@@ -89,26 +107,6 @@ public class MainActivity extends Activity {
             @Override
             public void onNetRequestError(String error) {
                 Toast("网络请求错误，错误信息[" + error + "]");
-            }
-        });
-
-        mShowVideo = (Button) findViewById(R.id.btnShowVideoAd);
-        mTvRest = (TextView) findViewById(R.id.tvRest);
-        mLogMsg = (TextView) findViewById(R.id.tvLogMsg);
-        mLogMsg.setMovementMethod(new ScrollingMovementMethod());
-        mShowVideo.setEnabled(false);
-        mShowVideo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        if (mShowVideo.isEnabled()) {
-                            mShowVideo.setEnabled(false);
-                        }
-                    }
-                });
-                KSCADAgent.getInstance().showAdVideo(MainActivity.this);
             }
         });
     }
