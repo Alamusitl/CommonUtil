@@ -269,10 +269,10 @@ public class KSCMobileAdProtoAPI {
      *
      * @return 网络环境信息
      */
-    private KSCMobileAdsProto530.Network.Builder getNetwork(Context context) {
+    private KSCMobileAdsProto530.Network.Builder getNetwork(Activity activity) {
         KSCMobileAdsProto530.Network.Builder networkBuilder = KSCMobileAdsProto530.Network.newBuilder();
         networkBuilder.setIpv4(KSCNetUtils.getIp());
-        int netType = KSCNetUtils.getNetType(context);
+        int netType = KSCNetUtils.getNetType(activity);
         if (netType == KSCNetUtils.NETWORK_TYPE_INVALID) {
             networkBuilder.setConnectionType(KSCMobileAdsProto530.Network.ConnectionType.CONNECTION_UNKNOWN);
         } else if (netType == KSCNetUtils.NETWORK_TYPE_WIFI) {
@@ -290,7 +290,7 @@ public class KSCMobileAdProtoAPI {
         } else {
             networkBuilder.setConnectionType(KSCMobileAdsProto530.Network.ConnectionType.NEW_TYPE);
         }
-        switch (KSCNetUtils.getOperators(context)) {
+        switch (KSCNetUtils.getOperators(activity)) {
             case 0:
                 networkBuilder.setOperatorType(KSCMobileAdsProto530.Network.OperatorType.UNKNOWN_OPERATOR);
                 break;
@@ -307,8 +307,8 @@ public class KSCMobileAdProtoAPI {
                 networkBuilder.setOperatorType(KSCMobileAdsProto530.Network.OperatorType.OTHER_OPERATOR);
                 break;
         }
-        networkBuilder.setCellularId(String.valueOf(KSCNetUtils.getCellId(context)));
-        networkBuilder.addWifiAps(getWifiAp(context));
+        networkBuilder.setCellularId(String.valueOf(KSCNetUtils.getCellId(activity)));
+        networkBuilder.addWifiAps(getWifiAp(activity));
         return networkBuilder;
     }
 

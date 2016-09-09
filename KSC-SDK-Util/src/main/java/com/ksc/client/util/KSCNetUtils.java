@@ -1,5 +1,7 @@
 package com.ksc.client.util;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -129,26 +131,30 @@ public class KSCNetUtils {
      * @param context 上下文
      * @return 基站ID
      */
-    public static int getCellId(Context context) {
+    public static int getCellId(Activity context) {
         int cellId = 0;
         try {
             TelephonyManager manager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
             if (manager == null) {
                 return cellId;
             }
-            String imsi = manager.getSubscriberId();
-            if (imsi == null || imsi.equals("")) {
-                return cellId;
-            }
-            if (imsi.startsWith("46003") || imsi.startsWith("46005")) {
-                CdmaCellLocation cdmaCellLocation = (CdmaCellLocation) manager.getCellLocation();
-                if (cdmaCellLocation != null) {
-                    cellId = cdmaCellLocation.getBaseStationId();
-                }
+            if (!KSCPermissionUtils.checkPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION)) {
+                KSCPermissionUtils.requestPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION, KSCPermissionUtils.REQUEST_PERMISSION_ACCESS_COARSE_LOCATION);
             } else {
-                GsmCellLocation gsmCellLocation = (GsmCellLocation) manager.getCellLocation();
-                if (gsmCellLocation != null) {
-                    cellId = gsmCellLocation.getCid();
+                String imsi = manager.getSubscriberId();
+                if (imsi == null || imsi.equals("")) {
+                    return cellId;
+                }
+                if (imsi.startsWith("46003") || imsi.startsWith("46005")) {
+                    CdmaCellLocation cdmaCellLocation = (CdmaCellLocation) manager.getCellLocation();
+                    if (cdmaCellLocation != null) {
+                        cellId = cdmaCellLocation.getBaseStationId();
+                    }
+                } else {
+                    GsmCellLocation gsmCellLocation = (GsmCellLocation) manager.getCellLocation();
+                    if (gsmCellLocation != null) {
+                        cellId = gsmCellLocation.getCid();
+                    }
                 }
             }
         } catch (Exception e) {

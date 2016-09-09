@@ -150,6 +150,9 @@ public class DownloadService extends IntentService {
     }
 
     private void disposeDownloadFile(boolean success, String path) {
+        if (path == null || path.equals("")) {
+            return;
+        }
         File downloadFile = new File(path);
         if (!downloadFile.exists()) {
             return;

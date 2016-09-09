@@ -11,7 +11,6 @@ import android.media.MediaPlayer.OnErrorListener;
 import android.media.MediaPlayer.OnInfoListener;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.media.MediaPlayer.OnSeekCompleteListener;
-import android.net.Uri;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Handler;
@@ -45,6 +44,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     private boolean mVideoIsReady;
     private boolean mAutoPlay;
     private boolean mIsCompleted;
+    private boolean mHasError;
     private int mInitialVideoWidth;
     private int mInitialVideoHeight;
     private int mBufferProgress;
@@ -129,7 +129,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         } else {
             start();
         }
-        if (mVideoPlayCallBack != null) {
+        if (mVideoPlayCallBack != null && !mHasError) {
             mVideoPlayCallBack.onCompletion();
         }
     }
@@ -138,6 +138,20 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     public boolean onError(MediaPlayer mediaPlayer, int i, int i1) {
         Log.d(TAG, "onError Called, what=" + i + ", extra=" + i1);
         stopLoading();
+        switch (i) {
+            case MediaPlayer.MEDIA_ERROR_IO:
+            case MediaPlayer.MEDIA_ERROR_MALFORMED:
+            case MediaPlayer.MEDIA_ERROR_NOT_VALID_FOR_PROGRESSIVE_PLAYBACK:
+            case MediaPlayer.MEDIA_ERROR_SERVER_DIED:
+            case MediaPlayer.MEDIA_ERROR_TIMED_OUT:
+            case MediaPlayer.MEDIA_ERROR_UNKNOWN:
+            case MediaPlayer.MEDIA_ERROR_UNSUPPORTED:
+                mHasError = true;
+                break;
+            default:
+                break;
+        }
+        Log.d(TAG, "onError: hasError=" + mHasError);
         mCurrentState = KSCMediaState.ERROR;
         if (mVideoPlayCallBack != null) {
             mVideoPlayCallBack.onError(i, i1);
@@ -543,39 +557,18 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     /**
      * {@link MediaPlayer} set the data source
      *
-     * @param path the path of local file
+     * @param source the path of video, file or http url
      * @throws IOException
      */
-    public void setVideoPath(String path) throws IOException {
-        Log.d(TAG, "setVideoPath called, path:" + path);
+    public void setVideoSource(String source) throws IOException {
+        Log.d(TAG, "setVideoSource called, source:" + source);
         if (mMediaPlayer != null) {
             if (mCurrentState != KSCMediaState.IDLE) {
                 mediaPlayerError();
                 return;
             }
             mCurrentState = KSCMediaState.INITIALIZED;
-            mMediaPlayer.setDataSource(path);
-            prepare();
-        } else {
-            mediaPlayerError();
-        }
-    }
-
-    /**
-     * {@link MediaPlayer} set the data source
-     *
-     * @param uri http or rtsp url of stream
-     * @throws IOException
-     */
-    public void setVideoURI(Uri uri) throws IOException {
-        Log.d(TAG, "setVideoPath called, uri:" + uri.toString());
-        if (mMediaPlayer != null) {
-            if (mCurrentState != KSCMediaState.IDLE) {
-                mediaPlayerError();
-                return;
-            }
-            mCurrentState = KSCMediaState.INITIALIZED;
-            mMediaPlayer.setDataSource(mContext, uri);
+            mMediaPlayer.setDataSource(source);
             prepare();
         } else {
             mediaPlayerError();

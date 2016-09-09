@@ -7,6 +7,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.widget.Toast;
 
 import com.ksc.client.ads.bean.KSCVideoAdBean;
 import com.ksc.client.ads.callback.KSCAdEventListener;
@@ -48,6 +49,8 @@ public class KSCADAgent {
      * 是否存在广告
      */
     private boolean mAdExist = true;
+
+    private boolean mRequestingAd = false;
 
     private List<KSCVideoAdBean> mVideoList = new ArrayList<>();
 
@@ -167,7 +170,7 @@ public class KSCADAgent {
             String playUri;
             if (!cachedFile.exists()) {
                 if (!KSCNetUtils.isNetworkAvailable(activity)) {
-                    mEventListener.onNetRequestError("network is not available");
+                    mEventListener.onNetRequestError("网络错误[网络不可用]");
                     return;
                 }
                 playUri = videoAdBean.getVideoUrl();
@@ -202,6 +205,10 @@ public class KSCADAgent {
      */
     private void checkAppHasAd(final Activity activity, final int index, final boolean isCache) {
         KSCLog.d("KSCADAgent checkAppHasAd, isCache:" + isCache);
+        if (mRequestingAd) {
+            return;
+        }
+        mRequestingAd = true;
         HttpRequestParam requestParam = new HttpRequestParam(KSCMobileAdKeyCode.MOBILE_AD_URL, HttpRequestParam.METHOD_POST);
         requestParam.setContentType("application/x-protobuf");
         KSCMobileAdsProto530.MobadsRequest request = KSCMobileAdProtoAPI.getInstance().getRequest(activity, mAppId, mAdSlotId);
@@ -209,13 +216,16 @@ public class KSCADAgent {
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(HttpResponse response) {
+                mRequestingAd = false;
                 disposeAdResponse(activity, response, index, isCache);
             }
         }, new HttpErrorListener() {
             @Override
             public void onErrorResponse(HttpError error) {
                 KSCLog.e("check App Ad failed, error:" + error.getMessage());
-                mEventListener.onNetRequestError("网络错误[" + error.getMessage() + "]");
+                mRequestingAd = false;
+                mEventListener.onNetRequestError("网络错误[请求广告错误]");
+                mEventListener.onAdExist(false, -1);
             }
         });
     }
@@ -289,8 +299,8 @@ public class KSCADAgent {
         }, new HttpErrorListener() {
             @Override
             public void onErrorResponse(HttpError error) {
-                mEventListener.onNetRequestError("网络错误[" + error.getMessage() + "]");
-                KSCLog.d("cached video fail, video path=" + adBean.getDownloadPath());
+                KSCLog.d("cached video fail, video path=" + adBean.getDownloadPath() + ", error=" + error.getMessage());
+                mEventListener.onNetRequestError("网络错误[缓存广告错误]");
                 mEventListener.onVideoCached(false);
             }
         }, new Handler(Looper.getMainLooper()));
@@ -400,6 +410,7 @@ public class KSCADAgent {
         intent.putExtra(DownloadService.EXTRA_SHOW_NOTIFY, true);
         intent.putExtra(DownloadService.EXTRA_DOWNLOAD_APP_NAME, downloadAppName);
         mContext.startService(intent);
+        Toast.makeText(mContext, "开始下载", Toast.LENGTH_SHORT).show();
     }
 
     private static class SingletonHolder {

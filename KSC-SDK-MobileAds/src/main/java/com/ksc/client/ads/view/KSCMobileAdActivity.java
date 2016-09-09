@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.media.AudioManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -48,18 +47,6 @@ public class KSCMobileAdActivity extends Activity {
     private boolean mPopCloseView = false;
     private Timer mTimer;
     private String mH5Path;
-    private Runnable mGetVideoProgressTask = new Runnable() {
-        @Override
-        public void run() {
-            mHandler.removeCallbacks(mGetVideoProgressTask);
-            Message message = mHandler.obtainMessage();
-            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mMediaPlayer.getDuration();
-            message.arg2 = mMediaPlayer.getCurrentPosition();
-            mHandler.sendMessage(message);
-            mHandler.postDelayed(mGetVideoProgressTask, 100);
-        }
-    };
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -132,6 +119,18 @@ public class KSCMobileAdActivity extends Activity {
             }
         }
     };
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,23 +143,26 @@ public class KSCMobileAdActivity extends Activity {
         String type = intent.getStringExtra(KSCMobileAdKeyCode.VIDEO_TYPE);
         String path = intent.getStringExtra(KSCMobileAdKeyCode.VIDEO_PATH);
         mH5Path = intent.getStringExtra(KSCMobileAdKeyCode.VIDEO_H5_PATH);
+        if (mH5Path == null) {
+            mH5Path = new String(new byte[0]);
+        }
         Log.d(TAG, "onCreate: type=" + type + ", path=" + path);
 
         initView();
         initListener();
 
         try {
-            if (type.equals(KSCMobileAdKeyCode.VIDEO_IN_CACHE)) {
-                mMediaPlayer.setVideoPath(path);
-            } else if (type.equals(KSCMobileAdKeyCode.VIDEO_IN_STREAM)) {
-                mMediaPlayer.setVideoURI(Uri.parse(path));
+            if (path != null && !path.equals("")) {
+                mMediaPlayer.setVideoSource(path);
+            }
+            if (type.equals(KSCMobileAdKeyCode.VIDEO_IN_STREAM)) {
                 mTimer = new Timer();
             }
         } catch (IOException e) {
             Log.e(TAG, "onCreate: set MediaPlayer DataSource exception", e);
             Message message = mHandler.obtainMessage();
             message.what = KSCMobileAdKeyCode.KEY_VIDEO_ERROR;
-            message.obj = "set MediaPlayer DataSource exception:" + e.getMessage();
+            message.obj = "视频文件错误";
             mHandler.sendMessage(message);
         }
     }
