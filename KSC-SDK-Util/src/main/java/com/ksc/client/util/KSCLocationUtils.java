@@ -39,6 +39,7 @@ public class KSCLocationUtils {
         }
         List<String> providers = lm.getProviders(true);
         if (providers == null || providers.size() == 0) {
+            KSCLog.d("gps service is closed!");
             return null;
         }
         if (providers.contains(LocationManager.GPS_PROVIDER)) {
