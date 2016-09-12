@@ -54,7 +54,7 @@ public class DownloadService extends IntentService {
                         long totalSize = msg.arg2;
                         int present = (int) ((currentSize * 100) / (double) totalSize);
                         if (present - mLastPresent >= 1) {
-                            showNotification(present, mDownloadAppName);
+                            showDownloadingNotification(present);
                         }
                         mLastPresent = present;
                     }
@@ -84,12 +84,12 @@ public class DownloadService extends IntentService {
         String downloadPath = intent.getStringExtra(EXTRA_DOWNLOAD_PATH);
         mDownloadAppName = intent.getStringExtra(EXTRA_DOWNLOAD_APP_NAME);
         if (mShowNotify) {
-            showNotification(0, mDownloadAppName);
+            showDownloadingNotification(0);
         }
         startDownload(downloadUrl, downloadPath);
     }
 
-    private void showNotification(int progress, String appName) {
+    private void showDownloadingNotification(int progress) {
         if (mManager == null) {
             mManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         }
@@ -99,10 +99,32 @@ public class DownloadService extends IntentService {
         if (mBuilder == null) {
             int iconId = android.R.drawable.stat_sys_download;
             String tickerText = "开始下载";
-            mBuilder = new NotificationCompat.Builder(this).setSmallIcon(iconId).setTicker(tickerText).setContentIntent(pendingIntent).setContentTitle(appName);
+            mBuilder = new NotificationCompat.Builder(this).setSmallIcon(iconId).setTicker(tickerText).setContentIntent(pendingIntent).setContentTitle(mDownloadAppName);
         }
         mBuilder.setContentText("正在下载 " + progress + "%");
         mBuilder.setProgress(100, progress, false);
+        mManager.notify(KEY_NOTIFICATION_ID, mBuilder.build());
+    }
+
+    private void showDownloadNotification(boolean status) {
+        if (mManager == null) {
+            mManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        }
+        if (pendingIntent == null) {
+            pendingIntent = PendingIntent.getActivity(this, 0, new Intent(), PendingIntent.FLAG_CANCEL_CURRENT);
+        }
+        if (mBuilder == null) {
+            int iconId = android.R.drawable.stat_sys_download;
+            String tickerText = "开始下载";
+            mBuilder = new NotificationCompat.Builder(this).setSmallIcon(iconId).setTicker(tickerText).setContentIntent(pendingIntent).setContentTitle(mDownloadAppName);
+        }
+        mBuilder.setProgress(0, 0, false);
+        mBuilder.setAutoCancel(true);
+        if (status) {
+            mBuilder.setContentText("下载成功");
+        } else {
+            mBuilder.setContentText("下载失败");
+        }
         mManager.notify(KEY_NOTIFICATION_ID, mBuilder.build());
     }
 
@@ -150,6 +172,7 @@ public class DownloadService extends IntentService {
     }
 
     private void disposeDownloadFile(boolean success, String path) {
+        showDownloadNotification(success);
         if (path == null || path.equals("")) {
             return;
         }
@@ -164,7 +187,6 @@ public class DownloadService extends IntentService {
         } else {
             deleteCacheFile(path);
         }
-        hideNotification();
     }
 
     private void installApk(File downloadFile) {

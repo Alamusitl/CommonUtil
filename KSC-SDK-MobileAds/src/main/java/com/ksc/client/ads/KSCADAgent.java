@@ -195,9 +195,8 @@ public class KSCADAgent {
             checkAppHasAd(activity, 0, false);
         } else if (mVideoList.size() > 0) {
             KSCVideoAdBean videoAdBean = mVideoList.get(0);
-            File cachedFile = new File(videoAdBean.getDownloadPath());
             String playUri;
-            if (!cachedFile.exists()) {
+            if (!videoAdBean.getIsCached()) {
                 if (!KSCNetUtils.isNetworkAvailable(activity)) {
                     mEventListener.onNetRequestError("网络错误[网络不可用]");
                     return;
@@ -218,7 +217,7 @@ public class KSCADAgent {
                 if (mVideoList.size() == 1) {
                     checkAppHasAd(activity, 1, true);
                 } else {
-                    cacheAdVideo(mVideoList.get(1));
+                    cacheAdVideo(1);
                 }
             }
             KSCLog.d("current play uri=" + playUri);
@@ -235,6 +234,7 @@ public class KSCADAgent {
     private void checkAppHasAd(final Activity activity, final int index, final boolean isCache) {
         KSCLog.d("KSCADAgent checkAppHasAd, isCache:" + isCache);
         if (mRequestingAd) {
+            KSCLog.d("sdk still requesting ad, try again later!");
             return;
         }
         mRequestingAd = true;
@@ -298,7 +298,7 @@ public class KSCADAgent {
             if (url != null) {
                 int netType = KSCNetUtils.getNetType(activity);
                 if (isCache && netType != KSCNetUtils.NETWORK_TYPE_2G) {// 可缓存，是缓存，不是2G网络的时候缓存
-                    cacheAdVideo(videoAdBean);
+                    cacheAdVideo(index);
                 } else if (!isCache) {// 不缓存的时候播放流媒体
                     showAdVideo(activity);
                 }
@@ -314,22 +314,29 @@ public class KSCADAgent {
     /**
      * 缓存视频
      *
-     * @param adBean 广告信息Bean
+     * @param index 广告信息index索引
      */
-    private void cacheAdVideo(final KSCVideoAdBean adBean) {
+    private void cacheAdVideo(final int index) {
+        final KSCVideoAdBean adBean = mVideoList.get(index);
         KSCLog.d("KSCADAgent cacheAdVideo, url:" + adBean.getVideoUrl());
         HttpRequestParam requestParam = new HttpRequestParam(adBean.getVideoUrl());
-        requestParam.setDownloadPath(adBean.getDownloadPath());
+        requestParam.setDownloadPath(mVideoList.get(index).getDownloadPath());
         HttpRequestManager.execute(requestParam, new HttpListener() {
             @Override
             public void onResponse(HttpResponse response) {
                 KSCLog.d("cached video success, video path=" + adBean.getDownloadPath());
+                if (mVideoList.size() > index) {
+                    mVideoList.get(index).setIsCached(true);
+                }
                 mEventListener.onVideoCached(true);
             }
         }, new HttpErrorListener() {
             @Override
             public void onErrorResponse(HttpError error) {
                 KSCLog.d("cached video fail, video path=" + adBean.getDownloadPath() + ", error=" + error.getMessage());
+                if (mVideoList.size() > index) {
+                    mVideoList.get(index).setIsCached(false);
+                }
                 mEventListener.onNetRequestError("网络错误[缓存广告错误]");
                 mEventListener.onVideoCached(false);
             }

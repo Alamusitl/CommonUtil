@@ -384,17 +384,11 @@ public class KSCMobileAdProtoAPI {
                 }
             }
 
-            String adSlotId = ad.getAdslotId();
-            String adKey = ad.getAdKey();
             for (KSCMobileAdsProto530.MaterialMeta meta : metaList) {
                 KSCVideoAdBean bean = new KSCVideoAdBean();
-                bean.setAdSlotId(adSlotId);
-                bean.setAdKey(adKey);
                 bean.setHtml(ad.getHtmlSnippet().toStringUtf8());
                 bean.setVideoUrl(meta.getVideoUrl());
                 bean.setClickUrl(meta.getClickUrl());
-                bean.setInteractionType(meta.getInteractionType());
-                bean.setCreativeType(meta.getCreativeType());
                 bean.setBrandName(meta.getBrandName());
                 List<String> mLandingPageTrack = meta.getWinNoticeUrlList();
                 for (String url : mLandingPageTrack) {
