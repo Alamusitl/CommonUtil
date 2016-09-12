@@ -47,6 +47,22 @@ public class KSCMobileAdActivity extends Activity {
     private boolean mPopCloseView = false;
     private Timer mTimer;
     private String mH5Path;
+    private int mControlViewSize;
+    private int mDialogViewWidth;
+    private int mDialogViewHeight;
+    private float mDensity;
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
+        }
+    };
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -119,18 +135,6 @@ public class KSCMobileAdActivity extends Activity {
             }
         }
     };
-    private Runnable mGetVideoProgressTask = new Runnable() {
-        @Override
-        public void run() {
-            mHandler.removeCallbacks(mGetVideoProgressTask);
-            Message message = mHandler.obtainMessage();
-            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mMediaPlayer.getDuration();
-            message.arg2 = mMediaPlayer.getCurrentPosition();
-            mHandler.sendMessage(message);
-            mHandler.postDelayed(mGetVideoProgressTask, 100);
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,6 +142,13 @@ public class KSCMobileAdActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        mDensity = dm.density;
+        mControlViewSize = (int) (33 * dm.density);
+        mDialogViewWidth = (int) (320 * dm.density);
+        mDialogViewHeight = (int) (165 * dm.density);
 
         Intent intent = getIntent();
         String type = intent.getStringExtra(KSCMobileAdKeyCode.VIDEO_TYPE);
@@ -242,14 +253,11 @@ public class KSCMobileAdActivity extends Activity {
     }
 
     private void showControlView() {
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int size = 33 * (int) dm.density;
-        int outLineWidth = (int) (2 / (float) 3 * dm.density);
-        int processWidth = 8 / 3 * (int) dm.density;
-        int textSize = (int) (50 / 3 * dm.density);
+        int outLineWidth = (int) (2 / (float) 3 * mDensity);
+        int processWidth = (int) (8 / 3 * mDensity);
+        int textSize = (int) (50 / 3 * mDensity);
         // 关闭按钮
-        LayoutParams lp = new LayoutParams(size, size);
+        LayoutParams lp = new LayoutParams(mControlViewSize, mControlViewSize);
         mCloseView = new ImageView(this);
         mCloseView.setId(KSCViewUtils.generateViewId());
         lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
@@ -261,7 +269,7 @@ public class KSCMobileAdActivity extends Activity {
         mRootView.addView(mCloseView, lp);
 
         // 倒计时视图
-        lp = new LayoutParams(size, size);
+        lp = new LayoutParams(mControlViewSize, mControlViewSize);
         mCountDownTimeView = new KSCCountDownView(this);
         mCountDownTimeView.setId(KSCViewUtils.generateViewId());
         lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
@@ -281,7 +289,7 @@ public class KSCMobileAdActivity extends Activity {
         mRootView.addView(mCountDownTimeView, lp);
 
         // 静音按钮
-        lp = new LayoutParams(size, size);
+        lp = new LayoutParams(mControlViewSize, mControlViewSize);
         mMuteView = new ImageView(this);
         mMuteView.setId(KSCViewUtils.generateViewId());
         lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
@@ -330,14 +338,10 @@ public class KSCMobileAdActivity extends Activity {
         mCloseView.setEnabled(false);
         mMuteView.setEnabled(false);
         mPopCloseView = true;
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
 
         final KSCCloseVideoPromptView alertDialogView = new KSCCloseVideoPromptView(this);
-        int width = 320 * (int) dm.density;
-        int height = 165 * (int) dm.density;
 
-        LayoutParams lp = new LayoutParams(width, height);
+        LayoutParams lp = new LayoutParams(mDialogViewWidth, mDialogViewHeight);
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
         alertDialogView.setText("现在关闭将无法得到奖励，确定关闭？");
         alertDialogView.setCloseButtonText("关闭");
@@ -367,11 +371,8 @@ public class KSCMobileAdActivity extends Activity {
 
     private void createLandingPage() {
         // 落地页
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int size = 33 * (int) dm.density;
         mLandingPageView = new KSCLandingPageView(this);
-        mLandingPageView.setSize(size);
+        mLandingPageView.setSize(mControlViewSize);
         mLandingPageView.setLandingViewData(mH5Path);
         mLandingPageView.setCloseViewClickListener(new OnClickListener() {
             @Override
@@ -402,13 +403,9 @@ public class KSCMobileAdActivity extends Activity {
     }
 
     private void showNetPromptView(final int i, String msg) {
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int width = 320 * (int) dm.density;
-        int height = 165 * (int) dm.density;
         KSCNetPromptView netPromptView = new KSCNetPromptView(this);
         netPromptView.setText(msg, "确定");
-        netPromptView.setSize(width, height);
+        netPromptView.setSize(mDialogViewWidth, mDialogViewHeight);
         netPromptView.setConfirmViewClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -419,7 +416,7 @@ public class KSCMobileAdActivity extends Activity {
                 }
             }
         });
-        LayoutParams lp = new LayoutParams(width, height);
+        LayoutParams lp = new LayoutParams(mDialogViewWidth, mDialogViewHeight);
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
         mRootView.addView(netPromptView, lp);
     }

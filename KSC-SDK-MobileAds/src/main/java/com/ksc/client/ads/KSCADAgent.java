@@ -25,6 +25,7 @@ import com.ksc.client.toolbox.HttpResponse;
 import com.ksc.client.util.KSCLog;
 import com.ksc.client.util.KSCNetUtils;
 import com.ksc.client.util.KSCPermissionUtils;
+import com.ksc.client.util.KSCStorageUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -405,6 +406,9 @@ public class KSCADAgent {
                 break;
             }
         } while (isClearAll);
+        if (isClearAll) {
+            KSCStorageUtils.deleteDir(new File(mCacheVideoPath));
+        }
         KSCLog.d("clear cached end");
     }
 
