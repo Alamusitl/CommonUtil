@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,12 +66,7 @@ public class KSCPermissionUtils {
                     builder.append(", ").append(shouldShowRequestPermissions.get(i));
                 }
                 final String msg = builder.toString();
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show();
-                    }
-                });
+                KSCToastUtils.showTaost(activity, msg);
             }
             ActivityCompat.requestPermissions(activity, needRequestPermissions.toArray(new String[needRequestPermissions.size()]), REQUEST_PERMISSION_CODE);
         }
@@ -131,12 +125,7 @@ public class KSCPermissionUtils {
     public static boolean checkRequestPermission(final Activity activity, String permission, int requestCode) {
         if (!checkPermission(permission)) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)) {
-                activity.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(activity, "您已禁止权限，请重新开启", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                KSCToastUtils.showTaost(activity, "您已禁止权限，请重新开启");
             }
             ActivityCompat.requestPermissions(activity, new String[]{permission}, requestCode);
             return false;
