@@ -20,5 +20,8 @@ android {
 }
 
 dependencies {
-    compile project(':KSC-SDK-MobileAds')
+    compile files('libs/android-support-v4.jar')
+    compile files('libs/protobuf-java-2.6.1.jar')
+    compile files('libs/sdk-mobile-ad-2.1.jar')
+    compile files('libs/sdk-util-1.2.jar')
 }

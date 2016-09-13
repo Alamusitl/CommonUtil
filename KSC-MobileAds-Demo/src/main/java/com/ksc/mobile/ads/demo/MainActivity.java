@@ -26,7 +26,6 @@ public class MainActivity extends Activity {
         mShowVideo = (Button) findViewById(R.id.btnShowVideoAd);
         mLogMsg = (TextView) findViewById(R.id.tvLogMsg);
         mLogMsg.setMovementMethod(new ScrollingMovementMethod());
-        mShowVideo.setEnabled(false);
         mShowVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,23 +44,11 @@ public class MainActivity extends Activity {
                     Toast("有广告");
                 } else {
                     Toast("没有广告");
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            mShowVideo.setEnabled(true);
-                        }
-                    });
                 }
             }
 
             @Override
             public void onVideoCached(boolean isCached) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mShowVideo.setEnabled(true);
-                    }
-                });
                 if (isCached) {
                     Toast("已缓存广告视频");
                 } else {
