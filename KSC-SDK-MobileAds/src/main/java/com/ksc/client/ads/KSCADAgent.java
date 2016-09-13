@@ -187,7 +187,7 @@ public class KSCADAgent {
      *
      * @param activity 上下文
      */
-    public void showAdVideo(Activity activity) {
+    public synchronized void showAdVideo(Activity activity) {
         KSCLog.d("KSCADAgent showAdVideo");
         if (!mAdExist) {
             return;

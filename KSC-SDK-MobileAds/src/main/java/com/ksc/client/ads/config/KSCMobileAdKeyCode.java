@@ -15,7 +15,7 @@ public class KSCMobileAdKeyCode {
     public static final String IMG_VIDEO_VIEW_MUTE = "ksc_controller_mute.png";
     public static final String IMG_VIDEO_VIEW_VOLUME_RESUME = "ksc_controller_volume_resume.png";
 
-    public static final String MOBILE_AD_URL = "http://120.92.44.245/api/def";
+    public static final String MOBILE_AD_URL = "http://api.ssp.ksyun.com/api/def";
 
     /**
      * 视频准备完成

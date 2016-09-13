@@ -42,6 +42,7 @@ public class DownloadService extends IntentService {
     private boolean mShowNotify = false;
     private int mLastPresent = 0;
     private String mDownloadAppName;
+    private String mDownloadPath;
 
     private Handler mHandler = new Handler(Looper.myLooper()) {
         @Override
@@ -81,12 +82,12 @@ public class DownloadService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         String downloadUrl = intent.getStringExtra(EXTRA_DOWNLOAD_URL);
         mShowNotify = intent.getBooleanExtra(EXTRA_SHOW_NOTIFY, false);
-        String downloadPath = intent.getStringExtra(EXTRA_DOWNLOAD_PATH);
+        mDownloadPath = intent.getStringExtra(EXTRA_DOWNLOAD_PATH);
         mDownloadAppName = intent.getStringExtra(EXTRA_DOWNLOAD_APP_NAME);
         if (mShowNotify) {
             showDownloadingNotification(0);
         }
-        startDownload(downloadUrl, downloadPath);
+        startDownload(downloadUrl);
     }
 
     private void showDownloadingNotification(int progress) {
@@ -111,7 +112,7 @@ public class DownloadService extends IntentService {
             mManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         }
         if (pendingIntent == null) {
-            pendingIntent = PendingIntent.getActivity(this, 0, new Intent(), PendingIntent.FLAG_CANCEL_CURRENT);
+            pendingIntent = PendingIntent.getActivity(this, 0, new Intent(), PendingIntent.FLAG_UPDATE_CURRENT);
         }
         if (mBuilder == null) {
             int iconId = android.R.drawable.stat_sys_download;
@@ -134,7 +135,7 @@ public class DownloadService extends IntentService {
         }
     }
 
-    private void startDownload(String downloadUrl, String downloadPath) {
+    private void startDownload(String downloadUrl) {
         try {
             HttpURLConnection connection = (HttpURLConnection) new URL(downloadUrl).openConnection();
             connection.setConnectTimeout(TIMEOUT);
@@ -143,24 +144,24 @@ public class DownloadService extends IntentService {
             connection.setDoInput(true);
             int responseCode = connection.getResponseCode();
             if (responseCode != 200) {
-                mHandler.sendMessage(mHandler.obtainMessage(KEY_DOWNLOAD_FAIL, downloadPath));
+                mHandler.sendMessage(mHandler.obtainMessage(KEY_DOWNLOAD_FAIL, mDownloadPath));
                 return;
             }
             int totalSize = connection.getContentLength();
             BufferedInputStream bis = new BufferedInputStream(connection.getInputStream());
-            FileOutputStream fos = new FileOutputStream(new File(downloadPath), false);
+            FileOutputStream fos = new FileOutputStream(new File(mDownloadPath), false);
             int length;
             int currentSize = 0;
-            byte[] buf = new byte[1024];
+            byte[] buf = new byte[4 * 1024];
             while (((length = bis.read(buf)) != -1)) {
                 currentSize += length;
                 fos.write(buf, 0, length);
                 mHandler.sendMessage(mHandler.obtainMessage(KEY_DOWNLOADING, currentSize, totalSize, null));
             }
             if (currentSize == totalSize) {
-                mHandler.sendMessage(mHandler.obtainMessage(KEY_DOWNLOAD_SUCCESS, downloadPath));
+                mHandler.sendMessage(mHandler.obtainMessage(KEY_DOWNLOAD_SUCCESS, mDownloadPath));
             } else {
-                mHandler.sendMessage(mHandler.obtainMessage(KEY_DOWNLOAD_FAIL, downloadPath));
+                mHandler.sendMessage(mHandler.obtainMessage(KEY_DOWNLOAD_FAIL, mDownloadPath));
             }
             connection.disconnect();
             fos.close();
