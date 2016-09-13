@@ -8,13 +8,14 @@ import java.util.Map;
  */
 public class KSCVideoAdBean {
 
-    private String mHtml;
-    private String mVideoUrl;
-    private String mClickUrl;
-    private String mDownloadPath;
-    private String mBrandName;
-    private Map<Integer, List<String>> mTrackingUrl;
-    private boolean mIsCached = false;
+    private String mHtml;// 落地页代码
+    private String mVideoUrl;// 视频链接
+    private String mClickUrl;//
+    private String mDownloadPath;// 视频缓存地址
+    private String mBrandName;// 应用名称
+    private String mPackageName;// 下载APK的包名
+    private Map<Integer, List<String>> mTrackingUrl;// 广告跟踪地址集
+    private boolean mIsCached = false;// 是否缓存
 
     public String getHtml() {
         return mHtml;
@@ -54,6 +55,14 @@ public class KSCVideoAdBean {
 
     public void setBrandName(String brandName) {
         mBrandName = brandName;
+    }
+
+    public String getPackageName() {
+        return mPackageName;
+    }
+
+    public void setPackageName(String packageName) {
+        mPackageName = packageName;
     }
 
     public Map<Integer, List<String>> getTrackingUrl() {

@@ -390,6 +390,7 @@ public class KSCMobileAdProtoAPI {
                 bean.setVideoUrl(meta.getVideoUrl());
                 bean.setClickUrl(meta.getClickUrl());
                 bean.setBrandName(meta.getDescription(0).toStringUtf8());
+                bean.setPackageName(meta.getAppPackage());
                 List<String> mLandingPageTrack = meta.getWinNoticeUrlList();
                 for (String url : mLandingPageTrack) {
                     if (url == null || url.equals("")) {

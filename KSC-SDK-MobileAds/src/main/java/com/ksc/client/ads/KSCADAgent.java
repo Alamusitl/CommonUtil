@@ -434,7 +434,12 @@ public class KSCADAgent {
             boolean result = file.mkdirs();
             KSCLog.d("mkdirs download dir " + downloadPath + "result = " + result);
         }
-        downloadPath += File.separator + "download-" + System.currentTimeMillis() + ".apk";
+        downloadPath += File.separator + mVideoList.get(0).getPackageName() + ".apk";
+        file = new File(downloadPath);
+        if (file.exists()) {
+            boolean result = file.delete();
+            KSCLog.d("delete exist apk file " + downloadPath + " result = " + result);
+        }
         Intent intent = new Intent(mContext, DownloadService.class);
         intent.putExtra(DownloadService.EXTRA_DOWNLOAD_URL, url);
         intent.putExtra(DownloadService.EXTRA_DOWNLOAD_PATH, downloadPath);
