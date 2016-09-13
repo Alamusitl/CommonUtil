@@ -32,6 +32,7 @@ public class DownloadService extends Service {
     private Uri CONTENT_URI = Uri.parse("content://downloads/my_downloads");
     private String mDownloadPath;
     private String mDownloadUrl;
+    private String mDownloadAppName;
     private long mDownloadId;
     private DownloadManager mDownloadManager;
     private CompleteReceiver mCompleteReceiver;
@@ -58,8 +59,10 @@ public class DownloadService extends Service {
         getContentResolver().registerContentObserver(CONTENT_URI, true, mDownloadObserver);
         mDownloadUrl = intent.getStringExtra(EXTRA_DOWNLOAD_URL);
         mDownloadPath = intent.getStringExtra(EXTRA_DOWNLOAD_PATH);
-        Log.d(TAG, "onHandleIntent: downloadUrl:" + mDownloadUrl);
-        Log.d(TAG, "onHandleIntent: downloadPath:" + mDownloadPath);
+        mDownloadAppName = intent.getStringExtra(EXTRA_DOWNLOAD_APP_NAME);
+        Log.d(TAG, "onStartCommand: downloadUrl:" + mDownloadUrl);
+        Log.d(TAG, "onStartCommand: downloadPath:" + mDownloadPath);
+        Log.d(TAG, "onStartCommand: downloadAppName:" + mDownloadAppName);
         if (TextUtils.isEmpty(mDownloadUrl) || TextUtils.isEmpty(mDownloadPath)) {
             Toast.makeText(this, "下载失败，参数错误", Toast.LENGTH_SHORT).show();
             stopSelf();
@@ -81,7 +84,7 @@ public class DownloadService extends Service {
         mDownloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
         Uri uri = Uri.parse(downloadUrl);
         DownloadManager.Request request = new DownloadManager.Request(uri);
-        request.setTitle("游戏包");
+        request.setTitle("".equals(mDownloadAppName) ? " 游戏包" : " " + mDownloadAppName);
         File file = new File(mDownloadPath);
         request.setDestinationUri(Uri.fromFile(file));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
