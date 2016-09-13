@@ -15,9 +15,7 @@ import com.ksc.client.ads.callback.KSCAdEventListener;
 public class MainActivity extends Activity {
 
     private Button mShowVideo;
-    private TextView mTvRest;
     private TextView mLogMsg;
-    private int mCurrentRest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +24,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mShowVideo = (Button) findViewById(R.id.btnShowVideoAd);
-        mTvRest = (TextView) findViewById(R.id.tvRest);
         mLogMsg = (TextView) findViewById(R.id.tvLogMsg);
         mLogMsg.setMovementMethod(new ScrollingMovementMethod());
         mShowVideo.setEnabled(false);
@@ -38,8 +35,8 @@ public class MainActivity extends Activity {
         });
 
         KSCADAgent.getInstance().setDebug(true);// 正式发布时请改为false，true时调试模式，将打印debug log
-        String appId = "4qby7kup";// 测试参数， 正式请替换自己的渠道
-        String adSlotId = "pe2otiaf";// 测试参数，正式请替换自己的参数
+        String appId = "rtp4pmx7";// 应用ID，测试参数， 正式请替换自己的渠道
+        String adSlotId = "syotepdd";// 广告位ID，测试参数，正式请替换自己的参数
         KSCADAgent.getInstance().init(this, appId, adSlotId, new KSCAdEventListener() {
 
             @Override
@@ -80,14 +77,8 @@ public class MainActivity extends Activity {
             @Override
             public void onVideoCompletion() {
                 Toast("播放完成");
-                mCurrentRest = Integer.parseInt(String.valueOf(mTvRest.getText())) + 20;
-                MainActivity.this.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mTvRest.setText(String.valueOf(mCurrentRest));
-                    }
-                });
                 Toast("奖励已发放");
+                // 可以发放奖励
             }
 
             @Override
@@ -103,6 +94,7 @@ public class MainActivity extends Activity {
             @Override
             public void onLandingPageClose(boolean status) {
                 Toast("落地页关闭");
+                // 请在落地页关闭之后显示发放奖励提示
             }
 
             @Override
