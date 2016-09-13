@@ -6,8 +6,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.ContentObserver;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -26,16 +29,13 @@ public class DownloadService extends Service {
     public static final String EXTRA_DOWNLOAD_APP_NAME = "downloadAppName";
     private static final String TAG = DownloadService.class.getSimpleName();
 
-    private static final int TIMEOUT = 20 * 1000;
-    private static final int KEY_DOWNLOADING = 0;
-    private static final int KEY_DOWNLOAD_FAIL = 1;
-    private static final int KEY_DOWNLOAD_SUCCESS = 2;
-
-    private DownloadManager mDownloadManager;
+    private Uri CONTENT_URI = Uri.parse("content://downloads/my_downloads");
     private String mDownloadPath;
     private String mDownloadUrl;
     private long mDownloadId;
+    private DownloadManager mDownloadManager;
     private CompleteReceiver mCompleteReceiver;
+    private DownloadChangeObserver mDownloadObserver;
 
     @Nullable
     @Override
@@ -48,18 +48,20 @@ public class DownloadService extends Service {
         super.onCreate();
         Log.d(TAG, "onCreate: new receiver");
         mCompleteReceiver = new CompleteReceiver();
+        mDownloadObserver = new DownloadChangeObserver(null);
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d(TAG, "onStartCommand: register receiver");
         registerReceiver(mCompleteReceiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        getContentResolver().registerContentObserver(CONTENT_URI, true, mDownloadObserver);
         mDownloadUrl = intent.getStringExtra(EXTRA_DOWNLOAD_URL);
         mDownloadPath = intent.getStringExtra(EXTRA_DOWNLOAD_PATH);
         Log.d(TAG, "onHandleIntent: downloadUrl:" + mDownloadUrl);
         Log.d(TAG, "onHandleIntent: downloadPath:" + mDownloadPath);
         if (TextUtils.isEmpty(mDownloadUrl) || TextUtils.isEmpty(mDownloadPath)) {
-            Toast.makeText(this, "下载失败", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "下载失败，参数错误", Toast.LENGTH_SHORT).show();
             stopSelf();
         } else {
             startDownloadWithSystem(mDownloadUrl);
@@ -72,6 +74,7 @@ public class DownloadService extends Service {
         super.onDestroy();
         Log.d(TAG, "onDestroy: unregister receiver");
         unregisterReceiver(mCompleteReceiver);
+        getContentResolver().unregisterContentObserver(mDownloadObserver);
     }
 
     private void startDownloadWithSystem(String downloadUrl) {
@@ -110,6 +113,49 @@ public class DownloadService extends Service {
         return type;
     }
 
+    private void queryDownloadStatus() {
+        DownloadManager.Query query = new DownloadManager.Query();
+        query.setFilterById(mDownloadId);
+        Cursor cursor = mDownloadManager.query(query);
+        if (cursor != null && cursor.moveToFirst()) {
+            int status = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS));
+            int reasonId = cursor.getColumnIndex(DownloadManager.COLUMN_REASON);
+            int titleId = cursor.getColumnIndex(DownloadManager.COLUMN_TITLE);
+            int fileSizeId = cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES);
+            int bytesId = cursor.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR);
+            String title = cursor.getString(titleId);
+            int fileSize = cursor.getInt(fileSizeId);
+            int bytesDL = cursor.getInt(bytesId);
+            int reason = cursor.getInt(reasonId);
+            Log.d(TAG, "queryDownloadStatus: title=" + title);
+            Log.d(TAG, "queryDownloadStatus: size=" + fileSize);
+            Log.d(TAG, "queryDownloadStatus: reason=" + reason);
+
+            switch (status) {
+                case DownloadManager.STATUS_FAILED:
+                    Log.d(TAG, "queryDownloadStatus: STATUS_FAILED [" + mDownloadId + "]");
+                    if (mDownloadManager != null) {
+                        mDownloadManager.remove(mDownloadId);
+                    }
+                    break;
+                case DownloadManager.STATUS_PAUSED:
+                    Log.d(TAG, "queryDownloadStatus: STATUS_PAUSED");
+                    break;
+                case DownloadManager.STATUS_PENDING:
+                    Log.d(TAG, "queryDownloadStatus: STATUS_PENDING");
+                    break;
+                case DownloadManager.STATUS_RUNNING:
+                    break;
+                case DownloadManager.STATUS_SUCCESSFUL:
+                    Log.d(TAG, "queryDownloadStatus: STATUS_SUCCESSFUL");
+                    break;
+            }
+        }
+        if (cursor != null) {
+            cursor.close();
+        }
+    }
+
     class CompleteReceiver extends BroadcastReceiver {
 
         @Override
@@ -122,6 +168,25 @@ public class DownloadService extends Service {
                 stopSelf();
             }
         }
+    }
+
+    class DownloadChangeObserver extends ContentObserver {
+
+        public DownloadChangeObserver(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        public boolean deliverSelfNotifications() {
+            return super.deliverSelfNotifications();
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            super.onChange(selfChange);
+            queryDownloadStatus();
+        }
+
     }
 
 }
