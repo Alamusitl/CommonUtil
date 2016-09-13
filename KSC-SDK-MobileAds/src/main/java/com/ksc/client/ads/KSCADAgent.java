@@ -28,7 +28,6 @@ import com.ksc.client.util.KSCPermissionUtils;
 import com.ksc.client.util.KSCStorageUtils;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -428,27 +427,9 @@ public class KSCADAgent {
             downloadPath = Environment.getDataDirectory().getAbsolutePath() + File.separator + Environment.DIRECTORY_DOWNLOADS;
         }
         downloadPath += File.separator + "download-" + System.currentTimeMillis() + ".apk";
-        File file = new File(downloadPath);
-        if (!file.getParentFile().exists()) {
-            boolean result = file.getParentFile().mkdirs();
-            if (!result) {
-                return;
-            }
-        }
-        if (!file.exists()) {
-            try {
-                boolean result = file.createNewFile();
-                if (!result) {
-                    KSCLog.e("create download file fail");
-                }
-            } catch (IOException e) {
-                KSCLog.e("create download file exception", e);
-            }
-        }
         Intent intent = new Intent(mContext, DownloadService.class);
         intent.putExtra(DownloadService.EXTRA_DOWNLOAD_URL, url);
         intent.putExtra(DownloadService.EXTRA_DOWNLOAD_PATH, downloadPath);
-        intent.putExtra(DownloadService.EXTRA_SHOW_NOTIFY, true);
         intent.putExtra(DownloadService.EXTRA_DOWNLOAD_APP_NAME, downloadAppName);
         mContext.startService(intent);
         Toast.makeText(mContext, "开始下载", Toast.LENGTH_SHORT).show();
