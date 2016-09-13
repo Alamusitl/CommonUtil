@@ -405,8 +405,11 @@ public class KSCADAgent {
                 break;
             }
         } while (isClearAll);
-        if (isClearAll) {
-            KSCStorageUtils.deleteDir(new File(mCacheVideoPath));
+        if (isClearAll && mCacheVideoPath != null) {
+            File file = new File(mCacheVideoPath);
+            if (file.exists()) {
+                KSCStorageUtils.deleteDir(file);
+            }
         }
         KSCLog.d("clear cached end");
     }
