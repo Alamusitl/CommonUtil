@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by Alamusi on 2016/8/22.
@@ -48,7 +49,7 @@ public class KSCMobileAdProtoAPI {
         try {
             DisplayMetrics dm = new DisplayMetrics();
             activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
-            String requestId = appId + adSlot_id + System.currentTimeMillis();
+            String requestId = appId + adSlot_id + UUID.randomUUID().toString();
             int length = requestId.length();
             if (length > 32) {
                 requestId = requestId.substring(0, 32);
@@ -57,6 +58,7 @@ public class KSCMobileAdProtoAPI {
                     requestId = requestId + "0";
                 }
             }
+            KSCLog.d("request id [" + requestId + "]");
             requestBuilder.setRequestId(requestId);
             requestBuilder.setApiVersion(getApiVersion());
             requestBuilder.setAdslot(getAdSlot(adSlot_id, dm.widthPixels, dm.heightPixels));
