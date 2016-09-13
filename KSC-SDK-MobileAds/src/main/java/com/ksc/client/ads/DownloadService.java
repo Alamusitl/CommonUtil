@@ -127,9 +127,7 @@ public class DownloadService extends Service {
             int fileSize = cursor.getInt(fileSizeId);
             int bytesDL = cursor.getInt(bytesId);
             int reason = cursor.getInt(reasonId);
-            Log.d(TAG, "queryDownloadStatus: title=" + title);
-            Log.d(TAG, "queryDownloadStatus: size=" + fileSize);
-            Log.d(TAG, "queryDownloadStatus: reason=" + reason);
+            Log.v(TAG, "queryDownloadStatus: title=" + title + ",size=" + fileSize + ",reason=" + reason + ",bytesDL=" + bytesDL);
 
             switch (status) {
                 case DownloadManager.STATUS_FAILED:
