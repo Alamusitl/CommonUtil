@@ -91,8 +91,8 @@
 }
 -keep class com.ksc.client.ads.proto.**{*;}
 -keep class com.ksc.client.ads.view.KSCCloseVideoPromptView {
-    public <fields>;
-    public <methods>;
+    public protected <fields>;
+    public protected <methods>;
 }
 -keep class com.ksc.client.ads.view.KSCCountDownView {
     public protected <fields>;
@@ -100,8 +100,8 @@
 }
 -keep class com.ksc.client.ads.view.KSCCountDownView$* {*;}
 -keep class com.ksc.client.ads.view.KSCLandingPageView {
-    public <fields>;
-    public <methods>;
+    public protected <fields>;
+    public protected <methods>;
 }
 -keep class com.ksc.client.ads.view.KSCLandingPageView$* {*;}
 -keep class com.ksc.client.ads.view.KSCMobileAdActivity {
@@ -110,13 +110,13 @@
 }
 -keep class com.ksc.client.ads.view.KSCMobileAdActivity$* {*;}
 -keep class com.ksc.client.ads.view.KSCNetPromptView {
-    public <fields>;
-    public <methods>;
+    public protected <fields>;
+    public protected <methods>;
 }
 -keep class com.ksc.client.ads.view.KSCNetPromptView$* {*;}
 -keep class com.ksc.client.ads.view.KSCVideoView {
-    public <fields>;
-    public <methods>;
+    public protected <fields>;
+    public protected <methods>;
 }
 -keep class com.ksc.client.ads.view.KSCVideoView$* {*;}
 -keep class com.ksc.client.ads.DownloadService{

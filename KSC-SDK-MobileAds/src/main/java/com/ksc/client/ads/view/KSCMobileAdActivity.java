@@ -51,18 +51,6 @@ public class KSCMobileAdActivity extends Activity {
     private int mDialogViewWidth;
     private int mDialogViewHeight;
     private float mDensity;
-    private Runnable mGetVideoProgressTask = new Runnable() {
-        @Override
-        public void run() {
-            mHandler.removeCallbacks(mGetVideoProgressTask);
-            Message message = mHandler.obtainMessage();
-            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
-            message.arg1 = mMediaPlayer.getDuration();
-            message.arg2 = mMediaPlayer.getCurrentPosition();
-            mHandler.sendMessage(message);
-            mHandler.postDelayed(mGetVideoProgressTask, 100);
-        }
-    };
     private Handler mHandler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(Message msg) {
@@ -133,6 +121,18 @@ public class KSCMobileAdActivity extends Activity {
                     closeActivity();
                     break;
             }
+        }
+    };
+    private Runnable mGetVideoProgressTask = new Runnable() {
+        @Override
+        public void run() {
+            mHandler.removeCallbacks(mGetVideoProgressTask);
+            Message message = mHandler.obtainMessage();
+            message.what = KSCMobileAdKeyCode.KEY_VIDEO_PLAYING;
+            message.arg1 = mMediaPlayer.getDuration();
+            message.arg2 = mMediaPlayer.getCurrentPosition();
+            mHandler.sendMessage(message);
+            mHandler.postDelayed(mGetVideoProgressTask, 100);
         }
     };
 
@@ -388,17 +388,13 @@ public class KSCMobileAdActivity extends Activity {
                 mHandler.sendMessage(message);
             }
         });
-        mLandingPageView.setVisibility(View.GONE);
-        mRootView.addView(mLandingPageView, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+
     }
 
     private void showLandingPage() {
         // 移除所有的View
-        mRootView.removeView(mCloseView);
-        mRootView.removeView(mMuteView);
-        mRootView.removeView(mCountDownTimeView);
-        mRootView.removeView(mMediaPlayer);
-        mLandingPageView.setVisibility(View.VISIBLE);
+        mRootView.removeAllViews();
+        mRootView.addView(mLandingPageView, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIEW_H5_SHOW);
     }
 
@@ -472,7 +468,7 @@ public class KSCMobileAdActivity extends Activity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        if (mMediaPlayer.getCurrentState() != KSCMediaState.END) {
+        if (mMediaPlayer != null && mMediaPlayer.getCurrentState() != KSCMediaState.END) {
             mMediaPlayer.setFullScreen();
             if (mPopCloseView) {
                 mHandler.sendEmptyMessage(KSCMobileAdKeyCode.KEY_VIDEO_PAUSE);
