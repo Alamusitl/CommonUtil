@@ -8,10 +8,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Environment;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.File;
 
@@ -57,15 +58,12 @@ public class DownloadService extends Service {
         mDownloadPath = intent.getStringExtra(EXTRA_DOWNLOAD_PATH);
         Log.d(TAG, "onHandleIntent: downloadUrl:" + mDownloadUrl);
         Log.d(TAG, "onHandleIntent: downloadPath:" + mDownloadPath);
-        String downloadPath;
-        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            downloadPath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + Environment.DIRECTORY_DOWNLOADS;
+        if (TextUtils.isEmpty(mDownloadUrl) || TextUtils.isEmpty(mDownloadPath)) {
+            Toast.makeText(this, "下载失败", Toast.LENGTH_SHORT).show();
+            stopSelf();
         } else {
-            downloadPath = Environment.getDataDirectory().getAbsolutePath() + File.separator + Environment.DIRECTORY_DOWNLOADS;
+            startDownloadWithSystem(mDownloadUrl);
         }
-        downloadPath += File.separator + "download-" + System.currentTimeMillis() + ".apk";
-        mDownloadPath = downloadPath;
-        startDownloadWithSystem(mDownloadUrl);
         return 0;
     }
 
