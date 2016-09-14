@@ -360,7 +360,7 @@ public class KSCADAgent {
             for (String url : urlList) {
                 String newUrl = url;
                 if (url.contains("${PROGRESS}")) {
-                    newUrl = url.replace("${PROGRESS}", String.valueOf(position));
+                    newUrl = url.replace("${PROGRESS}", String.valueOf(position / 1000));
                 }
                 formatUrlList.add(newUrl);
             }

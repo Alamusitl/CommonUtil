@@ -42,9 +42,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     private View mLoadingView;
     private boolean mSurfaceIsReady;
     private boolean mVideoIsReady;
-    private boolean mAutoPlay;
     private boolean mIsCompleted;
-    private boolean mHasError;
     private int mInitialVideoWidth;
     private int mInitialVideoHeight;
     private int mBufferProgress;
@@ -97,7 +95,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
             mSurfaceIsReady = true;
             if (mCurrentState != KSCMediaState.PREPARED && mCurrentState != KSCMediaState.STARTED
                     && mCurrentState != KSCMediaState.PAUSED && mCurrentState != KSCMediaState.PLAYBACKCOMPLETED) {
-                tryToPrepare();
+                tryToStart();
             }
         }
     }
@@ -129,7 +127,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         } else {
             start();
         }
-        if (mVideoPlayCallBack != null && !mHasError) {
+        if (mVideoPlayCallBack != null) {
             mVideoPlayCallBack.onCompletion();
         }
     }
@@ -138,32 +136,18 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     public boolean onError(MediaPlayer mediaPlayer, int i, int i1) {
         Log.d(TAG, "onError Called, what=" + i + ", extra=" + i1);
         stopLoading();
-        switch (i) {
-            case MediaPlayer.MEDIA_ERROR_IO:
-            case MediaPlayer.MEDIA_ERROR_MALFORMED:
-            case MediaPlayer.MEDIA_ERROR_NOT_VALID_FOR_PROGRESSIVE_PLAYBACK:
-            case MediaPlayer.MEDIA_ERROR_SERVER_DIED:
-            case MediaPlayer.MEDIA_ERROR_TIMED_OUT:
-            case MediaPlayer.MEDIA_ERROR_UNKNOWN:
-            case MediaPlayer.MEDIA_ERROR_UNSUPPORTED:
-                mHasError = true;
-                break;
-            default:
-                break;
-        }
-        Log.d(TAG, "onError: hasError=" + mHasError);
         mCurrentState = KSCMediaState.ERROR;
         if (mVideoPlayCallBack != null) {
             mVideoPlayCallBack.onError(i, i1);
         }
-        return false;
+        return true;
     }
 
     @Override
     public synchronized void onPrepared(MediaPlayer mediaPlayer) {
         Log.d(TAG, "onPrepared Called");
         mVideoIsReady = true;
-        tryToPrepare();
+        tryToStart();
     }
 
     @Override
@@ -195,8 +179,6 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         if (isInEditMode()) {
             return;
         }
-        mAutoPlay = true;
-        mCurrentState = KSCMediaState.IDLE;
         setBackgroundColor(Color.BLACK);
 
         // Initialize mediaPlayer
@@ -230,7 +212,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     /**
      * try to call state prepared, Only SurfaceView is already created、mediaPlayer is prepared、video is loaded, video can play.
      */
-    private void tryToPrepare() {
+    private void tryToStart() {
         if (mSurfaceIsReady && mVideoIsReady) {
             if (mMediaPlayer != null) {
                 mInitialVideoWidth = mMediaPlayer.getVideoWidth();
@@ -244,9 +226,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
                 mVideoPlayCallBack.onPrepared();
             }
 
-            if (mAutoPlay) {
-                start();
-            }
+            start();
         }
     }
 
@@ -344,24 +324,6 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     }
 
     /**
-     * get mediaPlayer is auto play flag
-     *
-     * @return
-     */
-    public boolean isAutoPlay() {
-        return mAutoPlay;
-    }
-
-    /**
-     * set mediaPlayer auto play flag
-     *
-     * @param autoPlay auto play state
-     */
-    public void setAutoPlay(boolean autoPlay) {
-        mAutoPlay = autoPlay;
-    }
-
-    /**
      * Switch View to fullScreen mode
      * It saves currentState and call pause method.
      * When switchFullScreen is finished, it call the saves currentState before pause()
@@ -386,7 +348,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      * @return loaded video current position
      */
     public int getCurrentPosition() {
-        if (mMediaPlayer != null && mCurrentState != KSCMediaState.IDLE) {
+        if (mMediaPlayer != null && mCurrentState != KSCMediaState.IDLE && mCurrentState != KSCMediaState.END) {
             return mMediaPlayer.getCurrentPosition();
         } else if (mCurrentState == KSCMediaState.IDLE) {
             return 0;
@@ -402,7 +364,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      * @return loaded video duration
      */
     public int getDuration() {
-        if (mMediaPlayer != null) {
+        if (mMediaPlayer != null && mCurrentState != KSCMediaState.IDLE && mCurrentState != KSCMediaState.END) {
             return mMediaPlayer.getDuration();
         } else {
             mediaPlayerError();
@@ -416,7 +378,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      * @return loaded video width
      */
     public int getVideoWidth() {
-        if (mMediaPlayer != null) {
+        if (mMediaPlayer != null && mCurrentState != KSCMediaState.IDLE && mCurrentState != KSCMediaState.END) {
             return mMediaPlayer.getVideoWidth();
         } else {
             mediaPlayerError();
@@ -430,7 +392,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      * @return loaded video height
      */
     public int getVideoHeight() {
-        if (mMediaPlayer != null) {
+        if (mMediaPlayer != null && mCurrentState != KSCMediaState.IDLE && mCurrentState != KSCMediaState.END) {
             return mMediaPlayer.getVideoHeight();
         } else {
             mediaPlayerError();
@@ -444,7 +406,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      * @return loaded video looping state
      */
     public boolean isLooping() {
-        if (mMediaPlayer != null) {
+        if (mMediaPlayer != null && mCurrentState != KSCMediaState.END) {
             return mMediaPlayer.isLooping();
         } else {
             mediaPlayerError();
@@ -458,7 +420,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      * @param looping need to set looping state
      */
     public void setLooping(boolean looping) {
-        if (mMediaPlayer != null) {
+        if (mMediaPlayer != null && mCurrentState != KSCMediaState.END) {
             mMediaPlayer.setLooping(looping);
         } else {
             mediaPlayerError();
@@ -471,7 +433,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      * @return loaded video playing state
      */
     public boolean isPlaying() {
-        if (mMediaPlayer != null) {
+        if (mMediaPlayer != null && mCurrentState != KSCMediaState.END) {
             return mMediaPlayer.isPlaying();
         } else {
             mediaPlayerError();
@@ -497,7 +459,8 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      */
     public void start() {
         Log.d(TAG, "start called");
-        if (mMediaPlayer != null) {
+        if (mMediaPlayer != null && mCurrentState != KSCMediaState.IDLE && mCurrentState != KSCMediaState.END && mCurrentState != KSCMediaState.ERROR
+                && mCurrentState != KSCMediaState.INITIALIZED && mCurrentState != KSCMediaState.PREPARING && mCurrentState != KSCMediaState.STOPPED) {
             mCurrentState = KSCMediaState.STARTED;
             if (mIsCompleted) {
                 mIsCompleted = false;
@@ -515,7 +478,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      */
     public void pause() {
         Log.d(TAG, "pause called");
-        if (mMediaPlayer != null) {
+        if (mMediaPlayer != null && mCurrentState == KSCMediaState.STARTED) {
             mCurrentState = KSCMediaState.PAUSED;
             mMediaPlayer.pause();
         } else {
@@ -529,11 +492,13 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     public void stop() {
         Log.d(TAG, "stop called");
         if (mMediaPlayer != null) {
-            mCurrentState = KSCMediaState.STOPPED;
-            mMediaPlayer.stop();
-        } else {
-            mediaPlayerError();
+            if (mCurrentState == KSCMediaState.PREPARED || mCurrentState == KSCMediaState.STARTED || mCurrentState == KSCMediaState.PAUSED || mCurrentState == KSCMediaState.PLAYBACKCOMPLETED) {
+                mCurrentState = KSCMediaState.STOPPED;
+                mMediaPlayer.stop();
+                return;
+            }
         }
+        mediaPlayerError();
     }
 
     /**
@@ -545,13 +510,15 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     public void seekTo(int position) {
         Log.d(TAG, "seekTo called, position=" + position);
         if (mMediaPlayer != null) {
-            if (mMediaPlayer.getDuration() > -1 && position < mMediaPlayer.getDuration()) {
-                mMediaPlayer.seekTo(position);
-                startLoading();
+            if (mCurrentState == KSCMediaState.PREPARED || mCurrentState == KSCMediaState.STARTED || mCurrentState == KSCMediaState.PAUSED || mCurrentState == KSCMediaState.PLAYBACKCOMPLETED) {
+                if (mMediaPlayer.getDuration() > -1 && position < mMediaPlayer.getDuration()) {
+                    mMediaPlayer.seekTo(position);
+                    startLoading();
+                    return;
+                }
             }
-        } else {
-            mediaPlayerError();
         }
+        mediaPlayerError();
     }
 
     /**
@@ -564,8 +531,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
         Log.d(TAG, "setVideoSource called, source:" + source);
         if (mMediaPlayer != null) {
             if (mCurrentState != KSCMediaState.IDLE) {
-                mediaPlayerError();
-                return;
+                reset();
             }
             mCurrentState = KSCMediaState.INITIALIZED;
             mMediaPlayer.setDataSource(source);
@@ -631,7 +597,7 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
     private void mediaPlayerError() {
         Log.e(TAG, "mediaPlayerError");
         if (mVideoPlayCallBack != null) {
-            mVideoPlayCallBack.onMediaPlayerError("media player is not initial");
+            mVideoPlayCallBack.onMediaPlayerError("media player is not initial or error status");
         }
     }
 
@@ -640,7 +606,6 @@ public class KSCVideoView extends RelativeLayout implements SurfaceHolder.Callba
      */
     public void release() {
         if (mMediaPlayer != null) {
-            mMediaPlayer.reset();
             mMediaPlayer.release();
             mMediaPlayer = null;
         }
