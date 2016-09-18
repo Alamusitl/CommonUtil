@@ -1,1 +1,1 @@
-include ':KSC-SDK-Util', ':KSC-SDK-Analytics', ':SensorsAnalyticsSDK', ':KSC-ScreenRecord-Demo', ':DeleteTestDir', ':KSC-AudioRecord-Demo', ':KSC-SDK-Update', ':KSC-Update-Demo', ':KSC-SDK-MobileAds', ':KSC-MobileAds-Demo'
+include ':KSC-SDK-Util', ':KSC-SDK-Analytics', ':SensorsAnalyticsSDK', ':KSC-ScreenRecord-Demo', ':DeleteTestDir', ':KSC-AudioRecord-Demo', ':KSC-SDK-Update', ':KSC-Update-Demo', ':FragmentTest', ':ContinueTransform'

@@ -9,11 +9,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/ContinueTransform" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
+            <option value="$PROJECT_DIR$/FragmentTest" />
             <option value="$PROJECT_DIR$/KSC-AudioRecord-Demo" />
-            <option value="$PROJECT_DIR$/KSC-MobileAds-Demo" />
             <option value="$PROJECT_DIR$/KSC-SDK-Analytics" />
-            <option value="$PROJECT_DIR$/KSC-SDK-MobileAds" />
             <option value="$PROJECT_DIR$/KSC-SDK-Update" />
             <option value="$PROJECT_DIR$/KSC-SDK-Util" />
             <option value="$PROJECT_DIR$/KSC-ScreenRecord-Demo" />
@@ -24,11 +24,11 @@
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/ContinueTransform" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
+            <option value="$PROJECT_DIR$/FragmentTest" />
             <option value="$PROJECT_DIR$/KSC-AudioRecord-Demo" />
-            <option value="$PROJECT_DIR$/KSC-MobileAds-Demo" />
             <option value="$PROJECT_DIR$/KSC-SDK-Analytics" />
-            <option value="$PROJECT_DIR$/KSC-SDK-MobileAds" />
             <option value="$PROJECT_DIR$/KSC-SDK-Update" />
             <option value="$PROJECT_DIR$/KSC-SDK-Util" />
             <option value="$PROJECT_DIR$/KSC-ScreenRecord-Demo" />

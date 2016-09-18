@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ContinueTransform/ContinueTransform.iml" filepath="$PROJECT_DIR$/ContinueTransform/ContinueTransform.iml" />
       <module fileurl="file://$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" filepath="$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FragmentTest/FragmentTest.iml" filepath="$PROJECT_DIR$/FragmentTest/FragmentTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-AudioRecord-Demo/KSC-AudioRecord-Demo.iml" filepath="$PROJECT_DIR$/KSC-AudioRecord-Demo/KSC-AudioRecord-Demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/KSC-MobileAds-Demo/KSC-MobileAds-Demo.iml" filepath="$PROJECT_DIR$/KSC-MobileAds-Demo/KSC-MobileAds-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Analytics/KSC-SDK-Analytics.iml" filepath="$PROJECT_DIR$/KSC-SDK-Analytics/KSC-SDK-Analytics.iml" />
-      <module fileurl="file://$PROJECT_DIR$/KSC-SDK-MobileAds/KSC-SDK-MobileAds.iml" filepath="$PROJECT_DIR$/KSC-SDK-MobileAds/KSC-SDK-MobileAds.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Update/KSC-SDK-Update.iml" filepath="$PROJECT_DIR$/KSC-SDK-Update/KSC-SDK-Update.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" filepath="$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-ScreenRecord-Demo/KSC-ScreenRecord-Demo.iml" filepath="$PROJECT_DIR$/KSC-ScreenRecord-Demo/KSC-ScreenRecord-Demo.iml" />
