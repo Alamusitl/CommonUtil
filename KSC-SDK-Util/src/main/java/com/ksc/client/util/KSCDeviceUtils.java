@@ -66,10 +66,10 @@ public class KSCDeviceUtils {
      * @return
      */
     public static String getUUID(Context context) {
-        String uuid = KSCPreferencesUtils.getUUID(context);
+        String uuid = (String) KSCPreferencesUtils.get(context, "UUID", "");
         if (uuid == null) {
             uuid = UUID.randomUUID().toString();
-            KSCPreferencesUtils.setUUID(context, uuid);
+            KSCPreferencesUtils.put(context, "UUID", uuid);
         }
         return uuid;
     }

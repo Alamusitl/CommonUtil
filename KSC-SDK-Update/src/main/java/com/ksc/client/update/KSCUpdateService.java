@@ -23,9 +23,9 @@ import com.ksc.client.toolbox.HttpRequestParam;
 import com.ksc.client.toolbox.HttpRequestRunnable;
 import com.ksc.client.toolbox.HttpResponse;
 import com.ksc.client.update.entity.KSCUpdateInfo;
+import com.ksc.client.util.KSCAppUtils;
 import com.ksc.client.util.KSCLog;
 import com.ksc.client.util.KSCMD5Utils;
-import com.ksc.client.util.KSCPackageUtils;
 import com.ksc.client.util.KSCStorageUtils;
 
 import java.io.BufferedInputStream;
@@ -370,7 +370,7 @@ public class KSCUpdateService extends Service {
         handler.post(new Runnable() {
             @Override
             public void run() {
-                String path = Environment.getExternalStorageDirectory() + File.separator + Environment.DIRECTORY_DOWNLOADS + File.separator + KSCPackageUtils.getPackageName(context) + ".apk";
+                String path = Environment.getExternalStorageDirectory() + File.separator + Environment.DIRECTORY_DOWNLOADS + File.separator + KSCAppUtils.getPackageName(context) + ".apk";
                 int result = PatchClient.applyPatch(mContext.getApplicationContext(), path, filePath);
                 if (result == 0) {
                     clearCache();

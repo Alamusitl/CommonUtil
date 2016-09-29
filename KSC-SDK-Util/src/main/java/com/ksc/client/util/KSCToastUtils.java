@@ -1,6 +1,8 @@
 package com.ksc.client.util;
 
-import android.app.Activity;
+import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.Toast;
 
 /**
@@ -8,19 +10,48 @@ import android.widget.Toast;
  */
 public class KSCToastUtils {
 
-    public static void showTaost(Activity activity, String msg) {
-        showToast(activity, msg, Toast.LENGTH_SHORT);
+    public static boolean mIsShowToast = true;
+
+    public static void showToast(Context context, String msg) {
+        if (mIsShowToast) {
+            showToast(context, msg, Toast.LENGTH_SHORT);
+        }
     }
 
-    public static void showToastLong(Activity activity, String msg) {
-        showToast(activity, msg, Toast.LENGTH_LONG);
+    public static void showToast(Context context, int msg) {
+        if (mIsShowToast) {
+            showToast(context, msg, Toast.LENGTH_SHORT);
+        }
     }
 
-    public static void showToast(final Activity activity, final String msg, final int duration) {
-        activity.runOnUiThread(new Runnable() {
+    public static void showToastLong(Context context, String msg) {
+        if (mIsShowToast) {
+            showToast(context, msg, Toast.LENGTH_LONG);
+        }
+    }
+
+    public static void showToastLong(Context context, int msg) {
+        if (mIsShowToast) {
+            showToast(context, msg, Toast.LENGTH_LONG);
+        }
+    }
+
+    private static void showToast(final Context context, final String msg, final int duration) {
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(activity, msg, duration).show();
+                Toast.makeText(context, msg, duration).show();
+            }
+        });
+    }
+
+    private static void showToast(final Context context, final int msg, final int duration) {
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(context, msg, duration).show();
             }
         });
     }

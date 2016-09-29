@@ -11,6 +11,18 @@ public class KSCLog {
     private static final String TAG = KSCLog.class.getSimpleName();
     public static boolean mIsDebug = false;
 
+    public static void v(String info) {
+        if (mIsDebug) {
+            Log.d(TAG, info);
+        }
+    }
+
+    public static void v(String tag, String info) {
+        if (mIsDebug) {
+            Log.d(tag, info);
+        }
+    }
+
     public static void d(String info) {
         if (mIsDebug) {
             Log.d(TAG, info);
@@ -47,11 +59,15 @@ public class KSCLog {
         Log.e(TAG, errorInfo);
     }
 
-    public static void e(String tag, String info) {
-        Log.i(tag, info);
+    public static void e(String tag, String errorInfo) {
+        Log.i(tag, errorInfo);
     }
 
     public static void e(String errorInfo, Throwable t) {
         Log.e(TAG, errorInfo, t);
+    }
+
+    public static void e(String tag, String errorInfo, Throwable t) {
+        Log.e(tag, errorInfo, t);
     }
 }

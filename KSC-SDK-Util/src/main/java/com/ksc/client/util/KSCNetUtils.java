@@ -2,7 +2,9 @@ package com.ksc.client.util;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
@@ -17,6 +19,7 @@ import java.net.NetworkInterface;
 import java.util.Enumeration;
 
 /**
+ * 网络辅助类
  * Created by Alamusi on 2016/6/23.
  */
 public class KSCNetUtils {
@@ -264,5 +267,22 @@ public class KSCNetUtils {
         return networkInfo != null && networkInfo.isConnected() && networkInfo.getType() == ConnectivityManager.TYPE_WIFI;
     }
 
+    /**
+     * 打开网络设置界面
+     *
+     * @param activity
+     */
+    public static void openNetSettings(Activity activity) {
+        Intent intent;
+        if (android.os.Build.VERSION.SDK_INT > 10) {
+            intent = new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
+        } else {
+            intent = new Intent();
+            ComponentName component = new ComponentName("com.android.settings", "com.android.settings.WirelessSettings");
+            intent.setComponent(component);
+            intent.setAction("android.intent.action.VIEW");
+        }
+        activity.startActivity(intent);
+    }
 
 }

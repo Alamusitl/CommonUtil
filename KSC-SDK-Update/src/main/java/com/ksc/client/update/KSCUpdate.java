@@ -19,9 +19,9 @@ import com.ksc.client.update.callback.CheckUpdateCallBack;
 import com.ksc.client.update.callback.UpdateCallBack;
 import com.ksc.client.update.entity.KSCUpdateInfo;
 import com.ksc.client.update.view.KSCUpdateDialogActivity;
+import com.ksc.client.util.KSCAppUtils;
 import com.ksc.client.util.KSCHelpUtils;
 import com.ksc.client.util.KSCLog;
-import com.ksc.client.util.KSCPackageUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -130,7 +130,7 @@ public class KSCUpdate {
         }
         mActivity = activity;
         mCheckUpdateCallBack = checkUpdateCallBack;
-        String param = "app_id=" + appId + "&full_id=" + KSCPackageUtils.getVersionCode(activity) + "&resource_id=" + resourceVersion + "&channel=" + channel + "&platform=android";
+        String param = "app_id=" + appId + "&full_id=" + KSCAppUtils.getVersionCode(activity) + "&resource_id=" + resourceVersion + "&channel=" + channel + "&platform=android";
         String encryptParam = KSCHelpUtils.encodeParam(param, KSCUpdateKeyCode.AES_PRIVATE_KEY);
         if (encryptParam == null) {
             mCheckUpdateCallBack.onError("checkUpdate encrypt param error, try again!");
