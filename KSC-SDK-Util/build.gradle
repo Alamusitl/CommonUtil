@@ -14,13 +14,13 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        debug {
             minifyEnabled false
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        abortOnError false
     }
 }
 
@@ -29,8 +29,8 @@ task makeUtilJar(type: Jar, dependsOn: build) {
     baseName 'sdk-util'
     from('build/intermediates/classes/release')
     exclude('android/')
-    exclude('com/ksc/client/util/BuildConfig.class', 'com/ksc/client/util/R.class',)
-    exclude('com/ksc/client/util/R$attr.class', 'com/ksc/client/util/R$string.class')
+    exclude('com/afk/client/util/BuildConfig.class', 'com/afk/client/util/R.class',)
+    exclude('com/afk/client/util/R$attr.class', 'com/afk/client/util/R$string.class')
 }
 
 task ProguardUtilJar(type: ProGuardTask, dependsOn: makeUtilJar) {
