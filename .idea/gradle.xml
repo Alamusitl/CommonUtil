@@ -20,20 +20,7 @@
             <option value="$PROJECT_DIR$/SensorsAnalyticsSDK" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/DeleteTestDir" />
-            <option value="$PROJECT_DIR$/KSC-AudioRecord-Demo" />
-            <option value="$PROJECT_DIR$/KSC-SDK-Analytics" />
-            <option value="$PROJECT_DIR$/KSC-SDK-Update" />
-            <option value="$PROJECT_DIR$/KSC-SDK-Util" />
-            <option value="$PROJECT_DIR$/KSC-ScreenRecord-Demo" />
-            <option value="$PROJECT_DIR$/KSC-Update-Demo" />
-            <option value="$PROJECT_DIR$/KSC-Util-Demo" />
-            <option value="$PROJECT_DIR$/SensorsAnalyticsSDK" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
