@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.content.Context;
 import android.util.TypedValue;
@@ -7,7 +7,7 @@ import android.util.TypedValue;
  * 常用单位转换的辅助类
  * Created by Alamusi on 2016/9/29.
  */
-public class KSCDensityUtils {
+public class DensityUtils {
 
     /**
      * dp转px

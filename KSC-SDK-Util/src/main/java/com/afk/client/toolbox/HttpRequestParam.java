@@ -1,4 +1,4 @@
-package com.ksc.client.toolbox;
+package com.afk.client.toolbox;
 
 import java.util.Map;
 
@@ -52,12 +52,12 @@ public class HttpRequestParam {
         return mPostParams;
     }
 
-    public void setBody(byte[] body) {
-        mPostParams = body;
-    }
-
     public void setBody(String params) {
         mPostParams = params.getBytes();
+    }
+
+    public void setBody(byte[] body) {
+        mPostParams = body;
     }
 
     public Map<String, String> getHeaders() {

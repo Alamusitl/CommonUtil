@@ -9,19 +9,19 @@ import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 
-import com.ksc.client.toolbox.HttpError;
-import com.ksc.client.toolbox.HttpErrorListener;
-import com.ksc.client.toolbox.HttpListener;
-import com.ksc.client.toolbox.HttpRequestManager;
-import com.ksc.client.toolbox.HttpRequestParam;
-import com.ksc.client.toolbox.HttpResponse;
+import com.afk.client.toolbox.HttpError;
+import com.afk.client.toolbox.HttpErrorListener;
+import com.afk.client.toolbox.HttpListener;
+import com.afk.client.toolbox.HttpRequestManager;
+import com.afk.client.toolbox.HttpRequestParam;
+import com.afk.client.toolbox.HttpResponse;
+import com.afk.client.util.AppUtils;
+import com.afk.client.util.HelpUtils;
+import com.afk.client.util.Logger;
 import com.ksc.client.update.callback.CheckUpdateCallBack;
 import com.ksc.client.update.callback.UpdateCallBack;
 import com.ksc.client.update.entity.KSCUpdateInfo;
 import com.ksc.client.update.view.KSCUpdateDialogActivity;
-import com.ksc.client.util.KSCAppUtils;
-import com.ksc.client.util.KSCHelpUtils;
-import com.ksc.client.util.KSCLog;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,7 +60,7 @@ public class KSCUpdate {
                     break;
                 case KSCUpdateStatusCode.EVENT_UPDATE_START:
                     if (mUpdateCallBack != null) {
-                        mUpdateCallBack.onUpdateStart((String) msg.obj, msg.arg1, KSCHelpUtils.changeToStr(msg.arg1));
+                        mUpdateCallBack.onUpdateStart((String) msg.obj, msg.arg1, HelpUtils.changeToStr(msg.arg1));
                     }
                     break;
                 case KSCUpdateStatusCode.EVENT_UPDATE_CANCEL:
@@ -75,7 +75,7 @@ public class KSCUpdate {
                     break;
                 case KSCUpdateStatusCode.EVENT_UPDATE_DOWNLOADING:
                     if (mUpdateCallBack != null) {
-                        mUpdateCallBack.onUpdating((String) msg.obj, msg.arg1, KSCHelpUtils.changeToStr(msg.arg1), msg.arg2);
+                        mUpdateCallBack.onUpdating((String) msg.obj, msg.arg1, HelpUtils.changeToStr(msg.arg1), msg.arg2);
                     }
                     break;
                 case KSCUpdateStatusCode.EVENT_UPDATE_FINISH:
@@ -109,29 +109,29 @@ public class KSCUpdate {
      */
     public void checkUpdate(final Activity activity, String appId, String channel, final String resourceVersion, final boolean useSelf, CheckUpdateCallBack checkUpdateCallBack) {
         if (activity == null) {
-            KSCLog.e("KSCUpdate check param activity is null, please check!");
+            Logger.e("KSCUpdate check param activity is null, please check!");
             return;
         }
         if (TextUtils.isEmpty(appId)) {
-            KSCLog.e("KSCUpdate check param appId is empty, please check!");
+            Logger.e("KSCUpdate check param appId is empty, please check!");
             return;
         }
         if (TextUtils.isEmpty(channel)) {
-            KSCLog.e("KSCUpdate check param channel is empty, please check!");
+            Logger.e("KSCUpdate check param channel is empty, please check!");
             return;
         }
         if (TextUtils.isEmpty(resourceVersion)) {
-            KSCLog.e("KSCUpdate check param resourceVersion is empty, please check!");
+            Logger.e("KSCUpdate check param resourceVersion is empty, please check!");
             return;
         }
         if (checkUpdateCallBack == null) {
-            KSCLog.e("KSCUpdate check param checkUpdateCallBack is null, please check!");
+            Logger.e("KSCUpdate check param checkUpdateCallBack is null, please check!");
             return;
         }
         mActivity = activity;
         mCheckUpdateCallBack = checkUpdateCallBack;
-        String param = "app_id=" + appId + "&full_id=" + KSCAppUtils.getVersionCode(activity) + "&resource_id=" + resourceVersion + "&channel=" + channel + "&platform=android";
-        String encryptParam = KSCHelpUtils.encodeParam(param, KSCUpdateKeyCode.AES_PRIVATE_KEY);
+        String param = "app_id=" + appId + "&full_id=" + AppUtils.getVersionCode(activity) + "&resource_id=" + resourceVersion + "&channel=" + channel + "&platform=android";
+        String encryptParam = HelpUtils.encodeParam(param, KSCUpdateKeyCode.AES_PRIVATE_KEY);
         if (encryptParam == null) {
             mCheckUpdateCallBack.onError("checkUpdate encrypt param error, try again!");
             return;
@@ -143,7 +143,7 @@ public class KSCUpdate {
             public void onResponse(HttpResponse response) {
                 Message message = mHandler.obtainMessage();
                 if (response.getCode() == HttpURLConnection.HTTP_OK) {
-                    String versionList = KSCHelpUtils.decodeParam(response.getBodyString(), KSCUpdateKeyCode.AES_PRIVATE_KEY);
+                    String versionList = HelpUtils.decodeParam(response.getBodyString(), KSCUpdateKeyCode.AES_PRIVATE_KEY);
                     try {
                         JSONObject list = new JSONObject(versionList);
                         if (list.has("detail")) {
@@ -164,12 +164,12 @@ public class KSCUpdate {
                             }
                         }
                     } catch (JSONException e) {
-                        KSCLog.e("update response convert error, JSONException", e);
+                        Logger.e("update response convert error, JSONException", e);
                         message.what = KSCUpdateStatusCode.EVENT_UPDATE_CHECK_FAIL;
                         message.obj = e.getMessage();
                     }
                 } else {
-                    KSCLog.e("check update error, code : " + response.getCode() + " , message : " + response.getBodyString());
+                    Logger.e("check update error, code : " + response.getCode() + " , message : " + response.getBodyString());
                     message.what = KSCUpdateStatusCode.EVENT_UPDATE_CHECK_FAIL;
                     message.obj = response.getBodyString();
                 }
@@ -178,7 +178,7 @@ public class KSCUpdate {
         }, new HttpErrorListener() {
             @Override
             public void onErrorResponse(HttpError error) {
-                KSCLog.e("get update info fail," + (error.httpResponse != null ? error.httpResponse.getCode() : 0) + ":" + (error.httpResponse != null ? error.httpResponse.getBodyString() : null), error);
+                Logger.e("get update info fail," + (error.httpResponse != null ? error.httpResponse.getCode() : 0) + ":" + (error.httpResponse != null ? error.httpResponse.getBodyString() : null), error);
                 mHandler.sendMessage(mHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_CHECK_FAIL, error.getMessage()));
             }
         });
@@ -281,7 +281,7 @@ public class KSCUpdate {
                 updateInfoList.add(updateInfo);
             }
         } catch (JSONException e) {
-            KSCLog.e("can not format String to JSON, String : [" + allInfo + "]", e);
+            Logger.e("can not format String to JSON, String : [" + allInfo + "]", e);
         }
         return updateInfoList;
     }
@@ -301,11 +301,11 @@ public class KSCUpdate {
     }
 
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
-        KSCLog.d("KSCUpdate onActivityResult begin called!");
+        Logger.d("KSCUpdate onActivityResult begin called!");
         if (requestCode == 10000) {
             switch (resultCode) {
                 case Activity.RESULT_CANCELED:
-                    KSCLog.d("user cancel update!");
+                    Logger.d("user cancel update!");
                     mHandler.sendMessage(mHandler.obtainMessage(KSCUpdateStatusCode.EVENT_UPDATE_CANCEL, ""));
                     break;
                 case Activity.RESULT_OK:
@@ -320,7 +320,7 @@ public class KSCUpdate {
                     break;
             }
         }
-        KSCLog.d("KSCUpdate onActivityResult end called!");
+        Logger.d("KSCUpdate onActivityResult end called!");
     }
 
     private void release() {

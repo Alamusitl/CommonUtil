@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.content.Context;
 import android.os.Build;
@@ -12,7 +12,7 @@ import java.util.UUID;
 /**
  * Created by Alamusi on 2016/6/22.
  */
-public class KSCDeviceUtils {
+public class DeviceUtils {
 
     /**
      * 获得设备ID, 优先级：ANDROID_ID -> IMEI -> UUID
@@ -54,7 +54,7 @@ public class KSCDeviceUtils {
                 }
             }
         } catch (SecurityException e) {
-            KSCLog.e(e.getMessage());
+            Logger.e(e.getMessage());
         }
         return "";
     }
@@ -66,10 +66,10 @@ public class KSCDeviceUtils {
      * @return
      */
     public static String getUUID(Context context) {
-        String uuid = (String) KSCPreferencesUtils.get(context, "UUID", "");
+        String uuid = (String) PreferencesUtils.get(context, "UUID", "");
         if (uuid == null) {
             uuid = UUID.randomUUID().toString();
-            KSCPreferencesUtils.put(context, "UUID", uuid);
+            PreferencesUtils.put(context, "UUID", uuid);
         }
         return uuid;
     }

@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
@@ -7,7 +7,7 @@ import javax.crypto.spec.SecretKeySpec;
 /**
  * Created by Alamusi on 2016/8/15.
  */
-public class KSCAESUtils {
+public class AESUtils {
 
     /**
      * AES加密
@@ -18,11 +18,11 @@ public class KSCAESUtils {
      */
     public static byte[] encrypt(String content, String privateKey) {
         if (content == null) {
-            KSCLog.e("content is null!");
+            Logger.e("content is null!");
             return null;
         }
         if (privateKey == null || privateKey.length() != 16) {
-            KSCLog.e("key is null or length is not 16!");
+            Logger.e("key is null or length is not 16!");
             return null;
         }
         try {
@@ -33,7 +33,7 @@ public class KSCAESUtils {
             cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, new IvParameterSpec("0102030405060708".getBytes()));
             return cipher.doFinal(byteContent);
         } catch (Exception e) {
-            KSCLog.e("AES Encrypt Exception, " + e.getMessage(), e);
+            Logger.e("AES Encrypt Exception, " + e.getMessage(), e);
             return null;
         }
     }
@@ -47,11 +47,11 @@ public class KSCAESUtils {
      */
     public static byte[] decrypt(byte[] content, String privateKey) {
         if (content == null) {
-            KSCLog.e("content is null!");
+            Logger.e("content is null!");
             return null;
         }
         if (privateKey == null || privateKey.length() != 16) {
-            KSCLog.e("key is null or length is not 16!");
+            Logger.e("key is null or length is not 16!");
             return null;
         }
         try {
@@ -61,7 +61,7 @@ public class KSCAESUtils {
             cipher.init(Cipher.DECRYPT_MODE, key, new IvParameterSpec("0102030405060708".getBytes()));
             return cipher.doFinal(content);
         } catch (Exception e) {
-            KSCLog.e("AES Decrypt Exception, " + e.getMessage(), e);
+            Logger.e("AES Decrypt Exception, " + e.getMessage(), e);
             return null;
         }
     }

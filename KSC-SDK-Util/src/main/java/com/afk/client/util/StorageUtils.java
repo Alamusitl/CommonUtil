@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.content.Context;
 import android.os.Build;
@@ -20,7 +20,7 @@ import java.io.OutputStream;
 /**
  * Created by Alamusi on 2016/6/22.
  */
-public class KSCStorageUtils {
+public class StorageUtils {
 
     /**
      * 递归删除文件夹及文件夹下的所有文件
@@ -112,19 +112,19 @@ public class KSCStorageUtils {
             bis.close();
             return true;
         } catch (IOException e) {
-            KSCLog.e("can not find " + fileName + " from assets");
+            Logger.e("can not find " + fileName + " from assets");
             if (output != null) {
                 try {
                     output.close();
                 } catch (IOException ioe) {
-                    KSCLog.e("error in close stream", ioe);
+                    Logger.e("error in close stream", ioe);
                 }
             }
             if (bis != null) {
                 try {
                     bis.close();
                 } catch (IOException ioe) {
-                    KSCLog.e("error in close stream", ioe);
+                    Logger.e("error in close stream", ioe);
                 }
             }
         }
@@ -146,7 +146,7 @@ public class KSCStorageUtils {
             fis = new FileInputStream(file);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            KSCLog.e("file not found ", e);
+            Logger.e("file not found ", e);
         }
         return fis;
     }
@@ -170,7 +170,7 @@ public class KSCStorageUtils {
      */
     public static String getSDCardTotalSize(Context context) {
         if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            KSCLog.e("sd card is not available, please check!");
+            Logger.e("sd card is not available, please check!");
             return null;
         }
         File path = Environment.getExternalStorageDirectory();
@@ -185,7 +185,7 @@ public class KSCStorageUtils {
      */
     public static String getSDCardAvailableSize(Context context) {
         if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            KSCLog.e("sd card is not available, please check!");
+            Logger.e("sd card is not available, please check!");
             return null;
         }
         File path = Environment.getExternalStorageDirectory();

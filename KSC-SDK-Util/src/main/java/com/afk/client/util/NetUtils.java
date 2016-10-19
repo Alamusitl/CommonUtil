@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.Manifest;
 import android.app.Activity;
@@ -22,7 +22,7 @@ import java.util.Enumeration;
  * 网络辅助类
  * Created by Alamusi on 2016/6/23.
  */
-public class KSCNetUtils {
+public class NetUtils {
 
     public static final int NETWORK_TYPE_INVALID = 0;
     public static final int NETWORK_TYPE_2G = 1;
@@ -141,7 +141,7 @@ public class KSCNetUtils {
             if (manager == null) {
                 return cellId;
             }
-            if (KSCPermissionUtils.checkRequestPermission(context, Manifest.permission_group.LOCATION, KSCPermissionUtils.REQUEST_PERMISSION_CODE)) {
+            if (PermissionUtils.checkRequestPermission(context, Manifest.permission_group.LOCATION, PermissionUtils.REQUEST_PERMISSION_CODE)) {
                 String imsi = manager.getSubscriberId();
                 if (imsi == null || imsi.equals("")) {
                     return cellId;
@@ -159,7 +159,7 @@ public class KSCNetUtils {
                 }
             }
         } catch (Exception e) {
-            KSCLog.e("get cell id exception", e);
+            Logger.e("get cell id exception", e);
         }
         return cellId;
     }
@@ -189,7 +189,7 @@ public class KSCNetUtils {
                 }
             }
         } catch (Exception ex) {
-            KSCLog.e(ex.getMessage() == null ? "" : ex.getMessage(), ex);
+            Logger.e(ex.getMessage() == null ? "" : ex.getMessage(), ex);
         }
         return ip;
     }
@@ -211,7 +211,7 @@ public class KSCNetUtils {
                 }
             }
         } catch (SecurityException ex) {
-            KSCLog.e(ex.getMessage() == null ? "" : ex.getMessage(), ex);
+            Logger.e(ex.getMessage() == null ? "" : ex.getMessage(), ex);
         }
         return mac;
     }

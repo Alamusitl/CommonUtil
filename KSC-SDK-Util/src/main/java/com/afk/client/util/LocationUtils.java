@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.Manifest;
 import android.app.Activity;
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by ALAMUSI on 2016/8/28.
  */
-public class KSCLocationUtils {
+public class LocationUtils {
 
     public static double getLongitude(Activity context) {
         Location location = getLocation(context);
@@ -39,7 +39,7 @@ public class KSCLocationUtils {
         }
         List<String> providers = lm.getProviders(true);
         if (providers == null || providers.size() == 0) {
-            KSCLog.d("gps service is closed!");
+            Logger.d("gps service is closed!");
             return null;
         }
         if (providers.contains(LocationManager.GPS_PROVIDER)) {
@@ -47,10 +47,10 @@ public class KSCLocationUtils {
         } else if (providers.contains(LocationManager.NETWORK_PROVIDER)) {
             locationProvider = LocationManager.NETWORK_PROVIDER;
         } else {
-            KSCLog.e("get Location: no useless location provider");
+            Logger.e("get Location: no useless location provider");
             return null;
         }
-        if (KSCPermissionUtils.checkRequestPermission(context, Manifest.permission_group.LOCATION, KSCPermissionUtils.REQUEST_PERMISSION_CODE)) {
+        if (PermissionUtils.checkRequestPermission(context, Manifest.permission_group.LOCATION, PermissionUtils.REQUEST_PERMISSION_CODE)) {
             return lm.getLastKnownLocation(locationProvider);
         } else {
             return null;

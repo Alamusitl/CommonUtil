@@ -1,4 +1,4 @@
-package com.ksc.client.toolbox;
+package com.afk.client.toolbox;
 
 import java.net.HttpURLConnection;
 import java.util.Collections;

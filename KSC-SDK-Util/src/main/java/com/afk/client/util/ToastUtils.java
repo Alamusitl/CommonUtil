@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.content.Context;
 import android.os.Handler;
@@ -8,7 +8,7 @@ import android.widget.Toast;
 /**
  * Created by Alamusi on 2016/7/5.
  */
-public class KSCToastUtils {
+public class ToastUtils {
 
     public static boolean mIsShowToast = true;
 

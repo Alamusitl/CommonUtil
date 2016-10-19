@@ -1,8 +1,8 @@
-package com.ksc.client.toolbox;
+package com.afk.client.toolbox;
 
 import android.os.Handler;
 
-import com.ksc.client.util.KSCLog;
+import com.afk.client.util.Logger;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
@@ -44,7 +44,7 @@ public class HttpRequestRunnable implements Runnable {
             URL parseUrl = new URL(url);
             HttpURLConnection connection = HttpUtils.openConnection(parseUrl, mRequestParams);
             if (connection == null) {
-                KSCLog.e("open connection fail, url: " + url);
+                Logger.e("open connection fail, url: " + url);
                 if (mHttpErrorListener != null) {
                     mHttpErrorListener.onErrorResponse(new HttpError("connection can not be null"));
                 }
@@ -58,7 +58,7 @@ public class HttpRequestRunnable implements Runnable {
             HttpUtils.setConnectionParametersForRequest(connection, mRequestParams);
             connection.connect();
             int responseCode = connection.getResponseCode();
-            KSCLog.d("Connection response code : " + responseCode + ", url=" + url);
+            Logger.d("Connection response code : " + responseCode + ", url=" + url);
             if (responseCode == -1) {
                 throw new IOException("Could not retrieve response code from HttpUrlConnection");
             }
@@ -83,13 +83,13 @@ public class HttpRequestRunnable implements Runnable {
             mIsRunning = false;
         } catch (MalformedURLException e) {
             mIsRunning = false;
-            KSCLog.e("can not malformed url:" + mRequestParams.getUrl());
+            Logger.e("can not malformed url:" + mRequestParams.getUrl());
             if (mHttpErrorListener != null) {
                 mHttpErrorListener.onErrorResponse(new HttpError(e.getMessage()));
             }
         } catch (IOException e) {
             mIsRunning = false;
-            KSCLog.e("can not open connection, url:" + mRequestParams.getUrl());
+            Logger.e("can not open connection, url:" + mRequestParams.getUrl());
             if (mHttpErrorListener != null) {
                 mHttpErrorListener.onErrorResponse(new HttpError(e.getMessage()));
             }

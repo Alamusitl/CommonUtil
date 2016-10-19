@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.Manifest;
 import android.app.Activity;
@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Created by Alamusi on 2016/9/9.
  */
-public class KSCPermissionUtils {
+public class PermissionUtils {
 
     protected static final int REQUEST_PERMISSION_CODE = 1000;
 
@@ -24,7 +24,7 @@ public class KSCPermissionUtils {
      * @param activity 上下文
      */
     public static void requestNeedPermission(final Activity activity) {
-        KSCLog.d("request need permissions begin");
+        Logger.d("request need permissions begin");
         mAllPrivatePermissions.put(Manifest.permission_group.LOCATION, true);
         mAllPrivatePermissions.put(Manifest.permission_group.STORAGE, true);
         mAllPrivatePermissions.put(Manifest.permission.READ_PHONE_STATE, true);
@@ -66,13 +66,13 @@ public class KSCPermissionUtils {
                     builder.append(", ").append(shouldShowRequestPermissions.get(i));
                 }
                 final String msg = builder.toString();
-                KSCToastUtils.showToast(activity, msg);
+                ToastUtils.showToast(activity, msg);
             }
             ActivityCompat.requestPermissions(activity, needRequestPermissions.toArray(new String[needRequestPermissions.size()]), REQUEST_PERMISSION_CODE);
         }
-        KSCLog.d("request need permissions end");
+        Logger.d("request need permissions end");
         for (String permission : mAllPrivatePermissions.keySet()) {
-            KSCLog.d("permission " + permission + " status= " + mAllPrivatePermissions.get(permission));
+            Logger.d("permission " + permission + " status= " + mAllPrivatePermissions.get(permission));
         }
     }
 
@@ -92,7 +92,7 @@ public class KSCPermissionUtils {
                     } else {
                         mAllPrivatePermissions.put(permissions[i], false);
                     }
-                    KSCLog.d("onRequestPermissionsResult " + permissions[i] + " status [" + mAllPrivatePermissions.get(permissions[i]));
+                    Logger.d("onRequestPermissionsResult " + permissions[i] + " status [" + mAllPrivatePermissions.get(permissions[i]));
                 }
                 break;
         }
@@ -125,7 +125,7 @@ public class KSCPermissionUtils {
     public static boolean checkRequestPermission(final Activity activity, String permission, int requestCode) {
         if (!checkPermission(permission)) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)) {
-                KSCToastUtils.showToast(activity, "您已禁止权限，请重新开启");
+                ToastUtils.showToast(activity, "您已禁止权限，请重新开启");
             }
             ActivityCompat.requestPermissions(activity, new String[]{permission}, requestCode);
             return false;

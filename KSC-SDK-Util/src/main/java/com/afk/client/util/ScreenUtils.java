@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.view.WindowManager;
  * 屏幕相关的辅助类
  * Created by Alamusi on 2016/9/29.
  */
-public class KSCScreenUtils {
+public class ScreenUtils {
 
     /**
      * 获得屏幕宽度

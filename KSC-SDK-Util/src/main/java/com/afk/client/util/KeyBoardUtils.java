@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.content.Context;
 import android.view.inputmethod.InputMethodManager;
@@ -8,7 +8,7 @@ import android.widget.EditText;
  * 软键盘辅助类
  * Created by Alamusi on 2016/9/29.
  */
-public class KSCKeyBoardUtils {
+public class KeyBoardUtils {
 
     /**
      * 打卡软键盘

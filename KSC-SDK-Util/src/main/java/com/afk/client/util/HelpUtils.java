@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.util.Base64;
 
@@ -10,7 +10,7 @@ import java.text.DecimalFormat;
 /**
  * Created by Alamusi on 2016/6/23.
  */
-public class KSCHelpUtils {
+public class HelpUtils {
 
     /**
      * 比较两个数字的大小，当第一个参数大于第二个参数时返回1，等于是0，反之-1
@@ -60,27 +60,27 @@ public class KSCHelpUtils {
      */
     public static String encodeParam(String content, String key) {
         if (content == null) {
-            KSCLog.e("content is null!");
+            Logger.e("content is null!");
             return null;
         }
         if (key == null || key.length() != 16) {
-            KSCLog.e("key is null or length is not 16!");
+            Logger.e("key is null or length is not 16!");
             return null;
         }
-        byte[] encryptParam = KSCAESUtils.encrypt(content, key);
+        byte[] encryptParam = AESUtils.encrypt(content, key);
         if (encryptParam == null) {
-            KSCLog.e("AES encrypt param error!");
+            Logger.e("AES encrypt param error!");
             return null;
         }
         String base64Param = Base64.encodeToString(encryptParam, Base64.DEFAULT);
         if (base64Param == null) {
-            KSCLog.e("Base64 encode param error!");
+            Logger.e("Base64 encode param error!");
             return null;
         }
         try {
             return URLEncoder.encode(base64Param, "UTF-8");
         } catch (UnsupportedEncodingException e) {
-            KSCLog.e("url encode param exception", e);
+            Logger.e("url encode param exception", e);
             return null;
         }
     }
@@ -94,28 +94,28 @@ public class KSCHelpUtils {
      */
     public static String decodeParam(String content, String key) {
         if (content == null) {
-            KSCLog.e("content is null!");
+            Logger.e("content is null!");
             return null;
         }
         if (key == null || key.length() != 16) {
-            KSCLog.e("key is null or length is not 16!");
+            Logger.e("key is null or length is not 16!");
             return null;
         }
         String decodeParam;
         try {
             decodeParam = URLDecoder.decode(content, "UTF-8");
         } catch (UnsupportedEncodingException e) {
-            KSCLog.e("url decode param exception", e);
+            Logger.e("url decode param exception", e);
             return null;
         }
         byte[] base64Param = Base64.decode(decodeParam, Base64.DEFAULT);
         if (base64Param == null) {
-            KSCLog.e("Base64 decode param error!");
+            Logger.e("Base64 decode param error!");
             return null;
         }
-        byte[] decryptParam = KSCAESUtils.decrypt(base64Param, key);
+        byte[] decryptParam = AESUtils.decrypt(base64Param, key);
         if (decryptParam == null) {
-            KSCLog.e("AES decrypt param error!");
+            Logger.e("AES decrypt param error!");
             return null;
         }
         return new String(decryptParam);

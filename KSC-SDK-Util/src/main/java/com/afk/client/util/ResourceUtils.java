@@ -1,11 +1,11 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.content.Context;
 
 /**
  * Created by Alamusi on 2016/6/29.
  */
-public class KSCResourceUtils {
+public class ResourceUtils {
 
     public static int getStringId(Context context, String name) {
         return context.getResources().getIdentifier(name, "string", context.getPackageName());

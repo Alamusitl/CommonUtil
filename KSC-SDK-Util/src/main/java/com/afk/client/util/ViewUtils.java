@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -16,10 +16,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Created by Alamusi on 2016/8/19.
  */
-public class KSCViewUtils {
+public class ViewUtils {
 
     private static final AtomicInteger mNextGenerateId = new AtomicInteger(1);
-    private static final String TAG = KSCViewUtils.class.getSimpleName();
+    private static final String TAG = ViewUtils.class.getSimpleName();
 
     /**
      * Generate a value suitable for use in setId(int).

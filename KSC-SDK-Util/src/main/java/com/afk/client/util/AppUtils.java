@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -11,7 +11,7 @@ import android.content.pm.ServiceInfo;
 /**
  * Created by Alamusi on 2016/8/4.
  */
-public class KSCAppUtils {
+public class AppUtils {
 
     /**
      * 获得应用名称
@@ -25,7 +25,7 @@ public class KSCAppUtils {
             int labelRes = packageInfo.applicationInfo.labelRes;
             return context.getResources().getString(labelRes);
         } catch (PackageManager.NameNotFoundException e) {
-            KSCLog.e("can not found package " + context.getPackageName(), e);
+            Logger.e("can not found package " + context.getPackageName(), e);
         }
         return null;
     }
@@ -41,7 +41,7 @@ public class KSCAppUtils {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
             return packageInfo.packageName;
         } catch (PackageManager.NameNotFoundException e) {
-            KSCLog.e("can not found package " + context.getPackageName(), e);
+            Logger.e("can not found package " + context.getPackageName(), e);
         }
         return null;
     }
@@ -57,7 +57,7 @@ public class KSCAppUtils {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
             return packageInfo.versionCode;
         } catch (PackageManager.NameNotFoundException e) {
-            KSCLog.e("can not found package " + context.getPackageName(), e);
+            Logger.e("can not found package " + context.getPackageName(), e);
         }
         return 0;
     }
@@ -73,7 +73,7 @@ public class KSCAppUtils {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
             return packageInfo.versionName;
         } catch (PackageManager.NameNotFoundException e) {
-            KSCLog.e("can not found package " + context.getPackageName(), e);
+            Logger.e("can not found package " + context.getPackageName(), e);
         }
         return null;
     }
@@ -95,7 +95,7 @@ public class KSCAppUtils {
                 }
             }
         } catch (PackageManager.NameNotFoundException e) {
-            KSCLog.e("can not found package " + context.getPackageName(), e);
+            Logger.e("can not found package " + context.getPackageName(), e);
         }
         return false;
     }
@@ -117,7 +117,7 @@ public class KSCAppUtils {
                 }
             }
         } catch (PackageManager.NameNotFoundException e) {
-            KSCLog.e("can not found package " + context.getPackageName(), e);
+            Logger.e("can not found package " + context.getPackageName(), e);
         }
         return false;
     }
@@ -139,7 +139,7 @@ public class KSCAppUtils {
                 }
             }
         } catch (PackageManager.NameNotFoundException e) {
-            KSCLog.e("can not found package " + context.getPackageName(), e);
+            Logger.e("can not found package " + context.getPackageName(), e);
         }
         return false;
     }
@@ -161,7 +161,7 @@ public class KSCAppUtils {
                 }
             }
         } catch (PackageManager.NameNotFoundException e) {
-            KSCLog.e("can not found package " + context.getPackageName(), e);
+            Logger.e("can not found package " + context.getPackageName(), e);
         }
         return false;
     }
@@ -183,7 +183,7 @@ public class KSCAppUtils {
                 }
             }
         } catch (PackageManager.NameNotFoundException e) {
-            KSCLog.e("can not found package " + context.getPackageName(), e);
+            Logger.e("can not found package " + context.getPackageName(), e);
         }
         return false;
     }

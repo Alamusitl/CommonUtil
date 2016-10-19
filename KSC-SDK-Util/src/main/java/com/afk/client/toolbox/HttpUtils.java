@@ -1,4 +1,4 @@
-package com.ksc.client.toolbox;
+package com.afk.client.toolbox;
 
 import java.io.DataOutputStream;
 import java.io.IOException;

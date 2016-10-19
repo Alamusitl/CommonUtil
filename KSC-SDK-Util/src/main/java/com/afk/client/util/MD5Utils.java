@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,7 +7,7 @@ import java.security.MessageDigest;
 /**
  * Created by Alamusi on 2016/7/28.
  */
-public class KSCMD5Utils {
+public class MD5Utils {
 
     private static char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
@@ -19,11 +19,11 @@ public class KSCMD5Utils {
      */
     public static String getFileMD5(File file) {
         if (!file.exists()) {
-            KSCLog.e("file " + file.getName() + " not exist!");
+            Logger.e("file " + file.getName() + " not exist!");
             return null;
         }
         if (!file.isFile()) {
-            KSCLog.e("file " + file.getName() + " is not a file!");
+            Logger.e("file " + file.getName() + " is not a file!");
             return null;
         }
         try {
@@ -61,7 +61,7 @@ public class KSCMD5Utils {
             }
             return builder.toString();
         } catch (Exception e) {
-            KSCLog.e("md5 sign " + msg + " exception", e);
+            Logger.e("md5 sign " + msg + " exception", e);
             return "";
         }
     }
@@ -72,7 +72,6 @@ public class KSCMD5Utils {
      * @param tmp 要转换的byte[]
      * @return 十六进制字符串表示形式
      */
-
     private static String byteToHexString(byte[] tmp) {
         String s;
         // 用字节表示就是 16 个字节

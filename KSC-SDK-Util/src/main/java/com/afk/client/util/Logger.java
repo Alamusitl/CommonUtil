@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.util.Log;
 
@@ -6,9 +6,9 @@ import android.util.Log;
  * SDK Log工具类
  * Created by Alamusi on 2016/6/22.
  */
-public class KSCLog {
+public class Logger {
 
-    private static final String TAG = KSCLog.class.getSimpleName();
+    private static final String TAG = Logger.class.getSimpleName();
     public static boolean mIsDebug = false;
 
     public static void v(String info) {

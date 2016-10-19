@@ -1,4 +1,4 @@
-package com.ksc.client.util;
+package com.afk.client.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Created by Alamusi on 2016/6/22.
  */
-public class KSCPreferencesUtils {
+public class PreferencesUtils {
 
     private static final String K_FILE_NAME = "share_data";
 
