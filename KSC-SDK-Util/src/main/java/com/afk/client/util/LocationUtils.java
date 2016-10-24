@@ -6,6 +6,8 @@ import android.content.Context;
 import android.location.Location;
 import android.location.LocationManager;
 
+import com.afk.permission.PermissionManager;
+
 import java.util.List;
 
 /**
@@ -50,10 +52,15 @@ public class LocationUtils {
             Logger.e("get Location: no useless location provider");
             return null;
         }
-        if (PermissionUtils.checkRequestPermission(context, Manifest.permission_group.LOCATION, PermissionUtils.REQUEST_PERMISSION_CODE)) {
-            return lm.getLastKnownLocation(locationProvider);
+        if (PermissionManager.getInstance().hasPermissions(context, Manifest.permission.ACCESS_FINE_LOCATION)) {
+            try {
+                return lm.getLastKnownLocation(locationProvider);
+            } catch (SecurityException e) {
+                return null;
+            }
         } else {
-            return null;
+            PermissionManager.getInstance().requestPermission(context, null, Manifest.permission.ACCESS_FINE_LOCATION);
         }
+        return null;
     }
 }

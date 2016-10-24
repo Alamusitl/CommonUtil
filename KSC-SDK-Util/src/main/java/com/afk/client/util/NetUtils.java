@@ -14,6 +14,8 @@ import android.telephony.cdma.CdmaCellLocation;
 import android.telephony.gsm.GsmCellLocation;
 import android.text.TextUtils;
 
+import com.afk.permission.PermissionManager;
+
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.Enumeration;
@@ -141,7 +143,7 @@ public class NetUtils {
             if (manager == null) {
                 return cellId;
             }
-            if (PermissionUtils.checkRequestPermission(context, Manifest.permission_group.LOCATION, PermissionUtils.REQUEST_PERMISSION_CODE)) {
+            if (PermissionManager.getInstance().hasPermissions(context, Manifest.permission.ACCESS_FINE_LOCATION)) {
                 String imsi = manager.getSubscriberId();
                 if (imsi == null || imsi.equals("")) {
                     return cellId;
@@ -157,6 +159,8 @@ public class NetUtils {
                         cellId = gsmCellLocation.getCid();
                     }
                 }
+            } else {
+                PermissionManager.getInstance().requestPermission(context, null, Manifest.permission.ACCESS_FINE_LOCATION);
             }
         } catch (Exception e) {
             Logger.e("get cell id exception", e);
