@@ -28,14 +28,14 @@ public class MainActivity extends Activity {
                     public void onPermissionRequestResult(Permission permission) {
                         doSomeThing(permission);
                     }
-                }, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.INTERNET);
+                }, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_FINE_LOCATION);
             }
         });
     }
 
     private void doSomeThing(Permission permission) {
         Log.i("MainActivity", "doSomeThing: " + permission.permissionName + " " + permission.isGranted);
-        if (permission.permissionName.equals(Manifest.permission.WRITE_EXTERNAL_STORAGE) || permission.permissionName.equals(Manifest.permission.INTERNET)) {
+        if (permission.permissionName.equals(Manifest.permission.WRITE_EXTERNAL_STORAGE) || permission.permissionName.equals(Manifest.permission.ACCESS_FINE_LOCATION)) {
             if (permission.isGranted) {
                 Toast.makeText(MainActivity.this, permission.permissionName + " 已授权", Toast.LENGTH_SHORT).show();
             } else if (permission.shouldShowRequestPermissionRationale) {

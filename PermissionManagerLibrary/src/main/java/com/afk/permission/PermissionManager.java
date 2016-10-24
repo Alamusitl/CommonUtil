@@ -31,7 +31,7 @@ public class PermissionManager {
         return mInstance;
     }
 
-    public boolean hasPermissions(Context context, PermissionCallBack callBack, String... permissions) {
+    public boolean hasPermissions(Context context, String... permissions) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return true;
         }
@@ -39,8 +39,6 @@ public class PermissionManager {
         for (String permission : permissions) {
             if (context.checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
                 mUnRequestedPermissions.add(permission);
-            } else {
-                callBack.onPermissionRequestResult(new Permission(permission, true));
             }
         }
         return mUnRequestedPermissions.isEmpty();
@@ -48,7 +46,7 @@ public class PermissionManager {
 
     public void requestPermission(Context context, PermissionCallBack callBack, String... permissions) {
         mCallBack = callBack;
-        if (hasPermissions(context, callBack, permissions)) {
+        if (hasPermissions(context, permissions)) {
             return;
         }
         Intent intent = new Intent(context, RequestPermissionActivity.class);
@@ -60,8 +58,10 @@ public class PermissionManager {
     void onRequestPermissionResult(String[] permissions, int[] grantResults, boolean[] shouldShowRequestPermissionRationale) {
         for (int i = 0; i < permissions.length; i++) {
             mUnRequestedPermissions.remove(permissions[i]);
-            boolean granted = grantResults[i] == PackageManager.PERMISSION_GRANTED;
-            mCallBack.onPermissionRequestResult(new Permission(permissions[i], granted, shouldShowRequestPermissionRationale[i]));
+            if (mCallBack != null) {
+                boolean granted = grantResults[i] == PackageManager.PERMISSION_GRANTED;
+                mCallBack.onPermissionRequestResult(new Permission(permissions[i], granted, shouldShowRequestPermissionRationale[i]));
+            }
         }
     }
 }
