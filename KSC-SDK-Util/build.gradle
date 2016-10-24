@@ -24,19 +24,19 @@ android {
     }
 }
 
-task makeUtilJar(type: Jar, dependsOn: build) {
-    delete 'build/libs/sdk-util.jar'
-    baseName 'sdk-util'
+task makeUnProguardUtilJar(type: Jar, dependsOn: build) {
+    delete 'build/libs/sdk-util-unProguard.jar'
+    baseName 'sdk-util-unProguard'
     from('build/intermediates/classes/release')
     exclude('android/')
     exclude('com/afk/client/util/BuildConfig.class', 'com/afk/client/util/R.class',)
     exclude('com/afk/client/util/R$attr.class', 'com/afk/client/util/R$string.class')
 }
 
-task ProguardUtilJar(type: ProGuardTask, dependsOn: makeUtilJar) {
-    delete 'build/libs/sdk-proguard-util.jar'
-    injars 'build/libs/sdk-util.jar'
-    outjars 'build/libs/sdk-proguard-util.jar'
+task makeReleaseUtilJar(type: ProGuardTask, dependsOn: makeUnProguardUtilJar) {
+    delete 'build/libs/sdk-proguard-release.jar'
+    injars 'build/libs/sdk-util-unProguard.jar'
+    outjars 'build/libs/sdk-proguard-release.jar'
     configuration 'proguard-rules.pro'
 }
 
