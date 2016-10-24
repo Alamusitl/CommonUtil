@@ -17,6 +17,8 @@
             <option value="$PROJECT_DIR$/KSC-ScreenRecord-Demo" />
             <option value="$PROJECT_DIR$/KSC-Update-Demo" />
             <option value="$PROJECT_DIR$/KSC-Util-Demo" />
+            <option value="$PROJECT_DIR$/PermissionManager" />
+            <option value="$PROJECT_DIR$/PermissionManagerLibrary" />
             <option value="$PROJECT_DIR$/SensorsAnalyticsSDK" />
           </set>
         </option>
