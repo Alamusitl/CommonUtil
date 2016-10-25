@@ -116,7 +116,20 @@ public class NetUtils {
      */
     public static int getOperators(Context context) {
         int operatorsName = 0;
-        String imsi = ((TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE)).getSubscriberId();
+        String imsi = "";
+        try {
+            TelephonyManager manager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+            if (manager == null) {
+                return operatorsName;
+            }
+            if (PermissionManager.getInstance().hasPermissions(context, Manifest.permission.ACCESS_FINE_LOCATION)) {
+                imsi = manager.getSubscriberId();
+            } else {
+                PermissionManager.getInstance().requestPermission(context, null, Manifest.permission.READ_PHONE_STATE);
+            }
+        } catch (Exception e) {
+            Logger.e("get Operators exception", e);
+        }
         if (imsi == null) {
             return operatorsName;
         }
