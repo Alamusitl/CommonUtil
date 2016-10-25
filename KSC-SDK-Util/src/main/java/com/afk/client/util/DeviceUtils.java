@@ -1,10 +1,13 @@
 package com.afk.client.util;
 
+import android.Manifest;
 import android.content.Context;
 import android.os.Build;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+
+import com.afk.permission.PermissionManager;
 
 import java.util.Locale;
 import java.util.UUID;
@@ -40,18 +43,22 @@ public class DeviceUtils {
      */
     public static String getImei(Context context) {
         try {
-            TelephonyManager mTelephonyMgr = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-            if (mTelephonyMgr != null) {
-                String imei = mTelephonyMgr.getDeviceId();
-                if ("012345678912345".equals(imei)) {
-                    return "";
+            if (PermissionManager.getInstance().hasPermissions(context, Manifest.permission.READ_PHONE_STATE)) {
+                TelephonyManager mTelephonyMgr = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+                if (mTelephonyMgr != null) {
+                    String imei = mTelephonyMgr.getDeviceId();
+                    if ("012345678912345".equals(imei)) {
+                        return "";
+                    }
+                    if ("000000000000000".equals(imei)) {
+                        return "";
+                    }
+                    if (!TextUtils.isEmpty(imei)) {
+                        return imei;
+                    }
                 }
-                if ("000000000000000".equals(imei)) {
-                    return "";
-                }
-                if (!TextUtils.isEmpty(imei)) {
-                    return imei;
-                }
+            } else {
+                PermissionManager.getInstance().requestPermission(context, null, Manifest.permission.READ_PHONE_STATE);
             }
         } catch (SecurityException e) {
             Logger.e(e.getMessage());
