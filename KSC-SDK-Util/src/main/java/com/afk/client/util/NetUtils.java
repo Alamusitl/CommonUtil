@@ -9,6 +9,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaCellLocation;
 import android.telephony.gsm.GsmCellLocation;
@@ -16,6 +17,10 @@ import android.text.TextUtils;
 
 import com.afk.permission.PermissionManager;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.Enumeration;
@@ -218,19 +223,23 @@ public class NetUtils {
      * @return Mac地址
      */
     public static String getMac(Context context) {
-        String mac = "";
-        try {
-            WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-            if (wifi != null) {
-                WifiInfo info = wifi.getConnectionInfo();
-                if (info != null && !TextUtils.isEmpty(info.getMacAddress())) {
-                    mac = info.getMacAddress();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            return getMacWithM();
+        } else {
+            String mac = "";
+            try {
+                WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+                if (wifi != null) {
+                    WifiInfo info = wifi.getConnectionInfo();
+                    if (info != null && !TextUtils.isEmpty(info.getMacAddress())) {
+                        mac = info.getMacAddress();
+                    }
                 }
+            } catch (SecurityException ex) {
+                Logger.e(ex.getMessage() == null ? "" : ex.getMessage(), ex);
             }
-        } catch (SecurityException ex) {
-            Logger.e(ex.getMessage() == null ? "" : ex.getMessage(), ex);
+            return mac;
         }
-        return mac;
     }
 
     /**
@@ -300,6 +309,45 @@ public class NetUtils {
             intent.setAction("android.intent.action.VIEW");
         }
         activity.startActivity(intent);
+    }
+
+    /**
+     * 兼容Android 6.0以上机器，6.0以上机器对Mac地址做了控制
+     *
+     * @return 从系统文件读到的Mac地址
+     */
+    private static String getMacWithM() {
+        String str = "";
+        String macSerial = "";
+        try {
+            Process process = Runtime.getRuntime().exec("cat /sys/class/net/wlan0/address ");
+            InputStreamReader isr = new InputStreamReader(process.getInputStream());
+            LineNumberReader lnr = new LineNumberReader(isr);
+            for (; null != str; ) {
+                str = lnr.readLine();
+                if (str != null) {
+                    macSerial = str.trim();
+                    break;
+                }
+            }
+            isr.close();
+            lnr.close();
+            if ("".equals(macSerial)) {
+                FileReader fr = new FileReader("/sys/class/net/eth0/address");
+                StringBuilder builder = new StringBuilder();
+                char[] buf = new char[4096];
+                int readLength;
+                while ((readLength = fr.read(buf)) != -1) {
+                    builder.append(buf, 0, readLength);
+                }
+                str = builder.toString();
+                fr.close();
+                macSerial = str.toUpperCase().substring(0, 17);
+            }
+        } catch (IOException e) {
+            Logger.e("get Android M macAddress exception", e);
+        }
+        return macSerial;
     }
 
 }
