@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Process;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 
 @TargetApi(Build.VERSION_CODES.M)
 public class RequestPermissionActivity extends Activity {
@@ -44,7 +45,7 @@ public class RequestPermissionActivity extends Activity {
 
     private void handleIntent(Intent intent) {
         String[] permissions = intent.getStringArrayExtra(PermissionManager.KEY_PERMISSION);
-        requestPermissions(permissions, mRequestCode);
+        ActivityCompat.requestPermissions(this, permissions, mRequestCode);
     }
 
     @Override
@@ -52,7 +53,7 @@ public class RequestPermissionActivity extends Activity {
         if (requestCode == mRequestCode) {
             boolean[] mShouldShowRequestPermissionRationale = new boolean[permissions.length];
             for (int i = 0; i < permissions.length; i++) {
-                mShouldShowRequestPermissionRationale[i] = shouldShowRequestPermissionRationale(permissions[i]);
+                mShouldShowRequestPermissionRationale[i] = ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i]);
             }
             PermissionManager.getInstance().onRequestPermissionResult(permissions, grantResults, mShouldShowRequestPermissionRationale);
         }
