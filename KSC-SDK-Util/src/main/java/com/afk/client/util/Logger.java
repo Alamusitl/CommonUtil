@@ -36,15 +36,11 @@ public class Logger {
     }
 
     public static void i(String info) {
-        if (mIsDebug) {
-            Log.i(TAG, info);
-        }
+        Log.i(TAG, info);
     }
 
     public static void i(String tag, String info) {
-        if (mIsDebug) {
-            Log.i(tag, info);
-        }
+        Log.i(tag, info);
     }
 
     public static void w(String info) {
