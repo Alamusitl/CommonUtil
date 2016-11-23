@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">KSC-GPT-ScreenRecordDemo</string>
-    <string name="ksc_record">录屏</string>
-    <string name="ksc_capture">截屏</string>
-    <string name="ksc_record_stop">停止</string>
-</resources>
