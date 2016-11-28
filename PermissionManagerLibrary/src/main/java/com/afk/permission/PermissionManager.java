@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +19,7 @@ import java.util.List;
 public class PermissionManager {
 
     static final String KEY_PERMISSION = "permissions";
+    private static final String TAG = "PermissionManager";
     private static PermissionManager mInstance = null;
     private List<String> mUnRequestedPermissions;
     private PermissionCallBack mCallBack;
@@ -32,19 +35,6 @@ public class PermissionManager {
         return mInstance;
     }
 
-    public boolean hasPermissions(Context context, String... permissions) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            return true;
-        }
-        mUnRequestedPermissions = new ArrayList<>();
-        for (String permission : permissions) {
-            if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
-                mUnRequestedPermissions.add(permission);
-            }
-        }
-        return mUnRequestedPermissions.isEmpty();
-    }
-
     public void requestPermission(Context context, PermissionCallBack callBack, String... permissions) {
         mCallBack = callBack;
         if (hasPermissions(context, permissions)) {
@@ -54,6 +44,40 @@ public class PermissionManager {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.putExtra(KEY_PERMISSION, mUnRequestedPermissions.toArray(new String[mUnRequestedPermissions.size()]));
         context.startActivity(intent);
+    }
+
+    public boolean hasPermissions(Context context, String... permissions) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return true;
+        }
+        mUnRequestedPermissions = new ArrayList<>();
+        if (!hasMethod("checkSelfPermission")) {
+            return false;
+        }
+        for (String permission : permissions) {
+            if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                mUnRequestedPermissions.add(permission);
+            }
+        }
+        return mUnRequestedPermissions.isEmpty();
+    }
+
+    boolean hasMethod(String methodName) {
+        try {
+            Class clz = Class.forName("android.support.v4.app.ActivityCompat");
+            if (clz == null) {
+                return false;
+            }
+            Method[] methods = clz.getMethods();
+            for (Method method : methods) {
+                if (methodName.equals(method.getName())) {
+                    return true;
+                }
+            }
+        } catch (ClassNotFoundException e) {
+            Log.e(TAG, "class ActivityCompat not exist, please check!");
+        }
+        return false;
     }
 
     void onRequestPermissionResult(String[] permissions, int[] grantResults, boolean[] shouldShowRequestPermissionRationale) {

@@ -33,24 +33,23 @@ public class RequestPermissionActivity extends Activity {
     }
 
     @Override
+    public void onNewIntent(Intent intent) {
+        handleIntent(intent);
+    }
+
+    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(KEY_ORIGINAL_PID, mOriginalProcessId);
     }
 
     @Override
-    public void onNewIntent(Intent intent) {
-        handleIntent(intent);
-    }
-
-    private void handleIntent(Intent intent) {
-        String[] permissions = intent.getStringArrayExtra(PermissionManager.KEY_PERMISSION);
-        ActivityCompat.requestPermissions(this, permissions, mRequestCode);
-    }
-
-    @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == mRequestCode) {
+            if (!PermissionManager.getInstance().hasMethod("shouldShowRequestPermissionRationale")) {
+                finish();
+                return;
+            }
             boolean[] mShouldShowRequestPermissionRationale = new boolean[permissions.length];
             for (int i = 0; i < permissions.length; i++) {
                 mShouldShowRequestPermissionRationale[i] = ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i]);
@@ -58,5 +57,14 @@ public class RequestPermissionActivity extends Activity {
             PermissionManager.getInstance().onRequestPermissionResult(permissions, grantResults, mShouldShowRequestPermissionRationale);
         }
         finish();
+    }
+
+    private void handleIntent(Intent intent) {
+        if (!PermissionManager.getInstance().hasMethod("requestPermissions")) {
+            finish();
+            return;
+        }
+        String[] permissions = intent.getStringArrayExtra(PermissionManager.KEY_PERMISSION);
+        ActivityCompat.requestPermissions(this, permissions, mRequestCode);
     }
 }

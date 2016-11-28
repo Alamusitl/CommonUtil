@@ -20,6 +20,6 @@ android {
 }
 
 dependencies {
-    compile project(':PermissionManagerLibrary')
+    compile files('libs/permission-manager-release.jar')
     compile 'com.android.support:support-v4:25.0.0'
 }
