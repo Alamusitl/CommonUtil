@@ -51,19 +51,27 @@ public class Logger {
         Log.i(tag, info);
     }
 
+    public static void e(String errorInfo, Throwable t) {
+        if (t == null) {
+            e(errorInfo);
+        } else {
+            Log.e(TAG, errorInfo, t);
+        }
+    }
+
     public static void e(String errorInfo) {
         Log.e(TAG, errorInfo);
     }
 
+    public static void e(String tag, String errorInfo, Throwable t) {
+        if (t == null) {
+            e(tag, errorInfo);
+        } else {
+            Log.e(tag, errorInfo, t);
+        }
+    }
+
     public static void e(String tag, String errorInfo) {
         Log.i(tag, errorInfo);
-    }
-
-    public static void e(String errorInfo, Throwable t) {
-        Log.e(TAG, errorInfo, t);
-    }
-
-    public static void e(String tag, String errorInfo, Throwable t) {
-        Log.e(tag, errorInfo, t);
     }
 }

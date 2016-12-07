@@ -80,7 +80,7 @@ public class HelpUtils {
         try {
             return URLEncoder.encode(base64Param, "UTF-8");
         } catch (UnsupportedEncodingException e) {
-            Logger.e("url encode param exception", e);
+            Logger.e("url encode param UnsupportedEncodingException");
             return null;
         }
     }
@@ -105,7 +105,7 @@ public class HelpUtils {
         try {
             decodeParam = URLDecoder.decode(content, "UTF-8");
         } catch (UnsupportedEncodingException e) {
-            Logger.e("url decode param exception", e);
+            Logger.e("url decode param UnsupportedEncodingException");
             return null;
         }
         byte[] base64Param = Base64.decode(decodeParam, Base64.DEFAULT);

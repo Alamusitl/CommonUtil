@@ -61,7 +61,7 @@ public class DeviceUtils {
                 PermissionManager.getInstance().requestPermission(context, null, Manifest.permission.READ_PHONE_STATE);
             }
         } catch (SecurityException e) {
-            Logger.e(e.getMessage());
+            Logger.e(e.getMessage() == null ? "" : e.getMessage());
         }
         return "";
     }

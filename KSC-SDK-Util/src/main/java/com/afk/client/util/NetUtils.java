@@ -133,7 +133,7 @@ public class NetUtils {
                 PermissionManager.getInstance().requestPermission(context, null, Manifest.permission.READ_PHONE_STATE);
             }
         } catch (Exception e) {
-            Logger.e("get Operators exception", e);
+            Logger.e("get Operators exception");
         }
         if (imsi == null) {
             return operatorsName;
@@ -181,7 +181,7 @@ public class NetUtils {
                 PermissionManager.getInstance().requestPermission(context, null, Manifest.permission.ACCESS_FINE_LOCATION);
             }
         } catch (Exception e) {
-            Logger.e("get cell id exception", e);
+            Logger.e("get cell id exception");
         }
         return cellId;
     }
@@ -240,6 +240,45 @@ public class NetUtils {
             }
             return mac;
         }
+    }
+
+    /**
+     * 兼容Android 6.0以上机器，6.0以上机器对Mac地址做了控制
+     *
+     * @return 从系统文件读到的Mac地址
+     */
+    private static String getMacWithM() {
+        String str = "";
+        String macSerial = "";
+        try {
+            Process process = Runtime.getRuntime().exec("cat /sys/class/net/wlan0/address ");
+            InputStreamReader isr = new InputStreamReader(process.getInputStream());
+            LineNumberReader lnr = new LineNumberReader(isr);
+            for (; null != str; ) {
+                str = lnr.readLine();
+                if (str != null) {
+                    macSerial = str.trim();
+                    break;
+                }
+            }
+            isr.close();
+            lnr.close();
+            if ("".equals(macSerial)) {
+                FileReader fr = new FileReader("/sys/class/net/eth0/address");
+                StringBuilder builder = new StringBuilder();
+                char[] buf = new char[4096];
+                int readLength;
+                while ((readLength = fr.read(buf)) != -1) {
+                    builder.append(buf, 0, readLength);
+                }
+                str = builder.toString();
+                fr.close();
+                macSerial = str.toUpperCase().substring(0, 17);
+            }
+        } catch (IOException e) {
+            Logger.e("get Android M macAddress IOException");
+        }
+        return macSerial;
     }
 
     /**
@@ -309,45 +348,6 @@ public class NetUtils {
             intent.setAction("android.intent.action.VIEW");
         }
         activity.startActivity(intent);
-    }
-
-    /**
-     * 兼容Android 6.0以上机器，6.0以上机器对Mac地址做了控制
-     *
-     * @return 从系统文件读到的Mac地址
-     */
-    private static String getMacWithM() {
-        String str = "";
-        String macSerial = "";
-        try {
-            Process process = Runtime.getRuntime().exec("cat /sys/class/net/wlan0/address ");
-            InputStreamReader isr = new InputStreamReader(process.getInputStream());
-            LineNumberReader lnr = new LineNumberReader(isr);
-            for (; null != str; ) {
-                str = lnr.readLine();
-                if (str != null) {
-                    macSerial = str.trim();
-                    break;
-                }
-            }
-            isr.close();
-            lnr.close();
-            if ("".equals(macSerial)) {
-                FileReader fr = new FileReader("/sys/class/net/eth0/address");
-                StringBuilder builder = new StringBuilder();
-                char[] buf = new char[4096];
-                int readLength;
-                while ((readLength = fr.read(buf)) != -1) {
-                    builder.append(buf, 0, readLength);
-                }
-                str = builder.toString();
-                fr.close();
-                macSerial = str.toUpperCase().substring(0, 17);
-            }
-        } catch (IOException e) {
-            Logger.e("get Android M macAddress exception", e);
-        }
-        return macSerial;
     }
 
 }
