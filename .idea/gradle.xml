@@ -10,12 +10,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/DeleteTestDir" />
-            <option value="$PROJECT_DIR$/KSC-SDK-Analytics" />
             <option value="$PROJECT_DIR$/KSC-SDK-Util" />
             <option value="$PROJECT_DIR$/KSC-Util-Demo" />
             <option value="$PROJECT_DIR$/PermissionManager" />
             <option value="$PROJECT_DIR$/PermissionManagerLibrary" />
-            <option value="$PROJECT_DIR$/SensorsAnalyticsSDK" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

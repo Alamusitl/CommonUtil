@@ -3,13 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" filepath="$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" />
-      <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Analytics/KSC-SDK-Analytics.iml" filepath="$PROJECT_DIR$/KSC-SDK-Analytics/KSC-SDK-Analytics.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" filepath="$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-Util-Demo/KSC-Util-Demo.iml" filepath="$PROJECT_DIR$/KSC-Util-Demo/KSC-Util-Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/PermissionManager/PermissionManager.iml" filepath="$PROJECT_DIR$/PermissionManager/PermissionManager.iml" />
       <module fileurl="file://$PROJECT_DIR$/PermissionManagerLibrary/PermissionManagerLibrary.iml" filepath="$PROJECT_DIR$/PermissionManagerLibrary/PermissionManagerLibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SensorsAnalyticsSDK/SensorsAnalyticsSDK.iml" filepath="$PROJECT_DIR$/SensorsAnalyticsSDK/SensorsAnalyticsSDK.iml" />
     </modules>
   </component>
 </project>
