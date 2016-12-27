@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
 
+def androidVersionCode = 1
+def androidVersionName = "1.0"
+
 android {
     compileSdkVersion androidCompileSdkVersion
     buildToolsVersion androidBuildToolsVersion

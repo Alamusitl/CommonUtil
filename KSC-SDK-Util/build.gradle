@@ -2,6 +2,9 @@ import proguard.gradle.ProGuardTask
 
 apply plugin: 'com.android.library'
 
+def androidVersionCode = 2
+def androidVersionName = "1.1"
+
 android {
     compileSdkVersion androidCompileSdkVersion
     buildToolsVersion androidBuildToolsVersion

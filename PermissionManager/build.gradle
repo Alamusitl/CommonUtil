@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+def androidVersionCode = 1
+def androidVersionName = "1.0"
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
@@ -8,8 +11,8 @@ android {
         applicationId "com.afk.demo.permission"
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode androidVersionCode
+        versionName androidVersionName
     }
     buildTypes {
         release {

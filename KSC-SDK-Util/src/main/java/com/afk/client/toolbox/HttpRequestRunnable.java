@@ -62,23 +62,28 @@ public class HttpRequestRunnable implements Runnable {
             if (responseCode == -1) {
                 throw new IOException("Could not retrieve response code from HttpUrlConnection");
             }
-            byte[] body = new byte[0];
             if (responseCode == HttpURLConnection.HTTP_OK) {
+                byte[] body;
                 if (mHandler != null) {
                     body = processDownloadFile(connection);
                 } else {
                     body = processGetParam(connection);
                 }
-            }
-            Map<String, String> responseHeaders = new HashMap<>();
-            for (Map.Entry<String, List<String>> header : connection.getHeaderFields().entrySet()) {
-                if (header.getKey() != null) {
-                    responseHeaders.put(header.getKey(), header.getValue().get(0));
+                Map<String, String> responseHeaders = new HashMap<>();
+                for (Map.Entry<String, List<String>> header : connection.getHeaderFields().entrySet()) {
+                    if (header.getKey() != null) {
+                        responseHeaders.put(header.getKey(), header.getValue().get(0));
+                    }
+                }
+                if (mHttpListener != null) {
+                    mHttpListener.onResponse(new HttpResponse(responseCode, body, responseHeaders, false));
+                }
+            } else {
+                if (mHttpErrorListener != null) {
+                    mHttpErrorListener.onErrorResponse(new HttpError("server response error, response code:" + responseCode));
                 }
             }
-            if (mHttpListener != null) {
-                mHttpListener.onResponse(new HttpResponse(responseCode, body, responseHeaders, false));
-            }
+
             connection.disconnect();
             mIsRunning = false;
         } catch (MalformedURLException e) {

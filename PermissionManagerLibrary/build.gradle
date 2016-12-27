@@ -2,6 +2,9 @@ import proguard.gradle.ProGuardTask
 
 apply plugin: 'com.android.library'
 
+def androidVersionCode = 2
+def androidVersionName = "1.1"
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
@@ -9,8 +12,8 @@ android {
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode androidVersionCode
+        versionName androidVersionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -33,9 +36,9 @@ task makeUnProguardPermissionJar(type: Jar, dependsOn: build) {
 }
 
 task makeReleasePermissionJar(type: ProGuardTask, dependsOn: makeUnProguardPermissionJar) {
-    delete 'build/libs/permission-manager-release.jar'
+    delete 'build/libs/permission-manager-release-' + androidVersionName + '.jar'
     injars 'build/libs/permission-manager-unProguard.jar'
-    outjars 'build/libs/permission-manager-release.jar'
+    outjars 'build/libs/permission-manager-release-' + androidVersionName + '.jar'
     configuration 'proguard-rules.pro'
 }
 

@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+def androidVersionCode = 1
+def androidVersionName = "1.0"
+
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
@@ -8,8 +11,8 @@ android {
         applicationId "com.ksc.demo.util"
         minSdkVersion 9
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        versionCode androidVersionCode
+        versionName androidVersionName
     }
     buildTypes {
         release {
