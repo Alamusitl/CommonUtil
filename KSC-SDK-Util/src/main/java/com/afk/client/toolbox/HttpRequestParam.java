@@ -9,7 +9,7 @@ public class HttpRequestParam {
 
     public static final int METHOD_GET = 0;
     public static final int METHOD_POST = 1;
-    public static final int DEFAULT_TIME_OUT_MS = 3 * 1000;
+    public static final int DEFAULT_TIME_OUT_MS = 20 * 1000;
 
     private static final String DEFAULT_PARAMS_ENCODING = "UTF-8";
     private String mContentType = "application/x-www-form-urlencoded";
@@ -52,12 +52,12 @@ public class HttpRequestParam {
         return mPostParams;
     }
 
-    public void setBody(String params) {
-        mPostParams = params.getBytes();
-    }
-
     public void setBody(byte[] body) {
         mPostParams = body;
+    }
+
+    public void setBody(String params) {
+        mPostParams = params.getBytes();
     }
 
     public Map<String, String> getHeaders() {
