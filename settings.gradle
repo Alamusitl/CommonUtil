@@ -1,1 +1,1 @@
-include ':KSC-SDK-Util', ':DeleteTestDir', ':KSC-Util-Demo', ':PermissionManager', ':PermissionManagerLibrary'
+include ':KSC-SDK-Util', ':DeleteTestDir', ':KSC-Util-Demo'

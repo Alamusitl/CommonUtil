@@ -6,8 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" filepath="$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" filepath="$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-Util-Demo/KSC-Util-Demo.iml" filepath="$PROJECT_DIR$/KSC-Util-Demo/KSC-Util-Demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PermissionManager/PermissionManager.iml" filepath="$PROJECT_DIR$/PermissionManager/PermissionManager.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PermissionManagerLibrary/PermissionManagerLibrary.iml" filepath="$PROJECT_DIR$/PermissionManagerLibrary/PermissionManagerLibrary.iml" />
     </modules>
   </component>
 </project>
