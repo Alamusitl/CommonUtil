@@ -21,8 +21,14 @@ public class PermissionManager {
     static final String KEY_PERMISSION = "permissions";
     private static final String TAG = "PermissionManager";
     private static PermissionManager mInstance = null;
-    private List<String> mUnRequestedPermissions;
+    private List<String> mNeedRequestPermissions;
+    private List<String> mRequestingPermissions;
     private PermissionCallBack mCallBack;
+
+    public PermissionManager() {
+        mNeedRequestPermissions = new ArrayList<>();
+        mRequestingPermissions = new ArrayList<>();
+    }
 
     public static PermissionManager getInstance() {
         if (mInstance == null) {
@@ -40,9 +46,20 @@ public class PermissionManager {
         if (hasPermissions(context, permissions)) {
             return;
         }
+        ArrayList<String> addNewRequestPermissions = new ArrayList<>();
+        for (String permission : mNeedRequestPermissions) {
+            if (!mRequestingPermissions.contains(permission)) {
+                addNewRequestPermissions.add(permission);
+                mRequestingPermissions.add(permission);
+            }
+        }
+        mNeedRequestPermissions.clear();
+        if (addNewRequestPermissions.isEmpty()) {
+            return;
+        }
         Intent intent = new Intent(context, RequestPermissionActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.putExtra(KEY_PERMISSION, mUnRequestedPermissions.toArray(new String[mUnRequestedPermissions.size()]));
+        intent.putExtra(KEY_PERMISSION, addNewRequestPermissions.toArray(new String[addNewRequestPermissions.size()]));
         context.startActivity(intent);
     }
 
@@ -50,16 +67,17 @@ public class PermissionManager {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return true;
         }
-        mUnRequestedPermissions = new ArrayList<>();
         if (!hasMethod("checkSelfPermission")) {
             return false;
         }
         for (String permission : permissions) {
             if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
-                mUnRequestedPermissions.add(permission);
+                if (!mNeedRequestPermissions.contains(permission)) {
+                    mNeedRequestPermissions.add(permission);
+                }
             }
         }
-        return mUnRequestedPermissions.isEmpty();
+        return mNeedRequestPermissions.isEmpty();
     }
 
     boolean hasMethod(String methodName) {
@@ -82,7 +100,7 @@ public class PermissionManager {
 
     void onRequestPermissionResult(String[] permissions, int[] grantResults, boolean[] shouldShowRequestPermissionRationale) {
         for (int i = 0; i < permissions.length; i++) {
-            mUnRequestedPermissions.remove(permissions[i]);
+            mRequestingPermissions.remove(permissions[i]);
             if (mCallBack != null) {
                 boolean granted = grantResults[i] == PackageManager.PERMISSION_GRANTED;
                 mCallBack.onPermissionRequestResult(new Permission(permissions[i], granted, shouldShowRequestPermissionRationale[i]));
