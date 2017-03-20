@@ -5,7 +5,7 @@ def androidVersionName = "1.0"
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "com.ksc.demo.util"
