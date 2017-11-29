@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CommonSDK.iml" filepath="$PROJECT_DIR$/CommonSDK.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" filepath="$PROJECT_DIR$/DeleteTestDir/DeleteTestDir.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" filepath="$PROJECT_DIR$/KSC-SDK-Util/KSC-SDK-Util.iml" />
       <module fileurl="file://$PROJECT_DIR$/KSC-Util-Demo/KSC-Util-Demo.iml" filepath="$PROJECT_DIR$/KSC-Util-Demo/KSC-Util-Demo.iml" />
     </modules>

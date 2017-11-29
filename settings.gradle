@@ -1,1 +1,1 @@
-include ':KSC-SDK-Util', ':DeleteTestDir', ':KSC-Util-Demo'
+include ':KSC-SDK-Util', ':KSC-Util-Demo'
